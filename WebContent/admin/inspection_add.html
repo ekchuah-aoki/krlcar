@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Metro, a sleek, intuitive, and powerful framework for faster and easier web development for Windows Metro Style.">
+    <meta name="keywords" content="HTML, CSS, JS, JavaScript, framework, metro, front-end, frontend, web development">
+    <meta name="author" content="Sergey Pimenov and Metro UI CSS contributors">
+
+    <link rel='shortcut icon' type='image/x-icon' href='../favicon.ico' />
+
+    <title>株式会社ケー・アールライン</title>
+
+    <link href="../css/metro.css" rel="stylesheet">
+    <link href="../css/metro-icons.css" rel="stylesheet">
+    <link href="../css/metro-responsive.css" rel="stylesheet">
+
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/jquery.dataTables.min.js"></script>
+
+    <script src="../js/metro.js"></script>
+
+    <style>
+        html, body {
+            height: 100%;
+        }
+        body {
+        }
+        .page-content {
+            padding-top: 3.125rem;
+            min-height: 100%;
+            height: 100%;
+        }
+        .table .input-control.checkbox {
+            line-height: 1;
+            min-height: 0;
+            height: auto;
+        }
+
+        @media screen and (max-width: 800px){
+            #cell-sidebar {
+                flex-basis: 52px;
+            }
+            #cell-content {
+                flex-basis: calc(100% - 52px);
+            }
+        }
+    </style>
+
+    <script>
+        function pushMessage(t){
+            var mes = 'Info|Implement independently';
+            $.Notify({
+                caption: mes.split("|")[0],
+                content: mes.split("|")[1],
+                type: t
+            });
+        }
+
+        $(function(){
+            $('.sidebar').on('click', 'li', function(){
+                if (!$(this).hasClass('active')) {
+                    $('.sidebar li').removeClass('active');
+                    $(this).addClass('active');
+                }
+            })
+        })
+    </script>
+	<script>
+	    $(function(){
+	        $("#datepicker").datepicker();
+	    });
+	</script>
+</head>
+<body class="bg-steel">
+    <div class="app-bar fixed-top darcula" data-role="appbar">
+        <a class="app-bar-element branding" style="background-color:#CEDBF2"><img style="width: 113px;" src="../img/logo.png" alt="ケー・アールライン"></a>
+        <span class="app-bar-divider"></span>
+        <ul class="app-bar-menu">
+            <li><a href="./home_notice.html">HOME</a></li>
+            <li>
+                <a href="" class="dropdown-toggle">点呼管理</a>
+                <ul class="d-menu" data-role="dropdown">
+                    <li><a href="./roll_call_add.html">
+                        <span class="mif-file-text icon"></span>
+                        <span class="title">点呼記録表入力</span>
+                    </a></li>
+                    <li><a href="./roll_call_list.html">
+                        <span class="mif-list-numbered icon"></span>
+                        <span class="title">【処理中】点呼記録表一覧</span>
+                    </a></li>
+                    <li><a href="./roll_call_search.html">
+                        <span class="mif-search icon"></span>
+                        <span class="title">点呼記録表検索</span>
+                    </a></li>
+                </ul>
+            </li>
+            <li class="active" style="background-color: #59cde2;">
+                <a href="" class="dropdown-toggle">日常点検</a>
+                <ul class="d-menu" data-role="dropdown">
+                    <li><a href="./inspection_add.html">
+                        <span class="mif-file-text icon"></span>
+                        <span class="title">日常点検実施表入力</span>
+                    </a></li>
+                    <li><a href="./inspection_list.html">
+                        <span class="mif-list-numbered icon"></span>
+                        <span class="title">日常点検実施表一覧</span>
+                    </a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="" class="dropdown-toggle">運送日報</a>
+                <ul class="d-menu" data-role="dropdown">
+                    <li><a href="./driving_report_add.html">
+                        <span class="mif-file-text icon"></span>
+                        <span class="title">運送日報入力</span>
+                    </a></li>
+                    <li><a href="./driving_report_list.html">
+                        <span class="mif-list icon"></span>
+                        <span class="title">運送日報一覧</span>
+                    </a></li>
+                    <li><a href="./driving_report_search.html">
+                        <span class="mif-search icon"></span>
+                        <span class="title">運送日報検索</span>
+                    </a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="" class="dropdown-toggle">請求書</a>
+                <ul class="d-menu" data-role="dropdown">
+                    <li><a href="./bill_list.html">
+                        <span class="mif-list icon"></span>
+                        <span class="title">未締めデータ一覧</span>
+                    </a></li>
+                    <li><a href="./bill_close.html">
+                        <span class="mif-checkmark icon"></span>
+                        <span class="title">請求書締め</span>
+                    </a></li>
+                    <li><a href="./bill_search.html">
+                        <span class="mif-search icon"></span>
+                        <span class="title">請求書検索</span>
+                    </a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="" class="dropdown-toggle">売上・経費</a>
+                <ul class="d-menu" data-role="dropdown">
+                    <li><a href="./salesCost_driver_daily.html">
+                        <span class="mif-chart-bars icon"></span>
+                        <span class="title">日次運転手別売上・経費</span>
+                    </a></li>
+                    <li><a href="./salesCost_truck_daily.html">
+                        <span class="mif-file-text icon"></span>
+                        <span class="title">日次車別売上・経費</span>
+                    </a></li>
+                    <li><a href="./salesCost_driver_monthly.html">
+                        <span class="mif-list icon"></span>
+                        <span class="title">月次運転手別売上・経費検索</span>
+                    </a></li>
+                    <li><a href="./cost_truck_monthly.html">
+                        <span class="mif-file-text icon"></span>
+                        <span class="title">月間車別経費</span>
+                    </a></li>
+<!--                    <li><a href="./salesCost_year.html">
+                        <span class="mif-chart-line icon"></span>
+                        <span class="title">年度別売上推移</span>
+                    </a></li>
+-->
+                    <li><a href="./sales_month.html">
+                        <span class="mif-file-text icon"></span>
+                        <span class="title">月次売上集計</span>
+                    </a></li>
+                    <li><a href="./sales_customer.html">
+                        <span class="mif-list icon"></span>
+                        <span class="title">得意先別売上集計</span>
+                    </a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="" class="dropdown-toggle">運行管理</a>
+                <ul class="d-menu" data-role="dropdown">
+                    <li><a href="./operationControl_bindingWorkHour.html">
+                        <span class="mif-user icon"></span>
+                        <span class="title">拘束・運転時間管理表</span>
+                    </a></li>
+                    <li><a href="./operationControl_car_fuelCost.html">
+                        <span class="mif-truck icon"></span>
+                        <span class="title">個車別燃費推移
+                    </a></li>
+                    <li><a href="./operationControl_car_status.html">
+                        <span class="mif-truck icon"></span>
+                        <span class="title">個車別走行距離</span>
+                    </a></li>
+                </ul>
+			</li>
+            <li><a href="./master_customer.html">マスター管理</a></li>
+        </ul>
+
+        <div class="app-bar-element place-right">
+            <span class="dropdown-toggle"><span class="mif-cog"></span> 管理者A</span>
+            <div class="app-bar-drop-container padding10 place-right no-margin-top block-shadow fg-dark" data-role="dropdown" data-no-close="true" style="width: 180px">
+                <ul class="unstyled-list fg-dark">
+                    <li><a href="" class="fg-white3 fg-hover-yellow">ログアウト</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-content">
+        <div class="flex-grid no-responsive-future" style="height: 100%;">
+            <div class="row" style="height: 1500px;">
+                <div class="cell auto-size padding20 bg-white" id="cell-content">
+					<ul class="breadcrumbs" style="padding:0px;">
+					    <li><a href="#">日常点検実施表一覧</a></li>
+					    <li><h4 class="text-light"><a href="#">日常点検実施表入力</a></h4></li>
+					</ul>
+
+                    <hr class="thin bg-grayLighter">
+					<div class="align-right">
+                    <button class="button warning" onclick="pushMessage('warning')"><span class="mif-cancel"></span> キャンセル</button>
+                    <button class="button primary" onclick="pushMessage('info')"><span class="mif-plus"></span> 保存</button>
+					</div>
+
+                    <hr class="thin bg-grayLighter">
+		            <div class="grid">
+		                <div class="row cells12">
+							<div class="cell colspan4">
+		                        登録番号
+		                        <div class="input-control select" style="width:100px;">
+		                            <select>
+		                                <option>湘南130</option>
+		                                <option>足立123</option>
+		                                <option>港111</option>
+		                            </select>
+		                        </div>
+		                        車番
+		                        <div class="input-control select" style="width:100px;">
+		                            <select>
+		                                <option>4956</option>
+		                                <option>6308</option>
+		                                <option>5468</option>
+		                            </select>
+		                        </div>
+		                    </div>
+							<div class="cell colspan2">
+		                        点検日
+								<div class="input-control text" id="datepicker" style="width:150px;">
+								    <input type="text">
+								    <button class="button"><span class="mif-calendar"></span></button>
+								</div>
+		                    </div>
+							<div class="cell colspan6">
+		                        整備管理者
+			                        <div class="input-control select" style="width:100px;">
+			                            <select>
+			                                <option>平坂</option>
+			                                <option>安藤</option>
+			                                <option>北村</option>
+			                            </select>
+			                        </div>
+		                        補助者
+			                        <div class="input-control select" style="width:100px;">
+			                            <select>
+			                                <option></option>
+			                                <option>平坂</option>
+			                                <option>安藤</option>
+			                                <option>北村</option>
+			                            </select>
+			                        </div>
+		                        点検実施者
+			                        <div class="input-control select" style="width:100px;">
+			                            <select>
+			                                <option>平坂</option>
+			                                <option>安藤</option>
+			                                <option>北村</option>
+			                            </select>
+			                        </div>
+		                    </div>
+	                    </div>
+                    </div>
+                    <table class="table border bordered" data-auto-width="false">
+                        <thead>
+                        <tr>
+                            <td class="sortable-column" colspan="3">点検内容<span style="float:right;">点検良→<span class="mif-checkmark fg-green"></span>　要整備→<span class="mif-cross fg-red"></span></td>
+                            <td>操作</td>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>準備</td>
+                            <td colspan="2">前日における異常個所はないか、または処置の確認</td>
+                            <td>
+			                        <label class="input-control radio small-check">
+			                            <input type="radio" name="n1" checked="checked">
+			                            <span class="check"></span>
+			                            <span class="mif-checkmark fg-green"></span>
+			                        </label>
+			                        <label class="input-control radio small-check">
+			                            <input type="radio" name="n1">
+			                            <span class="check"></span>
+			                            <span class="mif-cross fg-red">
+			                        </label>
+							</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="12">運転者席</td>
+                            <td colspan="2">エンジンのかかり具合・異音</td>
+                            <td>
+			                        <label class="input-control radio small-check">
+			                            <input type="radio" name="n2" checked="checked">
+			                            <span class="check"></span>
+			                            <span class="mif-checkmark fg-green"></span>
+			                        </label>
+			                        <label class="input-control radio small-check">
+			                            <input type="radio" name="n2">
+			                            <span class="check"></span>
+			                            <span class="mif-cross fg-red">
+			                        </label>
+							</td>
+						</tr><tr>
+					        <td colspan="2">エンジンのかかり具合・異音</td>
+					        <td>
+					        <label class="input-control radio small-check">
+					            <input type="radio" name="n3" checked="checked">
+					            <span class="check"></span>
+					            <span class="mif-checkmark fg-green"></span>
+					        </label>
+					        <label class="input-control radio small-check">
+					            <input type="radio" name="n3">
+					            <span class="check"></span>
+					            <span class="mif-cross fg-red">
+					        </label></td>
+						</tr><tr>
+					        <td colspan="2">低速・加速の状態</td>
+					        <td>
+					        <label class="input-control radio small-check">
+					            <input type="radio" name="n4" checked="checked">
+					            <span class="check"></span>
+					            <span class="mif-checkmark fg-green"></span>
+					        </label>
+					        <label class="input-control radio small-check">
+					            <input type="radio" name="n4">
+					            <span class="check"></span>
+					            <span class="mif-cross fg-red">
+					        </label></td>
+						</tr><tr>
+					        <td colspan="2">ブレーキ・ペダルの踏みしろ、きき具合</td>
+					        <td>
+					        <label class="input-control radio small-check">
+					            <input type="radio" name="n5" checked="checked">
+					            <span class="check"></span>
+					            <span class="mif-checkmark fg-green"></span>
+					        </label>
+					        <label class="input-control radio small-check">
+					            <input type="radio" name="n5">
+					            <span class="check"></span>
+					            <span class="mif-cross fg-red">
+					        </label></td>
+						</tr><tr>
+						        <td colspan="2">駐車ブレーキ．レバーの踏みしろ</span>
+						        <td>
+						        <label class="input-control radio small-check">
+						            <input type="radio" name="n6" checked="checked">
+						            <span class="check"></span>
+						            <span class="mif-checkmark fg-green"></span>
+						        </label>
+						        <label class="input-control radio small-check">
+						            <input type="radio" name="n6">
+						            <span class="check"></span>
+						            <span class="mif-cross fg-red">
+						        </label></td>
+							</tr><tr>
+						        <td colspan="2">空気圧力の上り具合</span>
+						        <td>
+						        <label class="input-control radio small-check">
+						            <input type="radio" name="n7" checked="checked">
+						            <span class="check"></span>
+						            <span class="mif-checkmark fg-green"></span>
+						        </label>
+						        <label class="input-control radio small-check">
+						            <input type="radio" name="n7">
+						            <span class="check"></span>
+						            <span class="mif-cross fg-red">
+						        </label></td>
+							</tr><tr>
+						        <td colspan="2">ブレーキ．ペダルを放したときの配管音</span>
+						        <td>
+						        <label class="input-control radio small-check">
+						            <input type="radio" name="n8" checked="checked">
+						            <span class="check"></span>
+						            <span class="mif-checkmark fg-green"></span>
+						        </label>
+						        <label class="input-control radio small-check">
+						            <input type="radio" name="n8">
+						            <span class="check"></span>
+						            <span class="mif-cross fg-red">
+						        </label></td>
+							</tr><tr>
+						        <td colspan="2">ブレーキ・チャンバのロッドのストローク</span>
+						        <td>
+						        <label class="input-control radio small-check">
+						            <input type="radio" name="n9" checked="checked">
+						            <span class="check"></span>
+						            <span class="mif-checkmark fg-green"></span>
+						        </label>
+						        <label class="input-control radio small-check">
+						            <input type="radio" name="n9">
+						            <span class="check"></span>
+						            <span class="mif-cross fg-red">
+						        </label></td>
+							</tr><tr>
+						        <td colspan="2">ブレーキドラムとライニングとの隙間</span>
+						        <td>
+						        <label class="input-control radio small-check">
+						            <input type="radio" name="n10" checked="checked">
+						            <span class="check"></span>
+						            <span class="mif-checkmark fg-green"></span>
+						        </label>
+						        <label class="input-control radio small-check">
+						            <input type="radio" name="n10">
+						            <span class="check"></span>
+						            <span class="mif-cross fg-red">
+						        </label></td>
+							</tr><tr>
+						        <td colspan="2">ウィンドウ・ウォッシャの液量・噴射状態</span>
+						        <td>
+						        <label class="input-control radio small-check">
+						            <input type="radio" name="n11" checked="checked">
+						            <span class="check"></span>
+						            <span class="mif-checkmark fg-green"></span>
+						        </label>
+						        <label class="input-control radio small-check">
+						            <input type="radio" name="n11">
+						            <span class="check"></span>
+						            <span class="mif-cross fg-red">
+						        </label></td>
+							</tr><tr>
+						        <td colspan="2">ワイパーの払拭状態</span>
+						        <td>
+						        <label class="input-control radio small-check">
+						            <input type="radio" name="n12" checked="checked">
+						            <span class="check"></span>
+						            <span class="mif-checkmark fg-green"></span>
+						        </label>
+						        <label class="input-control radio small-check">
+						            <input type="radio" name="n12">
+						            <span class="check"></span>
+						            <span class="mif-cross fg-red">
+						        </label></td>
+							</tr><tr>
+						        <td colspan="2">灯火措置及び方向指示器の点灯・点滅具合・汚れ、損傷</span>
+						        <td>
+						        <label class="input-control radio small-check">
+						            <input type="radio" name="n13" checked="checked">
+						            <span class="check"></span>
+						            <span class="mif-checkmark fg-green"></span>
+						        </label>
+						        <label class="input-control radio small-check">
+						            <input type="radio" name="n13">
+						            <span class="check"></span>
+						            <span class="mif-cross fg-red">
+						        </label></td>
+							</tr><tr>
+								<td rowspan="10">車両の周り（前部～後部）</td>
+						        <td colspan="2">ブレーキ・オイルの液量</span>
+						        <td>
+						        <label class="input-control radio small-check">
+						            <input type="radio" name="n14" checked="checked">
+						            <span class="check"></span>
+						            <span class="mif-checkmark fg-green"></span>
+						        </label>
+						        <label class="input-control radio small-check">
+						            <input type="radio" name="n14">
+						            <span class="check"></span>
+						            <span class="mif-cross fg-red">
+						        </label></td>
+							</tr><tr>
+						        <td colspan="2">冷却水の量</span>
+						        <td>
+						        <label class="input-control radio small-check">
+						            <input type="radio" name="n15" checked="checked">
+						            <span class="check"></span>
+						            <span class="mif-checkmark fg-green"></span>
+						        </label>
+						        <label class="input-control radio small-check">
+						            <input type="radio" name="n15">
+						            <span class="check"></span>
+						            <span class="mif-cross fg-red">
+						        </label></td>
+							</tr><tr>
+						        <td colspan="2">ファン・ベルトの張り具合・損傷</span>
+						        <td>
+						        <label class="input-control radio small-check">
+						            <input type="radio" name="n16" checked="checked">
+						            <span class="check"></span>
+						            <span class="mif-checkmark fg-green"></span>
+						        </label>
+						        <label class="input-control radio small-check">
+						            <input type="radio" name="n16">
+						            <span class="check"></span>
+						            <span class="mif-cross fg-red">
+						        </label></td>
+							</tr><tr>
+						        <td colspan="2">エンジン・オイルの量</span>
+						        <td>
+						        <label class="input-control radio small-check">
+						            <input type="radio" name="n17" checked="checked">
+						            <span class="check"></span>
+						            <span class="mif-checkmark fg-green"></span>
+						        </label>
+						        <label class="input-control radio small-check">
+						            <input type="radio" name="n17">
+						            <span class="check"></span>
+						            <span class="mif-cross fg-red">
+						        </label></td>
+							</tr><tr>
+						        <td rowspan="5">タイヤ</span>
+						        <td>空気圧</span>
+						        <td>
+						        <label class="input-control radio small-check">
+						            <input type="radio" name="n18" checked="checked">
+						            <span class="check"></span>
+						            <span class="mif-checkmark fg-green"></span>
+						        </label>
+						        <label class="input-control radio small-check">
+						            <input type="radio" name="n18">
+						            <span class="check"></span>
+						            <span class="mif-cross fg-red">
+						        </label></td>
+							</tr><tr>
+						        <td>亀裂及び損傷</span>
+						        <td>
+						        <label class="input-control radio small-check">
+						            <input type="radio" name="n19" checked="checked">
+						            <span class="check"></span>
+						            <span class="mif-checkmark fg-green"></span>
+						        </label>
+						        <label class="input-control radio small-check">
+						            <input type="radio" name="n19">
+						            <span class="check"></span>
+						            <span class="mif-cross fg-red">
+						        </label></td>
+							</tr><tr>
+						        <td>異常な損耗</span>
+						        <td>
+						        <label class="input-control radio small-check">
+						            <input type="radio" name="n20" checked="checked">
+						            <span class="check"></span>
+						            <span class="mif-checkmark fg-green"></span>
+						        </label>
+						        <label class="input-control radio small-check">
+						            <input type="radio" name="n20">
+						            <span class="check"></span>
+						            <span class="mif-cross fg-red">
+						        </label></td>
+							</tr><tr>
+						        <td>溝の深さ</td>
+						        <td>
+						        <label class="input-control radio small-check">
+						            <input type="radio" name="n21" checked="checked">
+						            <span class="check"></span>
+						            <span class="mif-checkmark fg-green"></span>
+						        </label>
+						        <label class="input-control radio small-check">
+						            <input type="radio" name="n21">
+						            <span class="check"></span>
+						            <span class="mif-cross fg-red">
+						        </label></td>
+							</tr><tr>
+						        <td>ディスク・ホイールの取付状態</td>
+						        <td>
+						        <label class="input-control radio small-check">
+						            <input type="radio" name="n22" checked="checked">
+						            <span class="check"></span>
+						            <span class="mif-checkmark fg-green"></span>
+						        </label>
+						        <label class="input-control radio small-check">
+						            <input type="radio" name="n22">
+						            <span class="check"></span>
+						            <span class="mif-cross fg-red">
+						        </label></td>
+							</tr><tr>
+						        <td colspan="2">エア・タンクの凝水</td>
+						        <td>
+						        <label class="input-control radio small-check">
+						            <input type="radio" name="n23" checked="checked">
+						            <span class="check"></span>
+						            <span class="mif-checkmark fg-green"></span>
+						        </label>
+						        <label class="input-control radio small-check">
+						            <input type="radio" name="n23">
+						            <span class="check"></span>
+						            <span class="mif-cross fg-red">
+						        </label></td>
+							</tr><tr>
+								<td rowspan="2">備付品</td>
+						        <td colspan="2">車検証・保険証・点検整備記録簿</td>
+						        <td>
+						        <label class="input-control radio small-check">
+						            <input type="radio" name="n24" checked="checked">
+						            <span class="check"></span>
+						            <span class="mif-checkmark fg-green"></span>
+						        </label>
+						        <label class="input-control radio small-check">
+						            <input type="radio" name="n24">
+						            <span class="check"></span>
+						            <span class="mif-cross fg-red">
+						        </label></td>
+							</tr><tr>
+						        <td colspan="2">スペア・タイヤ・工具の完備・停止表示板の携行、チャート紙</td>
+						        <td>
+						        <label class="input-control radio small-check">
+						            <input type="radio" name="n25" checked="checked">
+						            <span class="check"></span>
+						            <span class="mif-checkmark fg-green"></span>
+						        </label>
+						        <label class="input-control radio small-check">
+						            <input type="radio" name="n25">
+						            <span class="check"></span>
+						            <span class="mif-cross fg-red">
+						        </label></td>
+							</tr>
+							</tr><tr>
+						        <td colspan="3">運行可否の決定</td>
+						        <td>
+						        <label class="input-control radio small-check">
+						            <input type="radio" name="n26" checked="checked">
+						            <span class="check"></span>
+						            <span class="mif-checkmark fg-green"></span>
+						        </label>
+						        <label class="input-control radio small-check">
+						            <input type="radio" name="n26">
+						            <span class="check"></span>
+						            <span class="mif-cross fg-red">
+						        </label></td>
+							</tr>
+							</tr><tr>
+						        <td colspan="3">運行において異常が認められた箇所はないか</td>
+						        <td>
+						        <label class="input-control radio small-check">
+						            <input type="radio" name="n27" checked="checked">
+						            <span class="check"></span>
+						            <span class="mif-checkmark fg-green"></span>
+						        </label>
+						        <label class="input-control radio small-check">
+						            <input type="radio" name="n27">
+						            <span class="check"></span>
+						            <span class="mif-cross fg-red">
+						        </label></td>
+							</tr>
+                        </tbody>
+                    </table>
+
+
+			        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

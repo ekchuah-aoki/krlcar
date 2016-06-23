@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Metro, a sleek, intuitive, and powerful framework for faster and easier web development for Windows Metro Style.">
+    <meta name="keywords" content="HTML, CSS, JS, JavaScript, framework, metro, front-end, frontend, web development">
+    <meta name="author" content="Sergey Pimenov and Metro UI CSS contributors">
+
+    <link rel='shortcut icon' type='image/x-icon' href='../favicon.ico' />
+
+    <title>株式会社ケー・アールライン</title>
+
+    <link href="../css/metro.css" rel="stylesheet">
+    <link href="../css/common.css" rel="stylesheet">
+    <link href="../css/metro-icons.css" rel="stylesheet">
+    <link href="../css/metro-responsive.css" rel="stylesheet">
+
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/jquery.dataTables.min.js"></script>
+
+    <script src="../js/metro.js"></script>
+
+    <style>
+        html, body {
+            height: 100%;
+        }
+        body {
+        }
+        .page-content {
+            padding-top: 3.125rem;
+            min-height: 100%;
+            height: 100%;
+        }
+        .table .input-control.checkbox {
+            line-height: 1;
+            min-height: 0;
+            height: auto;
+        }
+
+        @media screen and (max-width: 800px){
+            #cell-sidebar {
+                flex-basis: 52px;
+            }
+            #cell-content {
+                flex-basis: calc(100% - 52px);
+            }
+        }
+    </style>
+
+    <script>
+        function pushMessage(t){
+            var mes = 'Info|Implement independently';
+            $.Notify({
+                caption: mes.split("|")[0],
+                content: mes.split("|")[1],
+                type: t
+            });
+        }
+
+        $(function(){
+            $('.sidebar').on('click', 'li', function(){
+                if (!$(this).hasClass('active')) {
+                    $('.sidebar li').removeClass('active');
+                    $(this).addClass('active');
+                }
+            })
+        })
+    </script>
+	<script>
+	    $(function(){
+	        $("#datepicker").datepicker();
+	    });
+	</script>
+</head>
+<body class="bg-steel">
+    <div class="app-bar fixed-top darcula" data-role="appbar">
+        <a href="./home_notice.html" class="app-bar-element branding" style="background-color:#CEDBF2"><img style="width: 113px;" src="../img/logo.png" alt="ケー・アールライン"></a>
+        <span class="app-bar-divider"></span>
+        <ul class="app-bar-menu">
+            <li><a href="./home_notice.html">HOME</a></li>
+            <li>
+                <a href="" class="dropdown-toggle">点呼管理</a>
+                <ul class="d-menu" data-role="dropdown">
+                    <li><a href="./roll_call_add.html">
+                        <span class="mif-file-text icon"></span>
+                        <span class="title">点呼記録表入力</span>
+                    </a></li>
+                    <li><a href="./roll_call_list.html">
+                        <span class="mif-list-numbered icon"></span>
+                        <span class="title">【処理中】点呼記録表一覧</span>
+                    </a></li>
+                    <li><a href="./roll_call_search.html">
+                        <span class="mif-search icon"></span>
+                        <span class="title">点呼記録表検索</span>
+                    </a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="" class="dropdown-toggle">日常点検</a>
+                <ul class="d-menu" data-role="dropdown">
+                    <li><a href="./inspection_add.html">
+                        <span class="mif-file-text icon"></span>
+                        <span class="title">日常点検実施表入力</span>
+                    </a></li>
+                    <li><a href="./inspection_list.html">
+                        <span class="mif-list-numbered icon"></span>
+                        <span class="title">日常点検実施表一覧</span>
+                    </a></li>
+                </ul>
+            </li>
+            <li class="active" style="background-color: #59cde2;">
+                <a href="" class="dropdown-toggle">運送日報</a>
+                <ul class="d-menu" data-role="dropdown">
+                    <li><a href="./driving_report_add.html">
+                        <span class="mif-file-text icon"></span>
+                        <span class="title">運送日報入力</span>
+                    </a></li>
+                    <li><a href="./driving_report_list.html">
+                        <span class="mif-list icon"></span>
+                        <span class="title">運送日報一覧</span>
+                    </a></li>
+                    <li><a href="./driving_report_search.html">
+                        <span class="mif-search icon"></span>
+                        <span class="title">運送日報検索</span>
+                    </a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="" class="dropdown-toggle">請求書</a>
+                <ul class="d-menu" data-role="dropdown">
+                    <li><a href="./bill_list.html">
+                        <span class="mif-list icon"></span>
+                        <span class="title">未締めデータ一覧</span>
+                    </a></li>
+                    <li><a href="./bill_close.html">
+                        <span class="mif-checkmark icon"></span>
+                        <span class="title">請求書締め</span>
+                    </a></li>
+                    <li><a href="./bill_search.html">
+                        <span class="mif-search icon"></span>
+                        <span class="title">請求書検索</span>
+                    </a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="" class="dropdown-toggle">売上・経費</a>
+                <ul class="d-menu" data-role="dropdown">
+                    <li><a href="./salesCost_driver_daily.html">
+                        <span class="mif-chart-bars icon"></span>
+                        <span class="title">日次運転手別売上・経費</span>
+                    </a></li>
+                    <li><a href="./salesCost_truck_daily.html">
+                        <span class="mif-file-text icon"></span>
+                        <span class="title">日次車別売上・経費</span>
+                    </a></li>
+                    <li><a href="./salesCost_driver_monthly.html">
+                        <span class="mif-list icon"></span>
+                        <span class="title">月次運転手別売上・経費検索</span>
+                    </a></li>
+                    <li><a href="./cost_truck_monthly.html">
+                        <span class="mif-file-text icon"></span>
+                        <span class="title">月間車別経費</span>
+                    </a></li>
+<!--                    <li><a href="./salesCost_year.html">
+                        <span class="mif-chart-line icon"></span>
+                        <span class="title">年度別売上推移</span>
+                    </a></li>
+-->
+                    <li><a href="./sales_month.html">
+                        <span class="mif-file-text icon"></span>
+                        <span class="title">月次売上集計</span>
+                    </a></li>
+                    <li><a href="./sales_customer.html">
+                        <span class="mif-list icon"></span>
+                        <span class="title">得意先別売上集計</span>
+                    </a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="" class="dropdown-toggle">運行管理</a>
+                <ul class="d-menu" data-role="dropdown">
+                    <li><a href="./operationControl_bindingWorkHour.html">
+                        <span class="mif-user icon"></span>
+                        <span class="title">拘束・運転時間管理表</span>
+                    </a></li>
+                    <li><a href="./operationControl_car_fuelCost.html">
+                        <span class="mif-truck icon"></span>
+                        <span class="title">個車別燃費推移
+                    </a></li>
+                    <li><a href="./operationControl_car_status.html">
+                        <span class="mif-truck icon"></span>
+                        <span class="title">個車別走行距離</span>
+                    </a></li>
+                </ul>
+			</li>
+            <li><a href="./master_customer.html">マスター管理</a></li>
+        </ul>
+
+        <div class="app-bar-element place-right">
+            <span class="dropdown-toggle"><span class="mif-cog"></span> 管理者A</span>
+            <div class="app-bar-drop-container padding10 place-right no-margin-top block-shadow fg-dark" data-role="dropdown" data-no-close="true" style="width: 180px">
+                <ul class="unstyled-list fg-dark">
+                    <li><a href="" class="fg-white3 fg-hover-yellow">ログアウト</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-content">
+        <div class="flex-grid no-responsive-future" style="height: 100%;">
+            <div class="row" style="height: 850px;">
+                <div class="cell auto-size padding10 bg-white" id="cell-content">
+					<ul class="breadcrumbs" style="padding:0px;">
+					    <li><a href="driving_report_list.html">運送日報一覧</a></li>
+					    <li><h4 class="text-light"><a href="#">運送作業報告書変更</a></h4></li>
+					</ul>
+<!--
+                    <h1 class="text-light">&nbsp;運送作業報告書 <span class="mif-file-text place-right"></span></h1>
+-->
+                    <hr class="thin bg-grayLighter">
+		            <div class="grid">
+		                <div class="row cells12">
+							<div class="cell colspan4" style="float:left;margin-right: auto;">
+		                        用車支払代金(円)
+								<div class="input-control text bg-green" style="width:80px;">
+								    <input type="text">
+								</div>
+		                        最大積載量
+								<div class="input-control text" data-role="keypad" data-length="3" style="width:70px;">
+								    <input type="text">
+								</div>
+		                    </div>
+							<div class="cell colspan3" style="margin-left:">
+		                        日付
+								<div class="input-control text" id="datepicker" style="width:140px;">
+								    <input type="text">
+								    <button class="button"><span class="mif-calendar"></span></button>
+								</div>
+		                    </div>
+							<div class="cell colspan2">
+		                        日報番号
+								<div class="input-control text" data-role="keypad" data-length="5" style="width:60px;">
+								    <input type="text">
+								</div>
+		                    </div>
+							<div class="cell colspan2" style="float:right;">
+		                        <label class="input-control radio small-check">
+		                            <input type="radio" name="alcohol_chk2" checked="checked">
+		                            <span class="check"></span>公開
+		                        </label>&nbsp;&nbsp;
+		                        <label class="input-control radio small-check">
+		                            <input type="radio" name="alcohol_chk2">
+		                            <span class="check"></span>非公開
+		                        </label>
+		                    </div>
+	                    </div>
+                    </div>
+
+		            <div class="grid">
+		                <div class="row cells12">
+							<div class="cell colspan8" style="float:left;margin-right: auto;">
+                    <table class="table border bordered" data-auto-width="false">
+                        <thead>
+                        <tr>
+                            <td rowspan="2">車番</td>
+                            <td rowspan="2">型式</td>
+                            <td colspan="4">運転手</td>
+                            <td colspan="8">助手</td>
+                        </tr>
+                        <tr>
+                            <td>コードNo.</td>
+                            <td>氏名</td>
+                            <td>コードNo.</td>
+                            <td>氏名</td>
+                            <td>コードNo.</td>
+                            <td>氏名</td>
+                        </tr>
+                        </thead>
+                        <tbody>
+	                        <tr>
+	                            <td>
+									<div class="input-control select" style="width:80px;">
+			                            <select>
+			                                <option>4956</option>
+			                                <option>6308</option>
+			                                <option>5468</option>
+			                            </select>
+									</div>
+								</td>
+	                            <td>
+									<div class="input-control select" style="width:80px;">
+			                            <select>
+			                                <option>大型</option>
+			                                <option>中型</option>
+			                                <option>小型</option>
+			                            </select>
+									</div>
+								</td>
+	                            <td>
+			                        <div class="input-control select" style="width:80px;">
+			                            <select>
+			                                <option>0001</option>
+			                                <option>0002</option>
+			                                <option>0003</option>
+			                                <option>0004</option>
+			                            </select>
+									</div>
+								</td>
+	                            <td>
+		                            <select>
+										<option>高橋　充</option>
+										<option>町谷　晃</option>
+										<option>小澤　高</option>
+										<option>相澤　武彦</option>
+		                            </select>
+								</td>
+	                            <td>
+			                        <div class="input-control select" style="width:80px;">
+			                            <select>
+			                                <option>0002</option>
+			                                <option>0001</option>
+			                                <option>0003</option>
+			                                <option>0004</option>
+			                            </select>
+									</div>
+								</td>
+	                            <td>
+		                            <select>
+										<option>高橋　充</option>
+										<option>町谷　晃</option>
+										<option>小澤　高</option>
+										<option>相澤　武彦</option>
+		                            </select>
+								</td>
+	                            <td>
+		                            <select>
+			                                <option></option>
+			                                <option>0001</option>
+			                                <option>0002</option>
+			                                <option>0003</option>
+			                                <option>0004</option>
+		                            </select>
+								</td>
+	                            <td>
+		                            <select>
+		                                <option></option>
+										<option>高橋　充</option>
+										<option>町谷　晃</option>
+										<option>小澤　高</option>
+										<option>相澤　武彦</option>
+		                            </select>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+                    <table class="table border bordered" data-auto-width="false">
+						<thead>
+	                        <tr>
+	                            <th style="font-size:15px;">夜ﾒｰﾀｰ</th>
+	                            <th style="font-size:15px;">朝ﾒｰﾀｰ</th>
+								<th style="font-size:15px;">01三共</th>
+								<th style="font-size:15px;">02太陽</th>
+								<th style="font-size:10px;">03ｺｰﾅﾝ</th>
+								<th style="font-size:15px;">04ｺｽﾓ</th>
+								<th style="font-size:15px;">05一光</th>
+								<th style="font-size:15px;">06現金</th>
+								<th style="font-size:10px;">07宇佐美</th>
+								<th style="font-size:15px;">ｵｲﾙ</th>
+								<th style="font-size:15px;">ｱﾄﾞﾌﾟﾙ</th>
+	                        </tr>
+						</thead>
+						<tbody>
+	                        <tr>
+	                            <td><div class="input-control"><input type="text"></div></td>
+	                            <td><div class="input-control"><input type="text"></div></td>
+	                            <td><div class="input-control"><input type="text"></div></td>
+	                            <td><div class="input-control"><input type="text"></div></td>
+	                            <td><div class="input-control"><input type="text"></div></td>
+	                            <td><div class="input-control"><input type="text"></div></td>
+	                            <td><div class="input-control"><input type="text"></div></td>
+	                            <td><div class="input-control"><input type="text"></div></td>
+	                            <td><div class="input-control"><input type="text"></div></td>
+	                            <td><div class="input-control"><input type="text"></div></td>
+	                            <td><div class="input-control"><input type="text"></div></td>
+	                        </tr>
+						</tbody>
+					</table>
+
+		                    </div>
+							<div class="cell colspan4" style="float:right;text-align: right;margin-left: auto;">
+                    <table class="table border bordered" data-auto-width="false">
+                        <thead>
+                        <tr>
+                            <td rowspan="2">当直</td>
+                            <td rowspan="2">配車</td>
+                            <td colspan="4">タコグラフ</td>
+                        </tr>
+                        <tr>
+                            <td>ナシ</td>
+                            <td>故障</td>
+                            <td>未提出</td>
+                            <td>提出</td>
+                        </tr>
+                        </thead>
+                        <tbody>
+	                        <tr>
+								<td>
+									<div class="input-control select" style="width:50px;">
+			                            <select>
+			                                <option></option>
+			                                <option>山口　英太</option>
+			                                <option>相澤　武彦</option>
+			                                <option>七海　和彦</option>
+			                                <option>渡邊</option>
+			                            </select>
+			                        </div>
+								</td>
+								<td>
+									<div class="input-control select" style="width:50px;">
+			                            <select>
+			                                <option></option>
+			                                <option>山口　英太</option>
+			                                <option>相澤　武彦</option>
+			                                <option>七海　和彦</option>
+			                                <option>渡邊</option>
+			                            </select>
+			                        </div>
+								</td>
+								<td>
+									<div class="input-control select" style="width:50px;">
+			                            <select>
+			                                <option></option>
+			                                <option>山口　英太</option>
+			                                <option>相澤　武彦</option>
+			                                <option>七海　和彦</option>
+			                                <option>渡邊</option>
+			                            </select>
+			                        </div>
+								</td>
+								<td>
+									<div class="input-control select" style="width:50px;">
+			                            <select>
+			                                <option></option>
+			                                <option>山口　英太</option>
+			                                <option>相澤　武彦</option>
+			                                <option>七海　和彦</option>
+			                                <option>渡邊</option>
+			                            </select>
+			                        </div>
+								</td>
+								<td>
+									<div class="input-control select" style="width:50px;">
+			                            <select>
+			                                <option></option>
+			                                <option>山口　英太</option>
+			                                <option>相澤　武彦</option>
+			                                <option>七海　和彦</option>
+			                                <option>渡邊</option>
+			                            </select>
+			                        </div>
+								</td>
+								<td>
+									<div class="input-control select" style="width:50px;">
+			                            <select>
+			                                <option></option>
+			                                <option>山口　英太</option>
+			                                <option>相澤　武彦</option>
+			                                <option>七海　和彦</option>
+			                                <option>渡邊</option>
+			                            </select>
+			                        </div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+                    <table class="table border bordered" data-auto-width="false">
+						<thead>
+	                        <tr>
+								<th>所長</th>
+								<th>集計</th>
+								<th>記帳</th>
+								<th>運賃</th>
+								<th>照合</th>
+								<th>配車</th>
+	                        </tr>
+						</thead>
+						<tbody>
+	                        <tr>
+	                            <td>
+									<div class="input-control select" style="width:50px;">
+										<select><option></option><option>山口　英太</option><option>相澤　武彦</option><option>七海　和彦</option><option>渡邊</option></select>
+									</div>
+								</td>
+	                            <td>
+									<div class="input-control select" style="width:50px;">
+										<select><option></option><option>山口　英太</option><option>相澤　武彦</option><option>七海　和彦</option><option>渡邊</option></select>
+									</div>
+								</td>
+	                            <td>
+									<div class="input-control select" style="width:50px;">
+										<select><option></option><option>山口　英太</option><option>相澤　武彦</option><option>七海　和彦</option><option>渡邊</option></select>
+									</div>
+								</td>
+	                            <td>
+									<div class="input-control select" style="width:50px;">
+										<select><option></option><option>山口　英太</option><option>相澤　武彦</option><option>七海　和彦</option><option>渡邊</option></select>
+									</div>
+								</td>
+	                            <td>
+									<div class="input-control select" style="width:50px;">
+										<select><option></option><option>山口　英太</option><option>相澤　武彦</option><option>七海　和彦</option><option>渡邊</option></select>
+									</div>
+								</td>
+	                            <td>
+									<div class="input-control select" style="width:50px;">
+										<select><option></option><option>山口　英太</option><option>相澤　武彦</option><option>七海　和彦</option><option>渡邊</option></select>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+
+		                    </div>
+	                    </div>
+                    </div>
+
+					<fieldset id="account"><legend>得意先・品名・数量</legend>
+		                <div class="row cells12">
+							<div class="cell colspan12">
+		                        得意先
+								<div class="input-control select">
+		                            <select style="width:180px;">
+		                                <option>トヨタ</option>
+		                                <option>ホンダ自動車</option>
+		                                <option>三菱商事</option>
+		                                <option>住友銀行</option>
+		                            </select>
+								</div>
+		                        品名
+								<div class="input-control select">
+		                            <select style="width:150px;">
+		                                <option>天然水</option>
+		                                <option>ビール（アサヒ）</option>
+		                                <option>つまみ</option>
+		                            </select>
+								</div>
+		                        個数
+								<div class="input-control text">
+		                            <input type="text" style="width:100px;">
+								</div>
+								トン数
+								<div class="input-control text">
+		                            <input type="text" style="width:100px;">t
+								</div>
+								往復
+								<div class="input-control text">
+		                            <input type="text" style="width:100px;">回
+								</div>
+		                    </div>
+	                    </div>
+				    </fieldset>
+
+					<div class="row cells12">
+					    <div class="cell colspan12">
+						    <fieldset style="float:left">
+						        <legend>運送区間</legend>
+								<table><tbody>
+								<tr>
+			                        <th rowspan="2">積地</th>
+			                        <td><input type="text" placeholder="地名"></td>
+			                    </tr>
+								<tr>
+									<td><input type="text" placeholder="社名"></td>
+			                    </tr>
+								<tr>
+			                        <th rowspan="2">卸地</th>
+			                        <td><input type="text" placeholder="地名"></td>
+			                    </tr>
+								<tr>
+									<td><input type="text" placeholder="社名"></td>
+			                    </tr>
+								</tbody></table>
+					    	</fieldset>
+						    <fieldset style="float:left">
+						        <legend>所要時間</legend>
+								<table><tbody>
+								<tr>
+			                        <th style="float:right;">自</th>
+									<td><input type="text" style="width:30px;"></td>
+			                        <td>日</td>
+									<td><input type="text" style="width:44px;"></td>
+			                        <td>分</td>
+					            </tr>
+								<tr>
+			                        <th style="float:right;">至</th>
+									<td><input type="text" style="width:30px;"></td>
+			                        <td>日</td>
+									<td><input type="text" style="width:44px;"></td>
+			                        <td>分</td>
+					            </tr>
+								<tr>
+			                        <th style="float:right;">拘束</th>
+									<td><span class="fg-green" style="font-size: 20px;">1.5</span></td>
+			                        <td colspan="2">時間</td>
+					            </tr>
+								<tr>
+			                        <th style="float:right;">運転</th>
+									<td><input type="text" style="width:30px;"></td>
+			                        <td colspan="2">時間</td>
+					            </tr>
+								</tbody></table>
+						    </fieldset>
+						    <fieldset style="float:left">
+						        <legend>走行粁(km)</legend>
+								<table><tbody>
+								<tr>
+			                        <th style="float:right;">実車</th>
+									<td><input type="text" style="width:60px;"></td>
+			                    </tr>
+								<tr>
+			                        <th style="float:right;">空車</th>
+									<td><input type="text" style="width:60px;"></td>
+			                    </tr>
+								<tr>
+			                        <th style="float:right;">総行<br/>距離</th>
+									<td><input type="text" style="width:60px;"></td>
+			                    </tr>
+								</tbody></table>
+						    </fieldset>
+						    <fieldset style="float:left">
+						        <legend>有料代</legend>
+								<table><tbody>
+								<tr>
+									<th style="float:right;">現金</th><td><input type="text" style="width:70px;"></td>
+									<th style="float:right;">航送代</th><td><input type="text" style="width:70px;"></td></tr>
+								<tr><th style="float:right;">ETC</th><td><input type="text" style="width:70px;"></td>
+									<th style="float:right;">ｸﾚｼﾞｯﾄ</th><td><input type="text" style="width:70px;"></td></tr>
+								<tr><th style="float:right;">ﾌｪﾘｰ代<br/>(現金)</th><td><input type="text" style="width:70px;"></td>
+									<th style="float:right;">航空券</th><td><input type="text" style="width:70px;"></td></tr>
+								</tbody></table>
+						    </fieldset>
+						    <fieldset id="personal">
+						        <legend>収受運賃</legend>
+								<table><tbody>
+								<tr>
+									<th style="float:right;">基本運賃</th><td><input type="text" style="width:70px;"></td>
+									<th style="float:right;">留置</th><td><input type="text" style="width:70px;"></td></tr>
+								<tr><th style="float:right;">時増</th><td><input type="text" style="width:70px;"></td>
+									<th style="float:right;">地区粁増</th><td><input type="text" style="width:70px;"></td></tr>
+								<tr><th style="float:right;">道路航送料</th><td><input type="text" style="width:70px;"></td>
+									<th style="float:right;">運転手荷役</th><td><input type="text" style="width:70px;"></td></tr>
+								<tr><th style="float:right;">助手荷役</th><td><input type="text" style="width:70px;"></td>
+									<th style="float:right;">据付作業</th><td><input type="text" style="width:70px;"></td></tr>
+								<tr><th style="float:right;">運送保険料</th><td><input type="text" style="width:70px;"></td>
+									<th style="float:right;">合計未収額</th><td><span class="fg-green" style="font-size: 20px;">50,500</span></td></tr>
+								</tbody></table>
+						    </fieldset>
+						</div>
+					</div>
+
+				    <fieldset id="personal">
+				        <legend>作業内容</legend>
+		                <div class="row cells12">
+							<div class="cell colspan9">
+							    <label class="input-control checkbox">
+								    <input type="checkbox" checked>
+								    <span class="check"></span>1 ﾕﾆｰｸ指定
+							    </label>
+							    <label class="input-control checkbox">
+								    <input type="checkbox" checked>
+								    <span class="check"></span>2 ｸﾞﾚｰﾝ車
+							    </label>
+							    <label class="input-control checkbox">
+								    <input type="checkbox" checked>
+								    <span class="check"></span>3 搬出
+							    </label>
+							    <label class="input-control checkbox">
+								    <input type="checkbox" checked>
+								    <span class="check"></span>4 搬入
+							    </label>
+							    <label class="input-control checkbox">
+								    <input type="checkbox" checked>
+								    <span class="check"></span>5 据付
+							    </label>
+							    <label class="input-control checkbox">
+								    <input type="checkbox" checked>
+								    <span class="check"></span>6 助手指定
+							    </label>
+								7 指定車両
+							    <label class="input-control text">
+								    <input type="text"
+							    </label>
+							</div>
+						</div>
+					</fieldset>
+			        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Metro, a sleek, intuitive, and powerful framework for faster and easier web development for Windows Metro Style.">
+    <meta name="keywords" content="HTML, CSS, JS, JavaScript, framework, metro, front-end, frontend, web development">
+    <meta name="author" content="Sergey Pimenov and Metro UI CSS contributors">
+
+    <link rel='shortcut icon' type='image/x-icon' href='../favicon.ico' />
+
+    <title>株式会社ケー・アールライン</title>
+
+    <link href="../css/metro.css" rel="stylesheet">
+    <link href="../css/metro-icons.css" rel="stylesheet">
+    <link href="../css/metro-responsive.css" rel="stylesheet">
+
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/jquery.dataTables.min.js"></script>
+
+    <script src="../js/metro.js"></script>
+
+    <style>
+        html, body {
+            height: 100%;
+        }
+        body {
+        }
+        .page-content {
+            padding-top: 3.125rem;
+            min-height: 100%;
+            height: 100%;
+        }
+        .table .input-control.checkbox {
+            line-height: 1;
+            min-height: 0;
+            height: auto;
+        }
+
+        @media screen and (max-width: 800px){
+            #cell-sidebar {
+                flex-basis: 52px;
+            }
+            #cell-content {
+                flex-basis: calc(100% - 52px);
+            }
+        }
+    </style>
+
+    <script>
+        function pushMessage(t){
+            var mes = 'Info|Implement independently';
+            $.Notify({
+                caption: mes.split("|")[0],
+                content: mes.split("|")[1],
+                type: t
+            });
+        }
+
+        $(function(){
+            $('.sidebar').on('click', 'li', function(){
+                if (!$(this).hasClass('active')) {
+                    $('.sidebar li').removeClass('active');
+                    $(this).addClass('active');
+                }
+            })
+        })
+    </script>
+</head>
+<body class="bg-steel">
+    <div class="app-bar fixed-top darcula" data-role="appbar">
+        <a href="./home_notice.html" class="app-bar-element branding" style="background-color:#CEDBF2"><img style="width: 113px;" src="../img/logo.png" alt="ケー・アールライン"></a>
+        <span class="app-bar-divider"></span>
+        <ul class="app-bar-menu">
+            <li><a href="./home_notice.html">HOME</a></li>
+            <li>
+                <a href="" class="dropdown-toggle">点呼管理</a>
+                <ul class="d-menu" data-role="dropdown">
+                    <li><a href="./roll_call_add.html">
+                        <span class="mif-file-text icon"></span>
+                        <span class="title">点呼記録表入力</span>
+                    </a></li>
+                    <li><a href="./roll_call_list.html">
+                        <span class="mif-list-numbered icon"></span>
+                        <span class="title">【処理中】点呼記録表一覧</span>
+                    </a></li>
+                    <li><a href="./roll_call_search.html">
+                        <span class="mif-search icon"></span>
+                        <span class="title">点呼記録表検索</span>
+                    </a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="" class="dropdown-toggle">日常点検</a>
+                <ul class="d-menu" data-role="dropdown">
+                    <li><a href="./inspection_add.html">
+                        <span class="mif-file-text icon"></span>
+                        <span class="title">日常点検実施表入力</span>
+                    </a></li>
+                    <li><a href="./inspection_list.html">
+                        <span class="mif-list-numbered icon"></span>
+                        <span class="title">日常点検実施表一覧</span>
+                    </a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="" class="dropdown-toggle">運送日報</a>
+                <ul class="d-menu" data-role="dropdown">
+                    <li><a href="./driving_report_add.html">
+                        <span class="mif-file-text icon"></span>
+                        <span class="title">運送日報入力</span>
+                    </a></li>
+                    <li><a href="./driving_report_list.html">
+                        <span class="mif-list icon"></span>
+                        <span class="title">運送日報一覧</span>
+                    </a></li>
+                    <li><a href="./driving_report_search.html">
+                        <span class="mif-search icon"></span>
+                        <span class="title">運送日報検索</span>
+                    </a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="" class="dropdown-toggle">請求書</a>
+                <ul class="d-menu" data-role="dropdown">
+                    <li><a href="./bill_list.html">
+                        <span class="mif-list icon"></span>
+                        <span class="title">未締めデータ一覧</span>
+                    </a></li>
+                    <li><a href="./bill_close.html">
+                        <span class="mif-checkmark icon"></span>
+                        <span class="title">請求書締め</span>
+                    </a></li>
+                    <li><a href="./bill_search.html">
+                        <span class="mif-search icon"></span>
+                        <span class="title">請求書検索</span>
+                    </a></li>
+                </ul>
+            </li>
+            <li class="active" style="background-color: #59cde2;">
+                <a href="" class="dropdown-toggle">売上・経費</a>
+                <ul class="d-menu" data-role="dropdown">
+                    <li><a href="./salesCost_driver_daily.html">
+                        <span class="mif-chart-bars icon"></span>
+                        <span class="title">日次運転手別売上・経費</span>
+                    </a></li>
+                    <li><a href="./salesCost_truck_daily.html">
+                        <span class="mif-file-text icon"></span>
+                        <span class="title">日次車別売上・経費</span>
+                    </a></li>
+                    <li><a href="./salesCost_driver_monthly.html">
+                        <span class="mif-list icon"></span>
+                        <span class="title">月次運転手別売上・経費検索</span>
+                    </a></li>
+                    <li><a href="./cost_truck_monthly.html">
+                        <span class="mif-file-text icon"></span>
+                        <span class="title">月間車別経費</span>
+                    </a></li>
+<!--                    <li><a href="./salesCost_year.html">
+                        <span class="mif-chart-line icon"></span>
+                        <span class="title">年度別売上推移</span>
+                    </a></li>
+-->
+                    <li><a href="./sales_month.html">
+                        <span class="mif-file-text icon"></span>
+                        <span class="title">月次売上集計</span>
+                    </a></li>
+                    <li><a href="./sales_customer.html">
+                        <span class="mif-list icon"></span>
+                        <span class="title">得意先別売上集計</span>
+                    </a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="" class="dropdown-toggle">運行管理</a>
+                <ul class="d-menu" data-role="dropdown">
+                    <li><a href="./operationControl_bindingWorkHour.html">
+                        <span class="mif-user icon"></span>
+                        <span class="title">拘束・運転時間管理表</span>
+                    </a></li>
+                    <li><a href="./operationControl_car_fuelCost.html">
+                        <span class="mif-truck icon"></span>
+                        <span class="title">個車別燃費推移
+                    </a></li>
+                    <li><a href="./operationControl_car_status.html">
+                        <span class="mif-truck icon"></span>
+                        <span class="title">個車別走行距離</span>
+                    </a></li>
+                </ul>
+			</li>
+            <li><a href="./master_customer.html">マスター管理</a></li>
+        </ul>
+
+        <div class="app-bar-element place-right">
+            <span class="dropdown-toggle"><span class="mif-cog"></span> 管理者A</span>
+            <div class="app-bar-drop-container padding10 place-right no-margin-top block-shadow fg-dark" data-role="dropdown" data-no-close="true" style="width: 180px">
+                <ul class="unstyled-list fg-dark">
+                    <li><a href="" class="fg-white3 fg-hover-yellow">ログアウト</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-content">
+        <div class="flex-grid no-responsive-future" style="height: 100%;">
+            <div class="row" style="height: 100%">
+                <div class="cell auto-size padding20 bg-white" id="cell-content">
+                    <!--<h1 class="text-light">日次車別売上・経費 <span class="mif-list place-right"></span></h1>-->
+                    <ul class="breadcrumbs" style="padding:0px;">
+					    <li><h4><a href="#">月次車別経費</a></h4></li>
+					</ul>
+                    <hr class="thin bg-grayLighter">
+
+		            <div class="grid">
+		                <div class="row cells12">
+							<div class="cell colspan9">
+		                        年度
+								<div class="input-control select" style="width: 80px;">
+		                            <select>
+		                                <option></option>
+		                                <option>2016</option>
+		                                <option>2015</option>
+		                                <option>2014</option>
+		                                <option>2013</option>
+		                            </select>
+								</div>
+		                        月
+								<div class="input-control select" style="width: 40px;">
+		                            <select>
+		                                <option></option>
+		                                <option>01</option>
+		                                <option>02</option>
+		                                <option>03</option>
+		                                <option>04</option>
+		                                <option>05</option>
+		                                <option>06</option>
+		                                <option>07</option>
+		                                <option>08</option>
+		                                <option>09</option>
+		                                <option>10</option>
+		                                <option>11</option>
+		                                <option>12</option>
+		                            </select>
+								</div>
+							</div>
+							<div class="cell colspan3">
+		                    	<button class="button primary"><span class="mif-search">検索</button>
+		                    </div>
+	                    </div>
+                    </div>
+                    <hr class="thin bg-grayLighter">
+					<div class="align-right">
+                    <button class="button primary" onclick="pushMessage('info')"><span class="mif-plus"></span> 保存</button>
+					</div>
+                    <hr class="thin bg-grayLighter">
+                    <table class="dataTable border bordered" data-role="datatable" data-auto-width="false">
+                        <thead>
+                        <tr>
+                            <th class="sortable-column sort-asc" rowspan="3">車番</th>
+                            <th class="sortable-column" colspan="6" style="text-align:center;">変動費用</th>
+                            <th class="sortable-column" colspan="14" style="text-align:center;">固定費用</th>
+                        </tr>
+                        <tr>
+                            <th class="sortable-column" colspan="5" style="text-align:center;">運行費</th>
+                            <th class="sortable-column" rowspan="2" colspan="1">運送料</th>
+                            <th class="sortable-column" colspan="6" style="text-align:center;">車両費</th>
+                            <th class="sortable-column" colspan="3" style="text-align:center;">保険費</th>
+                            <th class="sortable-column" colspan="3" style="text-align:center;">人件費</th>
+                            <th class="sortable-column" rowspan="2">一般管理費</th>
+                        </tr>
+                        <tr>
+                            <th class="sortable-column">燃料費</th>
+                            <th class="sortable-column">油脂費</th>
+                            <th class="sortable-column">車検整備費</th>
+                            <th class="sortable-column">一般修理費</th>
+                            <th class="sortable-column">タイヤチューブ費</th>
+                            <th class="sortable-column">減価償却費</th>
+                            <th class="sortable-column">金融費用</th>
+                            <th class="sortable-column">自動車取得税</th>
+                            <th class="sortable-column">自動車税</th>
+                            <th class="sortable-column">自動車重量税</th>
+                            <th class="sortable-column">自賠責保険</th>
+                            <th class="sortable-column">任意保険（事故・車両）</th>
+                            <th class="sortable-column">その他運送業総合保険等</th>
+                            <th class="sortable-column">ドライバー人件費</th>
+                            <th class="sortable-column">時間外手当</th>
+                            <th class="sortable-column">退職金引斗金</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td rowspan="3">4956</td>
+                            <th colspan="6" style="text-align:center;">503333</th>
+                            <th colspan="14" style="text-align:center;">433531</th>
+                        </tr>
+                        <tr>
+                            <th colspan="5" style="text-align:center;">498333</th>
+                            <th rowspan="2" colspan="1"><div class="input-control text" style="width:60px;"><input type="text" placeholder="5000"></div></th>
+                            <th colspan="6" style="text-align:center;">37403</th>
+                            <th colspan="3" style="text-align:center;">8946</th>
+                            <th colspan="3" style="text-align:center;">345516</th>
+                            <td rowspan="2">41666</td>
+                        </tr>
+                        <tr>
+                            <td><div class="input-control text" style="width:70px;"><input type="text" placeholder="437500"></div></td>
+                            <td><div class="input-control text" style="width:60px;"><input type="text" placeholder="12600"></div></td>
+                            <td><div class="input-control text" style="width:50px;"><input type="text" placeholder="8333"></div></td>
+                            <td><div class="input-control text" style="width:60px;"><input type="text" placeholder="17500"></div></td>
+                            <td><div class="input-control text" style="width:60px;"><input type="text" placeholder="22400"></div></td>
+                            <td>32638</td>
+                            <td>2083</td>
+                            <td>1041</td>
+                            <td>958</td>
+                            <td>683</td>
+                            <td>2280</td>
+                            <td>4166</td>
+                            <td>2500</td>
+                            <td>292600</td>
+                            <td>50000</td>
+                            <td>2916</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

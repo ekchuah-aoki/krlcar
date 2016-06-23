@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Metro, a sleek, intuitive, and powerful framework for faster and easier web development for Windows Metro Style.">
+    <meta name="keywords" content="HTML, CSS, JS, JavaScript, framework, metro, front-end, frontend, web development">
+    <meta name="author" content="Sergey Pimenov and Metro UI CSS contributors">
+
+    <link rel='shortcut icon' type='image/x-icon' href='../favicon.ico' />
+
+    <title>株式会社ケー・アールライン</title>
+
+    <link href="../css/metro.css" rel="stylesheet">
+    <link href="../css/metro-icons.css" rel="stylesheet">
+    <link href="../css/metro-responsive.css" rel="stylesheet">
+
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/jquery.dataTables.min.js"></script>
+
+    <script src="../js/metro.js"></script>
+
+    <style>
+        html, body {
+            height: 100%;
+        }
+        body {
+        }
+        .page-content {
+            padding-top: 3.125rem;
+            min-height: 100%;
+            height: 100%;
+        }
+        .table .input-control.checkbox {
+            line-height: 1;
+            min-height: 0;
+            height: auto;
+        }
+
+        @media screen and (max-width: 800px){
+            #cell-sidebar {
+                flex-basis: 52px;
+            }
+            #cell-content {
+                flex-basis: calc(100% - 52px);
+            }
+        }
+    </style>
+
+    <script>
+        function pushMessage(t){
+            var mes = 'Info|Implement independently';
+            $.Notify({
+                caption: mes.split("|")[0],
+                content: mes.split("|")[1],
+                type: t
+            });
+        }
+        
+        function showDialog(id) {
+            var dialog = $(id).data('dialog');
+            dialog.open();
+        }
+
+		$(function(){
+	        $("#datepicker").datepicker();
+	        $("#datepicker_inspect").datepicker();
+	        
+	    });
+	    
+        $(function(){
+            $('.sidebar').on('click', 'li', function(){
+                if (!$(this).hasClass('active')) {
+                    $('.sidebar li').removeClass('active');
+                    $(this).addClass('active');
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+    <div class="flex-grid no-responsive-future" style="height: 100%;">
+        <div class="row" style="height: 100%">
+            <!-- 車両 -->
+            <div id="addCar" class="padding20" data-close-button="true">
+                <h3 class="after-bg-lightRed">車両登録</h3>
+                <hr class="thin bg-grayLighter">
+				<div class="align-right">
+                <button class="button warning" onclick="pushMessage('warning')"><span class="mif-cancel"></span> キャンセル</button>
+                <button class="button primary" onclick="pushMessage('info')"><span class="mif-plus"></span> 保存</button>
+				</div>
+                <hr class="thin bg-grayLighter">
+
+	            <div class="grid">
+	                <div class="row cells12">
+						<div class="cell colspan2">
+	                        車番
+                            <div class="input-control text full-size" style="width:90px;">
+							    <input type="text">
+							</div>
+	                    </div>
+						<div class="cell colspan2">
+	                        管理番号
+                            <div class="input-control text full-size" style="width:90px;">
+							    <input type="text">
+							</div>
+	                    </div>
+						<div class="cell colspan2">
+	                        型式
+                            <div class="input-control select full-size">
+	                            <select>
+	                                <option>大型</option>
+	                                <option>中型</option>
+	                                <option>小型</option>
+	                            </select>
+	                        </div>
+						</div>
+						<div class="cell colspan3">
+                            車種
+                            <div class="input-control select full-size">
+	                            <select>
+	                                <option>15tウイング</option>
+	                                <option>10ｔウイング</option>
+	                                <option>4ｔウイング</option>
+	                                <option>15ｔ平</option>
+	                                <option>10ｔ平</option>
+	                                <option>…</option>
+	                            </select>
+	                        </div>
+	                    </div>
+						<div class="cell colspan2">
+	                        拠点
+                            <div class="input-control select full-size">
+	                            <select>
+	                                <option>神奈川</option>
+	                                <option>大阪</option>
+	                                <option>山形</option>
+	                            </select>
+	                        </div>
+						</div>
+                    </div>
+	                <div class="row cells12">
+						<div class="cell colspan2">
+                            登録年月日
+                            <div class="input-control text full-size" id="datepicker">
+							    <input type="text">
+							    <button class="button"><span class="mif-calendar"></span></button>
+							</div>
+						</div>
+						<div class="cell colspan2">
+	                        現在走行距離(km)
+                            <div class="input-control text full-size">
+							    <input type="text">
+							</div>
+	                    </div>
+						<div class="cell colspan3">
+                            最大積載量
+                            <div class="input-control text full-size">
+							    <input type="text">
+							</div>
+	                    </div>
+                    </div>
+	                <div class="row cells12">
+						<div class="cell colspan2">
+                            3カ月点検日
+                            <div class="input-control text full-size" id="datepicker_inspect">
+							    <input type="text">
+							    <button class="button"><span class="mif-calendar"></span></button>
+							</div>
+						</div>
+						<div class="cell colspan3">
+                            エンジンオイル交換目安(KM)
+                            <div class="input-control text full-size">
+							    <input type="text" placeholder="20000">
+			                </div>
+	                    </div>
+                    </div>
+
+	                <div class="row cells12">
+						<div class="cell colspan2">
+	                        タイヤサイズ(1軸目)
+                            <div class="input-control text full-size">
+							    <input type="text">
+							</div>
+	                    </div>
+						<div class="cell colspan2">
+	                        タイヤサイズ(2軸目)
+                            <div class="input-control text full-size">
+							    <input type="text">
+							</div>
+	                    </div>
+						<div class="cell colspan2">
+	                        タイヤサイズ(3軸目)
+                            <div class="input-control text full-size">
+							    <input type="text">
+							</div>
+	                    </div>
+						<div class="cell colspan2">
+	                        タイヤサイズ(4軸目)
+                            <div class="input-control text full-size">
+							    <input type="text">
+							</div>
+	                    </div>
+                    </div>
+
+
+	                <div class="row cells12">
+						<div class="cell colspan12">
+                            状況
+                            <div class="input-control textarea full-size">
+			                    <textarea></textarea>
+			                </div>
+	                    </div>
+                    </div>
+		        </div>
+            </div>
+        </div>
+</body>
+</html>

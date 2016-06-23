@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Metro, a sleek, intuitive, and powerful framework for faster and easier web development for Windows Metro Style.">
+    <meta name="keywords" content="HTML, CSS, JS, JavaScript, framework, metro, front-end, frontend, web development">
+    <meta name="author" content="Sergey Pimenov and Metro UI CSS contributors">
+
+    <link rel='shortcut icon' type='image/x-icon' href='../favicon.ico' />
+
+    <title>株式会社ケー・アールライン</title>
+
+    <link href="../css/metro.css" rel="stylesheet">
+    <link href="../css/metro-icons.css" rel="stylesheet">
+    <link href="../css/metro-responsive.css" rel="stylesheet">
+
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/jquery.dataTables.min.js"></script>
+
+    <script src="../js/metro.js"></script>
+
+    <style>
+        html, body {
+            height: 100%;
+        }
+        body {
+        }
+        .page-content {
+            padding-top: 3.125rem;
+            min-height: 100%;
+            height: 100%;
+        }
+        .table .input-control.checkbox {
+            line-height: 1;
+            min-height: 0;
+            height: auto;
+        }
+
+        @media screen and (max-width: 800px){
+            #cell-sidebar {
+                flex-basis: 52px;
+            }
+            #cell-content {
+                flex-basis: calc(100% - 52px);
+            }
+        }
+    </style>
+<script src="http://www.google.com/jsapi"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+	var data = [
+[new Date(2011,0,1),38835],
+[new Date(2011,1,1),45960],
+[new Date(2011,2,1),59318],
+[new Date(2011,3,1),37192],
+[new Date(2011,4,1),87814],
+[new Date(2011,5,1),66355],
+[new Date(2011,6,1),37564],
+[new Date(2011,7,1),37399],
+[new Date(2011,8,1),36488],
+[new Date(2011,9,1),79642],
+[new Date(2011,10,1),36680],
+[new Date(2011,11,1),45877],
+[new Date(2012,0,1),36894],
+[new Date(2012,1,1),32596],
+[new Date(2012,2,1),36275],
+[new Date(2012,3,1),34052],
+[new Date(2012,4,1),36071],
+[new Date(2012,5,1),54044],
+[new Date(2012,6,1),36684],
+[new Date(2012,7,1),36054],
+[new Date(2012,8,1),34596],
+[new Date(2012,9,1),87772],
+[new Date(2012,10,1),36922],
+[new Date(2012,11,1),35697],
+[new Date(2013,0,1),37296],
+[new Date(2013,1,1),34964],
+[new Date(2013,2,1),27625],
+[new Date(2013,3,1),36459],
+[new Date(2013,4,1),76883],
+[new Date(2013,5,1),34575],
+[new Date(2013,6,1),36327],
+[new Date(2013,7,1),36979],
+[new Date(2013,8,1),83862],
+[new Date(2013,9,1),38577],
+[new Date(2013,10,1),35499],
+[new Date(2013,11,1),36005],
+[new Date(2014,0,1),37770],
+[new Date(2014,1,1),37208],
+[new Date(2014,2,1),39374],
+[new Date(2014,3,1),34512],
+[new Date(2014,4,1),34506],
+[new Date(2014,5,1),32655],
+[new Date(2014,6,1),34270],
+[new Date(2014,7,1),34645],
+[new Date(2014,8,1),34079],
+[new Date(2014,9,1),34147],
+[new Date(2014,10,1),35510],
+[new Date(2014,11,1),34158],
+[new Date(2015,0,1),36445],
+[new Date(2015,1,1),33889],
+[new Date(2015,2,1),35218],
+[new Date(2015,3,1),33901],
+[new Date(2015,4,1),34924],
+[new Date(2015,5,1),32134],
+[new Date(2015,6,1),34237],
+[new Date(2015,7,1),34698],
+[new Date(2015,8,1),34331],
+[new Date(2015,9,1),35966],
+[new Date(2015,10,1),35424],
+[new Date(2015,11,1),36712],
+[new Date(2016,0,1),36181],
+[new Date(2016,1,1),35176],
+];
+	var is_mobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent);
+
+	google.load('visualization', '1.0', {'packages':['corechart', 'controls']});
+	google.setOnLoadCallback(apiLoaded);
+	var controLWrapper;
+	function apiLoaded()
+	{
+		var dataTable = new google.visualization.DataTable();
+		dataTable.addColumn('date', "日付");
+		dataTable.addColumn('number', "売上（円）");
+		dataTable.addRows(data);
+
+		controlWrapper = new google.visualization.ControlWrapper({
+			controlType: 'ChartRangeFilter',
+			containerId: 'filter',
+			options: {
+				filterColumnIndex: 0,
+				height: 75,
+				ui: {
+					chartType: 'LineChart',
+					chartOptions: {
+						chartArea: {
+							width: '95%',
+							height: 400
+						},
+						hAxis: {
+							baselineColor: 'none'
+						}
+					},
+					// 1 day in milliseconds = 24 * 60 * 60 * 1000 = 86,400,000
+					'minRangeSize': 172800000
+				},
+			},
+		    'state': {'range': {'start': new Date(2012, 1, 9), 'end': new Date(2014, 2, 20)}}
+		});
+
+		var chartWrapper = new google.visualization.ChartWrapper({
+			chartType: 'LineChart',
+			containerId: 'chart',
+			options: {
+				width: '99%',
+				height: 400,
+				chartArea: {
+					width: '85%'
+				},
+				legend: 'top',
+				hAxis: {
+					maxTextLines: 15,
+					minTextSpacing: 100
+				},
+				vAxis: {
+					minValue: 0
+				},
+				animation:{
+					duration: 500,
+					easing: 'out',
+				},
+				title: '年度売上推移'
+			}
+		});
+
+		var dashboard = new google.visualization.Dashboard(document.getElementById('dashboard'));
+		dashboard
+			.bind(controlWrapper, chartWrapper)
+			.draw(dataTable);
+	}
+</script>
+    <script>
+        function pushMessage(t){
+            var mes = 'Info|Implement independently';
+            $.Notify({
+                caption: mes.split("|")[0],
+                content: mes.split("|")[1],
+                type: t
+            });
+        }
+
+        $(function(){
+            $('.sidebar').on('click', 'li', function(){
+                if (!$(this).hasClass('active')) {
+                    $('.sidebar li').removeClass('active');
+                    $(this).addClass('active');
+                }
+            })
+        })
+    </script>
+</head>
+<body class="bg-steel">
+    <div class="app-bar fixed-top darcula" data-role="appbar">
+        <a href="./home_notice.html" class="app-bar-element branding" style="background-color:#CEDBF2"><img style="width: 113px;" src="../img/logo.png" alt="ケー・アールライン"></a>
+        <span class="app-bar-divider"></span>
+        <ul class="app-bar-menu">
+            <li><a href="./home_notice.html">HOME</a></li>
+            <li>
+                <a href="" class="dropdown-toggle">点呼管理</a>
+                <ul class="d-menu" data-role="dropdown">
+                    <li><a href="./roll_call_add.html">
+                        <span class="mif-file-text icon"></span>
+                        <span class="title">点呼記録表入力</span>
+                    </a></li>
+                    <li><a href="./roll_call_list.html">
+                        <span class="mif-list-numbered icon"></span>
+                        <span class="title">【処理中】点呼記録表一覧</span>
+                    </a></li>
+                    <li><a href="./roll_call_search.html">
+                        <span class="mif-search icon"></span>
+                        <span class="title">点呼記録表検索</span>
+                    </a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="" class="dropdown-toggle">日常点検</a>
+                <ul class="d-menu" data-role="dropdown">
+                    <li><a href="./inspection_add.html">
+                        <span class="mif-file-text icon"></span>
+                        <span class="title">日常点検実施表入力</span>
+                    </a></li>
+                    <li><a href="./inspection_list.html">
+                        <span class="mif-list-numbered icon"></span>
+                        <span class="title">日常点検実施表一覧</span>
+                    </a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="" class="dropdown-toggle">運送日報</a>
+                <ul class="d-menu" data-role="dropdown">
+                    <li><a href="./driving_report_add.html">
+                        <span class="mif-file-text icon"></span>
+                        <span class="title">運送日報入力</span>
+                    </a></li>
+                    <li><a href="./driving_report_list.html">
+                        <span class="mif-list icon"></span>
+                        <span class="title">運送日報一覧</span>
+                    </a></li>
+                    <li><a href="./driving_report_search.html">
+                        <span class="mif-search icon"></span>
+                        <span class="title">運送日報検索</span>
+                    </a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="" class="dropdown-toggle">請求書</a>
+                <ul class="d-menu" data-role="dropdown">
+                    <li><a href="./bill_list.html">
+                        <span class="mif-list icon"></span>
+                        <span class="title">未締めデータ一覧</span>
+                    </a></li>
+                    <li><a href="./bill_close.html">
+                        <span class="mif-checkmark icon"></span>
+                        <span class="title">請求書締め</span>
+                    </a></li>
+                    <li><a href="./bill_search.html">
+                        <span class="mif-search icon"></span>
+                        <span class="title">請求書検索</span>
+                    </a></li>
+                </ul>
+            </li>
+            <li class="active" style="background-color: #59cde2;">
+                <a href="" class="dropdown-toggle">売上・経費</a>
+                <ul class="d-menu" data-role="dropdown">
+                    <li><a href="./salesCost_driver_daily.html">
+                        <span class="mif-chart-bars icon"></span>
+                        <span class="title">日次運転手別売上・経費</span>
+                    </a></li>
+                    <li><a href="./salesCost_truck_daily.html">
+                        <span class="mif-file-text icon"></span>
+                        <span class="title">日次車別売上・経費</span>
+                    </a></li>
+                    <li><a href="./salesCost_driver_monthly.html">
+                        <span class="mif-list icon"></span>
+                        <span class="title">月次運転手別売上・経費検索</span>
+                    </a></li>
+                    <li><a href="./cost_truck_monthly.html">
+                        <span class="mif-file-text icon"></span>
+                        <span class="title">月間車別経費</span>
+                    </a></li>
+<!--                    <li><a href="./salesCost_year.html">
+                        <span class="mif-chart-line icon"></span>
+                        <span class="title">年度別売上推移</span>
+                    </a></li>
+-->
+                    <li><a href="./sales_month.html">
+                        <span class="mif-file-text icon"></span>
+                        <span class="title">月次売上集計</span>
+                    </a></li>
+                    <li><a href="./sales_customer.html">
+                        <span class="mif-list icon"></span>
+                        <span class="title">得意先別売上集計</span>
+                    </a></li>
+                </ul>
+            </li>
+            <li class="active">
+                <a href="" class="dropdown-toggle">運行管理</a>
+                <ul class="d-menu" data-role="dropdown">
+                    <li><a href="./operationControl_bindingWorkHour.html">
+                        <span class="mif-user icon"></span>
+                        <span class="title">拘束・運転時間管理表</span>
+                    </a></li>
+                    <li><a href="./operationControl_car_fuelCost.html">
+                        <span class="mif-truck icon"></span>
+                        <span class="title">個車別燃費推移
+                    </a></li>
+                    <li><a href="./operationControl_car_status.html">
+                        <span class="mif-truck icon"></span>
+                        <span class="title">個車別走行距離</span>
+                    </a></li>
+                </ul>
+			</li>
+            <li><a href="./master_customer.html">マスター管理</a></li>
+        </ul>
+
+        <div class="app-bar-element place-right">
+            <span class="dropdown-toggle"><span class="mif-cog"></span> 管理者A</span>
+            <div class="app-bar-drop-container padding10 place-right no-margin-top block-shadow fg-dark" data-role="dropdown" data-no-close="true" style="width: 180px">
+                <ul class="unstyled-list fg-dark">
+                    <li><a href="" class="fg-white3 fg-hover-yellow">ログアウト</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-content">
+        <div class="flex-grid no-responsive-future" style="height: 100%;">
+
+            <div class="row" style="height: 100%">
+                <div class="cell auto-size padding20 bg-white" id="cell-content">
+					    <h4 class="text-light">年度別売上推移図</h4>
+	                <div class="cell auto-size bg-white">
+						<div id="dashboard">
+							<div id="chart"></div>
+							<div id="filter_title">絞り込み</div>
+							<div id="filter" style="height: 50px;"></div>
+							<div id="filter_mobile"></div>
+						</div>
+			    	</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

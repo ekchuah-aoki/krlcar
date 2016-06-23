@@ -1,0 +1,191 @@
+<?php
+/* vim: set expandtab sw=4 ts=4 sts=4: */
+/**
+ * Common styles for the pmahomme theme
+ *
+ * @package    PhpMyAdmin-theme
+ * @subpackage PMAHomme
+ */
+
+// unplanned execution path
+if (! defined('PMA_MINIMUM_COMMON') && ! defined('TESTSUITE')) {
+    exit();
+}
+?>
+/******************************************************************************/
+
+/* general tags */
+.data,
+.data_full_width {
+    margin: 0 0 12px;
+}
+
+.data_full_width {
+    width: 100%;
+}
+
+fieldset, .preview_sql {
+    margin-top: 1em;
+    border: #aaa solid 1px;
+    background: #eee;
+}
+
+fieldset fieldset {
+    margin: .8em;
+    background: #fff;
+    border: 1px solid #aaa;
+    background: #E8E8E8;
+
+}
+
+fieldset legend {
+    font-weight: bold;
+    color: #444;
+    padding: 5px 10px;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border: 1px solid #aaa;
+    background-color: #fff;
+    -moz-box-shadow: 3px 3px 15px #bbb;
+    -webkit-box-shadow: 3px 3px 15px #bbb;
+    box-shadow: 3px 3px 15px #bbb;
+    max-width: 100%;
+}
+
+/* buttons in some browsers (eg. Konqueror) are block elements,
+   this breaks design */
+/******************************************************************************/
+/* classes */
+.clearfloat {
+    clear: both;
+}
+
+.center {
+    text-align: center;
+}
+
+.displayblock {
+    display: block;
+}
+
+fieldset.tblFooters {
+    margin-top: 0;
+    margin-bottom: .5em;
+    /* avoid a thick line since this should be used under another fieldset */
+    border-top: 0;
+    text-align: <?php echo $right; ?>;
+    float: none;
+    clear: both;
+    -webkit-border-radius: 0 0 4px 4px;
+    -moz-border-radius: 0 0 4px 4px;
+    border-radius: 0 0 4px 5px;
+}
+
+fieldset .formelement {
+    float: <?php echo $left; ?>;
+    margin-<?php echo $right; ?>: .5em;
+    /* IE */
+    white-space: nowrap;
+}
+
+/* revert for Gecko */
+fieldset div[class=formelement] {
+    white-space: normal;
+}
+
+fieldset.confirmation {
+}
+
+fieldset.confirmation legend {
+}
+
+fieldset.caution a {
+    color: #FF0000;
+}
+fieldset.caution a:hover {
+    color: #fff;
+    background-color: #FF0000;
+}
+
+/* user privileges */
+#fieldset_add_user_login div.item {
+    border-bottom: 1px solid silver;
+    padding-bottom: .3em;
+    margin-bottom: .3em;
+}
+
+#fieldset_add_user_login label {
+    float: <?php echo $left; ?>;
+    display: block;
+    width: 10em;
+    max-width: 100%;
+    text-align: <?php echo $right; ?>;
+    padding-<?php echo $right; ?>: .5em;
+}
+
+#fieldset_add_user_login span.options #select_pred_username,
+#fieldset_add_user_login span.options #select_pred_hostname,
+#fieldset_add_user_login span.options #select_pred_password {
+    width: 100%;
+    max-width: 100%;
+}
+
+#fieldset_add_user_login span.options {
+    float: <?php echo $left; ?>;
+    display: block;
+    width: 12em;
+    max-width: 100%;
+    padding-<?php echo $right; ?>: .5em;
+}
+
+#fieldset_add_user_login input {
+    width: 12em;
+    clear: <?php echo $right; ?>;
+    max-width: 100%;
+}
+
+#fieldset_add_user_login span.options input {
+    width: auto;
+}
+
+#fieldset_user_priv div.item {
+    float: <?php echo $left; ?>;
+    width: 9em;
+    max-width: 100%;
+}
+
+#fieldset_user_priv div.item div.item {
+    float: none;
+}
+
+#fieldset_user_priv div.item label {
+    white-space: nowrap;
+}
+
+#fieldset_user_priv div.item select {
+    width: 100%;
+}
+
+#fieldset_user_global_rights fieldset {
+    float: <?php echo $left; ?>;
+}
+
+#fieldset_user_group_rights fieldset {
+    float: <?php echo $left; ?>;
+}
+
+#fieldset_user_global_rights>legend input {
+    margin-<?php echo $left; ?>: 2em;
+}
+/* end user privileges */
+
+
+/* Also used for the variables page */
+fieldset#tableFilter {
+    margin-bottom: 1em;
+}
+
+#fieldset_select_fields {
+    float: <?php echo $left; ?>;
+}

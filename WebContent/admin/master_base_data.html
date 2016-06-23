@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Metro, a sleek, intuitive, and powerful framework for faster and easier web development for Windows Metro Style.">
+    <meta name="keywords" content="HTML, CSS, JS, JavaScript, framework, metro, front-end, frontend, web development">
+    <meta name="author" content="Sergey Pimenov and Metro UI CSS contributors">
+
+    <link rel='shortcut icon' type='image/x-icon' href='../favicon.ico' />
+
+    <title>株式会社ケー・アールライン</title>
+
+    <link href="../css/metro.css" rel="stylesheet">
+    <link href="../css/common.css" rel="stylesheet">
+    <link href="../css/metro-icons.css" rel="stylesheet">
+    <link href="../css/metro-responsive.css" rel="stylesheet">
+
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/jquery.dataTables.min.js"></script>
+
+    <script src="../js/metro.js"></script>
+
+    <style>
+        html, body {
+            height: 100%;
+        }
+        body {
+        }
+        .page-content {
+            padding-top: 3.125rem;
+            min-height: 100%;
+            height: 100%;
+        }
+        .table .input-control.checkbox {
+            line-height: 1;
+            min-height: 0;
+            height: auto;
+        }
+
+        @media screen and (max-width: 800px){
+            #cell-sidebar {
+                flex-basis: 52px;
+            }
+            #cell-content {
+                flex-basis: calc(100% - 52px);
+            }
+        }
+    </style>
+
+    <script>
+        function pushMessage(t){
+            var mes = 'Info|Implement independently';
+            $.Notify({
+                caption: mes.split("|")[0],
+                content: mes.split("|")[1],
+                type: t
+            });
+        }
+        
+        function showDialog(id) {
+            var dialog = $(id).data('dialog');
+            dialog.open();
+        }
+
+		$(function(){
+	        $("#datepicker1").datepicker();
+	        $("#datepicker").datepicker();
+	        $("#datepicker3").datepicker();
+	        
+	    });
+	    
+        $(function(){
+            $('.sidebar').on('click', 'li', function(){
+                if (!$(this).hasClass('active')) {
+                    $('.sidebar li').removeClass('active');
+                    $(this).addClass('active');
+                }
+            })
+        })
+    </script>
+</head>
+<body class="bg-steel">
+    <div class="app-bar fixed-top darcula" data-role="appbar">
+        <a href="./home_notice.html" class="app-bar-element branding" style="background-color:#CEDBF2"><img style="width: 113px;" src="../img/logo.png" alt="ケー・アールライン"></a>
+        <span class="app-bar-divider"></span>
+        <ul class="app-bar-menu">
+            <li><a href="./home_notice.html">HOME</a></li>
+            <li>
+                <a href="" class="dropdown-toggle">点呼管理</a>
+                <ul class="d-menu" data-role="dropdown">
+                    <li><a href="./roll_call_add.html">
+                        <span class="mif-file-text icon"></span>
+                        <span class="title">点呼記録表入力</span>
+                    </a></li>
+                    <li><a href="./roll_call_list.html">
+                        <span class="mif-list-numbered icon"></span>
+                        <span class="title">【処理中】点呼記録表一覧</span>
+                    </a></li>
+                    <li><a href="./roll_call_search.html">
+                        <span class="mif-search icon"></span>
+                        <span class="title">点呼記録表検索</span>
+                    </a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="" class="dropdown-toggle">日常点検</a>
+                <ul class="d-menu" data-role="dropdown">
+                    <li><a href="./inspection_add.html">
+                        <span class="mif-file-text icon"></span>
+                        <span class="title">日常点検実施表入力</span>
+                    </a></li>
+                    <li><a href="./inspection_list.html">
+                        <span class="mif-list-numbered icon"></span>
+                        <span class="title">日常点検実施表一覧</span>
+                    </a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="" class="dropdown-toggle">運送日報</a>
+                <ul class="d-menu" data-role="dropdown">
+                    <li><a href="./driving_report_add.html">
+                        <span class="mif-file-text icon"></span>
+                        <span class="title">運送日報入力</span>
+                    </a></li>
+                    <li><a href="./driving_report_list.html">
+                        <span class="mif-list icon"></span>
+                        <span class="title">運送日報一覧</span>
+                    </a></li>
+                    <li><a href="./driving_report_search.html">
+                        <span class="mif-search icon"></span>
+                        <span class="title">運送日報検索</span>
+                    </a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="" class="dropdown-toggle">請求書</a>
+                <ul class="d-menu" data-role="dropdown">
+                    <li><a href="./bill_list.html">
+                        <span class="mif-list icon"></span>
+                        <span class="title">未締めデータ一覧</span>
+                    </a></li>
+                    <li><a href="./bill_close.html">
+                        <span class="mif-checkmark icon"></span>
+                        <span class="title">請求書締め</span>
+                    </a></li>
+                    <li><a href="./bill_search.html">
+                        <span class="mif-search icon"></span>
+                        <span class="title">請求書検索</span>
+                    </a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="" class="dropdown-toggle">売上・経費</a>
+                <ul class="d-menu" data-role="dropdown">
+                    <li><a href="./salesCost_driver_daily.html">
+                        <span class="mif-chart-bars icon"></span>
+                        <span class="title">日次運転手別売上・経費</span>
+                    </a></li>
+                    <li><a href="./salesCost_truck_daily.html">
+                        <span class="mif-file-text icon"></span>
+                        <span class="title">日次車別売上・経費</span>
+                    </a></li>
+                    <li><a href="./salesCost_driver_monthly.html">
+                        <span class="mif-list icon"></span>
+                        <span class="title">月次運転手別売上・経費検索</span>
+                    </a></li>
+                    <li><a href="./cost_truck_monthly.html">
+                        <span class="mif-file-text icon"></span>
+                        <span class="title">月間車別経費</span>
+                    </a></li>
+<!--                    <li><a href="./salesCost_year.html">
+                        <span class="mif-chart-line icon"></span>
+                        <span class="title">年度別売上推移</span>
+                    </a></li>
+-->
+                    <li><a href="./sales_month.html">
+                        <span class="mif-file-text icon"></span>
+                        <span class="title">月次売上集計</span>
+                    </a></li>
+                    <li><a href="./sales_customer.html">
+                        <span class="mif-list icon"></span>
+                        <span class="title">得意先別売上集計</span>
+                    </a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="" class="dropdown-toggle">運行管理</a>
+                <ul class="d-menu" data-role="dropdown">
+                    <li><a href="./operationControl_bindingWorkHour.html">
+                        <span class="mif-user icon"></span>
+                        <span class="title">拘束・運転時間管理表</span>
+                    </a></li>
+                    <li><a href="./operationControl_car_fuelCost.html">
+                        <span class="mif-truck icon"></span>
+                        <span class="title">個車別燃費推移
+                    </a></li>
+                    <li><a href="./operationControl_car_status.html">
+                        <span class="mif-truck icon"></span>
+                        <span class="title">個車別走行距離</span>
+                    </a></li>
+                </ul>
+			</li>
+            <li><a href="./master_truck.html" style="background-color: #59cde2;">マスター管理</a></li>
+        </ul>
+
+        <div class="app-bar-element place-right">
+            <span class="dropdown-toggle"><span class="mif-cog"></span> 管理者A</span>
+            <div class="app-bar-drop-container padding10 place-right no-margin-top block-shadow fg-dark" data-role="dropdown" data-no-close="true" style="width: 180px">
+                <ul class="unstyled-list fg-dark">
+                    <li><a href="" class="fg-white3 fg-hover-yellow">ログアウト</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-content">
+        <div class="flex-grid no-responsive-future" style="height: 100%;">
+            <div class="row" style="height: 800px;">
+                <div class="cell" id="cell-sidebar" style="background-color: #71b1d1; height: 100%">
+                    <ul class="sidebar">
+                        <li><a href="./master_customer.html">
+                            <span class="mif-location icon"></span>
+                            <span class="title">取引先</span>
+                        </a></li>
+                        <li><a href="./master_truck.html">
+                            <span class="mif-truck icon"></span>
+                            <span class="title">車両</span>
+                        </a></li>
+                        <li><a href="./master_user.html">
+                            <span class="mif-users icon"></span>
+                            <span class="title">社員</span>
+                        </a></li>
+                        <li><a href="./master_truckCost.html">
+                            <span class="mif-money icon"></span>
+                            <span class="title">固定費用</span>
+                        </a></li>
+                        <li><a href="./master_fuelPrise.html">
+                            <span class="mif-money icon"></span>
+                            <span class="title">燃料単価</span>
+                        </a></li>
+                        <li><a href="./master_company_info.html">
+                            <span class="mif-database icon"></span>
+                            <span class="title">自社情報</span>
+                        </a></li>
+                        <li class="active"><a href="./master_base_data.html">
+                            <span class="mif-apps icon"></span>
+                            <span class="title">基本データ</span>
+                        </a></li>
+                    </ul>
+                </div>
+                <div class="cell auto-size padding20 bg-white" id="cell-content">
+                    <ul class="breadcrumbs" style="padding:0px;">
+					    <li><h4><a href="#">基本データ登録</a></h4></li>
+					</ul>
+                    <hr class="thin bg-grayLighter">
+					<div class="align-right">
+	                    <button class="button warning" onclick="pushMessage('warning')"><span class="mif-cancel"></span> キャンセル</button>
+	                    <button class="button primary" onclick="pushMessage('info')"><span class="mif-plus"></span> 保存</button>
+					</div>
+                    <hr class="thin bg-grayLighter">
+
+					<div class="example" data-text="拘束時間">
+	                    <table class="table border bordered" data-auto-width="false">
+							<thead>
+							<tr>
+								<td colspan="3">1カ月</td>
+								<td colspan="3">1日</td>
+							</tr>
+							<tr>
+								<td>原則時間数</td>
+								<td>最大時間数/月</td>
+								<td>上限月数/年</td>
+								<td>原則時間数</td>
+								<td>最大時間数/日</td>
+								<td>上限回数/週</td>
+							</tr>
+							</thead>
+							<tbody>
+							<tr>
+								<td>
+									<div class="input-control text" data-role="keypad" data-length="3" style="width:60px;">
+									    <input type="text" placeholder="293">
+									</div>時間
+								</td>
+								<td>
+									<div class="input-control text" data-role="keypad" data-length="3" style="width:60px;">
+									    <input type="text" placeholder="320">
+									</div>時間
+								</td>
+								<td>
+									<div class="input-control text" data-role="keypad" data-length="3" style="width:60px;">
+									    <input type="text" placeholder="6">
+									</div>月
+								</td>
+								<td>
+									<div class="input-control text" data-role="keypad" data-length="3" style="width:60px;">
+									    <input type="text" placeholder="13">
+									</div>時間
+								</td>
+								<td>
+									<div class="input-control text" data-role="keypad" data-length="3" style="width:60px;">
+									    <input type="text" placeholder="16">
+									</div>時間
+								</td>
+								<td>
+									<div class="input-control text" data-role="keypad" data-length="3" style="width:60px;">
+									    <input type="text" placeholder="2">
+									</div>回
+								</td>
+							</tr></tbody>
+						</table>
+			        </div>
+
+					<div class="example" data-text="運転時間">
+	                    <table class="table border bordered" data-auto-width="false">
+							<thead>
+							<tr>
+								<td>原則時間数/日</td>
+								<td>最大時間数/日</td>
+								<td>２日平均運転時間数</td>
+								<td>２週間平均運転時間数</td>
+							</tr>
+							</thead>
+							<tbody>
+							<tr>
+								<td>
+									<div class="input-control text" data-role="keypad" data-length="3" style="width:60px;">
+									    <input type="text" placeholder="12">
+									</div>時間
+								</td>
+								<td>
+									<div class="input-control text" data-role="keypad" data-length="3" style="width:60px;">
+									    <input type="text" placeholder="14.5">
+									</div>時間
+								</td>
+								<td>
+									<div class="input-control text" data-role="keypad" data-length="3" style="width:60px;">
+									    <input type="text" placeholder="9">
+									</div>時間
+								</td>
+								<td>
+									<div class="input-control text" data-role="keypad" data-length="3" style="width:60px;">
+									    <input type="text" placeholder="44">
+									</div>時間
+								</td>
+							</tr></tbody>
+						</table>
+			        </div>
+					<div class="example" data-text="繁忙期設定">
+	                    <table class="table border bordered" data-auto-width="false">
+							<thead>
+							<tr>
+								<td>1月</td>
+								<td>2月</td>
+								<td>3月</td>
+								<td>4月</td>
+								<td>5月</td>
+								<td>6月</td>
+								<td>7月</td>
+								<td>8月</td>
+								<td>9月</td>
+								<td>10月</td>
+								<td>11月</td>
+								<td>12月</td>
+							</tr>
+							</thead>
+							<tbody>
+							<tr>
+								<td>
+								    <label class="input-control checkbox">
+									    <input type="checkbox">
+									    <span class="check"></span>
+								    </label>
+								</td>
+								<td>
+								    <label class="input-control checkbox">
+									    <input type="checkbox">
+									    <span class="check"></span>
+								    </label>
+								</td>
+								<td>
+								    <label class="input-control checkbox">
+									    <input type="checkbox" checked>
+									    <span class="check"></span>
+								    </label>
+								</td>
+								<td>
+								    <label class="input-control checkbox">
+									    <input type="checkbox">
+									    <span class="check"></span>
+								    </label>
+								</td>
+								<td>
+								    <label class="input-control checkbox">
+									    <input type="checkbox">
+									    <span class="check"></span>
+								    </label>
+								</td>
+								<td>
+								    <label class="input-control checkbox">
+									    <input type="checkbox">
+									    <span class="check"></span>
+								    </label>
+								</td>
+								<td>
+								    <label class="input-control checkbox">
+									    <input type="checkbox" checked>
+									    <span class="check"></span>
+								    </label>
+								</td>
+								<td>
+								    <label class="input-control checkbox">
+									    <input type="checkbox">
+									    <span class="check"></span>
+								    </label>
+								</td>
+								<td>
+								    <label class="input-control checkbox">
+									    <input type="checkbox" checked>
+									    <span class="check"></span>
+								    </label>
+								</td>
+								<td>
+								    <label class="input-control checkbox">
+									    <input type="checkbox">
+									    <span class="check"></span>
+								    </label>
+								</td>
+								<td>
+								    <label class="input-control checkbox">
+									    <input type="checkbox">
+									    <span class="check"></span>
+								    </label>
+								</td>
+								<td>
+								    <label class="input-control checkbox">
+									    <input type="checkbox" checked>
+									    <span class="check"></span>
+								    </label>
+								</td>
+							</tr></tbody>
+						</table>
+			        </div>
+
+
+					<div class="example" data-text="その他">
+	                    <table class="table border bordered" data-auto-width="false">
+							<thead>
+							<tr>
+								<th rowspan="2">消費税率</th>
+								<th colspan="9">消費税課税対象外項目</th>
+							</tr>
+							<tr>
+								<th>基本運賃</th>
+								<th>留置</th>
+								<th>時増</th>
+								<th>地区粁増</th>
+								<th>道路航送料</th>
+								<th>運転手荷役</th>
+								<th>助手荷役</th>
+								<th>据付作業</th>
+								<th>運送保険料</th>
+							</tr>
+
+							</thead>
+							<tbody>
+							<tr>
+								<td>
+									<div class="input-control text" data-role="keypad" data-length="3" style="width:60px;">
+									    <input type="text" placeholder="8">
+									</div>%
+								</td>
+								<td>
+								    <label class="input-control checkbox">
+									    <input type="checkbox">
+									    <span class="check"></span>
+								    </label>
+								</td>
+								<td>
+								    <label class="input-control checkbox">
+									    <input type="checkbox">
+									    <span class="check"></span>
+								    </label>
+								</td>
+								<td>
+								    <label class="input-control checkbox">
+									    <input type="checkbox">
+									    <span class="check"></span>
+								    </label>
+								</td>
+								<td>
+								    <label class="input-control checkbox">
+									    <input type="checkbox">
+									    <span class="check"></span>
+								    </label>
+								</td>
+								<td>
+								    <label class="input-control checkbox">
+									    <input type="checkbox" checked>
+									    <span class="check"></span>
+								    </label>
+								</td>
+								<td>
+								    <label class="input-control checkbox">
+									    <input type="checkbox">
+									    <span class="check"></span>
+								    </label>
+								</td>
+								<td>
+								    <label class="input-control checkbox">
+									    <input type="checkbox">
+									    <span class="check"></span>
+								    </label>
+								</td>
+								<td>
+								    <label class="input-control checkbox">
+									    <input type="checkbox">
+									    <span class="check"></span>
+								    </label>
+								</td>
+								<td>
+								    <label class="input-control checkbox">
+									    <input type="checkbox">
+									    <span class="check"></span>
+								    </label>
+								</td>
+							</tr></tbody>
+						</table>
+			        </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
