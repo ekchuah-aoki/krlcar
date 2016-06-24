@@ -38,7 +38,9 @@
             min-height: 0;
             height: auto;
         }
-
+		.course{
+			text-align:center;
+		}
 		.theme	{
 			width:160px;
 		}
@@ -225,15 +227,15 @@
 
                     <hr class="thin bg-grayLighter">
 		            <div class="grid">
-		                <div class="row cells12">
-							<div class="cell colspan6" style="float:left;margin-right: auto;">
+		                <div>
+							<div style="margin-right: auto;">
 		                        年度
-								<div class="input-control select" style="width:100px;">
+								<div class="input-control select" style="width:50px;">
 		                            <select>
 		                                <option>2016</option>
-		                                <option>2015</option>
-		                                <option>2014</option>
-		                                <option>2013</option>
+		                                <option>2017</option>
+		                                <option>2018</option>
+		                                <option>2019</option>
 		                            </select>
 								</div>
 		                        月
@@ -252,10 +254,50 @@
 		                                <option>11</option>
 		                                <option>12</option>
 		                            </select>
+		                         </div>
+		                            日
+		                         <div class="input-control select" style="width:50px;">
+		                            <select>
+		                                <option>01</option>
+		                                <option>02</option>
+		                                <option>03</option>
+		                                <option>04</option>
+		                                <option>05</option>
+		                                <option>06</option>
+		                                <option>07</option>
+		                                <option>08</option>
+		                                <option>09</option>
+		                                <option>10</option>
+		                                <option>11</option>
+		                                <option>12</option>
+		                                <option>13</option>
+		                                <option>14</option>
+		                                <option>15</option>
+		                                <option>16</option>
+		                                <option>18</option>
+		                                <option>19</option>
+		                                <option>20</option>
+		                                <option>21</option>
+		                                <option>22</option>
+		                                <option>23</option>
+		                                <option>24</option>
+		                                <option>25</option>
+		                                <option>26</option>
+		                                <option>27</option>
+		                                <option>28</option>
+		                                <option>29</option>
+		                                <option>30</option>
+		                                <option>31</option>
+		                            </select>
+		                            
 								</div>
+								<button class="button primary"><span class="mif-search">検索</span></button>
 		                    </div>
-							<div class="cell colspan4" style="float:right;">
-		                    	<button class="button primary"><span class="mif-search">検索</span></button>
+							<div>
+							<button class="button alert" onclick="pushMessage('alert')">✔︎選択データ削除</button>
+		                    	<button class="button warning" onclick="pushMessage('warning')"><span class="mif-cancel"></span> キャンセル</button>
+		                    	 <button class="button primary" onclick="pushMessage('info')"><span class="mif-plus"></span> 保存</button>
+		                    	
 		                    </div>
 	                    </div>
                     </div>
@@ -268,7 +310,7 @@
                             
                      
                         <tr>
-                            <td colspan=4></td>
+                            <td colspan=5 width="3000"></td>
                             <td class="sortable-column">6月5日(日)</td>
                             <td class="sortable-column">6月6日(月)</td>
                             <td class="sortable-column">6月7日(火)</td>
@@ -281,29 +323,36 @@
                             
                         </tr>
                         <tr>
-                            <td class="sortable-column" width="120px">便番</td>
-                            <td class="sortable-column" width="120px">便名</td>
-                            <td class="sortable-column" width="1000px">運行コース/作業割り当(行先)</td>
-                            <td class="sortable-column" width="120px">車種</td>
-                            <td class="sortable-column" width="500px">車番/取引先<br>連絡先/ドライバー</td>
-                            <td class="sortable-column" width="500px">車番/取引先<br>連絡先/ドライバー</td>
-                            <td class="sortable-column" width="500px">車番/取引先<br>連絡先/ドライバー</td>
-                            <td class="sortable-column" width="500px">車番/取引先<br>連絡先/ドライバー</td>
-                            <td class="sortable-column" width="500px">車番/取引先<br>連絡先/ドライバー</td>
-                            <td class="sortable-column" width="500px">車番/取引先<br>連絡先/ドライバー</td>
-                            <td class="sortable-column" width="500px">車番/取引先<br>連絡先/ドライバー</td>
-                            <td class="sortable-column" width="500px">車番/取引先<br>連絡先/ドライバー</td>
-                            <td class="sortable-column" width="500px">車番/取引先<br>連絡先/ドライバー</td>
+                        	<td></td>
+                            <td class="sortable-column">便番</td>
+                            <td class="sortable-column">便名</td>
+                            <td class="sortable-column">運行コース/作業割り当(行先)</td>
+                            <td class="sortable-column">運行日/車種</td>
+                            <td class="sortable-column">車番/取引先(ドライバー)<br>連絡先/委託先ドライバー</td>
+                            <td class="sortable-column">車番/取引先(ドライバー)<br>連絡先/委託先ドライバー</td>
+                            <td class="sortable-column">車番/取引先(ドライバー)<br>連絡先/委託先ライバー</td>
+                            <td class="sortable-column">車番/取引先(ドライバー)<br>連絡先/委託先ドライバー</td>
+                            <td class="sortable-column">車番/取引先(ドライバー)<br>連絡先/委託先ドライバー</td>
+                            <td class="sortable-column">車番/取引先(ドライバー)<br>連絡先/委託先ドライバー</td>
+                            <td class="sortable-column">車番/取引先(ドライバー)<br>連絡先/委託先ドライバー</td>
+                            <td class="sortable-column">車番/取引先(ドライバー)<br>連絡先/委託先ドライバー</td>
+                            <td class="sortable-column">車番/取引先(ドライバー)<br>連絡先/委託先ドライバー</td>
                         </tr>
                         </thead>
                         <tbody>
                         
                         <tr>
+                        <td>
+                                <label class="input-control checkbox small-check no-margin">
+                                    <input type="checkbox">
+                                    <span class="check"></span>
+                                </label>
+                            </td>
                             <td>OA-111</td>
                             <td>川上下1</td>
                             <td>
-                            <table>
-                            <tr>
+                            <table style="text-align:center;">
+                            <tr >
                               <td class="course" style="border:none;">川崎東</td>
                               <td class="course" rowspan="2" style="border:none;">⇨</td>
                               <td class="course" style="border:none;">新大阪</td>
@@ -320,7 +369,7 @@
                              </tr>
                             </table>
                             </td>
-                            <td>8t</td>
+                            <td style="text-align:center;">8t</td>
                            <td><table>
                             <tr><td class="dri"style="border:none;"><input type="text" size="15" name="car" value="5346"></td><td class="dri"style="border:none;">平坂</td></tr>
                             <tr><td class="dri"style="border:none;"><input type="text" size="15" name="tel"value="090-1111-1111"></td><td class="dri"style="border:none;"><input type="text" size="15" name="driver" readonly="readonly"></td></tr>
@@ -359,7 +408,13 @@
                             </table></td>
                         </tr>
                         <tr>
-                            <td>OA-150</td>
+                        <td>
+                                <label class="input-control checkbox small-check no-margin">
+                                    <input type="checkbox">
+                                    <span class="check"></span>
+                                </label>
+                            </td>
+                            <td style="width:50px;">OA-150</td>
                             <td>綾神上</td>
                             <td>
                             <table>
@@ -368,7 +423,7 @@
                               <td class="course" rowspan="2" style="border:none;">⇨</td>
                               <td class="course" style="border:none;">ゆうP</td>
                               <td class="course" rowspan="2" style="border:none;">⇨</td>
-                              <td class="course" style="border:none;">新大阪</td>
+                              <td class="course" style="border:none;">新逢坂</td>
                               <td class="course" rowspan="2" style="border:none;">⇨</td>
                               <td class="course" style="border:none;">ゆうP</td>
                               <td class="course" rowspan="2" style="border:none;">⇨</td>
@@ -383,7 +438,7 @@
                              </tr>
                             </table>
                             </td>
-                            <td>8t</td>
+                            <td style="text-align:center;">8t</td>
                            <td><table>
                             <tr><td class="dri"style="border:none;"><input type="text" size="15" name="car" value="59061234"></td><td class="dri"style="border:none;">クレベ運送</td></tr>
                             <tr><td class="dri"style="border:none;"><input type="text" size="15" name="tel"value="090-9999-9999"></td><td class="dri"style="border:none;"><input type="text" size="15" name="driver"value="原田"></td></tr>
@@ -422,6 +477,12 @@
                             </table></td>
                         </tr>
                         <tr>
+                        <td>
+                                <label class="input-control checkbox small-check no-margin">
+                                    <input type="checkbox">
+                                    <span class="check"></span>
+                                </label>
+                            </td>
                             <td></td>
                             <td></td>
                             <td><table>
@@ -478,6 +539,12 @@
                             </table></td>
                         </tr>
                          <tr>
+                         <td>
+                                <label class="input-control checkbox small-check no-margin">
+                                    <input type="checkbox">
+                                    <span class="check"></span>
+                                </label>
+                            </td>
                             <td></td>
                             <td></td>
                             <td><table>
