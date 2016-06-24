@@ -49,13 +49,13 @@
 	        margin: 0;
 	        }
 	       
-	    table.center {
+	    tr.center {
 	        width: 100%;
 	        margin: 0 auto;
 	    }
 	    
 	    input.hoge {
-	        margin: 10px 170px 10px 70px; 
+	        margin: 10px 0px 10px 0px; 
 	        height: 40px; 
 	        width: 70%;
 	        font-size: 1.2em;
@@ -65,16 +65,16 @@
 	    input.input {
 	        margin: 10px; 
 	        height: 40px; 
-	        width: 30%;
+	        width: 20%;
 	        font-size: 1.2em;
 	        text-align: center;
 	    }
 	    
+	    td.box {
+	        width: 50%;
+	    }
 	    
 	    
-	    
-	  
-
         @media screen and (max-width: 800px){
             #cell-sidebar {
                 flex-basis: 52px;
@@ -219,6 +219,11 @@
 					    <li><h4 class="text-light"><a href="#">運行コース設定</a></h4></li>
 					</ul>
 
+                     <hr class="thin bg-grayLighter">
+		            <div class="grid">
+		              <button class="button warning" onclick="pushMessage('warning')"><span class="mif-cancel"></span> キャンセル</button>
+		              <button class="button primary" onclick="pushMessage('info')"><span class="mif-plus"></span> 保存</button>
+		            </div>
                     <hr class="thin bg-grayLighter">
 		                                
                     <table class="table border bordered" data-auto-width="false">
@@ -229,80 +234,31 @@
                         </tr>
                        </thead>
                        <tbody>
-                         <tr>
-		                   <td>
+                         
 		                   
-		                     <table class="center">
-		                     <tr>
-		                       <td><form><input type="text" class="hoge" placeholder="例：川崎東" /></form></td>
+		                     <tr class="center">
+		                       <td class="box"><form><input type="text" class="hoge" /></form></td>
+		                       <td class="box"><form><input type="text" class="input" />:<input type="text" class="input" /></form></td>
 		                     </tr>
-		                     <tr>
-		                       <td><form><input type="text" class="hoge" placeholder="例：新大阪" /></form></td>
+		                     <tr class="center">
+		                       <td class="box"><form><input type="text" class="hoge" /></form></td>
+		                       <td class="box"><form><input type="text" class="input"  />:<input type="text" class="input" /></form></td>
 		                     </tr>
-		                     <tr>
-		                       <td><form><input type="text" class="hoge" placeholder="例：ゆうP" /></form></td>
+		                     <tr class="center">
+		                       <td class="box"><form><input type="text" class="hoge" /></form></td>
+		                       <td class="box"><form><input type="text" class="input" />:<input type="text" class="input" /></form></td>
 		                     </tr>
-		                     <tr>
-		                       <td><form><input type="text" class="hoge" placeholder="例：神戸" /></form></td>
+		                     <tr class="center">
+		                       <td class="box"><form><input type="text" class="hoge" /></form></td>
+		                       <td class="box"><form><input type="text" class="input" />:<input type="text" class="input" /></form></td>
 		                     </tr>
-		                     <tr>
-		                       <td><form><input type="text" class="hoge" /></form></td>
+		                     <tr class="center">
+		                       <td class="box"><form><input type="text" class="hoge" /></form></td>
+		                       <td class="box"><form><input type="text" class="input" />:<input type="text" class="input" /></form></td>
 		                     </tr>
-		                     <tr>
-		                       <td><form><input type="text" class="hoge" /></form></td>
-		                     </tr>
-		                     <tr>
-		                       <td><form><input type="text" class="hoge" /></form></td>
-		                     </tr>
-		                     <tr>
-		                       <td><form><input type="text" class="hoge" /></form></td>
-		                     </tr>
-		                     <tr>
-		                       <td><form><input type="text" class="hoge" /></form></td>
-		                     </tr>
-		                     <tr>
-		                       <td><form><input type="text" class="hoge" /></form></td>
-		                     </tr>
-		                     </table>
-		                   　
-		                   </td>
 		                   
-		                   <td class="right">
 		                   
-		                     <table class="center">
-		                     <tr>
-		                       <td><form><input type="text" class="input"  placeholder="例：21" />:<input type="text" class="input"  placeholder="30" /></form></td>
-		                     </tr>
-		                     <tr>
-		                       <td><form><input type="text" class="input" placeholder="例：5" />:<input type="text" class="input" placeholder="15" /></form></td>
-		                     </tr>
-		                     <tr>
-		                       <td><form><input type="text" class="input"  placeholder="例：5" />:<input type="text" class="input"  placeholder="15" /></form></td>
-		                     </tr>
-		                     <tr>
-		                       <td><form><input type="text" class="input"  placeholder="例：6" />:<input type="text" class="input"  placeholder="25" /></form></td>
-		                     </tr>
-		                     <tr>
-		                       <td><form><input type="text" class="input" />:<input type="text" class="input" /></form></td>
-		                     </tr>
-		                     <tr>
-		                       <td><form><input type="text" class="input" />:<input type="text" class="input" /></form></td>
-		                     </tr>
-		                     <tr>
-		                       <td><form><input type="text" class="input" />:<input type="text" class="input" /></form></td>
-		                     </tr>
-		                     <tr>
-		                       <td><form><input type="text" class="input" />:<input type="text" class="input" /></form></td>
-		                     </tr>
-		                     <tr>
-		                       <td><form><input type="text" class="input" />:<input type="text" class="input" /></form></td>
-		                     </tr>
-		                     <tr>
-		                       <td><form><input type="text" class="input" />:<input type="text" class="input" /></form></td>
-		                     </table>　
-		                   </td>
-		                 
-		                 </tr>
+		                   
                         </tbody>
                    　　 </table>
 

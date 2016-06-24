@@ -39,7 +39,7 @@
             height: auto;
         }
         select.select {
-            width: 100%;   
+            width: 100%;
             -webkit-appearance: none;
 			border: none;
 			}
@@ -47,7 +47,16 @@
 	    td.buttonCenter {
 	        text-align: center;
 	    }
-
+        
+        .input-control {
+            width: 100%;
+        }
+        
+        input.text {
+            width: 100%;
+        }
+        
+        
         @media screen and (max-width: 800px){
             #cell-sidebar {
                 flex-basis: 52px;
@@ -186,1264 +195,145 @@
 
     <div class="page-content">
         <div class="flex-grid no-responsive-future" style="height: 100%;">
-            <div class="row" style="height: 700px;">
+            <div class="row" >
                 <div class="cell auto-size padding20 bg-white" id="cell-content">
 					<ul class="breadcrumbs" style="padding:0px;">
 					    <li><h4 class="text-light"><a href="#">運行一覧表</a></h4></li>
 					</ul>
 
                     <hr class="thin bg-grayLighter">
-		            
+		            <div class="grid">
+		              <button class="button warning" onclick="pushMessage('warning')"><span class="mif-cancel"></span> キャンセル</button>
+		              <button class="button primary" onclick="pushMessage('info')"><span class="mif-plus"></span> 保存</button>
+		            </div>
+                    <hr class="thin bg-grayLighter">
+                    
                     <table class="table border bordered" data-auto-width="false">
                         <thead><tr>
                             <td width="60">便番</td>
-                            <td width="100">路線名</td>
+                            <td width="100">線路名</td>
                             <td width="100">便名</td>
                             <td width="90">運行コース</td>
                             <td width="70">運行日</td>
                             <td width="70">車種</td>
                             <td width="100">一日あたりの運賃</td>
-                            <td width="100">有料道路使用料</td>
+                            
                         </tr></thead>
                         <tbody>
+                        
+                        
                        <tr>
-		                 <td rowspan="4">
-		                   <div class="input-control"><input type="text" placeholder="例：A-073"></div>
+		                 <td rowspan="4" class="form">
+		                   <div class="input-control"><input type="text" class="text"></div>
 		                 </td>
-		                 <td rowspan="4">
-		                   <div class="input-control"><input type="text" placeholder="例：綾瀬・新岩槻"></div>
+		                 <td rowspan="4" class="form">
+		                   <div class="input-control"><input type="text" class="text"></div>
 		                 </td>
-		                 <td rowspan="4">
-		                   <div class="input-control"><input type="text" placeholder="例：下3"></div>
+		                 <td rowspan="4" class="form">
+		                   <div class="input-control"><input type="text" class="text""></div>
 		                 </td>
 		                 <td rowspan="4" class="buttonCenter"><button class="button primary" onclick="window.open('master_root_next.html','_self')">設定</button></td>
                          <td>
                            <select class="select" name="carType">
-		                     <option value="">休日</option>
-		                     <option value="">--</option>
 		                     <option value="">1~末</option>
+		                     <option value="">土曜日</option>
+		                     <option value="">日曜日</option>
 						  	 <option value="">祝日</option>
-							 <option value="">土日</option>
-							 <option value="">翌休</option>
+							 <option value="">休翌</option>
+							 <option value="">--</option>
 						   </select>
                          </td>
                          <td>
                            <select class="select" name="carType">
-                             <option value="">4t</option>
 		                     <option value="">2t</option>
-						  	 <option value="">−―</option>
+							 <option value="">4t</option>
 							 <option value="">6t</option>
 							 <option value="">8t</option>
 							 <option value="">10t</option>
+							 <option value="">--</option>
 						   </select>
 						 </td>
                          <td>
-                           <div class="input-control"><input class="text" type="text" placeholder="例：21,475"></div>
-                         </td>
-                         <td>
-                           <div class="input-control"><input type="text"></div>
+                           <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
                          </td>
                         </tr>
 			            <tr>
 			              <td>
 			                <select class="select" name="carType">
 		                      <option value="">1~末</option>
-		                      <option value="">--</option>
-		                      <option value="">休日</option>
-						  	  <option value="">祝日</option>
-							  <option value="">土日</option>
-							  <option value="">翌休</option>
+		                     <option value="">土曜日</option>
+		                     <option value="">日曜日</option>
+						  	 <option value="">祝日</option>
+							 <option value="">休翌</option>
+							 <option value="">--</option>
 						   </select>
 			              </td>
 			              <td>
 			                <select class="select" name="carType">
-			                  <option value="">8t</option>
-			                  <option value="">--</option>
 		                      <option value="">2t</option>
 						  	  <option value="">4t</option>
 							  <option value="">6t</option>
+							  <option value="">8t</option>
 							  <option value="">10t</option>
+							  <option value="">--</option>
 						   </select>
-			              </td>
-			              <td>
-                           <div class="input-control"><input class="text" type="text"  placeholder="例：31,205"></div>
-                         </td>
-                         <td>
-                           <div class="input-control"><input type="text"></div>
+			             </td>
+			             <td>
+                           <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
                          </td>
                         </tr>
                         <tr>
 			              <td>
 			                <select class="select" name="carType">
-			                 <option value="">--</option>
 			                 <option value="">1~末</option>
-		                     <option value="">休日</option>
+		                     <option value="">土曜日</option>
+		                     <option value="">日曜日</option>
 						  	 <option value="">祝日</option>
-							 <option value="">土日</option>
-							 <option value="">翌休</option>
+							 <option value="">休翌</option>
+							 <option value="">--</option>
 						   </select>
 			              </td>
 			              <td>
 			                <select class="select" name="carType">
-			                  <option value="">--</option>
-		                      <option value="">2t</option>
-						  	  <option value="">4t</option>
-							  <option value="">6t</option>
-							  <option value="">8t</option>
-							  <option value="">10t</option>
-						   </select>
-			              </td>
-			              <td>
-                           <div class="input-control"><input class="text" type="text"></div>
-                         </td>
-                         <td>
-                           <div class="input-control"><input type="text"></div>
-                         </td>
-                        </tr>
-                        <tr>
-			              <td>
-			                <select class="select" name="carType">
-			                  <option value="">--</option>
-			                  <option value="">1~末</option>
-		                      <option value="">休日</option>
-						   	  <option value="">祝日</option>
-							  <option value="">土日</option>
-							 <option value="">翌休</option>
-						   </select>
-			              </td>
-			              <td>
-			                <select class="select" name="carType">
-			                  <option value="">--</option>
-		                      <option value="">2t</option>
-						  	  <option value="">4t</option>
-							  <option value="">6t</option>
-							  <option value="">8t</option>
-							  <option value="">10t</option>
-						   </select>
-			              </td>
-			              <td>
-                           <div class="input-control"><input class="text" type="text"></div>
-                         </td>
-                         <td>
-                           <div class="input-control"><input type="text"></div>
-                         </td>
-                        </tr>
-                        
-                        
-                        <tr>
-		                 <td rowspan="4">
-		                   <div class="input-control"><input type="text" placeholder="例：A-111"></div>
-		                 </td>
-		                 <td rowspan="4">
-		                   <div class="input-control"><input type="text" placeholder="例：川崎・大阪"></div>
-		                 </td>
-		                 <td rowspan="4">
-		                   <div class="input-control"><input type="text" placeholder="例：川神下1"></div>
-		                 </td>
-		                 <td rowspan="4" class="buttonCenter"><button class="button primary" onclick="window.open('master_root_next.html','_self')">設定</button></td>
-                         <td>
-                           <select class="select" name="carType">
-                             <option value="">土日</option>
-                             <option value="">--</option>
-                             <option value="">1~末</option>
-		                     <option value="">休日</option>
-						  	 <option value="">祝日</option>
-							 <option value="">翌休</option>
-						   </select>
-                         </td>
-                         <td>
-                           <select class="select" name="carType">
-                             <option value="">6t</option>
-                             <option value="">--</option>
-		                     <option value="">2t</option>
-						  	 <option value="">4t</option>
+			                  <option value="">2t</option>
+							 <option value="">4t</option>
+							 <option value="">6t</option>
 							 <option value="">8t</option>
 							 <option value="">10t</option>
+							 <option value="">--</option>
 						   </select>
-						 </td>
-                         <td>
-                           <div class="input-control"><input class="text" type="text" placeholder="例：70,135"></div>
-                         </td>
-                         <td>
-                           <div class="input-control"><input type="text"></div>
+			              </td>
+			              <td>
+                           <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
                          </td>
                         </tr>
-			            <tr>
+                        <tr>
 			              <td>
 			                <select class="select" name="carType">
 			                  <option value="">1~末</option>
-		                      <option value="">--</option>
-		                      <option value="">休日</option>
+		                      <option value="">土曜日</option>
+		                      <option value="">日曜日</option>
 						  	  <option value="">祝日</option>
-							  <option value="">土日</option>
-							  <option value="">翌休</option>
+							  <option value="">休翌</option>
+							  <option value="">--</option>
 						   </select>
 			              </td>
 			              <td>
 			                <select class="select" name="carType">
-			                  <option value="">8t</option>
-			                  <option value="">--</option>
-		                      <option value="">2t</option>
-						  	  <option value="">4t</option>
-							  <option value="">6t</option>
-							  <option value="">10t</option>
-						   </select>
-			              </td>
-			              <td>
-                           <div class="input-control"><input class="text" type="text" placeholder="例：78,128"></div>
-                         </td>
-                         <td>
-                           <div class="input-control"><input type="text"></div>
-                         </td>
-                        </tr>
-                        <tr>
-			              <td>
-			                <select class="select" name="carType">
-			                 <option value="">--</option>
-			                 <option value="">1~末</option>
-		                     <option value="">休日</option>
-						  	 <option value="">祝日</option>
-							 <option value="">土日</option>
-							 <option value="">翌休</option>
-						   </select>
-			              </td>
-			              <td>
-			                <select class="select" name="carType">
-			                  <option value="">--</option>
-		                      <option value="">2t</option>
-						  	  <option value="">4t</option>
-							  <option value="">6t</option>
-							  <option value="">8t</option>
-							  <option value="">10t</option>
-						   </select>
-			              </td>
-			              <td>
-                           <div class="input-control"><input class="text" type="text"></div>
-                         </td>
-                         <td>
-                           <div class="input-control"><input type="text"></div>
-                         </td>
-                        </tr>
-                        <tr>
-			              <td>
-			                <select class="select" name="carType">
-			                  <option value="">--</option>
-			                  <option value="">1~末</option>
-		                      <option value="">休日</option>
-						   	  <option value="">祝日</option>
-							  <option value="">土日</option>
-							 <option value="">翌休</option>
-						   </select>
-			              </td>
-			              <td>
-			                <select class="select" name="carType">
-			                  <option value="">--</option>
-		                      <option value="">2t</option>
-						  	  <option value="">4t</option>
-							  <option value="">6t</option>
-							  <option value="">8t</option>
-							  <option value="">10t</option>
-						   </select>
-			              </td>
-			              <td>
-                           <div class="input-control"><input class="text" type="text"></div>
-                         </td>
-                         <td>
-                           <div class="input-control"><input type="text"></div>
-                         </td>
-                        </tr>
-                        
-                        
-                        <tr>
-		                 <td rowspan="4">
-		                   <div class="input-control"><input type="text"></div>
-		                 </td>
-		                 <td rowspan="4">
-		                   <div class="input-control"><input type="text"></div>
-		                 </td>
-		                 <td rowspan="4">
-		                   <div class="input-control"><input type="text"></div>
-		                 </td>
-		                 <td rowspan="4" class="buttonCenter"><button class="button primary" onclick="window.open('master_root_next.html','_self')">設定</button></td>
-                         <td>
-                           <select class="select" name="carType">
-                             <option value="">--</option>
-                             <option value="">1~末</option>
-		                     <option value="">休日</option>
-						  	 <option value="">祝日</option>
-						  	 <option value="">土日</option>
-							 <option value="">翌休</option>
-						   </select>
-                         </td>
-                         <td>
-                           <select class="select" name="carType">
-                             <option value="">--</option>
-		                     <option value="">2t</option>
-						  	 <option value="">4t</option>
-						  	 <option value="">6t</option>
+			                  <option value="">2t</option>
+							 <option value="">4t</option>
+							 <option value="">6t</option>
 							 <option value="">8t</option>
 							 <option value="">10t</option>
-						   </select>
-						 </td>
-                         <td>
-                           <div class="input-control"><input class="text" type="text"></div>
-                         </td>
-                         <td>
-                           <div class="input-control"><input type="text"></div>
-                         </td>
-                        </tr>
-			            <tr>
-			              <td>
-			                <select class="select" name="carType">
-			                  <option value="">--</option>
-		                      <option value="">1~末</option>
-		                      <option value="">休日</option>
-						  	  <option value="">祝日</option>
-							  <option value="">土日</option>
-							  <option value="">翌休</option>
+							 <option value="">--</option>
 						   </select>
 			              </td>
 			              <td>
-			                <select class="select" name="carType">
-			                  <option value="">--</option>
-		                      <option value="">2t</option>
-						  	  <option value="">4t</option>
-							  <option value="">6t</option>
-							  <option value="">8t</option>
-							  <option value="">10t</option>
-						   </select>
-			              </td>
-			              <td>
-                           <div class="input-control"><input class="text" type="text"></div>
-                         </td>
-                         <td>
-                           <div class="input-control"><input type="text"></div>
-                         </td>
-                        </tr>
-                        <tr>
-			              <td>
-			                <select class="select" name="carType">
-			                 <option value="">--</option>
-			                 <option value="">1~末</option>
-		                     <option value="">休日</option>
-						  	 <option value="">祝日</option>
-							 <option value="">土日</option>
-							 <option value="">翌休</option>
-						   </select>
-			              </td>
-			              <td>
-			                <select class="select" name="carType">
-			                  <option value="">--</option>
-		                      <option value="">2t</option>
-						  	  <option value="">4t</option>
-							  <option value="">6t</option>
-							  <option value="">8t</option>
-							  <option value="">10t</option>
-						   </select>
-			              </td>
-			              <td>
-                           <div class="input-control"><input class="text" type="text"></div>
-                         </td>
-                         <td>
-                           <div class="input-control"><input type="text"></div>
-                         </td>
-                        </tr>
-                        <tr>
-			              <td>
-			                <select class="select" name="carType">
-			                  <option value="">--</option>
-			                  <option value="">1~末</option>
-		                      <option value="">休日</option>
-						   	  <option value="">祝日</option>
-							  <option value="">土日</option>
-							 <option value="">翌休</option>
-						   </select>
-			              </td>
-			              <td>
-			                <select class="select" name="carType">
-			                  <option value="">--</option>
-		                      <option value="">2t</option>
-						  	  <option value="">4t</option>
-							  <option value="">6t</option>
-							  <option value="">8t</option>
-							  <option value="">10t</option>
-						   </select>
-			              </td>
-			              <td>
-                           <div class="input-control"><input class="text" type="text"></div>
-                         </td>
-                         <td>
-                           <div class="input-control"><input type="text"></div>
+                           <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
                          </td>
                         </tr>
                         
                         
-                        <tr>
-		                 <td rowspan="4">
-		                   <div class="input-control"><input type="text"></div>
-		                 </td>
-		                 <td rowspan="4">
-		                   <div class="input-control"><input type="text"></div>
-		                 </td>
-		                 <td rowspan="4">
-		                   <div class="input-control"><input type="text"></div>
-		                 </td>
-		                 <td rowspan="4" class="buttonCenter"><button class="button primary" onclick="window.open('master_root_next.html','_self')">設定</button></td>
-                         <td>
-                           <select class="select" name="carType">
-                             <option value="">--</option>
-                             <option value="">1~末</option>
-		                     <option value="">休日</option>
-						  	 <option value="">祝日</option>
-						  	 <option value="">土日</option>
-							 <option value="">翌休</option>
-						   </select>
-                         </td>
-                         <td>
-                           <select class="select" name="carType">
-                             <option value="">--</option>
-		                     <option value="">2t</option>
-						  	 <option value="">4t</option>
-						  	 <option value="">6t</option>
-							 <option value="">8t</option>
-							 <option value="">10t</option>
-						   </select>
-						 </td>
-                         <td>
-                           <div class="input-control"><input class="text" type="text"></div>
-                         </td>
-                         <td>
-                           <div class="input-control"><input type="text"></div>
-                         </td>
-                        </tr>
-			            <tr>
-			              <td>
-			                <select class="select" name="carType">
-			                  <option value="">--</option>
-		                      <option value="">1~末</option>
-		                      <option value="">休日</option>
-						  	  <option value="">祝日</option>
-							  <option value="">土日</option>
-							  <option value="">翌休</option>
-						   </select>
-			              </td>
-			              <td>
-			                <select class="select" name="carType">
-			                  <option value="">--</option>
-		                      <option value="">2t</option>
-						  	  <option value="">4t</option>
-							  <option value="">6t</option>
-							  <option value="">8t</option>
-							  <option value="">10t</option>
-						   </select>
-			              </td>
-			              <td>
-                           <div class="input-control"><input class="text" type="text"></div>
-                         </td>
-                         <td>
-                           <div class="input-control"><input type="text"></div>
-                         </td>
-                        </tr>
-                        <tr>
-			              <td>
-			                <select class="select" name="carType">
-			                 <option value="">--</option>
-			                 <option value="">1~末</option>
-		                     <option value="">休日</option>
-						  	 <option value="">祝日</option>
-							 <option value="">土日</option>
-							 <option value="">翌休</option>
-						   </select>
-			              </td>
-			              <td>
-			                <select class="select" name="carType">
-			                  <option value="">--</option>
-		                      <option value="">2t</option>
-						  	  <option value="">4t</option>
-							  <option value="">6t</option>
-							  <option value="">8t</option>
-							  <option value="">10t</option>
-						   </select>
-			              </td>
-			              <td>
-                           <div class="input-control"><input class="text" type="text"></div>
-                         </td>
-                         <td>
-                           <div class="input-control"><input type="text"></div>
-                         </td>
-                        </tr>
-                        <tr>
-			              <td>
-			                <select class="select" name="carType">
-			                  <option value="">--</option>
-			                  <option value="">1~末</option>
-		                      <option value="">休日</option>
-						   	  <option value="">祝日</option>
-							  <option value="">土日</option>
-							 <option value="">翌休</option>
-						   </select>
-			              </td>
-			              <td>
-			                <select class="select" name="carType">
-			                  <option value="">--</option>
-		                      <option value="">2t</option>
-						  	  <option value="">4t</option>
-							  <option value="">6t</option>
-							  <option value="">8t</option>
-							  <option value="">10t</option>
-						   </select>
-			              </td>
-			              <td>
-                           <div class="input-control"><input class="text" type="text"></div>
-                         </td>
-                         <td>
-                           <div class="input-control"><input type="text"></div>
-                         </td>
-                        </tr>
-                        
-                        
-                        <tr>
-		                 <td rowspan="4">
-		                   <div class="input-control"><input type="text"></div>
-		                 </td>
-		                 <td rowspan="4">
-		                   <div class="input-control"><input type="text"></div>
-		                 </td>
-		                 <td rowspan="4">
-		                   <div class="input-control"><input type="text"></div>
-		                 </td>
-		                 <td rowspan="4" class="buttonCenter"><button class="button primary" onclick="window.open('master_root_next.html','_self')">設定</button></td>
-                         <td>
-                           <select class="select" name="carType">
-                             <option value="">--</option>
-                             <option value="">1~末</option>
-		                     <option value="">休日</option>
-						  	 <option value="">祝日</option>
-						  	 <option value="">土日</option>
-							 <option value="">翌休</option>
-						   </select>
-                         </td>
-                         <td>
-                           <select class="select" name="carType">
-                             <option value="">--</option>
-		                     <option value="">2t</option>
-						  	 <option value="">4t</option>
-						  	 <option value="">6t</option>
-							 <option value="">8t</option>
-							 <option value="">10t</option>
-						   </select>
-						 </td>
-                         <td>
-                           <div class="input-control"><input class="text" type="text"></div>
-                         </td>
-                         <td>
-                           <div class="input-control"><input type="text"></div>
-                         </td>
-                        </tr>
-			            <tr>
-			              <td>
-			                <select class="select" name="carType">
-			                  <option value="">--</option>
-		                      <option value="">1~末</option>
-		                      <option value="">休日</option>
-						  	  <option value="">祝日</option>
-							  <option value="">土日</option>
-							  <option value="">翌休</option>
-						   </select>
-			              </td>
-			              <td>
-			                <select class="select" name="carType">
-			                  <option value="">--</option>
-		                      <option value="">2t</option>
-						  	  <option value="">4t</option>
-							  <option value="">6t</option>
-							  <option value="">8t</option>
-							  <option value="">10t</option>
-						   </select>
-			              </td>
-			              <td>
-                           <div class="input-control"><input class="text" type="text"></div>
-                         </td>
-                         <td>
-                           <div class="input-control"><input type="text"></div>
-                         </td>
-                        </tr>
-                        <tr>
-			              <td>
-			                <select class="select" name="carType">
-			                 <option value="">--</option>
-			                 <option value="">1~末</option>
-		                     <option value="">休日</option>
-						  	 <option value="">祝日</option>
-							 <option value="">土日</option>
-							 <option value="">翌休</option>
-						   </select>
-			              </td>
-			              <td>
-			                <select class="select" name="carType">
-			                  <option value="">--</option>
-		                      <option value="">2t</option>
-						  	  <option value="">4t</option>
-							  <option value="">6t</option>
-							  <option value="">8t</option>
-							  <option value="">10t</option>
-						   </select>
-			              </td>
-			              <td>
-                           <div class="input-control"><input class="text" type="text"></div>
-                         </td>
-                         <td>
-                           <div class="input-control"><input type="text"></div>
-                         </td>
-                        </tr>
-                        <tr>
-			              <td>
-			                <select class="select" name="carType">
-			                  <option value="">--</option>
-			                  <option value="">1~末</option>
-		                      <option value="">休日</option>
-						   	  <option value="">祝日</option>
-							  <option value="">土日</option>
-							 <option value="">翌休</option>
-						   </select>
-			              </td>
-			              <td>
-			                <select class="select" name="carType">
-			                  <option value="">--</option>
-		                      <option value="">2t</option>
-						  	  <option value="">4t</option>
-							  <option value="">6t</option>
-							  <option value="">8t</option>
-							  <option value="">10t</option>
-						   </select>
-			              </td>
-			              <td>
-                           <div class="input-control"><input class="text" type="text"></div>
-                         </td>
-                         <td>
-                           <div class="input-control"><input type="text"></div>
-                         </td>
-                        </tr>
-                        
-                        
-                        <tr>
-		                 <td rowspan="4">
-		                   <div class="input-control"><input type="text"></div>
-		                 </td>
-		                 <td rowspan="4">
-		                   <div class="input-control"><input type="text"></div>
-		                 </td>
-		                 <td rowspan="4">
-		                   <div class="input-control"><input type="text"></div>
-		                 </td>
-		                 <td rowspan="4" class="buttonCenter"><button class="button primary" onclick="window.open('master_root_next.html','_self')">設定</button></td>
-                         <td>
-                           <select class="select" name="carType">
-                             <option value="">--</option>
-                             <option value="">1~末</option>
-		                     <option value="">休日</option>
-						  	 <option value="">祝日</option>
-						  	 <option value="">土日</option>
-							 <option value="">翌休</option>
-						   </select>
-                         </td>
-                         <td>
-                           <select class="select" name="carType">
-                             <option value="">--</option>
-		                     <option value="">2t</option>
-						  	 <option value="">4t</option>
-						  	 <option value="">6t</option>
-							 <option value="">8t</option>
-							 <option value="">10t</option>
-						   </select>
-						 </td>
-                         <td>
-                           <div class="input-control"><input class="text" type="text"></div>
-                         </td>
-                         <td>
-                           <div class="input-control"><input type="text"></div>
-                         </td>
-                        </tr>
-			            <tr>
-			              <td>
-			                <select class="select" name="carType">
-			                  <option value="">--</option>
-		                      <option value="">1~末</option>
-		                      <option value="">休日</option>
-						  	  <option value="">祝日</option>
-							  <option value="">土日</option>
-							  <option value="">翌休</option>
-						   </select>
-			              </td>
-			              <td>
-			                <select class="select" name="carType">
-			                  <option value="">--</option>
-		                      <option value="">2t</option>
-						  	  <option value="">4t</option>
-							  <option value="">6t</option>
-							  <option value="">8t</option>
-							  <option value="">10t</option>
-						   </select>
-			              </td>
-			              <td>
-                           <div class="input-control"><input class="text" type="text"></div>
-                         </td>
-                         <td>
-                           <div class="input-control"><input type="text"></div>
-                         </td>
-                        </tr>
-                        <tr>
-			              <td>
-			                <select class="select" name="carType">
-			                 <option value="">--</option>
-			                 <option value="">1~末</option>
-		                     <option value="">休日</option>
-						  	 <option value="">祝日</option>
-							 <option value="">土日</option>
-							 <option value="">翌休</option>
-						   </select>
-			              </td>
-			              <td>
-			                <select class="select" name="carType">
-			                  <option value="">--</option>
-		                      <option value="">2t</option>
-						  	  <option value="">4t</option>
-							  <option value="">6t</option>
-							  <option value="">8t</option>
-							  <option value="">10t</option>
-						   </select>
-			              </td>
-			              <td>
-                           <div class="input-control"><input class="text" type="text"></div>
-                         </td>
-                         <td>
-                           <div class="input-control"><input type="text"></div>
-                         </td>
-                        </tr>
-                        <tr>
-			              <td>
-			                <select class="select" name="carType">
-			                  <option value="">--</option>
-			                  <option value="">1~末</option>
-		                      <option value="">休日</option>
-						   	  <option value="">祝日</option>
-							  <option value="">土日</option>
-							 <option value="">翌休</option>
-						   </select>
-			              </td>
-			              <td>
-			                <select class="select" name="carType">
-			                  <option value="">--</option>
-		                      <option value="">2t</option>
-						  	  <option value="">4t</option>
-							  <option value="">6t</option>
-							  <option value="">8t</option>
-							  <option value="">10t</option>
-						   </select>
-			              </td>
-			              <td>
-                           <div class="input-control"><input class="text" type="text"></div>
-                         </td>
-                         <td>
-                           <div class="input-control"><input type="text"></div>
-                         </td>
-                        </tr>
-                        
-                        
-                        <tr>
-		                 <td rowspan="4">
-		                   <div class="input-control"><input type="text"></div>
-		                 </td>
-		                 <td rowspan="4">
-		                   <div class="input-control"><input type="text"></div>
-		                 </td>
-		                 <td rowspan="4">
-		                   <div class="input-control"><input type="text"></div>
-		                 </td>
-		                 <td rowspan="4" class="buttonCenter"><button class="button primary" onclick="window.open('master_root_next.html','_self')">設定</button></td>
-                         <td>
-                           <select class="select" name="carType">
-                             <option value="">--</option>
-                             <option value="">1~末</option>
-		                     <option value="">休日</option>
-						  	 <option value="">祝日</option>
-						  	 <option value="">土日</option>
-							 <option value="">翌休</option>
-						   </select>
-                         </td>
-                         <td>
-                           <select class="select" name="carType">
-                             <option value="">--</option>
-		                     <option value="">2t</option>
-						  	 <option value="">4t</option>
-						  	 <option value="">6t</option>
-							 <option value="">8t</option>
-							 <option value="">10t</option>
-						   </select>
-						 </td>
-                         <td>
-                           <div class="input-control"><input class="text" type="text"></div>
-                         </td>
-                         <td>
-                           <div class="input-control"><input type="text"></div>
-                         </td>
-                        </tr>
-			            <tr>
-			              <td>
-			                <select class="select" name="carType">
-			                  <option value="">--</option>
-		                      <option value="">1~末</option>
-		                      <option value="">休日</option>
-						  	  <option value="">祝日</option>
-							  <option value="">土日</option>
-							  <option value="">翌休</option>
-						   </select>
-			              </td>
-			              <td>
-			                <select class="select" name="carType">
-			                  <option value="">--</option>
-		                      <option value="">2t</option>
-						  	  <option value="">4t</option>
-							  <option value="">6t</option>
-							  <option value="">8t</option>
-							  <option value="">10t</option>
-						   </select>
-			              </td>
-			              <td>
-                           <div class="input-control"><input class="text" type="text"></div>
-                         </td>
-                         <td>
-                           <div class="input-control"><input type="text"></div>
-                         </td>
-                        </tr>
-                        <tr>
-			              <td>
-			                <select class="select" name="carType">
-			                 <option value="">--</option>
-			                 <option value="">1~末</option>
-		                     <option value="">休日</option>
-						  	 <option value="">祝日</option>
-							 <option value="">土日</option>
-							 <option value="">翌休</option>
-						   </select>
-			              </td>
-			              <td>
-			                <select class="select" name="carType">
-			                  <option value="">--</option>
-		                      <option value="">2t</option>
-						  	  <option value="">4t</option>
-							  <option value="">6t</option>
-							  <option value="">8t</option>
-							  <option value="">10t</option>
-						   </select>
-			              </td>
-			              <td>
-                           <div class="input-control"><input class="text" type="text"></div>
-                         </td>
-                         <td>
-                           <div class="input-control"><input type="text"></div>
-                         </td>
-                        </tr>
-                        <tr>
-			              <td>
-			                <select class="select" name="carType">
-			                  <option value="">--</option>
-			                  <option value="">1~末</option>
-		                      <option value="">休日</option>
-						   	  <option value="">祝日</option>
-							  <option value="">土日</option>
-							 <option value="">翌休</option>
-						   </select>
-			              </td>
-			              <td>
-			                <select class="select" name="carType">
-			                  <option value="">--</option>
-		                      <option value="">2t</option>
-						  	  <option value="">4t</option>
-							  <option value="">6t</option>
-							  <option value="">8t</option>
-							  <option value="">10t</option>
-						   </select>
-			              </td>
-			              <td>
-                           <div class="input-control"><input class="text" type="text"></div>
-                         </td>
-                         <td>
-                           <div class="input-control"><input type="text"></div>
-                         </td>
-                        </tr>
-                        
-                        
-                        <tr>
-		                 <td rowspan="4">
-		                   <div class="input-control"><input type="text"></div>
-		                 </td>
-		                 <td rowspan="4">
-		                   <div class="input-control"><input type="text"></div>
-		                 </td>
-		                 <td rowspan="4">
-		                   <div class="input-control"><input type="text"></div>
-		                 </td>
-		                 <td rowspan="4" class="buttonCenter"><button class="button primary" onclick="window.open('master_root_next.html','_self')">設定</button></td>
-                         <td>
-                           <select class="select" name="carType">
-                             <option value="">--</option>
-                             <option value="">1~末</option>
-		                     <option value="">休日</option>
-						  	 <option value="">祝日</option>
-						  	 <option value="">土日</option>
-							 <option value="">翌休</option>
-						   </select>
-                         </td>
-                         <td>
-                           <select class="select" name="carType">
-                             <option value="">--</option>
-		                     <option value="">2t</option>
-						  	 <option value="">4t</option>
-						  	 <option value="">6t</option>
-							 <option value="">8t</option>
-							 <option value="">10t</option>
-						   </select>
-						 </td>
-                         <td>
-                           <div class="input-control"><input class="text" type="text"></div>
-                         </td>
-                         <td>
-                           <div class="input-control"><input type="text"></div>
-                         </td>
-                        </tr>
-			            <tr>
-			              <td>
-			                <select class="select" name="carType">
-			                  <option value="">--</option>
-		                      <option value="">1~末</option>
-		                      <option value="">休日</option>
-						  	  <option value="">祝日</option>
-							  <option value="">土日</option>
-							  <option value="">翌休</option>
-						   </select>
-			              </td>
-			              <td>
-			                <select class="select" name="carType">
-			                  <option value="">--</option>
-		                      <option value="">2t</option>
-						  	  <option value="">4t</option>
-							  <option value="">6t</option>
-							  <option value="">8t</option>
-							  <option value="">10t</option>
-						   </select>
-			              </td>
-			              <td>
-                           <div class="input-control"><input class="text" type="text"></div>
-                         </td>
-                         <td>
-                           <div class="input-control"><input type="text"></div>
-                         </td>
-                        </tr>
-                        <tr>
-			              <td>
-			                <select class="select" name="carType">
-			                 <option value="">--</option>
-			                 <option value="">1~末</option>
-		                     <option value="">休日</option>
-						  	 <option value="">祝日</option>
-							 <option value="">土日</option>
-							 <option value="">翌休</option>
-						   </select>
-			              </td>
-			              <td>
-			                <select class="select" name="carType">
-			                  <option value="">--</option>
-		                      <option value="">2t</option>
-						  	  <option value="">4t</option>
-							  <option value="">6t</option>
-							  <option value="">8t</option>
-							  <option value="">10t</option>
-						   </select>
-			              </td>
-			              <td>
-                           <div class="input-control"><input class="text" type="text"></div>
-                         </td>
-                         <td>
-                           <div class="input-control"><input type="text"></div>
-                         </td>
-                        </tr>
-                        <tr>
-			              <td>
-			                <select class="select" name="carType">
-			                  <option value="">--</option>
-			                  <option value="">1~末</option>
-		                      <option value="">休日</option>
-						   	  <option value="">祝日</option>
-							  <option value="">土日</option>
-							 <option value="">翌休</option>
-						   </select>
-			              </td>
-			              <td>
-			                <select class="select" name="carType">
-			                  <option value="">--</option>
-		                      <option value="">2t</option>
-						  	  <option value="">4t</option>
-							  <option value="">6t</option>
-							  <option value="">8t</option>
-							  <option value="">10t</option>
-						   </select>
-			              </td>
-			              <td>
-                           <div class="input-control"><input class="text" type="text"></div>
-                         </td>
-                         <td>
-                           <div class="input-control"><input type="text"></div>
-                         </td>
-                        </tr>
-                        
-                        
-                        <tr>
-		                 <td rowspan="4">
-		                   <div class="input-control"><input type="text"></div>
-		                 </td>
-		                 <td rowspan="4">
-		                   <div class="input-control"><input type="text"></div>
-		                 </td>
-		                 <td rowspan="4">
-		                   <div class="input-control"><input type="text"></div>
-		                 </td>
-		                 <td rowspan="4" class="buttonCenter"><button class="button primary" onclick="window.open('master_root_next.html','_self')">設定</button></td>
-                         <td>
-                           <select class="select" name="carType">
-                             <option value="">--</option>
-                             <option value="">1~末</option>
-		                     <option value="">休日</option>
-						  	 <option value="">祝日</option>
-						  	 <option value="">土日</option>
-							 <option value="">翌休</option>
-						   </select>
-                         </td>
-                         <td>
-                           <select class="select" name="carType">
-                             <option value="">--</option>
-		                     <option value="">2t</option>
-						  	 <option value="">4t</option>
-						  	 <option value="">6t</option>
-							 <option value="">8t</option>
-							 <option value="">10t</option>
-						   </select>
-						 </td>
-                         <td>
-                           <div class="input-control"><input class="text" type="text"></div>
-                         </td>
-                         <td>
-                           <div class="input-control"><input type="text"></div>
-                         </td>
-                        </tr>
-			            <tr>
-			              <td>
-			                <select class="select" name="carType">
-			                  <option value="">--</option>
-		                      <option value="">1~末</option>
-		                      <option value="">休日</option>
-						  	  <option value="">祝日</option>
-							  <option value="">土日</option>
-							  <option value="">翌休</option>
-						   </select>
-			              </td>
-			              <td>
-			                <select class="select" name="carType">
-			                  <option value="">--</option>
-		                      <option value="">2t</option>
-						  	  <option value="">4t</option>
-							  <option value="">6t</option>
-							  <option value="">8t</option>
-							  <option value="">10t</option>
-						   </select>
-			              </td>
-			              <td>
-                           <div class="input-control"><input class="text" type="text"></div>
-                         </td>
-                         <td>
-                           <div class="input-control"><input type="text"></div>
-                         </td>
-                        </tr>
-                        <tr>
-			              <td>
-			                <select class="select" name="carType">
-			                 <option value="">--</option>
-			                 <option value="">1~末</option>
-		                     <option value="">休日</option>
-						  	 <option value="">祝日</option>
-							 <option value="">土日</option>
-							 <option value="">翌休</option>
-						   </select>
-			              </td>
-			              <td>
-			                <select class="select" name="carType">
-			                  <option value="">--</option>
-		                      <option value="">2t</option>
-						  	  <option value="">4t</option>
-							  <option value="">6t</option>
-							  <option value="">8t</option>
-							  <option value="">10t</option>
-						   </select>
-			              </td>
-			              <td>
-                           <div class="input-control"><input class="text" type="text"></div>
-                         </td>
-                         <td>
-                           <div class="input-control"><input type="text"></div>
-                         </td>
-                        </tr>
-                        <tr>
-			              <td>
-			                <select class="select" name="carType">
-			                  <option value="">--</option>
-			                  <option value="">1~末</option>
-		                      <option value="">休日</option>
-						   	  <option value="">祝日</option>
-							  <option value="">土日</option>
-							 <option value="">翌休</option>
-						   </select>
-			              </td>
-			              <td>
-			                <select class="select" name="carType">
-			                  <option value="">--</option>
-		                      <option value="">2t</option>
-						  	  <option value="">4t</option>
-							  <option value="">6t</option>
-							  <option value="">8t</option>
-							  <option value="">10t</option>
-						   </select>
-			              </td>
-			              <td>
-                           <div class="input-control"><input class="text" type="text"></div>
-                         </td>
-                         <td>
-                           <div class="input-control"><input type="text"></div>
-                         </td>
-                        </tr>
-                        
-                        
-                        <tr>
-		                 <td rowspan="4">
-		                   <div class="input-control"><input type="text"></div>
-		                 </td>
-		                 <td rowspan="4">
-		                   <div class="input-control"><input type="text"></div>
-		                 </td>
-		                 <td rowspan="4">
-		                   <div class="input-control"><input type="text"></div>
-		                 </td>
-		                 <td rowspan="4" class="buttonCenter"><button class="button primary" onclick="window.open('master_root_next.html','_self')">設定</button></td>
-                         <td>
-                           <select class="select" name="carType">
-                             <option value="">--</option>
-                             <option value="">1~末</option>
-		                     <option value="">休日</option>
-						  	 <option value="">祝日</option>
-						  	 <option value="">土日</option>
-							 <option value="">翌休</option>
-						   </select>
-                         </td>
-                         <td>
-                           <select class="select" name="carType">
-                             <option value="">--</option>
-		                     <option value="">2t</option>
-						  	 <option value="">4t</option>
-						  	 <option value="">6t</option>
-							 <option value="">8t</option>
-							 <option value="">10t</option>
-						   </select>
-						 </td>
-                         <td>
-                           <div class="input-control"><input class="text" type="text"></div>
-                         </td>
-                         <td>
-                           <div class="input-control"><input type="text"></div>
-                         </td>
-                        </tr>
-			            <tr>
-			              <td>
-			                <select class="select" name="carType">
-			                  <option value="">--</option>
-		                      <option value="">1~末</option>
-		                      <option value="">休日</option>
-						  	  <option value="">祝日</option>
-							  <option value="">土日</option>
-							  <option value="">翌休</option>
-						   </select>
-			              </td>
-			              <td>
-			                <select class="select" name="carType">
-			                  <option value="">--</option>
-		                      <option value="">2t</option>
-						  	  <option value="">4t</option>
-							  <option value="">6t</option>
-							  <option value="">8t</option>
-							  <option value="">10t</option>
-						   </select>
-			              </td>
-			              <td>
-                           <div class="input-control"><input class="text" type="text"></div>
-                         </td>
-                         <td>
-                           <div class="input-control"><input type="text"></div>
-                         </td>
-                        </tr>
-                        <tr>
-			              <td>
-			                <select class="select" name="carType">
-			                 <option value="">--</option>
-			                 <option value="">1~末</option>
-		                     <option value="">休日</option>
-						  	 <option value="">祝日</option>
-							 <option value="">土日</option>
-							 <option value="">翌休</option>
-						   </select>
-			              </td>
-			              <td>
-			                <select class="select" name="carType">
-			                  <option value="">--</option>
-		                      <option value="">2t</option>
-						  	  <option value="">4t</option>
-							  <option value="">6t</option>
-							  <option value="">8t</option>
-							  <option value="">10t</option>
-						   </select>
-			              </td>
-			              <td>
-                           <div class="input-control"><input class="text" type="text"></div>
-                         </td>
-                         <td>
-                           <div class="input-control"><input type="text"></div>
-                         </td>
-                        </tr>
-                        <tr>
-			              <td>
-			                <select class="select" name="carType">
-			                  <option value="">--</option>
-			                  <option value="">1~末</option>
-		                      <option value="">休日</option>
-						   	  <option value="">祝日</option>
-							  <option value="">土日</option>
-							 <option value="">翌休</option>
-						   </select>
-			              </td>
-			              <td>
-			                <select class="select" name="carType">
-			                  <option value="">--</option>
-		                      <option value="">2t</option>
-						  	  <option value="">4t</option>
-							  <option value="">6t</option>
-							  <option value="">8t</option>
-							  <option value="">10t</option>
-						   </select>
-			              </td>
-			              <td>
-                           <div class="input-control"><input class="text" type="text"></div>
-                         </td>
-                         <td>
-                           <div class="input-control"><input type="text"></div>
-                         </td>
-                        </tr>
                         
                         
                         
