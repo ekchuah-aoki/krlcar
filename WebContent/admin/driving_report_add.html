@@ -27,6 +27,7 @@
 			height: 100%;
 		}
 		body {
+			font-size:10pt;
 		}
 		.page-content {
 			padding-top: 3.125rem;
@@ -38,7 +39,18 @@
 			min-height: 0;
 			height: auto;
 		}
-
+	
+		.separateHeader  thead  td {
+			background-color:moccasin;
+		}
+	    .customHeader thead td {
+  			padding: 0.225rem;
+	    }
+	    
+	    .customerNameSelect select{
+	    	width:400px;
+	    }
+				
 		@media screen and (max-width: 800px){
 			#cell-sidebar {
 				flex-basis: 52px;
@@ -47,6 +59,7 @@
 				flex-basis: calc(100% - 52px);
 			}
 		}
+		
 	</style>
 
 	<script>
@@ -211,7 +224,7 @@
                     </a></li>
 					<li><a href="./operationControl_car_fuelCost.html">
 						<span class="mif-truck icon"></span>
-						<span class="title">個車別燃費推移
+						<span class="title">個車別燃費推移</span>
 					</a></li>
 					<li><a href="./operationControl_car_status.html">
 						<span class="mif-truck icon"></span>
@@ -234,7 +247,7 @@
 
 	<div class="page-content">
 		<div class="flex-grid no-responsive-future" style="height: 100%;">
-			<div class="row" style="height: 1280px;">
+			<div class="row">
 				<div class="cell auto-size padding10 bg-white" id="cell-content">
 					<ul class="breadcrumbs" style="padding:0px;">
 						<li><a href="driving_report_list.html">運送日報一覧</a></li>
@@ -300,7 +313,7 @@
 					<div class="grid">
 						<div class="row cells12">
 							<div class="cell colspan6" style="float:left;margin-right: auto;">
-					<table class="table border bordered" data-auto-width="false">
+					<table class="table border bordered customHeader" data-auto-width="false">
 						<thead>
 						<tr>
 							<td rowspan="2">車番</td>
@@ -362,7 +375,7 @@
 							</tr>
 						</tbody>
 					</table>
-					<table class="table border bordered" data-auto-width="false">
+					<table class="table border bordered customHeader" data-auto-width="false">
 						<thead>
 							<tr>
 								<th>夜ﾒｰﾀｰ</th>
@@ -407,7 +420,7 @@
 
 							</div>
 							<div class="cell colspan6" style="float:right;text-align: right;margin-left: auto;">
-					<table class="table border bordered" data-auto-width="false">
+					<table class="table border bordered customHeader" data-auto-width="false">
 						<thead>
 						<tr>
 							<td rowspan="2">当直</td>
@@ -492,7 +505,7 @@
 							</tr>
 						</tbody>
 					</table>
-					<table class="table border bordered" data-auto-width="false">
+					<table class="table border bordered customHeader" data-auto-width="false">
 						<thead>
 							<tr style="height:47px;">
 								<th>所長</th>
@@ -543,19 +556,18 @@
 						</div>
 					</div>
 
-					<table class="table border bordered" data-auto-width="false">
+					<table class="table border bordered separateHeader customHeader" data-auto-width="false">
 						<thead>
 						<tr>
 							<td>物品受領書</td>
 							<td>得意先</td>
 							<td>トン数・<br/>往復(km)</td>
-							<td>車種上料・<br/>車種内容</td>
 							<td>品名・個数<button style="float:right;" class="button primary goods_list1_add"><span class="mif-plus"></span>追加</button></td>
 						</tr>
 						</thead>
 						<tbody style="font-size:13px;">
 						<tr>
-							<td>
+							<td  style="width:220px">
 								<table><tbody>
 								    <tr>
 										<td>
@@ -596,25 +608,11 @@
 								</table>
 							</td>
 							<td>
-								<div class="input-control select">
-									<select>
-										<option>住友ナコマテリアルハンドリング販売株式会社</option>
-										<option>富士フォークリフト</option>
-										<option>東京小松フォークリフト株式会社</option>
-									</select>
-								</div><br/>
-								<div class="input-control select">
-									<select>
-										<option>AAA部</option>
-										<option>BBB部</option>
-										<option>大和支店</option>
-									</select>
-								</div><br/>
-								<div class="input-control select">
-									<select>
-										<option>AAA課</option>
-										<option>BBB課</option>
-										<option>CCC課</option>
+								<div class="input-control select customerNameSelect">
+									<select class="">
+										<option>住友ナコマテリアルハンドリング（略名）</option>
+										<option>富士フォークリフト（略名）</option>
+										<option>東京小松フォークリフト（略名）</option>
 									</select>
 								</div>
 							</td>
@@ -625,14 +623,6 @@
 								<div class="input-control text" style="width:30px;">
 									<input type="text">
 								</div>回
-							</td>
-							<td>
-								<div class="input-control text" style="width:90px;">
-									<input type="text">
-								</div><br/>
-								<div class="input-control text" style="width:90px;">
-									<input type="text" placeholder="4t→6t">
-								</div>
 							</td>
 							<td>
 								<table id="goods_list1">
@@ -649,12 +639,12 @@
 						</tbody>
 					</table>
 
-					<table class="table border bordered" data-auto-width="false">
+					<table class="table border bordered customHeader" data-auto-width="false">
 						<thead>
 						<tr>
 							<th>運送区間</th>
 							<th>所要時間</th>
-							<th>走行粁(km)</th>
+							<th>走行距離(km)</th>
 							<th>有料代</th>
 							<th>収受運賃</th>
 						</tr>
@@ -779,26 +769,25 @@
 								</label>
 								7 指定車両
 								<label class="input-control text">
-									<input type="text"
+									<input type="text">
 								</label>
 							</td>
 						</tr>
 						</tbody>
 					</table>
 
-					<table class="table border bordered" data-auto-width="false">
+					<table class="table border bordered separateHeader customHeader" data-auto-width="false">
 						<thead>
 						<tr>
 							<td>物品受領書</td>
 							<td>得意先</td>
 							<td>トン数・<br/>往復(km)</td>
-							<td>車種上料・<br/>車種内容</td>
 							<td>品名・個数<button style="float:right;" class="button primary goods_list2_add"><span class="mif-plus"></span>追加</button></td>
 						</tr>
 						</thead>
 						<tbody style="font-size:13px;">
 						<tr>
-							<td>
+							<td style="width:220px">
 								<table><tbody>
 								    <tr>
 										<td>
@@ -839,27 +828,13 @@
 								</table>
 							</td>
 							<td>
-								<div class="input-control select">
+								<div class="input-control select　customerNameSelect">
 									<select>
-										<option>住友ナコマテリアルハンドリング販売株式会社</option>
-										<option>富士フォークリフト</option>
-										<option>東京小松フォークリフト株式会社</option>
+										<option>住友ナコマテリアルハンドリング（略名）</option>
+										<option>富士フォークリフト（略名）</option>
+										<option>東京小松フォークリフト（略名）</option>
 									</select>
 								</div><br/>
-								<div class="input-control select">
-									<select>
-										<option>AAA部</option>
-										<option>BBB部</option>
-										<option>大和支店</option>
-									</select>
-								</div><br/>
-								<div class="input-control select">
-									<select>
-										<option>AAA課</option>
-										<option>BBB課</option>
-										<option>CCC課</option>
-									</select>
-								</div>
 							</td>
 							<td>
 								<div class="input-control text" style="width:30px;">
@@ -868,14 +843,6 @@
 								<div class="input-control text" style="width:30px;">
 									<input type="text">
 								</div>回
-							</td>
-							<td>
-								<div class="input-control text" style="width:90px;">
-									<input type="text">
-								</div><br/>
-								<div class="input-control text" style="width:90px;">
-									<input type="text" placeholder="4t→6t">
-								</div>
 							</td>
 							<td>
 								<table id="goods_list2">
@@ -892,12 +859,12 @@
 						</tbody>
 					</table>
 
-					<table class="table border bordered" data-auto-width="false">
+					<table class="table border bordered customHeader" data-auto-width="false">
 						<thead>
 						<tr>
 							<th>運送区間</th>
 							<th>所要時間</th>
-							<th>走行粁(km)</th>
+							<th>走行距離(km)</th>
 							<th>有料代</th>
 							<th>収受運賃</th>
 						</tr>
@@ -1022,7 +989,7 @@
 								</label>
 								7 指定車両
 								<label class="input-control text">
-									<input type="text"
+									<input type="text">
 								</label>
 							</td>
 						</tr>
