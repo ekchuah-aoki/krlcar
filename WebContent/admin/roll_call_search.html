@@ -73,108 +73,20 @@
 	        $("#datepicker").datepicker();
 	    });
 	</script>
+	
+	<!-- ヘッダー固定 -->
+	<script type="text/javascript">
+        $(document).ready(function() {
+           $('#header-target').load('header.html');
+        });
+    </script>
+	
 </head>
 <body class="bg-steel">
-    <div class="app-bar fixed-top darcula" data-role="appbar">
-        <a class="app-bar-element branding" style="background-color:#CEDBF2"><img style="width: 113px;" src="../img/logo.png" alt="ケー・アールライン"></a>
-        <span class="app-bar-divider"></span>
-        <ul class="app-bar-menu">
-            <li><a href="./home_notice.html">HOME</a></li>
-            <li class="active" style="background-color: #59cde2;">
-                <a href="" class="dropdown-toggle">点呼管理</a>
-                <ul class="d-menu" data-role="dropdown">
-                    <li><a href="./roll_call_add.html">
-                        <span class="mif-file-text icon"></span>
-                        <span class="title">点呼記録表入力</span>
-                    </a></li>
-                    <li><a href="./roll_call_list.html">
-                        <span class="mif-list-numbered icon"></span>
-                        <span class="title">点呼記録表一覧</span>
-                    </a></li>
-                    <li><a href="./roll_call_search.html">
-                        <span class="mif-search icon"></span>
-                        <span class="title">点呼記録表検索</span>
-                    </a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="" class="dropdown-toggle">日常点検</a>
-                <ul class="d-menu" data-role="dropdown">
-                    <li><a href="./inspection_add.html">
-                        <span class="mif-file-text icon"></span>
-                        <span class="title">日常点検実施表入力</span>
-                    </a></li>
-                    <li><a href="./inspection_list.html">
-                        <span class="mif-list-numbered icon"></span>
-                        <span class="title">日常点検実施表一覧</span>
-                    </a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="" class="dropdown-toggle">運送日報</a>
-                <ul class="d-menu" data-role="dropdown">
-                    <li><a href="./driving_report_add.html">
-                        <span class="mif-file-text icon"></span>
-                        <span class="title">運送日報入力</span>
-                    </a></li>
-                    <li><a href="./driving_report_list.html">
-                        <span class="mif-list icon"></span>
-                        <span class="title">運送日報一覧</span>
-                    </a></li>
-                    <li><a href="./driving_report_search.html">
-                        <span class="mif-search icon"></span>
-                        <span class="title">運送日報検索</span>
-                    </a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="" class="dropdown-toggle">請求書</a>
-                <ul class="d-menu" data-role="dropdown">
-                    <li><a href="./bill_list.html">
-                        <span class="mif-list icon"></span>
-                        <span class="title">未締めデータ一覧</span>
-                    </a></li>
-                    <li><a href="./bill_close.html">
-                        <span class="mif-checkmark icon"></span>
-                        <span class="title">請求書締め</span>
-                    </a></li>
-                    <li><a href="./bill_search.html">
-                        <span class="mif-search icon"></span>
-                        <span class="title">請求書検索</span>
-                    </a></li>
-                </ul>
-            </li>
-            <li><a href="./salesCost_driver_daily.html">売上・経費</a></li>
-            <li>
-                <a href="" class="dropdown-toggle">運行管理</a>
-                <ul class="d-menu" data-role="dropdown">
-                    <li><a href="./operationControl_bindingWorkHour.html">
-                        <span class="mif-user icon"></span>
-                        <span class="title">拘束・運転時間管理表</span>
-                    </a></li>
-                    <li><a href="./operationControl_car_fuelCost.html">
-                        <span class="mif-truck icon"></span>
-                        <span class="title">個車別燃費推移
-                    </a></li>
-                    <li><a href="./operationControl_car_status.html">
-                        <span class="mif-truck icon"></span>
-                        <span class="title">個車別走行距離</span>
-                    </a></li>
-                </ul>
-			</li>
-            <li><a href="./master_customer.html">マスター管理</a></li>
-        </ul>
-
-        <div class="app-bar-element place-right">
-            <span class="dropdown-toggle"><span class="mif-cog"></span> 管理者A</span>
-            <div class="app-bar-drop-container padding10 place-right no-margin-top block-shadow fg-dark" data-role="dropdown" data-no-close="true" style="width: 180px">
-                <ul class="unstyled-list fg-dark">
-                    <li><a href="" class="fg-white3 fg-hover-yellow">ログアウト</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
+    
+    <!-- ヘッダー固定 -->
+    <div id="header-target"></div>
+    
     <div class="page-content">
         <div class="flex-grid no-responsive-future" style="height: 100%;">
             <div class="row" style="height: 700px;">
