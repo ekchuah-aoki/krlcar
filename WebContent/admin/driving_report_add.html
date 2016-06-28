@@ -258,13 +258,13 @@
 					<table class="table border bordered customHeader" data-auto-width="false">
 						<thead>
 							<tr>
-								<th>夜ﾒｰﾀｰ</th>
-								<th>朝ﾒｰﾀｰ</th>
+								<th>夜メーター</th>
+								<th>朝メーター</th>
 								<th>
 									<select>
 										<option></option>
-										<option>ｴﾈｵｽｳｲﾝｸﾞ</option>
-										<option>ｷﾀｾｷ</option>
+										<option>エネオスウイング</option>
+										<option>キタセキ</option>
 										<option>宇佐美</option>
 										<option>吉田石油</option>
 										<option>太陽鉱油</option>
@@ -273,16 +273,16 @@
 								<th>
 									<select>
 										<option></option>
-										<option>ｴﾈｵｽｳｲﾝｸﾞ</option>
-										<option>ｷﾀｾｷ</option>
+										<option>エネオスウイング</option>
+										<option>キタセキ</option>
 										<option>宇佐美</option>
 										<option>吉田石油</option>
 										<option>太陽鉱油</option>
 									</select>
 								</th>
 								<th>その他</th>
-								<th>ｵｲﾙ</th>
-								<th>ｱﾄﾞﾌﾟﾙ</th>
+								<th>オイル</th>
+								<th>アドブル</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -488,13 +488,13 @@
 								</table>
 							</td>
 							<td>
-								<div class="input-control select customerNameSelect">
-									<select class="">
+								<div class="input-control select　customerNameSelect">
+									<select>
 										<option>住友ナコマテリアルハンドリング（略名）</option>
 										<option>富士フォークリフト（略名）</option>
 										<option>東京小松フォークリフト（略名）</option>
 									</select>
-								</div>
+								</div><br/>
 							</td>
 							<td>
 								<div class="input-control text" style="width:30px;">
@@ -596,13 +596,20 @@
 							<td>
 								<table><tbody>
 								<tr>
-									<td>現金</td><td><input type="text" style="width:70px;"></td>
-									<td>航送代</td><td><input type="text" style="width:70px;"></td></tr>
-								<tr><td>ETC</td><td><input type="text" style="width:70px;"></td>
-									<td>ｸﾚｼﾞｯﾄ</td><td><input type="text" style="width:70px;"></td></tr>
-								<tr><td>ﾌｪﾘｰ代<br/>(現金)</td><td><input type="text" style="width:70px;"></td>
-									<td>航空券</td><td><input type="text" style="width:70px;"></td></tr>
-								</tbody></table>
+									<td rowspan="2">現金</td>
+									<td>金額<input type="text"></td>
+								</tr>
+								<tr>
+									<td>許可<input type="checkbox"></td>
+								</tr>
+								<tr>
+									<td rowspan="2">ETC</td>
+									<td>金額<input type="text"></td>
+								</tr>
+								<tr>
+									<td>許可<input type="checkbox"></td>
+								</tr>
+								 </tbody></table>
 							</td>
 							<td>
 								<table><tbody>
@@ -625,11 +632,11 @@
 							<td colspan="4">
 								<label class="input-control checkbox">
 									<input type="checkbox" checked>
-									<span class="check"></span>1 ﾕﾆｰｸ指定
+									<span class="check"></span>1 ユニーク指定
 								</label>
 								<label class="input-control checkbox">
 									<input type="checkbox" checked>
-									<span class="check"></span>2 ｸﾞﾚｰﾝ車
+									<span class="check"></span>2 クレーン車
 								</label>
 								<label class="input-control checkbox">
 									<input type="checkbox" checked>
@@ -813,17 +820,26 @@
 								</tr>
 								</tbody></table>
 							</td>
+							
 							<td>
 								<table><tbody>
 								<tr>
-									<td>現金</td><td><input type="text" style="width:70px;"></td>
-									<td>航送代</td><td><input type="text" style="width:70px;"></td></tr>
-								<tr><td>ETC</td><td><input type="text" style="width:70px;"></td>
-									<td>ｸﾚｼﾞｯﾄ</td><td><input type="text" style="width:70px;"></td></tr>
-								<tr><td>ﾌｪﾘｰ代<br/>(現金)</td><td><input type="text" style="width:70px;"></td>
-									<td>航空券</td><td><input type="text" style="width:70px;"></td></tr>
-								</tbody></table>
+									<td rowspan="2">現金</td>
+									<td>金額<input type="text"></td>
+								</tr>
+								<tr>
+									<td>許可<input type="checkbox"></td>
+								</tr>
+								<tr>
+									<td rowspan="2">ETC</td>
+									<td>金額<input type="text"></td>
+								</tr>
+								<tr>
+									<td>許可<input type="checkbox"></td>
+								</tr>
+								 </tbody></table>
 							</td>
+							
 							<td>
 								<table><tbody>
 								<tr>
@@ -845,11 +861,11 @@
 							<td colspan="4">
 								<label class="input-control checkbox">
 									<input type="checkbox" checked>
-									<span class="check"></span>1 ﾕﾆｰｸ指定
+									<span class="check"></span>1 ユニーク指定
 								</label>
 								<label class="input-control checkbox">
 									<input type="checkbox" checked>
-									<span class="check"></span>2 ｸﾞﾚｰﾝ車
+									<span class="check"></span>2 クレーン車
 								</label>
 								<label class="input-control checkbox">
 									<input type="checkbox" checked>
