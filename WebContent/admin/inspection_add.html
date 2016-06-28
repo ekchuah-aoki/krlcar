@@ -186,7 +186,7 @@
                     </a></li>
                     <li><a href="./operationControl_car_fuelCost.html">
                         <span class="mif-truck icon"></span>
-                        <span class="title">個車別燃費推移
+                        <span class="title">個車別燃費推移</span>
                     </a></li>
                     <li><a href="./operationControl_car_status.html">
                         <span class="mif-truck icon"></span>
@@ -243,13 +243,27 @@
 		                            </select>
 		                        </div>
 		                    </div>
-							<div class="cell colspan2">
-		                        点検日
+		                    <!-- <div class="cell colspan2">
+							    点検年月
 								<div class="input-control text" id="datepicker" style="width:150px;">
 								    <input type="text">
 								    <button class="button"><span class="mif-calendar"></span></button>
 								</div>
-		                    </div>
+		                    </div> -->
+							<div class="cell colspan4">
+		                        始業点検
+								<div class="input-control text" id="datepicker" style="width:150px;">
+								    <input type="text">
+								    <button class="button"><span class="mif-calendar"></span></button>
+								</div>
+							</div>
+							<!-- <div class="cell colspan2">
+							    就業点検
+								<div class="input-control text" id="datepicker" style="width:150px;">
+								    <input type="text">
+								    <button class="button"><span class="mif-calendar"></span></button>
+								</div>
+		                    </div> -->
 							<div class="cell colspan6">
 		                        整備管理者
 			                        <div class="input-control select" style="width:100px;">
@@ -282,7 +296,7 @@
                     <table class="table border bordered" data-auto-width="false">
                         <thead>
                         <tr>
-                            <td class="sortable-column" colspan="3">点検内容<span style="float:right;">点検良→<span class="mif-checkmark fg-green"></span>　要整備→<span class="mif-cross fg-red"></span></td>
+                            <td class="sortable-column" colspan="3">点検内容<span style="float:right;"></span>点検良→<span class="mif-checkmark fg-green"></span>　要整備→<span class="mif-cross fg-red"></span></td>
                             <td>操作</td>
                         </tr>
                         </thead>
@@ -299,7 +313,7 @@
 			                        <label class="input-control radio small-check">
 			                            <input type="radio" name="n1">
 			                            <span class="check"></span>
-			                            <span class="mif-cross fg-red">
+			                            <span class="mif-cross fg-red"></span>
 			                        </label>
 							</td>
                         </tr>
@@ -315,7 +329,7 @@
 			                        <label class="input-control radio small-check">
 			                            <input type="radio" name="n2">
 			                            <span class="check"></span>
-			                            <span class="mif-cross fg-red">
+			                            <span class="mif-cross fg-red"></span>
 			                        </label>
 							</td>
 						</tr><tr>
@@ -329,7 +343,7 @@
 					        <label class="input-control radio small-check">
 					            <input type="radio" name="n3">
 					            <span class="check"></span>
-					            <span class="mif-cross fg-red">
+					            <span class="mif-cross fg-red"></span>
 					        </label></td>
 						</tr><tr>
 					        <td colspan="2">低速・加速の状態</td>
@@ -342,7 +356,7 @@
 					        <label class="input-control radio small-check">
 					            <input type="radio" name="n4">
 					            <span class="check"></span>
-					            <span class="mif-cross fg-red">
+					            <span class="mif-cross fg-red"></span>
 					        </label></td>
 						</tr><tr>
 					        <td colspan="2">ブレーキ・ペダルの踏みしろ、きき具合</td>
@@ -355,10 +369,10 @@
 					        <label class="input-control radio small-check">
 					            <input type="radio" name="n5">
 					            <span class="check"></span>
-					            <span class="mif-cross fg-red">
+					            <span class="mif-cross fg-red"></span>
 					        </label></td>
 						</tr><tr>
-						        <td colspan="2">駐車ブレーキ．レバーの踏みしろ</span>
+						        <td colspan="2">駐車ブレーキ．レバーの踏みしろ</td>
 						        <td>
 						        <label class="input-control radio small-check">
 						            <input type="radio" name="n6" checked="checked">
@@ -368,10 +382,10 @@
 						        <label class="input-control radio small-check">
 						            <input type="radio" name="n6">
 						            <span class="check"></span>
-						            <span class="mif-cross fg-red">
+						            <span class="mif-cross fg-red"></span>
 						        </label></td>
 							</tr><tr>
-						        <td colspan="2">空気圧力の上り具合</span>
+						        <td colspan="2">空気圧力の上り具合</td>
 						        <td>
 						        <label class="input-control radio small-check">
 						            <input type="radio" name="n7" checked="checked">
@@ -381,10 +395,10 @@
 						        <label class="input-control radio small-check">
 						            <input type="radio" name="n7">
 						            <span class="check"></span>
-						            <span class="mif-cross fg-red">
+						            <span class="mif-cross fg-red"></span>
 						        </label></td>
 							</tr><tr>
-						        <td colspan="2">ブレーキ．ペダルを放したときの配管音</span>
+						        <td colspan="2">ブレーキ．ペダルを放したときの配管音</td>
 						        <td>
 						        <label class="input-control radio small-check">
 						            <input type="radio" name="n8" checked="checked">
@@ -394,10 +408,10 @@
 						        <label class="input-control radio small-check">
 						            <input type="radio" name="n8">
 						            <span class="check"></span>
-						            <span class="mif-cross fg-red">
+						            <span class="mif-cross fg-red"></span>
 						        </label></td>
 							</tr><tr>
-						        <td colspan="2">ブレーキ・チャンバのロッドのストローク</span>
+						        <td colspan="2">ブレーキ・チャンバのロッドのストローク</td>
 						        <td>
 						        <label class="input-control radio small-check">
 						            <input type="radio" name="n9" checked="checked">
@@ -407,10 +421,10 @@
 						        <label class="input-control radio small-check">
 						            <input type="radio" name="n9">
 						            <span class="check"></span>
-						            <span class="mif-cross fg-red">
+						            <span class="mif-cross fg-red"></span>
 						        </label></td>
 							</tr><tr>
-						        <td colspan="2">ブレーキドラムとライニングとの隙間</span>
+						        <td colspan="2">ブレーキドラムとライニングとの隙間</td>
 						        <td>
 						        <label class="input-control radio small-check">
 						            <input type="radio" name="n10" checked="checked">
@@ -420,10 +434,10 @@
 						        <label class="input-control radio small-check">
 						            <input type="radio" name="n10">
 						            <span class="check"></span>
-						            <span class="mif-cross fg-red">
+						            <span class="mif-cross fg-red"></span>
 						        </label></td>
 							</tr><tr>
-						        <td colspan="2">ウィンドウ・ウォッシャの液量・噴射状態</span>
+						        <td colspan="2">ウィンドウ・ウォッシャの液量・噴射状態</td>
 						        <td>
 						        <label class="input-control radio small-check">
 						            <input type="radio" name="n11" checked="checked">
@@ -433,10 +447,10 @@
 						        <label class="input-control radio small-check">
 						            <input type="radio" name="n11">
 						            <span class="check"></span>
-						            <span class="mif-cross fg-red">
+						            <span class="mif-cross fg-red"></span>
 						        </label></td>
 							</tr><tr>
-						        <td colspan="2">ワイパーの払拭状態</span>
+						        <td colspan="2">ワイパーの払拭状態</td>
 						        <td>
 						        <label class="input-control radio small-check">
 						            <input type="radio" name="n12" checked="checked">
@@ -446,10 +460,10 @@
 						        <label class="input-control radio small-check">
 						            <input type="radio" name="n12">
 						            <span class="check"></span>
-						            <span class="mif-cross fg-red">
+						            <span class="mif-cross fg-red"></span>
 						        </label></td>
 							</tr><tr>
-						        <td colspan="2">灯火措置及び方向指示器の点灯・点滅具合・汚れ、損傷</span>
+						        <td colspan="2">灯火措置及び方向指示器の点灯・点滅具合・汚れ、損傷</td>
 						        <td>
 						        <label class="input-control radio small-check">
 						            <input type="radio" name="n13" checked="checked">
@@ -459,11 +473,11 @@
 						        <label class="input-control radio small-check">
 						            <input type="radio" name="n13">
 						            <span class="check"></span>
-						            <span class="mif-cross fg-red">
+						            <span class="mif-cross fg-red"></span>
 						        </label></td>
 							</tr><tr>
 								<td rowspan="10">車両の周り（前部～後部）</td>
-						        <td colspan="2">ブレーキ・オイルの液量</span>
+						        <td colspan="2">ブレーキ・オイルの液量</td>
 						        <td>
 						        <label class="input-control radio small-check">
 						            <input type="radio" name="n14" checked="checked">
@@ -473,10 +487,10 @@
 						        <label class="input-control radio small-check">
 						            <input type="radio" name="n14">
 						            <span class="check"></span>
-						            <span class="mif-cross fg-red">
+						            <span class="mif-cross fg-red"></span>
 						        </label></td>
 							</tr><tr>
-						        <td colspan="2">冷却水の量</span>
+						        <td colspan="2">冷却水の量</td>
 						        <td>
 						        <label class="input-control radio small-check">
 						            <input type="radio" name="n15" checked="checked">
@@ -486,10 +500,10 @@
 						        <label class="input-control radio small-check">
 						            <input type="radio" name="n15">
 						            <span class="check"></span>
-						            <span class="mif-cross fg-red">
+						            <span class="mif-cross fg-red"></span>
 						        </label></td>
 							</tr><tr>
-						        <td colspan="2">ファン・ベルトの張り具合・損傷</span>
+						        <td colspan="2">ファン・ベルトの張り具合・損傷</td>
 						        <td>
 						        <label class="input-control radio small-check">
 						            <input type="radio" name="n16" checked="checked">
@@ -499,10 +513,10 @@
 						        <label class="input-control radio small-check">
 						            <input type="radio" name="n16">
 						            <span class="check"></span>
-						            <span class="mif-cross fg-red">
+						            <span class="mif-cross fg-red"></span>
 						        </label></td>
 							</tr><tr>
-						        <td colspan="2">エンジン・オイルの量</span>
+						        <td colspan="2">エンジン・オイルの量</td>
 						        <td>
 						        <label class="input-control radio small-check">
 						            <input type="radio" name="n17" checked="checked">
@@ -512,11 +526,11 @@
 						        <label class="input-control radio small-check">
 						            <input type="radio" name="n17">
 						            <span class="check"></span>
-						            <span class="mif-cross fg-red">
+						            <span class="mif-cross fg-red"></span>
 						        </label></td>
 							</tr><tr>
-						        <td rowspan="5">タイヤ</span>
-						        <td>空気圧</span>
+						        <td rowspan="5">タイヤ</td>
+						        <td>空気圧</td>
 						        <td>
 						        <label class="input-control radio small-check">
 						            <input type="radio" name="n18" checked="checked">
@@ -526,10 +540,10 @@
 						        <label class="input-control radio small-check">
 						            <input type="radio" name="n18">
 						            <span class="check"></span>
-						            <span class="mif-cross fg-red">
+						            <span class="mif-cross fg-red"></span>
 						        </label></td>
 							</tr><tr>
-						        <td>亀裂及び損傷</span>
+						        <td>亀裂及び損傷</td>
 						        <td>
 						        <label class="input-control radio small-check">
 						            <input type="radio" name="n19" checked="checked">
@@ -539,10 +553,10 @@
 						        <label class="input-control radio small-check">
 						            <input type="radio" name="n19">
 						            <span class="check"></span>
-						            <span class="mif-cross fg-red">
+						            <span class="mif-cross fg-red"></span>
 						        </label></td>
 							</tr><tr>
-						        <td>異常な損耗</span>
+						        <td>異常な損耗</td>
 						        <td>
 						        <label class="input-control radio small-check">
 						            <input type="radio" name="n20" checked="checked">
@@ -552,7 +566,7 @@
 						        <label class="input-control radio small-check">
 						            <input type="radio" name="n20">
 						            <span class="check"></span>
-						            <span class="mif-cross fg-red">
+						            <span class="mif-cross fg-red"></span>
 						        </label></td>
 							</tr><tr>
 						        <td>溝の深さ</td>
@@ -565,7 +579,7 @@
 						        <label class="input-control radio small-check">
 						            <input type="radio" name="n21">
 						            <span class="check"></span>
-						            <span class="mif-cross fg-red">
+						            <span class="mif-cross fg-red"></span>
 						        </label></td>
 							</tr><tr>
 						        <td>ディスク・ホイールの取付状態</td>
@@ -578,7 +592,7 @@
 						        <label class="input-control radio small-check">
 						            <input type="radio" name="n22">
 						            <span class="check"></span>
-						            <span class="mif-cross fg-red">
+						            <span class="mif-cross fg-red"></span>
 						        </label></td>
 							</tr><tr>
 						        <td colspan="2">エア・タンクの凝水</td>
@@ -591,7 +605,7 @@
 						        <label class="input-control radio small-check">
 						            <input type="radio" name="n23">
 						            <span class="check"></span>
-						            <span class="mif-cross fg-red">
+						            <span class="mif-cross fg-red"></span>
 						        </label></td>
 							</tr><tr>
 								<td rowspan="2">備付品</td>
@@ -605,7 +619,7 @@
 						        <label class="input-control radio small-check">
 						            <input type="radio" name="n24">
 						            <span class="check"></span>
-						            <span class="mif-cross fg-red">
+						            <span class="mif-cross fg-red"></span>
 						        </label></td>
 							</tr><tr>
 						        <td colspan="2">スペア・タイヤ・工具の完備・停止表示板の携行、チャート紙</td>
@@ -618,10 +632,10 @@
 						        <label class="input-control radio small-check">
 						            <input type="radio" name="n25">
 						            <span class="check"></span>
-						            <span class="mif-cross fg-red">
+						            <span class="mif-cross fg-red"></span>
 						        </label></td>
 							</tr>
-							</tr><tr>
+							<tr>
 						        <td colspan="3">運行可否の決定</td>
 						        <td>
 						        <label class="input-control radio small-check">
@@ -632,10 +646,10 @@
 						        <label class="input-control radio small-check">
 						            <input type="radio" name="n26">
 						            <span class="check"></span>
-						            <span class="mif-cross fg-red">
+						            <span class="mif-cross fg-red"></span>
 						        </label></td>
 							</tr>
-							</tr><tr>
+							<tr>
 						        <td colspan="3">運行において異常が認められた箇所はないか</td>
 						        <td>
 						        <label class="input-control radio small-check">
@@ -646,7 +660,7 @@
 						        <label class="input-control radio small-check">
 						            <input type="radio" name="n27">
 						            <span class="check"></span>
-						            <span class="mif-cross fg-red">
+						            <span class="mif-cross fg-red"></span>
 						        </label></td>
 							</tr>
                         </tbody>
@@ -657,6 +671,6 @@
                 </div>
             </div>
         </div>
-    </div>
+    
 </body>
 </html>
