@@ -208,7 +208,7 @@
             <div class="row" style="height: 100%">
                 <div class="cell auto-size padding20 bg-white" id="cell-content">
 					<ul class="breadcrumbs" style="padding:0px;">
-					    <li><h4><a href="#">請求書締め</a></h4></li>
+					    <li><h4><a href="#">請求一覧照会</a></h4></li>
 					</ul>
                     <hr class="thin bg-grayLighter">
                     
@@ -286,73 +286,49 @@
 		            </div>
 		            
                     <hr class="thin bg-grayLighter">
-					<div class="align-right">
-                    <button class="button success">選択データを締め</button>
-					</div>
-                    <table class="dataTable border bordered" data-role="datatable" data-auto-width="false">
+					
+                    <table class="dataTable border bordered" data-auto-width="false">
                         <thead>
                         <tr>
-                            <td style="width: 20px"></td>
                             <td class="sortable-column sort-asc">得意先コード</td>
-                            <td class="sortable-column">得意先</td>
-                            <td class="sortable-column">前回締日</td>
+                            <td class="sortable-column">得意先名</td>
+                            
                             <td class="sortable-column">請求金額</td>
-                            <td class="sortable-column">消費税</td>
-                            <td class="sortable-column">締め状況</td>
+                            <td class="sortable-column">入金予定日</td>
+                            <td class="sortable-column">支払方法</td>
+                            
                         </tr>
                         </thead>
                         <tbody>
                         <tr>
-                            <td>
-                                <label class="input-control checkbox small-check no-margin">
-                                    <input type="checkbox">
-                                    <span class="check"></span>
-                                </label>
-                            </td>
-                            <td>423</td><td>芙蓉産業　株式会社</td><td>2016/01/31</td><td>100,000</td><td>8,000</td>
-                            <td class="align-center">締済<span class="mif-checkmark fg-green"></span></td>
+                            
+                            <td>0423</td><td>芙蓉産業　株式会社</td><td>100,000</td><td>2016/01/01</td><td>掛け売り</td>
+                            
 						</tr>
                         <tr>
-                            <td>
-                                <label class="input-control checkbox small-check no-margin">
-                                    <input type="checkbox">
-                                    <span class="check"></span>
-                                </label>
-                            </td>
-                            <td>305</td><td>フジパスク株式会社</td><td>2016/01/31</td><td>200,000</td><td>16,000</td>
-                            <td class="align-center">締済<span class="mif-checkmark fg-green"></span></td>
+                            
+                            <td>0305</td><td>フジパスク株式会社</td><td>200,000</td><td>2016/01/01</td><td>現金決済</td>
+                            
 						</tr>
                         <tr>
-                            <td>
-                                <label class="input-control checkbox small-check no-margin">
-                                    <input type="checkbox">
-                                    <span class="check"></span>
-                                </label>
-                            </td>
-                            <td>617</td><td>（株）ｶｰﾚﾝﾄｻｰﾋﾞｽ横浜ﾛｼﾞｽﾃｨｸｽｾﾝﾀｰ</td><td>2016/01/31</td><td>300,000</td><td>24,000</td>
-                            <td class="align-center">締済<span class="mif-checkmark fg-green"></span></td>
+                            
+                            <td>0617</td><td>（株）ｶｰﾚﾝﾄｻｰﾋﾞｽ横浜ﾛｼﾞｽﾃｨｸｽｾﾝﾀｰ</td><td>300,000</td><td>2016/01/01</td><td>掛け売り</td>
+                            
 						</tr>
                         <tr>
-                            <td>
-                                <label class="input-control checkbox small-check no-margin">
-                                    <input type="checkbox">
-                                    <span class="check"></span>
-                                </label>
-                            </td>
-                            <td>545</td><td>株式会社ﾊﾞﾝﾃｯｸｾﾝﾄﾗﾙ平塚営業所</td><td>2016/01/31</td><td>400,000</td><td>32,000</td>
-                            <td class="align-center">未締<span class="mif-stop fg-red"></span></td>
+                            
+                            <td>0545</td><td>株式会社ﾊﾞﾝﾃｯｸｾﾝﾄﾗﾙ平塚営業所</td><td>400,000</td><td>2016/01/01</td><td>掛け売り</td>
+                            
 						</tr>
                         <tr>
-                            <td>
-                                <label class="input-control checkbox small-check no-margin">
-                                    <input type="checkbox">
-                                    <span class="check"></span>
-                                </label>
-                            </td>
-                            <td>556</td><td>ロジテムエージェンシー株式会社</td><td>2016/01/31</td><td>500,000</td><td>40,000</td>
-                            <td class="align-center">未締<span class="mif-stop fg-red"></span></td>
+                            
+                            <td>0556</td><td>ロジテムエージェンシー株式会社</td><td>500,000</td><td>2016/01/01</td><td>現金決済</td>
+                            
 						</tr>
-                        </tbody>            
+                        </tbody>    
+                        <tfoot>
+			                        <tr><td colspan="2">合計</td><td>1,500,000</td><td colspan="2"></td></tr>
+			                        </tfoot>        
                     </table>
                 </div>
             </div>
