@@ -67,19 +67,141 @@
             })
         })
     </script>
-    
-    <!-- ヘッダー固定 -->
-	<script type="text/javascript">
-        $(document).ready(function() {
-           $('#header-target').load('header.html');
-        });
-    </script>
-    
 </head>
 <body class="bg-steel">
-    
-    <!-- ヘッダー固定 -->
-    <div id="header-target"></div>
+    <div class="app-bar fixed-top darcula" data-role="appbar">
+        <a href="./home_notice.html" class="app-bar-element branding" style="background-color:#CEDBF2"><img style="width: 113px;" src="../img/logo.png" alt="ケー・アールライン"></a>
+        <span class="app-bar-divider"></span>
+        <ul class="app-bar-menu">
+            <li><a href="./home_notice.html">HOME</a></li>
+            <li>
+                <a href="" class="dropdown-toggle">点呼管理</a>
+                <ul class="d-menu" data-role="dropdown">
+                    <li><a href="./roll_call_add.html">
+                        <span class="mif-file-text icon"></span>
+                        <span class="title">点呼記録表入力</span>
+                    </a></li>
+                    <li><a href="./roll_call_list.html">
+                        <span class="mif-list-numbered icon"></span>
+                        <span class="title">【処理中】点呼記録表一覧</span>
+                    </a></li>
+                    <li><a href="./roll_call_search.html">
+                        <span class="mif-search icon"></span>
+                        <span class="title">点呼記録表検索</span>
+                    </a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="" class="dropdown-toggle">日常点検</a>
+                <ul class="d-menu" data-role="dropdown">
+                    <li><a href="./inspection_add.html">
+                        <span class="mif-file-text icon"></span>
+                        <span class="title">日常点検実施表入力</span>
+                    </a></li>
+                    <li><a href="./inspection_list.html">
+                        <span class="mif-list-numbered icon"></span>
+                        <span class="title">日常点検実施表一覧</span>
+                    </a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="" class="dropdown-toggle">運送日報</a>
+                <ul class="d-menu" data-role="dropdown">
+                    <li><a href="./driving_report_add.html">
+                        <span class="mif-file-text icon"></span>
+                        <span class="title">運送日報入力</span>
+                    </a></li>
+                    <li><a href="./driving_report_list.html">
+                        <span class="mif-list icon"></span>
+                        <span class="title">運送日報一覧</span>
+                    </a></li>
+                    <li><a href="./driving_report_search.html">
+                        <span class="mif-search icon"></span>
+                        <span class="title">運送日報検索</span>
+                    </a></li>
+                </ul>
+            </li>
+            <li class="active" style="background-color: #59cde2;">
+                <a href="" class="dropdown-toggle">請求書</a>
+                <ul class="d-menu" data-role="dropdown">
+                    <li><a href="./bill_list.html">
+                        <span class="mif-list icon"></span>
+                        <span class="title">未締めデータ一覧</span>
+                    </a></li>
+                    <li><a href="./bill_close.html">
+                        <span class="mif-checkmark icon"></span>
+                        <span class="title">請求書締め</span>
+                    </a></li>
+                    <li><a href="./bill_search.html">
+                        <span class="mif-search icon"></span>
+                        <span class="title">請求書検索</span>
+                    </a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="" class="dropdown-toggle">売上・経費</a>
+                <ul class="d-menu" data-role="dropdown">
+                    <li><a href="./salesCost_driver_daily.html">
+                        <span class="mif-chart-bars icon"></span>
+                        <span class="title">日次運転手別売上・経費</span>
+                    </a></li>
+                    <li><a href="./salesCost_truck_daily.html">
+                        <span class="mif-file-text icon"></span>
+                        <span class="title">日次車別売上・経費</span>
+                    </a></li>
+                    <li><a href="./salesCost_driver_monthly.html">
+                        <span class="mif-list icon"></span>
+                        <span class="title">月次運転手別売上・経費検索</span>
+                    </a></li>
+                    <li><a href="./cost_truck_monthly.html">
+                        <span class="mif-file-text icon"></span>
+                        <span class="title">月間車別経費</span>
+                    </a></li>
+<!--                    <li><a href="./salesCost_year.html">
+                        <span class="mif-chart-line icon"></span>
+                        <span class="title">年度別売上推移</span>
+                    </a></li>
+-->
+                    <li><a href="./sales_month.html">
+                        <span class="mif-file-text icon"></span>
+                        <span class="title">月次売上集計</span>
+                    </a></li>
+                    <li><a href="./sales_customer.html">
+                        <span class="mif-list icon"></span>
+                        <span class="title">得意先別売上集計</span>
+                    </a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="" class="dropdown-toggle">運行管理</a>
+                <ul class="d-menu" data-role="dropdown">
+                    <li><a href="./operationControl_bindingWorkHour.html">
+                        <span class="mif-user icon"></span>
+                        <span class="title">拘束・運転時間管理表</span>
+                    </a></li>
+                    <li><a href="./operationControl_car_fuelCost.html">
+                        <span class="mif-truck icon"></span>
+                        <span class="title">個車別燃費推移
+                    </a></li>
+                    <li><a href="./operationControl_car_status.html">
+                        <span class="mif-truck icon"></span>
+                        <span class="title">個車別走行距離</span>
+                    </a></li>
+                </ul>
+			</li>
+            <li><a href="./master_customer.html">マスター管理</a></li>
+        </ul>
+
+        <div class="app-bar-element place-right">
+            <span class="dropdown-toggle"><span class="mif-cog"></span> 管理者A</span>
+            <div class="app-bar-drop-container padding10 place-right no-margin-top block-shadow fg-dark" data-role="dropdown" data-no-close="true" style="width: 180px">
+                <ul class="unstyled-list fg-dark">
+                    <li><a href="" class="fg-white3 fg-hover-yellow">ログアウト</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
     <div class="page-content">
         <div class="flex-grid no-responsive-future" style="height: 100%;">
@@ -169,43 +291,39 @@
                         <thead>
                         <tr>
                             <td class="sortable-column sort-asc">得意先コード</td>
-                            <td class="sortable-column">得意先名</td>
+                            <td class="sortable-column">得意先名(略)</td>
                             
-                            <td class="sortable-column">請求金額</td>
+                            <td class="sortable-column">請求金額(円)</td>
                             <td class="sortable-column">入金予定日</td>
-                            <td class="sortable-column">支払方法</td>
+                            <td class="sortable-column">支払内容</td>
                             
                         </tr>
                         </thead>
                         <tbody>
                         <tr>
                             
-                            <td>0423</td><td>芙蓉産業　株式会社</td><td>100,000</td><td>2016/01/01</td><td>掛け売り</td>
+                            <td>0423</td><td>ユニキャリア</td><td style="text-align: right;">100,000</td><td>2016/01/01</td><td>20日締め翌々月10日現金支払100万円以上は原則手形又は半金半手</td>
                             
 						</tr>
                         <tr>
                             
-                            <td>0305</td><td>フジパスク株式会社</td><td>200,000</td><td>2016/01/01</td><td>現金決済</td>
+                            <td>0305</td><td>住友ナコマテリアルハンドリング</td><td style="text-align: right;">200,000</td><td>2016/01/01</td><td>20日締め翌々月10日現金支払100万円以上は原則手形又は半金半手</td>
                             
 						</tr>
                         <tr>
                             
-                            <td>0617</td><td>（株）ｶｰﾚﾝﾄｻｰﾋﾞｽ横浜ﾛｼﾞｽﾃｨｸｽｾﾝﾀｰ</td><td>300,000</td><td>2016/01/01</td><td>掛け売り</td>
+                            <td>0617</td><td>富士フォークリフト</td><td style="text-align: right;">300,000</td><td>2016/01/01</td><td>20日締め翌々月10日現金支払100万円以上は原則手形又は半金半手</td>
                             
 						</tr>
                         <tr>
                             
-                            <td>0545</td><td>株式会社ﾊﾞﾝﾃｯｸｾﾝﾄﾗﾙ平塚営業所</td><td>400,000</td><td>2016/01/01</td><td>掛け売り</td>
+                            <td>0545</td><td>東京小松フォークリフト</td><td style="text-align: right;">400,000</td><td>2016/01/01</td><td>20日締め翌々月10日現金支払100万円以上は原則手形又は半金半手</td>
                             
 						</tr>
-                        <tr>
-                            
-                            <td>0556</td><td>ロジテムエージェンシー株式会社</td><td>500,000</td><td>2016/01/01</td><td>現金決済</td>
-                            
-						</tr>
+                       
                         </tbody>    
                         <tfoot>
-			                        <tr><td colspan="2">合計</td><td>1,500,000</td><td colspan="2"></td></tr>
+			                        <tr><td colspan="2">合計</td><td style="text-align: right;">1,000,000</td><td colspan="2"></td></tr>
 			                        </tfoot>        
                     </table>
                 </div>

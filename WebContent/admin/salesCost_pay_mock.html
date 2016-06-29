@@ -47,10 +47,9 @@
 		
 		p.yoko2{
 		text-align:center;
-		width:300px;
+		width:330px;
 		margin:0px;
 		}
-
 
         @media screen and (max-width: 800px){
             #cell-sidebar {
@@ -62,10 +61,6 @@
         }
     </style>
 
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-
-
-    
     <script>
         function pushMessage(t){
             var mes = 'Info|Implement independently';
@@ -85,11 +80,6 @@
             })
         })
     </script>
-	<script>
-	    $(function(){
-	        $("#datepicker").datepicker();
-	    });
-	</script>
 </head>
 <body class="bg-steel">
     <div class="app-bar fixed-top darcula" data-role="appbar">
@@ -144,7 +134,7 @@
                     </a></li>
                 </ul>
             </li>
-            <li>
+            <li class="active" style="background-color: #59cde2;">
                 <a href="" class="dropdown-toggle">請求書</a>
                 <ul class="d-menu" data-role="dropdown">
                     <li><a href="./bill_list.html">
@@ -161,7 +151,8 @@
                     </a></li>
                 </ul>
             </li>
-            <li class="active" style="background-color: #59cde2;">
+
+            <li>
                 <a href="" class="dropdown-toggle">売上・経費</a>
                 <ul class="d-menu" data-role="dropdown">
                     <li><a href="./salesCost_driver_daily.html">
@@ -204,7 +195,7 @@
                     </a></li>
                     <li><a href="./operationControl_car_fuelCost.html">
                         <span class="mif-truck icon"></span>
-                        <span class="title">個車別燃費推移</span>
+                        <span class="title">個車別燃費推移
                     </a></li>
                     <li><a href="./operationControl_car_status.html">
                         <span class="mif-truck icon"></span>
@@ -227,16 +218,17 @@
 
     <div class="page-content">
         <div class="flex-grid no-responsive-future" style="height: 100%;">
-
             <div class="row" style="height: 100%">
                 <div class="cell auto-size padding20 bg-white" id="cell-content">
-                    <h4 class="text-light">ドライバー別売上</h4>
-
+					<ul class="breadcrumbs" style="padding:0px;">
+					    <li><h4><a href="#">委託先別支払一覧照会</a></h4></li>
+					</ul>
                     <hr class="thin bg-grayLighter">
+                    
 		            <div class="grid">
 		                <div class="row cells12">
 							<div class="cell colspan2">
-		                       対象年月
+		                      年
 		                        <div class="input-control select" style="width:50px;">
 		                            <select>
 		                            	<option>2015</option>
@@ -247,7 +239,7 @@
 		                                <option>2020</option>
 		                            </select>
 								</div>
-		                        年
+		                       月
 								<div class="input-control select" style="width:50px;">
 		                            <select>
 		                                <option>01</option>
@@ -264,24 +256,20 @@
 		                                <option>12</option>
 		                            </select>
 		                         </div>
-		                            月
-		                    </div>
-							<div class="cell colspan2">
-			                    <button class="button primary"><span class="mif-search"></span>検索</button>
-		                    </div>
+							</div>
+						<div class="cell colspan2">
+			                   <button class="button primary"><span class="mif-search"></span>検索</button>
+		                   </div>
 		                </div>
 		            </div>
+		            
                     <hr class="thin bg-grayLighter">
-		            <div class="grid">
-		                <div class="row cells12">
-							<div class="cell colspan5">
-			                    
-			                    
-			                    <table class="dataTable border bordered" data-auto-width="false">
+					
+                    <table class="dataTable border bordered" data-auto-width="false">
                         <thead>
                         <tr>
-                        	<td class="sortable-column" rowspan="2"><p class="yoko">社員番号</p></td>
-                            <td class="sortable-column" rowspan="2"><p class="yoko">氏名</p></td>
+                       		<td class="sortable-column" rowspan="2"><p class="yoko">委託先コード</p></td>
+                            <td class="sortable-column" rowspan="2"><p class="yoko2">委託先名</p></td>
                             <td class="sortable-column">2015/01</td>
                             <td class="sortable-column">2015/02</td>
                             <td class="sortable-column">2015/03</td>
@@ -300,46 +288,49 @@
                         </tr>
                         <tr>
                         	
-                            <td class="sortable-column"><p class="yoko">売上金額(円)</p></td>
-                            <td class="sortable-column"><p class="yoko">売上金額(円)</p></td>
-                            <td class="sortable-column"><p class="yoko">売上金額(円)</p></td>
-                            <td class="sortable-column"><p class="yoko">売上金額(円)</p></td>
-                            <td class="sortable-column"><p class="yoko">売上金額(円)</p></td>
-                            <td class="sortable-column"><p class="yoko">売上金額(円)</p></td>
-                            <td class="sortable-column"><p class="yoko">売上金額(円)</p></td>
-                            <td class="sortable-column"><p class="yoko">売上金額(円)</p></td>
-                            <td class="sortable-column"><p class="yoko">売上金額(円)</p></td>
-                            <td class="sortable-column"><p class="yoko">売上金額(円)</p></td>
-                            <td class="sortable-column"><p class="yoko">売上金額(円)</p></td>
-                            <td class="sortable-column"><p class="yoko">売上金額(円)</p></td>
+                            <td class="sortable-column"><p class="yoko">支払金額(円)</p></td>
+                            <td class="sortable-column"><p class="yoko">支払金額(円)</p></td>
+                            <td class="sortable-column"><p class="yoko">支払金額(円)</p></td>
+                            <td class="sortable-column"><p class="yoko">支払金額(円)</p></td>
+                            <td class="sortable-column"><p class="yoko">支払金額(円)</p></td>
+                            <td class="sortable-column"><p class="yoko">支払金額(円)</p></td>
+                            <td class="sortable-column"><p class="yoko">支払金額(円)</p></td>
+                            <td class="sortable-column"><p class="yoko">支払金額(円)</p></td>
+                            <td class="sortable-column"><p class="yoko">支払金額(円)</p></td>
+                            <td class="sortable-column"><p class="yoko">支払金額(円)</p></td>
+                            <td class="sortable-column"><p class="yoko">支払金額(円)</p></td>
+                            <td class="sortable-column"><p class="yoko">支払金額(円)</p></td>
+                            
                             
                         </tr>
                         </thead>
                         <tbody style="text-align: right;">
-                        <tr>
-                            <td style="text-align: left;">1111</td><td style="text-align: left;">平坂</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>3,900,000</td>
+                        <tr >
+                            
+                            <td style="text-align: center;">0001</td><td style="text-align: left;">クレベ運送</td><td>100,000</td><td>100,000</td><td>100,000</td><td>100,000</td><td>100,000</td><td>100,000</td><td>100,000</td><td>100,000</td><td>100,000</td><td>100,000</td><td>100,000</td><td>100,000</td><td>1,200,00</td>
+                            
 						</tr>
                         <tr>
-                            <td style="text-align: left;">2222</td><td style="text-align: left;">安藤</td><td>200,000</td><td>200,000</td><td>200,000</td><td>200,000</td><td>200,000</td><td>200,000</td><td>200,000</td><td>200,000</td><td>200,000</td><td>200,000</td><td>200,000</td><td>200,000</td><td>2,400,000</td>
+                            
+                            <td style="text-align: center;">0002</td><td style="text-align: left;">奥辰運輸</td><td>200,000</td><td>200,000</td><td>200,000</td><td>200,000</td><td>200,000</td><td>200,000</td><td>200,000</td><td>200,000</td><td>200,000</td><td>200,000</td><td>200,000</td><td>200,000</td><td>2,400,00</td>
+                            
 						</tr>
                         <tr>
-                            <td style="text-align: left;">3333</td><td style="text-align: left;">後藤</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>3,900,000</td>
+                            
+                            <td style="text-align: center;">0003</td><td style="text-align: left;">浦島サービス</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>3,900,00</td>
+                            
 						</tr>
                         <tr>
-                            <td style="text-align: left;">4444</td><td style="text-align: left;">浜野</td><td>400,000</td><td>400,000</td><td>400,000</td><td>400,000</td><td>400,000</td><td>400,000</td><td>400,000</td><td>400,000</td><td>400,000</td><td>400,000</td><td>400,000</td><td>400,000</td><td>4,800,000</td>
+                            
+                            <td style="text-align: center;">0004</td><td style="text-align: left;">七美</td><td>400,000</td><td>400,000</td><td>400,000</td><td>400,000</td><td>400,000</td><td>400,000</td><td>400,000</td><td>400,000</td><td>400,000</td><td>400,000</td><td>400,000</td><td>400,000</td><td>4,800,00</td>
+                            
 						</tr>
-                        <tr>
-                            <td style="text-align: left;">5555</td><td style="text-align: left;">北村</td><td>250,000</td><td>250,000</td><td>250,000</td><td>250,000</td><td>250,000</td><td>250,000</td><td>250,000</td><td>250,000</td><td>250,000</td><td>250,000</td><td>250,000</td><td>250,000</td><td>3,000,000</td>
-						</tr>
-                        </tbody>   
-                         
+                        
+                        </tbody>    
                         <tfoot>
-			                 <tr><td colspan="2" style="text-align: center;">合計</td><td>1,450,000</td><td>1,450,000</td><td>1,450,000</td><td>1,450,000</td><td>1,450,000</td><td>1,450,000</td><td>1,450,000</td><td>1,450,000</td><td>1,450,000</td><td>1,450,000</td><td>1,450,000</td><td>1,450,000</td><td>18,000,000</td>
-			            </tfoot>        
+			                        <tr><td colspan="2">合計</td><td>1,000,000</td><td>1,000,000</td><td>1,000,000</td><td>1,000,000</td><td>1,000,000</td><td>1,000,000</td><td>1,000,000</td><td>1,000,000</td><td>1,000,000</td><td>1,000,000</td><td>1,000,000</td><td>1,000,000</td><td>12,000,000</td>
+			                        </tfoot>        
                     </table>
-		                    </div>
-	                    </div>
-                    </div>
                 </div>
             </div>
         </div>
