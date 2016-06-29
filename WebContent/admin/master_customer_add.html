@@ -98,13 +98,13 @@
 		            <div class="grid">
 		                <div class="row cells12">
 							<div class="cell colspan1">
-		                        取引先コード
+		                        顧客コード
 		                        <div class="input-control text full-size">
 								    <input type="text">
 								</div>
 		                    </div>
 		                    <div class="cell colspan3">
-		                        <label>取引先名</label>
+		                        <label>顧客名</label>
 		                        <div class="input-control text full-size">
 		                            <input type="text">
 		                        </div>
@@ -124,7 +124,7 @@
 		                </div>
 		                <div class="row cells12">
 		                    <div class="cell colspan3">
-		                        <label>取引先略名</label>
+		                        <label>顧客略名</label>
 		                        <div class="input-control text full-size">
 		                            <input type="text">
 		                        </div>
@@ -201,8 +201,10 @@
 							<div class="cell colspan1">
 		                        締日
 								<div class="input-control text full-size">
-								    <input type="text" placeholder="31">
+									<input type="text" placeholder="31">
 								</div>
+								※来月は99と入力
+								
 		                    </div>
 							<div class="cell colspan7">
 		                        締日内容
@@ -211,21 +213,36 @@
 				                </div>
 		                    </div>
 	                    </div>
-
-		                <div class="row cells12">
+                        
+                        
+                        <div class="row cells12">
 							<div class="cell colspan1">
-		                        請求日
+		                        支払サイト
 								<div class="input-control text full-size">
-								    <input type="text" placeholder="31">
+									<select class="select" name="carType">
+                              　　　   <option value="">当月</option>
+				                      <option value="">翌月</option>
+				                      <option value="">翌々月</option>
+								  	  <option value="">--</option>
+								    </select>
+								</div>	
+		                    </div>
+							<div class="cell colspan1">
+							    日付
+	                            <div class="input-control text full-size">
+								    <input type="text">
 								</div>
 		                    </div>
-							<div class="cell colspan7">
+		                    <div class="cell colspan7">
 		                        支払内容
 				                <div class="input-control textarea full-size">
 				                    <textarea style="min-height:3rem;" placeholder="20日締め翌々月10日現金支払100万円以上は原則手形又は半金半手"></textarea>
 				                </div>
 		                    </div>
 	                    </div>
+                        
+	                    
+	                    
                     </div>
 	            </div>
             </div>

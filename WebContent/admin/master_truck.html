@@ -99,31 +99,54 @@
                 
                 <div class="cell auto-size padding20 bg-white" id="cell-content">
                     <ul class="breadcrumbs" style="padding:0px;">
-					    <li><h4><a href="#">車両一覧</a></h4></li>
+					    <li><h4><a href="#">車両一覧照会</a></h4></li>
 					</ul>
                     <hr class="thin bg-grayLighter">
 					<div class="align-right">
                     <button class="button primary" onclick="window.open('master_truck_add.html', '_self')"><span class="mif-plus"></span> 車両登録</button>
                     <button class="button alert" onclick="pushMessage('alert')">削除</button>
 					</div>
+					<label class="input-control checkbox small-check no-margin">
+                    	<input type="checkbox">
+                    	<span class="check"></span>シビヤ点検
+                    </label>
+                    <label class="input-control checkbox small-check no-margin">
+                    	<input type="checkbox">
+                    	<span class="check"></span>三カ月点検
+                    </label>
+                    <label class="input-control checkbox small-check no-margin">
+                    	<input type="checkbox">
+                    	<span class="check"></span>車検
+                    </label>
+                    <label class="input-control checkbox small-check no-margin">
+                    	<input type="checkbox">
+                    	<span class="check"></span>オイル交換
+                    </label>
+                    <button class="" onclick="('')">絞込</button>
+                    
                     <hr class="thin bg-grayLighter">
-                    <table class="dataTable border bordered" data-role="datatable" data-auto-width="false">
+                    <table class="dataTable border bordered" data-auto-width="false">
                         <thead>
                         <tr>
-                            <td style="width: 20px">
-                            </td>
-                            <td class="sortable-column sort-asc">車番</td>
-                            <td class="sortable-column">管理番号</td>
-                            <td class="sortable-column">車種</td>
-                            <td class="sortable-column">型式</td>
-                            <td class="sortable-column">登録年月日</td>
-                            <td class="sortable-column">走行距離</td>
-                            <td class="sortable-column">直近3カ月点検日</td>
-                            <td class="sortable-column">拠点</td>
-                            <td class="sortable-column">自賠責保険番号</td>
-                            <td class="sortable-column">任意保険番号</td>
-                            <td class="sortable-column">詳細</td>
+                            <td rowspan="2" style="width: 20px"></td>
+                            <td rowspan="2" class="sortable-column">車番</td>
+                            <td rowspan="2" class="sortable-column">車種</td>
+                            <td rowspan="2" class="sortable-column">拠点</td>
+                            <td rowspan="2" class="sortable-column">走行距離km</td>
+                            <td colspan="3" class="sortable-column">次回実施予定日</td>
+                            <td colspan="3" class="sortable-column">次回残距離km</td>
+                            <td rowspan="2" class="sortable-column">詳細</td>
                         </tr>
+                        
+                        <tr>
+                            <td class="sortable-column">シビア点検</td>
+                            <td class="sortable-column">三カ月点検</td>
+                            <td class="sortable-column">車検</td>
+                            <td class="sortable-column">タイヤ交換</td>
+                            <td class="sortable-column">タイヤローテーション</td>
+                            <td class="sortable-column">オイル交換</td>
+                        </tr>
+                         
                         </thead>
                         <tbody>
                         <tr>
@@ -133,18 +156,19 @@
                                     <span class="check"></span>
                                 </label>
                             </td>
-                            <td>A111</td>
-                            <td>K001</td>
-                            <td>大型</td>
-                            <td>15tウイング</td>
-                            <td>2015/12/1</td>
-                            <td>50000km</td>
-                            <td>2016/09/01</td>
+                            <td>9999</td>
+                            <td>大型10t</td>
                             <td>神奈川</td>
-                            <td><a href="../img/sample_hoken01.jpg" target="_blank">GL6555411-31</a></td>
-                            <td><a href="../img/sample_hoken01.jpg" target="_blank">N123456-11</a></td>
+                            <td>999,999</td>
+                            <td>99/99/99</td>
+                            <td>99/99/99</td>
+                            <td>99/99/99</td>
+                            <td>999,999</td>
+                            <td>999,999</td>
+                            <td>999,999</td>
                             <td><a href="master_truck_add.html" target="_self">詳細</a></td>
                         </tr>
+                        <!-- 
                         <tr>
                             <td>
                                 <label class="input-control checkbox small-check no-margin">
@@ -183,6 +207,7 @@
                             <td><a href="../img/sample_hoken01.jpg" target="_blank">N123456-13</a></td>
                             <td><a href="master_truck_add.html" target="_self">詳細</a></td>
                         </tr>
+                         -->
                         </tbody>
                     </table>
                 </div>
