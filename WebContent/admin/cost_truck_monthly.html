@@ -93,7 +93,7 @@
                 <div class="cell auto-size padding20 bg-white" id="cell-content">
 					<ul class="breadcrumbs" style="padding:0px;">
 					    <li><a href="#">日常点検実施表一覧</a></li>
-					    <li><h4 class="text-light"><a href="#">日常点検実施表入力</a></h4></li>
+					    <li><h4 class="text-light"><a href="#">車両別固定費・変動費・諸経費入力</a></h4></li>
 					</ul>
 
                     <hr class="thin bg-grayLighter">
@@ -129,7 +129,7 @@
 		                         </div>
 		                            月
 		                    </div>
-							<div class="cell colspan5">
+							<div class="cell colspan4">
 			                    <button class="button primary"><span class="mif-search"></span> 検索</button>
 			                    <button class="button primary" style="margin:2px 0px 0px 30px;"><span class="mif-folder-download"></span> 前月データコピー</button>
 		                    </div>
@@ -139,7 +139,7 @@
                     <hr class="thin bg-grayLighter">
 		            <div class="grid">
 		                <div class="row cells12">
-							<div class="cell colspan5">
+							<div class="cell colspan10">
 		                        車番
 		                        <div class="input-control select" style="width:100px;" >
 		                            <select>
@@ -148,7 +148,7 @@
 		                                <option>5468</option>
 		                            </select>
 		                        </div>
-		                        <button class="button primary" onclick="pushMessage('info')" style="margin:0px 0px 0px 50px;"><span class="mif-plus"></span> 保存</button>
+		                        <button class="button primary" onclick="pushMessage('info')" style="margin:0px 0px 0px 53px;"><span class="mif-plus"></span> 保存</button>
 		                    </div>
 	                    </div>
                     </div>
@@ -163,68 +163,68 @@
                         <tbody style="text-align: right;">
                         <tr>
                             <td style="width:20%;text-align: center;"rowspan="6">車両費</td>
-                            <td style="text-align: left;">(1)減価償却費</td><td>32,638</td>
+                            <td style="text-align: left;">(1) 減価償却費</td><td>32,638</td>
 						</tr>
                         <tr>
-                            <td style="text-align: left;">(2)金融費用</td><td>2,083</td>
+                            <td style="text-align: left;">(2) 金融費用</td><td>2,083</td>
 						</tr>
                         <tr>
-                            <td style="text-align: left;">(3)自動車取得税</td><td>1,041</td>
+                            <td style="text-align: left;">(3) 自動車取得税</td><td>1,041</td>
 						</tr>
                         <tr>
-                            <td style="text-align: left;">(4)自動車税</td><td>958</td>
+                            <td style="text-align: left;">(4) 自動車税</td><td>958</td>
 						</tr>
                         <tr>
-                            <td style="text-align: left;">(5)自動車重量税</td><td>683</td>
+                            <td style="text-align: left;">(5) 自動車重量税</td><td>683</td>
 						</tr>
 						 <tr>
-                            <td style="text-align: left;">車両費の合計</td><td>37,403</td>
+                            <td style="text-align: left; border-top:double;border-bottom:double;">車両費の合計</td><td style="border-top:double;border-bottom:double;">37,403</td>
 						</tr>
 						<tr>
                             <td style="width:20%;text-align: center;" rowspan="4">保険費</td>
-                            <td style="text-align: left;">(1)自賠責保険</td><td>2,280</td>
+                            <td style="text-align: left;">(1) 自賠責保険</td><td>2,280</td>
 						</tr>
                         <tr>
-                            <td style="text-align: left;">(2)任意保険(事故・車両)</td><td>4,166</td>
+                            <td style="text-align: left;">(2) 任意保険(事故・車両)</td><td>4,166</td>
 						</tr>
                         <tr>
-                            <td style="text-align: left;">(3)その他運送業総合保険等</td><td>2,500</td>
+                            <td style="text-align: left;">(3) その他運送業総合保険等</td><td>2,500</td>
 						</tr>
                         <tr>
-                            <td style="text-align: left;">保険費の合計</td><td>8,946</td>
+                            <td style="text-align: left;border-top:double;border-bottom:double;">保険費の合計</td><td style="border-top:double;border-bottom:double;">8,946</td>
 						</tr>
 						<tr>
                             <td style="width:20%;text-align: center;"rowspan="6">運行費</td>
-                            <td style="text-align: left;">(1)燃料単価(ℓ)</td><td>437,500</td>
+                            <td style="text-align: left;">(1) 燃料単価(ℓ)</td><td>437,500</td>
 						</tr>
                         <tr>
-                            <td style="text-align: left;">(2)油脂費</td><td>12,600</td>
+                            <td style="text-align: left;">(2) 油脂費</td><td>12,600</td>
 						</tr>
                         <tr>
-                            <td style="text-align: left;">(3)修理費・車検整備費</td><td>8,333</td>
+                            <td style="text-align: left;">(3) 修理費・車検整備費</td><td>8,333</td>
 						</tr>
                         <tr>
-                            <td style="text-align: left;">(4)修理費・一般修理費</td><td>17,500</td>
+                            <td style="text-align: left;">(4) 修理費・一般修理費</td><td>17,500</td>
 						</tr>
                         <tr>
-                            <td style="text-align: left;">(5)タイヤチューブ費</td><td>22,400</td> 
+                            <td style="text-align: left;">(5) タイヤチューブ費</td><td>22,400</td> 
 						</tr>
 						<tr>
-                            <td style="text-align: left;">運行費の合計</td><td>498,333</td> 
+                            <td style="text-align: left;border-top:double;border-bottom:double;">運行費の合計</td><td style="border-top:double;border-bottom:double;">498,333</td> 
 						</tr>
 						
 						<tr>
                             <td style="width:20%;text-align: center;"rowspan="4">人件費</td>
-                            <td style="text-align: left;">(1)ドライバー人件費</td><td>292,600</td>
+                            <td style="text-align: left;">(1) ドライバー人件費</td><td>292,600</td>
 						</tr>
                         <tr>
-                            <td style="text-align: left;">(2)時間外手当</td><td>50,000</td>
+                            <td style="text-align: left;">(2) 時間外手当</td><td>50,000</td>
 						</tr>
                         <tr>
-                            <td style="text-align: left;">(3)退職金引当金</td><td>2,916</td>
+                            <td style="text-align: left;">(3) 退職金引当金</td><td>2,916</td>
 						</tr>
                         <tr>
-                            <td style="text-align: left;">人件費の合計</td><td>345,516</td>
+                            <td style="text-align: left;border-top:double;border-bottom:double;">人件費の合計</td><td style="border-top:double;border-bottom:double;">345,516</td>
 						</tr>
 						<tr>
                             <td style="text-align: left;" colspan="2">運送料(高速道路利用料他)</td>
