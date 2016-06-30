@@ -19,6 +19,21 @@
             <!-- HOME -->
             <li><a href="./home_notice.html">HOME</a></li>
             
+            <!-- 配車管理 -->
+            <li>
+                <a href="" class="dropdown-toggle">配車管理</a>
+                <ul class="d-menu" data-role="dropdown">
+                    <li><a href="./mock_unsou.html">
+                        <span class="mif-file-text icon"></span>
+                        <span class="title">配車表入力</span>
+                    </a></li>
+                    <li><a href="#">
+                        <span class="mif-list-numbered icon"></span>
+                        <span class="title">配車表一覧表PDF入力(提出用)</span>
+                    </a></li>
+                </ul>
+            </li>
+            
             <!-- 点呼管理 -->
             <li>
                 <a href="" class="dropdown-toggle">点呼管理</a>
@@ -29,13 +44,9 @@
                     </a></li>
                     <li><a href="./roll_call_list.html">
                         <span class="mif-list-numbered icon"></span>
-                        <span class="title">【処理中】点呼記録表一覧</span>
+                        <span class="title">点呼記録表一覧PDF出力(提出用)</span>
                     </a></li>
-                    <li><a href="./roll_call_search.html">
-                        <span class="mif-search icon"></span>
-                        <span class="title">点呼記録表検索</span>
-                    </a></li>
-                </ul>
+                    </ul>
             </li>
             
             <!-- 日常点検 -->
@@ -48,14 +59,14 @@
                     </a></li>
                     <li><a href="./inspection_list.html">
                         <span class="mif-list-numbered icon"></span>
-                        <span class="title">日常点検実施表一覧</span>
+                        <span class="title">日常点検実施表検索一覧照会</span>
                     </a></li>
                 </ul>
             </li>
             
-            <!-- 運送日報 -->
+            <!-- 運送日報報管理 -->
             <li>
-                <a href="" class="dropdown-toggle">運送日報</a>
+                <a href="" class="dropdown-toggle">運送日報管理</a>
                 <ul class="d-menu" data-role="dropdown">
                     <li><a href="./driving_report_add.html">
                         <span class="mif-file-text icon"></span>
@@ -63,101 +74,134 @@
                     </a></li>
                     <li><a href="./driving_report_list.html">
                         <span class="mif-list icon"></span>
-                        <span class="title">運送日報一覧</span>
+                        <span class="title">運送日報検索一覧照会</span>
                     </a></li>
-                    <li><a href="./driving_report_search.html">
-                        <span class="mif-search icon"></span>
-                        <span class="title">運送日報検索</span>
-                    </a></li>
-                </ul>
+                    </ul>
             </li>
             
-            <!-- 請求書 -->
+            <!-- 経費 -->
             <li>
-                <a href="" class="dropdown-toggle">請求書</a>
-                <ul class="d-menu" data-role="dropdown">
-                    <li><a href="./bill_list.html">
-                        <span class="mif-list icon"></span>
-                        <span class="title">未締めデータ一覧</span>
-                    </a></li>
-                    <li><a href="./bill_close.html">
-                        <span class="mif-checkmark icon"></span>
-                        <span class="title">請求書締め</span>
-                    </a></li>
-                    <li><a href="./bill_search.html">
-                        <span class="mif-search icon"></span>
-                        <span class="title">請求書検索</span>
-                    </a></li>
-                </ul>
-            </li>
-            
-            <!-- 売上経費 -->
-            <li>
-                <a href="" class="dropdown-toggle">売上・経費</a>
+                <a href="" class="dropdown-toggle">経費</a>
                 <ul class="d-menu" data-role="dropdown">
                     <li><a href="./salesCost_driver_daily.html">
                         <span class="mif-chart-bars icon"></span>
-                        <span class="title">日次運転手別売上・経費</span>
+                        <span class="title">ドライバー別売上一覧照会</span>
                     </a></li>
-                    <li><a href="./salesCost_truck_daily.html">
-                        <span class="mif-file-text icon"></span>
-                        <span class="title">日次車別売上・経費</span>
-                    </a></li>
-                    <li><a href="./salesCost_driver_monthly.html">
+                    <li><a href="./bill_list.html">
                         <span class="mif-list icon"></span>
-                        <span class="title">月次運転手別売上・経費検索</span>
+                        <span class="title">得意先別請求一覧照会</span>
+                    </a></li>
+                    <li><a href="./bill_close.html">
+                        <span class="mif-checkmark icon"></span>
+                        <span class="title">請求書締め処理</span>
+                    </a></li>
+                    <li><a href="#">
+                        <span class="mif-search icon"></span>
+                        <span class="title">請求書PDF出力</span>
+                    </a></li>
+                    <li><a href="./salesCost_sales_mock.html">
+                        <span class="mif-search icon"></span>
+                        <span class="title">得意先別売上一覧照会</span>
+                    </a></li>
+                    <li><a href="./salesCost_pay_mock.html">
+                        <span class="mif-search icon"></span>
+                        <span class="title">委託先別支払一覧照会</span>
                     </a></li>
                     <li><a href="./cost_truck_monthly.html">
                         <span class="mif-file-text icon"></span>
-                        <span class="title">月間車別経費</span>
+                        <span class="title">車両別固定費・変動費・諸経費入力</span>
                     </a></li>
-                    
-<!--                    <li><a href="./salesCost_year.html">
-                        <span class="mif-chart-line icon"></span>
-                        <span class="title">年度別売上推移</span>
+                    <li><a href="./salesCost_driver_monthly.html">
+                        <span class="mif-list icon"></span>
+                        <span class="title">車両別・委託先別売上経費照会</span>
                     </a></li>
--->
                     <li><a href="./sales_month.html">
                         <span class="mif-file-text icon"></span>
-                        <span class="title">月次売上集計</span>
+                        <span class="title">売上締め処理</span>
                     </a></li>
-                    <li><a href="./sales_customer.html">
-                        <span class="mif-list icon"></span>
-                        <span class="title">得意先別売上集計</span>
+                   
+                </ul>
+            </li>
+            
+            <!-- 運行管理 -->
+            <li>
+                <a href="" class="dropdown-toggle">運行管理</a>
+                <ul class="d-menu" data-role="dropdown">
+                    <li><a href="#">
+                        <span class=""></span>
+                        <span class="title">ドライバー別拘束・運転時間管理一覧照会</span>
+                    </a></li>
+                    <li><a href="#">
+                        <span class=""></span>
+                        <span class="title">月別個車燃費推移一覧照会</span>
+                    </a></li>
+                    <li><a href="./driver_mock.html">
+                        <span class=""></span>
+                        <span class="title">年次ドライバー別実車・空車・総走行距離一覧照会</span>
                     </a></li>
                 </ul>
             </li>
             
-            <!-- マスター管理 -->
+			<!-- マスター管理 -->
             <li>
                 <a href="" class="dropdown-toggle">マスター管理</a>
                 <ul class="d-menu" data-role="dropdown">
-                        <li><a href="./master_customer.html">
+                        <li><a href="./master_root.html">
                             <span class="mif-location icon"></span>
-                            <span class="title">取引先</span>
+                            <span class="title">定期便(運行コース)登録</span>
+                        </a></li>
+                        <li><a href="./master_truck_add.html">
+                            <span class="mif-location icon"></span>
+                            <span class="title">車両登録</span>
                         </a></li>
                         <li><a href="./master_truck.html">
                             <span class="mif-truck icon"></span>
-                            <span class="title">車両</span>
+                            <span class="title">車両一覧照会</span>
+                        </a></li>
+                        <li><a href="#">
+                            <span class="mif-location icon"></span>
+                            <span class="title">車両台帳PDF出力</span>
+                        </a></li>
+                        <li><a href="./master_user_add.html">
+                            <span class="mif-users icon"></span>
+                            <span class="title">社員・権限登録</span>
                         </a></li>
                         <li><a href="./master_user.html">
                             <span class="mif-users icon"></span>
-                            <span class="title">社員</span>
+                            <span class="title">社員検索一覧照会</span>
+                        </a></li>
+                        <li><a href="#">
+                            <span class="mif-location icon"></span>
+                            <span class="title">運転者台帳PDF出力</span>
+                        </a></li>
+                        <li><a href="./master_customer_add.html">
+                            <span class="mif-location icon"></span>
+                            <span class="title">得意先登録</span>
+                        </a></li>
+                       <li><a href="#">
+                            <span class="mif-location icon"></span>
+                            <span class="title">得意先検索一覧照会</span>
+                        </a></li>
+                        <li><a href="#">
+                            <span class="mif-database icon"></span>
+                            <span class="title">委託先(外注)</span>
+                        </a></li>
+                        <li><a href="#">
+                            <span class="mif-database icon"></span>
+                            <span class="title">委託先検索一覧照会</span>
                         </a></li>
                         <li><a href="./master_fuelPrise.html">
                             <span class="mif-money icon"></span>
-                            <span class="title">燃料単価</span>
+                            <span class="title">月別燃料単価</span>
                         </a></li>
-                        <li><a href="./master_company_info.html">
-                            <span class="mif-database icon"></span>
-                            <span class="title">自社情報</span>
-                        </a></li>
-                        <li><a href="./master_base_data.html">
-                            <span class="mif-apps icon"></span>
-                            <span class="title">基本データ</span>
+                        <li><a href="#">
+                            <span></span>
+                            <span class="title">祝日定義</span>
                         </a></li>
                 </ul>
 			</li>
+			
+			
         </ul>
         
         <!-- 管理者 -->

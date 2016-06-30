@@ -37,6 +37,16 @@
             min-height: 0;
             height: auto;
         }
+        
+        input.checkbox {
+            width: 24px;
+            height: 24px;
+        }
+        
+         .size {
+             font-size: 18px;
+             margin: 0px 0 15px 0px; 
+         }
 
         @media screen and (max-width: 800px){
             #cell-sidebar {
@@ -97,7 +107,6 @@
             <div class="row" style="height: 1120px;">
                                <div class="cell auto-size padding20 bg-white" id="cell-content">
 					<ul class="breadcrumbs" style="padding:0px;">
-						<li><a href="master_truck.html">車両一覧</a></li>
 						<li><h4 class="text-light"><a href="#">車両登録</a></h4></li>
 					</ul>
                     <hr class="thin bg-grayLighter">
@@ -165,10 +174,13 @@
 								</div>
 							</div>
 							<div class="cell colspan3">
-	                            エンジンオイル交換目安(KM)
-	                            <div class="input-control text full-size">
-								    <input type="text" placeholder="20000">
-				                </div>
+	                            定期更使用車
+	                            <div class="checkbox">
+		                          <label class="input-control checkbox small-check no-margin">
+                                    <input type="checkbox" class="checkbox">
+                                    <span class="check"></span>
+                                  </label>
+                                </div>
 		                    </div>
 	                    </div>
 
@@ -212,6 +224,7 @@
 								    <input type="file">
 								    <button class="button"><span class="mif-folder"></span></button>
 								</div>
+								<button class="" onclick="('')">ダウンロード</button>
 		                    </div>
 							<div class="cell colspan2">
 		                        任意保険番号
@@ -225,9 +238,77 @@
 								    <input type="file">
 								    <button class="button"><span class="mif-folder"></span></button>
 								</div>
+								<button class="" onclick="('')">ダウンロード</button>
 		                    </div>
 		                </div>
 			        </div>
+			        
+			        <div class="example" data-text="メンテナンス情報">
+			            <div class="grid" style="font-size:13px;">
+			                <div class="row cells12">
+								<div class="cell colspan2">
+			                        車検有効日
+		                            <div class="input-control text full-size" style="width:90px;">
+									    <input type="text">
+									</div>
+			                    </div>
+								<div class="cell colspan2">
+		                            車検時走行距離
+		                            <div class="input-control text full-size">
+									    <input type="text">
+									</div>
+								</div>
+								<div class="cell colspan3">
+			                        タイヤローテンション時走行距離
+		                            <div class="input-control text full-size">
+									    <input type="text">
+									</div>
+								</div>
+								<div class="cell colspan3">
+		                            エンジンオイル交換時走行距離
+		                            <div class="input-control text full-size">
+									    <input type="text">
+									</div>
+								</div>
+								
+		                    </div>
+		                    
+			              <div class="size">
+			              タイヤ交換時走行距離
+			              </div>
+			              <div class="row cells12">
+							<div class="cell colspan2">
+		                        タイヤサイズ(1軸目)
+	                            <div class="input-control text full-size">
+								    <input type="text">
+								</div>
+		                    </div>
+							<div class="cell colspan2">
+		                        タイヤサイズ(2軸目)
+	                            <div class="input-control text full-size">
+								    <input type="text">
+								</div>
+		                    </div>
+							<div class="cell colspan2">
+		                        タイヤサイズ(3軸目)
+	                            <div class="input-control text full-size">
+								    <input type="text">
+								</div>
+		                    </div>
+							<div class="cell colspan2">
+		                        タイヤサイズ(4軸目)
+	                            <div class="input-control text full-size">
+								    <input type="text">
+								</div>
+		                    </div>
+	                    </div>
+			               
+
+
+			               
+				        </div>
+	                </div>
+			        
 
 					<div class="example" data-text="車検証情報">
 			            <div class="grid" style="font-size:13px;">

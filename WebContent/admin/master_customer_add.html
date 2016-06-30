@@ -79,14 +79,26 @@
             })
         })
     </script>
+    
+    <!-- ヘッダー固定 -->
+	<script type="text/javascript">
+        $(document).ready(function() {
+           $('#header-target').load('header.html');
+        });
+    </script>
+    
 </head>
 <body>
-        <div class="flex-grid no-responsive-future" style="height: 100%;">
-            <div class="row" style="height: 100%">
-                <!-- 取引先登録 -->
-                <div id="addCar" class="padding20" data-close-button="true">
+
+<!-- ヘッダー固定 -->
+    <div id="header-target"></div>
+    
+        <div class="page-content">
+        <div class="flex-grid no-responsive-future">
+           <div class="row">
+                <div class="cell auto-size padding20 bg-white" id="cell-content">
 	                <ul class="breadcrumbs" style="padding:0px;">
-					    <li><h4><a href="#">取引先登録</a></h4></li>
+					    <li><h4><a href="#">得意先登録</a></h4></li>
 					</ul>
 	                <hr class="thin bg-grayLighter">
 					<div class="align-right">
@@ -242,7 +254,7 @@
 	                    </div>
                         
 	                    
-	                    
+	                    </div>
                     </div>
 	            </div>
             </div>
