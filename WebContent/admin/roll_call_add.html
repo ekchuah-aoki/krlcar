@@ -43,6 +43,10 @@
             min-height: 0;
             height: auto;
         }
+        
+        .checklist {
+            font-size: 1em;
+        }
 
         @media screen and (max-width: 800px){
             #cell-sidebar {
@@ -54,8 +58,38 @@
         }
         
     </style>
-
+    
+    <!-- ポップアップ -->
+	<script>
+        function showDialog(id) {
+            var dialog = $(id).data('dialog');
+            dialog.open();
+        }
+    </script>
+	
+	<!-- ヘッダー固定 -->
+	<script>
+        $(document).ready(function() {
+           $('#header-target').load('header.html');
+        });
+    </script>
+    
+    <!-- セレクトボックス -->
     <script>
+    　　　//var event = document.getElementById('team_name');
+    　　　//console.log("event");
+        <!--$(".select_form").( function(){
+    	    var val = $(".select_form").val();
+    	    console.log("12345")
+    	    <!--if(val==3){
+    		    $('<p>追加されました</p>').insertAfter('select');
+    		    }-->
+    	    //});
+/*         function kakunin(){
+        	console.log("12345")
+        	  
+        	} */
+        
         function pushMessage(t){
             var mes = 'Info|Implement independently';
             $.Notify({
@@ -64,29 +98,19 @@
                 type: t
             });
         }
-
-        $(function(){
-            $('.sidebar').on('click', 'li', function(){
-                if (!$(this).hasClass('active')) {
-                    $('.sidebar li').removeClass('active');
-                    $(this).addClass('active');
-                }
-            })
-        })
     </script>
-	<script>
-	    $(function(){
-	        $("#datepicker").datepicker();
-	    });
-	</script>
-	
-	<!-- ヘッダー固定 -->
-	<script type="text/javascript">
-        $(document).ready(function() {
-           $('#header-target').load('header.html');
-        });
-    </script>
-        
+    <script>
+$('#delete').click(function(){
+    if(!confirm('本当に削除しますか？')){
+        /* キャンセルの時の処理 */
+        return false;
+    }else{
+        /*　OKの時の処理 */
+        location.href = 'index.html';
+    }
+});
+</script>
+    
 </head>
 <body class="bg-steel">
 
@@ -129,6 +153,20 @@
 		                            </select>
 		                        </div>
 								</div>
+								<div class="input-control text">本支店
+		                        <div class="input-control select" style="width:70px;">
+		                            <select>
+		                                <option></option>
+		                                <option>本社</option>
+		                                <option>大阪</option>
+		                                <option>名古屋</option>
+		                            </select>
+		                        </div>
+								</div>
+								
+								<!-- ポップアップ -->
+								<div data-role="dialog" id="checklist" data-close-button="true" data-content='<iframe src="checklist.html"></iframe>' data-width="900" data-content-type="video"></div>
+									
 		                    </div>
                     <hr class="thin bg-grayLighter">
                     
@@ -163,7 +201,7 @@
                         	<td>HA-110</td>
                         	<td>20:45</td>
                         	<td>安藤 (5345)<br>080-4444-8888</td>
-                        	<td style="color:green">1H前</td>
+                        	<td>1H前</td>
                             <td>
 		                        <label class="input-control radio small-check">
 		                            <input type="radio" name="th01">
@@ -188,16 +226,20 @@
 		                        </label>
 							</td>
                             <td>
-			                        <label class="input-control radio small-check">
-			                            <input type="radio" name="confirm_1">
-			                            <span class="check"></span>
-			                            <span class="mif-checkmark fg-green"></span>
-			                        </label>
-			                        <label class="input-control radio small-check">
-			                            <input type="radio" name="confirm_1">
-			                            <span class="check"></span>
-			                            <span class="mif-cross fg-red"></span>
-			                        </label>
+		                        <label class="input-control radio small-check">
+		                            <input type="radio" name="confirm_1">
+		                            <span class="check"></span>
+		                            <span class="mif-checkmark fg-green"></span>
+		                        </label>
+		                        <label class="input-control radio small-check">
+		                            <input type="radio" name="confirm_1">
+		                            <span class="check"></span>
+		                            <span class="mif-cross fg-red"></span>
+		                        </label>
+		                        
+			                    <!-- ポップアップ -->
+					            <div class="checklist"><a href="javascript:showDialog('#checklist')" target="_blank">確認事項</a></div>
+		                       
 							</td>
                             <td>
 							    <input type="text" style="width:30px;">:<input type="text" style="width:30px;">
@@ -221,7 +263,7 @@
                         	<td>HA-110</td>
                         	<td>20:45</td>
                         	<td>安藤 (5345)<br>080-4444-8888</td>
-                        	<td style="color:green">業務前</td>
+                        	<td>業務前</td>
                             <td>
 		                        <label class="input-control radio small-check">
 		                            <input type="radio" name="th01">
@@ -246,16 +288,19 @@
 		                        </label>
 							</td>
                             <td>
-			                        <label class="input-control radio small-check">
-			                            <input type="radio" name="confirm_1">
-			                            <span class="check"></span>
-			                            <span class="mif-checkmark fg-green"></span>
-			                        </label>
-			                        <label class="input-control radio small-check">
-			                            <input type="radio" name="confirm_1">
-			                            <span class="check"></span>
-			                            <span class="mif-cross fg-red"></span>
-			                        </label>
+		                        <label class="input-control radio small-check">
+		                            <input type="radio" name="confirm_1">
+		                            <span class="check"></span>
+		                            <span class="mif-checkmark fg-green"></span>
+		                        </label>
+		                        <label class="input-control radio small-check">
+		                            <input type="radio" name="confirm_1">
+		                            <span class="check"></span>
+		                            <span class="mif-cross fg-red"></span>
+		                        </label>
+		                        <!-- ポップアップ -->
+				                <div class="checklist"><a href="javascript:showDialog('#checklist')" target="_blank">確認事項</a></div>
+		                       
 							</td>
                             <td>
 							    <input type="text" style="width:30px;">:<input type="text" style="width:30px;">
@@ -305,17 +350,20 @@
 		                        </label>
 							</td>
                             <td>
-			                        <label class="input-control radio small-check">
-			                            <input type="radio" name="confirm_3" >
-			                            <span class="check"></span>
-			                            <span class="mif-checkmark fg-green"></span>
-			                        </label>
-			                        <label class="input-control radio small-check">
-			                            <input type="radio" name="confirm_3">
-			                            <span class="check"></span>
-			                            <span class="mif-cross fg-red"></span>
-			                        </label>
-							</td>
+		                        <label class="input-control radio small-check">
+		                            <input type="radio" name="confirm_3" >
+		                            <span class="check"></span>
+		                            <span class="mif-checkmark fg-green"></span>
+		                        </label>
+		                        <label class="input-control radio small-check">
+		                            <input type="radio" name="confirm_3">
+		                            <span class="check"></span>
+		                            <span class="mif-cross fg-red"></span>
+		                        </label>
+		                        
+		                        <!-- ポップアップ -->
+				                <div class="checklist"><a href="javascript:showDialog('#checklist')" target="_blank">確認事項</a></div>
+		                    </td>
                             <td>
 							    <input type="text" style="width:30px;">:<input type="text" style="width:30px;">
 							</td>
@@ -364,16 +412,18 @@
 		                        </label>
 							</td>
                             <td>
-			                        <label class="input-control radio small-check">
-			                            <input type="radio" name="confirm_4" >
-			                            <span class="check"></span>
-			                            <span class="mif-checkmark fg-green"></span>
-			                        </label>
-			                        <label class="input-control radio small-check">
-			                            <input type="radio" name="confirm_4">
-			                            <span class="check"></span>
-			                            <span class="mif-cross fg-red"></span>
-			                        </label>
+		                        <label class="input-control radio small-check">
+		                            <input type="radio" name="confirm_4" >
+		                            <span class="check"></span>
+		                            <span class="mif-checkmark fg-green"></span>
+		                        </label>
+		                        <label class="input-control radio small-check">
+		                            <input type="radio" name="confirm_4">
+		                            <span class="check"></span>
+		                            <span class="mif-cross fg-red"></span>
+		                        </label>
+		                        <!-- ポップアップ -->
+			                    <div class="checklist"><a href="javascript:showDialog('#checklist')" target="_blank">確認事項</a></div>
 							</td>
                             <td>
 							    <input type="text" style="width:30px;">:<input type="text" style="width:30px;">
@@ -423,16 +473,18 @@
 		                        </label>
 							</td>
                             <td>
-			                        <label class="input-control radio small-check">
-			                            <input type="radio" name="confirm_5">
-			                            <span class="check"></span>
-			                            <span class="mif-checkmark fg-green"></span>
-			                        </label>
-			                        <label class="input-control radio small-check">
-			                            <input type="radio" name="confirm_5">
-			                            <span class="check"></span>
-			                            <span class="mif-cross fg-red"></span>
-			                        </label>
+		                        <label class="input-control radio small-check">
+		                            <input type="radio" name="confirm_5">
+		                            <span class="check"></span>
+		                            <span class="mif-checkmark fg-green"></span>
+		                        </label>
+		                        <label class="input-control radio small-check">
+		                            <input type="radio" name="confirm_5">
+		                            <span class="check"></span>
+		                            <span class="mif-cross fg-red"></span>
+		                        </label>
+		                        <!-- ポップアップ -->
+			                    <div class="checklist"><a href="javascript:showDialog('#checklist')" target="_blank">確認事項</a></div>
 							</td>
                             <td>
 							    <input type="text" style="width:30px;">:<input type="text" style="width:30px;">
@@ -481,16 +533,18 @@
 		                        </label>
 							</td>
                             <td>
-			                        <label class="input-control radio small-check">
-			                            <input type="radio" name="confirm_6" >
-			                            <span class="check"></span>
-			                            <span class="mif-checkmark fg-green"></span>
-			                        </label>
-			                        <label class="input-control radio small-check">
-			                            <input type="radio" name="confirm_6">
-			                            <span class="check"></span>
-			                            <span class="mif-cross fg-red"></span>
-			                        </label>
+			                    <label class="input-control radio small-check">
+		                            <input type="radio" name="confirm_5">
+		                            <span class="check"></span>
+		                            <span class="mif-checkmark fg-green"></span>
+		                        </label>
+		                        <label class="input-control radio small-check">
+		                            <input type="radio" name="confirm_5">
+		                            <span class="check"></span>
+		                            <span class="mif-cross fg-red"></span>
+		                        </label>
+		                        <!-- ポップアップ -->
+			                    <div class="checklist"><a href="javascript:showDialog('#checklist')" target="_blank">確認事項</a></div>
 							</td>
                             <td>
 							    <input type="text" style="width:30px;">:<input type="text" style="width:30px;">
@@ -514,7 +568,7 @@
                         	<td>HA-110</td>
                         	<td></td>
                         	<td>安藤 (5345)<br>080-4444-8888</td>
-                        	<td style="color:green">中間<input type="text" style="margin-left:10px;width:100px;"></td>
+                        	<td>中間<input type="text" style="margin-left:10px;width:100px;"></td>
                             <td>
 		                        <label class="input-control radio small-check">
 		                            <input type="radio" name="th07">
@@ -539,16 +593,18 @@
 		                        </label>
 							</td>
                             <td>
-			                        <label class="input-control radio small-check">
-			                            <input type="radio" name="confirm_7" >
-			                            <span class="check"></span>
-			                            <span class="mif-checkmark fg-green"></span>
-			                        </label>
-			                        <label class="input-control radio small-check">
-			                            <input type="radio" name="confirm_7">
-			                            <span class="check"></span>
-			                            <span class="mif-cross fg-red"></span>
-			                        </label>
+			                    <label class="input-control radio small-check">
+		                            <input type="radio" name="confirm_5">
+		                            <span class="check"></span>
+		                            <span class="mif-checkmark fg-green"></span>
+		                        </label>
+		                        <label class="input-control radio small-check">
+		                            <input type="radio" name="confirm_5">
+		                            <span class="check"></span>
+		                            <span class="mif-cross fg-red"></span>
+		                        </label>
+		                        <!-- ポップアップ -->
+			                    <div class="checklist"><a href="javascript:showDialog('#checklist')" target="_blank">確認事項</a></div>
 							</td>
                             <td>
 							    <input type="text" style="width:30px;">:<input type="text" style="width:30px;">
@@ -572,7 +628,7 @@
                         	<td>HA-110</td>
                         	<td></td>
                         	<td>安藤 (5345)<br>080-4444-8888</td>
-                        	<td style="color:green">業務後</td>
+                        	<td>業務後</td>
                             <td>
 		                        <label class="input-control radio small-check">
 		                            <input type="radio" name="th08">
@@ -597,16 +653,18 @@
 		                        </label>
 							</td>
                             <td>
-			                        <label class="input-control radio small-check">
-			                            <input type="radio" name="confirm_8" >
-			                            <span class="check"></span>
-			                            <span class="mif-checkmark fg-green"></span>
-			                        </label>
-			                        <label class="input-control radio small-check">
-			                            <input type="radio" name="confirm_8">
-			                            <span class="check"></span>
-			                            <span class="mif-cross fg-red"></span>
-			                        </label>
+			                    <label class="input-control radio small-check">
+		                            <input type="radio" name="confirm_5">
+		                            <span class="check"></span>
+		                            <span class="mif-checkmark fg-green"></span>
+		                        </label>
+		                        <label class="input-control radio small-check">
+		                            <input type="radio" name="confirm_5">
+		                            <span class="check"></span>
+		                            <span class="mif-cross fg-red"></span>
+		                        </label>
+		                        <!-- ポップアップ -->
+			                    <div class="checklist"><a href="javascript:showDialog('#checklist')" target="_blank">確認事項</a></div>
 							</td>
                             <td>
 							    <input type="text" style="width:30px;">:<input type="text" style="width:30px;">
@@ -630,7 +688,7 @@
                         	<td>HA-051</td>
                         	<td>22:40</td>
                         	<td>賀川 (9492)<br>090-111-92222</td>
-                        	<td style="color:green">1H前</td>
+                        	<td>1H前</td>
                             <td>
 		                        <label class="input-control radio small-check">
 		                            <input type="radio" name="th09">
@@ -655,16 +713,18 @@
 		                        </label>
 							</td>
                             <td>
-			                        <label class="input-control radio small-check">
-			                            <input type="radio" name="confirm_9" >
-			                            <span class="check"></span>
-			                            <span class="mif-checkmark fg-green"></span>
-			                        </label>
-			                        <label class="input-control radio small-check">
-			                            <input type="radio" name="confirm_9">
-			                            <span class="check"></span>
-			                            <span class="mif-cross fg-red"></span>
-			                        </label>
+                                <label class="input-control radio small-check">
+		                            <input type="radio" name="confirm_5">
+		                            <span class="check"></span>
+		                            <span class="mif-checkmark fg-green"></span>
+		                        </label>
+		                        <label class="input-control radio small-check">
+		                            <input type="radio" name="confirm_5">
+		                            <span class="check"></span>
+		                            <span class="mif-cross fg-red"></span>
+		                        </label>
+		                        <!-- ポップアップ -->
+			                    <div class="checklist"><a href="javascript:showDialog('#checklist')" target="_blank">確認事項</a></div>
 							</td>
                             <td>
 							    <input type="text" style="width:30px;">:<input type="text" style="width:30px;">
@@ -688,7 +748,7 @@
                         	<td>HA-051</td>
                         	<td>22:40</td>
                         	<td>賀川 (9492)<br>090-111-92222</td>
-                        	<td style="color:green">業務前</td>
+                        	<td>業務前</td>
                             <td>
 		                        <label class="input-control radio small-check">
 		                            <input type="radio" name="th09">
@@ -713,16 +773,18 @@
 		                        </label>
 							</td>
                             <td>
-			                        <label class="input-control radio small-check">
-			                            <input type="radio" name="confirm_9" >
-			                            <span class="check"></span>
-			                            <span class="mif-checkmark fg-green"></span>
-			                        </label>
-			                        <label class="input-control radio small-check">
-			                            <input type="radio" name="confirm_9">
-			                            <span class="check"></span>
-			                            <span class="mif-cross fg-red"></span>
-			                        </label>
+			                    <label class="input-control radio small-check">
+		                            <input type="radio" name="confirm_5">
+		                            <span class="check"></span>
+		                            <span class="mif-checkmark fg-green"></span>
+		                        </label>
+		                        <label class="input-control radio small-check">
+		                            <input type="radio" name="confirm_5">
+		                            <span class="check"></span>
+		                            <span class="mif-cross fg-red"></span>
+		                        </label>
+		                        <!-- ポップアップ -->
+			                    <div class="checklist"><a href="javascript:showDialog('#checklist')" target="_blank">確認事項</a></div>
 							</td>
                             <td>
 							    <input type="text" style="width:30px;">:<input type="text" style="width:30px;">
@@ -772,16 +834,18 @@
 		                        </label>
 							</td>
                             <td>
-			                        <label class="input-control radio small-check">
-			                            <input type="radio" name="confirm_11">
-			                            <span class="check"></span>
-			                            <span class="mif-checkmark fg-green"></span>
-			                        </label>
-			                        <label class="input-control radio small-check">
-			                            <input type="radio" name="confirm_11">
-			                            <span class="check"></span>
-			                            <span class="mif-cross fg-red"></span>
-			                        </label>
+			                    <label class="input-control radio small-check">
+		                            <input type="radio" name="confirm_5">
+		                            <span class="check"></span>
+		                            <span class="mif-checkmark fg-green"></span>
+		                        </label>
+		                        <label class="input-control radio small-check">
+		                            <input type="radio" name="confirm_5">
+		                            <span class="check"></span>
+		                            <span class="mif-cross fg-red"></span>
+		                        </label>
+		                        <!-- ポップアップ -->
+			                    <div class="checklist"><a href="javascript:showDialog('#checklist')" target="_blank">確認事項</a></div>
 							</td>
                             <td>
 							    <input type="text" style="width:30px;">:<input type="text" style="width:30px;">
@@ -830,16 +894,18 @@
 		                        </label>
 							</td>
                             <td>
-			                        <label class="input-control radio small-check">
-			                            <input type="radio" name="confirm_12">
-			                            <span class="check"></span>
-			                            <span class="mif-checkmark fg-green"></span>
-			                        </label>
-			                        <label class="input-control radio small-check">
-			                            <input type="radio" name="confirm_12">
-			                            <span class="check"></span>
-			                            <span class="mif-cross fg-red"></span>
-			                        </label>
+			                    <label class="input-control radio small-check">
+		                            <input type="radio" name="confirm_5">
+		                            <span class="check"></span>
+		                            <span class="mif-checkmark fg-green"></span>
+		                        </label>
+		                        <label class="input-control radio small-check">
+		                            <input type="radio" name="confirm_5">
+		                            <span class="check"></span>
+		                            <span class="mif-cross fg-red"></span>
+		                        </label>
+		                        <!-- ポップアップ -->
+			                    <div class="checklist"><a href="javascript:showDialog('#checklist')" target="_blank">確認事項</a></div>
 							</td>
                             <td>
 							    <input type="text" style="width:30px;">:<input type="text" style="width:30px;">
@@ -888,16 +954,18 @@
 		                        </label>
 							</td>
                             <td>
-			                        <label class="input-control radio small-check">
-			                            <input type="radio" name="confirm_13">
-			                            <span class="check"></span>
-			                            <span class="mif-checkmark fg-green"></span>
-			                        </label>
-			                        <label class="input-control radio small-check">
-			                            <input type="radio" name="confirm_13">
-			                            <span class="check"></span>
-			                            <span class="mif-cross fg-red"></span>
-			                        </label>
+			                    <label class="input-control radio small-check">
+		                            <input type="radio" name="confirm_5">
+		                            <span class="check"></span>
+		                            <span class="mif-checkmark fg-green"></span>
+		                        </label>
+		                        <label class="input-control radio small-check">
+		                            <input type="radio" name="confirm_5">
+		                            <span class="check"></span>
+		                            <span class="mif-cross fg-red"></span>
+		                        </label>
+		                        <!-- ポップアップ -->
+			                    <div class="checklist"><a href="javascript:showDialog('#checklist')" target="_blank">確認事項</a></div>
 							</td>
                             <td>
 							    <input type="text" style="width:30px;">:<input type="text" style="width:30px;">
@@ -921,7 +989,7 @@
                         	<td>HA-051</td>
                         	<td></td>
                         	<td>賀川 (9492)<br>090-111-92222</td>
-                        	<td style="color:green">中間<input type="text" style="margin-left:10px;width:100px;"></td>
+                        	<td>中間<input type="text" style="margin-left:10px;width:100px;"></td>
                             <td>
 		                        <label class="input-control radio small-check">
 		                            <input type="radio" name="th14">
@@ -946,16 +1014,18 @@
 		                        </label>
 							</td>
                             <td>
-			                        <label class="input-control radio small-check">
-			                            <input type="radio" name="confirm_14">
-			                            <span class="check"></span>
-			                            <span class="mif-checkmark fg-green"></span>
-			                        </label>
-			                        <label class="input-control radio small-check">
-			                            <input type="radio" name="confirm_14">
-			                            <span class="check"></span>
-			                            <span class="mif-cross fg-red"></span>
-			                        </label>
+			                    <label class="input-control radio small-check">
+		                            <input type="radio" name="confirm_5">
+		                            <span class="check"></span>
+		                            <span class="mif-checkmark fg-green"></span>
+		                        </label>
+		                        <label class="input-control radio small-check">
+		                            <input type="radio" name="confirm_5">
+		                            <span class="check"></span>
+		                            <span class="mif-cross fg-red"></span>
+		                        </label>
+		                        <!-- ポップアップ -->
+			                    <div class="checklist"><a href="javascript:showDialog('#checklist')" target="_blank">確認事項</a></div>
 							</td>
                             <td>
 							    <input type="text" style="width:30px;">:<input type="text" style="width:30px;">
@@ -979,7 +1049,7 @@
                         	<td>HA-051</td>
                         	<td></td>
                         	<td>賀川 (9492)<br>090-111-92222</td>
-                        	<td style="color:green">業務後</td>
+                        	<td>業務後</td>
                             <td>
 		                        <label class="input-control radio small-check">
 		                            <input type="radio" name="th15">
@@ -1004,16 +1074,18 @@
 		                        </label>
 							</td>
                             <td>
-			                        <label class="input-control radio small-check">
-			                            <input type="radio" name="confirm_15">
-			                            <span class="check"></span>
-			                            <span class="mif-checkmark fg-green"></span>
-			                        </label>
-			                        <label class="input-control radio small-check">
-			                            <input type="radio" name="confirm_15">
-			                            <span class="check"></span>
-			                            <span class="mif-cross fg-red"></span>
-			                        </label>
+			                    <label class="input-control radio small-check">
+		                            <input type="radio" name="confirm_5">
+		                            <span class="check"></span>
+		                            <span class="mif-checkmark fg-green"></span>
+		                        </label>
+		                        <label class="input-control radio small-check">
+		                            <input type="radio" name="confirm_5">
+		                            <span class="check"></span>
+		                            <span class="mif-cross fg-red"></span>
+		                        </label>
+		                        <!-- ポップアップ -->
+			                    <div class="checklist"><a href="javascript:showDialog('#checklist')" target="_blank">確認事項</a></div>
 							</td>
                             <td>
 							    <input type="text" style="width:30px;">:<input type="text" style="width:30px;">
@@ -1046,14 +1118,28 @@
 						      </div>
                         	</td>
                         	<td rowspan="2" style="color:green">
+                        	
+                        	
+                        	
+                        	
+                        	
+                        	
                         	  <div class="input-control select" style="width:70px;">
-                        	  <select style="margin-left:10px;width:120px;">
-                                <option value="">1H前</option>
-		                        <option value="">業務前</option>
-							    <option value="">中間</option>
-							    <option value="">業務後</option>
+                        	  <select class="select_form" onChange="kakunin()" style="margin-left:10px;width:120px;">
+                                <option value="1">1H前</option>
+		                        <option value="2">業務前</option>
+							    <option value="3">中間</option>
+							    <option value="4">業務後</option>
 						      </select>
+						      <button class="button warning" onclick="pushMessage('warning')"><span class="mif-cancel"></span> キャンセル</button>
 						      </div>
+						      
+						      
+						      
+						      
+						      
+						      
+						      
                         	</td>
                             <td rowspan="2">
 		                        <label class="input-control radio small-check">
@@ -1080,15 +1166,17 @@
 							</td>
                             <td rowspan="2">
 			                        <label class="input-control radio small-check">
-			                            <input type="radio" name="confirm_15">
-			                            <span class="check"></span>
-			                            <span class="mif-checkmark fg-green"></span>
-			                        </label>
-			                        <label class="input-control radio small-check">
-			                            <input type="radio" name="confirm_15">
-			                            <span class="check"></span>
-			                            <span class="mif-cross fg-red"></span>
-			                        </label>
+		                            <input type="radio" name="confirm_5">
+		                            <span class="check"></span>
+		                            <span class="mif-checkmark fg-green"></span>
+		                        </label>
+		                        <label class="input-control radio small-check">
+		                            <input type="radio" name="confirm_5">
+		                            <span class="check"></span>
+		                            <span class="mif-cross fg-red"></span>
+		                        </label>
+		                        <!-- ポップアップ -->
+			                    <div class="checklist"><a href="javascript:showDialog('#checklist')" target="_blank">確認事項</a></div>
 							</td>
                             <td rowspan="2">
 							    <input type="text" style="width:30px;">:<input type="text" style="width:30px;">
@@ -1106,14 +1194,14 @@
 							<input type="text" style="width:200px;">
 							</td>
                         </tr>
-                        <tr><td><input type="text" style="width:100px;"value="9492"></td></tr>
+                        <tr><td><input type="text" style="width:110px;"value="090-111-92222"></td></tr>
                         
                         
                         </tbody>
                     </table>
                     
                     <!-- 追加ボタン -->
-					<button class="button success" onclick="pushMessage('info')"><span class="mif-plus"></span> 行追加</button>
+					<button class="button success" onclick="pushMessage('info')"><span class="mif-plus"></span>行追加</button>
 					<div class="row cells12">
 						<div class="cell colspan4">
 						    <fieldset id="personal">
