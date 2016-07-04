@@ -19,7 +19,7 @@
 
     <script src="../js/jquery-2.1.3.min.js"></script>
     <script src="../js/jquery.dataTables.min.js"></script>
-
+    
     <script src="../js/metro.js"></script>
 
     <style>
@@ -46,6 +46,19 @@
         
         .checklist {
             font-size: 1em;
+        }
+        
+        div.input-control select {
+            overflow: hidden;
+        }
+        
+        form.left {
+            float: left;
+        }
+        
+        .rightForm {
+            float: left;
+            margin: 2px 0px 0 5px;
         }
 
         @media screen and (max-width: 800px){
@@ -76,40 +89,20 @@
     
     <!-- セレクトボックス -->
     <script>
-    　　　//var event = document.getElementById('team_name');
-    　　　//console.log("event");
-        <!--$(".select_form").( function(){
-    	    var val = $(".select_form").val();
-    	    console.log("12345")
-    	    <!--if(val==3){
-    		    $('<p>追加されました</p>').insertAfter('select');
-    		    }-->
-    	    //});
-/*         function kakunin(){
-        	console.log("12345")
-        	  
-        	} */
-        
-        function pushMessage(t){
-            var mes = 'Info|Implement independently';
-            $.Notify({
-                caption: mes.split("|")[0],
-                content: mes.split("|")[1],
-                type: t
-            });
-        }
+ 		    function kakunin(){
+ 		    	  obj = document.test.changeSelect;
+ 		    	  
+ 		    	  index = obj.selectedIndex;
+ 		    	  
+ 		    	  if (index == 2){
+ 		    		//alert(index);
+ 		    		$('.rightForm').append('<input type="text" style="width:75px;">');
+ 		    	  }else{
+ 		    		 $('.rightForm').empty();	  
+ 		    	  }
+ 		    	
+ 		    	}
     </script>
-    <script>
-$('#delete').click(function(){
-    if(!confirm('本当に削除しますか？')){
-        /* キャンセルの時の処理 */
-        return false;
-    }else{
-        /*　OKの時の処理 */
-        location.href = 'index.html';
-    }
-});
-</script>
     
 </head>
 <body class="bg-steel">
@@ -126,6 +119,7 @@ $('#delete').click(function(){
 					</ul>
 
                     <hr class="thin bg-grayLighter">
+                           
 		            <div class="grid">
 		                <div class="row cells4">
 							<div class="cell colspan3">
@@ -195,6 +189,8 @@ $('#delete').click(function(){
                         </tr>
                         </thead>
                         <tbody>
+                        
+                        
  <!-- １行目 -->                       
                         <tr>
                         	<td>川崎下</td>
@@ -1103,7 +1099,7 @@ $('#delete').click(function(){
 							<input type="text" style="width:200px;">
 							</td>
                         </tr>
- <!-- 16行目/追加 -->                       
+ <!-- 16行目/追加 -->
                         <tr>
                         	<td rowspan="2"></td>
                         	<td rowspan="2"></td>
@@ -1119,27 +1115,22 @@ $('#delete').click(function(){
                         	</td>
                         	<td rowspan="2" style="color:green">
                         	
-                        	
-                        	
-                        	
-                        	
-                        	
-                        	  <div class="input-control select" style="width:70px;">
-                        	  <select class="select_form" onChange="kakunin()" style="margin-left:10px;width:120px;">
-                                <option value="1">1H前</option>
-		                        <option value="2">業務前</option>
-							    <option value="3">中間</option>
-							    <option value="4">業務後</option>
+                        	  <div class="input-control select" style="width:140px;">
+                        	  <form class="left" name="test">
+                              <select name="changeSelect" onChange="kakunin()" style="width:60px;">
+								
+								<option>業務前</option>
+								<option>1H前</option>
+								<option>中間</option>
+								<option>業務後</option>
+
 						      </select>
-						      <button class="button warning" onclick="pushMessage('warning')"><span class="mif-cancel"></span> キャンセル</button>
-						      </div>
 						      
-						      
-						      
-						      
-						      
-						      
-						      
+							  </form>
+								
+							  <div class="rightForm"></div>
+                        	  </div>
+						     
                         	</td>
                             <td rowspan="2">
 		                        <label class="input-control radio small-check">
@@ -1175,7 +1166,7 @@ $('#delete').click(function(){
 		                            <span class="check"></span>
 		                            <span class="mif-cross fg-red"></span>
 		                        </label>
-		                        <!-- ポップアップ -->
+		                        
 			                    <div class="checklist"><a href="javascript:showDialog('#checklist')" target="_blank">確認事項</a></div>
 							</td>
                             <td rowspan="2">
@@ -1195,7 +1186,6 @@ $('#delete').click(function(){
 							</td>
                         </tr>
                         <tr><td><input type="text" style="width:110px;"value="090-111-92222"></td></tr>
-                        
                         
                         </tbody>
                     </table>
