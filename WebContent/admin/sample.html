@@ -44,13 +44,17 @@
 		text-align:center;
 		 width:85px;
 		 margin:0px;
+		 
 		}
 		
 		p.yoko2{
 		text-align:center;
+		padding:18px;
 		width:250px;
 		margin:0px;
+		
 		}
+		
 
         @media screen and (max-width: 800px){
             #cell-sidebar {
@@ -93,22 +97,24 @@
 <body class="bg-steel">
     
     <!-- ヘッダー固定 -->
-    <div id="header-target"></div>
-
-    <div class="page-content">
-        <div class="flex-grid no-responsive-future" style="height: 100%;">
-            <div class="row" style="height: 100%">
-                <div class="cell auto-size padding20 bg-white" id="cell-content">
-					<ul class="breadcrumbs" style="padding:0px;">
-					    <li><h4><a href="#">得意先検索</a></h4></li>
-					</ul>
+	<div id="header-target"></div>
+    	<div class="page-content">
+    
+        	<div class="flex-grid no-responsive-future" style="height: 100%;">
+        
+            	<div class="row" style="height: 100%">
+            
+                	<div class="cell auto-size padding20 bg-white" id="cell-content">
+                
+						<ul class="breadcrumbs" style="padding:0px;">
+							<li><h4><a href="#">得意先検索</a></h4></li>
+						</ul>
                     <hr class="thin bg-grayLighter">
-                    
-		            <div class="grid">
-		                <div class="row cells12">
-							<div class="cell colspan2">
+		            	<div class="grid">
+		                	<div class="row cells12">
+								<div class="cell colspan2">
 		                       年
-		                        <div class="input-control select" style="width:50px;">
+		                        	<div class="input-control select" style="width:50px;">
 		                            <select>
 		                            	<option>2015</option>
 		                                <option>2016</option>
@@ -117,9 +123,9 @@
 		                                <option>2019</option>
 		                                <option>2020</option>
 		                            </select>
-								</div>
+									</div>
 		                        月
-								<div class="input-control select" style="width:50px;">
+									<div class="input-control select" style="width:50px;">
 		                            <select>
 		                                <option>01</option>
 		                                <option>02</option>
@@ -134,54 +140,76 @@
 		                                <option>11</option>
 		                                <option>12</option>
 		                            </select>
-		                         </div>
+		                         	</div>
+		                     	</div>
 							</div>
-						<div class="cell colspan2">
+						</div>
+					<div class="cell colspan2">
 			                   <button class="button primary"><span class="mif-search"></span>検索</button>
-		                   </div>
-		                </div>
-		            </div>
-		            
                     <hr class="thin bg-grayLighter">
                     
-                    
-                        
       <div class="x_data_area">
-        <!-- ロック部分 -->
-        <table class="dataTable border bordered" data-auto-width="false">
-        
-            <table class="width300 data">
+      
+      <!-- ロック部分 -->
+      	<div class="lock_box">
+        	 <table class="dataTable border bordered width300 data" data-auto-width="false">
                 
-                
+                <colgroup>
+                	<col style="width: 30%;">
+                	<col style="width: 70%;">
+                </colgroup>
+                <thead>
                 <tr>
-                    <td class="sortable-column" rowspan="2"><p class="yoko">得意先コード</p></td>
+					<td class="sortable-column" rowspan="2"><p class="yoko">得意先コード</p></td>
+					
                     <td class="sortable-column" rowspan="2"><p class="yoko2">得意先名(略)</p></td>
+                    
                 </tr>
                 </thead>
+                <tbody>
                 
-                <tbody style="text-align: right;">
-                        <tr >
-                            <td style="text-align: center;">0423</td><td style="text-align: left;">ユニキャリア</td>
-						</tr>
-                        <tr>
-                            <td style="text-align: center;">0305</td><td style="text-align: left;">住友ナコ</td>
-						</tr>
-						<tr>
-                            <td style="text-align: center;">0617</td><td style="text-align: left;">富士フォークリフト</td>
-						</tr>
-                        <tr>
-                            <td style="text-align: center;">0545</td><td style="text-align: left;">東京小松フォークリフト</td>
-						</tr>
-            </tbody></table>
+                	<tr>
+                    	<td style="text-align: center;">0423</td><td style="text-align: left;">ユニキャリア</td>
+					</tr>
+                    <tr>
+                    	<td style="text-align: center;">0305</td><td style="text-align: left;">住友ナコ</td>
+					</tr>
+					<tr>
+                        <td style="text-align: center;">0617</td><td style="text-align: left;">富士フォークリフト</td>
+					</tr>
+                    <tr>
+                        <td style="text-align: center;">0545</td><td style="text-align: left;">東京小松フォークリフト</td>
+					</tr>
+					
+            	</tbody>
+            	
+        	</table>
         </div>
+        
         <!-- /ロック部分 -->
         <!-- 横スクロール部分 -->
         <div class="x_scroll_box">
-            <table class="width2500 data">
-                <tbody><thead>
-                        <tr>
-                        	<td class="sortable-column">2015/01</td>
-                            <td class="sortable-column">2015/02</td>
+            <table class="dataTable border bordered  data width2500">
+                <colgroup>
+                <col style="width: 7%;">
+                <col style="width: 7%;">
+                <col style="width: 7%;">
+                <col style="width: 7%;">
+                <col style="width: 7%;">
+                <col style="width: 7%;">
+                <col style="width: 7%;">
+                <col style="width: 7%;">
+                <col style="width: 7%;">
+                <col style="width: 7%;">
+                <col style="width: 7%;">
+                <col style="width: 7%;">
+                <col style="width: 7%;">
+                </colgroup>
+                <tbody>
+                <thead>
+                	<tr>
+                    		<td class="sortable-column">2015/01</td>
+                        	<td class="sortable-column">2015/02</td>
                             <td class="sortable-column">2015/03</td>
                             <td class="sortable-column">2015/04</td>
                             <td class="sortable-column">2015/05</td>
@@ -208,7 +236,7 @@
                             <td class="sortable-column"><p class="yoko">売上金額(円)</p></td>
                             <td class="sortable-column"><p class="yoko">売上金額(円)</p></td>
                         </tr>
-                        </thead>
+                </thead>
                         <tr>
                             <td>100,000</td><td>100,000</td><td>100,000</td><td>100,000</td><td>100,000</td><td>100,000</td><td>100,000</td><td>100,000</td><td>100,000</td><td>100,000</td><td>100,000</td><td>100,000</td><td>1,200,00</td>
                         </tr>
@@ -222,19 +250,18 @@
                             <td>400,000</td><td>400,000</td><td>400,000</td><td>400,000</td><td>400,000</td><td>400,000</td><td>400,000</td><td>400,000</td><td>400,000</td><td>400,000</td><td>400,000</td><td>400,000</td><td>4,800,000</td>
                         </tr>
                         
-                        <tfoot>
-                          <tr><td colspan="2">合計</td><td>1,000,000</td><td>1,000,000</td><td>1,000,000</td><td>1,000,000</td><td>1,000,000</td><td>1,000,000</td><td>1,000,000</td><td>1,000,000</td><td>1,000,000</td><td>1,000,000</td><td>1,000,000</td><td>1,000,000</td><td>12,000,000</td>
-                        </tfoot>
-            </tbody></table>
+                        
+            </tbody>
+            </table>
         </div>
+        
         <!-- /横スクロール部分 -->
-    </div>
-					
-					
-                    
-                </div>
-            </div>
-        </div>
-    </div>
+					</div>
+				</div>
+			</div>
+			</div>
+		</div>
+	</div>
+  
 </body>
 </html>
