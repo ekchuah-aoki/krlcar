@@ -222,30 +222,19 @@
 			                    </div>
 		                </div>
 		            </div>
-		                     
+
 							<div>
 								<button class="button alert" onclick="pushMessage('alert')"><span class="mif-checkmark"></span> 選択データ削除</button>
 		                   		<button class="button warning" onclick="pushMessage('warning')"><span class="mif-cancel"></span> キャンセル</button>
 		                   		<button class="button primary" onclick="pushMessage('info')" style="background-color:#6A5ACD;border-color:#6A5ACD;"><span class="mif-printer"></span> PDF出力</button>
 		                   		<button class="button primary" onclick="pushMessage('info')"><span class="mif-plus"></span> 保存</button>
 		                    </div>
-	                    
                     
-                    
-                    
-                    
-                    <div data-role="dialog" id="addUser" data-close-button="true" data-content='<iframe src="mock_unsou_add.html"></iframe>' data-width="900" data-content-type="video"></div>
                     <hr class="thin bg-grayLighter">
-					
-
                     <table class="dataTable border bordered" data-auto-width="false">
-					
 					<thead>
-                     
                         <tr>
                             <td colspan=5></td>
-                            
-                            
                             <td class="sortable-column">6月5日(日)</td>
                             <td class="sortable-column">6月6日(月)</td>
                             <td class="sortable-column">6月7日(火)</td>
@@ -534,7 +523,7 @@
                               <td style="border:none;"><p class="yoko2">ゆうP</p></td>
                               <td class="course" rowspan="2" style="border:none;">⇨</td>
                               <td style="border:none;"><p class="yoko2">綾瀬</p></td>
-                              <td class="buttonright" rowspan="2" style="border:none;"><button class="button primary" ><a href="javascript:showDialog('#addUser')" target="_blank">設定</a></button></td>
+                              <td class="buttonright" rowspan="2" style="border:none;"><button class="button primary" onclick="window.open('mock_unsou_add.html','_self')">設定</button></td>
                              </tr>
                              <tr>
                                <td style="border:none;"><p class="yoko2">21:30</p></td>
@@ -607,7 +596,7 @@
                             <td><table style="width:600px;">
                             <tr>
                             
-                            <td class="buttonright" rowspan="2" style="border:none;"><button class="button primary" ><a href="javascript:showDialog('#addUser')" target="_blank">設定</a></button></td>
+                            <td class="buttonright" rowspan="2" style="border:none;"><button class="button primary" onclick="window.open('mock_unsou_add.html','_self')">設定</button></td>
                             
                             
                             </table></td>
