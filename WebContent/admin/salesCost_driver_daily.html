@@ -15,6 +15,7 @@
     <link href="../css/metro.css" rel="stylesheet">
     <link href="../css/metro-icons.css" rel="stylesheet">
     <link href="../css/metro-responsive.css" rel="stylesheet">
+    <link href="../css/salesCost_driver_daily.css" rel="stylesheet">
 
     <script src="../js/jquery-2.1.3.min.js"></script>
     <script src="../js/jquery.dataTables.min.js"></script>
@@ -41,14 +42,21 @@
 
 		p.yoko{
 		text-align:center;
-		 width:85px;
+		 width:50px;
 		 margin:0px;
+		 
 		}
 		
 		p.yoko2{
 		text-align:center;
-		width:300px;
+		padding:18px;
+		width:100px;
 		margin:0px;
+		
+		}
+		
+		.dataTable {
+		margin: 0;
 		}
 
 
@@ -64,33 +72,6 @@
 
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
-
-    
-    <script>
-        function pushMessage(t){
-            var mes = 'Info|Implement independently';
-            $.Notify({
-                caption: mes.split("|")[0],
-                content: mes.split("|")[1],
-                type: t
-            });
-        }
-
-        $(function(){
-            $('.sidebar').on('click', 'li', function(){
-                if (!$(this).hasClass('active')) {
-                    $('.sidebar li').removeClass('active');
-                    $(this).addClass('active');
-                }
-            })
-        })
-    </script>
-	<script>
-	    $(function(){
-	        $("#datepicker").datepicker();
-	    });
-	</script>
-	
 	<!-- ヘッダー固定 -->
 	<script type="text/javascript">
         $(document).ready(function() {
@@ -99,6 +80,7 @@
     </script>
 	
 </head>
+
 <body class="bg-steel">
 
     <!-- ヘッダー固定 -->
@@ -158,66 +140,116 @@
 							<div class="cell colspan5">
 			                    
 			                    
-			                    <table class="dataTable border bordered" data-auto-width="false">
-                        <thead>
-                        <tr>
-                        	<td class="sortable-column" rowspan="2"><p class="yoko">社員番号</p></td>
-                            <td class="sortable-column" rowspan="2"><p class="yoko">氏名</p></td>
-                            <td class="sortable-column">2015/01</td>
-                            <td class="sortable-column">2015/02</td>
-                            <td class="sortable-column">2015/03</td>
-                            <td class="sortable-column">2015/04</td>
-                            <td class="sortable-column">2015/05</td>
-                            <td class="sortable-column">2015/06</td>
-                            <td class="sortable-column">2015/07</td>
-                            <td class="sortable-column">2015/08</td>
-                            <td class="sortable-column">2015/09</td>
-                            <td class="sortable-column">2015/10</td>
-                            <td class="sortable-column">2015/11</td>
-                            <td class="sortable-column">2015/12</td>
-                            <td class="sortable-column" rowspan="2"><p class="yoko">合計</p></td>
-                            
-                            
-                        </tr>
-                        <tr>
-                        	
-                            <td class="sortable-column"><p class="yoko">売上金額(円)</p></td>
-                            <td class="sortable-column"><p class="yoko">売上金額(円)</p></td>
-                            <td class="sortable-column"><p class="yoko">売上金額(円)</p></td>
-                            <td class="sortable-column"><p class="yoko">売上金額(円)</p></td>
-                            <td class="sortable-column"><p class="yoko">売上金額(円)</p></td>
-                            <td class="sortable-column"><p class="yoko">売上金額(円)</p></td>
-                            <td class="sortable-column"><p class="yoko">売上金額(円)</p></td>
-                            <td class="sortable-column"><p class="yoko">売上金額(円)</p></td>
-                            <td class="sortable-column"><p class="yoko">売上金額(円)</p></td>
-                            <td class="sortable-column"><p class="yoko">売上金額(円)</p></td>
-                            <td class="sortable-column"><p class="yoko">売上金額(円)</p></td>
-                            <td class="sortable-column"><p class="yoko">売上金額(円)</p></td>
-                            
-                        </tr>
-                        </thead>
-                        <tbody style="text-align: right;">
-                        <tr>
-                            <td style="text-align: left;">1111</td><td style="text-align: left;">平坂</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>3,900,000</td>
-						</tr>
-                        <tr>
-                            <td style="text-align: left;">2222</td><td style="text-align: left;">安藤</td><td>200,000</td><td>200,000</td><td>200,000</td><td>200,000</td><td>200,000</td><td>200,000</td><td>200,000</td><td>200,000</td><td>200,000</td><td>200,000</td><td>200,000</td><td>200,000</td><td>2,400,000</td>
-						</tr>
-                        <tr>
-                            <td style="text-align: left;">3333</td><td style="text-align: left;">後藤</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>3,900,000</td>
-						</tr>
-                        <tr>
-                            <td style="text-align: left;">4444</td><td style="text-align: left;">浜野</td><td>400,000</td><td>400,000</td><td>400,000</td><td>400,000</td><td>400,000</td><td>400,000</td><td>400,000</td><td>400,000</td><td>400,000</td><td>400,000</td><td>400,000</td><td>400,000</td><td>4,800,000</td>
-						</tr>
-                        <tr>
-                            <td style="text-align: left;">5555</td><td style="text-align: left;">北村</td><td>250,000</td><td>250,000</td><td>250,000</td><td>250,000</td><td>250,000</td><td>250,000</td><td>250,000</td><td>250,000</td><td>250,000</td><td>250,000</td><td>250,000</td><td>250,000</td><td>3,000,000</td>
-						</tr>
-                        </tbody>   
-                         
-                        <tfoot>
-			                 <tr><td colspan="2" style="text-align: center;">合計</td><td>1,450,000</td><td>1,450,000</td><td>1,450,000</td><td>1,450,000</td><td>1,450,000</td><td>1,450,000</td><td>1,450,000</td><td>1,450,000</td><td>1,450,000</td><td>1,450,000</td><td>1,450,000</td><td>1,450,000</td><td>18,000,000</td>
-			            </tfoot>        
-                    </table>
+                              
+                              <div class="x_data_area">
+      
+							      <!-- ロック部分 -->
+							      	<div class="lock_box">
+							        	 <table class="dataTable border bordered width300 data" data-auto-width="false">
+							                
+							                <colgroup>
+							                	<col style="width: 30%;">
+							                	<col style="width: 70%;">
+							                </colgroup>
+							                <thead>
+							                <tr>
+												<td class="sortable-column" rowspan="2"><p class="yoko">社員番号</p></td>
+												
+							                    <td class="sortable-column" rowspan="2"><p class="yoko2">氏名</p></td>
+							                    
+							                </tr>
+							                </thead>
+							                <tbody>
+							                
+							                	<tr>
+							                    	<td style="text-align: center;">1111</td><td style="text-align: left;">平坂</td>
+												</tr>
+							                    <tr>
+							                    	<td style="text-align: center;">2222</td><td style="text-align: left;">安藤</td>
+												</tr>
+												<tr>
+							                        <td style="text-align: center;">3333</td><td style="text-align: left;">後藤</td>
+												</tr>
+							                    <tr>
+							                        <td style="text-align: center;">4444</td><td style="text-align: left;">浜野</td>
+												</tr>
+												<tr>
+							                        <td style="text-align: center;">5555</td><td style="text-align: left;">北村</td>
+												</tr>
+												
+												<tfoot>
+												  <tr>
+												    <td colspan="2">合計</td>
+							            	      </tr>
+							            	    </tfoot>
+							            	</tbody>
+							            	
+							        	</table>
+							        </div>
+							        
+							        <!-- /ロック部分 -->
+							        <!-- 横スクロール部分 -->
+							        <div class="x_scroll_box">
+							            <table class="dataTable border bordered  data width2500">
+							                
+							                <tbody>
+							                  <thead>
+							                	<tr>
+							                		<td class="sortable-column">2015/01</td>
+							                    	<td class="sortable-column">2015/02</td>
+							                        <td class="sortable-column">2015/03</td>
+							                        <td class="sortable-column">2015/04</td>
+							                        <td class="sortable-column">2015/05</td>
+							                        <td class="sortable-column">2015/06</td>
+							                        <td class="sortable-column">2015/07</td>
+							                        <td class="sortable-column">2015/08</td>
+							                        <td class="sortable-column">2015/09</td>
+							                        <td class="sortable-column">2015/10</td>
+							                        <td class="sortable-column">2015/11</td>
+							                        <td class="sortable-column">2015/12</td>
+							                        <td class="sortable-column" rowspan="2"><p class="yoko">合計</p></td>
+							                    </tr>
+							                    <tr>
+							                        <td class="sortable-column"><p class="yoko">売上金額(円)</p></td>
+						                           <td class="sortable-column"><p class="yoko">売上金額(円)</p></td>
+						                           <td class="sortable-column"><p class="yoko">売上金額(円)</p></td>
+						                           <td class="sortable-column"><p class="yoko">売上金額(円)</p></td>
+						                           <td class="sortable-column"><p class="yoko">売上金額(円)</p></td>
+						                           <td class="sortable-column"><p class="yoko">売上金額(円)</p></td>
+						                           <td class="sortable-column"><p class="yoko">売上金額(円)</p></td>
+						                           <td class="sortable-column"><p class="yoko">売上金額(円)</p></td>
+						                           <td class="sortable-column"><p class="yoko">売上金額(円)</p></td>
+						                           <td class="sortable-column"><p class="yoko">売上金額(円)</p></td>
+						                           <td class="sortable-column"><p class="yoko">売上金額(円)</p></td>
+						                           <td class="sortable-column"><p class="yoko">売上金額(円)</p></td>
+							                      </tr>
+							                  </thead>
+							                  <tr>
+							                    <td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>3,900,000</td>
+							                  </tr>
+							                  <tr>
+							                    <td>200,000</td><td>200,000</td><td>200,000</td><td>200,000</td><td>200,000</td><td>200,000</td><td>200,000</td><td>200,000</td><td>200,000</td><td>200,000</td><td>200,000</td><td>200,000</td><td>2,400,000</td>
+							                  </tr>
+							                  <tr>
+							                    <td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>3,900,000</td>
+							                  </tr>
+							                  <tr>
+							                    <td>400,000</td><td>400,000</td><td>400,000</td><td>400,000</td><td>400,000</td><td>400,000</td><td>400,000</td><td>400,000</td><td>400,000</td><td>400,000</td><td>400,000</td><td>400,000</td><td>4,800,000</td>
+							                  </tr>
+							                  <tr>
+							                    <td>250,000</td><td>250,000</td><td>250,000</td><td>250,000</td><td>250,000</td><td>250,000</td><td>250,000</td><td>250,000</td><td>250,000</td><td>250,000</td><td>250,000</td><td>250,000</td><td>3,000,000</td>
+							                  </tr>
+							                  <tfoot>
+										        <tr>
+							                      <td>1,450,000</td><td>1,450,000</td><td>1,450,000</td><td>1,450,000</td><td>1,450,000</td><td>1,450,000</td><td>1,450,000</td><td>1,450,000</td><td>1,450,000</td><td>1,450,000</td><td>1,450,000</td><td>1,450,000</td><td>18,000,000</td>
+							                    </tr>
+							                  </tfoot>
+							            </tbody>
+							            </table>
+							        </div>
+				
+								</div>
+                              
 		                    </div>
 	                    </div>
                     </div>
