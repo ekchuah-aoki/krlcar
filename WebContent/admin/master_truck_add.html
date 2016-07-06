@@ -20,6 +20,8 @@
     <script src="../js/jquery.dataTables.min.js"></script>
 
     <script src="../js/metro.js"></script>
+    
+    <script src="../js/Menu.js"></script>
 
     <style>
         html, body {
@@ -88,19 +90,11 @@
             })
         })
     </script>
-    
-    <!-- ヘッダー固定 -->
-	<script type="text/javascript">
-        $(document).ready(function() {
-           $('#header-target').load('header.html');
-        });
-    </script>
-    
 </head>
 <body class="bg-steel">
 
-    <!-- ヘッダー固定 -->
-    <div id="header-target"></div>
+     <!-- ヘッダー固定 -->
+   <div id="Menu_load"></div>
 
     <div class="page-content">
         <div class="flex-grid no-responsive-future" style="height: 100%;">
@@ -111,7 +105,7 @@
 					</ul>
                     <hr class="thin bg-grayLighter">
 					<div class="align-right">
-                    <button class="button primary" onclick="window.open('master_truck_add_history.html', '_self')"><span class="mif-list"></span> 車両登録履歴一覧</button>
+                    <button class="button primary" onclick="window.open('master_truck.html', '_self')"><span class="mif-list"></span> 車両台帳印刷</button>
                     <button class="button success" onclick="pushMessage('alert')"><span class="mif-plus"></span>保存</button>
                     <button class="button alert" onclick="pushMessage('alert')">取消</button>
 					</div>

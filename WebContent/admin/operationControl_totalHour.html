@@ -20,6 +20,8 @@
     <script src="../js/jquery.dataTables.min.js"></script>
 
     <script src="../js/metro.js"></script>
+    
+    <script src="../js/Menu.js"></script>
 
     <style>
         html, body {
@@ -48,7 +50,6 @@
         }
     </style>
 
-    </script>
     <script>
         function pushMessage(t){
             var mes = 'Info|Implement independently';
@@ -68,19 +69,11 @@
             })
         })
     </script>
-    
-    <!-- ヘッダー固定 -->
-	<script type="text/javascript">
-        $(document).ready(function() {
-           $('#header-target').load('header.html');
-        });
-    </script>
-    
 </head>
 <body class="bg-steel">
 
-    <!-- ヘッダー固定 -->
-    <div id="header-target"></div>
+     <!-- ヘッダー固定 -->
+   <div id="Menu_load"></div>
     
     <div class="page-content">
         <div class="flex-grid no-responsive-future" style="height: 100%;">
@@ -121,7 +114,7 @@
 								</div>
 		                    </div>
 							<div class="cell colspan4" style="float:right;">
-		                    	<button class="button primary"><span class="mif-search">検索</button>
+		                    	<button class="button primary"><span class="mif-search">検索</span></button>
 		                    </div>
 	                    </div>
                     </div>

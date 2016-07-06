@@ -21,6 +21,8 @@
     <script src="../js/jquery.dataTables.min.js"></script>
 
     <script src="../js/metro.js"></script>
+    
+    <script src="../js/Menu.js"></script>
 
     <style>
         html, body {
@@ -91,19 +93,11 @@
 	        $("#datepicker").datepicker();
 	    });
 	</script>
-	
-	<!-- ヘッダー固定 -->
-	<script type="text/javascript">
-        $(document).ready(function() {
-           $('#header-target').load('header.html');
-        });
-    </script>
-	
 </head>
 <body class="bg-steel">
 
-    <!-- ヘッダー固定 -->
-    <div id="header-target"></div>
+     <!-- ヘッダー固定 -->
+   <div id="Menu_load"></div>
 
     <div class="page-content">
         <div class="flex-grid no-responsive-future" style="height: 100%;">
@@ -144,7 +138,7 @@
 		                    <div class="input-control"><input type="text" class="text" value="川崎・大阪"></div>
 		                  </td>
 		                  <td rowspan="4" class="form">
-		                    <div class="input-control"><input type="text" class="text" value="川神下3"></div>
+		                    <div class="input-control"><input type="text" class="text" value="川神下1"></div>
 		                  </td>
 		                  <td rowspan="4" class="buttonCenter"><button class="button primary" onclick="window.open('master_root_next2.html','_self')">設定</button></td>
                           <td>

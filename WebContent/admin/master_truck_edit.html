@@ -72,19 +72,11 @@
 	        
 	    });
 	    
-        $(function(){
-            $('.sidebar').on('click', 'li', function(){
-                if (!$(this).hasClass('active')) {
-                    $('.sidebar li').removeClass('active');
-                    $(this).addClass('active');
-                }
-            })
-        })
     </script>
 </head>
 <body class="bg-steel">
-    
-     <!-- ヘッダー固定 -->
+
+    <!-- ヘッダー固定 -->
    <div id="Menu_load"></div>
 
     <div class="page-content">
@@ -93,79 +85,89 @@
                 
                 <div class="cell auto-size padding20 bg-white" id="cell-content">
                     <ul class="breadcrumbs" style="padding:0px;">
-					    <li><h4><a href="#">社員検索</a></h4></li>
+					    <li><h4><a href="#">車両登録</a></h4></li>
 					</ul>
                     <hr class="thin bg-grayLighter">
 					<div class="align-right">
-					<button class="button primary" onclick="pushMessage('info')" style="background-color:#6A5ACD;border-color:#6A5ACD;"><span class="mif-printer"></span> PDF出力</button>
-                    <button class="button primary" onclick="showDialog('#addUser')"><span class="mif-plus"></span> 社員登録</button>
-<div data-role="dialog" id="addUser" data-close-button="true" data-content='<iframe src="master_user_add.html"></iframe>' data-width="900" data-content-type="video"></div>
+                    <button class="button primary" onclick="window.open('master_truck_add.html', '_self')"><span class="mif-plus"></span> 車両登録</button>
                     <button class="button alert" onclick="pushMessage('alert')">削除</button>
 					</div>
                     <hr class="thin bg-grayLighter">
                     <table class="dataTable border bordered" data-auto-width="false">
                         <thead>
                         <tr>
-                        	<td style="width: 20px">
+                            <td style="width: 20px">
                             </td>
-                            <td class="sortable-column sort-asc" style="width: 100px">社員<br>コード</td>
-                            <td class="sortable-column">社員名</td>
-                            <td class="sortable-column">郵便番号</td>
-                            <td class="sortable-column">住所</td>
-                            <td class="sortable-column">電話番号</td>
-                            <td class="sortable-column">携帯番号</td>
-                            <td class="sortable-column">免許更新日</td>
-                            <td style="width: 20px">詳細</td>
+                            <td class="sortable-column sort-asc">車番</td>
+                            <td class="sortable-column">管理番号</td>
+                            <td class="sortable-column">車種</td>
+                            <td class="sortable-column">型式</td>
+                            <td class="sortable-column">登録年月日</td>
+                            <td class="sortable-column">走行距離</td>
+                            <td class="sortable-column">直近3カ月点検日</td>
+                            <td class="sortable-column">拠点</td>
+                            <td class="sortable-column">自賠責保険番号</td>
+                            <td class="sortable-column">任意保険番号</td>
+                            <td class="sortable-column">詳細</td>
                         </tr>
                         </thead>
                         <tbody>
                         <tr>
-                        	<td>
+                            <td>
                                 <label class="input-control checkbox small-check no-margin">
                                     <input type="checkbox">
                                     <span class="check"></span>
                                 </label>
                             </td>
-                            <td>0001</td>
-                            <td>平塚　一郎</td>
-                            <td>259-1212</td>
-                            <td>神奈川県平塚市岡崎1111-1</td>
-                            <td>0463－59－1111</td>
-                            <td>090－1111－7777</td>
-                            <td>2017/01/01</td>
-                            <td><a href="javascript:showDialog('#addUser')" target="_blank">詳細</a></td>
+                            <td>A111</td>
+                            <td>K001</td>
+                            <td>大型</td>
+                            <td>15tウイング</td>
+                            <td>2015/12/1</td>
+                            <td>50000km</td>
+                            <td>2016/09/01</td>
+                            <td>神奈川</td>
+                            <td><a href="../img/sample_hoken01.jpg" target="_blank">GL6555411-31</a></td>
+                            <td><a href="../img/sample_hoken01.jpg" target="_blank">N123456-11</a></td>
+                            <td><a href="master_truck_add.html" target="_self">詳細</a></td>
                         </tr>
                         <tr>
-                        	<td>
+                            <td>
                                 <label class="input-control checkbox small-check no-margin">
                                     <input type="checkbox">
                                     <span class="check"></span>
                                 </label>
                             </td>
-                            <td>0002</td>
-                            <td>平塚　はなこ</td>
-                            <td>259-1212</td>
-                            <td>神奈川県平塚市岡崎2222-2</td>
-                            <td>0222－22－222</td>
-                            <td>090－6666-2222</td>
-                            <td>2017/01/01</td>
-                            <td><a href="javascript:showDialog('#addUser')" target="_blank">詳細</a></td>
+                            <td>A112</td>
+                            <td>O002</td>
+                            <td>中型</td>
+                            <td>8ｔユニック</td>
+                            <td>2015/12/3</td>
+                            <td>50000km</td>
+                            <td>2016/03/10</td>
+                            <td>大阪</td>
+                            <td><a href="../img/sample_hoken01.jpg" target="_blank">GL6555411-32</a></td>
+                            <td><a href="../img/sample_hoken01.jpg" target="_blank">N123456-12</a></td>
+                            <td><a href="master_truck_add.html" target="_self">詳細</a></td>
                         </tr>
                         <tr>
-                        	<td>
+                            <td>
                                 <label class="input-control checkbox small-check no-margin">
                                     <input type="checkbox">
                                     <span class="check"></span>
                                 </label>
                             </td>
-                            <td>0003</td>
-                            <td>平塚　三郎</td>
-                            <td>254-0061</td>
-                            <td>神奈川県平塚市御殿1－11－1</td>
-                            <td>0333－33－3333</td>
-                            <td>090－3333－3333</td>
-                            <td class="bg-yellow">2016/04/01</td>
-                            <td><a href="javascript:showDialog('#addUser')" target="_blank">詳細</a></td>
+                            <td>A113</td>
+                            <td>Y001</td>
+                            <td>小型</td>
+                            <td>4ｔウイング</td>
+                            <td>2015/12/10</td>
+                            <td>50000km</td>
+                            <td class="bg-yellow">2016/02/10</td>
+                            <td>山形</td>
+                            <td><a href="../img/sample_hoken01.jpg" target="_blank">GL6555411-33</a></td>
+                            <td><a href="../img/sample_hoken01.jpg" target="_blank">N123456-13</a></td>
+                            <td><a href="master_truck_add.html" target="_self">詳細</a></td>
                         </tr>
                         </tbody>
                     </table>

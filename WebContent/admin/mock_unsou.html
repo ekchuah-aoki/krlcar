@@ -15,12 +15,14 @@
     <link href="../css/metro.css" rel="stylesheet">
     <link href="../css/metro-icons.css" rel="stylesheet">
     <link href="../css/metro-responsive.css" rel="stylesheet">
-    <link href="../css/table2.css" rel="stylesheet">
+    <link href="../css/table3.css" rel="stylesheet">
 
     <script src="../js/jquery-2.1.3.min.js"></script>
     <script src="../js/jquery.dataTables.min.js"></script>
 
     <script src="../js/metro.js"></script>
+    
+    <script src="../js/Menu.js"></script>
 	
 	<script>
 	<!--
@@ -64,7 +66,6 @@
 			text-align:center;
 		}
 		
-
 		p.yoko{
 		 width:40px;
 		 margin:0px;
@@ -73,9 +74,10 @@
 		
 		p.yoko2{
 		text-align:center;
-		width:px;
+		
 		margin:0px;
 		}
+		
 		p.yoko3{
 		 width:27px;
 		 margin:0px;
@@ -87,6 +89,7 @@
 		 width:85px;
 		 margin:0px;
 		}
+		
 		p.yoko5{
 		text-align:center;
 		padding:18px;
@@ -101,6 +104,10 @@
 		}
 		.input-control select{
 		width:100%;
+		}
+		
+		.x_data_area{
+		margin: 0;
 		}
 		
         @media screen and (max-width:100%){
@@ -143,19 +150,11 @@
             })
         })
     </script>
-    
-    <!-- ヘッダー固定 -->
-	<script type="text/javascript">
-        $(document).ready(function() {
-           $('#header-target').load('header.html');
-        });
-    </script>
-    
 </head>
 <body class="bg-steel" onLoad="FixedMidashi.create();">
     
-    <!-- ヘッダー固定 -->
-    <div id="header-target"></div>
+     <!-- ヘッダー固定 -->
+   <div id="Menu_load"></div>
 
     <div class="page-content">
         <div class="flex-grid no-responsive-future">
@@ -264,7 +263,7 @@
                 
 				<tr>
 					<td><p class="yoko3">削除</p></td>
-                    <td class="sortable-column"><p class="yoko3">便番</p></td>
+                    <td class="sortable-column" ><p class="yoko3">便番</p></td>
                     <td class="sortable-column"><p class="yoko3">便名</p></td>
                     <td class="sortable-column">運行コース/作業割り当(行先)</td>
                     <td class="sortable-column"><p>運行日/車種</p></td>
@@ -279,7 +278,7 @@
                         	</label>
                         </td>
                             <td style="padding:28px 5px;">A-111</td>
-                            <td>川上下1</td>
+                            <td>川神下1</td>
                             <td>
                             	<table class="center">
 		                            <tr id="acMenu">

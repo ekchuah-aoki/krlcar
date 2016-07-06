@@ -20,6 +20,8 @@
     <script src="../js/jquery.dataTables.min.js"></script>
 
     <script src="../js/metro.js"></script>
+    
+    <script src="../js/Menu.js"></script>
 
     <style>
         html, body {
@@ -72,19 +74,11 @@
             $("#datepicker").datepicker();
         });
     </script>
-    
-    <!-- ヘッダー固定 -->
-	<script type="text/javascript">
-        $(document).ready(function() {
-           $('#header-target').load('header.html');
-        });
-    </script>
-    
 </head>
 <body class="bg-steel">
     
-    <!-- ヘッダー固定 -->
-    <div id="header-target"></div>
+     <!-- ヘッダー固定 -->
+   <div id="Menu_load"></div>
 
     <div class="page-content">
         <div class="flex-grid no-responsive-future" style="height: 100%;">
@@ -100,13 +94,6 @@
 			            <div class="grid">
 			                <div class="row cells12">
 								
-								<div class="cell colspan4">
-			                        集計開始日
-									<div class="input-control text" id="datepicker">
-									    <input type="text" placeholder="2015/12/01">
-									    <button class="button"><span class="mif-calendar"></span></button>
-									</div>
-			                    </div>
 								<div class="cell colspan4">
 			                        集計締日
 									<div class="input-control text" id="datepicker">
@@ -128,75 +115,6 @@
 					</div>
                     <hr class="thin bg-grayLighter">
 
-					<div class="frame">
-						<img src="../img/sales_monthly.jpg"></img>
-					</div>
-		            
-					<!-- <div class="align-right">
-					</div>
-                    <hr class="thin bg-grayLighter">
-                    <table class="dataTable border bordered" data-role="datatable" data-auto-width="false">
-                        <thead>
-                        <tr>
-                            <td style="width: 20px"></td>
-                            <td class="sortable-column sort-asc">運送年月日</td>
-                            <td class="sortable-column">得意先</td>
-                            <td class="sortable-column">積地</td>
-                            <td class="sortable-column">卸地</td>
-                            <td class="sortable-column">品名</td>
-                            <td class="sortable-column">基本運賃</td>
-                            <td class="sortable-column">未収合計</td>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>
-                                <label class="input-control checkbox small-check no-margin">
-                                    <input type="checkbox">
-                                    <span class="check"></span>
-                                </label>
-                            </td>
-                            <td>2015/12/1</td>
-                            <td>いすゞ自動車（株）</td>
-                            <td>藤沢市土棚いすゞ自動車(株)<br>藤沢工場運動ブレーキ</td>
-                            <td>栃木県那須塩原市<br>（株）ブリヂストンプルービ ンググラウンド</td>
-                            <td>MPAER8816ET00234 95</td>
-                            <td>105,690</td>
-                            <td>105,690</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label class="input-control checkbox small-check no-margin">
-                                    <input type="checkbox">
-                                    <span class="check"></span>
-                                </label>
-                            </td>
-                            <td>2015/12/1</td>
-                            <td>クレベ運送株式会社</td>
-                            <td>川崎東</td>
-                            <td>名古屋神宮</td>
-                            <td>ゆうパック</td>
-                            <td>45,340</td>
-                            <td>45,340</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label class="input-control checkbox small-check no-margin">
-                                    <input type="checkbox">
-                                    <span class="check"></span>
-                                </label>
-                            </td>
-                            <td>2015/12/2</td>
-                            <td>いすゞ自動車（株）</td>
-                            <td>川崎市川崎区プリンス海運</td>
-                            <td>藤沢市土棚<br>いすゞ自動車（株）藤沢工 場審査課</td>
-                            <td>VN98A-004</td>
-                            <td>35,000</td>
-                            <td>35,000</td>
-                        </tr>
-                        
-                        </tbody>
-                    </table>-->
                 </div>
             </div>
         </div>

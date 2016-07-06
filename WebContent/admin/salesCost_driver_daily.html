@@ -21,6 +21,8 @@
     <script src="../js/jquery.dataTables.min.js"></script>
 
     <script src="../js/metro.js"></script>
+    
+    <script src="../js/Menu.js"></script>
 
     <style>
         html, body {
@@ -44,21 +46,18 @@
 		text-align:center;
 		 width:50px;
 		 margin:0px;
-		 
 		}
 		
 		p.yoko2{
 		text-align:center;
-		padding:17px;
+		padding:18px;
 		width:100px;
 		margin:0px;
-		
 		}
 		
 		.dataTable {
 		margin: 0;
 		}
-
 
         @media screen and (max-width: 800px){
             #cell-sidebar {
@@ -71,20 +70,12 @@
     </style>
 
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-
-	<!-- ヘッダー固定 -->
-	<script type="text/javascript">
-        $(document).ready(function() {
-           $('#header-target').load('header.html');
-        });
-    </script>
-	
 </head>
 
 <body class="bg-steel">
 
-    <!-- ヘッダー固定 -->
-    <div id="header-target"></div>
+     <!-- ヘッダー固定 -->
+   <div id="Menu_load"></div>
 
     <div class="page-content">
         <div class="flex-grid no-responsive-future" style="height: 100%;">
@@ -224,24 +215,24 @@
 						                           <td class="sortable-column"><p class="yoko">売上金額(円)</p></td>
 							                      </tr>
 							                  </thead>
-							                  <tr>
+							                  <tr style="text-align:right;">
 							                    <td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>3,900,000</td>
 							                  </tr>
-							                  <tr>
+							                  <tr style="text-align:right;">
 							                    <td>200,000</td><td>200,000</td><td>200,000</td><td>200,000</td><td>200,000</td><td>200,000</td><td>200,000</td><td>200,000</td><td>200,000</td><td>200,000</td><td>200,000</td><td>200,000</td><td>2,400,000</td>
 							                  </tr>
-							                  <tr>
+							                  <tr style="text-align:right;">
 							                    <td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>3,900,000</td>
 							                  </tr>
-							                  <tr>
+							                  <tr style="text-align:right;">
 							                    <td>400,000</td><td>400,000</td><td>400,000</td><td>400,000</td><td>400,000</td><td>400,000</td><td>400,000</td><td>400,000</td><td>400,000</td><td>400,000</td><td>400,000</td><td>400,000</td><td>4,800,000</td>
 							                  </tr>
-							                  <tr>
+							                  <tr style="text-align:right;">
 							                    <td>250,000</td><td>250,000</td><td>250,000</td><td>250,000</td><td>250,000</td><td>250,000</td><td>250,000</td><td>250,000</td><td>250,000</td><td>250,000</td><td>250,000</td><td>250,000</td><td>3,000,000</td>
 							                  </tr>
 							                  <tfoot>
 										        <tr>
-							                      <td>1,450,000</td><td>1,450,000</td><td>1,450,000</td><td>1,450,000</td><td>1,450,000</td><td>1,450,000</td><td>1,450,000</td><td>1,450,000</td><td>1,450,000</td><td>1,450,000</td><td>1,450,000</td><td>1,450,000</td><td>18,000,000</td>
+							                      <td style="text-align:right;">1,450,000</td><td style="text-align:right;">1,450,000</td><td style="text-align:right;">1,450,000</td><td style="text-align:right;">1,450,000</td><td style="text-align:right;">1,450,000</td><td style="text-align:right;">1,450,000</td><td style="text-align:right;">1,450,000</td><td style="text-align:right;">1,450,000</td><td style="text-align:right;">1,450,000</td><td style="text-align:right;">1,450,000</td><td style="text-align:right;">1,450,000</td><td style="text-align:right;">1,450,000</td><td style="text-align:right;">18,000,000</td>
 							                    </tr>
 							                  </tfoot>
 							            </tbody>

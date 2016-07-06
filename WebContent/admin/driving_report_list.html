@@ -20,6 +20,8 @@
     <script src="../js/jquery.dataTables.min.js"></script>
 
     <script src="../js/metro.js"></script>
+    
+    <script src="../js/Menu.js"></script>
 
     <style>
         html, body {
@@ -67,19 +69,11 @@
             })
         })
     </script>
-    
-    <!-- ヘッダー固定 -->
-	<script type="text/javascript">
-        $(document).ready(function() {
-           $('#header-target').load('header.html');
-        });
-    </script>
-    
 </head>
 <body class="bg-steel">
     
     <!-- ヘッダー固定 -->
-    <div id="header-target"></div>
+   <div id="Menu_load"></div>
 
     <div class="page-content">
         <div class="flex-grid no-responsive-future" style="height: 100%;">
@@ -138,7 +132,7 @@
                             <td><a href="#">詳細</a></td>
                             <td class="align-center"><span class="mif-checkmark fg-green"></span></td>
                             <td>
-			                    <button class="button primary" onclick="window.open('driving_report_edit.html', '_self')"><span class="mif-pencil"></span></button>
+			                    <button class="button primary" onclick="window.open('driving_report_add.html', '_self')"><span class="mif-pencil"></span></button>
                             </td>
                         </tr>
                         <tr role="row" class="even">
@@ -161,7 +155,7 @@
                             <td><a href="#">詳細</a></td>
                             <td class="align-center"><span class="mif-stop fg-red"></span></td>
                             <td>
-			                    <button class="button primary" onclick="window.open('driving_report_edit.html', '_self')"><span class="mif-pencil"></span></button>
+			                    <button class="button primary" onclick="window.open('driving_report_add.html', '_self')"><span class="mif-pencil"></span></button>
                             </td>
                         </tr>
                         <tr role="row" class="odd">
@@ -184,7 +178,7 @@
                             <td><a href="#">詳細</a></td>
                             <td class="align-center"><span class="mif-stop fg-red"></span></td>
                             <td>
-			                    <button class="button primary" onclick="window.open('driving_report_edit.html', '_self')"><span class="mif-pencil"></span></button>
+			                    <button class="button primary" onclick="window.open('driving_report_add.html', '_self')"><span class="mif-pencil"></span></button>
                             </td>
                         </tr>
                         <tr role="row" class="even">
@@ -207,7 +201,7 @@
                             <td><a href="#">詳細</a></td>
                             <td class="align-center"><span class="mif-stop fg-red"></span></td>
                             <td>
-			                    <button class="button primary" onclick="window.open('driving_report_edit.html', '_self')"><span class="mif-pencil"></span></button>
+			                    <button class="button primary" onclick="window.open('driving_report_add.html', '_self')"><span class="mif-pencil"></span></button>
                             </td>
                         </tr>
                         </tbody>

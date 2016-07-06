@@ -21,6 +21,8 @@
     <script src="../js/jquery.dataTables.min.js"></script>
 
     <script src="../js/metro.js"></script>
+    
+    <script src="../js/Menu.js"></script>
 
     <style>
         html, body {
@@ -73,19 +75,11 @@
 	        $("#datepicker").datepicker();
 	    });
 	</script>
-	
-	<!-- ヘッダー固定 -->
-	<script type="text/javascript">
-        $(document).ready(function() {
-           $('#header-target').load('header.html');
-        });
-    </script>
-	
 </head>
 <body class="bg-steel">
     
-    <!-- ヘッダー固定 -->
-    <div id="header-target"></div>
+     <!-- ヘッダー固定 -->
+   <div id="Menu_load"></div>
 
     <div class="page-content">
         <div class="flex-grid no-responsive-future" style="height: 100%;">
@@ -162,17 +156,17 @@
                         <tr>
                             <td rowspan="2" class="sortable-column">点呼方法</td>
                             <td class="sortable-column" colspan="2">アルコール検知器</td>
-                            <td rowspan="2">確認<br/>事項①②<br/>③④</td>
+                            <td rowspan="2">確認<br/>事項</td>
                             <td rowspan="2">点呼時間</td>
                             <td rowspan="2">点呼執行者</td>
                             <td rowspan="2" class="sortable-column">点呼方法</td>
                             <td class="sortable-column" colspan="2">アルコール検知器</td>
-                            <td rowspan="2">確認<br/>事項<br/>①②<br/>③④</td>
+                            <td rowspan="2">確認<br/>事項</td>
                             <td rowspan="2">点呼時間</td>
                             <td rowspan="2">点呼執行者</td>
                             <td rowspan="2" class="sortable-column">点呼方法</td>
                             <td class="sortable-column" colspan="2">アルコール検知器</td>
-                            <td rowspan="2">確認<br/>事項<br/>①②<br/>③④</td>
+                            <td rowspan="2">確認<br/>事項</td>
                             <td rowspan="2">点呼時間</td>
                             <td rowspan="2">点呼執行者</td>
                         </tr>
@@ -187,15 +181,15 @@
                         </thead>
                         <tbody>
                         <tr>
-                            <td>5468</td>
-                            <td>駒木</td>
-                            <td>JP大阪発</td>
+                            <td>5346</td>
+                            <td>平坂</td>
+                            <td>JP川崎東</td>
                             <td>電</td>
                             <td>有</td>
                             <td>○</td>
 			                <td><span class="mif-checkmark fg-green"></span>
 							</td>
-                            <td>20:20</td>
+                            <td>21:30</td>
                             <td>大崎</td>
                             <td>
 							</td>
@@ -212,7 +206,7 @@
                             <td>:</td>
                             <td></td>
                             <td>
-			                    <button class="button primary" onclick="window.open('roll_call_edit.html','_self')"><span class="mif-pencil"></span></button>
+			                    <button class="button primary" onclick="window.open('roll_call_add.html','_self')"><span class="mif-pencil"></span></button>
                             </td>
                         </tr>
                         <tr>
@@ -241,7 +235,7 @@
                             <td>:</td>
                             <td></td>
                             <td>
-			                    <button class="button primary" onclick="window.open('roll_call_edit.html','_self')"><span class="mif-pencil"></span></button>
+			                    <button class="button primary" onclick="window.open('roll_call_add.html','_self')"><span class="mif-pencil"></span></button>
                             </td>
                         </tr>
                         <tr>
@@ -270,7 +264,7 @@
                             <td>:</td>
                             <td></td>
                             <td>
-			                    <button class="button primary" onclick="window.open('roll_call_edit.html','_self')"><span class="mif-pencil"></span></button>
+			                    <button class="button primary" onclick="window.open('roll_call_add.html','_self')"><span class="mif-pencil"></span></button>
                             </td>
                         </tr>
                         </tbody>

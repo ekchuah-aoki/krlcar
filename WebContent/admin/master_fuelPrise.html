@@ -20,6 +20,8 @@
     <script src="../js/jquery.dataTables.min.js"></script>
 
     <script src="../js/metro.js"></script>
+    
+    <script src="../js/Menu.js"></script>
 
     <style>
         html, body {
@@ -68,19 +70,11 @@
             })
         })
     </script>
-    
-    <!-- ヘッダー固定 -->
-	<script type="text/javascript">
-        $(document).ready(function() {
-           $('#header-target').load('header.html');
-        });
-    </script>
-    
 </head>
 <body class="bg-steel">
 
-    <!-- ヘッダー固定 -->
-    <div id="header-target"></div>
+     <!-- ヘッダー固定 -->
+   <div id="Menu_load"></div>
 
     <div class="page-content">
         <div class="flex-grid no-responsive-future" style="height: 100%;">
@@ -121,7 +115,7 @@
                         </thead>
                         <tbody>
                         <tr class="info">
-                            <td>平成27年度</td>
+                            <td style="text-align:center;">平成27年度</td>
                             <td><div class="input-control text" style="width:60px;"><input type="text" placeholder="95.46"></div></td>
                             <td><div class="input-control text" style="width:60px;"><input type="text" placeholder="91.54"></div></td>
                             <td><div class="input-control text" style="width:60px;"><input type="text" placeholder="84.5"></div></td>
@@ -136,7 +130,7 @@
                             <td><div class="input-control text" style="width:60px;"><input type="text" placeholder=""></div></td>
 						</tr>
                         <tr>
-                            <td style="text-align:right;">平成26年度</td>
+                            <td style="text-align:center;">平成26年度</td>
                             <td style="text-align:right;">95.46</td>
                             <td style="text-align:right;">91.54</td>
                             <td style="text-align:right;">84.5</td>
@@ -151,7 +145,7 @@
                             <td style="text-align:right;">91</td>
                         </tr>
                         <tr>
-                            <td>平成25年度</td>
+                            <td style="text-align:center;">平成25年度</td>
                             <td style="text-align:right;">95.46</td>
                             <td style="text-align:right;">91.54</td>
                             <td style="text-align:right;">84.5</td>
@@ -166,7 +160,7 @@
                             <td style="text-align:right;">91</td>
                         </tr>
                         <tr>
-                            <td>平成24年度</td>
+                            <td style="text-align:center;">平成24年度</td>
                             <td style="text-align:right;">95.46</td>
                             <td style="text-align:right;">91.54</td>
                             <td style="text-align:right;">84.5</td>
