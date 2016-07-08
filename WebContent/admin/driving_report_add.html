@@ -123,10 +123,11 @@
                 <div class="cell auto-size padding20 bg-white" id="cell-content">
 				    
 					<ul class="breadcrumbs" style="padding:0px;">
-					    <li><h4><a href="#">運送日報入力</a></h4></li>
+					    <li><h4>運送日報入力</h4></li>
 					</ul>
 					
 					<hr class="thin bg-grayLighter">
+					
 					<div class="grid">
 						<div class="row cells12">
 							<div class="cell colspan6" style="float:left;margin-right: auto;">
@@ -143,16 +144,13 @@
 						</div>
 					</div>
 
-					
-
-
 					<div class="grid">
 						<div class="row cells12">
 							<div class="cell colspan4" style="float:left;margin-right: auto;">
 								<span id="whiteGreen-item">用車支払代金(円)</span>
                                 <input type="hidden" id="white_green_flg" name="white_green_flg" value="white">
 								<div class="input-control text bg-green" style="width:80px;">
-									<input type="text">
+									<input type="text" style="text-align:right;">
 								</div>
 								最大積載量
 								<span style="width:70px;">15t</span>
@@ -167,7 +165,7 @@
 							<div class="cell colspan2">
 								日報番号
 								<div class="input-control text" data-role="keypad" data-length="5" style="width:60px;">
-									<input type="text">
+									<input type="text" style="text-align:right;">
 								</div>
 							</div>
 							<div class="cell colspan2" style="float:right;">
@@ -182,7 +180,9 @@
 							</div>
 						</div>
 					</div>
+					
 					<hr class="thin bg-grayLighter">
+					
 					<div class="grid">
 						<div class="row cells12" style="width:1200px;">
 							<div class="cell colspan6" style="float:left;margin-right: auto;">
@@ -205,7 +205,7 @@
 							<tr>
 								<td>
 									<div class="input-control select" style="width:90px;">
-									<select>
+									<select dir="rtl">
 										<option>4956</option>
 										<option>6308</option>
 										<option>5468</option>
@@ -285,8 +285,8 @@
 						</thead>
 						<tbody>
 							<tr>
-								<td><div class="input-control" style="width:70px;"><input type="text"></div></td>
-								<td><div class="input-control" style="width:70px;"><input type="text"></div></td>
+								<td><div class="input-control" style="width:70px;"><input type="text" style="text-align:right;"></div></td>
+								<td><div class="input-control" style="width:70px;"><input type="text" style="text-align:right;"></div></td>
 								<td><div class="input-control"><input type="text"></div></td>
 								<td><div class="input-control"><input type="text"></div></td>
 								<td><div class="input-control"><input type="text"></div></td>
@@ -496,10 +496,10 @@
 							</td>
 							<td>
 								<div class="input-control text" style="width:30px;">
-									<input type="text">
+									<input type="text" style="text-align:right;">
 								</div>t<br/>
 								<div class="input-control text" style="width:30px;">
-									<input type="text">
+									<input type="text" style="text-align:right;">
 								</div>回
 							</td>
 							<td>
@@ -507,7 +507,7 @@
 								  <tbody>
 								    <tr class="goods_list1_var">
 								      <td>品名</td><td><input type="text" name="goods_list1_name_0"></td>
-								      <td>個数</td><td><input type="text" name="goods_list1_mail_0"></td>
+								      <td>個数</td><td><input type="text" name="goods_list1_mail_0" style="text-align:right;"></td>
 								      <td class="del_01" style="display: table-cell;"><button class="button goods_list1_del alert"><span class="mif-cancel">削除</span></button></td>
 								    </tr>
 								  </tbody>
@@ -551,26 +551,26 @@
 								<table><tbody>
 								<tr>
 									<td>自</td>
-									<td><input type="text" style="width:30px;"></td>
+									<td><input type="text" style="width:30px; text-align:right;"></td>
 									<td>日</td>
-									<td><input type="text" style="width:44px;"></td>
+									<td><input type="text" style="width:44px; text-align:right;"></td>
 									<td>分</td>
 								</tr>
 								<tr>
 									<td>至</td>
-									<td><input type="text" style="width:30px;"></td>
+									<td><input type="text" style="width:30px; text-align:right;"></td>
 									<td>日</td>
-									<td><input type="text" style="width:44px;"></td>
+									<td><input type="text" style="width:44px; text-align:right;"></td>
 									<td>分</td>
 								</tr>
 								<tr>
 									<td>拘束</td>
-									<td><input type="text" style="width:30px;"></td>
+									<td><input type="text" style="width:30px; text-align:right;"></td>
 									<td colspan="2">時間</td>
 								</tr>
 								<tr>
 									<td>運転</td>
-									<td><input type="text" style="width:30px;"></td>
+									<td><input type="text" style="width:30px; text-align:right;"></td>
 									<td colspan="2">時間</td>
 								</tr>
 								</tbody></table>
@@ -579,15 +579,15 @@
 								<table><tbody>
 								<tr>
 									<td>実車</td>
-									<td><input type="text" style="width:60px;"></td>
+									<td><input type="text" style="width:60px; text-align:right;"></td>
 								</tr>
 								<tr>
 									<td>空車</td>
-									<td><input type="text" style="width:60px;"></td>
+									<td><input type="text" style="width:60px; text-align:right;"></td>
 								</tr>
 								<tr>
 									<td>総行<br/>距離</td>
-									<td><input type="text" style="width:60px;"></td>
+									<td><input type="text" style="width:60px; text-align:right;"></td>
 								</tr>
 								</tbody></table>
 							</td>
@@ -595,11 +595,11 @@
 								<table><tbody>
 								<tr>
 									<td rowspan="2">現金</td>
-									<td>金額<input type="text" style="width:70px;"></td>
+									<td>金額<input type="text" style="width:70px; text-align:right;"></td>
 									<td rowspan="2">フェリー現金</td>
-									<td>金額<input type="text" style="width:70px;"></td>
+									<td>金額<input type="text" style="width:70px; text-align:right;"></td>
 									<td rowspan="2">航送代</td>
-									<td>金額<input type="text" style="width:70px;"></td>
+									<td>金額<input type="text" style="width:70px; text-align:right;"></td>
 								</tr>
 								<tr>
 									<td>
@@ -623,11 +623,11 @@
 								</tr>
 								<tr>
 									<td rowspan="2">ETC</td>
-									<td>金額<input type="text" style="width:70px;"></td>
+									<td>金額<input type="text" style="width:70px; text-align:right;"></td>
 									<td rowspan="2">クレジット</td>
-									<td>金額<input type="text" style="width:70px;"></td>
+									<td>金額<input type="text" style="width:70px; text-align:right;"></td>
 									<td rowspan="2">航空券</td>
-									<td>金額<input type="text" style="width:70px;"></td>
+									<td>金額<input type="text" style="width:70px; text-align:right;"></td>
 								</tr>
 								<tr>
 								  <td>
@@ -653,15 +653,15 @@
 							<td>
 								<table><tbody>
 								<tr>
-									<td>基本運賃</td><td><input type="text" style="width:70px;"></td>
-									<td>留置</td><td><input type="text" style="width:70px;"></td></tr>
-								<tr><td>時増</td><td><input type="text" style="width:70px;"></td>
-									<td>地区粁増</td><td><input type="text" style="width:70px;"></td></tr>
-								<tr><td>道路航送料</td><td><input type="text" style="width:70px;"></td>
-									<td>運転手荷役</td><td><input type="text" style="width:70px;"></td></tr>
-								<tr><td>助手荷役</td><td><input type="text" style="width:70px;"></td>
-									<td>据付作業</td><td><input type="text" style="width:70px;"></td></tr>
-								<tr><td>運送保険料</td><td><input type="text" style="width:70px;"></td>
+									<td>基本運賃</td><td><input type="text" style="width:70px; text-align:right;"></td>
+									<td>留置</td><td><input type="text" style="width:70px; text-align:right;"></td></tr>
+								<tr><td>時増</td><td><input type="text" style="width:70px; text-align:right;"></td>
+									<td>地区粁増</td><td><input type="text" style="width:70px; text-align:right;"></td></tr>
+								<tr><td>道路航送料</td><td><input type="text" style="width:70px; text-align:right;"></td>
+									<td>運転手荷役</td><td><input type="text" style="width:70px; text-align:right;"></td></tr>
+								<tr><td>助手荷役</td><td><input type="text" style="width:70px; text-align:right;"></td>
+									<td>据付作業</td><td><input type="text" style="width:70px; text-align:right;"></td></tr>
+								<tr><td>運送保険料</td><td><input type="text" style="width:70px; text-align:right;"></td>
 									<td>合計未収額</td><td><span class="fg-green" style="font-size: 20px;">50,500</span></td></tr>
 								</tbody></table>
 							</td>
@@ -701,19 +701,19 @@
 						</tr>
 						</tbody>
 					</table>
-
+                    
 					<table class="table border bordered separateHeader customHeader" data-auto-width="false">
 						<thead>
 						<tr>
 							<td>物品受領書</td>
 							<td>得意先</td>
 							<td>トン数・<br/>往復(km)</td>
-							<td>品名・個数<button style="float:right;" class="button primary goods_list2_add"><span class="mif-plus"></span>追加</button></td>
+							<td>品名・個数<button style="float:right;" class="button primary goods_list1_add"><span class="mif-plus"></span>追加</button></td>
 						</tr>
 						</thead>
 						<tbody style="font-size:13px;">
 						<tr>
-							<td style="width:220px">
+							<td  style="width:220px">
 								<table><tbody>
 								    <tr>
 										<td>
@@ -764,19 +764,19 @@
 							</td>
 							<td>
 								<div class="input-control text" style="width:30px;">
-									<input type="text">
+									<input type="text" style="text-align:right;">
 								</div>t<br/>
 								<div class="input-control text" style="width:30px;">
-									<input type="text">
+									<input type="text" style="text-align:right;">
 								</div>回
 							</td>
 							<td>
-								<table id="goods_list2">
+								<table id="goods_list1">
 								  <tbody>
-								    <tr class="goods_list2_var">
-								      <td>品名</td><td><input type="text" name="goods_list2_name_0"></td>
-								      <td>個数</td><td><input type="text" name="goods_list2_mail_0"></td>
-								      <td class="del_02" style="display: table-cell;"><button class="button goods_list2_del alert"><span class="mif-cancel">削除</span></button></td>
+								    <tr class="goods_list1_var">
+								      <td>品名</td><td><input type="text" name="goods_list1_name_0"></td>
+								      <td>個数</td><td><input type="text" name="goods_list1_mail_0" style="text-align:right;"></td>
+								      <td class="del_01" style="display: table-cell;"><button class="button goods_list1_del alert"><span class="mif-cancel">削除</span></button></td>
 								    </tr>
 								  </tbody>
 								</table>
@@ -819,26 +819,26 @@
 								<table><tbody>
 								<tr>
 									<td>自</td>
-									<td><input type="text" style="width:30px;"></td>
+									<td><input type="text" style="width:30px; text-align:right;"></td>
 									<td>日</td>
-									<td><input type="text" style="width:44px;"></td>
+									<td><input type="text" style="width:44px; text-align:right;"></td>
 									<td>分</td>
 								</tr>
 								<tr>
 									<td>至</td>
-									<td><input type="text" style="width:30px;"></td>
+									<td><input type="text" style="width:30px; text-align:right;"></td>
 									<td>日</td>
-									<td><input type="text" style="width:44px;"></td>
+									<td><input type="text" style="width:44px; text-align:right;"></td>
 									<td>分</td>
 								</tr>
 								<tr>
 									<td>拘束</td>
-									<td><input type="text" style="width:30px;"></td>
+									<td><input type="text" style="width:30px; text-align:right;"></td>
 									<td colspan="2">時間</td>
 								</tr>
 								<tr>
 									<td>運転</td>
-									<td><input type="text" style="width:30px;"></td>
+									<td><input type="text" style="width:30px; text-align:right;"></td>
 									<td colspan="2">時間</td>
 								</tr>
 								</tbody></table>
@@ -847,28 +847,27 @@
 								<table><tbody>
 								<tr>
 									<td>実車</td>
-									<td><input type="text" style="width:60px;"></td>
+									<td><input type="text" style="width:60px; text-align:right;"></td>
 								</tr>
 								<tr>
 									<td>空車</td>
-									<td><input type="text" style="width:60px;"></td>
+									<td><input type="text" style="width:60px; text-align:right;"></td>
 								</tr>
 								<tr>
 									<td>総行<br/>距離</td>
-									<td><input type="text" style="width:60px;"></td>
+									<td><input type="text" style="width:60px; text-align:right;"></td>
 								</tr>
 								</tbody></table>
 							</td>
-							
 							<td>
 								<table><tbody>
 								<tr>
 									<td rowspan="2">現金</td>
-									<td>金額<input type="text" style="width:70px;"></td>
+									<td>金額<input type="text" style="width:70px; text-align:right;"></td>
 									<td rowspan="2">フェリー現金</td>
-									<td>金額<input type="text" style="width:70px;"></td>
+									<td>金額<input type="text" style="width:70px; text-align:right;"></td>
 									<td rowspan="2">航送代</td>
-									<td>金額<input type="text" style="width:70px;"></td>
+									<td>金額<input type="text" style="width:70px; text-align:right;"></td>
 								</tr>
 								<tr>
 									<td>
@@ -892,11 +891,11 @@
 								</tr>
 								<tr>
 									<td rowspan="2">ETC</td>
-									<td>金額<input type="text" style="width:70px;"></td>
+									<td>金額<input type="text" style="width:70px; text-align:right;"></td>
 									<td rowspan="2">クレジット</td>
-									<td>金額<input type="text" style="width:70px;"></td>
+									<td>金額<input type="text" style="width:70px; text-align:right;"></td>
 									<td rowspan="2">航空券</td>
-									<td>金額<input type="text" style="width:70px;"></td>
+									<td>金額<input type="text" style="width:70px; text-align:right;"></td>
 								</tr>
 								<tr>
 								  <td>
@@ -919,19 +918,18 @@
 								   </td>
 								 </tbody></table>
 							</td>
-							
 							<td>
 								<table><tbody>
 								<tr>
-									<td>基本運賃</td><td><input type="text" style="width:70px;"></td>
-									<td>留置</td><td><input type="text" style="width:70px;"></td></tr>
-								<tr><td>時増</td><td><input type="text" style="width:70px;"></td>
-									<td>地区粁増</td><td><input type="text" style="width:70px;"></td></tr>
-								<tr><td>道路航送料</td><td><input type="text" style="width:70px;"></td>
-									<td>運転手荷役</td><td><input type="text" style="width:70px;"></td></tr>
-								<tr><td>助手荷役</td><td><input type="text" style="width:70px;"></td>
-									<td>据付作業</td><td><input type="text" style="width:70px;"></td></tr>
-								<tr><td>運送保険料</td><td><input type="text" style="width:70px;"></td>
+									<td>基本運賃</td><td><input type="text" style="width:70px; text-align:right;"></td>
+									<td>留置</td><td><input type="text" style="width:70px; text-align:right;"></td></tr>
+								<tr><td>時増</td><td><input type="text" style="width:70px; text-align:right;"></td>
+									<td>地区粁増</td><td><input type="text" style="width:70px; text-align:right;"></td></tr>
+								<tr><td>道路航送料</td><td><input type="text" style="width:70px; text-align:right;"></td>
+									<td>運転手荷役</td><td><input type="text" style="width:70px; text-align:right;"></td></tr>
+								<tr><td>助手荷役</td><td><input type="text" style="width:70px; text-align:right;"></td>
+									<td>据付作業</td><td><input type="text" style="width:70px; text-align:right;"></td></tr>
+								<tr><td>運送保険料</td><td><input type="text" style="width:70px; text-align:right;"></td>
 									<td>合計未収額</td><td><span class="fg-green" style="font-size: 20px;">50,500</span></td></tr>
 								</tbody></table>
 							</td>
@@ -971,6 +969,7 @@
 						</tr>
 						</tbody>
 					</table>
+					
 				</div>
 			</div>
 		</div>

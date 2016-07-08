@@ -50,26 +50,8 @@
         }
     </style>
 
+	<!-- カレンダー -->
     <script>
-        function pushMessage(t){
-            var mes = 'Info|Implement independently';
-            $.Notify({
-                caption: mes.split("|")[0],
-                content: mes.split("|")[1],
-                type: t
-            });
-        }
-
-        $(function(){
-            $('.sidebar').on('click', 'li', function(){
-                if (!$(this).hasClass('active')) {
-                    $('.sidebar li').removeClass('active');
-                    $(this).addClass('active');
-                }
-            })
-        })
-    </script>
-	<script>
 	    $(function(){
 	        $("#datepicker").datepicker();
 	    });
@@ -85,7 +67,7 @@
             <div class="row">
                 <div class="cell auto-size padding20 bg-white" id="cell-content">
 					<ul class="breadcrumbs" style="padding:0px;">
-					    <li><h4 class="text-light"><a href="#">日常点検実施表入力</a></h4></li>
+					    <li><h4>日常点検実施表入力</h4></li>
 					</ul>
 
                     <hr class="thin bg-grayLighter">
@@ -106,21 +88,13 @@
 		                        </div>
 		                        車番
 		                        <div class="input-control select" style="width:100px;">
-		                            <select>
+		                            <select dir="rtl">
 		                                <option>4956</option>
 		                                <option>6308</option>
 		                                <option>5468</option>
 		                            </select>
 		                        </div>
 		                    </div>
-		                    <!-- <div class="cell colspan2">
-							    点検年月
-								<div class="input-control text" id="datepicker" style="width:150px;">
-								    <input type="text">
-								    <button class="button"><span class="mif-calendar"></span></button>
-								</div>
-		                    </div> -->
-		                    
 		                    
 							<div class="cell colspan6">
 		                        整備管理者

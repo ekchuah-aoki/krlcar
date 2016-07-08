@@ -58,6 +58,12 @@
             }
         }
     </style>
+    <!-- カレンダー -->
+    <script>
+	    $(function(){
+	        $("#datepicker").datepicker();
+	    });
+	</script>
     <!-- ポップアップ -->
 	<script>
         function showDialog(id) {
@@ -91,7 +97,7 @@
             <div class="row">
                 <div class="cell auto-size padding20 bg-white" id="cell-content">
 					<ul class="breadcrumbs" style="padding:0px;">
-					    <li><h4 class="text-light"><a href="#">点呼記録表入力</a></h4></li>
+					    <li><h4>点呼記録表入力</h4></li>
 					</ul>
 
                     <hr class="thin bg-grayLighter">
@@ -100,7 +106,7 @@
 		                <div class="row cells4">
 							<div class="cell colspan3">
 		                        点呼日
-								<div class="input-control text" id="datepicker" style="width:180px;">
+								<div class="input-control text" id="datepicker" style="width:160px;">
 								    <input type="text">	
 								    <button class="button"><span class="mif-calendar"></span></button>
 								</div>
@@ -171,7 +177,7 @@
                         <tr>
                         	<td>川神下1</td>
                         	<td>HA-111</td>
-                        	<td>20:30</td>
+                        	<td style="text-align:right;">20:30</td>
                         	<td>平坂 (5346)<br>090-1111-1111</td>
                         	<td>1H前</td>
                             <td>
@@ -185,7 +191,7 @@
 		                        </label>
 							</td>
                             <td>
-							    <input type="text" style="width:60px;">
+							    <input type="text" style="width:60px; text-align:right;">
 							</td>
                             <td>
 		                        <label class="input-control radio small-check">
@@ -211,10 +217,11 @@
 		                        
 			                    <!-- ポップアップ -->
 					            <div class="checklist"><a href="javascript:showDialog('#checklist')" target="_blank">確認事項</a></div>
-		                       
+		                        <div data-role="dialog" id="checklist" data-close-button="true" data-content='<iframe src="checklist.html"></iframe>' data-width="900" data-content-type="video"></div>
+							
 							</td>
                             <td>
-							    <input type="text" style="width:30px;">:<input type="text" style="width:30px;">
+							    <input type="text" style="width:30px; text-align:right;">:<input type="text" style="width:30px; text-align:right;">
 							</td>
                             <td>
 		                        <div class="input-control select" style="width:120px;">
@@ -233,7 +240,7 @@
                         <tr>
                         	<td>川神下1</td>
                         	<td>HA-111</td>
-                        	<td>20:30</td>
+                        	<td style="text-align:right;">20:30</td>
                         	<td>平坂 (5346)<br>090-1111-1111</td>
                         	<td>業務前</td>
                             <td>
@@ -247,7 +254,7 @@
 		                        </label>
 							</td>
                             <td>
-							    <input type="text" style="width:60px;">
+							    <input type="text" style="width:60px; text-align:right;">
 							</td>
                             <td>
 		                        <label class="input-control radio small-check">
@@ -272,10 +279,11 @@
 		                        </label>
 		                        <!-- ポップアップ -->
 				                <div class="checklist"><a href="javascript:showDialog('#checklist')" target="_blank">確認事項</a></div>
-		                       
+		                        <div data-role="dialog" id="checklist" data-close-button="true" data-content='<iframe src="checklist.html"></iframe>' data-width="900" data-content-type="video"></div>
+		                        
 							</td>
                             <td>
-							    <input type="text" style="width:30px;">:<input type="text" style="width:30px;">
+							    <input type="text" style="width:30px; text-align:right;">:<input type="text" style="width:30px; text-align:right;">
 							</td>
                             <td>
 		                        <div class="input-control select" style="width:120px;">
@@ -295,7 +303,7 @@
                         <tr>
                         	<td>川神下1</td>
                         	<td>HA-111</td>
-                        	<td>21:30</td>
+                        	<td style="text-align:right;">21:30</td>
                         	<td>平坂 (5346)<br>090-1111-1111</td>
                         	<td>川崎東</td>
                             <td>
@@ -309,7 +317,7 @@
 		                        </label>
 							</td>
                             <td>
-							    <input type="text" style="width:60px;">
+							    <input type="text" style="width:60px; text-align:right;">
 							</td>
                             <td>
 		                        <label class="input-control radio small-check">
@@ -335,9 +343,11 @@
 		                        
 		                        <!-- ポップアップ -->
 				                <div class="checklist"><a href="javascript:showDialog('#checklist')" target="_blank">確認事項</a></div>
+		                        <div data-role="dialog" id="checklist" data-close-button="true" data-content='<iframe src="checklist.html"></iframe>' data-width="900" data-content-type="video"></div>
+		                        
 		                    </td>
                             <td>
-							    <input type="text" style="width:30px;">:<input type="text" style="width:30px;">
+							    <input type="text" style="width:30px; text-align:right;">:<input type="text" style="width:30px; text-align:right;">
 							</td>
                             <td>
 		                        <div class="input-control select" style="width:120px;">
@@ -357,7 +367,7 @@
                         <tr>
                         	<td>川神下1</td>
                         	<td>HA-111</td>
-                        	<td>5:00</td>
+                        	<td style="text-align:right;">5:00</td>
                         	<td>平坂 (5346)<br>090-1111-1111</td>
                         	<td>新大阪</td>
                             <td>
@@ -371,7 +381,7 @@
 		                        </label>
 							</td>
                             <td>
-							    <input type="text" style="width:60px;">
+							    <input type="text" style="width:60px; text-align:right;">
 							</td>
                             <td>
 		                        <label class="input-control radio small-check">
@@ -396,9 +406,11 @@
 		                        </label>
 		                        <!-- ポップアップ -->
 			                    <div class="checklist"><a href="javascript:showDialog('#checklist')" target="_blank">確認事項</a></div>
+							    <div data-role="dialog" id="checklist" data-close-button="true" data-content='<iframe src="checklist.html"></iframe>' data-width="900" data-content-type="video"></div>
+							    
 							</td>
                             <td>
-							    <input type="text" style="width:30px;">:<input type="text" style="width:30px;">
+							    <input type="text" style="width:30px; text-align:right;">:<input type="text" style="width:30px; text-align:right;">
 							</td>
                             <td>
 		                        <div class="input-control select" style="width:120px;">
@@ -418,7 +430,7 @@
                         <tr>
                         	<td>川神下1</td>
                         	<td>HA-111</td>
-                        	<td>05:15</td>
+                        	<td style="text-align:right;">05:15</td>
                         	<td>平坂 (5346)<br>090-1111-1111</td>
                         	<td>ゆうP</td>
                             <td>
@@ -432,7 +444,7 @@
 		                        </label>
 							</td>
                             <td>
-							    <input type="text" style="width:60px;">
+							    <input type="text" style="width:60px; text-align:right;">
 							</td>
                             <td>
 		                        <label class="input-control radio small-check">
@@ -457,9 +469,11 @@
 		                        </label>
 		                        <!-- ポップアップ -->
 			                    <div class="checklist"><a href="javascript:showDialog('#checklist')" target="_blank">確認事項</a></div>
+							    <div data-role="dialog" id="checklist" data-close-button="true" data-content='<iframe src="checklist.html"></iframe>' data-width="900" data-content-type="video"></div>
+							    
 							</td>
                             <td>
-							    <input type="text" style="width:30px;">:<input type="text" style="width:30px;">
+							    <input type="text" style="width:30px; text-align:right;">:<input type="text" style="width:30px; text-align:right;">
 							</td>
                             <td>
 		                        <div class="input-control select" style="width:120px;">
@@ -478,7 +492,7 @@
                         <tr>
                         	<td>川神下1</td>
                         	<td>HA-111</td>
-                        	<td>06:25</td>
+                        	<td style="text-align:right;">06:25</td>
                         	<td>平坂 (5346)<br>090-1111-1111</td>
                         	<td>神戸</td>
                             <td>
@@ -492,7 +506,7 @@
 		                        </label>
 							</td>
                             <td>
-							    <input type="text" style="width:60px;">
+							    <input type="text" style="width:60px; text-align:right;">
 							</td>
                             <td>
 		                        <label class="input-control radio small-check">
@@ -517,9 +531,11 @@
 		                        </label>
 		                        <!-- ポップアップ -->
 			                    <div class="checklist"><a href="javascript:showDialog('#checklist')" target="_blank">確認事項</a></div>
+							    <div data-role="dialog" id="checklist" data-close-button="true" data-content='<iframe src="checklist.html"></iframe>' data-width="900" data-content-type="video"></div>
+							    
 							</td>
                             <td>
-							    <input type="text" style="width:30px;">:<input type="text" style="width:30px;">
+							    <input type="text" style="width:30px; text-align:right;">:<input type="text" style="width:30px; text-align:right;">
 							</td>
                             <td>
 		                        <div class="input-control select" style="width:120px;">
@@ -538,7 +554,7 @@
                         <tr>
                         	<td>川神下1</td>
                         	<td>HA-111</td>
-                        	<td></td>
+                        	<td style="text-align:right;"></td>
                         	<td>平坂 (5346)<br>090-1111-1111</td>
                         	<td>中間<input type="text" style="margin-left:10px;width:100px;"></td>
                             <td>
@@ -552,7 +568,7 @@
 		                        </label>
 							</td>
                             <td>
-							    <input type="text" style="width:60px;">
+							    <input type="text" style="width:60px; text-align:right;">
 							</td>
                             <td>
 		                        <label class="input-control radio small-check">
@@ -577,9 +593,11 @@
 		                        </label>
 		                        <!-- ポップアップ -->
 			                    <div class="checklist"><a href="javascript:showDialog('#checklist')" target="_blank">確認事項</a></div>
+							    <div data-role="dialog" id="checklist" data-close-button="true" data-content='<iframe src="checklist.html"></iframe>' data-width="900" data-content-type="video"></div>
+							    
 							</td>
                             <td>
-							    <input type="text" style="width:30px;">:<input type="text" style="width:30px;">
+							    <input type="text" style="width:30px; text-align:right;">:<input type="text" style="width:30px; text-align:right;">
 							</td>
                             <td>
 		                        <div class="input-control select" style="width:120px;">
@@ -591,14 +609,14 @@
 		                        </div>
 							</td>
 							<td>
-							<input type="text" style="width:200px;">
+							    <input type="text" style="width:200px;">
 							</td>
                         </tr>                
 <!-- 8行目 -->                       
                         <tr>
                         	<td>川神下1</td>
                         	<td>HA-111</td>
-                        	<td></td>
+                        	<td style="text-align:right;"></td>
                         	<td>平坂 (5346)<br>090-1111-1111</td>
                         	<td>業務後</td>
                             <td>
@@ -612,7 +630,7 @@
 		                        </label>
 							</td>
                             <td>
-							    <input type="text" style="width:60px;">
+							    <input type="text" style="width:60px; text-align:right;">
 							</td>
                             <td>
 		                        <label class="input-control radio small-check">
@@ -637,9 +655,11 @@
 		                        </label>
 		                        <!-- ポップアップ -->
 			                    <div class="checklist"><a href="javascript:showDialog('#checklist')" target="_blank">確認事項</a></div>
+							    <div data-role="dialog" id="checklist" data-close-button="true" data-content='<iframe src="checklist.html"></iframe>' data-width="900" data-content-type="video"></div>
+							    
 							</td>
                             <td>
-							    <input type="text" style="width:30px;">:<input type="text" style="width:30px;">
+							    <input type="text" style="width:30px; text-align:right;">:<input type="text" style="width:30px; text-align:right;">
 							</td>
                             <td>
 		                        <div class="input-control select" style="width:120px;">
@@ -658,7 +678,7 @@
                         <tr>
                         	<td>下4</td>
                         	<td>HA-051</td>
-                        	<td>22:40</td>
+                        	<td style="text-align:right;">22:40</td>
                         	<td>賀川 (9492)<br>090-111-92222</td>
                         	<td>1H前</td>
                             <td>
@@ -672,7 +692,7 @@
 		                        </label>
 							</td>
                             <td>
-							    <input type="text" style="width:60px;">
+							    <input type="text" style="width:60px; text-align:right;">
 							</td>
                             <td>
 		                        <label class="input-control radio small-check">
@@ -697,9 +717,11 @@
 		                        </label>
 		                        <!-- ポップアップ -->
 			                    <div class="checklist"><a href="javascript:showDialog('#checklist')" target="_blank">確認事項</a></div>
+							    <div data-role="dialog" id="checklist" data-close-button="true" data-content='<iframe src="checklist.html"></iframe>' data-width="900" data-content-type="video"></div>
+							    
 							</td>
                             <td>
-							    <input type="text" style="width:30px;">:<input type="text" style="width:30px;">
+							    <input type="text" style="width:30px; text-align:right;">:<input type="text" style="width:30px; text-align:right;">
 							</td>
                             <td>
 		                        <div class="input-control select" style="width:120px;">
@@ -718,7 +740,7 @@
                         <tr>
                         	<td>下4</td>
                         	<td>HA-051</td>
-                        	<td>22:40</td>
+                        	<td style="text-align:right;">22:40</td>
                         	<td>賀川 (9492)<br>090-111-92222</td>
                         	<td>業務前</td>
                             <td>
@@ -732,7 +754,7 @@
 		                        </label>
 							</td>
                             <td>
-							    <input type="text" style="width:60px;">
+							    <input type="text" style="width:60px; text-align:right;">
 							</td>
                             <td>
 		                        <label class="input-control radio small-check">
@@ -757,9 +779,11 @@
 		                        </label>
 		                        <!-- ポップアップ -->
 			                    <div class="checklist"><a href="javascript:showDialog('#checklist')" target="_blank">確認事項</a></div>
+							    <div data-role="dialog" id="checklist" data-close-button="true" data-content='<iframe src="checklist.html"></iframe>' data-width="900" data-content-type="video"></div>
+							    
 							</td>
                             <td>
-							    <input type="text" style="width:30px;">:<input type="text" style="width:30px;">
+							    <input type="text" style="width:30px; text-align:right;">:<input type="text" style="width:30px; text-align:right;">
 							</td>
                             <td>
 		                        <div class="input-control select" style="width:120px;">
@@ -779,7 +803,7 @@
                         <tr>
                         	<td>下4</td>
                         	<td>HA-051</td>
-                        	<td>23:40</td>
+                        	<td style="text-align:right;">23:40</td>
                         	<td>賀川 (9492)<br>090-111-92222</td>
                         	<td>東京多摩</td>
                             <td>
@@ -793,7 +817,7 @@
 		                        </label>
 							</td>
                             <td>
-							    <input type="text" style="width:60px;">
+							    <input type="text" style="width:60px; text-align:right;">
 							</td>
                             <td>
 		                        <label class="input-control radio small-check">
@@ -818,9 +842,11 @@
 		                        </label>
 		                        <!-- ポップアップ -->
 			                    <div class="checklist"><a href="javascript:showDialog('#checklist')" target="_blank">確認事項</a></div>
+							    <div data-role="dialog" id="checklist" data-close-button="true" data-content='<iframe src="checklist.html"></iframe>' data-width="900" data-content-type="video"></div>
+							    
 							</td>
                             <td>
-							    <input type="text" style="width:30px;">:<input type="text" style="width:30px;">
+							    <input type="text" style="width:30px; text-align:right;">:<input type="text" style="width:30px; text-align:right;">
 							</td>
                             <td>
 		                        <div class="input-control select" style="width:120px;">
@@ -839,7 +865,7 @@
                         <tr>
                         	<td>下4</td>
                         	<td>HA-051</td>
-                        	<td>00:45</td>
+                        	<td style="text-align:right;">00:45</td>
                         	<td>賀川 (9492)<br>090-111-92222</td>
                         	<td>綾瀬</td>
                             <td>
@@ -853,7 +879,7 @@
 		                        </label>
 							</td>
                             <td>
-							    <input type="text" style="width:60px;">
+							    <input type="text" style="width:60px; text-align:right;">
 							</td>
                             <td>
 		                        <label class="input-control radio small-check">
@@ -878,9 +904,11 @@
 		                        </label>
 		                        <!-- ポップアップ -->
 			                    <div class="checklist"><a href="javascript:showDialog('#checklist')" target="_blank">確認事項</a></div>
+							    <div data-role="dialog" id="checklist" data-close-button="true" data-content='<iframe src="checklist.html"></iframe>' data-width="900" data-content-type="video"></div>
+							    
 							</td>
                             <td>
-							    <input type="text" style="width:30px;">:<input type="text" style="width:30px;">
+							    <input type="text" style="width:30px; text-align:right;">:<input type="text" style="width:30px; text-align:right;">
 							</td>
                             <td>
 		                        <div class="input-control select" style="width:120px;">
@@ -899,7 +927,7 @@
                         <tr>
                         	<td>下4</td>
                         	<td>HA-051</td>
-                        	<td>02:15</td>
+                        	<td style="text-align:right;">02:15</td>
                         	<td>賀川 (9492)<br>090-111-92222</td>
                         	<td>川崎東</td>
                             <td>
@@ -913,7 +941,7 @@
 		                        </label>
 							</td>
                             <td>
-							    <input type="text" style="width:60px;">
+							    <input type="text" style="width:60px; text-align:right;">
 							</td>
                             <td>
 		                        <label class="input-control radio small-check">
@@ -938,9 +966,11 @@
 		                        </label>
 		                        <!-- ポップアップ -->
 			                    <div class="checklist"><a href="javascript:showDialog('#checklist')" target="_blank">確認事項</a></div>
+							    <div data-role="dialog" id="checklist" data-close-button="true" data-content='<iframe src="checklist.html"></iframe>' data-width="900" data-content-type="video"></div>
+							    
 							</td>
                             <td>
-							    <input type="text" style="width:30px;">:<input type="text" style="width:30px;">
+							    <input type="text" style="width:30px; text-align:right;">:<input type="text" style="width:30px; text-align:right;">
 							</td>
                             <td>
 		                        <div class="input-control select" style="width:120px;">
@@ -959,7 +989,7 @@
                         <tr>
                         	<td>下4</td>
                         	<td>HA-051</td>
-                        	<td></td>
+                        	<td style="text-align:right;"></td>
                         	<td>賀川 (9492)<br>090-111-92222</td>
                         	<td>中間<input type="text" style="margin-left:10px;width:100px;"></td>
                             <td>
@@ -973,7 +1003,7 @@
 		                        </label>
 							</td>
                             <td>
-							    <input type="text" style="width:60px;">
+							    <input type="text" style="width:60px; text-align:right;">
 							</td>
                             <td>
 		                        <label class="input-control radio small-check">
@@ -998,9 +1028,11 @@
 		                        </label>
 		                        <!-- ポップアップ -->
 			                    <div class="checklist"><a href="javascript:showDialog('#checklist')" target="_blank">確認事項</a></div>
+							    <div data-role="dialog" id="checklist" data-close-button="true" data-content='<iframe src="checklist.html"></iframe>' data-width="900" data-content-type="video"></div>
+							    
 							</td>
                             <td>
-							    <input type="text" style="width:30px;">:<input type="text" style="width:30px;">
+							    <input type="text" style="width:30px; text-align:right;">:<input type="text" style="width:30px; text-align:right;">
 							</td>
                             <td>
 		                        <div class="input-control select" style="width:120px;">
@@ -1019,7 +1051,7 @@
                         <tr>
                         	<td>下4</td>
                         	<td>HA-051</td>
-                        	<td></td>
+                        	<td style="text-align:right;"></td>
                         	<td>賀川 (9492)<br>090-111-92222</td>
                         	<td>業務後</td>
                             <td>
@@ -1033,7 +1065,7 @@
 		                        </label>
 							</td>
                             <td>
-							    <input type="text" style="width:60px;">
+							    <input type="text" style="width:60px; text-align:right;">
 							</td>
                             <td>
 		                        <label class="input-control radio small-check">
@@ -1058,9 +1090,11 @@
 		                        </label>
 		                        <!-- ポップアップ -->
 			                    <div class="checklist"><a href="javascript:showDialog('#checklist')" target="_blank">確認事項</a></div>
+							    <div data-role="dialog" id="checklist" data-close-button="true" data-content='<iframe src="checklist.html"></iframe>' data-width="900" data-content-type="video"></div>
+							    
 							</td>
                             <td>
-							    <input type="text" style="width:30px;">:<input type="text" style="width:30px;">
+							    <input type="text" style="width:30px; text-align:right;">:<input type="text" style="width:30px; text-align:right;">
 							</td>
                             <td>
 		                        <div class="input-control select" style="width:120px;">
@@ -1080,7 +1114,7 @@
                         	<td rowspan="2"></td>
                         	<td rowspan="2"></td>
                         	<td rowspan="2">
-							    <input type="text" style="width:30px;">:<input type="text" style="width:30px;">
+							    <input type="text" style="width:30px; text-align:right;">:<input type="text" style="width:30px; text-align:right;">
 							</td>
                         	<td>
                         	  <div class="input-control select" style="width:70px;">
@@ -1091,7 +1125,7 @@
                         	</td>
                         	<td rowspan="2" style="color:green">
                         	
-                        	  <div class="input-control select" style="width:140px;">
+                        	<div class="input-control select" style="width:140px;">
                         	  <form class="left" name="test">
                               <select name="changeSelect" onChange="kakunin()" style="width:60px;">
 								
@@ -1105,7 +1139,7 @@
 							  </form>
 								
 							  <div class="rightForm"></div>
-                        	  </div>
+                        	</div>
 						     
                         	</td>
                             <td rowspan="2">
@@ -1119,7 +1153,7 @@
 		                        </label>
 							</td>
                             <td rowspan="2">
-							    <input type="text" style="width:60px;">
+							    <input type="text" style="width:60px; text-align:right;">
 							</td>
                             <td rowspan="2">
 		                        <label class="input-control radio small-check">
@@ -1146,7 +1180,7 @@
 			                    <div class="checklist"><a href="javascript:showDialog('#checklist')" target="_blank">確認事項</a></div>
 							</td>
                             <td rowspan="2">
-							    <input type="text" style="width:30px;">:<input type="text" style="width:30px;">
+							    <input type="text" style="width:30px; text-align:right;">:<input type="text" style="width:30px; text-align:right;">
 							</td>
                             <td rowspan="2">
 		                        <div class="input-control select" style="width:120px;">
@@ -1161,7 +1195,7 @@
 							<input type="text" style="width:200px;">
 							</td>
                         </tr>
-                        <tr><td><input type="text" style="width:110px;"value="090-111-92222"></td></tr>
+                        <tr><td><input type="text" style="width:110px; text-align:right;"value="090-111-92222"></td></tr>
                         
                         </tbody>
                     </table>

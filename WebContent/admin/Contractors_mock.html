@@ -28,7 +28,6 @@
             height: 100%;
         }
         body {
-        font-size:10pt;
         }
         .page-content {
             padding-top: 3.125rem;
@@ -40,24 +39,16 @@
             min-height: 0;
             height: auto;
         }
-
-		p.yoko{
-		text-align:center;
-		 width:150px;
-		 margin:0px;
-		}
-		
-		p.yoko2{
-		text-align:center;
-		width:150px;
-		margin:0px;
-		}
-		
-		p.yoko3{
-		width:35px;
-		margin:0px;
-		}
-
+        .cell colspan5 {
+            overflow: hidden;
+        }
+        .input-control text {
+            float: left;
+        }
+        .right {
+            float: right;
+            margin:7px 0 0 0;
+        }
 
         @media screen and (max-width: 800px){
             #cell-sidebar {
@@ -69,92 +60,82 @@
         }
     </style>
 
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-
-	<script>
-	    $(function(){
-	        $("#datepicker").datepicker();
-	    });
-	</script>
-	
-	<!-- ヘッダー固定 -->
-	<script type="text/javascript">
-        $(document).ready(function() {
-           $('#header-target').load('header.html');
-        });
+    <script>
+	    
     </script>
-	
 </head>
 <body class="bg-steel">
     
-    <!-- ヘッダー固定 -->
+     <!-- ヘッダー固定 -->
    <div id="Menu_load"></div>
 
     <div class="page-content">
         <div class="flex-grid no-responsive-future" style="height: 100%;">
             <div class="row" style="height: 100%">
+                
                 <div class="cell auto-size padding20 bg-white" id="cell-content">
                     <ul class="breadcrumbs" style="padding:0px;">
 					    <li><h4><a href="#">委託先(外注)</a></h4></li>
 					</ul>
-                    
+					
                     <hr class="thin bg-grayLighter">
                     
-		            <div class="grid">
-		                <div class="row cells12" style="margin:0px;">
-							<div class="cell colspan5">
-								委託先コード
-								<div class="input-control text" data-length="8" style="width:150px;">
-									<input type="text">
-								</div>
-							</div>
-		                </div>
-		                <div class="cell colspan5">
-								委 託 先 名
-								<div class="input-control text" data-length="8" style="width:150px;margin:10px 0px 0px 13px;">
-									<input type="text">
-									</div>
-			                    <button class="button primary" style="margin:2px 0px 0px 70px;"><span class="mif-search"></span>検索</button>
-			                    <a href="./master_Contractors_add.html" target="_self"><button class="button primary" onclick="#"><span class="mif-plus"></span>登録</button></a>
-		                </div>
+					<div class="cell colspan5">
+						委託先コード
+						<div class="input-control text" data-length="8" style="width:150px;margin:10px 0px 0px 13px;">
+					      <input type="text">
+					    </div>
+					    委託先名
+						<div class="input-control text" data-length="8" style="width:250px;margin:10px 0px 0px 13px;">
+					      <input type="text">
+					    </div>
+					    
+					    <div class="right">
+					      <button class="button alert" onclick="pushMessage('alert')"><span class="mif-checkmark"></span> 選択データ削除</button>
+	                      <button class="button primary"><span class="mif-search"></span>検索</button>
+	                      <a href="./master_customer_add.html" target="_self"><button class="button primary" onclick="#"><span class="mif-plus"></span>登録</button></a>
+                        </div>
 		            </div>
-		            
+					
                     <hr class="thin bg-grayLighter">
                     
-		            <div class="grid">
-		                <div class="row cells12">
-							<div class="cell colspan7">
-			                    <table class="dataTable border bordered" data-auto-width="false">
+                    <table class="dataTable border bordered" data-auto-width="false">
                         <thead>
                         <tr>
-                        	
-                            <td class="sortable-column" colspan="2"><p class="yoko">委託先コード</p></td>
-                            <td class="sortable-column"><p class="yoko2">委託先名</p></td>
-                            <td class="sortable-column"><p class="yoko2">部署</p></td>
-                            <td class="sortable-column"><p class="yoko2">課</p></td>
-                            <td class="sortable-column"><p class="yoko2">住所</p></td>
-                            <td class="sortable-column"><p class="yoko2">電話</p></td>
-                            <td class="sortable-column"><p class="yoko2">FAX</p></td>
+                            <td class="sortable-column">削除</td>
+                            <td class="sortable-column">委託先コード</td>
+                            <td class="sortable-column">委託先名</td>
+                            <td class="sortable-column">部署</td>
+                            <td class="sortable-column">課名</td>
+                            <td class="sortable-column">郵便番号</td>
+                            <td class="sortable-column">住所</td>
+                            <td class="sortable-column">電話番号</td>
+                            <td class="sortable-column">FAX</td>
+                            <td class="sortable-column">詳細</td>
                         </tr>
-                        
                         </thead>
-                        <tbody style="text-align: right;">
-                        <tr>
-                        	<td class="buttonright" style="border:none;"><button class="button primary" ><p class="yoko3">編集</p></button></td>
-                            <td class="sortable-column"><p class="yoko">0001</p></td>
-                            <td class="sortable-column"><p class="yoko">クレベ運送</p></td>
-                            <td class="sortable-column"><p class="yoko">人事部</p></td>
-                            <td class="sortable-column"><p class="yoko">運送管理課</p></td>
-                            <td class="sortable-column"><p class="yoko">神奈川県横浜市2-2-2</p></td>
-                            <td class="sortable-column"><p class="yoko">222-222-2222</p></td>
-                            <td class="sortable-column"><p class="yoko">222-222-2222</p></td>
+                        <tbody>
+                        
+                        <tr style="height: 45px;">
+                            <td align="center">
+                               <label class="input-control checkbox small-check no-margin">
+                                    <input type="checkbox">
+                                    <span class="check"></span>
+                                </label>
+                            </td>
+                            <td>1234</td>
+                            <td>クレベ運送株式会社</td>
+                            <td></td>
+                            <td></td>
+                            <td>538-0043</td>
+                            <td>大阪府大阪市鶴見区今津南３丁目２-４</td>
+                            <td>06-6962-1581</td>
+                            <td>06-6968-1651</td>
+                            <td align="center"><a href="#" target="_self">詳細</a></td>
                         </tr>
-                         
-                        </tbody>   
+             　         
+                        </tbody>
                     </table>
-		                    </div>
-	                    </div>
-                    </div>
                 </div>
             </div>
         </div>
