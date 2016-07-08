@@ -20,6 +20,8 @@
     <script src="../js/jquery.dataTables.min.js"></script>
 
     <script src="../js/metro.js"></script>
+    
+    <script src="../js/Menu.js"></script>
 
     <style>
         html, body {
@@ -72,139 +74,105 @@
 	        $("#datepicker").datepicker();
 	    });
 	</script>
-	
-	<!-- ヘッダー固定 -->
-	<script type="text/javascript">
-        $(document).ready(function() {
-           $('#header-target').load('header.html');
-        });
-    </script>
-	
 </head>
 <body class="bg-steel">
     
     <!-- ヘッダー固定 -->
-    <div id="header-target"></div>
+   <div id="Menu_load"></div>
 
     <div class="page-content">
         <div class="flex-grid no-responsive-future" style="height: 100%;">
             <div class="row" style="height: 700px;">
-                                <div class="cell auto-size padding20 bg-white" id="cell-content">
+                <div class="cell auto-size padding20 bg-white" id="cell-content">
                     <ul class="breadcrumbs" style="padding:0px;">
-					    <li><h4><a href="#">自社情報登録</a></h4></li>
+					    <li><h4><a href="#">会社登録</a></h4></li>
 					</ul>
+					
                     <hr class="thin bg-grayLighter">
+                    
 					<div class="align-right">
                     <button class="button primary" onclick="pushMessage('info')"><span class="mif-plus"></span> 保存</button>
                     <button class="button warning" onclick="pushMessage('warning')"><span class="mif-cancel"></span> キャンセル</button>
 					</div>
+					
                     <hr class="thin bg-grayLighter">
+                    
 		            <div class="grid">
 		                <div class="row cells12">
-							<div class="cell colspan2">
+							<div class="cell colspan3">
 		                        会社コード
-		                        <div class="input-control text full-size" style="width: 80px;">
-								    <input type="text">
+		                        <div class="input-control text full-size">
+								    <input type="text" style="width: 150px;">
 								</div>
 		                    </div>
 		                    <div class="cell colspan4">
 		                        会社名
-								<div class="input-control text full-size" style="width: 300px;">
-								    <input type="text">
+								<div class="input-control text full-size">
+								    <input type="text" style="width: 300px;">
 								</div>
 		                    </div>
-		                    <div class="cell colspan1">
-		                        決算月
-								<div class="input-control text full-size" style="width: 40px;">
-								    <input type="text" placeholder="05">
+		                    <div class="cell colspan2">
+		                        支社名
+								<div class="input-control text full-size">
+								    <input type="text" style="width: 250px;">
 								</div>
 		                    </div>
 		                </div>
+		                
 		                <div class="row cells12">
-		                    <div class="cell colspan2">
-		                        郵便番号
-								<div class="input-control text full-size" style="width: 80px;">
-								    <input type="text">
-								</div>
-		                    </div>
-							<div class="cell colspan5">
-		                        住所
+		                    <div class="cell colspan3">
+		                        代表者名
 								<div class="input-control text full-size">
-								    <input type="text" style="width: 350px;">
+								    <input type="text" style="width: 220px;">
 								</div>
 		                    </div>
 							<div class="cell colspan4">
-		                        建物名
-								<div class="input-control text full-size" style="width: 250px;">
+		                        郵便
+								<div class="input-control text full-size">
+								    <input type="text" style="width: 150px;">
+								</div>
+		                    </div>
+							<div class="cell colspan4">
+		                        住所
+								<div class="input-control text full-size" style="width: 200px;">
 								    <input type="text">
 								</div>
 		                    </div>
 		                </div>
+		                
 		                <div class="row cells12">
-							<div class="cell colspan2">
+							<div class="cell colspan3">
 		                        電話番号
-		                        <div class="input-control text full-size" style="width: 100px;">
-								    <input type="tel" name="telNumber" pattern="\d{1,5}-\d{1,4}-\d{4,5}">
-								</div>
-		                    </div>
-		                    <div class="cell colspan2">
-		                        ＦＡＸ番号
-								<div class="input-control text full-size" style="width: 100px;">
-								    <input type="tel" name="faxNumber" pattern="\d{1,5}-\d{1,4}-\d{4,5}">
-								</div>
-		                    </div>
-		                    <div class="cell colspan2">
-		                        代表者役職
-								<div class="input-control text full-size" style="width: 100px;">
-								    <input type="text">
-								</div>
-		                    </div>
-							<div class="cell colspan2">
-		                        代表者名
-		                        <div class="input-control text full-size" style="width: 100px;">
-								    <input type="text">
-								</div>
-		                    </div>
-		                </div>
-		                <div class="row cells12">
-		                    <div class="cell colspan2">
-		                        担当者名
-								<div class="input-control text full-size" style="width: 100px;">
-								    <input type="text">
+		                        <div class="input-control text full-size">
+								    <input type="tel" name="telNumber" pattern="\d{1,5}-\d{1,4}-\d{4,5}" style="width: 200px;">
 								</div>
 		                    </div>
 		                    <div class="cell colspan4">
-		                        担当者電話番号
+		                        携帯番号
 								<div class="input-control text full-size">
+								    <input type="tel" name="faxNumber" pattern="\d{1,5}-\d{1,4}-\d{4,5}" style="width: 250px;">
+								</div>
+		                    </div>
+		                    <div class="cell colspan2">
+		                        メールアドレス
+								<div class="input-control text full-size" style="width: 100px;">
 								    <input type="text">
 								</div>
 		                    </div>
 		                </div>
-		                <div class="row cells12">
-							<div class="cell colspan7">
-		                        代表メールアドレス
-								<div class="input-control text full-size" style="width: 350px;">
-								    <input type="text">
-								</div>
-		                    </div>
-							<div class="cell colspan3">
-		                        会社情報バーコード
-								<div class="input-control text full-size">
-								    <input type="text">
-								</div>
-		                    </div>
-		                </div>
+		                
+		                
 		                <div class="row cells12">
 							<div class="cell colspan3">
 		                        社印１
 								<div class="content clear-float">
-                                    <img src="../img/sample_06.gif" class="">
+                                    <img src="#" class="">
                                 </div>
 		                    </div>
 							<div class="cell colspan3">
 		                        社印２
 								<div class="content clear-float">
-                                    <img src="../img/sample_06.gif" class="">
+                                    <img src="#" class="">
                                 </div>
 		                    </div>
 		                </div>

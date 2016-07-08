@@ -71,8 +71,6 @@
     </style>
 
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-
-
     
     <script>
         function pushMessage(t){
@@ -83,15 +81,6 @@
                 type: t
             });
         }
-
-        $(function(){
-            $('.sidebar').on('click', 'li', function(){
-                if (!$(this).hasClass('active')) {
-                    $('.sidebar li').removeClass('active');
-                    $(this).addClass('active');
-                }
-            })
-        })
     </script>
 	<script>
 	    $(function(){
@@ -108,8 +97,10 @@
         <div class="flex-grid no-responsive-future" style="height: 100%;">
             <div class="row" style="height: 100%">
                 <div class="cell auto-size padding20 bg-white" id="cell-content">
-                    <h4><a href="#">得意先検索</a></h4>
+                    <h4><a href="#">得意先</a></h4>
+                    
                     <hr class="thin bg-grayLighter">
+                    
 		            <div class="grid">
 		                <div class="row cells12" style="margin:0px;">
 							<div class="cell colspan5">
@@ -120,14 +111,17 @@
 							</div>
 		                </div>
 		                <div class="cell colspan5">
-								得 意 先 名
-								<div class="input-control text" data-length="8" style="width:150px;margin:10px 0px 0px 13px;">
-									<input type="text">
-									</div>
-			                    <button class="button primary" style="margin:2px 0px 0px 70px;"><span class="mif-search"></span>検索</button>
+							得 意 先 名
+							<div class="input-control text" data-length="8" style="width:150px;margin:10px 0px 0px 13px;">
+								<input type="text">
+								</div>
+		                    <button class="button primary" style="margin:2px 0px 0px 70px;"><span class="mif-search"></span>検索</button>
+		                    <a href="./master_customer_add.html" target="_self"><button class="button primary" onclick="#"><span class="mif-plus"></span>登録</button></a>
 		                </div>
 		            </div>
+		            
                     <hr class="thin bg-grayLighter">
+                    
 		            <div class="grid">
 		                <div class="row cells12">
 							<div class="cell colspan7">

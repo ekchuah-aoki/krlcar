@@ -12,7 +12,6 @@
 	<li><a href='' class='dropdown-toggle'>点呼管理</a>\
       <ul class='d-menu' data-role='dropdown'>\
         <li><a href='./roll_call_add.html'><span class='mif-file-text icon'></span><span class='title'>点呼記録表入力</span></a></li>\
-        <li><a href='./roll_call_list.html'><span class='mif-list-numbered icon'></span><span class='title'>点呼記録表一覧PDF印刷(提出用)</span></a></li>\
       </ul>\
     </li>\
     <li><a href='' class='dropdown-toggle'>日常点検</a>\
@@ -32,11 +31,11 @@
         <li><a href='./salesCost_driver_daily.html'><span class='mif-chart-bars icon'></span><span class='title'>ドライバー別売上一覧</span></a></li>\
         <li><a href='./bill_list.html'><span class='mif-list icon'></span><span class='title'>得意先別請求一覧</span></a></li>\
         <li><a href='./bill_close.html'><span class='mif-checkmark icon'></span><span class='title'>請求書締め処理</span></a></li>\
-        <li><a href='./salesCost_mock.html'><span class='mif-search icon'></span><span class='title'>請求書印刷</span></a></li>\
+        <li><a href='./bill_search.html'><span class='mif-search icon'></span><span class='title'>請求書印刷</span></a></li>\
         <li><a href='./salesCost_sales_mock.html'><span class='mif-search icon'></span><span class='title'>得意先別売上一覧</span></a></li>\
         <li><a href='./salesCost_pay_mock.html'><span class='mif-search icon'></span><span class='title'>委託先別支払一覧</span></a></li>\
         <li><a href='./cost_truck_monthly.html'><span class='mif-file-text icon'></span><span class='title'>車両別固定費・変動費・諸経費入力</span></a></li>\
-        <li><a href='./car_sales_mock.html'><span class='mif-list icon'></span><span class='title'>車両別・委託先別売上経費一覧</span></a></li>\
+        <li><a href='./car_sales_mock.html'><span class='mif-file-text icon'></span><span class='title'>車両別・委託先別売上経費一覧</span></a></li>\
         <li><a href='./sales_month.html'><span class='mif-file-text icon'></span><span class='title'>売上締め処理</span></a></li>\
     </ul>\
     </li>\
@@ -49,18 +48,16 @@
     </li>\
     <li><a href='' class='dropdown-toggle'>マスター管理</a>\
       <ul class='d-menu' data-role='dropdown'>\
-        <li><a href='./master_loginConfig_user.html'><span class='mif-location icon'></span><span class='title'>ログイン設定・社員一覧</span></a></li>\
-        <li><a href='./master_root.html'><span class='mif-location icon'></span><span class='title'>定期便(運行コース)登録</span></a></li>\
-        <li><a href='./master_truck_edit.html'><span class='mif-location icon'></span><span class='title'>車両登録</span></a></li>\
-	    <li><a href='./master_truck.html'><span class='mif-truck icon'></span><span class='title'>車両台帳印刷</span></a></li>\
-	    <li><a href='./master_user_add.html'><span class='mif-users icon'></span><span class='title'>社員登録</span></a></li>\
-	    <li><a href='./master_user.html'><span class='mif-users icon'></span><span class='title'>社員検索</span></a></li>\
-	    <li><a href='./master_customer_add.html'><span class='mif-location icon'></span><span class='title'>得意先登録</span></a></li>\
-	    <li><a href='./customer_mock.html'><span class='mif-location icon'></span><span class='title'>得意先検索</span></a></li>\
-	    <li><a href='./master_Contractors_add.html'><span class='mif-database icon'></span><span class='title'>委託先(外注)登録</span></a></li>\
-        <li><a href='./Contractors_mock.html'><span class='mif-database icon'></span><span class='title'>委託先(外注)検索</span></a></li>\
-        <li><a href='./master_fuelPrise.html'><span class='mif-money icon'></span><span class='title'>月別燃料単価登録</span></a></li>\
-        <li><a href='./holiday.html'><span class='mif-tag icon'></span><span class='title'>祝日定義</span></a></li>\
+        <li><a href='./master_loginConfig_user.html'><span class='mif-user icon'></span><span class='title'>ログイン設定</span></a></li>\
+        <li><a href='./master_company_list.html'><span class='mif-location-city icon'></span><span class='title'>会社</span></a></li>\
+        <li><a href='./master_base_data.html'><span class='mif-file-text icon'></span><span class='title'>基本情報</span></a></li>\
+	    <li><a href='./master_user.html'><span class='mif-users icon'></span><span class='title'>社員</span></a></li>\
+	    <li><a href='./customer_mock.html'><span class='mif-location icon'></span><span class='title'>得意先</span></a></li>\
+        <li><a href='./Contractors_mock.html'><span class='mif-database icon'></span><span class='title'>委託先(外注)</span></a></li>\
+        <li><a href='./holiday.html'><span class='mif-tag icon'></span><span class='title'>祝日</span></a></li>\
+        <li><a href='./master_truck_edit.html'><span class='mif-truck icon'></span><span class='title'>車両</span></a></li>\
+        <li><a href='./master_root.html'><span class='mif-location icon'></span><span class='title'>定期便(運行コース)</span></a></li>\
+        <li><a href='./master_fuelPrise.html'><span class='mif-money icon'></span><span class='title'>月別燃料単価</span></a></li>\
       </ul>\
     </li>\
   </ul>\

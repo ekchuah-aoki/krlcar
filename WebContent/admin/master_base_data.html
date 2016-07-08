@@ -21,6 +21,8 @@
     <script src="../js/jquery.dataTables.min.js"></script>
 
     <script src="../js/metro.js"></script>
+    
+    <script src="../js/Menu.js"></script>
 
     <style>
         html, body {
@@ -50,57 +52,22 @@
     </style>
 
     <script>
-        function pushMessage(t){
-            var mes = 'Info|Implement independently';
-            $.Notify({
-                caption: mes.split("|")[0],
-                content: mes.split("|")[1],
-                type: t
-            });
-        }
         
-        function showDialog(id) {
-            var dialog = $(id).data('dialog');
-            dialog.open();
-        }
-
-		$(function(){
-	        $("#datepicker1").datepicker();
-	        $("#datepicker").datepicker();
-	        $("#datepicker3").datepicker();
-	        
-	    });
-	    
-        $(function(){
-            $('.sidebar').on('click', 'li', function(){
-                if (!$(this).hasClass('active')) {
-                    $('.sidebar li').removeClass('active');
-                    $(this).addClass('active');
-                }
-            })
-        })
-    </script>
-    
-    <!-- ヘッダー固定 -->
-	<script type="text/javascript">
-        $(document).ready(function() {
-           $('#header-target').load('header.html');
-        });
     </script>
     
 </head>
 <body class="bg-steel">
     
     <!-- ヘッダー固定 -->
-    <div id="header-target"></div>
+   <div id="Menu_load"></div>
 
     <div class="page-content">
         <div class="flex-grid no-responsive-future" style="height: 100%;">
-            <div class="row" style="height: 900px;">
+            <div class="row">
             
                  <div class="cell auto-size padding20 bg-white" id="cell-content">
                     <ul class="breadcrumbs" style="padding:0px;">
-					    <li><h4><a href="#">基本データ登録</a></h4></li>
+					    <li><h4><a href="#">基本情報</a></h4></li>
 					</ul>
                     <hr class="thin bg-grayLighter">
 					<div class="align-right">

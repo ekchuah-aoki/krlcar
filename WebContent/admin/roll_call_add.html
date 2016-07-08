@@ -45,24 +45,10 @@
             min-height: 0;
             height: auto;
         }
-        
         .checklist {
             font-size: 1em;
         }
         
-        div.input-control select {
-            overflow: hidden;
-        }
-        
-        form.left {
-            float: left;
-        }
-        
-        .rightForm {
-            float: left;
-            margin: 2px 0px 0 5px;
-        }
-
         @media screen and (max-width: 800px){
             #cell-sidebar {
                 flex-basis: 52px;
@@ -71,9 +57,7 @@
                 flex-basis: calc(100% - 52px);
             }
         }
-        
     </style>
-    
     <!-- ポップアップ -->
 	<script>
         function showDialog(id) {
@@ -81,7 +65,6 @@
             dialog.open();
         }
     </script>
-    
     <!-- セレクトボックス -->
     <script>
  		    function kakunin(){
@@ -95,10 +78,8 @@
  		    	  }else{
  		    		 $('.rightForm').empty();	  
  		    	  }
- 		    	
  		    	}
     </script>
-    
 </head>
 <body class="bg-steel">
 
@@ -124,14 +105,9 @@
 								    <button class="button"><span class="mif-calendar"></span></button>
 								</div>
 		                    </div>
-							<div class="cell">
-	                    		<button class="button primary" onclick="pushMessage('info')"><span class="mif-search"></span> 検索</button>
-		                    </div>
-		                    <button class="button primary" onclick="pushMessage('info')" style="background-color:#6A5ACD;border-color:#6A5ACD;"><span class="mif-printer"></span> PDF出力</button>
-		                 </div>
-                    </div>
-                    <div class="cell">
-								<div class="input-control text">天候
+		                    
+		                    
+						      <div class="input-control text">天候
 		                        <div class="input-control select" style="width:70px;">
 		                            <select>
 		                                <option></option>
@@ -141,8 +117,9 @@
 		                                <option>雪</option>
 		                            </select>
 		                        </div>
-								</div>
-								<div class="input-control text">本支店
+							  </div>
+							  
+							  <div class="input-control text">本支店
 		                        <div class="input-control select" style="width:70px;">
 		                            <select>
 		                                <option></option>
@@ -151,12 +128,16 @@
 		                                <option>名古屋</option>
 		                            </select>
 		                        </div>
-								</div>
-								
-								<!-- ポップアップ -->
-								<div data-role="dialog" id="checklist" data-close-button="true" data-content='<iframe src="checklist.html"></iframe>' data-width="900" data-content-type="video"></div>
-									
+							  </div>
+		                    
+		                    <div class="align-right">
+		                        <button class="button primary" onclick="pushMessage('info')" style="background-color:#6A5ACD;border-color:#6A5ACD;"><span class="mif-printer"></span> PDF出力</button>
+		                        <div class="cell">
+	                    		   <button class="button primary" onclick="pushMessage('info')"><span class="mif-search"></span> 検索</button>
+		                        </div>
 		                    </div>
+                    </div>
+		            
                     <hr class="thin bg-grayLighter">
                     
                     <table class="table border bordered callList" data-auto-width="false">
@@ -1223,7 +1204,7 @@
                 </div>
             </div>
         </div>
-        
+        </div>
     </div>
         
 </body>

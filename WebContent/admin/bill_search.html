@@ -20,6 +20,8 @@
     <script src="../js/jquery.dataTables.min.js"></script>
 
     <script src="../js/metro.js"></script>
+    
+    <script src="../js/Menu.js"></script>
 
     <style>
         html, body {
@@ -72,26 +74,18 @@
 	        $("#datepicker").datepicker();
 	    });
 	</script>
-	
-	<!-- ヘッダー固定 -->
-	<script type="text/javascript">
-        $(document).ready(function() {
-           $('#header-target').load('header.html');
-        });
-    </script>
-	
 </head>
 <body class="bg-steel">
     
     <!-- ヘッダー固定 -->
-    <div id="header-target"></div>
+   <div id="Menu_load"></div>
 
     <div class="page-content">
         <div class="flex-grid no-responsive-future" style="height: 100%;">
             <div class="row" style="height: 100%">
                 <div class="cell auto-size padding20 bg-white" id="cell-content" style="height: 100%;">
 					<ul class="breadcrumbs" style="padding:0px;">
-					    <li><h4><a href="#">請求書印刷力</a></h4></li>
+					    <li><h4><a href="#">請求書印刷</a></h4></li>
 					</ul>
                     <hr class="thin bg-grayLighter">
 					<div class="example" data-text="検索条件">

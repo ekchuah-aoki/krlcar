@@ -60,15 +60,6 @@
                 type: t
             });
         }
-
-        $(function(){
-            $('.sidebar').on('click', 'li', function(){
-                if (!$(this).hasClass('active')) {
-                    $('.sidebar li').removeClass('active');
-                    $(this).addClass('active');
-                }
-            })
-        })
     </script>
 </head>
 <body class="bg-steel">
@@ -130,11 +121,8 @@
                             <td class="sortable-column" rowspan="3">運転手</td>
                             <td class="sortable-column" rowspan="3">1月</td>
                             <td class="sortable-column" colspan="35">
-								<span class="fg-red">拘束時間：一日13時間以内　・最高16時間以内　・15時間超は一周間に2回以内　・1カ月293時間以内　・繁忙期の場合320時間以内）
-<br/>運転時間：2日平均で9時間以内　・2週間の平均が1週間当たり44時間以内
-</span><br/>
-<span class="fg-blue">安：安全講習会</span>
-</td>
+								<span class="fg-red">拘束時間：一日13時間以内　・最高16時間以内　・15時間超は一周間に2回以内　・1カ月293時間以内　・繁忙期の場合320時間以内）<br/>運転時間：2日平均で9時間以内　・2週間の平均が1週間当たり44時間以内</span><br/><span class="fg-blue">安：安全講習会</span>
+                            </td>
                             <td class="sortable-column" rowspan="3">合計</td>
                             <td class="sortable-column" rowspan="3">操作</td>
                         <tr>
@@ -210,7 +198,7 @@
                         </thead>
                         <tbody>
                         <tr>
-						  	<td rowspan="2">後藤</td>
+						  	<td rowspan="2">平坂</td>
 							<td>拘束</td>
 							<td class="bg-yellow">17</td><td>12</td><td>10</td><td>11</td><td>10</td><td>10</td><td>14</td><td>95</td>
 							<td>10</td><td><span class="fg-green">休</span></td><td><span class="fg-green">休</span></td><td>10</td><td>10</td><td>10</td><td>10</td><td>68</td>

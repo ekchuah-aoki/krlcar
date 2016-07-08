@@ -25,15 +25,6 @@
     <script src="../js/Menu.js"></script>
 	
 	<script>
-	<!--
-	function a(){
-	document.getElementById('t').style.visibility= "visible";
-	}
-
-	function b(){
-	document.getElementById('t').style.visibility= "collapse";
-	}
-	// -->
 	
 </script>
 
@@ -120,38 +111,11 @@
         }
     </style>
 
-    
     <script>
-        function pushMessage(t){
-            var mes = 'Info|Implement independently';
-            $.Notify({
-                caption: mes.split("|")[0],
-                content: mes.split("|")[1],
-                type: t
-            });
-        }
-
-        function showDialog(id) {
-            var dialog = $(id).data('dialog');
-            dialog.open();
-        }
         
-        function showDialog(id) {
-            var dialog = $(id).data('dialog');
-            dialog.open();
-        }
-        
-        $(function(){
-            $('.sidebar').on('click', 'li', function(){
-                if (!$(this).hasClass('active')) {
-                    $('.sidebar li').removeClass('active');
-                    $(this).addClass('active');
-                }
-            })
-        })
     </script>
 </head>
-<body class="bg-steel" onLoad="FixedMidashi.create();">
+<body>
     
      <!-- ヘッダー固定 -->
    <div id="Menu_load"></div>
@@ -233,6 +197,7 @@
 		                    </div>
 							<div class="cell colspan" style="margin:0px;">
 			                    <button class="button primary"><span class="mif-search"></span>検索</button>
+			                    
 			                    </div>
 		                </div>
 		            </div>
@@ -247,484 +212,485 @@
                     <hr class="thin bg-grayLighter">
                     <div class="x_data_area">
       
-      <!-- ロック部分 -->
-      	<div class="lock_box">
-        	 <table class="dataTable border bordered width300 data" style="margin:0px;"data-auto-width="false">
-				<colgroup>
-		                <col style="width: 6%;">
-		                <col style="width: 6%;">
-		                <col style="width: 7%;">
-		                <col style="width: 66%;">
-		                <col style="width: 12%;">
-	                </colgroup>
-
-
-                <thead>
-                
-				<tr>
-					<td><p class="yoko3">削除</p></td>
-                    <td class="sortable-column" ><p class="yoko3">便番</p></td>
-                    <td class="sortable-column"><p class="yoko3">便名</p></td>
-                    <td class="sortable-column">運行コース/作業割り当(行先)</td>
-                    <td class="sortable-column"><p>運行日/車種</p></td>
-                </tr>
-                </thead>
-                <tbody>
-                
-                	<tr>
-                        <td style="text-align:center;">
-                        	<label class="input-control checkbox small-check no-margin">
-                                    <input type="checkbox"><span class="check"></span>
-                        	</label>
-                        </td>
-                            <td style="padding:28px 5px;">A-111</td>
-                            <td>川神下1</td>
-                            <td>
-                            	<table class="center">
-		                            <tr id="acMenu">
-		                              <td style="border:none;"><p class="yoko2">川崎東</p></td>
-		                              <td class="course" rowspan="2" style="border:none;">⇨</td>
-		                              <td style="border:none;"><p class="yoko2">新大阪</p></td>
-		                              <td class="course" rowspan="2" style="border:none;">⇨</td>
-		                              <td style="border:none;"><p class="yoko2">ゆうP</p></td>
-		                              <td class="course" rowspan="2" style="border:none;">⇨</td>
-		                              <td style="border:none;"><p class="yoko2">神戸</p></td>
-		                             </tr>
-		                             <tr>
-		                               <td style="border:none;"><p class="yoko2">21:30</p></td>
-		                               <td style="border:none;"><p class="yoko2">5:00</p></td>
-			                           <td style="border:none;"><p class="yoko2">5:15</p></td>
-			                           <td style="border:none;"><p class="yoko2">6:25</p></td>
-		                             </tr>
-                            	</table>
-                            </td>
-                            <td style="text-align:center;">1〜末/8t</td>
-							
-                    <tr>
-                        <td style="text-align:center;">
-                                <label class="input-control checkbox small-check no-margin">
-                                    <input type="checkbox">
-                                    <span class="check"></span>
-                                </label>
-                            </td>
-                            <td style="padding:29px 5px;">A-150</td>
-                            <td>綾神上</td>
-                            <td>
-                            <table class="center">
-                            <tr>
-                              <td class="course" style="border:none;"><p class="yoko2">神戸</p></td>
-                              <td class="course" rowspan="2" style="border:none;">⇨</td>
-                              <td class="course" style="border:none;"><p class="yoko2">ゆうP</p></td>
-                              <td class="course" rowspan="2" style="border:none;">⇨</td>
-                              <td class="course" style="border:none;"><p class="yoko2">新大阪</p></td>
-                              <td class="course" rowspan="2" style="border:none;">⇨</td>
-                              <td class="course" style="border:none;"><p class="yoko2">ゆうP</p></td>
-                              <td class="course" rowspan="2" style="border:none;">⇨</td>
-                              <td class="course" style="border:none;"><p class="yoko2">綾瀬</p></td>
-                             </tr>
-                             <tr>
-                              <td style="border:none;"><p class="yoko2">19:15</p></td>
-                              <td style="border:none;"><p class="yoko2">20:00</p></td>
-	                          <td style="border:none;"><p class="yoko2">20:20</p></td>
-	                          <td style="border:none;"><p class="yoko2">21:15</p></td>
-	                          <td style="border:none;"><p class="yoko2">4:05</p></td>
-                             </tr>
-                            </table>
-                            </td>
-                            <td style="text-align:center;">1〜末/8t<br>日祝/4t</td>
-                           </tr>
-						<tr>
-                        	<td style="text-align:center;">
-                                <label class="input-control checkbox small-check no-margin">
-                                    <input type="checkbox">
-                                    <span class="check"></span>
-                                </label>
-                            </td>
-                            <td style="padding:28px 5px;"></td>
-                            <td></td>
-                            <td>
-                            <table class="center" style="width:600px;">
-                            
-                            <tr id="acMenu">
-                              <td style="border:none;"><p class="yoko2">川崎東</p></td>
-                              <td class="course" rowspan="2" style="border:none;">⇨</td>
-                              <td style="border:none;"><p class="yoko2">新大阪</p></td>
-                              <td class="course" rowspan="2" style="border:none;">⇨</td>
-                              <td style="border:none;"><p class="yoko2">ゆうP</p></td>
-                              <td class="course" rowspan="2" style="border:none;">⇨</td>
-                              <td style="border:none;"><p class="yoko2">神戸</p></td>
-                              <td class="course" rowspan="2" style="border:none;">⇨</td>
-                              <td style="border:none;"><p class="yoko2">ゆうP</p></td>
-                              <td class="course" rowspan="2" style="border:none;">⇨</td>
-                              <td style="border:none;"><p class="yoko2">新大阪</p></td>
-                              <td class="course" rowspan="2" style="border:none;">⇨</td>
-                              <td style="border:none;"><p class="yoko2">ゆうP</p></td>
-                              <td class="course" rowspan="2" style="border:none;">⇨</td>
-                              <td style="border:none;"><p class="yoko2">綾瀬</p></td>
-                              <td class="buttonright" rowspan="2" style="border:none;"><button class="button primary" onclick="window.open('mock_unsou_add.html','_self')">設定</button></td>
-                             </tr>
-                             <tr>
-                               <td style="border:none;"><p class="yoko2">21:30</p></td>
-                               <td style="border:none;"><p class="yoko2">5:00</p></td>
-	                           <td style="border:none;"><p class="yoko2">5:15</p></td>
-	                           <td style="border:none;"><p class="yoko2">6:25</p></td>
-	                           <td style="border:none;"><p class="yoko2">7:35</p></td>
-                               <td style="border:none;"><p class="yoko2">7:50</p></td>
-	                           <td style="border:none;"><p class="yoko2">8:20</p></td>
-	                           <td style="border:none;"><p class="yoko2">13:30</p></td>
-                             </tr>
-                            
-                            </table>
-                            </td>
-                            <td><div class="input-control select" style="width:100px;">
-		                            <select>
-		                                <option></option>
-										<option>2t</option>
-										<option>6t</option>
-										<option>8t</option>
-										<option>10t</option>
-		                            </select>
-		                    </div></td>
-						</tr>
-		                	<tr>
-		                        <td style="text-align:center;">
-									<label class="input-control checkbox small-check no-margin">
-                                    <input type="checkbox"><span class="check"></span>
-	                                </label>
-	                            </td>
-	                            <td style="padding:28px 5px;"></td>
-	                            <td></td>
-	                            <td><table style="width:600px;">
-	                        <tr>
-		                        <td class="buttonright" rowspan="2" style="border:none;"><button class="button primary" onclick="window.open('mock_unsou_add.html','_self')">設定</button></td>
-	                        </tr>
-                        </table></td>
-	                    	<td><div class="input-control select" style="width:100px;">
-		                        <select>
-		                        	<option></option>
-									<option>2t</option>
-									<option>6t</option>
-									<option>8t</option>
-									<option>10t</option>
-		                    	</select>
-		                	</div></td>
-						</tr>
-            	</tbody>
-        	</table>
-        </div>
-        
-		        <!-- /ロック部分 -->
-		        <!-- 横スクロール部分 -->
-		        <div class="x_scroll_box">
-	            <table class="dataTable border bordered  data width2500"  style="margin:0px;">
-	                <colgroup>
-		                <col style="width: 11%;">
-		                <col style="width: 11%;">
-		                <col style="width: 11%;">
-		                <col style="width: 11%;">
-		                <col style="width: 11%;">
-		                <col style="width: 11%;">
-		                <col style="width: 11%;">
-		                <col style="width: 11%;">
-		                <col style="width: 11%;">
-	                </colgroup>
-                <tbody>
-	                <thead>
-                		<tr>
-                    		<td class="sortable-column">6月5日(日)</td>
-                            <td class="sortable-column">6月6日(月)</td>
-                            <td class="sortable-column">6月7日(火)</td>
-                            <td class="sortable-column">6月8日(水)</td>
-                            <td class="sortable-column">6月9日(木)</td>
-                            <td class="sortable-column">6月10日(金)</td>
-                            <td class="sortable-column">6月11日(土)</td>
-                            <td class="sortable-column">6月12日(日)</td>
-                            <td class="sortable-column">6月13日(月)</td>
-                        </tr>
-                        <tr>
-                            <td class="sortable-column">車番/取引先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
-                            <td class="sortable-column">車番/取引先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
-                            <td class="sortable-column">車番/取引先(社員ドライバー)<br>連絡先/委託先ライバー</td>
-                            <td class="sortable-column">車番/取引先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
-                            <td class="sortable-column">車番/取引先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
-                            <td class="sortable-column">車番/取引先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
-                            <td class="sortable-column">車番/取引先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
-                            <td class="sortable-column">車番/取引先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
-                            <td class="sortable-column">車番/取引先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
-                        </tr>
-	                </thead>
-		                <tr>
-	                		<td><table>
-	                            <tr>
-		                            <td style="border:none;"><input type="text" size="15" name="car" value="5346"></td>
-		                            <td style="border:none;">
-	                            	<div class="input-control select" style="width:94px;">
-										<select>
-											<option>平坂</option>
-											<option>安藤</option>
-											<option>後藤</option>
-											<option>浜野</option>
-										</select>
-									</div></td>
-								</tr>
-	                            <tr><td style="border:none;"><input type="text" size="15" name="tel"value="090-1111-1111"></td><td style="border:none;"><input type="text" size="15" name="driver"></td></tr>
-                            </table></td>
-                            <td><table>
-	                            <tr><td style="border:none;"><input type="text" size="15" name="car" value="4666"></td><td style="border:none;">
-	                            	<div class="input-control select" style="width:94px;">
-										<select>
-											<option>平坂</option>
-											<option>安藤</option>
-											<option>後藤</option>
-											<option>浜野</option>
-										</select>
-									</div></td>
-								</tr>
-	                            <tr><td style="border:none;"><input type="text" size="15" name="tel"value="090-2222-2222"></td><td style="border:none;"><input type="text" size="15" name="driver"></td></tr>
-                            </table></td>
-                            <td><table>
-	                            <tr><td style="border:none;"><input type="text" size="15" name="car" value="6859"></td><td style="border:none;">
-	                            	<div class="input-control select" style="width:94px;">
-										<select>
-											<option>平坂</option>
-											<option>安藤</option>
-											<option>後藤</option>
-											<option>浜野</option>
-										</select>
-									</div></td>
-								</tr>
-	                            <tr><td style="border:none;"><input type="text" size="15" name="tel"value="090-3333-3333"></td><td style="border:none;"><input type="text" size="15" name="driver"></td></tr>
-                            </table></td>
-							<td><table>
-	                            <tr><td style="border:none;"><input type="text" size="15" name="car" value="5345"></td><td style="border:none;"><input type="text" size="15" name="car" value="加藤運送"></td></tr>
-	                            <tr><td style="border:none;"><input type="text" size="15" name="tel"value="090-4444-4444"></td><td style="border:none;"><input type="text" size="15" name="driver" value="安藤"></td></tr>
-                            </table></td>
-                            <td><table>
-	                            <tr><td style="border:none;"><input type="text" size="15" name="car" value="5346"></td><td style="border:none;">
-	                            	<div class="input-control select" style="width:94px;">
-										<select>
-											<option>平坂</option>
-											<option>安藤</option>
-											<option>後藤</option>
-											<option>浜野</option>
-										</select>
-									</div></td>
-								</tr>
-	                            <tr><td style="border:none;"><input type="text" size="15" name="tel"value="090-1111-1111"></td><td style="border:none;"><input type="text" size="15" name="driver"></td></tr>
-                            </table></td>
-                            <td><table>
-	                            <tr><td style="border:none;"><input type="text" size="15" name="car" value="5468"></td><td style="border:none;">
-	                            	<div class="input-control select" style="width:94px;">
-										<select>
-											<option>平坂</option>
-											<option>安藤</option>
-											<option>後藤</option>
-											<option>浜野</option>
-										</select>
-									</div></td>
-								</tr>
-                            <tr><td style="border:none;"><input type="text" size="15" name="tel"value="090-5555-5555"></td><td style="border:none;"><input type="text" size="15" name="driver"></td></tr>
-                            </table></td>
-                            <td><table>
-	                            <tr><td style="border:none;"><input type="text" size="15" name="car" value="9492"></td><td style="border:none;">
-	                            	<div class="input-control select" style="width:94px;">
-										<select>
-											<option>平坂</option>
-											<option>安藤</option>
-											<option>後藤</option>
-											<option>浜野</option>
-										</select>
-									</div></td>
-								</tr>
-	                            <tr><td style="border:none;"><input type="text" size="15" name="tel"value="090-6666-6666"></td><td style="border:none;"><input type="text" size="15" name="driver"></td></tr>
-                            </table></td>
-                            <td><table>
-	                            <tr><td style="border:none;"><input type="text" size="15" name="car" value="5986"></td><td style="border:none;">
-		                            <div class="input-control select" style="width:94px;">
-										<select>
-											<option>平坂</option>
-											<option>安藤</option>
-											<option>後藤</option>
-											<option>浜野</option>
-										</select>
-									</div></td>
-								</tr>
-	                            <tr><td style="border:none;"><input type="text" size="15" name="tel"value="090-7777-7777"></td><td style="border:none;"><input type="text" size="15" name="driver"></td></tr>
-                            </table></td>
-                            <td><table>
-	                            <tr><td style="border:none;"><input type="text" size="15" name="car" value="6308"></td><td style="border:none;">
-	                            	<div class="input-control select" style="width:94px;">
-										<select>
-											<option>平坂</option>
-											<option>安藤</option>
-											<option>後藤</option>
-											<option>浜野</option>
-										</select>
-									</div></td>
-								</tr>
-	                            <tr><td style="border:none;"><input type="text" size="15" name="tel"value="090-8888-8888"></td><td style="border:none;"><input type="text" size="15" name="driver"></td></tr>
-                            </table></td>
-                        </tr>
-                        <tr>
-                        	<td><table>
-	                            <tr><td style="border:none;"><input type="text" size="15" name="car" value="59061234"></td><td style="border:none;"><input type="text" size="15" name="car" value="クレベ運送"></td></tr>
-	                            <tr><td style="border:none;"><input type="text" size="15" name="tel"value="090-9999-9999"></td><td style="border:none;"><input type="text" size="15" name="driver"value="原田"></td></tr>
-                            </table></td>
-                            <td><table>
-	                            <tr><td style="border:none;"><input type="text" size="15" name="car" value="53464567"></td><td style="border:none;"><input type="text" size="15" name="car" value="浦島サービス"></td></tr>
-	                            <tr><td style="border:none;"><input type="text" size="15" name="tel"value="090-1111-1111"></td><td style="border:none;"><input type="text" size="15" name="driver" value="北村"></td></tr>
-                            </table></td>
-                            <td><table>
-	                            <tr><td style="border:none;"><input type="text" size="15" name="car" value="59061234"></td><td style="border:none;"><input type="text" size="15" name="car" value="クレベ運送"></td></tr>
-	                            <tr><td style="border:none;"><input type="text" size="15" name="tel"value="090-9999-9999"></td><td style="border:none;"><input type="text" size="15" name="driver" value="原田"></td></tr>
-                            </table></td>
-                           <td><table>
-	                            <tr><td style="border:none;"><input type="text" size="15" name="car" value="6383"></td><td style="border:none;"><input type="text" size="15" name="car" value="三島運輸"></td></tr>
-	                            <tr><td style="border:none;"><input type="text" size="15" name="tel"value="090-1234-5678"></td><td style="border:none;"><input type="text" size="15" name="driver"  value="沖田"></td></tr>
-                            </table></td>
-                            <td><table>
-	                            <tr><td style="border:none;"><input type="text" size="15" name="car" value="53457689"></td><td style="border:none;"><input type="text" size="15" name="car" value="加藤運送"></td></tr>
-	                            <tr><td style="border:none;"><input type="text" size="15" name="tel"value="090-4444-4444"></td><td style="border:none;"><input type="text" size="15" name="driver" value="安藤"></td></tr>
-                            </table></td>
-                            <td><table>
-	                            <tr><td style="border:none;"><input type="text" size="15" name="car" value="5346"></td><td style="border:none;">
-		                            <div class="input-control select" style="width:94px;">
-										<select>
-											<option>平坂</option>
-											<option>安藤</option>
-											<option>後藤</option>
-											<option>浜野</option>
-										</select>
-									</div></td>
-								</tr>
-	                            <tr><td style="border:none;"><input type="text" size="15" name="tel"value="090-1111-1111"></td><td style="border:none;"><input type="text" size="15" name="driver"></td></tr>
-                            </table></td>
-                            <td><table>
-	                            <tr><td style="border:none;"><input type="text" size="15" name="car" value="4666"></td><td style="border:none;">
-	                            	<div class="input-control select" style="width:94px;">
-										<select>
-											<option>平坂</option>
-											<option>安藤</option>
-											<option>後藤</option>
-											<option>浜野</option>
-										</select>
-									</div>
-									</td>
-								</tr>
-	                            <tr><td style="border:none;"><input type="text" size="15" name="tel"value="090-2222-2222"></td><td style="border:none;"><input type="text" size="15" name="driver"></td></tr>
-                            </table></td>
-                            <td><table>
-	                            <tr><td style="border:none;"><input type="text" size="15" name="car" value="6859"></td><td style="border:none;">
-	                            	<div class="input-control select" style="width:94px;">
-										<select>
-											<option>平坂</option>
-											<option>安藤</option>
-											<option>後藤</option>
-											<option>浜野</option>
-										</select>
-									</div>
-									</td>
-								</tr>
-	                            <tr><td style="border:none;"><input type="text" size="15" name="tel"value="090-3333-3333"></td><td style="border:none;"><input type="text" size="15" name="driver"></td></tr>
-                            </table></td>
-                            <td><table>
-	                            <tr><td style="border:none;"><input type="text" size="15" name="car" value="5986"></td><td style="border:none;">
-	                            	<div class="input-control select" style="width:94px;">
-										<select>
-											<option>平坂</option>
-											<option>安藤</option>
-											<option>後藤</option>
-											<option>浜野</option>
-										</select>
-									</div>
-									</td>
-								</tr>
-	                            <tr><td style="border:none;"><input type="text" size="15" name="tel"value="090-7777-7777"></td><td style="border:none;"><input type="text" size="15" name="driver"></td></tr>
-                            </table></td>
-						</tr>
-						<tr>
-							<td><table>
-	                            <tr><td style="border:none;"><input type="text" size="15" name="car" value=""></td><td style="border:none;"></td></tr>
-	                            <tr><td style="border:none;"><input type="text" size="15" name="tel"value=""></td><td style="border:none;"><input type="text" size="15" name="driver" value=""></td></tr>
-	                            </table></td>
-	                            <td><table>
-	                            <tr><td style="border:none;"><input type="text" size="15" name="car" value=""></td><td style="border:none;"></td></tr>
-	                            <tr><td style="border:none;"><input type="text" size="15" name="tel"value=""></td><td style="border:none;"><input type="text" size="15" name="driver" value=""></td></tr>
-	                            </table></td>
-	                            <td><table>
-	                            <tr><td style="border:none;"><input type="text" size="15" name="car" value=""></td><td style="border:none;"></td></tr>
-	                            <tr><td style="border:none;"><input type="text" size="15" name="tel"value=""></td><td style="border:none;"><input type="text" size="15" name="driver" value=""></td></tr>
-	                            </table></td>
-	                            <td><table>
-	                            <tr><td style="border:none;"><input type="text" size="15" name="car" value=""></td><td style="border:none;"></td></tr>
-	                            <tr><td style="border:none;"><input type="text" size="15" name="tel"value=""></td><td style="border:none;"><input type="text" size="15" name="driver" value=""></td></tr>
-	                            </table></td>
-	                            <td><table>
-	                            <tr><td style="border:none;"><input type="text" size="15" name="car" value=""></td><td style="border:none;"></td></tr>
-	                            <tr><td style="border:none;"><input type="text" size="15" name="tel"value=""></td><td style="border:none;"><input type="text" size="15" name="driver" value=""></td></tr>
-	                            </table></td>
-	                            <td><table>
-	                            <tr><td style="border:none;"><input type="text" size="15" name="car" value=""></td><td style="border:none;"></td></tr>
-	                            <tr><td style="border:none;"><input type="text" size="15" name="tel"value=""></td><td style="border:none;"><input type="text" size="15" name="driver" value=""></td></tr>
-	                            </table></td>
-	                            <td><table>
-	                            <tr><td style="border:none;"><input type="text" size="15" name="car" value=""></td><td style="border:none;"></td></tr>
-	                            <tr><td style="border:none;"><input type="text" size="15" name="tel"value=""></td><td style="border:none;"><input type="text" size="15" name="driver" value=""></td></tr>
-	                            </table></td>
-	                            <td><table>
-	                            <tr><td style="border:none;"><input type="text" size="15" name="car" value=""></td><td style="border:none;"></td></tr>
-	                            <tr><td style="border:none;"><input type="text" size="15" name="tel"value=""></td><td style="border:none;"><input type="text" size="15" name="driver" value=""></td></tr>
-	                            </table></td>
-	                            <td><table>
-	                            <tr><td style="border:none;"><input type="text" size="15" name="car" value=""></td><td style="border:none;"></td></tr>
-	                            <tr><td style="border:none;"><input type="text" size="15" name="tel"value=""></td><td style="border:none;"><input type="text" size="15" name="driver" value=""></td></tr>
-                            </table></td>
-                        </tr>
-                        <tr>
-                        	<td><table>
-	                            <tr><td style="border:none;"><input type="text" size="15" name="car" value=""></td><td style="border:none;"></td></tr>
-	                            <tr><td style="border:none;"><input type="text" size="15" name="tel"value=""></td><td style="border:none;"><input type="text" size="15" name="driver" value=""></td></tr>
-	                            </table></td>
-	                            <td><table>
-	                            <tr><td style="border:none;"><input type="text" size="15" name="car" value=""></td><td style="border:none;"></td></tr>
-	                            <tr><td style="border:none;"><input type="text" size="15" name="tel"value=""></td><td style="border:none;"><input type="text" size="15" name="driver" value=""></td></tr>
-	                            </table></td>
-	                            <td><table>
-	                            <tr><td style="border:none;"><input type="text" size="15" name="car" value=""></td><td style="border:none;"></td></tr>
-	                            <tr><td style="border:none;"><input type="text" size="15" name="tel"value=""></td><td style="border:none;"><input type="text" size="15" name="driver" value=""></td></tr>
-	                            </table></td>
-	                            <td><table>
-	                            <tr><td style="border:none;"><input type="text" size="15" name="car" value=""></td><td style="border:none;"></td></tr>
-	                            <tr><td style="border:none;"><input type="text" size="15" name="tel"value=""></td><td style="border:none;"><input type="text" size="15" name="driver" value=""></td></tr>
-	                            </table></td>
-	                            <td><table>
-	                            <tr><td style="border:none;"><input type="text" size="15" name="car" value=""></td><td style="border:none;"></td></tr>
-	                            <tr><td style="border:none;"><input type="text" size="15" name="tel"value=""></td><td style="border:none;"><input type="text" size="15" name="driver" value=""></td></tr>
-	                            </table></td>
-	                            <td><table>
-	                            <tr><td style="border:none;"><input type="text" size="15" name="car" value=""></td><td style="border:none;"></td></tr>
-	                            <tr><td style="border:none;"><input type="text" size="15" name="tel"value=""></td><td style="border:none;"><input type="text" size="15" name="driver" value=""></td></tr>
-	                            </table></td>
-	                            <td><table>
-	                            <tr><td style="border:none;"><input type="text" size="15" name="car" value=""></td><td style="border:none;"></td></tr>
-	                            <tr><td style="border:none;"><input type="text" size="15" name="tel"value=""></td><td style="border:none;"><input type="text" size="15" name="driver" value=""></td></tr>
-	                            </table></td>
-	                            <td><table>
-	                            <tr><td style="border:none;"><input type="text" size="15" name="car" value=""></td><td style="border:none;"></td></tr>
-	                            <tr><td style="border:none;"><input type="text" size="15" name="tel"value=""></td><td style="border:none;"><input type="text" size="15" name="driver" value=""></td></tr>
-	                            </table></td>
-	                            <td><table>
-	                            <tr><td style="border:none;"><input type="text" size="15" name="car" value=""></td><td style="border:none;"></td></tr>
-	                            <tr><td style="border:none;"><input type="text" size="15" name="tel"value=""></td><td style="border:none;"><input type="text" size="15" name="driver" value=""></td></tr>
-                            </table></td>
-                        </tr>
-	            </tbody>
-            </table>
-				   </div>
-			       <div>
+				     <!-- ロック部分 -->
+				     	<div class="lock_box">
+				       	 <table class="dataTable border bordered width300 data" style="margin:0px;"data-auto-width="false">
+							<colgroup>
+					                <col style="width: 6%;">
+					                <col style="width: 6%;">
+					                <col style="width: 7%;">
+					                <col style="width: 66%;">
+					                <col style="width: 12%;">
+				                </colgroup>
+				
+				
+				               <thead>
+				               
+							<tr>
+								<td><p class="yoko3">削除</p></td>
+				                   <td class="sortable-column" ><p class="yoko3">便番</p></td>
+				                   <td class="sortable-column"><p class="yoko3">便名</p></td>
+				                   <td class="sortable-column">運行コース/作業割り当(行先)</td>
+				                   <td class="sortable-column"><p>運行日/車種</p></td>
+				               </tr>
+				               </thead>
+				               <tbody>
+				               
+				               	<tr>
+				                       <td style="text-align:center;">
+				                       	<label class="input-control checkbox small-check no-margin">
+				                                   <input type="checkbox"><span class="check"></span>
+				                       	</label>
+				                       </td>
+				                           <td style="padding:28px 5px;">A-111</td>
+				                           <td>川神下1</td>
+				                           <td>
+				                           	<table class="center">
+					                            <tr id="acMenu">
+					                              <td style="border:none;"><p class="yoko2">川崎東</p></td>
+					                              <td class="course" rowspan="2" style="border:none;">⇨</td>
+					                              <td style="border:none;"><p class="yoko2">新大阪</p></td>
+					                              <td class="course" rowspan="2" style="border:none;">⇨</td>
+					                              <td style="border:none;"><p class="yoko2">ゆうP</p></td>
+					                              <td class="course" rowspan="2" style="border:none;">⇨</td>
+					                              <td style="border:none;"><p class="yoko2">神戸</p></td>
+					                             </tr>
+					                             <tr>
+					                               <td style="border:none;"><p class="yoko2">21:30</p></td>
+					                               <td style="border:none;"><p class="yoko2">5:00</p></td>
+						                           <td style="border:none;"><p class="yoko2">5:15</p></td>
+						                           <td style="border:none;"><p class="yoko2">6:25</p></td>
+					                             </tr>
+				                           	</table>
+				                           </td>
+				                           <td style="text-align:center;">1〜末/8t</td>
+										
+				                   <tr>
+				                       <td style="text-align:center;">
+				                               <label class="input-control checkbox small-check no-margin">
+				                                   <input type="checkbox">
+				                                   <span class="check"></span>
+				                               </label>
+				                           </td>
+				                           <td style="padding:29px 5px;">A-150</td>
+				                           <td>綾神上</td>
+				                           <td>
+				                           <table class="center">
+				                           <tr>
+				                             <td class="course" style="border:none;"><p class="yoko2">神戸</p></td>
+				                             <td class="course" rowspan="2" style="border:none;">⇨</td>
+				                             <td class="course" style="border:none;"><p class="yoko2">ゆうP</p></td>
+				                             <td class="course" rowspan="2" style="border:none;">⇨</td>
+				                             <td class="course" style="border:none;"><p class="yoko2">新大阪</p></td>
+				                             <td class="course" rowspan="2" style="border:none;">⇨</td>
+				                             <td class="course" style="border:none;"><p class="yoko2">ゆうP</p></td>
+				                             <td class="course" rowspan="2" style="border:none;">⇨</td>
+				                             <td class="course" style="border:none;"><p class="yoko2">綾瀬</p></td>
+				                            </tr>
+				                            <tr>
+				                             <td style="border:none;"><p class="yoko2">19:15</p></td>
+				                             <td style="border:none;"><p class="yoko2">20:00</p></td>
+				                          <td style="border:none;"><p class="yoko2">20:20</p></td>
+				                          <td style="border:none;"><p class="yoko2">21:15</p></td>
+				                          <td style="border:none;"><p class="yoko2">4:05</p></td>
+				                            </tr>
+				                           </table>
+				                           </td>
+				                           <td style="text-align:center;">1〜末/8t<br>日祝/4t</td>
+				                          </tr>
+									<tr>
+				                       	<td style="text-align:center;">
+				                               <label class="input-control checkbox small-check no-margin">
+				                                   <input type="checkbox">
+				                                   <span class="check"></span>
+				                               </label>
+				                           </td>
+				                           <td style="padding:28px 5px;"></td>
+				                           <td></td>
+				                           <td>
+				                           <table class="center" style="width:600px;">
+				                           
+				                           <tr id="acMenu">
+				                             <td style="border:none;"><p class="yoko2">川崎東</p></td>
+				                             <td class="course" rowspan="2" style="border:none;">⇨</td>
+				                             <td style="border:none;"><p class="yoko2">新大阪</p></td>
+				                             <td class="course" rowspan="2" style="border:none;">⇨</td>
+				                             <td style="border:none;"><p class="yoko2">ゆうP</p></td>
+				                             <td class="course" rowspan="2" style="border:none;">⇨</td>
+				                             <td style="border:none;"><p class="yoko2">神戸</p></td>
+				                             <td class="course" rowspan="2" style="border:none;">⇨</td>
+				                             <td style="border:none;"><p class="yoko2">ゆうP</p></td>
+				                             <td class="course" rowspan="2" style="border:none;">⇨</td>
+				                             <td style="border:none;"><p class="yoko2">新大阪</p></td>
+				                             <td class="course" rowspan="2" style="border:none;">⇨</td>
+				                             <td style="border:none;"><p class="yoko2">ゆうP</p></td>
+				                             <td class="course" rowspan="2" style="border:none;">⇨</td>
+				                             <td style="border:none;"><p class="yoko2">綾瀬</p></td>
+				                             <td class="buttonright" rowspan="2" style="border:none;"><button class="button primary" onclick="window.open('mock_unsou_add.html','_self')">設定</button></td>
+				                            </tr>
+				                            <tr>
+				                              <td style="border:none;"><p class="yoko2">21:30</p></td>
+				                              <td style="border:none;"><p class="yoko2">5:00</p></td>
+				                           <td style="border:none;"><p class="yoko2">5:15</p></td>
+				                           <td style="border:none;"><p class="yoko2">6:25</p></td>
+				                           <td style="border:none;"><p class="yoko2">7:35</p></td>
+				                              <td style="border:none;"><p class="yoko2">7:50</p></td>
+				                           <td style="border:none;"><p class="yoko2">8:20</p></td>
+				                           <td style="border:none;"><p class="yoko2">13:30</p></td>
+				                            </tr>
+				                           
+				                           </table>
+				                           </td>
+				                           <td><div class="input-control select" style="width:100px;">
+					                            <select>
+					                                <option></option>
+													<option>2t</option>
+													<option>6t</option>
+													<option>8t</option>
+													<option>10t</option>
+					                            </select>
+					                    </div></td>
+									</tr>
+					                	<tr>
+					                        <td style="text-align:center;">
+												<label class="input-control checkbox small-check no-margin">
+				                                   <input type="checkbox"><span class="check"></span>
+				                                </label>
+				                            </td>
+				                            <td style="padding:28px 5px;"></td>
+				                            <td></td>
+				                            <td><table style="width:600px;">
+				                        <tr>
+					                        <td class="buttonright" rowspan="2" style="border:none;"><button class="button primary" onclick="window.open('mock_unsou_add.html','_self')">設定</button></td>
+				                        </tr>
+				                       </table></td>
+				                    	<td><div class="input-control select" style="width:100px;">
+					                        <select>
+					                        	<option></option>
+												<option>2t</option>
+												<option>6t</option>
+												<option>8t</option>
+												<option>10t</option>
+					                    	</select>
+					                	</div></td>
+									</tr>
+				           	</tbody>
+				       	</table>
+				       </div>
+				       
+					        <!-- /ロック部分 -->
+					        <!-- 横スクロール部分 -->
+					        <div class="x_scroll_box">
+				            <table class="dataTable border bordered  data width2500"  style="margin:0px;">
+				                <colgroup>
+					                <col style="width: 11%;">
+					                <col style="width: 11%;">
+					                <col style="width: 11%;">
+					                <col style="width: 11%;">
+					                <col style="width: 11%;">
+					                <col style="width: 11%;">
+					                <col style="width: 11%;">
+					                <col style="width: 11%;">
+					                <col style="width: 11%;">
+				                </colgroup>
+				               <tbody>
+				                <thead>
+				               		<tr>
+				                   		<td class="sortable-column">6月5日(日)</td>
+				                           <td class="sortable-column">6月6日(月)</td>
+				                           <td class="sortable-column">6月7日(火)</td>
+				                           <td class="sortable-column">6月8日(水)</td>
+				                           <td class="sortable-column">6月9日(木)</td>
+				                           <td class="sortable-column">6月10日(金)</td>
+				                           <td class="sortable-column">6月11日(土)</td>
+				                           <td class="sortable-column">6月12日(日)</td>
+				                           <td class="sortable-column">6月13日(月)</td>
+				                       </tr>
+				                       <tr>
+				                           <td class="sortable-column">車番/取引先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
+				                           <td class="sortable-column">車番/取引先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
+				                           <td class="sortable-column">車番/取引先(社員ドライバー)<br>連絡先/委託先ライバー</td>
+				                           <td class="sortable-column">車番/取引先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
+				                           <td class="sortable-column">車番/取引先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
+				                           <td class="sortable-column">車番/取引先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
+				                           <td class="sortable-column">車番/取引先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
+				                           <td class="sortable-column">車番/取引先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
+				                           <td class="sortable-column">車番/取引先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
+				                       </tr>
+				                </thead>
+					                <tr>
+				                		<td><table>
+				                            <tr>
+					                            <td style="border:none;"><input type="text" size="15" name="car" value="5346"></td>
+					                            <td style="border:none;">
+				                            	<div class="input-control select" style="width:94px;">
+													<select>
+														<option>平坂</option>
+														<option>安藤</option>
+														<option>後藤</option>
+														<option>浜野</option>
+													</select>
+												</div></td>
+											</tr>
+				                            <tr><td style="border:none;"><input type="text" size="15" name="tel"value="090-1111-1111"></td><td style="border:none;"><input type="text" size="15" name="driver"></td></tr>
+				                           </table></td>
+				                           <td><table>
+				                            <tr><td style="border:none;"><input type="text" size="15" name="car" value="4666"></td><td style="border:none;">
+				                            	<div class="input-control select" style="width:94px;">
+													<select>
+														<option>平坂</option>
+														<option>安藤</option>
+														<option>後藤</option>
+														<option>浜野</option>
+													</select>
+												</div></td>
+											</tr>
+				                            <tr><td style="border:none;"><input type="text" size="15" name="tel"value="090-2222-2222"></td><td style="border:none;"><input type="text" size="15" name="driver"></td></tr>
+				                           </table></td>
+				                           <td><table>
+				                            <tr><td style="border:none;"><input type="text" size="15" name="car" value="6859"></td><td style="border:none;">
+				                            	<div class="input-control select" style="width:94px;">
+													<select>
+														<option>平坂</option>
+														<option>安藤</option>
+														<option>後藤</option>
+														<option>浜野</option>
+													</select>
+												</div></td>
+											</tr>
+				                            <tr><td style="border:none;"><input type="text" size="15" name="tel"value="090-3333-3333"></td><td style="border:none;"><input type="text" size="15" name="driver"></td></tr>
+				                           </table></td>
+										<td><table>
+				                            <tr><td style="border:none;"><input type="text" size="15" name="car" value="5345"></td><td style="border:none;"><input type="text" size="15" name="car" value="加藤運送"></td></tr>
+				                            <tr><td style="border:none;"><input type="text" size="15" name="tel"value="090-4444-4444"></td><td style="border:none;"><input type="text" size="15" name="driver" value="安藤"></td></tr>
+				                           </table></td>
+				                           <td><table>
+				                            <tr><td style="border:none;"><input type="text" size="15" name="car" value="5346"></td><td style="border:none;">
+				                            	<div class="input-control select" style="width:94px;">
+													<select>
+														<option>平坂</option>
+														<option>安藤</option>
+														<option>後藤</option>
+														<option>浜野</option>
+													</select>
+												</div></td>
+											</tr>
+				                            <tr><td style="border:none;"><input type="text" size="15" name="tel"value="090-1111-1111"></td><td style="border:none;"><input type="text" size="15" name="driver"></td></tr>
+				                           </table></td>
+				                           <td><table>
+				                            <tr><td style="border:none;"><input type="text" size="15" name="car" value="5468"></td><td style="border:none;">
+				                            	<div class="input-control select" style="width:94px;">
+													<select>
+														<option>平坂</option>
+														<option>安藤</option>
+														<option>後藤</option>
+														<option>浜野</option>
+													</select>
+												</div></td>
+											</tr>
+				                           <tr><td style="border:none;"><input type="text" size="15" name="tel"value="090-5555-5555"></td><td style="border:none;"><input type="text" size="15" name="driver"></td></tr>
+				                           </table></td>
+				                           <td><table>
+				                            <tr><td style="border:none;"><input type="text" size="15" name="car" value="9492"></td><td style="border:none;">
+				                            	<div class="input-control select" style="width:94px;">
+													<select>
+														<option>平坂</option>
+														<option>安藤</option>
+														<option>後藤</option>
+														<option>浜野</option>
+													</select>
+												</div></td>
+											</tr>
+				                            <tr><td style="border:none;"><input type="text" size="15" name="tel"value="090-6666-6666"></td><td style="border:none;"><input type="text" size="15" name="driver"></td></tr>
+				                           </table></td>
+				                           <td><table>
+				                            <tr><td style="border:none;"><input type="text" size="15" name="car" value="5986"></td><td style="border:none;">
+					                            <div class="input-control select" style="width:94px;">
+													<select>
+														<option>平坂</option>
+														<option>安藤</option>
+														<option>後藤</option>
+														<option>浜野</option>
+													</select>
+												</div></td>
+											</tr>
+				                            <tr><td style="border:none;"><input type="text" size="15" name="tel"value="090-7777-7777"></td><td style="border:none;"><input type="text" size="15" name="driver"></td></tr>
+				                           </table></td>
+				                           <td><table>
+				                            <tr><td style="border:none;"><input type="text" size="15" name="car" value="6308"></td><td style="border:none;">
+				                            	<div class="input-control select" style="width:94px;">
+													<select>
+														<option>平坂</option>
+														<option>安藤</option>
+														<option>後藤</option>
+														<option>浜野</option>
+													</select>
+												</div></td>
+											</tr>
+				                            <tr><td style="border:none;"><input type="text" size="15" name="tel"value="090-8888-8888"></td><td style="border:none;"><input type="text" size="15" name="driver"></td></tr>
+				                           </table></td>
+				                       </tr>
+				                       <tr>
+				                       	<td><table>
+				                            <tr><td style="border:none;"><input type="text" size="15" name="car" value="59061234"></td><td style="border:none;"><input type="text" size="15" name="car" value="クレベ運送"></td></tr>
+				                            <tr><td style="border:none;"><input type="text" size="15" name="tel"value="090-9999-9999"></td><td style="border:none;"><input type="text" size="15" name="driver"value="原田"></td></tr>
+				                           </table></td>
+				                           <td><table>
+				                            <tr><td style="border:none;"><input type="text" size="15" name="car" value="53464567"></td><td style="border:none;"><input type="text" size="15" name="car" value="浦島サービス"></td></tr>
+				                            <tr><td style="border:none;"><input type="text" size="15" name="tel"value="090-1111-1111"></td><td style="border:none;"><input type="text" size="15" name="driver" value="北村"></td></tr>
+				                           </table></td>
+				                           <td><table>
+				                            <tr><td style="border:none;"><input type="text" size="15" name="car" value="59061234"></td><td style="border:none;"><input type="text" size="15" name="car" value="クレベ運送"></td></tr>
+				                            <tr><td style="border:none;"><input type="text" size="15" name="tel"value="090-9999-9999"></td><td style="border:none;"><input type="text" size="15" name="driver" value="原田"></td></tr>
+				                           </table></td>
+				                          <td><table>
+				                            <tr><td style="border:none;"><input type="text" size="15" name="car" value="6383"></td><td style="border:none;"><input type="text" size="15" name="car" value="三島運輸"></td></tr>
+				                            <tr><td style="border:none;"><input type="text" size="15" name="tel"value="090-1234-5678"></td><td style="border:none;"><input type="text" size="15" name="driver"  value="沖田"></td></tr>
+				                           </table></td>
+				                           <td><table>
+				                            <tr><td style="border:none;"><input type="text" size="15" name="car" value="53457689"></td><td style="border:none;"><input type="text" size="15" name="car" value="加藤運送"></td></tr>
+				                            <tr><td style="border:none;"><input type="text" size="15" name="tel"value="090-4444-4444"></td><td style="border:none;"><input type="text" size="15" name="driver" value="安藤"></td></tr>
+				                           </table></td>
+				                           <td><table>
+				                            <tr><td style="border:none;"><input type="text" size="15" name="car" value="5346"></td><td style="border:none;">
+					                            <div class="input-control select" style="width:94px;">
+													<select>
+														<option>平坂</option>
+														<option>安藤</option>
+														<option>後藤</option>
+														<option>浜野</option>
+													</select>
+												</div></td>
+											</tr>
+				                            <tr><td style="border:none;"><input type="text" size="15" name="tel"value="090-1111-1111"></td><td style="border:none;"><input type="text" size="15" name="driver"></td></tr>
+				                           </table></td>
+				                           <td><table>
+				                            <tr><td style="border:none;"><input type="text" size="15" name="car" value="4666"></td><td style="border:none;">
+				                            	<div class="input-control select" style="width:94px;">
+													<select>
+														<option>平坂</option>
+														<option>安藤</option>
+														<option>後藤</option>
+														<option>浜野</option>
+													</select>
+												</div>
+												</td>
+											</tr>
+				                            <tr><td style="border:none;"><input type="text" size="15" name="tel"value="090-2222-2222"></td><td style="border:none;"><input type="text" size="15" name="driver"></td></tr>
+				                           </table></td>
+				                           <td><table>
+				                            <tr><td style="border:none;"><input type="text" size="15" name="car" value="6859"></td><td style="border:none;">
+				                            	<div class="input-control select" style="width:94px;">
+													<select>
+														<option>平坂</option>
+														<option>安藤</option>
+														<option>後藤</option>
+														<option>浜野</option>
+													</select>
+												</div>
+												</td>
+											</tr>
+				                            <tr><td style="border:none;"><input type="text" size="15" name="tel"value="090-3333-3333"></td><td style="border:none;"><input type="text" size="15" name="driver"></td></tr>
+				                           </table></td>
+				                           <td><table>
+				                            <tr><td style="border:none;"><input type="text" size="15" name="car" value="5986"></td><td style="border:none;">
+				                            	<div class="input-control select" style="width:94px;">
+													<select>
+														<option>平坂</option>
+														<option>安藤</option>
+														<option>後藤</option>
+														<option>浜野</option>
+													</select>
+												</div>
+												</td>
+											</tr>
+				                            <tr><td style="border:none;"><input type="text" size="15" name="tel"value="090-7777-7777"></td><td style="border:none;"><input type="text" size="15" name="driver"></td></tr>
+				                           </table></td>
+									</tr>
+									<tr>
+										<td><table>
+				                            <tr><td style="border:none;"><input type="text" size="15" name="car" value=""></td><td style="border:none;"></td></tr>
+				                            <tr><td style="border:none;"><input type="text" size="15" name="tel"value=""></td><td style="border:none;"><input type="text" size="15" name="driver" value=""></td></tr>
+				                            </table></td>
+				                            <td><table>
+				                            <tr><td style="border:none;"><input type="text" size="15" name="car" value=""></td><td style="border:none;"></td></tr>
+				                            <tr><td style="border:none;"><input type="text" size="15" name="tel"value=""></td><td style="border:none;"><input type="text" size="15" name="driver" value=""></td></tr>
+				                            </table></td>
+				                            <td><table>
+				                            <tr><td style="border:none;"><input type="text" size="15" name="car" value=""></td><td style="border:none;"></td></tr>
+				                            <tr><td style="border:none;"><input type="text" size="15" name="tel"value=""></td><td style="border:none;"><input type="text" size="15" name="driver" value=""></td></tr>
+				                            </table></td>
+				                            <td><table>
+				                            <tr><td style="border:none;"><input type="text" size="15" name="car" value=""></td><td style="border:none;"></td></tr>
+				                            <tr><td style="border:none;"><input type="text" size="15" name="tel"value=""></td><td style="border:none;"><input type="text" size="15" name="driver" value=""></td></tr>
+				                            </table></td>
+				                            <td><table>
+				                            <tr><td style="border:none;"><input type="text" size="15" name="car" value=""></td><td style="border:none;"></td></tr>
+				                            <tr><td style="border:none;"><input type="text" size="15" name="tel"value=""></td><td style="border:none;"><input type="text" size="15" name="driver" value=""></td></tr>
+				                            </table></td>
+				                            <td><table>
+				                            <tr><td style="border:none;"><input type="text" size="15" name="car" value=""></td><td style="border:none;"></td></tr>
+				                            <tr><td style="border:none;"><input type="text" size="15" name="tel"value=""></td><td style="border:none;"><input type="text" size="15" name="driver" value=""></td></tr>
+				                            </table></td>
+				                            <td><table>
+				                            <tr><td style="border:none;"><input type="text" size="15" name="car" value=""></td><td style="border:none;"></td></tr>
+				                            <tr><td style="border:none;"><input type="text" size="15" name="tel"value=""></td><td style="border:none;"><input type="text" size="15" name="driver" value=""></td></tr>
+				                            </table></td>
+				                            <td><table>
+				                            <tr><td style="border:none;"><input type="text" size="15" name="car" value=""></td><td style="border:none;"></td></tr>
+				                            <tr><td style="border:none;"><input type="text" size="15" name="tel"value=""></td><td style="border:none;"><input type="text" size="15" name="driver" value=""></td></tr>
+				                            </table></td>
+				                            <td><table>
+				                            <tr><td style="border:none;"><input type="text" size="15" name="car" value=""></td><td style="border:none;"></td></tr>
+				                            <tr><td style="border:none;"><input type="text" size="15" name="tel"value=""></td><td style="border:none;"><input type="text" size="15" name="driver" value=""></td></tr>
+				                           </table></td>
+				                       </tr>
+				                       <tr>
+				                       	<td><table>
+				                            <tr><td style="border:none;"><input type="text" size="15" name="car" value=""></td><td style="border:none;"></td></tr>
+				                            <tr><td style="border:none;"><input type="text" size="15" name="tel"value=""></td><td style="border:none;"><input type="text" size="15" name="driver" value=""></td></tr>
+				                            </table></td>
+				                            <td><table>
+				                            <tr><td style="border:none;"><input type="text" size="15" name="car" value=""></td><td style="border:none;"></td></tr>
+				                            <tr><td style="border:none;"><input type="text" size="15" name="tel"value=""></td><td style="border:none;"><input type="text" size="15" name="driver" value=""></td></tr>
+				                            </table></td>
+				                            <td><table>
+				                            <tr><td style="border:none;"><input type="text" size="15" name="car" value=""></td><td style="border:none;"></td></tr>
+				                            <tr><td style="border:none;"><input type="text" size="15" name="tel"value=""></td><td style="border:none;"><input type="text" size="15" name="driver" value=""></td></tr>
+				                            </table></td>
+				                            <td><table>
+				                            <tr><td style="border:none;"><input type="text" size="15" name="car" value=""></td><td style="border:none;"></td></tr>
+				                            <tr><td style="border:none;"><input type="text" size="15" name="tel"value=""></td><td style="border:none;"><input type="text" size="15" name="driver" value=""></td></tr>
+				                            </table></td>
+				                            <td><table>
+				                            <tr><td style="border:none;"><input type="text" size="15" name="car" value=""></td><td style="border:none;"></td></tr>
+				                            <tr><td style="border:none;"><input type="text" size="15" name="tel"value=""></td><td style="border:none;"><input type="text" size="15" name="driver" value=""></td></tr>
+				                            </table></td>
+				                            <td><table>
+				                            <tr><td style="border:none;"><input type="text" size="15" name="car" value=""></td><td style="border:none;"></td></tr>
+				                            <tr><td style="border:none;"><input type="text" size="15" name="tel"value=""></td><td style="border:none;"><input type="text" size="15" name="driver" value=""></td></tr>
+				                            </table></td>
+				                            <td><table>
+				                            <tr><td style="border:none;"><input type="text" size="15" name="car" value=""></td><td style="border:none;"></td></tr>
+				                            <tr><td style="border:none;"><input type="text" size="15" name="tel"value=""></td><td style="border:none;"><input type="text" size="15" name="driver" value=""></td></tr>
+				                            </table></td>
+				                            <td><table>
+				                            <tr><td style="border:none;"><input type="text" size="15" name="car" value=""></td><td style="border:none;"></td></tr>
+				                            <tr><td style="border:none;"><input type="text" size="15" name="tel"value=""></td><td style="border:none;"><input type="text" size="15" name="driver" value=""></td></tr>
+				                            </table></td>
+				                            <td><table>
+				                            <tr><td style="border:none;"><input type="text" size="15" name="car" value=""></td><td style="border:none;"></td></tr>
+				                            <tr><td style="border:none;"><input type="text" size="15" name="tel"value=""></td><td style="border:none;"><input type="text" size="15" name="driver" value=""></td></tr>
+				                           </table></td>
+				                       </tr>
+				            </tbody>
+				           </table>
+				        </div>
+			       
+            	　　　　</div>
+            	　　<div>
 						<button class="button success" onclick="pushMessage('info')"><span class="mif-plus"></span> 行追加</button>    	
 			       </div>
-            	</div>
 				</div>
         	</div>
     	</div>

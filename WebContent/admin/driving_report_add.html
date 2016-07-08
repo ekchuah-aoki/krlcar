@@ -54,6 +54,10 @@
 	    .customerNameSelect select{
 	    	width:400px;
 	    }
+	    
+	    tr.heightthSsame {
+	        height: 65px;
+	    }
 				
 		@media screen and (max-width: 800px){
 			#cell-sidebar {
@@ -76,14 +80,6 @@
 			});
 		}
 
-		$(function(){
-			$('.sidebar').on('click', 'li', function(){
-				if (!$(this).hasClass('active')) {
-					$('.sidebar li').removeClass('active');
-					$(this).addClass('active');
-				}
-			})
-		})
 	</script>
 	<script>
 		$(function(){
@@ -221,6 +217,7 @@
 								<td>
 									<div class="input-control select" style="width:90px;">
 									<select>
+									    <option>平坂　剛</option>
 										<option>高橋　充</option>
 										<option>町谷　晃</option>
 										<option>小澤　高</option>
@@ -254,7 +251,7 @@
 					</table>
 					<table class="table border bordered customHeader" data-auto-width="false">
 						<thead>
-							<tr>
+							<tr class="heightthSsame">
 								<th>夜メーター</th>
 								<th>朝メーター</th>
 								<th>
@@ -388,7 +385,7 @@
 					</table>
 					<table class="table border bordered customHeader" data-auto-width="false">
 						<thead>
-							<tr style="height:47px;">
+							<tr class="heightthSsame">
 								<th>所長</th>
 								<th>集計</th>
 								<th>記帳</th>
