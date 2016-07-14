@@ -39,7 +39,15 @@
             min-height: 0;
             height: auto;
         }
-
+        .cell colspan5 {
+            overflow: hidden;
+        }
+        .input-control text {
+            float: left;
+        }
+        .right {
+            float: right;
+        }
         @media screen and (max-width: 800px){
             #cell-sidebar {
                 flex-basis: 52px;
@@ -59,19 +67,15 @@
                 type: t
             });
         }
-
-        $(function(){
-            $('.sidebar').on('click', 'li', function(){
-                if (!$(this).hasClass('active')) {
-                    $('.sidebar li').removeClass('active');
-                    $(this).addClass('active');
-                }
-            })
-        })
     </script>
 	<script>
 	    $(function(){
 	        $("#datepicker").datepicker();
+	    });
+	</script>
+	<script>
+	    $(function(){
+	        $("#datepicker2").datepicker();
 	    });
 	</script>
 </head>
@@ -87,36 +91,20 @@
 					<ul class="breadcrumbs" style="padding:0px;">
 					    <li><h4>請求書印刷</h4></li>
 					</ul>
-                    <hr class="thin bg-grayLighter">
-					<div class="example" data-text="検索条件">
 			            <div class="grid">
-			                <div class="row cells12">
-								<div class="cell colspan3">
+			            
+			            <hr class="thin bg-grayLighter">
+			            
+			                <div class="cell colspan5">
 			                        得意先
-			                        <div class="input-control select full-size">
-			                            <select>
+			                        <div class="input-control select">
+			                            <select style="width:160px;">
 			                                <option></option>
 			                                <option>いすゞ自動車</option>
 			                                <option>クレベ運送株式会社</option>
 			                                <option>ニチユＭＨＩ</option>
 			                            </select>
 			                        </div>
-			                    </div>
-								<div class="cell colspan2">
-			                        運送年月日(From)
-									<div class="input-control text full-size" id="datepicker">
-									    <input type="text">
-									    <button class="button"><span class="mif-calendar"></span></button>
-									</div>
-			                    </div>
-								<div class="cell colspan2">
-			                        運送年月日(To)
-									<div class="input-control text full-size" id="datepicker">
-									    <input type="text">
-									    <button class="button"><span class="mif-calendar"></span></button>
-									</div>
-			                    </div>
-								<div class="cell colspan2">
 			                        請求書分類
 			                        <div class="input-control select">
 			                            <select>
@@ -125,118 +113,117 @@
 			                                <option>請求済み</option>
 			                            </select>
 			                        </div>
-			                    </div>
-
-								<div class="cell colspan2">
-				                    <button class="button primary" onclick="pushMessage('info')"><span class="mif-search"></span> 検索</button>
+			                      </div>
+			                      <div class="cell colspan5">
+			                        運送年月日（From）
+									<div class="input-control text" id="datepicker" style="width:160px;">
+									    <input type="text">
+									    <button class="button"><span class="mif-calendar"></span></button>
+									</div>
+			                        <span style="margin-left:20px;">運送年月日（To）</span>
+									<div class="input-control text" id="datepicker2" style="width:160px;">
+									    <input type="text">
+									    <button class="button"><span class="mif-calendar"></span></button>
+									</div>
+									<div class="right">
+					                    <button class="button primary" onclick="pushMessage('info')"><span class="mif-search"></span> 検索</button>
+				                        <button class="button success" onclick="window.open('../pdf/bill_1201.pdf')">選択請求書印刷</button>
+				                    </div>
 			                    </div>
 			                </div>
-			            </div>
-		            </div>
-
-					<div class="align-right">
-                    <button class="button success" onclick="window.open('../pdf/bill_1201.pdf')">選択請求書発行</button>
-					</div>
                     <hr class="thin bg-grayLighter">
 
                     <table class="dataTable border bordered" data-auto-width="false">
                         <thead>
                         <tr>
-                            <td style="width: 20px"></td>
-                            <td class="sortable-column">番号</td>
-                            <td class="sortable-column">得意先コード</td>
-                            <td class="sortable-column">得意先</td>
-                            <td class="sortable-column">締日</td>
-                            <td class="sortable-column">請求年月日</td>
-                            <td class="sortable-column">総未収合計</td>
-                            <td class="sortable-column">消費税</td>
-                            <td class="sortable-column">請求金額</td>
-                            <td class="sortable-column">詳細</td>
-                            <td class="sortable-column">請求状況</td>
+                            <td style="width: 60px;text-align:center;">印刷</td>
+                            <td class="sortable-column" style="text-align:center;">番号</td>
+                            <td class="sortable-column" style="text-align:center;">得意先コード</td>
+                            <td class="sortable-column" style="text-align:center;">得意先</td>
+                            <td class="sortable-column" style="text-align:center;">締日</td>
+                            <td class="sortable-column" style="text-align:center;">請求年月日</td>
+                            <td class="sortable-column" style="text-align:center;">総未収合計</td>
+                            <td class="sortable-column" style="text-align:center;">消費税</td>
+                            <td class="sortable-column" style="text-align:center;">請求金額</td>
+                            <td class="sortable-column" style="text-align:center;">詳細</td>
+                            <td class="sortable-column" style="text-align:center;">請求状況</td>
                         </tr>
                         </thead>
                         <tbody>
                         <tr>
-                            <td>
+                            <td style="text-align:center;">
                                 <label class="input-control checkbox small-check no-margin">
                                     <input type="checkbox">
                                     <span class="check"></span>
                                 </label>
                             </td>
-                            <td>466</td>
-                            <td>489</td>
+                            <td style="text-align:right;">466</td>
+                            <td style="text-align:right;">489</td>
                             <td>いすゞ自動車（株）</td>
-                            <td>2015/11/30</td>
-                            <td>2015/11/30</td>
-                            <td>105,690</td>
-                            <td>8,455</td>
-                            <td>114,145</td>
-                            <td><a href="bill_list_detail.html" target="_blank">詳細</a></td>
-                            <td class="align-center">請求済<span class="mif-checkmark fg-green"></span></td>
+                            <td style="text-align:right;">2015/11/30</td>
+                            <td style="text-align:right;">2015/11/30</td>
+                            <td style="text-align:right;">105,690</td>
+                            <td style="text-align:right;">8,455</td>
+                            <td style="text-align:right;">114,145</td>
+                            <td style="text-align:center;"><a href="bill_list_detail.html" target="_blank">詳細</a></td>
+                            <td>請求済<span class="mif-checkmark fg-green"></span></td>
                             
                         </tr>
                         <tr>
-                            <td>
+                            <td style="text-align:center;">
                                 <label class="input-control checkbox small-check no-margin">
                                     <input type="checkbox">
                                     <span class="check"></span>
                                 </label>
                             </td>
-                            <td>489</td>
-                            <td>287</td>
+                            <td style="text-align:right;">489</td>
+                            <td style="text-align:right;">287</td>
                             <td>クレベ運送株式会社</td>
-                            <td>2015/11/30</td>
-                            <td>2015/12/1</td>
-                            <td>133,315</td>
-                            <td>10,665</td>
-                            <td>143,980</td>
-                            <td><a href="bill_list_detail.html" target="_blank">詳細</a></td>
-                            <td class="align-center">請求済<span class="mif-checkmark fg-green"></span></td>
-                            <!-- <td>
-			                    <button class="button primary" onclick="pushMessage('info')"><span class="mif-pencil"></span></button>
-                            </td> -->
+                            <td style="text-align:right;">2015/11/30</td>
+                            <td style="text-align:right;">2015/12/1</td>
+                            <td style="text-align:right;">133,315</td>
+                            <td style="text-align:right;">10,665</td>
+                            <td style="text-align:right;">143,980</td>
+                            <td style="text-align:center;"><a href="bill_list_detail.html" target="_blank">詳細</a></td>
+                            <td>請求済<span class="mif-checkmark fg-green"></span></td>
                         </tr>
                         <tr>
-                            <td>
+                            <td style="text-align:center;">
                                 <label class="input-control checkbox small-check no-margin">
                                     <input type="checkbox">
                                     <span class="check"></span>
                                 </label>
                             </td>
-                            <td>405</td>
-                            <td>427</td>
+                            <td style="text-align:right;">405</td>
+                            <td style="text-align:right;">427</td>
                             <td>ニチユＭＨＩ</td>
-                            <td>2015/11/30</td>
+                            <td style="text-align:right;">2015/11/30</td>
                             <td></td>
-                            <td>6133,315</td>
-                            <td>610,665</td>
-                            <td>6143,980</td>
-                            <td><a href="bill_list_detail.html" target="_blank">詳細</a></td>
-                            <td class="align-center">未請求<span class="mif-stop fg-red"></span></td>
-                            <!-- <td>
-			                    <button class="button primary" onclick="pushMessage('info')"><span class="mif-pencil"></span></button>
-                            </td> -->
+                            <td style="text-align:right;">6133,315</td>
+                            <td style="text-align:right;">610,665</td>
+                            <td style="text-align:right;">6143,980</td>
+                            <td style="text-align:center;"><a href="bill_list_detail.html" target="_blank">詳細</a></td>
+                            <td>未請求<span class="mif-stop fg-red"></span></td>
+                            
                         </tr>
                         <tr>
-                            <td>
+                            <td style="text-align:center;">
                                 <label class="input-control checkbox small-check no-margin">
                                     <input type="checkbox">
                                     <span class="check"></span>
                                 </label>
                             </td>
-                            <td>474</td>
-                            <td>497</td>
+                            <td style="text-align:right;">474</td>
+                            <td style="text-align:right;">497</td>
                             <td>日本郵便輸送株式会社南関東支社</td>
-                            <td>2015/11/30</td>
+                            <td style="text-align:right;">2015/11/30</td>
                             <td></td>
-                            <td>8133,315</td>
-                            <td>810,665</td>
-                            <td>8143,980</td>
-                            <td><a href="../pdf/bill_v.pdf" target="_blank">詳細</a></td>
-                            <td class="align-center">未請求<span class="mif-stop fg-red"></span></td>
-                            <!-- <td>
-			                    <button class="button primary" onclick="pushMessage('info')"><span class="mif-pencil"></span></button>
-                            </td> -->
+                            <td style="text-align:right;">8133,315</td>
+                            <td style="text-align:right;">810,665</td>
+                            <td style="text-align:right;">8143,980</td>
+                            <td style="text-align:center;"><a href="../pdf/bill_v.pdf" target="_blank">詳細</a></td>
+                            <td>未請求<span class="mif-stop fg-red"></span></td>
+                            
                         </tr>
                         </tbody>
                     </table>

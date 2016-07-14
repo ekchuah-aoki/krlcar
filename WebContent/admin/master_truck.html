@@ -40,7 +40,16 @@
             min-height: 0;
             height: auto;
         }
-
+        
+        .grid {
+            overflow: hidden;
+        }
+        .left {
+            float: left;
+        }
+        .right {
+            float: right;
+        }
         @media screen and (max-width: 800px){
             #cell-sidebar {
                 flex-basis: 52px;
@@ -72,15 +81,6 @@
 	        $("#datepicker3").datepicker();
 	        
 	    });
-	    
-        $(function(){
-            $('.sidebar').on('click', 'li', function(){
-                if (!$(this).hasClass('active')) {
-                    $('.sidebar li').removeClass('active');
-                    $(this).addClass('active');
-                }
-            })
-        })
     </script>
 </head>
 <body class="bg-steel">
@@ -96,12 +96,9 @@
                     <ul class="breadcrumbs" style="padding:0px;">
 					    <li><h4>車両台帳印刷</h4></li>
 					</ul>
+					<div class="grid">
                     <hr class="thin bg-grayLighter">
-					<div class="align-right">
-					<button class="button primary" onclick="pushMessage('info')" style="background-color:#6A5ACD;border-color:#6A5ACD;"><span class="mif-printer"></span> PDF出力</button>
-                    <button class="button primary" onclick="window.open('master_truck_add.html', '_self')"><span class="mif-plus"></span> 車両登録</button>
-                    <button class="button alert" onclick="pushMessage('alert')">削除</button>
-					</div>
+					<div class="left">
 					<label class="input-control checkbox small-check no-margin">
                     	<input type="checkbox">
                     	<span class="check"></span>シビヤ点検
@@ -119,28 +116,35 @@
                     	<span class="check"></span>オイル交換
                     </label>
                     <button class="" onclick="('')">絞込</button>
+                    </div>
+                    <div class="right">
+                        <button class="button alert" onclick="pushMessage('alert')">削除</button>
+						<button class="button primary" onclick="pushMessage('info')" style="background-color:#6A5ACD;border-color:#6A5ACD;">印刷</button>
+	                    <button class="button success" onclick="window.open('master_truck_add.html', '_self')">登録</button>
+					</div>
+					</div>
                     
                     <hr class="thin bg-grayLighter">
                     <table class="dataTable border bordered" data-auto-width="false" style="text-align:center;">
                         <thead>
                         <tr>
-                            <td rowspan="2" style="width: 20px"></td>
-                            <td rowspan="2" class="sortable-column">車番</td>
-                            <td rowspan="2" class="sortable-column">車種</td>
-                            <td rowspan="2" class="sortable-column">拠点</td>
-                            <td rowspan="2" class="sortable-column">走行距離km</td>
-                            <td colspan="3" class="sortable-column">次回実施予定日</td>
-                            <td colspan="3" class="sortable-column">次回残距離km</td>
-                            <td rowspan="2" class="sortable-column">詳細</td>
+                            <td rowspan="2" style="width:60px" style="text-align:center;">削除</td>
+                            <td rowspan="2" class="sortable-column" style="text-align:center;">車番</td>
+                            <td rowspan="2" class="sortable-column" style="text-align:center;">車種</td>
+                            <td rowspan="2" class="sortable-column" style="text-align:center;">拠点</td>
+                            <td rowspan="2" class="sortable-column" style="text-align:center;">走行距離km</td>
+                            <td colspan="3" class="sortable-column" style="text-align:center;">次回実施予定日</td>
+                            <td colspan="3" class="sortable-column" style="text-align:center;">次回残距離km</td>
+                            <td rowspan="2" class="sortable-column" style="text-align:center;">詳細</td>
                         </tr>
                         
                         <tr>
-                            <td class="sortable-column">シビア点検</td>
-                            <td class="sortable-column">三カ月点検</td>
-                            <td class="sortable-column">車検</td>
-                            <td class="sortable-column">タイヤ交換</td>
-                            <td class="sortable-column">タイヤローテーション</td>
-                            <td class="sortable-column">オイル交換</td>
+                            <td class="sortable-column" style="text-align:center;">シビア点検</td>
+                            <td class="sortable-column" style="text-align:center;">三カ月点検</td>
+                            <td class="sortable-column" style="text-align:center;">車検</td>
+                            <td class="sortable-column" style="text-align:center;">タイヤ交換</td>
+                            <td class="sortable-column" style="text-align:center;">タイヤローテーション</td>
+                            <td class="sortable-column" style="text-align:center;">オイル交換</td>
                         </tr>
                          
                         </thead>
@@ -153,8 +157,8 @@
                                 </label>
                             </td>
                             <td style="text-align:right;">9999</td>
-                            <td style="text-align:center;">大型10t</td>
-                            <td style="text-align:center;">神奈川</td>
+                            <td style="text-align:left;">大型10t</td>
+                            <td style="text-align:left;">神奈川</td>
                             <td style="text-align:right;">999,999</td>
                             <td style="text-align:center;">99/99/99</td>
                             <td style="text-align:center;">99/99/99</td>
@@ -164,46 +168,7 @@
                             <td style="text-align:right;">999,999</td>
                             <td style="text-align:center;"><a href="master_truck_add.html" target="_self">詳細</a></td>
                         </tr>
-                        <!-- 
-                        <tr>
-                            <td>
-                                <label class="input-control checkbox small-check no-margin">
-                                    <input type="checkbox">
-                                    <span class="check"></span>
-                                </label>
-                            </td>
-                            <td>A112</td>
-                            <td>O002</td>
-                            <td>中型</td>
-                            <td>8ｔユニック</td>
-                            <td>2015/12/3</td>
-                            <td>50000km</td>
-                            <td>2016/03/10</td>
-                            <td>大阪</td>
-                            <td><a href="../img/sample_hoken01.jpg" target="_blank">GL6555411-32</a></td>
-                            <td><a href="../img/sample_hoken01.jpg" target="_blank">N123456-12</a></td>
-                            <td><a href="master_truck_add.html" target="_self">詳細</a></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label class="input-control checkbox small-check no-margin">
-                                    <input type="checkbox">
-                                    <span class="check"></span>
-                                </label>
-                            </td>
-                            <td>A113</td>
-                            <td>Y001</td>
-                            <td>小型</td>
-                            <td>4ｔウイング</td>
-                            <td>2015/12/10</td>
-                            <td>50000km</td>
-                            <td class="bg-yellow">2016/02/10</td>
-                            <td>山形</td>
-                            <td><a href="../img/sample_hoken01.jpg" target="_blank">GL6555411-33</a></td>
-                            <td><a href="../img/sample_hoken01.jpg" target="_blank">N123456-13</a></td>
-                            <td><a href="master_truck_add.html" target="_self">詳細</a></td>
-                        </tr>
-                         -->
+                       
                         </tbody>
                     </table>
                 </div>

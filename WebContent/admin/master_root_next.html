@@ -96,15 +96,6 @@
                 type: t
             });
         }
-
-        $(function(){
-            $('.sidebar').on('click', 'li', function(){
-                if (!$(this).hasClass('active')) {
-                    $('.sidebar li').removeClass('active');
-                    $(this).addClass('active');
-                }
-            })
-        })
     </script>
 	<script>
 	    $(function(){
@@ -114,41 +105,43 @@
 </head>
 <body class="bg-steel">
     
-     <!-- ヘッダー固定 -->
+      <!-- ヘッダー固定 -->
    <div id="Menu_load"></div>
-    
+
     <div class="page-content">
         <div class="flex-grid no-responsive-future" style="height: 100%;">
             <div class="row" >
                 <div class="cell auto-size padding20 bg-white" id="cell-content">
 					<ul class="breadcrumbs" style="padding:0px;">
-					    <li><h4>運行コース設定</h4></li>
+					    <li><h4>定期便（運行コース）</h4></li>
 					</ul>
-
-                     <hr class="thin bg-grayLighter">
 		            <div class="grid">
-		              <button class="button warning" onclick="pushMessage('warning')"><span class="mif-cancel"></span> キャンセル</button>
-		              <button class="button primary" onclick="pushMessage('info')"><span class="mif-plus"></span> 保存</button>
-		            </div>
+		            
                     <hr class="thin bg-grayLighter">
-		                                
-                    <table class="table border bordered" data-auto-width="false">
+	                
+					<div class="align-right">
+                    <button class="button warning" onclick="pushMessage('warning')">キャンセル</button>
+                    <button class="button success" onclick="pushMessage('info')">保存</button>
+					</div>
+					</div>
+					
+	                <hr class="thin bg-grayLighter">
+                    
+                    <table class="dataTable border bordered" data-auto-width="false">
                       <thead>
                         <tr>
                           <td><p class="text">場所</p></td>
                           <td><p class="text">発着時刻</p></td>
                         </tr>
                        </thead>
-                       <tbody>
-                         
-		                   
+                        <tbody>
 		                     <tr class="center">
-		                       <td class="box"><form><input type="text" class="hoge" /></form></td>
+		                       <td class="box"><form><input type="text" class="hoge"/></form></td>
 		                       <td class="box"><form><input type="text" class="input" />:<input type="text" class="input" /></form></td>
 		                     </tr>
 		                     <tr class="center">
-		                       <td class="box"><form><input type="text" class="hoge" /></form></td>
-		                       <td class="box"><form><input type="text" class="input"  />:<input type="text" class="input" /></form></td>
+		                       <td class="box"><form><input type="text" class="hoge"/></form></td>
+		                       <td class="box"><form><input type="text" class="input" />:<input type="text" class="input" /></form></td>
 		                     </tr>
 		                     <tr class="center">
 		                       <td class="box"><form><input type="text" class="hoge" /></form></td>
@@ -223,11 +216,8 @@
 		                       <td class="box"><form><input type="text" class="input" />:<input type="text" class="input" /></form></td>
 		                     </tr>
 		                     
-		                   
-		                   
                         </tbody>
-                   　　 </table>
-
+                    </table>
 
                 </div>
             </div>

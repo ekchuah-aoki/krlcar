@@ -5999,7 +5999,7 @@ a.tag {
 .d-menu {
   text-align: left;
   background: #ffffff;
-  max-width: 23.625rem;
+  max-width: 19.625rem;
   list-style: none inside none;
   margin: 0;
   padding: 0;
@@ -6034,7 +6034,7 @@ a.tag {
   font-size: .875rem;
   display: block;
   float: none;
-  padding: .75rem 2rem .75rem 2.5rem;
+  padding: .75rem 0.5rem .75rem 0.5rem;
   text-decoration: none;
   vertical-align: middle;
   position: relative;

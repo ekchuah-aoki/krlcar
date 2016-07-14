@@ -28,7 +28,6 @@
             height: 100%;
         }
         body {
-        font-size:10pt;
         }
         .page-content {
             padding-top: 3.125rem;
@@ -40,7 +39,15 @@
             min-height: 0;
             height: auto;
         }
-
+        .cell colspan5 {
+            overflow: hidden;
+        }
+        .input-control select {
+            float: left;
+        }
+        .right {
+            float: right;
+        }
         @media screen and (max-width: 800px){
             #cell-sidebar {
                 flex-basis: 52px;
@@ -60,15 +67,6 @@
                 type: t
             });
         }
-
-        $(function(){
-            $('.sidebar').on('click', 'li', function(){
-                if (!$(this).hasClass('active')) {
-                    $('.sidebar li').removeClass('active');
-                    $(this).addClass('active');
-                }
-            })
-        })
     </script>
 </head>
 <body class="bg-steel">
@@ -84,14 +82,13 @@
                     <ul class="breadcrumbs" style="padding:0px;">
                       <li><h4>月別個車燃費推移一覧</h4></li>
                     </ul>
-
-                    <hr class="thin bg-grayLighter">
 		            <div class="grid">
-		                <div class="row cells12">
-							<div class="cell colspan6" style="float:left;margin-right: auto;">
-		                        
-								<div class="input-control select" style="width:100px;">
-		                            <select>
+		            
+                    <hr class="thin bg-grayLighter">
+                    
+		                <div class="cell colspan5">
+								<div class="input-control select" style="width:60px;">
+		                            <select dir="rtl">
 		                                <option>2016</option>
 		                                <option>2015</option>
 		                                <option>2014</option>
@@ -99,12 +96,12 @@
 		                            </select>
 								</div>
 								年度
+		                    
+							<div class="right">
+		                    	<button class="button primary">検索</button>
 		                    </div>
-							<div class="cell colspan4" style="float:right;">
-		                    	<button class="button primary"><span class="mif-search"></span>検索</button>
 		                    </div>
 	                    </div>
-                    </div>
                     <hr class="thin bg-grayLighter">
 
                     <table class="dataTable border bordered" data-auto-width="false">
@@ -146,10 +143,10 @@
                             <td>平均燃費</td>
                         </tr>
                         </thead>
-                        <tbody  style="text-align:right;">
+                        <tbody style="text-align:right;">
                         <tr>
-						  	<td rowspan="4">101<br/>いすゞ<br/>阿部</td>
-						 	<td>走行距離</td>
+						  	<td rowspan="4" style="text-align:left;">101<br/>いすゞ<br/>阿部</td>
+						 	<td style="text-align:left;">走行距離</td>
 							<td>14304</td>
 							<td>11451</td>
 							<td>12367</td>
@@ -165,7 +162,7 @@
 							<td>110585</td>
 						</tr>
 						<tr>
-							<td style="text-align:center;">給油量</td>
+							<td style="text-align:left;">給油量</td>
 							<td>3661.00</td>
 							<td>3368.00</td>
 							<td>3307.00</td>
@@ -181,7 +178,7 @@
 							<td>29756.95</td>
 						</tr>
 						<tr>
-							<td style="text-align:center;">燃料費</td>
+							<td style="text-align:left;">燃料費</td>
 							<td>349479</td>
 							<td>308307</td>
 							<td>279442</td>
@@ -197,7 +194,7 @@
 							<td>2485412</td>
 						</tr>
 						<tr>
-							<td style="text-align:center;">燃費</td>
+							<td style="text-align:left;">燃費</td>
 							<td>3.91</td>
 							<td>3.40</td>
 							<td>3.74</td>
@@ -214,8 +211,8 @@
 						</tr>
 
                         <tr>
-						  	<td rowspan="4" style="text-align:center;">103<br/>いすゞ<br/></td>
-						 	<td style="text-align:center;">走行距離</td>
+						  	<td rowspan="4" style="text-align:left;">103<br/>いすゞ<br/></td>
+						 	<td style="text-align:left;">走行距離</td>
 							<td>9763</td>
 							<td>15166</td>
 							<td>12911</td>
@@ -231,7 +228,7 @@
 							<td>57333</td>
 						</tr>
 						<tr>
-							<td style="text-align:center;">給油量</td>
+							<td style="text-align:left;">給油量</td>
 							<td>2702.00</td>
 							<td>4040.01</td>
 							<td>3636.00</td>
@@ -247,7 +244,7 @@
 							<td>15943.21</td>
 						</tr>
 						<tr>
-							<td style="text-align:center;">燃料費</td>
+							<td style="text-align:left;">燃料費</td>
 							<td>258028</td>
 							<td>369823</td>
 							<td>307242</td>
@@ -263,7 +260,7 @@
 							<td>15943.21</td>
 						</tr>
 						<tr>
-							<td style="text-align:center;">燃費</td>
+							<td style="text-align:left;">燃費</td>
 							<td>3.58</td>
 							<td>3.75</td>
 							<td>3.55</td>
@@ -278,7 +275,6 @@
 							<td></td>
 							<td>3.60</td>
 						</tr>
-
 					</tbody>
                         <tfoot>
                         <tr>

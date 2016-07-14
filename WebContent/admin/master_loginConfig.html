@@ -80,15 +80,6 @@
 	        $("#datepicker_inspect").datepicker();
 	        
 	    });
-	    
-        $(function(){
-            $('.sidebar').on('click', 'li', function(){
-                if (!$(this).hasClass('active')) {
-                    $('.sidebar li').removeClass('active');
-                    $(this).addClass('active');
-                }
-            })
-        })
     </script>
 </head>
 <body>
@@ -99,14 +90,16 @@
     <div class="page-content">
         <div class="flex-grid no-responsive-future" style="height: 100%;">
             <div class="row">
-                               <div class="cell auto-size padding20 bg-white" id="cell-content">
+                  <div class="cell auto-size padding20 bg-white" id="cell-content">
 					<ul class="breadcrumbs" style="padding:0px;">
 						<li><h4>ログイン設定</h4></li>
 					</ul>
+					<div class="grid">
                     <hr class="thin bg-grayLighter">
 					<div class="align-right">
-                    <button class="button success" onclick="pushMessage('alert')"><span class="mif-plus"></span>保存</button>
-                    <button class="button alert" onclick="pushMessage('alert')">戻る</button>
+					<button class="button warning" onclick="pushMessage('warning')">キャンセル</button>
+                    <button class="button success" onclick="pushMessage('alert')">保存</button>
+                    </div>
 					</div>
                     <hr class="thin bg-grayLighter">
 
@@ -115,7 +108,7 @@
 							<div class="cell colspan2">
 		                        社員コード
 	                            <div class="input-control text full-size">
-								    <input type="text">
+								    <input type="text" style="text-align:right;">
 								</div>
 		                    </div>
 							<div class="cell colspan2">

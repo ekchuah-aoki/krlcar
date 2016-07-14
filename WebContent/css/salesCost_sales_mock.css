@@ -1,8 +1,6 @@
-
-
 /* 外枠 */
 div.x_data_area {
-  width:100%;
+  width:1372px;
   overflow: hidden; /* floatさせた要素を内包しているため指定 */
   border-right: 1px solid #CCC;
 }
@@ -10,22 +8,20 @@ div.x_data_area {
 /* ロック部分 */
 div.lock_box {
   float: left;
-  width: 36%;
-  
+  width: 40%;
 }
 
 /* 横スクロール部分 */
 div.x_scroll_box {
   float: left;
-  width: 64%;
-  
+  width: 60%;
   overflow-y: hidden; /* 縦スクロール非表示 */
   overflow-x: scroll; /* 横スクロール */
 }
 
 /* テーブル */
 .width300 {
-  width: 900px;
+  width: 100%;
 }
 
 .width2500 {
@@ -38,20 +34,15 @@ table.data {
   border-spacing: 0; /* tableのcellspacing="0"の代わり */
 }
 
-
 table.data td {
  
   border-right: 1px solid #CCC;
   border-bottom: 1px solid #CCC;
 }
 
-
 table.data td.r_none {
   border-right: none; /* 右ボーダーの重なりを防止 */
 }
-
-
-
 
 table.data td {
   overflow: hidden; /* データが幅を超えたとき非表示に */
@@ -71,4 +62,3 @@ table.data {
 *:first-child+html table.data {
   border-collapse: collapse; /* IE7がborder-spacing: 0;に対応していないので */
 }
-

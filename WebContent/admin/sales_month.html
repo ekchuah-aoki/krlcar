@@ -61,15 +61,6 @@
         }
 
         $(function(){
-            $('.sidebar').on('click', 'li', function(){
-                if (!$(this).hasClass('active')) {
-                    $('.sidebar li').removeClass('active');
-                    $(this).addClass('active');
-                }
-            })
-        })
-        
-        $(function(){
             $("#datepicker").datepicker();
             $("#datepicker").datepicker();
         });
@@ -84,14 +75,15 @@
         <div class="flex-grid no-responsive-future" style="height: 100%;">
             <div class="row" style="height: 100%">
                 <div class="cell auto-size padding20 bg-white" id="cell-content">
-                    <!--<h1 class="text-light">売上計算書発行 <span class="mif-list place-right"></span></h1>-->
 					<ul class="breadcrumbs" style="padding:0px;">
 					    <li><h4>売上締め処理</h4></li>
 					</ul>
-                    <hr class="thin bg-grayLighter">
                     
-                    <div class="example" data-text="検索条件">
 			            <div class="grid">
+			            
+                        <hr class="thin bg-grayLighter">
+                    
+			            <div class="example" data-text="検索条件">
 			                <div class="row cells12">
 								
 								<div class="cell colspan4">
@@ -103,7 +95,7 @@
 			                    </div>
 			                    
 			                    <div class="align-right">
-			                    	<button class="button primary"><span class="mif-search"></span>検索</button>
+			                    	<button class="button primary">検索</button>
 								</div>
 			                </div>
 			            </div>

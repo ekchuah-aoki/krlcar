@@ -71,32 +71,11 @@
 	        $("#datepicker_sime").datepicker();
 	        
 	    });
-	    
-        $(function(){
-            $('.sidebar').on('click', 'li', function(){
-                if (!$(this).hasClass('active')) {
-                    $('.sidebar li').removeClass('active');
-                    $(this).addClass('active');
-                }
-            })
-        })
     </script>
-    
-    <!-- ヘッダー固定 -->
-	<script type="text/javascript">
-        $(document).ready(function() {
-           $('#header-target').load('header.html');
-        });
-    </script>
-    
 </head>
-<body>
-
 <body class="bg-steel">
-
    <!-- ヘッダー固定 -->
    <div id="Menu_load"></div>
-    
         <div class="page-content">
         <div class="flex-grid no-responsive-future">
            <div class="row">
@@ -104,10 +83,13 @@
 	                <ul class="breadcrumbs" style="padding:0px;">
 					    <li><h4>得意先登録</h4></li>
 					</ul>
+					<div class="grid">
 	                <hr class="thin bg-grayLighter">
+	                
 					<div class="align-right">
-	                    <button class="button warning"><span class="mif-cancel"></span> キャンセル</button>
-	                    <button class="button primary"><span class="mif-plus"></span> 保 存</button>
+	                    <button class="button warning">キャンセル</button>
+	                    <button class="button success">保存</button>
+					</div>
 					</div>
 	                <hr class="thin bg-grayLighter">
 
@@ -116,7 +98,7 @@
 							<div class="cell colspan1">
 		                        顧客コード
 		                        <div class="input-control text full-size">
-								    <input type="text">
+								    <input type="text" style="text-align:right;">
 								</div>
 		                    </div>
 		                    <div class="cell colspan3">
@@ -151,7 +133,7 @@
 							<div class="cell colspan1">
 		                        郵便番号
 		                        <div class="input-control text full-size">
-								    <input type="text">
+								    <input type="text" style="text-align:right;">
 								</div>
 		                    </div>
 		                    <div class="cell colspan3">
@@ -183,13 +165,13 @@
 							<div class="cell colspan1">
 		                        電話番号
 	                            <div class="input-control text full-size">
-								    <input type="text">
+								    <input type="text" style="text-align:right;">
 								</div>
 		                    </div>
 							<div class="cell colspan1">
 		                        ＦＡＸ
 	                            <div class="input-control text full-size">
-								    <input type="text">
+								    <input type="text" style="text-align:right;">
 								</div>
 		                    </div>
 							<div class="cell colspan6">
@@ -217,7 +199,7 @@
 							<div class="cell colspan1">
 		                        締日
 								<div class="input-control text full-size">
-									<input type="text" placeholder="31">
+									<input type="text" placeholder="31" style="text-align:right;">
 								</div>
 								※来月は99と入力
 								
@@ -246,7 +228,7 @@
 							<div class="cell colspan1">
 							    日付
 	                            <div class="input-control text full-size">
-								    <input type="text">
+								    <input type="text" style="text-align:right;">
 								</div>
 		                    </div>
 		                    <div class="cell colspan7">

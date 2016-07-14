@@ -39,6 +39,21 @@
             min-height: 0;
             height: auto;
         }
+        
+        .cell colspan5 {
+            overflow: hidden;
+        }
+        
+        .input-control select {
+            float: left;
+        }
+        .input-control text {
+            float: left;
+        }
+        
+        .right {
+            float: right;
+        }
 
         @media screen and (max-width: 100%){
             #cell-sidebar {
@@ -59,15 +74,6 @@
                 type: t
             });
         }
-
-        $(function(){
-            $('.sidebar').on('click', 'li', function(){
-                if (!$(this).hasClass('active')) {
-                    $('.sidebar li').removeClass('active');
-                    $(this).addClass('active');
-                }
-            })
-        })
     </script>
 	<script>
 	    $(function(){
@@ -87,11 +93,10 @@
 					<ul class="breadcrumbs" style="padding:0px;">
 					    <li><h4>日常点検実施表検実施一覧</h4></li>
 					</ul>
-
-                    <hr class="thin bg-grayLighter">
 		            <div class="grid">
-		                <div class="row cells12">
-							<div class="cell colspan2">
+		            <hr class="thin bg-grayLighter">
+		            
+							<div class="cell colspan5">
 		                        登録番号
 		                        <div class="input-control select" style="width:100px;">
 		                            <select>
@@ -100,8 +105,6 @@
 		                                <option>港111</option>
 		                            </select>
 		                        </div>
-		                    </div>
-							<div class="cell colspan2">
 		                        車番
 		                        <div class="input-control select" style="width:100px;">
 		                            <select dir="rtl">
@@ -110,40 +113,34 @@
 		                                <option>5468</option>
 		                            </select>
 		                        </div>
-		                    </div>
-							<div class="cell colspan6">
 		                        点検年月
-								<div class="input-control text" id="datepicker">
+								<div class="input-control text" id="datepicker" style="width:160px;">
 								    <input type="text">
 								    <button class="button"><span class="mif-calendar"></span></button>
 								</div>
-								
+		                    <div class="right">
+		                    	<button class="button primary" onclick="pushMessage('warning')">検索</button>
+							</div>
 		                    </div>
-		                    <div class="align-right">
-                    <button class="button primary" onclick="pushMessage('warning')"><span class="mif-search"></span> 検索</button>
-					</div>
 	                    </div>
-                    </div>
-                    
-					
 					<hr class="thin bg-grayLighter">
                     <table class="table border bordered" data-auto-width="false">
                         <thead>
                         <tr>
-                            <td rowspan="3" class="sortable-column" colspan="4">点検内容<span style="float:right;"></span>点検良→<span class="mif-checkmark fg-green"></span>　要整備→<span class="mif-cross fg-red"></span></td>
-                            <td colspan="20">日付</td>
+                            <td rowspan="3" class="sortable-column" colspan="4" style="text-align:center;">点検内容<span style="float:right;"></span>点検良→<span class="mif-checkmark fg-green"></span>　要整備→<span class="mif-cross fg-red"></span></td>
+                            <td colspan="20" style="text-align:center;">日付</td>
                         </tr>
                         <tr>
-                            <td colspan="2" style="text-align:right;">01</td>
-							<td colspan="2" style="text-align:right;">02</td>
-							<td colspan="2" style="text-align:right;">03</td>
-							<td colspan="2" style="text-align:right;">04</td>
-							<td colspan="2" style="text-align:right;">05</td>
-							<td colspan="2" style="text-align:right;">06</td>
-							<td colspan="2" style="text-align:right;">07</td>
-							<td colspan="2" style="text-align:right;">08</td>
-							<td colspan="2" style="text-align:right;">09</td>
-							<td colspan="2" style="text-align:right;">10</td>
+                            <td colspan="2" style="text-align:center;">01</td>
+							<td colspan="2" style="text-align:center;">02</td>
+							<td colspan="2" style="text-align:center;">03</td>
+							<td colspan="2" style="text-align:center;">04</td>
+							<td colspan="2" style="text-align:center;">05</td>
+							<td colspan="2" style="text-align:center;">06</td>
+							<td colspan="2" style="text-align:center;">07</td>
+							<td colspan="2" style="text-align:center;">08</td>
+							<td colspan="2" style="text-align:center;">09</td>
+							<td colspan="2" style="text-align:center;">10</td>
                         </tr>
                         <tr>
                             <td><a href="./inspection_add.html">始業</a></td>
@@ -295,20 +292,20 @@
                     <table class="table border bordered" data-auto-width="false">
                         <thead>
                         <tr>
-                            <td rowspan="3" class="sortable-column" colspan="4">点検内容<span style="float:right;"></span>点検良→<span class="mif-checkmark fg-green"></span>　要整備→<span class="mif-cross fg-red"></span></td>
-                            <td colspan="20">日付</td>
+                            <td rowspan="3" class="sortable-column" colspan="4" style="text-align:center;">点検内容<span style="float:right;"></span>点検良→<span class="mif-checkmark fg-green"></span>　要整備→<span class="mif-cross fg-red"></span></td>
+                            <td colspan="20" style="text-align:center;">日付</td>
                         </tr>
                         <tr>
-                            <td colspan="2" style="text-align:right;">11</td>
-							<td colspan="2" style="text-align:right;">12</td>
-							<td colspan="2" style="text-align:right;">13</td>
-							<td colspan="2" style="text-align:right;">14</td>
-							<td colspan="2" style="text-align:right;">15</td>
-							<td colspan="2" style="text-align:right;">16</td>
-							<td colspan="2" style="text-align:right;">17</td>
-							<td colspan="2" style="text-align:right;">18</td>
-							<td colspan="2" style="text-align:right;">19</td>
-							<td colspan="2" style="text-align:right;">20</td>
+                            <td colspan="2" style="text-align:center;">11</td>
+							<td colspan="2" style="text-align:center;">12</td>
+							<td colspan="2" style="text-align:center;">13</td>
+							<td colspan="2" style="text-align:center;">14</td>
+							<td colspan="2" style="text-align:center;">15</td>
+							<td colspan="2" style="text-align:center;">16</td>
+							<td colspan="2" style="text-align:center;">17</td>
+							<td colspan="2" style="text-align:center;">18</td>
+							<td colspan="2" style="text-align:center;">19</td>
+							<td colspan="2" style="text-align:center;">20</td>
                         </tr>
                         <tr>
                             <td><a href="./inspection_add.html">始業</a></td>
@@ -459,20 +456,20 @@
                     <table class="table border bordered" data-auto-width="false">
                         <thead>
                         <tr>
-                            <td rowspan="3" class="sortable-column" colspan="4">点検内容<span style="float:right;"></span>点検良→<span class="mif-checkmark fg-green"></span>　要整備→<span class="mif-cross fg-red"></span></td>
-                            <td colspan="20">日付</td>
+                            <td rowspan="3" class="sortable-column" colspan="4" style="text-align:center;">点検内容<span style="float:right;"></span>点検良→<span class="mif-checkmark fg-green"></span>　要整備→<span class="mif-cross fg-red"></span></td>
+                            <td colspan="20" style="text-align:center;">日付</td>
                         </tr>
                         <tr>
-                            <td colspan="2" style="text-align:right;">21</td>
-							<td colspan="2" style="text-align:right;">22</td>
-							<td colspan="2" style="text-align:right;">23</td>
-							<td colspan="2" style="text-align:right;">24</td>
-							<td colspan="2" style="text-align:right;">25</td>
-							<td colspan="2" style="text-align:right;">26</td>
-							<td colspan="2" style="text-align:right;">27</td>
-							<td colspan="2" style="text-align:right;">28</td>
-							<td colspan="2" style="text-align:right;">29</td>
-							<td colspan="2" style="text-align:right;">30</td>
+                            <td colspan="2" style="text-align:center;">21</td>
+							<td colspan="2" style="text-align:center;">22</td>
+							<td colspan="2" style="text-align:center;">23</td>
+							<td colspan="2" style="text-align:center;">24</td>
+							<td colspan="2" style="text-align:center;">25</td>
+							<td colspan="2" style="text-align:center;">26</td>
+							<td colspan="2" style="text-align:center;">27</td>
+							<td colspan="2" style="text-align:center;">28</td>
+							<td colspan="2" style="text-align:center;">29</td>
+							<td colspan="2" style="text-align:center;">30</td>
                         </tr>
                         <tr>
                             <td><a href="./inspection_add.html">始業</a></td>

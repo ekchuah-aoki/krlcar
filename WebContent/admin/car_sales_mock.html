@@ -29,7 +29,6 @@
             height: 100%;
         }
         body {
-        font-size:10pt;
         }
         .page-content {
             padding-top: 3.125rem;
@@ -43,24 +42,30 @@
         }
 
 		p.yoko{
-		text-align:center;
-		 width:85px;
-		 margin:0px;
+		    text-align:center;
+		    width:85px;
+		    margin:0px;
 		}
 		
 		p.yoko2{
-		text-align:center;
-		width:330px;
-		margin:0px;
+		    text-align:center;
+		    width:330px;
+		    margin:0px;
 		}
-		
 		p.yoko3{
-		text-align:center;
-		 width:120px;
-		 margin:0px;
-		 padding:18px;
+		    text-align:center;
+		    margin:0px;
+		    padding:18px 0;
 		}
-
+        .hidden {
+		overflow: hidden;
+		}
+		.left {
+		float: left;
+		}
+        .right {
+        float: right;
+        }
         @media screen and (max-width: 800px){
             #cell-sidebar {
                 flex-basis: 52px;
@@ -80,15 +85,6 @@
                 type: t
             });
         }
-
-        $(function(){
-            $('.sidebar').on('click', 'li', function(){
-                if (!$(this).hasClass('active')) {
-                    $('.sidebar li').removeClass('active');
-                    $(this).addClass('active');
-                }
-            })
-        })
     </script>
     
 </head>
@@ -104,14 +100,14 @@
 					<ul class="breadcrumbs" style="padding:0px;">
 					    <li><h4>車両・委託先別売上経費一覧</h4></li>
 					</ul>
-                    <hr class="thin bg-grayLighter">
-                    
 		            <div class="grid">
-		                <div class="row cells12">
-							<div class="cell colspan2">
-		                      
-		                        <div class="input-control select" style="width:50px;">
-		                            <select>
+		            
+                    <hr class="thin bg-grayLighter">
+		            
+		                <div class="hidden">
+							<div class="left">
+		                        <div class="input-control select" style="width:60px;">
+		                            <select dir="rtl">
 		                            	<option>2015</option>
 		                                <option>2016</option>
 		                                <option>2017</option>
@@ -122,7 +118,7 @@
 								</div>
 		                        年
 								<div class="input-control select" style="width:50px;">
-		                            <select>
+		                            <select dir="rtl">
 		                                <option>01</option>
 		                                <option>02</option>
 		                                <option>03</option>
@@ -137,235 +133,221 @@
 		                                <option>12</option>
 		                            </select>
 		                         </div>
-		                         月
-							</div>
-						<div class="cell colspan2">
-			                   <button class="button primary"><span class="mif-search"></span>検索</button>
-		                   </div>
+		                            月
+		                    </div>
+							<div class="right">
+			                    <button class="button primary">検索</button>
+		                    </div>
 		                </div>
 		            </div>
-		            
                     <hr class="thin bg-grayLighter">
 					
                     <div class="x_data_area">
-      
-      <!-- ロック部分 -->
-      	<div class="lock_box">
-        	 <table class="dataTable border bordered width300 data" style="margin:0px;"data-auto-width="false">
-                
-                
-                <thead>
-                <tr>
-					<td class="sortable-column"><p class="yoko3">車番/委託先コード</p></td>
-                    <td class="sortable-column"><p class="yoko3">車種/委託先名</p></td>
-                </tr>
-                </thead>
-                <tbody>
-                
-                	<tr>
-                       	<td style="text-align: left;">5346</td>
-                        <td style="text-align: left;">大型8t</td>
-					</tr>
-                    <tr>
-                    	<td style="text-align: left;">59061234</td>
-                        <td style="text-align: left;">クレベ運送</td>
-					</tr>
-					
-					
-            	</tbody>
-            	<tfoot>
-				<tr><td colspan="2">合計</td>
-			</tfoot>
-        	</table>
-        </div>
-        
-        <!-- /ロック部分 -->
-        <!-- 横スクロール部分 -->
-        <div class="x_scroll_box">
-            <table class="dataTable border bordered  data width2500"  style="margin:0px;">
-                
-                <tbody>
-                <thead>
-                	<tr>
-                    		<td class="sortable-column" colspan="8">2015/01</td>
-                            <td class="sortable-column" colspan="8">2015/02</td>
-                            <td class="sortable-column" colspan="8">2015/03</td>
-                            <td class="sortable-column" colspan="8">2015/04</td>
-                            <td class="sortable-column" colspan="8">2015/05</td>
-                            <td class="sortable-column" colspan="8">2015/06</td>
-                            <td class="sortable-column" colspan="8">2015/07</td>
-                            <td class="sortable-column" colspan="8">2015/08</td>
-                            <td class="sortable-column" colspan="8">2015/09</td>
-                            <td class="sortable-column" colspan="8">2015/10</td>
-                            <td class="sortable-column" colspan="8">2015/11</td>
-                            <td class="sortable-column" colspan="8">2015/12</td>
-                            <td class="sortable-column" colspan="6" style="text-align: center;">合計</td>
-                        </tr>
-                        <tr>
-                            <td class="sortable-column"><p class="yoko">売上</p></td>
-                            <td class="sortable-column"><p class="yoko">固定費</p></td>
-                            <td class="sortable-column"><p class="yoko">変動費</p></td>
-                            <td class="sortable-column"><p class="yoko">諸経費</p></td>
-                            <td class="sortable-column"><p class="yoko">純利益</p></td>
-                            <td class="sortable-column"><p class="yoko">稼働時間</p></td>
-                            <td class="sortable-column"><p class="yoko">固定費(1H)</p></td>
-                            <td class="sortable-column"><p class="yoko">変動費(1H)</p></td>
-                            <td class="sortable-column"><p class="yoko">売上</p></td>
-                            <td class="sortable-column"><p class="yoko">固定費</p></td>
-                            <td class="sortable-column"><p class="yoko">変動費</p></td>
-                            <td class="sortable-column"><p class="yoko">諸経費</p></td>
-                            <td class="sortable-column"><p class="yoko">純利益</p></td>
-                            <td class="sortable-column"><p class="yoko">稼働時間</p></td>
-                            <td class="sortable-column"><p class="yoko">固定費(1H)</p></td>
-                            <td class="sortable-column"><p class="yoko">変動費(1H)</p></td>
-                            <td class="sortable-column"><p class="yoko">売上</p></td>
-                            <td class="sortable-column"><p class="yoko">固定費</p></td>
-                            <td class="sortable-column"><p class="yoko">変動費</p></td>
-                            <td class="sortable-column"><p class="yoko">諸経費</p></td>
-                            <td class="sortable-column"><p class="yoko">純利益</p></td>
-                            <td class="sortable-column"><p class="yoko">稼働時間</p></td>
-                            <td class="sortable-column"><p class="yoko">固定費(1H)</p></td>
-                            <td class="sortable-column"><p class="yoko">変動費(1H)</p></td>
-                            <td class="sortable-column"><p class="yoko">売上</p></td>
-                            <td class="sortable-column"><p class="yoko">固定費</p></td>
-                            <td class="sortable-column"><p class="yoko">変動費</p></td>
-                            <td class="sortable-column"><p class="yoko">諸経費</p></td>
-                            <td class="sortable-column"><p class="yoko">純利益</p></td>
-                            <td class="sortable-column"><p class="yoko">稼働時間</p></td>
-                            <td class="sortable-column"><p class="yoko">固定費(1H)</p></td>
-                            <td class="sortable-column"><p class="yoko">変動費(1H)</p></td>
-                            <td class="sortable-column"><p class="yoko">売上</p></td>
-                            <td class="sortable-column"><p class="yoko">固定費</p></td>
-                            <td class="sortable-column"><p class="yoko">変動費</p></td>
-                            <td class="sortable-column"><p class="yoko">諸経費</p></td>
-                            <td class="sortable-column"><p class="yoko">純利益</p></td>
-                            <td class="sortable-column"><p class="yoko">稼働時間</p></td>
-                            <td class="sortable-column"><p class="yoko">固定費(1H)</p></td>
-                            <td class="sortable-column"><p class="yoko">変動費(1H)</p></td>
-                            <td class="sortable-column"><p class="yoko">売上</p></td>
-                            <td class="sortable-column"><p class="yoko">固定費</p></td>
-                            <td class="sortable-column"><p class="yoko">変動費</p></td>
-                            <td class="sortable-column"><p class="yoko">諸経費</p></td>
-                            <td class="sortable-column"><p class="yoko">純利益</p></td>
-                            <td class="sortable-column"><p class="yoko">稼働時間</p></td>
-                            <td class="sortable-column"><p class="yoko">固定費(1H)</p></td>
-                            <td class="sortable-column"><p class="yoko">変動費(1H)</p></td>
-                            <td class="sortable-column"><p class="yoko">売上</p></td>
-                            <td class="sortable-column"><p class="yoko">固定費</p></td>
-                            <td class="sortable-column"><p class="yoko">変動費</p></td>
-                            <td class="sortable-column"><p class="yoko">諸経費</p></td>
-                            <td class="sortable-column"><p class="yoko">純利益</p></td>
-                            <td class="sortable-column"><p class="yoko">稼働時間</p></td>
-                            <td class="sortable-column"><p class="yoko">固定費(1H)</p></td>
-                            <td class="sortable-column"><p class="yoko">変動費(1H)</p></td>
-                            <td class="sortable-column"><p class="yoko">売上</p></td>
-                            <td class="sortable-column"><p class="yoko">固定費</p></td>
-                            <td class="sortable-column"><p class="yoko">変動費</p></td>
-                            <td class="sortable-column"><p class="yoko">諸経費</p></td>
-                            <td class="sortable-column"><p class="yoko">純利益</p></td>
-                            <td class="sortable-column"><p class="yoko">稼働時間</p></td>
-                            <td class="sortable-column"><p class="yoko">固定費(1H)</p></td>
-                            <td class="sortable-column"><p class="yoko">変動費(1H)</p></td>
-                            <td class="sortable-column"><p class="yoko">売上</p></td>
-                            <td class="sortable-column"><p class="yoko">固定費</p></td>
-                            <td class="sortable-column"><p class="yoko">変動費</p></td>
-                            <td class="sortable-column"><p class="yoko">諸経費</p></td>
-                            <td class="sortable-column"><p class="yoko">純利益</p></td>
-                            <td class="sortable-column"><p class="yoko">稼働時間</p></td>
-                            <td class="sortable-column"><p class="yoko">固定費(1H)</p></td>
-                            <td class="sortable-column"><p class="yoko">変動費(1H)</p></td>
-                            <td class="sortable-column"><p class="yoko">売上</p></td>
-                            <td class="sortable-column"><p class="yoko">固定費</p></td>
-                            <td class="sortable-column"><p class="yoko">変動費</p></td>
-                            <td class="sortable-column"><p class="yoko">諸経費</p></td>
-                            <td class="sortable-column"><p class="yoko">純利益</p></td>
-                            <td class="sortable-column"><p class="yoko">稼働時間</p></td>
-                            <td class="sortable-column"><p class="yoko">固定費(1H)</p></td>
-                            <td class="sortable-column"><p class="yoko">変動費(1H)</p></td>
-                            <td class="sortable-column"><p class="yoko">売上</p></td>
-                            <td class="sortable-column"><p class="yoko">固定費</p></td>
-                            <td class="sortable-column"><p class="yoko">変動費</p></td>
-                            <td class="sortable-column"><p class="yoko">諸経費</p></td>
-                            <td class="sortable-column"><p class="yoko">純利益</p></td>
-                            <td class="sortable-column"><p class="yoko">稼働時間</p></td>
-                            <td class="sortable-column"><p class="yoko">固定費(1H)</p></td>
-                            <td class="sortable-column"><p class="yoko">変動費(1H)</p></td>
-                            <td class="sortable-column"><p class="yoko">売上</p></td>
-                            <td class="sortable-column"><p class="yoko">固定費</p></td>
-                            <td class="sortable-column"><p class="yoko">変動費</p></td>
-                            <td class="sortable-column"><p class="yoko">諸経費</p></td>
-                            <td class="sortable-column"><p class="yoko">純利益</p></td>
-                            <td class="sortable-column"><p class="yoko">稼働時間</p></td>
-                            <td class="sortable-column"><p class="yoko">固定費(1H)</p></td>
-                            <td class="sortable-column"><p class="yoko">変動費(1H)</p></td>
-                            <td class="sortable-column"><p class="yoko">売上</p></td>
-                            <td class="sortable-column"><p class="yoko">固定費</p></td>
-                            <td class="sortable-column"><p class="yoko">変動費</p></td>
-                            <td class="sortable-column"><p class="yoko">諸経費</p></td>
-                            <td class="sortable-column"><p class="yoko">純利益</p></td>
-                            <td class="sortable-column"><p class="yoko">稼働時間</p></td>
-                            
-                            
-                        </tr>
-                </thead>
-                <tbody style="text-align: right;">
-                        <tr>
-                            <td>650,000</td><td>450,000</td><td>200,000</td><td>50,000</td><td>600,000</td><td>200</td><td>2,250</td><td>1,000</td>
-                            <td>650,000</td><td>450,000</td><td>200,000</td><td>50,000</td><td>600,000</td><td>200</td><td>2,250</td><td>1,000</td>
-                            <td>650,000</td><td>450,000</td><td>200,000</td><td>50,000</td><td>600,000</td><td>200</td><td>2,250</td><td>1,000</td>
-                            <td>650,000</td><td>450,000</td><td>200,000</td><td>50,000</td><td>600,000</td><td>200</td><td>2,250</td><td>1,000</td>
-                            <td>650,000</td><td>450,000</td><td>200,000</td><td>50,000</td><td>600,000</td><td>200</td><td>2,250</td><td>1,000</td>
-                            <td>650,000</td><td>450,000</td><td>200,000</td><td>50,000</td><td>600,000</td><td>200</td><td>2,250</td><td>1,000</td>
-                            <td>650,000</td><td>450,000</td><td>200,000</td><td>50,000</td><td>600,000</td><td>200</td><td>2,250</td><td>1,000</td>
-                            <td>650,000</td><td>450,000</td><td>200,000</td><td>50,000</td><td>600,000</td><td>200</td><td>2,250</td><td>1,000</td>
-                            <td>650,000</td><td>450,000</td><td>200,000</td><td>50,000</td><td>600,000</td><td>200</td><td>2,250</td><td>1,000</td>
-                            <td>650,000</td><td>450,000</td><td>200,000</td><td>50,000</td><td>600,000</td><td>200</td><td>2,250</td><td>1,000</td>
-                            <td>650,000</td><td>450,000</td><td>200,000</td><td>50,000</td><td>600,000</td><td>200</td><td>2,250</td><td>1,000</td>
-                            <td>650,000</td><td>450,000</td><td>200,000</td><td>50,000</td><td>600,000</td><td>200</td><td>2,250</td><td>1,000</td>
-                            <td>7,800,000</td><td>5,400,000</td><td>2,400,000</td><td>600,000</td><td>7,200,000</td><td>2,400</td>
-                        </tr>
-                        <tr>
-                        	<td>520,000</td><td>520,000</td><td>ー</td><td>45,000</td><td>475,000</td><td>185</td><td>2,810</td><td>ー</td>
-                        	<td>520,000</td><td>520,000</td><td>ー</td><td>45,000</td><td>475,000</td><td>185</td><td>2,810</td><td>ー</td>
-                        	<td>520,000</td><td>520,000</td><td>ー</td><td>45,000</td><td>475,000</td><td>185</td><td>2,810</td><td>ー</td>
-                        	<td>520,000</td><td>520,000</td><td>ー</td><td>45,000</td><td>475,000</td><td>185</td><td>2,810</td><td>ー</td>
-                        	<td>520,000</td><td>520,000</td><td>ー</td><td>45,000</td><td>475,000</td><td>185</td><td>2,810</td><td>ー</td>
-                        	<td>520,000</td><td>520,000</td><td>ー</td><td>45,000</td><td>475,000</td><td>185</td><td>2,810</td><td>ー</td>
-                        	<td>520,000</td><td>520,000</td><td>ー</td><td>45,000</td><td>475,000</td><td>185</td><td>2,810</td><td>ー</td>
-                        	<td>520,000</td><td>520,000</td><td>ー</td><td>45,000</td><td>475,000</td><td>185</td><td>2,810</td><td>ー</td>
-                        	<td>520,000</td><td>520,000</td><td>ー</td><td>45,000</td><td>475,000</td><td>185</td><td>2,810</td><td>ー</td>
-                        	<td>520,000</td><td>520,000</td><td>ー</td><td>45,000</td><td>475,000</td><td>185</td><td>2,810</td><td>ー</td>
-                        	<td>520,000</td><td>520,000</td><td>ー</td><td>45,000</td><td>475,000</td><td>185</td><td>2,810</td><td>ー</td>
-                        	<td>520,000</td><td>520,000</td><td>ー</td><td>45,000</td><td>475,000</td><td>185</td><td>2,810</td><td>ー</td>
-                        	<td>6,240,000</td><td>6,240,000</td><td>ー</td><td>540,000</td><td>5,700,000</td><td>2,220</td>
-                        </tr>
-            </tbody>
-            <tfoot>
-				<tr>
-                            <td style="text-align: right;">1,170,000</td><td style="text-align: right;">970,000</td><td style="text-align: right;">200,000</td><td style="text-align: right;">95,000</td><td style="text-align: right;">1,075,000</td><td style="text-align: right;">385</td><td style="text-align: right;">5,060</td><td style="text-align: right;">1,000</td>
-                        	<td style="text-align: right;">1,170,000</td><td style="text-align: right;">970,000</td><td style="text-align: right;">200,000</td><td style="text-align: right;">95,000</td><td style="text-align: right;">1,075,000</td><td style="text-align: right;">385</td><td style="text-align: right;">5,060</td><td style="text-align: right;">1,000</td>
-                        	<td style="text-align: right;">1,170,000</td><td style="text-align: right;">970,000</td><td style="text-align: right;">200,000</td><td style="text-align: right;">95,000</td><td style="text-align: right;">1,075,000</td><td style="text-align: right;">385</td><td style="text-align: right;">5,060</td><td style="text-align: right;">1,000</td>
-                        	<td style="text-align: right;">1,170,000</td><td style="text-align: right;">970,000</td><td style="text-align: right;">200,000</td><td style="text-align: right;">95,000</td><td style="text-align: right;">1,075,000</td><td style="text-align: right;">385</td><td style="text-align: right;">5,060</td><td style="text-align: right;">1,000</td>
-                        	<td style="text-align: right;">1,170,000</td><td style="text-align: right;">970,000</td><td style="text-align: right;">200,000</td><td style="text-align: right;">95,000</td><td style="text-align: right;">1,075,000</td><td style="text-align: right;">385</td><td style="text-align: right;">5,060</td><td style="text-align: right;">1,000</td>
-                        	<td style="text-align: right;">1,170,000</td><td style="text-align: right;">970,000</td><td style="text-align: right;">200,000</td><td style="text-align: right;">95,000</td><td style="text-align: right;">1,075,000</td><td style="text-align: right;">385</td><td style="text-align: right;">5,060</td><td style="text-align: right;">1,000</td>
-                        	<td style="text-align: right;">1,170,000</td><td style="text-align: right;">970,000</td><td style="text-align: right;">200,000</td><td style="text-align: right;">95,000</td><td style="text-align: right;">1,075,000</td><td style="text-align: right;">385</td><td style="text-align: right;">5,060</td><td style="text-align: right;">1,000</td>
-                        	<td style="text-align: right;">1,170,000</td><td style="text-align: right;">970,000</td><td style="text-align: right;">200,000</td><td style="text-align: right;">95,000</td><td style="text-align: right;">1,075,000</td><td style="text-align: right;">385</td><td style="text-align: right;">5,060</td><td style="text-align: right;">1,000</td>
-                        	<td style="text-align: right;">1,170,000</td><td style="text-align: right;">970,000</td><td style="text-align: right;">200,000</td><td style="text-align: right;">95,000</td><td style="text-align: right;">1,075,000</td><td style="text-align: right;">385</td><td style="text-align: right;">5,060</td><td style="text-align: right;">1,000</td>
-                        	<td style="text-align: right;">1,170,000</td><td style="text-align: right;">970,000</td><td style="text-align: right;">200,000</td><td style="text-align: right;">95,000</td><td style="text-align: right;">1,075,000</td><td style="text-align: right;">385</td><td style="text-align: right;">5,060</td><td style="text-align: right;">1,000</td>
-                        	<td style="text-align: right;">1,170,000</td><td style="text-align: right;">970,000</td><td style="text-align: right;">200,000</td><td style="text-align: right;">95,000</td><td style="text-align: right;">1,075,000</td><td style="text-align: right;">385</td><td style="text-align: right;">5,060</td><td style="text-align: right;">1,000</td>
-                        	<td style="text-align: right;">1,170,000</td><td style="text-align: right;">970,000</td><td style="text-align: right;">200,000</td><td style="text-align: right;">95,000</td><td style="text-align: right;">1,075,000</td><td style="text-align: right;">385</td><td style="text-align: right;">5,060</td><td style="text-align: right;">1,000</td>
-                        	<td style="text-align: right;">14,040,000</td><td style="text-align: right;">11,640,000</td><td style="text-align: right;">2,400,000</td><td style="text-align: right;">11,400,000</td><td style="text-align: right;">12,900,000</td><td style="text-align: right;">4,620</td>
-                        </tr>
-			</tfoot>
-            </table>
-        </div>
-
+				     <!-- ロック部分 -->
+				     	<div class="lock_box">
+				       	 <table class="dataTable border bordered width300 data" style="margin:0px;"data-auto-width="false">
+				             <thead>
+				               <tr style="height: 90px;">
+								   <td class="sortable-column" style="width:160px;"><p class="yoko3">車番/委託先コード</p></td>
+				                   <td class="sortable-column"><p class="yoko3">車種/委託先名</p></td>
+				               </tr>
+				               </thead>
+				               <tbody>
+				               	<tr style="height: 30px;">
+				                    <td style="text-align: right;">5346</td>
+				                    <td>大型8t</td>
+								</tr>
+				                <tr style="height: 30px;">
+				                   	<td style="text-align: right;">5906</td>
+				                    <td>クレベ運送</td>
+								</tr>
+				           	</tbody>
+				           	<tfoot>
+							<tr style="height: 40px;"><td colspan="2">合計</td>
+						</tfoot>
+				       	</table>
+				       </div>
+				       
+				       <!-- 横スクロール部分 -->
+				       <div class="x_scroll_box">
+				           <table class="dataTable border bordered  data width2500"  style="margin:0px;">
+				               <tbody>
+				               <thead>
+				               	<tr style="height: 48px;">
+				                   		<td class="sortable-column" colspan="8" style="text-align:center;">2015/01</td>
+				                           <td class="sortable-column" colspan="8" style="text-align:center;">2015/02</td>
+				                           <td class="sortable-column" colspan="8" style="text-align:center;">2015/03</td>
+				                           <td class="sortable-column" colspan="8" style="text-align:center;">2015/04</td>
+				                           <td class="sortable-column" colspan="8" style="text-align:center;">2015/05</td>
+				                           <td class="sortable-column" colspan="8" style="text-align:center;">2015/06</td>
+				                           <td class="sortable-column" colspan="8" style="text-align:center;">2015/07</td>
+				                           <td class="sortable-column" colspan="8" style="text-align:center;">2015/08</td>
+				                           <td class="sortable-column" colspan="8" style="text-align:center;">2015/09</td>
+				                           <td class="sortable-column" colspan="8" style="text-align:center;">2015/10</td>
+				                           <td class="sortable-column" colspan="8" style="text-align:center;">2015/11</td>
+				                           <td class="sortable-column" colspan="8" style="text-align:center;">2015/12</td>
+				                           <td class="sortable-column" colspan="6" style="text-align: center;">合計</td>
+				                       </tr>
+				                       <tr style="height: 42px;">
+				                           <td class="sortable-column"><p class="yoko">売上</p></td>
+				                           <td class="sortable-column"><p class="yoko">固定費</p></td>
+				                           <td class="sortable-column"><p class="yoko">変動費</p></td>
+				                           <td class="sortable-column"><p class="yoko">諸経費</p></td>
+				                           <td class="sortable-column"><p class="yoko">純利益</p></td>
+				                           <td class="sortable-column"><p class="yoko">稼働時間</p></td>
+				                           <td class="sortable-column"><p class="yoko">固定費(1H)</p></td>
+				                           <td class="sortable-column"><p class="yoko">変動費(1H)</p></td>
+				                           <td class="sortable-column"><p class="yoko">売上</p></td>
+				                           <td class="sortable-column"><p class="yoko">固定費</p></td>
+				                           <td class="sortable-column"><p class="yoko">変動費</p></td>
+				                           <td class="sortable-column"><p class="yoko">諸経費</p></td>
+				                           <td class="sortable-column"><p class="yoko">純利益</p></td>
+				                           <td class="sortable-column"><p class="yoko">稼働時間</p></td>
+				                           <td class="sortable-column"><p class="yoko">固定費(1H)</p></td>
+				                           <td class="sortable-column"><p class="yoko">変動費(1H)</p></td>
+				                           <td class="sortable-column"><p class="yoko">売上</p></td>
+				                           <td class="sortable-column"><p class="yoko">固定費</p></td>
+				                           <td class="sortable-column"><p class="yoko">変動費</p></td>
+				                           <td class="sortable-column"><p class="yoko">諸経費</p></td>
+				                           <td class="sortable-column"><p class="yoko">純利益</p></td>
+				                           <td class="sortable-column"><p class="yoko">稼働時間</p></td>
+				                           <td class="sortable-column"><p class="yoko">固定費(1H)</p></td>
+				                           <td class="sortable-column"><p class="yoko">変動費(1H)</p></td>
+				                           <td class="sortable-column"><p class="yoko">売上</p></td>
+				                           <td class="sortable-column"><p class="yoko">固定費</p></td>
+				                           <td class="sortable-column"><p class="yoko">変動費</p></td>
+				                           <td class="sortable-column"><p class="yoko">諸経費</p></td>
+				                           <td class="sortable-column"><p class="yoko">純利益</p></td>
+				                           <td class="sortable-column"><p class="yoko">稼働時間</p></td>
+				                           <td class="sortable-column"><p class="yoko">固定費(1H)</p></td>
+				                           <td class="sortable-column"><p class="yoko">変動費(1H)</p></td>
+				                           <td class="sortable-column"><p class="yoko">売上</p></td>
+				                           <td class="sortable-column"><p class="yoko">固定費</p></td>
+				                           <td class="sortable-column"><p class="yoko">変動費</p></td>
+				                           <td class="sortable-column"><p class="yoko">諸経費</p></td>
+				                           <td class="sortable-column"><p class="yoko">純利益</p></td>
+				                           <td class="sortable-column"><p class="yoko">稼働時間</p></td>
+				                           <td class="sortable-column"><p class="yoko">固定費(1H)</p></td>
+				                           <td class="sortable-column"><p class="yoko">変動費(1H)</p></td>
+				                           <td class="sortable-column"><p class="yoko">売上</p></td>
+				                           <td class="sortable-column"><p class="yoko">固定費</p></td>
+				                           <td class="sortable-column"><p class="yoko">変動費</p></td>
+				                           <td class="sortable-column"><p class="yoko">諸経費</p></td>
+				                           <td class="sortable-column"><p class="yoko">純利益</p></td>
+				                           <td class="sortable-column"><p class="yoko">稼働時間</p></td>
+				                           <td class="sortable-column"><p class="yoko">固定費(1H)</p></td>
+				                           <td class="sortable-column"><p class="yoko">変動費(1H)</p></td>
+				                           <td class="sortable-column"><p class="yoko">売上</p></td>
+				                           <td class="sortable-column"><p class="yoko">固定費</p></td>
+				                           <td class="sortable-column"><p class="yoko">変動費</p></td>
+				                           <td class="sortable-column"><p class="yoko">諸経費</p></td>
+				                           <td class="sortable-column"><p class="yoko">純利益</p></td>
+				                           <td class="sortable-column"><p class="yoko">稼働時間</p></td>
+				                           <td class="sortable-column"><p class="yoko">固定費(1H)</p></td>
+				                           <td class="sortable-column"><p class="yoko">変動費(1H)</p></td>
+				                           <td class="sortable-column"><p class="yoko">売上</p></td>
+				                           <td class="sortable-column"><p class="yoko">固定費</p></td>
+				                           <td class="sortable-column"><p class="yoko">変動費</p></td>
+				                           <td class="sortable-column"><p class="yoko">諸経費</p></td>
+				                           <td class="sortable-column"><p class="yoko">純利益</p></td>
+				                           <td class="sortable-column"><p class="yoko">稼働時間</p></td>
+				                           <td class="sortable-column"><p class="yoko">固定費(1H)</p></td>
+				                           <td class="sortable-column"><p class="yoko">変動費(1H)</p></td>
+				                           <td class="sortable-column"><p class="yoko">売上</p></td>
+				                           <td class="sortable-column"><p class="yoko">固定費</p></td>
+				                           <td class="sortable-column"><p class="yoko">変動費</p></td>
+				                           <td class="sortable-column"><p class="yoko">諸経費</p></td>
+				                           <td class="sortable-column"><p class="yoko">純利益</p></td>
+				                           <td class="sortable-column"><p class="yoko">稼働時間</p></td>
+				                           <td class="sortable-column"><p class="yoko">固定費(1H)</p></td>
+				                           <td class="sortable-column"><p class="yoko">変動費(1H)</p></td>
+				                           <td class="sortable-column"><p class="yoko">売上</p></td>
+				                           <td class="sortable-column"><p class="yoko">固定費</p></td>
+				                           <td class="sortable-column"><p class="yoko">変動費</p></td>
+				                           <td class="sortable-column"><p class="yoko">諸経費</p></td>
+				                           <td class="sortable-column"><p class="yoko">純利益</p></td>
+				                           <td class="sortable-column"><p class="yoko">稼働時間</p></td>
+				                           <td class="sortable-column"><p class="yoko">固定費(1H)</p></td>
+				                           <td class="sortable-column"><p class="yoko">変動費(1H)</p></td>
+				                           <td class="sortable-column"><p class="yoko">売上</p></td>
+				                           <td class="sortable-column"><p class="yoko">固定費</p></td>
+				                           <td class="sortable-column"><p class="yoko">変動費</p></td>
+				                           <td class="sortable-column"><p class="yoko">諸経費</p></td>
+				                           <td class="sortable-column"><p class="yoko">純利益</p></td>
+				                           <td class="sortable-column"><p class="yoko">稼働時間</p></td>
+				                           <td class="sortable-column"><p class="yoko">固定費(1H)</p></td>
+				                           <td class="sortable-column"><p class="yoko">変動費(1H)</p></td>
+				                           <td class="sortable-column"><p class="yoko">売上</p></td>
+				                           <td class="sortable-column"><p class="yoko">固定費</p></td>
+				                           <td class="sortable-column"><p class="yoko">変動費</p></td>
+				                           <td class="sortable-column"><p class="yoko">諸経費</p></td>
+				                           <td class="sortable-column"><p class="yoko">純利益</p></td>
+				                           <td class="sortable-column"><p class="yoko">稼働時間</p></td>
+				                           <td class="sortable-column"><p class="yoko">固定費(1H)</p></td>
+				                           <td class="sortable-column"><p class="yoko">変動費(1H)</p></td>
+				                           <td class="sortable-column"><p class="yoko">売上</p></td>
+				                           <td class="sortable-column"><p class="yoko">固定費</p></td>
+				                           <td class="sortable-column"><p class="yoko">変動費</p></td>
+				                           <td class="sortable-column"><p class="yoko">諸経費</p></td>
+				                           <td class="sortable-column"><p class="yoko">純利益</p></td>
+				                           <td class="sortable-column"><p class="yoko">稼働時間</p></td>
+				                       </tr>
+				                   </thead>
+				                   <tbody style="text-align: right;">
+				                       <tr style="height: 30px;">
+				                           <td>650,000</td><td>450,000</td><td>200,000</td><td>50,000</td><td>600,000</td><td>200</td><td>2,250</td><td>1,000</td>
+				                           <td>650,000</td><td>450,000</td><td>200,000</td><td>50,000</td><td>600,000</td><td>200</td><td>2,250</td><td>1,000</td>
+				                           <td>650,000</td><td>450,000</td><td>200,000</td><td>50,000</td><td>600,000</td><td>200</td><td>2,250</td><td>1,000</td>
+				                           <td>650,000</td><td>450,000</td><td>200,000</td><td>50,000</td><td>600,000</td><td>200</td><td>2,250</td><td>1,000</td>
+				                           <td>650,000</td><td>450,000</td><td>200,000</td><td>50,000</td><td>600,000</td><td>200</td><td>2,250</td><td>1,000</td>
+				                           <td>650,000</td><td>450,000</td><td>200,000</td><td>50,000</td><td>600,000</td><td>200</td><td>2,250</td><td>1,000</td>
+				                           <td>650,000</td><td>450,000</td><td>200,000</td><td>50,000</td><td>600,000</td><td>200</td><td>2,250</td><td>1,000</td>
+				                           <td>650,000</td><td>450,000</td><td>200,000</td><td>50,000</td><td>600,000</td><td>200</td><td>2,250</td><td>1,000</td>
+				                           <td>650,000</td><td>450,000</td><td>200,000</td><td>50,000</td><td>600,000</td><td>200</td><td>2,250</td><td>1,000</td>
+				                           <td>650,000</td><td>450,000</td><td>200,000</td><td>50,000</td><td>600,000</td><td>200</td><td>2,250</td><td>1,000</td>
+				                           <td>650,000</td><td>450,000</td><td>200,000</td><td>50,000</td><td>600,000</td><td>200</td><td>2,250</td><td>1,000</td>
+				                           <td>650,000</td><td>450,000</td><td>200,000</td><td>50,000</td><td>600,000</td><td>200</td><td>2,250</td><td>1,000</td>
+				                           <td>7,800,000</td><td>5,400,000</td><td>2,400,000</td><td>600,000</td><td>7,200,000</td><td>2,400</td>
+				                      </tr>
+				                      <tr style="height: 30px;">
+					                      <td>520,000</td><td>520,000</td><td>ー</td><td>45,000</td><td>475,000</td><td>185</td><td>2,810</td><td>ー</td>
+					                      <td>520,000</td><td>520,000</td><td>ー</td><td>45,000</td><td>475,000</td><td>185</td><td>2,810</td><td>ー</td>
+					                      <td>520,000</td><td>520,000</td><td>ー</td><td>45,000</td><td>475,000</td><td>185</td><td>2,810</td><td>ー</td>
+					                      <td>520,000</td><td>520,000</td><td>ー</td><td>45,000</td><td>475,000</td><td>185</td><td>2,810</td><td>ー</td>
+					                      <td>520,000</td><td>520,000</td><td>ー</td><td>45,000</td><td>475,000</td><td>185</td><td>2,810</td><td>ー</td>
+					                      <td>520,000</td><td>520,000</td><td>ー</td><td>45,000</td><td>475,000</td><td>185</td><td>2,810</td><td>ー</td>
+					                      <td>520,000</td><td>520,000</td><td>ー</td><td>45,000</td><td>475,000</td><td>185</td><td>2,810</td><td>ー</td>
+					                      <td>520,000</td><td>520,000</td><td>ー</td><td>45,000</td><td>475,000</td><td>185</td><td>2,810</td><td>ー</td>
+					                      <td>520,000</td><td>520,000</td><td>ー</td><td>45,000</td><td>475,000</td><td>185</td><td>2,810</td><td>ー</td>
+					                      <td>520,000</td><td>520,000</td><td>ー</td><td>45,000</td><td>475,000</td><td>185</td><td>2,810</td><td>ー</td>
+					                      <td>520,000</td><td>520,000</td><td>ー</td><td>45,000</td><td>475,000</td><td>185</td><td>2,810</td><td>ー</td>
+					                      <td>520,000</td><td>520,000</td><td>ー</td><td>45,000</td><td>475,000</td><td>185</td><td>2,810</td><td>ー</td>
+					                      <td>6,240,000</td><td>6,240,000</td><td>ー</td><td>540,000</td><td>5,700,000</td><td>2,220</td>
+				                      </tr>
+					       </tbody>
+					         <tfoot>
+							   <tr style="height: 40px;">
+			                        <td style="text-align: right;">1,170,000</td><td style="text-align: right;">970,000</td><td style="text-align: right;">200,000</td><td style="text-align: right;">95,000</td><td style="text-align: right;">1,075,000</td><td style="text-align: right;">385</td><td style="text-align: right;">5,060</td><td style="text-align: right;">1,000</td>
+			                       	<td style="text-align: right;">1,170,000</td><td style="text-align: right;">970,000</td><td style="text-align: right;">200,000</td><td style="text-align: right;">95,000</td><td style="text-align: right;">1,075,000</td><td style="text-align: right;">385</td><td style="text-align: right;">5,060</td><td style="text-align: right;">1,000</td>
+			                       	<td style="text-align: right;">1,170,000</td><td style="text-align: right;">970,000</td><td style="text-align: right;">200,000</td><td style="text-align: right;">95,000</td><td style="text-align: right;">1,075,000</td><td style="text-align: right;">385</td><td style="text-align: right;">5,060</td><td style="text-align: right;">1,000</td>
+			                       	<td style="text-align: right;">1,170,000</td><td style="text-align: right;">970,000</td><td style="text-align: right;">200,000</td><td style="text-align: right;">95,000</td><td style="text-align: right;">1,075,000</td><td style="text-align: right;">385</td><td style="text-align: right;">5,060</td><td style="text-align: right;">1,000</td>
+			                       	<td style="text-align: right;">1,170,000</td><td style="text-align: right;">970,000</td><td style="text-align: right;">200,000</td><td style="text-align: right;">95,000</td><td style="text-align: right;">1,075,000</td><td style="text-align: right;">385</td><td style="text-align: right;">5,060</td><td style="text-align: right;">1,000</td>
+			                       	<td style="text-align: right;">1,170,000</td><td style="text-align: right;">970,000</td><td style="text-align: right;">200,000</td><td style="text-align: right;">95,000</td><td style="text-align: right;">1,075,000</td><td style="text-align: right;">385</td><td style="text-align: right;">5,060</td><td style="text-align: right;">1,000</td>
+			                       	<td style="text-align: right;">1,170,000</td><td style="text-align: right;">970,000</td><td style="text-align: right;">200,000</td><td style="text-align: right;">95,000</td><td style="text-align: right;">1,075,000</td><td style="text-align: right;">385</td><td style="text-align: right;">5,060</td><td style="text-align: right;">1,000</td>
+			                       	<td style="text-align: right;">1,170,000</td><td style="text-align: right;">970,000</td><td style="text-align: right;">200,000</td><td style="text-align: right;">95,000</td><td style="text-align: right;">1,075,000</td><td style="text-align: right;">385</td><td style="text-align: right;">5,060</td><td style="text-align: right;">1,000</td>
+			                       	<td style="text-align: right;">1,170,000</td><td style="text-align: right;">970,000</td><td style="text-align: right;">200,000</td><td style="text-align: right;">95,000</td><td style="text-align: right;">1,075,000</td><td style="text-align: right;">385</td><td style="text-align: right;">5,060</td><td style="text-align: right;">1,000</td>
+			                       	<td style="text-align: right;">1,170,000</td><td style="text-align: right;">970,000</td><td style="text-align: right;">200,000</td><td style="text-align: right;">95,000</td><td style="text-align: right;">1,075,000</td><td style="text-align: right;">385</td><td style="text-align: right;">5,060</td><td style="text-align: right;">1,000</td>
+			                       	<td style="text-align: right;">1,170,000</td><td style="text-align: right;">970,000</td><td style="text-align: right;">200,000</td><td style="text-align: right;">95,000</td><td style="text-align: right;">1,075,000</td><td style="text-align: right;">385</td><td style="text-align: right;">5,060</td><td style="text-align: right;">1,000</td>
+			                       	<td style="text-align: right;">1,170,000</td><td style="text-align: right;">970,000</td><td style="text-align: right;">200,000</td><td style="text-align: right;">95,000</td><td style="text-align: right;">1,075,000</td><td style="text-align: right;">385</td><td style="text-align: right;">5,060</td><td style="text-align: right;">1,000</td>
+			                       	<td style="text-align: right;">14,040,000</td><td style="text-align: right;">11,640,000</td><td style="text-align: right;">2,400,000</td><td style="text-align: right;">11,400,000</td><td style="text-align: right;">12,900,000</td><td style="text-align: right;">4,620</td>
+                       		    </tr>
+						     </tfoot>
+				           </table>
+				       </div>
 					</div>
 				</div>
-			</div>
+			  </div>
 			</div>
 		</div>
-	
-  
 </body>
 </html>

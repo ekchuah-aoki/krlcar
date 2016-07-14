@@ -54,6 +54,12 @@
     <script>
 	    $(function(){
 	        $("#datepicker").datepicker();
+	        
+	    });
+	</script>
+	<script>
+	    $(function(){
+	        $("#datepicker2").datepicker();
 	    });
 	</script>
 </head>
@@ -69,13 +75,10 @@
 					<ul class="breadcrumbs" style="padding:0px;">
 					    <li><h4>日常点検実施表入力</h4></li>
 					</ul>
-
-                    <hr class="thin bg-grayLighter">
-					
-
-                    
 		            <div class="grid" >
 		              
+                    <hr class="thin bg-grayLighter">
+					
 		                <div class="row cells12">
 							<div class="cell colspan4" >
 		                        登録番号
@@ -128,7 +131,7 @@
 	                    <div class="row cells12">
 							<div class="cell colspan3">
 		                        始業点検
-								<div class="input-control text" id="datepicker" style="width:150px;">
+								<div class="input-control text" id="datepicker" style="width:160px;">
 								    <input type="text">
 								    <button class="button"><span class="mif-calendar"></span></button>
 								</div>
@@ -136,7 +139,7 @@
 							
 							<div class="cell colspan3">
 							    就業点検
-								<div class="input-control text" id="datepicker" style="width:150px;">
+								<div class="input-control text" id="datepicker2" style="width:160px;">
 								    <input type="text">
 								    <button class="button"><span class="mif-calendar"></span></button>
 								</div>
@@ -149,8 +152,8 @@
                     <table class="table border bordered" data-auto-width="false">
                         <thead>
                         <tr>
-                            <td class="sortable-column" colspan="3">点検内容<span style="float:right;"></span>点検良→<span class="mif-checkmark fg-green"></span>　要整備→<span class="mif-cross fg-red"></span></td>
-                            <td>操作</td>
+                            <td class="sortable-column" colspan="3" style="text-align:center;">点検内容<span style="float:right;"></span>点検良→<span class="mif-checkmark fg-green"></span>　要整備→<span class="mif-cross fg-red"></span></td>
+                            <td style="text-align:center;">操作</td>
                         </tr>
                         </thead>
                         <tbody>
@@ -518,15 +521,14 @@
 							</tr>
                         </tbody>
                     </table>
+                    <hr class="thin bg-grayLighter">
 					<div class="align-right">
-                    <button class="button warning" onclick="pushMessage('warning')"><span class="mif-cancel"></span> キャンセル</button>
-                    <button class="button primary" onclick="pushMessage('info')"><span class="mif-plus"></span> 保存</button>
+                    <button class="button warning" onclick="pushMessage('warning')">キャンセル</button>
+                    <button class="button success" onclick="pushMessage('info')">保存</button>
 					</div>
-
 			        </div>
                 </div>
             </div>
         </div>
-    
 </body>
 </html>

@@ -71,23 +71,11 @@
 	        $("#datepicker_sime").datepicker();
 	        
 	    });
-	    
-        $(function(){
-            $('.sidebar').on('click', 'li', function(){
-                if (!$(this).hasClass('active')) {
-                    $('.sidebar li').removeClass('active');
-                    $(this).addClass('active');
-                }
-            })
-        })
     </script>
 </head>
 <body>
-
     <!-- ヘッダー固定 -->
    <div id="Menu_load"></div>
-
-    
         <div class="page-content">
         <div class="flex-grid no-responsive-future">
            <div class="row">
@@ -95,10 +83,12 @@
 	                <ul class="breadcrumbs" style="padding:0px;">
 					    <li><h4>委託先(外注)登録</h4></li>
 					</ul>
+					<div class="grid">
 	                <hr class="thin bg-grayLighter">
 					<div class="align-right">
-	                    <button class="button warning"><span class="mif-cancel"></span> キャンセル</button>
-	                    <button class="button primary"><span class="mif-plus"></span> 保 存</button>
+	                    <button class="button warning">キャンセル</button>
+	                    <button class="button success">保存</button>
+					</div>
 					</div>
 	                <hr class="thin bg-grayLighter">
 

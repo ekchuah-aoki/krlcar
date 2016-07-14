@@ -15,7 +15,7 @@
     <link href="../css/metro.css" rel="stylesheet">
     <link href="../css/metro-icons.css" rel="stylesheet">
     <link href="../css/metro-responsive.css" rel="stylesheet">
-    <link href="../css/table3.css" rel="stylesheet">
+    <link href="../css/mock_unsou.css" rel="stylesheet">
 
     <script src="../js/jquery-2.1.3.min.js"></script>
     <script src="../js/jquery.dataTables.min.js"></script>
@@ -27,7 +27,6 @@
 	<script>
 	
 </script>
-
     <style>
         html, body {
             height: 100%;
@@ -49,55 +48,42 @@
 	        text-align: right;
 	        margin:0px;
 	    }
-		
+		.dataTable {
+			margin:0;
+		}
 		.theme	{
 			width:160px;
 		}
 		td.course{
 			text-align:center;
 		}
-		p.yoko{
-		 width:40px;
-		 margin:0px;
-		 padding:40px;
-		}
 		p.yoko2{
-		text-align:center;
-		margin:0px;
+			text-align:center;
+			margin:0px;
 		}
-		
 		p.yoko3{
-		 width:27px;
-		 margin:0px;
-		 padding:25px 0px 24px 0px;
+		    margin:0px;
+		    padding:25px 0px 24px 0px;
 		}
-		
-		p.yoko4{
-		text-align:center;
-		 width:85px;
-		 margin:0px;
-		}
-		
-		p.yoko5{
-		text-align:center;
-		padding:18px;
-		width:250px;
-		margin:0px;
-		}
-		
 		table.center{
-		width:100%;
-		margin:0 auto;
-		
+			width:100%;
+			margin:0 auto;
 		}
 		.input-control select{
-		width:100%;
+			width:100%;
 		}
-		
 		.x_data_area{
-		margin: 0;
+			margin: 0;
 		}
-		
+		.cell colspan5 {
+            overflow: hidden;
+        }
+        .input-control text {
+            float: left;
+        }
+        .right {
+            float: right;
+        }
         @media screen and (max-width:100%){
             #cell-sidebar {
                 flex-basis: 52px;
@@ -109,14 +95,16 @@
     </style>
 
     <script>
-        
+    <!-- カレンダー -->
+    <script>
+	    $(function(){
+	        $("#datepicker").datepicker();
+	    });
     </script>
 </head>
 <body>
-    
      <!-- ヘッダー固定 -->
    <div id="Menu_load"></div>
-
     <div class="page-content">
         <div class="flex-grid no-responsive-future">
            <div class="row">
@@ -124,120 +112,55 @@
                   <ul class="breadcrumbs" style="padding:0px;">
                     <li><h4>配車表入力</h4></li>
                   </ul>
-                    <hr class="thin bg-grayLighter">
 		            <div class="grid">
-		                <div class="row colspan">
-							<div class="cell colspan3">
-							　
-		                       <div class="input-control select" style="width:50px;">
-		                            <select dir="rtl">
-		                                <option>2016</option>
-		                                <option>2017</option>
-		                                <option>2018</option>
-		                                <option>2019</option>
-		                                <option>2020</option>
-		                            </select>
+		            <hr class="thin bg-grayLighter">
+		                <div class="cell colspan5">
+		                       点呼日
+								<div class="input-control text" id="datepicker" style="width:160px;">
+								    <input type="text" style="height:35px;">
+								    <button class="button" style="height:35px;"><span class="mif-calendar"></span></button>
 								</div>
-		                       年
-								<div class="input-control select" style="width:50px;">
-		                            <select dir="rtl">
-		                                <option>01</option>
-		                                <option>02</option>
-		                                <option>03</option>
-		                                <option>04</option>
-		                                <option>05</option>
-		                                <option>06</option>
-		                                <option>07</option>
-		                                <option>08</option>
-		                                <option>09</option>
-		                                <option>10</option>
-		                                <option>11</option>
-		                                <option>12</option>
-		                            </select>
-		                         </div>
-		                            月
-		                         <div class="input-control select" style="width:50px;">
-		                            <select dir="rtl">
-		                                <option>01</option>
-		                                <option>02</option>
-		                                <option>03</option>
-		                                <option>04</option>
-		                                <option>05</option>
-		                                <option>06</option>
-		                                <option>07</option>
-		                                <option>08</option>
-		                                <option>09</option>
-		                                <option>10</option>
-		                                <option>11</option>
-		                                <option>12</option>
-		                                <option>13</option>
-		                                <option>14</option>
-		                                <option>15</option>
-		                                <option>16</option>
-		                                <option>18</option>
-		                                <option>19</option>
-		                                <option>20</option>
-		                                <option>21</option>
-		                                <option>22</option>
-		                                <option>23</option>
-		                                <option>24</option>
-		                                <option>25</option>
-		                                <option>26</option>
-		                                <option>27</option>
-		                                <option>28</option>
-		                                <option>29</option>
-		                                <option>30</option>
-		                                <option>31</option>
-		                            </select>
-								</div>
-								日
-		                    </div>
-							<div class="cell colspan" style="margin:0px;">
-			                    <button class="button primary"><span class="mif-search"></span>検索</button>
+							<div class="right">
+			                    <button class="button primary">検索</button>
 			                </div>
-		                </div>
-		            </div>
-
-							<div>
-								<button class="button alert" onclick="pushMessage('alert')"><span class="mif-checkmark"></span> 選択データ削除</button>
-		                   		<button class="button warning" onclick="pushMessage('warning')"><span class="mif-cancel"></span> キャンセル</button>
-		                   		<button class="button primary" onclick="pushMessage('info')" style="background-color:#6A5ACD;border-color:#6A5ACD;"><span class="mif-printer"></span> PDF出力</button>
-		                   		<button class="button primary" onclick="pushMessage('info')"><span class="mif-plus"></span> 保存</button>
-		                    </div>
-                    
+			                </div>
+		                <div class="align-right">
+							<button class="button alert" onclick="pushMessage('alert')">削除</button>
+	                   		<button class="button warning" onclick="pushMessage('warning')">キャンセル</button>
+	                   		<button class="button primary" onclick="pushMessage('info')" style="background-color:#6A5ACD;border-color:#6A5ACD;">印刷</button>
+	                   		<button class="button success" onclick="pushMessage('info')">保存</button>
+	                    </div>
+	                    </div>
+	                    
                     <hr class="thin bg-grayLighter">
                     <div class="x_data_area">
-      
 				     <!-- ロック部分 -->
 				     	<div class="lock_box">
 				       	 <table class="dataTable border bordered width300 data" style="margin:0px;"data-auto-width="false">
 							<colgroup>
-					                <col style="width: 6%;">
-					                <col style="width: 6%;">
-					                <col style="width: 7%;">
-					                <col style="width: 66%;">
-					                <col style="width: 12%;">
-				                </colgroup>
-				
+				                <col style="width: 6%;">
+				                <col style="width: 6%;">
+				                <col style="width: 7%;">
+				                <col style="width: 66%;">
+					            <col style="width: 12%;">
+				            </colgroup>
 				               <thead>
-				               
-							   <tr>
-								   <td><p class="yoko3">削除</p></td>
-				                   <td class="sortable-column"><p class="yoko3">便番</p></td>
-				                   <td class="sortable-column"><p class="yoko3">便名</p></td>
-				                   <td class="sortable-column">運行コース/作業割り当(行先)</td>
-				                   <td class="sortable-column"><p>運行日/車種</p></td>
+							   <tr style="height:120px;">
+								   <td style="text-align:center;"><p class="yoko3">削除</p></td>
+				                   <td class="sortable-column" style="text-align:center;"><p class="yoko3">便番</p></td>
+				                   <td class="sortable-column" style="text-align:center;"><p class="yoko3">便名</p></td>
+				                   <td class="sortable-column" style="text-align:center;">運行コース/作業割り当(行先)</td>
+				                   <td class="sortable-column" style="text-align:center;"><p>運行日/車種</p></td>
 				               </tr>
 				               </thead>
 				               <tbody>
-				               
-				               	<tr>
+				               	<tr style="height:80px;">
 				                       <td style="text-align:center;">
 				                       	<label class="input-control checkbox small-check no-margin">
 				                                   <input type="checkbox"><span class="check"></span>
 				                       	</label>
 				                       </td>
-				                           <td style="padding:28px 5px;">A-111</td>
+				                           <td style="padding:28px 5px;text-align:right;">A-111</td>
 				                           <td>川神下1</td>
 				                           <td>
 				                           	<table class="center">
@@ -259,15 +182,14 @@
 				                           	</table>
 				                           </td>
 				                           <td style="text-align:center;">1〜末/8t</td>
-										
-				                   <tr>
+				                   <tr style="height:80px;">
 				                       <td style="text-align:center;">
 				                               <label class="input-control checkbox small-check no-margin">
 				                                   <input type="checkbox">
 				                                   <span class="check"></span>
 				                               </label>
 				                           </td>
-				                           <td style="padding:29px 5px;">A-150</td>
+				                           <td style="padding:29px 5px;text-align:right;">A-150</td>
 				                           <td>綾神上</td>
 				                           <td>
 				                           <table class="center">
@@ -293,19 +215,18 @@
 				                           </td>
 				                           <td style="text-align:center;">1〜末/8t<br>日祝/4t</td>
 				                          </tr>
-									<tr>
+									<tr style="height:80px;">
 				                       	<td style="text-align:center;">
 				                               <label class="input-control checkbox small-check no-margin">
 				                                   <input type="checkbox">
 				                                   <span class="check"></span>
 				                               </label>
 				                           </td>
-				                           <td style="padding:28px 5px;"></td>
+				                           <td style="padding:28px 5px;text-align:right;"></td>
 				                           <td></td>
 				                           <td>
 				                           <table class="center" style="width:600px;">
-				                           
-				                           <tr id="acMenu">
+				                           <tr>
 				                              <td style="border:none;"><p class="yoko2">川崎東</p></td>
 				                              <td class="course" rowspan="2" style="border:none;">⇨</td>
 				                              <td style="border:none;"><p class="yoko2">新大阪</p></td>
@@ -321,7 +242,7 @@
 				                              <td style="border:none;"><p class="yoko2">ゆうP</p></td>
 				                              <td class="course" rowspan="2" style="border:none;">⇨</td>
 				                              <td style="border:none;"><p class="yoko2">綾瀬</p></td>
-				                              <td class="buttonright" rowspan="2" style="border:none;"><button class="button primary" onclick="window.open('mock_unsou_add.html','_self')">設定</button></td>
+				                              <td class="buttonright" rowspan="2" style="border:none;"><button class="button success" onclick="window.open('mock_unsou_add.html','_self')">設定</button></td>
 				                            </tr>
 				                            <tr>
 				                              <td style="border:none;"><p class="yoko2">21:30</p></td>
@@ -333,7 +254,6 @@
 				                              <td style="border:none;"><p class="yoko2">8:20</p></td>
 				                              <td style="border:none;"><p class="yoko2">13:30</p></td>
 				                            </tr>
-				                           
 				                           </table>
 				                           </td>
 				                           <td><div class="input-control select" style="width:100px;">
@@ -346,20 +266,24 @@
 					                            </select>
 					                    </div></td>
 									</tr>
-					                	<tr>
+					                <tr style="height:80px;">
 					                        <td style="text-align:center;">
 												<label class="input-control checkbox small-check no-margin">
 				                                   <input type="checkbox"><span class="check"></span>
 				                                </label>
 				                            </td>
-				                            <td style="padding:28px 5px;"></td>
+				                            <td style="padding:28px 5px;text-align:right;"></td>
 				                            <td></td>
-				                            <td><table style="width:600px;">
-				                        <tr>
-					                        <td class="buttonright" rowspan="2" style="border:none;"><button class="button primary" onclick="window.open('mock_unsou_add.html','_self')">設定</button></td>
-				                        </tr>
-				                       </table></td>
-				                    	<td><div class="input-control select" style="width:100px;">
+				                            <td>
+				                              <table style="width:606px;">
+				                                <tr>
+					                              <td class="buttonright" rowspan="2" style="border:none;">
+					                                <button class="button success" onclick="window.open('mock_unsou_add.html','_self')">設定</button>
+					                              </td>
+				                                </tr>
+				                              </table>
+				                            </td>
+				                    	    <td><div class="input-control select" style="width:100px;">
 					                        <select dir="rtl">
 					                        	<option></option>
 												<option>2t</option>
@@ -372,48 +296,36 @@
 				           	</tbody>
 				       	</table>
 				       </div>
-				       
 					        <!-- /ロック部分 -->
 					        <!-- 横スクロール部分 -->
 					        <div class="x_scroll_box">
 				            <table class="dataTable border bordered  data width2500"  style="margin:0px;">
-				                <colgroup>
-					                <col style="width: 11%;">
-					                <col style="width: 11%;">
-					                <col style="width: 11%;">
-					                <col style="width: 11%;">
-					                <col style="width: 11%;">
-					                <col style="width: 11%;">
-					                <col style="width: 11%;">
-					                <col style="width: 11%;">
-					                <col style="width: 11%;">
-				                </colgroup>
 				               <tbody>
-				                <thead>
-				               		<tr>
-				                   		<td class="sortable-column">6月5日(日)</td>
-				                           <td class="sortable-column">6月6日(月)</td>
-				                           <td class="sortable-column">6月7日(火)</td>
-				                           <td class="sortable-column">6月8日(水)</td>
-				                           <td class="sortable-column">6月9日(木)</td>
-				                           <td class="sortable-column">6月10日(金)</td>
-				                           <td class="sortable-column">6月11日(土)</td>
-				                           <td class="sortable-column">6月12日(日)</td>
-				                           <td class="sortable-column">6月13日(月)</td>
-				                       </tr>
-				                       <tr>
-				                           <td class="sortable-column">車番/取引先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
-				                           <td class="sortable-column">車番/取引先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
-				                           <td class="sortable-column">車番/取引先(社員ドライバー)<br>連絡先/委託先ライバー</td>
-				                           <td class="sortable-column">車番/取引先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
-				                           <td class="sortable-column">車番/取引先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
-				                           <td class="sortable-column">車番/取引先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
-				                           <td class="sortable-column">車番/取引先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
-				                           <td class="sortable-column">車番/取引先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
-				                           <td class="sortable-column">車番/取引先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
-				                       </tr>
+				               <thead>
+				               	   <tr style="height:60px;">
+				                   	   <td class="sortable-column" style="text-align:center;">6月5日(日)</td>
+			                           <td class="sortable-column" style="text-align:center;">6月6日(月)</td>
+			                           <td class="sortable-column" style="text-align:center;">6月7日(火)</td>
+			                           <td class="sortable-column" style="text-align:center;">6月8日(水)</td>
+			                           <td class="sortable-column" style="text-align:center;">6月9日(木)</td>
+			                           <td class="sortable-column" style="text-align:center;">6月10日(金)</td>
+			                           <td class="sortable-column" style="text-align:center;">6月11日(土)</td>
+			                           <td class="sortable-column" style="text-align:center;">6月12日(日)</td>
+			                           <td class="sortable-column" style="text-align:center;">6月13日(月)</td>
+				                    </tr>
+				                    <tr style="height:60px;">
+			                           <td class="sortable-column" style="text-align:center;">車番/取引先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
+			                           <td class="sortable-column" style="text-align:center;">車番/取引先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
+			                           <td class="sortable-column" style="text-align:center;">車番/取引先(社員ドライバー)<br>連絡先/委託先ライバー</td>
+			                           <td class="sortable-column" style="text-align:center;">車番/取引先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
+			                           <td class="sortable-column" style="text-align:center;">車番/取引先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
+			                           <td class="sortable-column" style="text-align:center;">車番/取引先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
+			                           <td class="sortable-column" style="text-align:center;">車番/取引先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
+			                           <td class="sortable-column" style="text-align:center;">車番/取引先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
+			                           <td class="sortable-column" style="text-align:center;">車番/取引先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
+				                    </tr>
 				                </thead>
-					                <tr>
+					                <tr style="height:80px;">
 				                		<td><table>
 				                            <tr>
 					                            <td style="border:none;"><input type="text" style="text-align:right;" size="15" name="car" value="5346"></td>
@@ -455,7 +367,7 @@
 											</tr>
 				                            <tr><td style="border:none;"><input type="text" size="15" style="text-align:right;" name="tel"value="090-3333-3333"></td><td style="border:none;"><input type="text" size="15" name="driver"></td></tr>
 				                           </table></td>
-										<td><table>
+										   <td><table>
 				                            <tr><td style="border:none;"><input type="text" size="15" style="text-align:right;" name="car" value="5345"></td><td style="border:none;"><input type="text" size="15" name="car" value="加藤運送"></td></tr>
 				                            <tr><td style="border:none;"><input type="text" size="15" style="text-align:right;" name="tel"value="090-4444-4444"></td><td style="border:none;"><input type="text" size="15" name="driver" value="安藤"></td></tr>
 				                           </table></td>
@@ -525,7 +437,7 @@
 				                            <tr><td style="border:none;"><input type="text" size="15" style="text-align:right;" name="tel"value="090-8888-8888"></td><td style="border:none;"><input type="text" size="15" name="driver"></td></tr>
 				                           </table></td>
 				                       </tr>
-				                       <tr>
+				                       <tr style="height:80px;">
 				                       	<td><table>
 				                            <tr><td style="border:none;"><input type="text" size="15" style="text-align:right;" name="car" value="59061234"></td><td style="border:none;"><input type="text" size="15" name="car" value="クレベ運送"></td></tr>
 				                            <tr><td style="border:none;"><input type="text" size="15" style="text-align:right;" name="tel"value="090-9999-9999"></td><td style="border:none;"><input type="text" size="15" name="driver"value="原田"></td></tr>
@@ -602,7 +514,7 @@
 				                            <tr><td style="border:none;"><input type="text" size="15" style="text-align:right;" name="tel"value="090-7777-7777"></td><td style="border:none;"><input type="text" size="15" name="driver"></td></tr>
 				                           </table></td>
 									</tr>
-									<tr>
+									<tr style="height:80px;">
 										<td><table>
 				                            <tr><td style="border:none;"><input type="text" size="15" style="text-align:right;" name="car" value=""></td><td style="border:none;"></td></tr>
 				                            <tr><td style="border:none;"><input type="text" size="15" style="text-align:right;" name="tel"value=""></td><td style="border:none;"><input type="text" size="15" name="driver" value=""></td></tr>
@@ -640,7 +552,7 @@
 				                            <tr><td style="border:none;"><input type="text" size="15" style="text-align:right;" name="tel"value=""></td><td style="border:none;"><input type="text" size="15" name="driver" value=""></td></tr>
 				                           </table></td>
 				                       </tr>
-				                       <tr>
+				                       <tr style="height:80px;">
 				                       	<td><table>
 				                            <tr><td style="border:none;"><input type="text" size="15" style="text-align:right;" name="car" value=""></td><td style="border:none;"></td></tr>
 				                            <tr><td style="border:none;"><input type="text" size="15" style="text-align:right;" name="tel"value=""></td><td style="border:none;"><input type="text" size="15" name="driver" value=""></td></tr>
@@ -678,13 +590,13 @@
 				                            <tr><td style="border:none;"><input type="text" size="15" style="text-align:right;" name="tel"value=""></td><td style="border:none;"><input type="text" size="15" name="driver" value=""></td></tr>
 				                           </table></td>
 				                       </tr>
-				            </tbody>
-				           </table>
-				        </div>
-			       
-            	　　　　</div>
-            	　　<div>
-						<button class="button success" onclick="pushMessage('info')"><span class="mif-plus"></span> 行追加</button>    	
+						            </tbody>
+						           </table>
+						        </div>
+		            	　　　　</div>
+		            	　　<div>
+            	        <hr class="thin bg-grayLighter">
+						<button class="button success" onclick="pushMessage('info')">行追加</button>    	
 			       </div>
 				</div>
         	</div>

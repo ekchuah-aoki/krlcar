@@ -59,15 +59,6 @@
                 type: t
             });
         }
-
-        $(function(){
-            $('.sidebar').on('click', 'li', function(){
-                if (!$(this).hasClass('active')) {
-                    $('.sidebar li').removeClass('active');
-                    $(this).addClass('active');
-                }
-            })
-        })
     </script>
 	<script>
 	    $(function(){
@@ -87,14 +78,14 @@
                     <ul class="breadcrumbs" style="padding:0px;">
 					    <li><h4>会社登録</h4></li>
 					</ul>
-					
+					<div class="grid">
                     <hr class="thin bg-grayLighter">
                     
 					<div class="align-right">
-                    <button class="button primary" onclick="pushMessage('info')"><span class="mif-plus"></span> 保存</button>
-                    <button class="button warning" onclick="pushMessage('warning')"><span class="mif-cancel"></span> キャンセル</button>
+					<button class="button warning" onclick="pushMessage('warning')">キャンセル</button>
+                    <button class="button success" onclick="pushMessage('info')">保存</button>
+                    </div>
 					</div>
-					
                     <hr class="thin bg-grayLighter">
                     
 		            <div class="grid">
@@ -129,7 +120,7 @@
 							<div class="cell colspan4">
 		                        郵便
 								<div class="input-control text full-size">
-								    <input type="text" style="width: 150px;">
+								    <input type="text" style="width: 150px; text-align:right;">
 								</div>
 		                    </div>
 							<div class="cell colspan4">
@@ -144,13 +135,13 @@
 							<div class="cell colspan3">
 		                        電話番号
 		                        <div class="input-control text full-size">
-								    <input type="tel" name="telNumber" pattern="\d{1,5}-\d{1,4}-\d{4,5}" style="width: 200px;">
+								    <input type="tel" name="telNumber" pattern="\d{1,5}-\d{1,4}-\d{4,5}" style="width: 200px; text-align:right;">
 								</div>
 		                    </div>
 		                    <div class="cell colspan4">
 		                        携帯番号
 								<div class="input-control text full-size">
-								    <input type="tel" name="faxNumber" pattern="\d{1,5}-\d{1,4}-\d{4,5}" style="width: 250px;">
+								    <input type="tel" name="faxNumber" pattern="\d{1,5}-\d{1,4}-\d{4,5}" style="width: 250px; text-align:right;">
 								</div>
 		                    </div>
 		                    <div class="cell colspan2">

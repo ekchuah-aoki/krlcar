@@ -80,15 +80,6 @@
 	        $("#datepicker_inspect").datepicker();
 	        
 	    });
-	    
-        $(function(){
-            $('.sidebar').on('click', 'li', function(){
-                if (!$(this).hasClass('active')) {
-                    $('.sidebar li').removeClass('active');
-                    $(this).addClass('active');
-                }
-            })
-        })
     </script>
 </head>
 <body class="bg-steel">
@@ -99,15 +90,17 @@
     <div class="page-content">
         <div class="flex-grid no-responsive-future" style="height: 100%;">
             <div class="row">
-                               <div class="cell auto-size padding20 bg-white" id="cell-content">
+                    <div class="cell auto-size padding20 bg-white" id="cell-content">
 					<ul class="breadcrumbs" style="padding:0px;">
 						<li><h4>車両登録</h4></li>
 					</ul>
+					<div class="grid">
                     <hr class="thin bg-grayLighter">
 					<div class="align-right">
-                    <button class="button primary" onclick="window.open('master_truck.html', '_self')"><span class="mif-list"></span> 車両台帳印刷</button>
-                    <button class="button success" onclick="pushMessage('alert')"><span class="mif-plus"></span>保存</button>
-                    <button class="button alert" onclick="pushMessage('alert')">取消</button>
+					<button class="button alert" onclick="pushMessage('alert')">取消</button>
+                    <button class="button primary" onclick="window.open('master_truck.html', '_self')" style="background-color:#6A5ACD;border-color:#6A5ACD;">印刷</button>
+                    <button class="button success" onclick="pushMessage('alert')">保存</button>
+					</div>
 					</div>
                     <hr class="thin bg-grayLighter">
 

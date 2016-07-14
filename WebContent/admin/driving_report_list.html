@@ -67,38 +67,41 @@
 					    <li><h4>運送日報検索一覧</h4></li>
 					</ul>
 					
-                    <hr class="thin bg-grayLighter">
-                    
+					<div class="grid">
 					<div class="align-right">
-                    <a href="./driving_report_add.html"><button class="button primary"><span class="mif-plus"></span> 追加...</button></a>
-                    <button class="button alert" onclick="pushMessage('alert')"><span class="mif-checkmark"></span> 選択データ削除</button>
-                    <button class="button info" onclick="pushMessage('alert')">非公開にする</button>
-					</div>
 					
+					<hr class="thin bg-grayLighter">
+					
+                    <button class="button alert" onclick="pushMessage('alert')">削除</button>
+                    <button class="button info" onclick="pushMessage('alert')">非公開にする</button>
+                    <a href="./driving_report_add.html"><button class="button success">追加</button></a>
+                    
+					</div>
+					</div>
                     <hr class="thin bg-grayLighter">
                     
                     <table class="dataTable border bordered" data-auto-width="false">
                         <thead>
                         <tr>
-                            <td style="width: 20px"></td>
-                            <td class="sortable-column">番号</td>
-                            <td class="sortable-column">枝番</td>
-                            <td class="sortable-column">車両</td>
-                            <td class="sortable-column">運転手</td>
-                            <td class="sortable-column">運送年月日</td>
-                            <td class="sortable-column">走行距離</td>
-                            <td class="sortable-column">収受運賃</td>
-                            <td class="sortable-column">荷主</td>
-                            <td class="sortable-column">品名</td>
-                            <td class="sortable-column">数量</td>
-                            <td class="sortable-column">備考</td>
-                            <td class="sortable-column">状況</td>
-                            <td>操作</td>
+                            <td style="width: 60px;align:center;">削除</td>
+                            <td class="sortable-column" style="text-align:center;">番号</td>
+                            <td class="sortable-column" style="text-align:center;">枝番</td>
+                            <td class="sortable-column" style="text-align:center;">車両</td>
+                            <td class="sortable-column" style="text-align:center;">運転手</td>
+                            <td class="sortable-column" style="text-align:center;">運送年月日</td>
+                            <td class="sortable-column" style="text-align:center;">走行距離</td>
+                            <td class="sortable-column" style="text-align:center;">収受運賃</td>
+                            <td class="sortable-column" style="text-align:center;">荷主</td>
+                            <td class="sortable-column" style="text-align:center;">品名</td>
+                            <td class="sortable-column" style="text-align:center;">数量</td>
+                            <td class="sortable-column" style="text-align:center;">備考</td>
+                            <td class="sortable-column" style="text-align:center;">状況</td>
+                            <td style="text-align:center;">操作</td>
                         </tr>
                         </thead>
                         <tbody>
                         <tr role="row" class="odd">
-                            <td>
+                            <td style="text-align:center;">
                                 <label class="input-control checkbox small-check no-margin">
                                     <input type="checkbox">
                                     <span class="check"></span>
@@ -113,15 +116,15 @@
                             <td style="text-align:right;">11000</td>
                             <td>ユニキャリア</td>
                             <td>FB15-8</td>
-                            <td>1個</td>
-                            <td><a href="#">詳細</a></td>
+                            <td style="text-align:right;">1個</td>
+                            <td style="text-align:center;"><a href="#">詳細</a></td>
                             <td class="align-center"><span class="mif-checkmark fg-green"></span></td>
-                            <td>
+                            <td style="text-align:center;">
 			                    <button class="button primary" onclick="window.open('driving_report_add.html', '_self')"><span class="mif-pencil"></span></button>
                             </td>
                         </tr>
                         <tr role="row" class="even">
-                            <td>
+                            <td style="text-align:center;">
                                 <label class="input-control checkbox small-check no-margin">
                                     <input type="checkbox">
                                     <span class="check"></span>
@@ -136,15 +139,15 @@
                             <td style="text-align:right;">16000</td>
                             <td>ユニキャリア</td>
                             <td>PIFIA15</td>
-                            <td>2個</td>
-                            <td><a href="#">詳細</a></td>
+                            <td style="text-align:right;">2個</td>
+                            <td style="text-align:center;"><a href="#">詳細</a></td>
                             <td class="align-center"><span class="mif-stop fg-red"></span></td>
-                            <td>
+                            <td style="text-align:center;">
 			                    <button class="button primary" onclick="window.open('driving_report_add.html', '_self')"><span class="mif-pencil"></span></button>
                             </td>
                         </tr>
                         <tr role="row" class="odd">
-                            <td>
+                            <td style="text-align:center;">
                                 <label class="input-control checkbox small-check no-margin">
                                     <input type="checkbox">
                                     <span class="check"></span>
@@ -159,15 +162,15 @@
                             <td style="text-align:right;">8000</td>
                             <td>ユニキャリア</td>
                             <td>PIFIA15</td>
-                            <td>2個</td>
-                            <td><a href="#">詳細</a></td>
+                            <td style="text-align:right;">2個</td>
+                            <td style="text-align:center;"><a href="#">詳細</a></td>
                             <td class="align-center"><span class="mif-stop fg-red"></span></td>
-                            <td>
+                            <td style="text-align:center;">
 			                    <button class="button primary" onclick="window.open('driving_report_add.html', '_self')"><span class="mif-pencil"></span></button>
                             </td>
                         </tr>
                         <tr role="row" class="even">
-                            <td>
+                            <td style="text-align:center;">
                                 <label class="input-control checkbox small-check no-margin">
                                     <input type="checkbox">
                                     <span class="check"></span>
@@ -182,10 +185,10 @@
                             <td style="text-align:right;">15300</td>
                             <td>住友ナユ</td>
                             <td>FBR15</td>
-                            <td>1個</td>
-                            <td><a href="#">詳細</a></td>
+                            <td style="text-align:right;">1個</td>
+                            <td style="text-align:center;"><a href="#">詳細</a></td>
                             <td class="align-center"><span class="mif-stop fg-red"></span></td>
-                            <td>
+                            <td style="text-align:center;">
 			                    <button class="button primary" onclick="window.open('driving_report_add.html', '_self')"><span class="mif-pencil"></span></button>
                             </td>
                         </tr>

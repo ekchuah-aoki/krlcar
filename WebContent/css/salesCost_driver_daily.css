@@ -1,6 +1,6 @@
 /* ŠO˜g */
 div.x_data_area {
-  width:1239px;
+  width:1379px;
   overflow: hidden; /* float‚³‚¹‚½—v‘f‚ð“à•ï‚µ‚Ä‚¢‚é‚½‚ßŽw’è */
   border-right: 1px solid #CCC;
 }
@@ -69,4 +69,12 @@ table.data {
 *:first-child+html table.data {
   border-collapse: collapse; /* IE7‚ªborder-spacing: 0;‚É‘Î‰ž‚µ‚Ä‚¢‚È‚¢‚Ì‚Å */
 }
-
+p.yoko{
+		text-align:center;
+		margin:0px;
+		}
+		p.yoko2{
+		text-align:center;
+		padding:18px 0;
+		margin:0px;
+		}

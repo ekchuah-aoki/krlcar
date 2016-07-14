@@ -69,10 +69,15 @@
                     <ul class="breadcrumbs" style="padding:0px;">
 					    <li><h4>基本情報</h4></li>
 					</ul>
+					
+					<div class="grid">
+					
                     <hr class="thin bg-grayLighter">
+                    
 					<div class="align-right">
-	                    <button class="button warning" onclick="pushMessage('warning')"><span class="mif-cancel"></span> キャンセル</button>
-	                    <button class="button primary" onclick="pushMessage('info')"><span class="mif-plus"></span> 保存</button>
+	                    <button class="button warning" onclick="pushMessage('warning')">キャンセル</button>
+	                    <button class="button success" onclick="pushMessage('info')">保存</button>
+					</div>
 					</div>
                     <hr class="thin bg-grayLighter">
 
@@ -80,48 +85,48 @@
 	                    <table class="table border bordered" data-auto-width="false">
 							<thead>
 							<tr>
-								<td colspan="3">1カ月</td>
-								<td colspan="3">1日</td>
+								<td colspan="3" style="text-align:center;">1カ月</td>
+								<td colspan="3" style="text-align:center;">1日</td>
 							</tr>
 							<tr>
-								<td>原則時間数</td>
-								<td>最大時間数/月</td>
-								<td>上限月数/年</td>
-								<td>原則時間数</td>
-								<td>最大時間数/日</td>
-								<td>上限回数/週</td>
+								<td style="text-align:center;">原則時間数</td>
+								<td style="text-align:center;">最大時間数/月</td>
+								<td style="text-align:center;">上限月数/年</td>
+								<td style="text-align:center;">原則時間数</td>
+								<td style="text-align:center;">最大時間数/日</td>
+								<td style="text-align:center;">上限回数/週</td>
 							</tr>
 							</thead>
 							<tbody>
 							<tr>
-								<td>
+								<td style="text-align:center;">
 									<div class="input-control text"  data-length="3" style="width:60px;">
-									    <input type="text" placeholder="293">
+									    <input type="text" placeholder="293" style="text-align:right;">
 									</div>時間
 								</td>
-								<td>
+								<td style="text-align:center;">
 									<div class="input-control text"  data-length="3" style="width:60px;">
-									    <input type="text" placeholder="320">
+									    <input type="text" placeholder="320" style="text-align:right;">
 									</div>時間
 								</td>
-								<td>
+								<td style="text-align:center;">
 									<div class="input-control text"  data-length="3" style="width:60px;">
-									    <input type="text" placeholder="6">
+									    <input type="text" placeholder="6" style="text-align:right;">
 									</div>月
 								</td>
-								<td>
+								<td style="text-align:center;">
 									<div class="input-control text"  data-length="3" style="width:60px;">
-									    <input type="text" placeholder="13">
+									    <input type="text" placeholder="13" style="text-align:right;">
 									</div>時間
 								</td>
-								<td>
+								<td style="text-align:center;">
 									<div class="input-control text"  data-length="3" style="width:60px;">
-									    <input type="text" placeholder="16">
+									    <input type="text" placeholder="16" style="text-align:right;">
 									</div>時間
 								</td>
-								<td>
+								<td style="text-align:center;">
 									<div class="input-control text"  data-length="3" style="width:60px;">
-									    <input type="text" placeholder="2">
+									    <input type="text" placeholder="2" style="text-align:right;">
 									</div>回
 								</td>
 							</tr></tbody>
@@ -132,32 +137,32 @@
 	                    <table class="table border bordered" data-auto-width="false">
 							<thead>
 							<tr>
-								<td>原則時間数/日</td>
-								<td>最大時間数/日</td>
-								<td>２日平均運転時間数</td>
-								<td>２週間平均運転時間数</td>
+								<td style="text-align:center;">原則時間数/日</td>
+								<td style="text-align:center;">最大時間数/日</td>
+								<td style="text-align:center;">２日平均運転時間数</td>
+								<td style="text-align:center;">２週間平均運転時間数</td>
 							</tr>
 							</thead>
 							<tbody>
 							<tr>
-								<td>
+								<td style="text-align:center;">
 									<div class="input-control text"  data-length="3" style="width:60px;">
-									    <input type="text" placeholder="12">
+									    <input type="text" placeholder="12" style="text-align:right;">
 									</div>時間
 								</td>
-								<td>
+								<td style="text-align:center;">
 									<div class="input-control text"  data-length="3" style="width:60px;">
-									    <input type="text" placeholder="14.5">
+									    <input type="text" placeholder="14.5" style="text-align:right;">
 									</div>時間
 								</td>
-								<td>
+								<td style="text-align:center;">
 									<div class="input-control text"  data-length="3" style="width:60px;">
-									    <input type="text" placeholder="9">
+									    <input type="text" placeholder="9" style="text-align:right;">
 									</div>時間
 								</td>
-								<td>
+								<td style="text-align:center;">
 									<div class="input-control text"  data-length="3" style="width:60px;">
-									    <input type="text" placeholder="44">
+									    <input type="text" placeholder="44" style="text-align:right;">
 									</div>時間
 								</td>
 							</tr></tbody>
@@ -167,29 +172,65 @@
 	                    <table class="table border bordered" data-auto-width="false">
 							<thead>
 							<tr>
-								<td>1月</td>
-								<td>2月</td>
-								<td>3月</td>
-								<td>4月</td>
-								<td>5月</td>
-								<td>6月</td>
-								<td>7月</td>
-								<td>8月</td>
-								<td>9月</td>
-								<td>10月</td>
-								<td>11月</td>
-								<td>12月</td>
+								<td style="text-align:center;">1月</td>
+								<td style="text-align:center;">2月</td>
+								<td style="text-align:center;">3月</td>
+								<td style="text-align:center;">4月</td>
+								<td style="text-align:center;">5月</td>
+								<td style="text-align:center;">6月</td>
+								<td style="text-align:center;">7月</td>
+								<td style="text-align:center;">8月</td>
+								<td style="text-align:center;">9月</td>
+								<td style="text-align:center;">10月</td>
+								<td style="text-align:center;">11月</td>
+								<td style="text-align:center;">12月</td>
 							</tr>
 							</thead>
 							<tbody>
 							<tr>
-								<td>
+								<td style="text-align:center;">
 								    <label class="input-control checkbox">
 									    <input type="checkbox">
 									    <span class="check"></span>
 								    </label>
 								</td>
-								<td>
+								<td style="text-align:center;">
+								    <label class="input-control checkbox">
+									    <input type="checkbox">
+									    <span class="check"></span>
+								    </label>
+								</td>
+								<td style="text-align:center;">
+								    <label class="input-control checkbox">
+									    <input type="checkbox" checked>
+									    <span class="check"></span>
+								    </label>
+								</td>
+								<td style="text-align:center;">
+								    <label class="input-control checkbox">
+									    <input type="checkbox">
+									    <span class="check"></span>
+								    </label>
+								</td>
+								<td style="text-align:center;">
+								    <label class="input-control checkbox">
+									    <input type="checkbox">
+									    <span class="check"></span>
+								    </label>
+								</td>
+								<td style="text-align:center;">
+								    <label class="input-control checkbox">
+									    <input type="checkbox">
+									    <span class="check"></span>
+								    </label>
+								</td>
+								<td style="text-align:center;">
+								    <label class="input-control checkbox">
+									    <input type="checkbox" checked>
+									    <span class="check"></span>
+								    </label>
+								</td>
+								<td style="text-align:center;">
 								    <label class="input-control checkbox">
 									    <input type="checkbox">
 									    <span class="check"></span>
@@ -201,55 +242,19 @@
 									    <span class="check"></span>
 								    </label>
 								</td>
-								<td>
+								<td style="text-align:center;">
 								    <label class="input-control checkbox">
 									    <input type="checkbox">
 									    <span class="check"></span>
 								    </label>
 								</td>
-								<td>
+								<td style="text-align:center;">
 								    <label class="input-control checkbox">
 									    <input type="checkbox">
 									    <span class="check"></span>
 								    </label>
 								</td>
-								<td>
-								    <label class="input-control checkbox">
-									    <input type="checkbox">
-									    <span class="check"></span>
-								    </label>
-								</td>
-								<td>
-								    <label class="input-control checkbox">
-									    <input type="checkbox" checked>
-									    <span class="check"></span>
-								    </label>
-								</td>
-								<td>
-								    <label class="input-control checkbox">
-									    <input type="checkbox">
-									    <span class="check"></span>
-								    </label>
-								</td>
-								<td>
-								    <label class="input-control checkbox">
-									    <input type="checkbox" checked>
-									    <span class="check"></span>
-								    </label>
-								</td>
-								<td>
-								    <label class="input-control checkbox">
-									    <input type="checkbox">
-									    <span class="check"></span>
-								    </label>
-								</td>
-								<td>
-								    <label class="input-control checkbox">
-									    <input type="checkbox">
-									    <span class="check"></span>
-								    </label>
-								</td>
-								<td>
+								<td style="text-align:center;">
 								    <label class="input-control checkbox">
 									    <input type="checkbox" checked>
 									    <span class="check"></span>
@@ -264,78 +269,78 @@
 	                    <table class="table border bordered" data-auto-width="false">
 							<thead>
 							<tr>
-								<th rowspan="2">消費税率</th>
-								<th colspan="9">消費税課税対象外項目</th>
+								<th rowspan="2" style="text-align:center;">消費税率</th>
+								<th colspan="9" style="text-align:center;">消費税課税対象外項目</th>
 							</tr>
 							<tr>
-								<th>基本運賃</th>
-								<th>留置</th>
-								<th>時増</th>
-								<th>地区粁増</th>
-								<th>道路航送料</th>
-								<th>運転手荷役</th>
-								<th>助手荷役</th>
-								<th>据付作業</th>
-								<th>運送保険料</th>
+								<th style="text-align:center;">基本運賃</th>
+								<th style="text-align:center;">留置</th>
+								<th style="text-align:center;">時増</th>
+								<th style="text-align:center;">地区粁増</th>
+								<th style="text-align:center;">道路航送料</th>
+								<th style="text-align:center;">運転手荷役</th>
+								<th style="text-align:center;">助手荷役</th>
+								<th style="text-align:center;">据付作業</th>
+								<th style="text-align:center;">運送保険料</th>
 							</tr>
 
 							</thead>
 							<tbody>
 							<tr>
-								<td>
+								<td style="text-align:center;">
 									<div class="input-control text"  data-length="3" style="width:60px;">
-									    <input type="text" placeholder="8">
+									    <input type="text" placeholder="8" style="text-align:right;">
 									</div>%
 								</td>
-								<td>
+								<td style="text-align:center;">
 								    <label class="input-control checkbox">
 									    <input type="checkbox">
 									    <span class="check"></span>
 								    </label>
 								</td>
-								<td>
+								<td style="text-align:center;">
 								    <label class="input-control checkbox">
 									    <input type="checkbox">
 									    <span class="check"></span>
 								    </label>
 								</td>
-								<td>
+								<td style="text-align:center;">
 								    <label class="input-control checkbox">
 									    <input type="checkbox">
 									    <span class="check"></span>
 								    </label>
 								</td>
-								<td>
+								<td style="text-align:center;">
 								    <label class="input-control checkbox">
 									    <input type="checkbox">
 									    <span class="check"></span>
 								    </label>
 								</td>
-								<td>
+								<td style="text-align:center;">
 								    <label class="input-control checkbox">
 									    <input type="checkbox" checked>
 									    <span class="check"></span>
 								    </label>
 								</td>
-								<td>
+								<td style="text-align:center;">
 								    <label class="input-control checkbox">
 									    <input type="checkbox">
 									    <span class="check"></span>
 								    </label>
 								</td>
-								<td>
+								<td style="text-align:center;">
 								    <label class="input-control checkbox">
 									    <input type="checkbox">
 									    <span class="check"></span>
 								    </label>
 								</td>
-								<td>
+								<td style="text-align:center;">
 								    <label class="input-control checkbox">
 									    <input type="checkbox">
 									    <span class="check"></span>
 								    </label>
 								</td>
-								<td>
+								<td style="text-align:center;">
 								    <label class="input-control checkbox">
 									    <input type="checkbox">
 									    <span class="check"></span>
@@ -349,27 +354,26 @@
 	                    <table class="table border bordered" data-auto-width="false">
 							<thead>
 							<tr>
-								<td>タイヤ交換</td>
-								<td>タイヤローテーション</td>
-								<td>オイル交換</td>
-								
+								<td style="text-align:center;">タイヤ交換</td>
+								<td style="text-align:center;">タイヤローテーション</td>
+								<td style="text-align:center;">オイル交換</td>
 							</tr>
 							</thead>
 							<tbody>
 							<tr>
-								<td>
+								<td style="text-align:center;">
 									<div class="input-control text"  data-length="15" style="width:120px;">
-									    <input type="text" placeholder="180,000">
+									    <input type="text" placeholder="180,000" style="text-align:right;">
 									</div>km
 								</td>
-								<td>
+								<td style="text-align:center;">
 									<div class="input-control text"  data-length="15" style="width:120px;">
-									    <input type="text" placeholder="15,000">
+									    <input type="text" placeholder="15,000" style="text-align:right;">
 									</div>km
 								</td>
-								<td>
+								<td style="text-align:center;">
 									<div class="input-control text"  data-length="15" style="width:120px;">
-									    <input type="text" placeholder="20,000">
+									    <input type="text" placeholder="20,000" style="text-align:right;">
 									</div>km
 								</td>
 								

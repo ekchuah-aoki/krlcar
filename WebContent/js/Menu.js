@@ -6,58 +6,58 @@
 	<li><a href='./home_notice.html'>HOME</a></li>\
     <li><a href='' class='dropdown-toggle'>　配車管理　</a>\
       <ul class='d-menu' data-role='dropdown'>\
-        <li><a href='./mock_unsou.html'><span class='mif-file-text icon'></span><span class='title'>配車表入力</span></a></li>\
+        <li><a href='./mock_unsou.html'><span class='title'>配車表入力</span></a></li>\
       </ul>\
     </li>\
 	<li><a href='' class='dropdown-toggle'>点呼管理</a>\
       <ul class='d-menu' data-role='dropdown'>\
-        <li><a href='./roll_call_add.html'><span class='mif-file-text icon'></span><span class='title'>点呼記録表入力</span></a></li>\
+        <li><a href='./roll_call_add.html'><span class='title'>点呼記録表入力</span></a></li>\
       </ul>\
     </li>\
     <li><a href='' class='dropdown-toggle'>日常点検</a>\
       <ul class='d-menu' data-role='dropdown'>\
-        <li><a href='./inspection_add.html'><span class='mif-file-text icon'></span><span class='title'>日常点検実施表入力</span></a></li>\
-        <li><a href='./inspection_list.html'><span class='mif-list-numbered icon'></span><span class='title'>日常点検実施表検索一覧</span></a></li>\
+        <li><a href='./inspection_add.html'><span class='title'>日常点検実施表入力</span></a></li>\
+        <li><a href='./inspection_list.html'><span class='title'>日常点検実施表検索一覧</span></a></li>\
       </ul>\
     </li>\
     <li><a href='' class='dropdown-toggle'>運送日報管理</a>\
       <ul class='d-menu' data-role='dropdown'>\
-        <li><a href='./driving_report_add.html'><span class='mif-file-text icon'></span><span class='title'>運送日報入力</span></a></li>\
-        <li><a href='./driving_report_list.html'><span class='mif-list icon'></span><span class='title'>運送日報検索一覧</span></a></li>\
+        <li><a href='./driving_report_add.html'><span class='title'>運送日報入力</span></a></li>\
+        <li><a href='./driving_report_list.html'><span class='title'>運送日報検索一覧</span></a></li>\
       </ul>\
     </li>\
     <li><a href='' class='dropdown-toggle'>経費</a>\
       <ul class='d-menu' data-role='dropdown'>\
-        <li><a href='./salesCost_driver_daily.html'><span class='mif-chart-bars icon'></span><span class='title'>ドライバー別売上一覧</span></a></li>\
-        <li><a href='./bill_list.html'><span class='mif-list icon'></span><span class='title'>得意先別請求一覧</span></a></li>\
-        <li><a href='./bill_close.html'><span class='mif-checkmark icon'></span><span class='title'>請求書締め処理</span></a></li>\
-        <li><a href='./bill_search.html'><span class='mif-search icon'></span><span class='title'>請求書印刷</span></a></li>\
-        <li><a href='./salesCost_sales_mock.html'><span class='mif-search icon'></span><span class='title'>得意先別売上一覧</span></a></li>\
-        <li><a href='./salesCost_pay_mock.html'><span class='mif-search icon'></span><span class='title'>委託先別支払一覧</span></a></li>\
-        <li><a href='./cost_truck_monthly.html'><span class='mif-file-text icon'></span><span class='title'>車両別固定費・変動費・諸経費入力</span></a></li>\
-        <li><a href='./car_sales_mock.html'><span class='mif-file-text icon'></span><span class='title'>車両別・委託先別売上経費一覧</span></a></li>\
-        <li><a href='./sales_month.html'><span class='mif-file-text icon'></span><span class='title'>売上締め処理</span></a></li>\
+        <li><a href='./salesCost_driver_daily.html'><span class='title'>ドライバー別売上一覧</span></a></li>\
+        <li><a href='./bill_list.html'><span class='title'>得意先別請求一覧</span></a></li>\
+        <li><a href='./bill_close.html'><span class='title'>請求書締め処理</span></a></li>\
+        <li><a href='./bill_search.html'><span class='title'>請求書印刷</span></a></li>\
+        <li><a href='./salesCost_sales_mock.html'><span class='title'>得意先別売上一覧</span></a></li>\
+        <li><a href='./salesCost_pay_mock.html'><span class='title'>委託先別支払一覧</span></a></li>\
+        <li><a href='./cost_truck_monthly.html'><span class='title'>車両別固定費・変動費・諸経費入力</span></a></li>\
+        <li><a href='./car_sales_mock.html'><span class='title'>車両別・委託先別売上経費一覧</span></a></li>\
+        <li><a href='./sales_month.html'><span class='title'>売上締め処理</span></a></li>\
     </ul>\
     </li>\
     <li><a href='' class='dropdown-toggle'>運行管理</a>\
       <ul class='d-menu' data-role='dropdown'>\
-        <li><a href='./operationControl_bindingWorkHour.html'><span class='mif-list icon'></span><span class='title'>ドライバー別拘束・運転時間管理一覧</span></a></li>\
-        <li><a href='./operationControl_car_fuelCost.html'><span class='mif-list icon'></span><span class='title'>月別個車燃費推移一覧</span></a></li>\
-        <li><a href='./driver_mock.html'><span class='mif-list icon'></span><span class='title'>年次ドライバー別実車・空車・総走行距離一覧</span></a></li>\
+        <li><a href='./operationControl_bindingWorkHour.html'><span class='title'>ドライバー別拘束・運転時間管理一覧</span></a></li>\
+        <li><a href='./operationControl_car_fuelCost.html'><span class='title'>月別個車燃費推移一覧</span></a></li>\
+        <li><a href='./driver_mock.html'><span class='title'>年次ドライバー別実車・空車・総走行距離一覧</span></a></li>\
       </ul>\
     </li>\
     <li><a href='' class='dropdown-toggle'>マスター管理</a>\
       <ul class='d-menu' data-role='dropdown'>\
-        <li><a href='./master_loginConfig_user.html'><span class='mif-user icon'></span><span class='title'>ログイン設定</span></a></li>\
-        <li><a href='./master_company_list.html'><span class='mif-location-city icon'></span><span class='title'>会社</span></a></li>\
-        <li><a href='./master_base_data.html'><span class='mif-file-text icon'></span><span class='title'>基本情報</span></a></li>\
-	    <li><a href='./master_user.html'><span class='mif-users icon'></span><span class='title'>社員</span></a></li>\
-	    <li><a href='./customer_mock.html'><span class='mif-location icon'></span><span class='title'>得意先</span></a></li>\
-        <li><a href='./Contractors_mock.html'><span class='mif-database icon'></span><span class='title'>委託先(外注)</span></a></li>\
-        <li><a href='./holiday.html'><span class='mif-tag icon'></span><span class='title'>祝日</span></a></li>\
-        <li><a href='./master_truck_edit.html'><span class='mif-truck icon'></span><span class='title'>車両</span></a></li>\
-        <li><a href='./master_root.html'><span class='mif-location icon'></span><span class='title'>定期便(運行コース)</span></a></li>\
-        <li><a href='./master_fuelPrise.html'><span class='mif-money icon'></span><span class='title'>月別燃料単価</span></a></li>\
+        <li><a href='./master_loginConfig_user.html'><span class='title'>ログイン設定</span></a></li>\
+        <li><a href='./master_company_list.html'><span class='title'>会社</span></a></li>\
+        <li><a href='./master_base_data.html'><span class='title'>基本情報</span></a></li>\
+	    <li><a href='./master_user.html'><span class='title'>社員</span></a></li>\
+	    <li><a href='./customer_mock.html'><span class='title'>得意先</span></a></li>\
+        <li><a href='./Contractors_mock.html'><span class='title'>委託先(外注)</span></a></li>\
+        <li><a href='./holiday.html'><span class='title'>祝日</span></a></li>\
+        <li><a href='./master_truck_edit.html'><span class='title'>車両</span></a></li>\
+        <li><a href='./master_root.html'><span class='title'>定期便(運行コース)</span></a></li>\
+        <li><a href='./master_fuelPrise.html'><span class='title'>月別燃料単価</span></a></li>\
       </ul>\
     </li>\
   </ul>\

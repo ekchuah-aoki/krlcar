@@ -45,7 +45,18 @@
 		margin:0 auto;
 		
 		}
-		
+		.cell colspan5 {
+            overflow: hidden;
+        }
+        .input-control select {
+            float: left;
+        }
+        .input-control text {
+            float: left;
+        }
+        .right {
+            float: right;
+        }
         @media screen and (max-width: 800px){
             #cell-sidebar {
                 flex-basis: 52px;
@@ -65,15 +76,6 @@
                 type: t
             });
         }
-
-        $(function(){
-            $('.sidebar').on('click', 'li', function(){
-                if (!$(this).hasClass('active')) {
-                    $('.sidebar li').removeClass('active');
-                    $(this).addClass('active');
-                }
-            })
-        })
     </script>
 </head>
 <body class="bg-steel">
@@ -88,12 +90,12 @@
 					<ul class="breadcrumbs" style="padding:0px;">
 					    <li><h4>車両別固定費・変動費・諸経費入力</h4></li>
 					</ul>
-                    <hr class="thin bg-grayLighter">
 					<div class="grid">
-		                <div class="row cells12">
-							<div class="cell colspan2">
+                    <hr class="thin bg-grayLighter">
+                    
+		                <div class="cell colspan5">
 		                        <div class="input-control select" style="width:60px;">
-		                            <select>
+		                            <select dir="rtl">
 		                            	<option>2015</option>
 		                                <option>2016</option>
 		                                <option>2017</option>
@@ -104,7 +106,7 @@
 								</div>
 		                        年
 								<div class="input-control select" style="width:50px;">
-		                            <select>
+		                            <select dir="rtl">
 		                                <option>01</option>
 		                                <option>02</option>
 		                                <option>03</option>
@@ -120,34 +122,30 @@
 		                            </select>
 		                         </div>
 		                            月
-		                    </div>
-							<div class="cell colspan4">
-			                    <button class="button primary"><span class="mif-search"></span> 検索</button>
-			                    <button class="button primary" style="margin:2px 0px 0px 30px;"><span class="mif-folder-download"></span> 前月データコピー</button>
-		                    </div>
-		                </div>
-		            </div>
-
-                    <hr class="thin bg-grayLighter">
-		            <div class="grid">
-		                <div class="row cells12">
-							<div class="cell colspan10">
+		                        <span style="margin-left:30px;">
 		                        車番
-		                        <div class="input-control select" style="width:100px;" >
-		                            <select>
+		                        </span>
+		                        <div class="input-control select" style="width:100px;">
+		                            <select dir="rtl">
 		                                <option>4956</option>
 		                                <option>6308</option>
 		                                <option>5468</option>
 		                            </select>
 		                        </div>
-		                        <button class="button primary" onclick="pushMessage('info')" style="margin:0px 0px 0px 53px;"><span class="mif-plus"></span> 保存</button>
+							<div class="right">
+			                    <button class="button primary">検索</button>
+			                    <button class="button primary" onclick="pushMessage('info')" style="background-color:#6A5ACD;border-color:#6A5ACD;">印刷</button>
+			                    <button class="button success" onclick="pushMessage('info')">保存</button>
 		                    </div>
-	                    </div>
-                    </div>
+		                  </div>
+		                </div>
+
+                    <hr class="thin bg-grayLighter">
+                    
                     <table class="dataTable border bordered" data-auto-width="false" style="width:70%; margin:0 auto;">
                         <thead>
                         <tr>
-                        	<td class="sortable-column"colspan="2" style="width:70%;text-align:center;">費　　　　目</td>
+                        	<td class="sortable-column"colspan="2" style="width:70%;text-align:center;">費目</td>
                             <td class="sortable-column"></td>
                         </tr>
                         
