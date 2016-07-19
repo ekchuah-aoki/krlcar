@@ -1,15 +1,16 @@
-  $(function(){
-  var Menu_html = "<div class='app-bar fixed-top darcula' data-role='appbar'>\
+$(function(){
+    var Menu_html = "\
+<div class='app-bar fixed-top darcula' data-role='appbar'>\
 <a href='./home_notice.html' class='app-bar-element branding' style='background-color:#CEDBF2'><img style='width: 113px;' src='../img/logo.png' alt='ケー・アールライン'></a>\
 <span class='app-bar-divider'></span>\
   <ul class='app-bar-menu'>\
-	<li><a href='./home_notice.html'>HOME</a></li>\
+    <li><a href='./home_notice.html'>HOME</a></li>\
     <li><a href='' class='dropdown-toggle'>　配車管理　</a>\
       <ul class='d-menu' data-role='dropdown'>\
         <li><a href='./mock_unsou.html'><span class='title'>配車表入力</span></a></li>\
       </ul>\
     </li>\
-	<li><a href='' class='dropdown-toggle'>点呼管理</a>\
+    <li><a href='' class='dropdown-toggle'>点呼管理</a>\
       <ul class='d-menu' data-role='dropdown'>\
         <li><a href='./roll_call_add.html'><span class='title'>点呼記録表入力</span></a></li>\
       </ul>\
@@ -49,27 +50,26 @@
     <li><a href='' class='dropdown-toggle'>マスター管理</a>\
       <ul class='d-menu' data-role='dropdown'>\
         <li><a href='./master_loginConfig_user.html'><span class='title'>ログイン設定</span></a></li>\
-        <li><a href='./master_company_list.html'><span class='title'>会社</span></a></li>\
+        <li><a href='./master_company_list.html'><span class='title'>会社一覧</span></a></li>\
         <li><a href='./master_base_data.html'><span class='title'>基本情報</span></a></li>\
-	    <li><a href='./master_user.html'><span class='title'>社員</span></a></li>\
-	    <li><a href='./customer_mock.html'><span class='title'>得意先</span></a></li>\
-        <li><a href='./Contractors_mock.html'><span class='title'>委託先(外注)</span></a></li>\
-        <li><a href='./holiday.html'><span class='title'>祝日</span></a></li>\
-        <li><a href='./master_truck_edit.html'><span class='title'>車両</span></a></li>\
+	    <li><a href='./master_user.html'><span class='title'>社員一覧</span></a></li>\
+	    <li><a href='./customer_mock.html'><span class='title'>得意先一覧</span></a></li>\
+        <li><a href='./Contractors_mock.html'><span class='title'>委託先(外注)一覧</span></a></li>\
+        <li><a href='./holiday.html'><span class='title'>祝日設定</span></a></li>\
+        <li><a href='./master_truck_edit.html'><span class='title'>車両一覧</span></a></li>\
         <li><a href='./master_root.html'><span class='title'>定期便(運行コース)</span></a></li>\
         <li><a href='./master_fuelPrise.html'><span class='title'>月別燃料単価</span></a></li>\
       </ul>\
     </li>\
   </ul>\
   <div class='app-bar-element place-right'>\
-    <span class='dropdown-toggle'><span class='mif-cog'></span>管理者A</span>\
+    <span class='dropdown-toggle'>管理者Ａ</span>\
       <div class='app-bar-drop-container padding10 place-right no-margin-top block-shadow fg-dark' data-role='dropdown' data-no-close='true' style='width: 180px'>\
         <ul class='unstyled-list fg-dark'>\
-          <li><a href='' class='fg-white3 fg-hover-yellow'>ログアウト</a></li>\
+          <li><a href='login.html' class='fg-white3 fg-hover-yellow'>ログアウト</a></li>\
         </ul>\
       </div>\
   </div>\
 </div>";
-   $('#Menu_load').html(Menu_html);
-
+$('#Menu_load').html(Menu_html);
 })
