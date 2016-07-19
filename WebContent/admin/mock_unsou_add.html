@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -13,6 +13,7 @@
     <title>株式会社ケー・アールライン</title>
 
     <link href="../css/metro.css" rel="stylesheet">
+    <link href="../css/common.css" rel="stylesheet">
     <link href="../css/metro-icons.css" rel="stylesheet">
     <link href="../css/metro-responsive.css" rel="stylesheet">
 
@@ -42,41 +43,40 @@
         select.select {
             width: 100%;
             -webkit-appearance: none;
-			border: none;
-			}
-			
-	    p.text {
-	        text-align: center;
-	        margin: 0;
-	        }
-	       
-	    tr.center {
-	        width: 100%;
-	        margin: 0 auto;
-	    }
-	    
-	    input.hoge {
-	        margin: 10px 0px 10px 0px; 
-	        height: 40px; 
-	        width: 70%;
-	        font-size: 1.2em;
-	        text-align: center;
-	    }
-	    
-	    input.input {
-	        margin: 10px; 
-	        height: 40px; 
-	        width: 20%;
-	        font-size: 1.2em;
-	        text-align: center;
-	    }
-	    
-	    td.box {
-	        width: 50%;
-	        text-align: center;
-	    }
-	    
-	    
+            border: none;
+            }
+            
+        p.text {
+            text-align: center;
+            margin: 0;
+            }
+           
+        tr.center {
+            width: 100%;
+            margin: 0 auto;
+        }
+        
+        input.hoge {
+            margin: 10px 0px 10px 0px; 
+            height: 40px; 
+            width: 70%;
+            font-size: 1.2em;
+            text-align: center;
+        }
+        
+        input.input {
+            margin: 10px; 
+            height: 40px; 
+            width: 20%;
+            font-size: 1.2em;
+            text-align: center;
+        }
+        
+        td.box {
+            width: 50%;
+        }
+        
+        
         @media screen and (max-width: 800px){
             #cell-sidebar {
                 flex-basis: 52px;
@@ -96,134 +96,106 @@
                 type: t
             });
         }
-        
-        function showDialog(id) {
-            var dialog = $(id).data('dialog');
-            dialog.open();
-        }
 
-		$(function(){
-	        $("#datepicker_birthday").datepicker();
-	        $("#datepicker_from").datepicker();
-	        $("#datepicker_to").datepicker();
-	        
-	    });
+        $(function(){
+            $('.sidebar').on('click', 'li', function(){
+                if (!$(this).hasClass('active')) {
+                    $('.sidebar li').removeClass('active');
+                    $(this).addClass('active');
+                }
+            })
+        })
+    </script>
+    <script>
+        $(function(){
+            var addRow;
+
+            $("#datepicker").datepicker();
+
+            addRow = function () {
+                var lastRow = $('#nameTable tbody > tr:last').after('<tr class="center"><td style="text-align:center;padding:0px;margin:0px;"><label class="input-control checkbox small-check no-margin"><input type="checkbox"><span class="check"></span></label></td><td><input type="text" class="hoge" style="width:95%;" value="" /></td><td><input type="text" class="input" value="" />:<input type="text" class="input" value="" /></td></tr>')
+            }
+            $('#addRow').on('click', function() {
+                addRow();
+            });
+        });
     </script>
 </head>
 <body>
-
+    
      <!-- ヘッダー固定 -->
    <div id="Menu_load"></div>
-    
+
     <div class="page-content">
         <div class="flex-grid no-responsive-future" style="height: 100%;">
             <div class="row" >
                 <div class="cell auto-size padding20 bg-white" id="cell-content">
-					<ul class="breadcrumbs" style="padding:0px;">
-					    <li><h4>運行コース設定</h4></li>
-					</ul>
-					<div class="grid">
+                    <ul class="breadcrumbs" style="padding:0px;">
+                        <li><h4>運行コース設定</h4></li>
+                    </ul>
                     <hr class="thin bg-grayLighter">
-		            <div class="align-right">
-		              <button class="button warning" onclick="pushMessage('warning')">キャンセル</button>
-		              <button class="button success" onclick="pushMessage('info')">保存</button>
-		            </div>
-		            </div>
-                    <hr class="thin bg-grayLighter">     
-                    <table class="table border bordered" data-auto-width="false">
+                    <span style="margin-left:10px;">便番</span><span style="margin-left:10px;">【00001】</span>
+                    <div class="input-control text" data-length="8" style="width:150px;">
+                    </div>
+                    <div style="float: right; display:inline;">
+                       <button class="button warning" id="addRow" style="width:100px; margin:0px 5px 0px 0px">行追加</button>
+                       <button class="button alert" style="width:100px; margin:0px 5px 0px 0px">削除</button>
+                       <button class="button primary" style="width:100px;margin:0px 5px 0px 0px">保存</button>
+                       <button class="button alert"   style="width:100px;" onclick="location.href='mock_unsou.html'">戻る</button>
+                    </div>
+                    <hr class="thin bg-grayLighter">
+                                        
+                    <table id="nameTable" class="dataTable border bordered" data-auto-width="false" style="width:70%; margin:0 auto;">
                       <thead>
                         <tr>
-                          <td><p class="text">場所</p></td>
-                          <td><p class="text">発着時刻</p></td>
+                          <td style="width:15px;text-align: center;">削除</td>
+                          <td style="width:73%;text-align: center;" class="sortable-column">場所</td>
+                          <td style="width:20%;text-align: center;" class="sortable-column">発着時刻</td>
                         </tr>
                        </thead>
                        <tbody>
-		                     <tr class="center">
-		                       <td class="box"><form><input type="text" class="hoge" value="川崎東" /></form></td>
-		                       <td class="box"><form><input type="text" class="input" value="21" />:<input type="text" class="input" value="30" /></form></td>
-		                     </tr>
-		                     <tr class="center">
-		                       <td class="box"><form><input type="text" class="hoge" value="新大阪" /></form></td>
-		                       <td class="box"><form><input type="text" class="input" value="5"  />:<input type="text" class="input" value="00" /></form></td>
-		                     </tr>
-		                     <tr class="center">
-		                       <td class="box"><form><input type="text" class="hoge" value="ゆうP" /></form></td>
-		                       <td class="box"><form><input type="text" class="input"value="5" />:<input type="text" class="input" value="15" /></form></td>
-		                     </tr>
-		                     <tr class="center">
-		                       <td class="box"><form><input type="text" class="hoge" value="神戸" /></form></td>
-		                       <td class="box"><form><input type="text" class="input" value="6" />:<input type="text" class="input" value="25" /></form></td>
-		                     </tr>
-		                     <tr class="center">
-		                       <td class="box"><form><input type="text" class="hoge" value="ゆうP"/></form></td>
-		                       <td class="box"><form><input type="text" class="input" value="7" />:<input type="text" class="input" value="35" /></form></td>
-		                     </tr>
-		                     <tr class="center">
-		                       <td class="box"><form><input type="text" class="hoge" value="新大阪"/></form></td>
-		                       <td class="box"><form><input type="text" class="input" value="7" />:<input type="text" class="input" value="50" /></form></td>
-		                     </tr>
-		                     <tr class="center">
-		                       <td class="box"><form><input type="text" class="hoge" value="ゆうP"/></form></td>
-		                       <td class="box"><form><input type="text" class="input" value="8" />:<input type="text" class="input" value="20" /></form></td>
-		                     </tr>
-		                     <tr class="center">
-		                       <td class="box"><form><input type="text" class="hoge" value="綾瀬"/></form></td>
-		                       <td class="box"><form><input type="text" class="input" value="13" />:<input type="text" class="input" value="30" /></form></td>
-		                     </tr>
-		                     <tr class="center">
-		                       <td class="box"><form><input type="text" class="hoge" /></form></td>
-		                       <td class="box"><form><input type="text" class="input" />:<input type="text" class="input" /></form></td>
-		                     </tr>
-		                     <tr class="center">
-		                       <td class="box"><form><input type="text" class="hoge" /></form></td>
-		                       <td class="box"><form><input type="text" class="input" />:<input type="text" class="input" /></form></td>
-		                     </tr>
-		                     <tr class="center">
-		                       <td class="box"><form><input type="text" class="hoge" /></form></td>
-		                       <td class="box"><form><input type="text" class="input" />:<input type="text" class="input" /></form></td>
-		                     </tr>
-		                     <tr class="center">
-		                       <td class="box"><form><input type="text" class="hoge" /></form></td>
-		                       <td class="box"><form><input type="text" class="input" />:<input type="text" class="input" /></form></td>
-		                     </tr>
-		                     <tr class="center">
-		                       <td class="box"><form><input type="text" class="hoge" /></form></td>
-		                       <td class="box"><form><input type="text" class="input" />:<input type="text" class="input" /></form></td>
-		                     </tr>
-		                     <tr class="center">
-		                       <td class="box"><form><input type="text" class="hoge" /></form></td>
-		                       <td class="box"><form><input type="text" class="input" />:<input type="text" class="input" /></form></td>
-		                     </tr>
-		                     <tr class="center">
-		                       <td class="box"><form><input type="text" class="hoge" /></form></td>
-		                       <td class="box"><form><input type="text" class="input" />:<input type="text" class="input" /></form></td>
-		                     </tr>
-		                     <tr class="center">
-		                       <td class="box"><form><input type="text" class="hoge" /></form></td>
-		                       <td class="box"><form><input type="text" class="input" />:<input type="text" class="input" /></form></td>
-		                     </tr>
-		                     <tr class="center">
-		                       <td class="box"><form><input type="text" class="hoge" /></form></td>
-		                       <td class="box"><form><input type="text" class="input" />:<input type="text" class="input" /></form></td>
-		                     </tr>
-		                     <tr class="center">
-		                       <td class="box"><form><input type="text" class="hoge" /></form></td>
-		                       <td class="box"><form><input type="text" class="input" />:<input type="text" class="input" /></form></td>
-		                     </tr>
-		                     <tr class="center">
-		                       <td class="box"><form><input type="text" class="hoge" /></form></td>
-		                       <td class="box"><form><input type="text" class="input" />:<input type="text" class="input" /></form></td>
-		                     </tr>
-		                     <tr class="center">
-		                       <td class="box"><form><input type="text" class="hoge" /></form></td>
-		                       <td class="box"><form><input type="text" class="input" />:<input type="text" class="input" /></form></td>
-		                     </tr>
-		                     <tr class="center">
-		                       <td class="box"><form><input type="text" class="hoge" /></form></td>
-		                       <td class="box"><form><input type="text" class="input" />:<input type="text" class="input" /></form></td>
-		                     </tr>
+                             <tr class="center">
+                               <td style="text-align:center;padding:0px;margin:0px;">
+                                  <label class="input-control checkbox small-check no-margin">
+                                     <input type="checkbox">
+                                     <span class="check"></span>
+                                  </label>
+                               </td>
+                               <td><input type="text" class="hoge" style="width:95%;" value="平塚" /></td>
+                               <td><input type="text" class="input" value="08" />:<input type="text" class="input" value="30" /></td>
+                             </tr>
+                             <tr class="center">
+                               <td style="text-align:center;padding:0px;margin:0px;">
+                                  <label class="input-control checkbox small-check no-margin">
+                                     <input type="checkbox">
+                                     <span class="check"></span>
+                                  </label>
+                               </td>
+                               <td><input type="text" class="hoge" style="width:95%;" value="厚木" /></td>
+                               <td><input type="text" class="input" value="11" />:<input type="text" class="input" value="01" /></td>
+                             </tr>
+                             <tr class="center">
+                               <td style="text-align:center;padding:0px;margin:0px;">
+                                  <label class="input-control checkbox small-check no-margin">
+                                     <input type="checkbox">
+                                     <span class="check"></span>
+                                  </label>
+                               </td>
+                               <td><input type="text" class="hoge" style="width:95%;" value="大和" /></td>
+                               <td><input type="text" class="input" value="11" />:<input type="text" class="input" value="54" /></td>
+                             </tr>
+                             <tr class="center">
+                               <td style="text-align:center;padding:0px;margin:0px;">
+                                  <label class="input-control checkbox small-check no-margin">
+                                     <input type="checkbox">
+                                     <span class="check"></span>
+                                  </label>
+                               </td>
+                               <td><input type="text" class="hoge" style="width:95%;" value="座間" /></td>
+                               <td><input type="text" class="input" value="13" />:<input type="text" class="input" value="17" /></td>
+                             </tr>
                         </tbody>
-                    </table>
+                   </table>
                 </div>
             </div>
         </div>

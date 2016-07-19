@@ -7,7 +7,8 @@
     <meta name="description" content="Metro, a sleek, intuitive, and powerful framework for faster and easier web development for Windows Metro Style.">
     <meta name="keywords" content="HTML, CSS, JS, JavaScript, framework, metro, front-end, frontend, web development">
     <meta name="author" content="Sergey Pimenov and Metro UI CSS contributors">
-
+    <meta name="format-detection" content="telephone=no">
+    
     <link rel='shortcut icon' type='image/x-icon' href='../favicon.ico' />
 
     <title>株式会社ケー・アールライン</title>
@@ -16,6 +17,7 @@
     <link href="../css/common.css" rel="stylesheet">
     <link href="../css/metro-icons.css" rel="stylesheet">
     <link href="../css/metro-responsive.css" rel="stylesheet">
+	<link href="../themes/blue/style.css" rel="stylesheet" type="text/css" id="" media="print, projection, screen" />
 
     <script src="../js/jquery-2.1.3.min.js"></script>
     <script src="../js/jquery.dataTables.min.js"></script>
@@ -24,6 +26,8 @@
     
     <script src="../js/Menu.js"></script>
 
+	<script type="text/javascript" src="../js/jquery-latest.js"></script>
+	<script type="text/javascript" src="../js/jquery.tablesorter.min.js"></script>
     <style>
         html, body {
             height: 100%;
@@ -97,6 +101,13 @@
  		    	  }
  		    	}
     </script>
+    <script>
+		$(document).ready(function() 
+    		{ 
+        		$("#sort-table").tablesorter(); 
+    		} 
+		);
+	</script>
 </head>
 <body class="bg-steel">
      <!-- ヘッダー固定 -->
@@ -137,18 +148,20 @@
 								    <button class="button"><span class="mif-calendar"></span></button>
 								</div>
 		                    <div class="right">
-						      <button class="button primary" onclick="pushMessage('info')" style="background-color:#6A5ACD;border-color:#6A5ACD;">印刷</button>
-		                      <button class="button primary">検索</button>
+		                      <button class="button primary" style="width:100px;">検索</button>
+		                      <button class="button warning" onclick="pushMessage('warning')" style="width:150px;">キャンセル</button>
+						      <button class="button primary" onclick="pushMessage('info')" style="background-color:#6A5ACD;border-color:#6A5ACD;width:100px;">印刷</button>
+			                  <button class="button success" onclick="pushMessage('info')" style="width:100px;">保存</button>
 	                        </div>
 		                </div>
 	                    </div>
                     <hr class="thin bg-grayLighter">
-                    <table class="table border bordered callList" data-auto-width="false">
+                    <table id="sort-table" class="tablesorter table border bordered callList" data-auto-width="false">
                         <thead>
                         <tr>
                             <td rowspan="3" style="text-align:center;">便名/作業割当（行先）</td>
-                            <td rowspan="3" style="text-align:center;">便番</td>
-                            <td rowspan="3" width="75" style="text-align:center;">発着予定<br>時刻</td>
+                            <td rowspan="3" width="75" style="text-align:center;">便番</td>
+                            <th rowspan="3" width="75" style="text-align:center;">発着予定<br>時刻</td>
                             <td rowspan="2" width="130" style="text-align:center;">ドライバー（車番）</td>
                             <td colspan="7" style="text-align:center;">点呼内容</td>
                             <td rowspan="3" style="text-align:center;">備考</td>
@@ -174,7 +187,7 @@
                         	<td>川神下1</td>
                         	<td style="text-align:right;">HA-111</td>
                         	<td style="text-align:right;">20:30</td>
-                        	<td>平坂 (5346)<br>090-1111-1111</td>
+                        	<td>平坂 一郎 (5346)<br>090-1111-1111</td>
                         	<td>1H前</td>
                             <td>
 		                        <label class="input-control radio small-check">
@@ -237,7 +250,7 @@
                         	<td>川神下1</td>
                         	<td style="text-align:right;">HA-111</td>
                         	<td style="text-align:right;">20:30</td>
-                        	<td>平坂 (5346)<br>090-1111-1111</td>
+                        	<td>平坂 一郎 (5346)<br>090-1111-1111</td>
                         	<td>業務前</td>
                             <td>
 		                        <label class="input-control radio small-check">
@@ -300,7 +313,7 @@
                         	<td>川神下1</td>
                         	<td style="text-align:right;">HA-111</td>
                         	<td style="text-align:right;">21:30</td>
-                        	<td>平坂 (5346)<br>090-1111-1111</td>
+                        	<td>平坂 一郎 (5346)<br>090-1111-1111</td>
                         	<td>川崎東</td>
                             <td>
 		                        <label class="input-control radio small-check">
@@ -313,34 +326,19 @@
 		                        </label>
 							</td>
                             <td>
-							    <input type="text" style="width:60px; text-align:right;">
 							</td>
                             <td>
 		                        <label class="input-control radio small-check">
-		                            <input type="radio" name="alcohol_result3" >
-		                            <span class="check"></span><span class="mif-checkmark fg-green"></span>
 		                        </label>
 		                        <label class="input-control radio small-check">
-		                            <input type="radio" name="alcohol_result3">
-		                            <span class="check"></span><span class="mif-cross fg-red"></span>
 		                        </label>
 							</td>
                             <td>
 		                        <label class="input-control radio small-check">
-		                            <input type="radio" name="confirm_3" >
-		                            <span class="check"></span>
-		                            <span class="mif-checkmark fg-green"></span>
 		                        </label>
 		                        <label class="input-control radio small-check">
-		                            <input type="radio" name="confirm_3">
-		                            <span class="check"></span>
-		                            <span class="mif-cross fg-red"></span>
 		                        </label>
-		                        
-		                        <!-- ポップアップ -->
-				                <div class="checklist"><a href="javascript:showDialog('#checklist')" target="_blank">確認事項</a></div>
-		                        <div data-role="dialog" id="checklist" data-close-button="true" data-content='<iframe src="checklist.html"></iframe>' data-width="900" data-content-type="video"></div>
-		                        
+		                        		                        
 		                    </td>
                             <td>
 							    <input type="text" style="width:30px; text-align:right;">:<input type="text" style="width:30px; text-align:right;">
@@ -364,7 +362,7 @@
                         	<td>川神下1</td>
                         	<td style="text-align:right;">HA-111</td>
                         	<td style="text-align:right;">5:00</td>
-                        	<td>平坂 (5346)<br>090-1111-1111</td>
+                        	<td>平坂 一郎 (5346)<br>090-1111-1111</td>
                         	<td>新大阪</td>
                             <td>
 		                        <label class="input-control radio small-check">
@@ -377,33 +375,18 @@
 		                        </label>
 							</td>
                             <td>
-							    <input type="text" style="width:60px; text-align:right;">
 							</td>
                             <td>
 		                        <label class="input-control radio small-check">
-		                            <input type="radio" name="alcohol_result4" >
-		                            <span class="check"></span><span class="mif-checkmark fg-green"></span>
 		                        </label>
 		                        <label class="input-control radio small-check">
-		                            <input type="radio" name="alcohol_result4">
-		                            <span class="check"></span><span class="mif-cross fg-red"></span>
 		                        </label>
 							</td>
                             <td>
 		                        <label class="input-control radio small-check">
-		                            <input type="radio" name="confirm_4" >
-		                            <span class="check"></span>
-		                            <span class="mif-checkmark fg-green"></span>
 		                        </label>
 		                        <label class="input-control radio small-check">
-		                            <input type="radio" name="confirm_4">
-		                            <span class="check"></span>
-		                            <span class="mif-cross fg-red"></span>
 		                        </label>
-		                        <!-- ポップアップ -->
-			                    <div class="checklist"><a href="javascript:showDialog('#checklist')" target="_blank">確認事項</a></div>
-							    <div data-role="dialog" id="checklist" data-close-button="true" data-content='<iframe src="checklist.html"></iframe>' data-width="900" data-content-type="video"></div>
-							    
 							</td>
                             <td>
 							    <input type="text" style="width:30px; text-align:right;">:<input type="text" style="width:30px; text-align:right;">
@@ -427,7 +410,7 @@
                         	<td>川神下1</td>
                         	<td style="text-align:right;">HA-111</td>
                         	<td style="text-align:right;">05:15</td>
-                        	<td>平坂 (5346)<br>090-1111-1111</td>
+                        	<td>平坂 一郎 (5346)<br>090-1111-1111</td>
                         	<td>ゆうP</td>
                             <td>
 		                        <label class="input-control radio small-check">
@@ -440,33 +423,18 @@
 		                        </label>
 							</td>
                             <td>
-							    <input type="text" style="width:60px; text-align:right;">
 							</td>
                             <td>
 		                        <label class="input-control radio small-check">
-		                            <input type="radio" name="alcohol_result5" >
-		                            <span class="check"></span><span class="mif-checkmark fg-green"></span>
 		                        </label>
 		                        <label class="input-control radio small-check">
-		                            <input type="radio" name="alcohol_result5">
-		                            <span class="check"></span><span class="mif-cross fg-red"></span>
 		                        </label>
 							</td>
                             <td>
 		                        <label class="input-control radio small-check">
-		                            <input type="radio" name="confirm_5">
-		                            <span class="check"></span>
-		                            <span class="mif-checkmark fg-green"></span>
 		                        </label>
 		                        <label class="input-control radio small-check">
-		                            <input type="radio" name="confirm_5">
-		                            <span class="check"></span>
-		                            <span class="mif-cross fg-red"></span>
 		                        </label>
-		                        <!-- ポップアップ -->
-			                    <div class="checklist"><a href="javascript:showDialog('#checklist')" target="_blank">確認事項</a></div>
-							    <div data-role="dialog" id="checklist" data-close-button="true" data-content='<iframe src="checklist.html"></iframe>' data-width="900" data-content-type="video"></div>
-							    
 							</td>
                             <td>
 							    <input type="text" style="width:30px; text-align:right;">:<input type="text" style="width:30px; text-align:right;">
@@ -489,7 +457,7 @@
                         	<td>川神下1</td>
                         	<td style="text-align:right;">HA-111</td>
                         	<td style="text-align:right;">06:25</td>
-                        	<td>平坂 (5346)<br>090-1111-1111</td>
+                        	<td>平坂 一郎 (5346)<br>090-1111-1111</td>
                         	<td>神戸</td>
                             <td>
 		                        <label class="input-control radio small-check">
@@ -502,33 +470,18 @@
 		                        </label>
 							</td>
                             <td>
-							    <input type="text" style="width:60px; text-align:right;">
 							</td>
                             <td>
 		                        <label class="input-control radio small-check">
-		                            <input type="radio" name="alcohol_result6" >
-		                            <span class="check"></span><span class="mif-checkmark fg-green"></span>
 		                        </label>
 		                        <label class="input-control radio small-check">
-		                            <input type="radio" name="alcohol_result6">
-		                            <span class="check"></span><span class="mif-cross fg-red"></span>
 		                        </label>
 							</td>
                             <td>
 			                    <label class="input-control radio small-check">
-		                            <input type="radio" name="confirm_5">
-		                            <span class="check"></span>
-		                            <span class="mif-checkmark fg-green"></span>
 		                        </label>
 		                        <label class="input-control radio small-check">
-		                            <input type="radio" name="confirm_5">
-		                            <span class="check"></span>
-		                            <span class="mif-cross fg-red"></span>
 		                        </label>
-		                        <!-- ポップアップ -->
-			                    <div class="checklist"><a href="javascript:showDialog('#checklist')" target="_blank">確認事項</a></div>
-							    <div data-role="dialog" id="checklist" data-close-button="true" data-content='<iframe src="checklist.html"></iframe>' data-width="900" data-content-type="video"></div>
-							    
 							</td>
                             <td>
 							    <input type="text" style="width:30px; text-align:right;">:<input type="text" style="width:30px; text-align:right;">
@@ -551,7 +504,7 @@
                         	<td>川神下1</td>
                         	<td style="text-align:right;">HA-111</td>
                         	<td style="text-align:right;"></td>
-                        	<td>平坂 (5346)<br>090-1111-1111</td>
+                        	<td>平坂 一郎 (5346)<br>090-1111-1111</td>
                         	<td>中間<input type="text" style="margin-left:10px;width:100px;"></td>
                             <td>
 		                        <label class="input-control radio small-check">
@@ -613,7 +566,7 @@
                         	<td>川神下1</td>
                         	<td style="text-align:right;">HA-111</td>
                         	<td style="text-align:right;"></td>
-                        	<td>平坂 (5346)<br>090-1111-1111</td>
+                        	<td>平坂 一郎 (5346)<br>090-1111-1111</td>
                         	<td>業務後</td>
                             <td>
 		                        <label class="input-control radio small-check">
@@ -675,7 +628,7 @@
                         	<td>下4</td>
                         	<td style="text-align:right;">HA-051</td>
                         	<td style="text-align:right;">22:40</td>
-                        	<td>賀川 (9492)<br>090-111-92222</td>
+                        	<td>賀川 二郎 (9492)<br>090-6666-2222</td>
                         	<td>1H前</td>
                             <td>
 		                        <label class="input-control radio small-check">
@@ -737,7 +690,7 @@
                         	<td>下4</td>
                         	<td style="text-align:right;">HA-051</td>
                         	<td style="text-align:right;">22:40</td>
-                        	<td>賀川 (9492)<br>090-111-92222</td>
+                        	<td>賀川 二郎 (9492)<br>090-6666-2222</td>
                         	<td>業務前</td>
                             <td>
 		                        <label class="input-control radio small-check">
@@ -800,7 +753,7 @@
                         	<td>下4</td>
                         	<td style="text-align:right;">HA-051</td>
                         	<td style="text-align:right;">23:40</td>
-                        	<td>賀川 (9492)<br>090-111-92222</td>
+                        	<td>賀川 二郎 (9492)<br>090-6666-2222</td>
                         	<td>東京多摩</td>
                             <td>
 		                        <label class="input-control radio small-check">
@@ -813,33 +766,18 @@
 		                        </label>
 							</td>
                             <td>
-							    <input type="text" style="width:60px; text-align:right;">
 							</td>
                             <td>
 		                        <label class="input-control radio small-check">
-		                            <input type="radio" name="alcohol_result11">
-		                            <span class="check"></span><span class="mif-checkmark fg-green"></span>
 		                        </label>
 		                        <label class="input-control radio small-check">
-		                            <input type="radio" name="alcohol_result11">
-		                            <span class="check"></span><span class="mif-cross fg-red"></span>
 		                        </label>
 							</td>
                             <td>
 			                    <label class="input-control radio small-check">
-		                            <input type="radio" name="confirm_5">
-		                            <span class="check"></span>
-		                            <span class="mif-checkmark fg-green"></span>
 		                        </label>
 		                        <label class="input-control radio small-check">
-		                            <input type="radio" name="confirm_5">
-		                            <span class="check"></span>
-		                            <span class="mif-cross fg-red"></span>
 		                        </label>
-		                        <!-- ポップアップ -->
-			                    <div class="checklist"><a href="javascript:showDialog('#checklist')" target="_blank">確認事項</a></div>
-							    <div data-role="dialog" id="checklist" data-close-button="true" data-content='<iframe src="checklist.html"></iframe>' data-width="900" data-content-type="video"></div>
-							    
 							</td>
                             <td>
 							    <input type="text" style="width:30px; text-align:right;">:<input type="text" style="width:30px; text-align:right;">
@@ -862,7 +800,7 @@
                         	<td>下4</td>
                         	<td style="text-align:right;">HA-051</td>
                         	<td style="text-align:right;">00:45</td>
-                        	<td>賀川 (9492)<br>090-111-92222</td>
+                        	<td>賀川 二郎 (9492)<br>090-6666-2222</td>
                         	<td>綾瀬</td>
                             <td>
 		                        <label class="input-control radio small-check">
@@ -875,33 +813,18 @@
 		                        </label>
 							</td>
                             <td>
-							    <input type="text" style="width:60px; text-align:right;">
 							</td>
                             <td>
 		                        <label class="input-control radio small-check">
-		                            <input type="radio" name="alcohol_result12">
-		                            <span class="check"></span><span class="mif-checkmark fg-green"></span>
 		                        </label>
 		                        <label class="input-control radio small-check">
-		                            <input type="radio" name="alcohol_result12">
-		                            <span class="check"></span><span class="mif-cross fg-red"></span>
 		                        </label>
 							</td>
                             <td>
 			                    <label class="input-control radio small-check">
-		                            <input type="radio" name="confirm_5">
-		                            <span class="check"></span>
-		                            <span class="mif-checkmark fg-green"></span>
 		                        </label>
 		                        <label class="input-control radio small-check">
-		                            <input type="radio" name="confirm_5">
-		                            <span class="check"></span>
-		                            <span class="mif-cross fg-red"></span>
 		                        </label>
-		                        <!-- ポップアップ -->
-			                    <div class="checklist"><a href="javascript:showDialog('#checklist')" target="_blank">確認事項</a></div>
-							    <div data-role="dialog" id="checklist" data-close-button="true" data-content='<iframe src="checklist.html"></iframe>' data-width="900" data-content-type="video"></div>
-							    
 							</td>
                             <td>
 							    <input type="text" style="width:30px; text-align:right;">:<input type="text" style="width:30px; text-align:right;">
@@ -924,7 +847,7 @@
                         	<td>下4</td>
                         	<td style="text-align:right;">HA-051</td>
                         	<td style="text-align:right;">02:15</td>
-                        	<td>賀川 (9492)<br>090-111-92222</td>
+                        	<td>賀川 二郎 (9492)<br>090-6666-2222</td>
                         	<td>川崎東</td>
                             <td>
 		                        <label class="input-control radio small-check">
@@ -937,33 +860,18 @@
 		                        </label>
 							</td>
                             <td>
-							    <input type="text" style="width:60px; text-align:right;">
 							</td>
                             <td>
 		                        <label class="input-control radio small-check">
-		                            <input type="radio" name="alcohol_result13">
-		                            <span class="check"></span><span class="mif-checkmark fg-green"></span>
 		                        </label>
 		                        <label class="input-control radio small-check">
-		                            <input type="radio" name="alcohol_result13">
-		                            <span class="check"></span><span class="mif-cross fg-red"></span>
 		                        </label>
 							</td>
                             <td>
 			                    <label class="input-control radio small-check">
-		                            <input type="radio" name="confirm_5">
-		                            <span class="check"></span>
-		                            <span class="mif-checkmark fg-green"></span>
 		                        </label>
 		                        <label class="input-control radio small-check">
-		                            <input type="radio" name="confirm_5">
-		                            <span class="check"></span>
-		                            <span class="mif-cross fg-red"></span>
 		                        </label>
-		                        <!-- ポップアップ -->
-			                    <div class="checklist"><a href="javascript:showDialog('#checklist')" target="_blank">確認事項</a></div>
-							    <div data-role="dialog" id="checklist" data-close-button="true" data-content='<iframe src="checklist.html"></iframe>' data-width="900" data-content-type="video"></div>
-							    
 							</td>
                             <td>
 							    <input type="text" style="width:30px; text-align:right;">:<input type="text" style="width:30px; text-align:right;">
@@ -986,7 +894,7 @@
                         	<td>下4</td>
                         	<td style="text-align:right;">HA-051</td>
                         	<td style="text-align:right;"></td>
-                        	<td>賀川 (9492)<br>090-111-92222</td>
+                        	<td>賀川 二郎 (9492)<br>090-6666-2222</td>
                         	<td>中間<input type="text" style="margin-left:10px;width:100px;"></td>
                             <td>
 		                        <label class="input-control radio small-check">
@@ -1048,7 +956,7 @@
                         	<td>下4</td>
                         	<td style="text-align:right;">HA-051</td>
                         	<td style="text-align:right;"></td>
-                        	<td>賀川 (9492)<br>090-111-92222</td>
+                        	<td>賀川 二郎 (9492)<br>090-6666-2222</td>
                         	<td>業務後</td>
                             <td>
 		                        <label class="input-control radio small-check">
@@ -1115,7 +1023,7 @@
                         	<td>
                         	  <div class="input-control select" style="width:70px;">
                         	  <select>
-							    <option value="">賀川</option>
+							    <option value="">賀川 二郎</option>
 						      </select>
 						      </div>
                         	</td>
@@ -1191,13 +1099,13 @@
 							<input type="text" style="width:200px;">
 							</td>
                         </tr>
-                        <tr><td><input type="text" style="width:110px; text-align:right;"value="090-111-92222"></td></tr>
+                        <tr><td><input type="text" style="width:110px; text-align:right;"value="090-6666-2222"></td></tr>
                         
                         </tbody>
                     </table>
                     
                     <!-- 追加ボタン -->
-					<button class="button success" onclick="pushMessage('info')">行追加</button>
+					<button class="button success" onclick="pushMessage('info')" style="width:100px;">行追加</button>
 					<div class="row cells12">
 						<div class="cell colspan4">
 						    <fieldset id="personal">
@@ -1224,13 +1132,6 @@
 					    	</fieldset>
 	                    </div>
                     </div>
-
-			        <hr class="thin bg-grayLighter">
-					<div class="align-right">
-			                  <button class="button warning" onclick="pushMessage('warning')">キャンセル</button>
-			                  <button class="button success" onclick="pushMessage('info')">保存</button>
-					</div>
-
                 </div>
             </div>
         </div>
