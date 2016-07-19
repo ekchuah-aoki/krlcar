@@ -43,12 +43,12 @@
         select.select {
             width: 100%;
             -webkit-appearance: none;
-			border: none;
-			}
-		
-	    td.buttonCenter {
-	        text-align: center;
-	    }
+            border: none;
+            }
+        
+        td.buttonCenter {
+            text-align: center;
+        }
         
         .input-control {
             width: 100%;
@@ -57,8 +57,7 @@
         input.text {
             width: 100%;
         }
-        
-        
+
         @media screen and (max-width: 800px){
             #cell-sidebar {
                 flex-basis: 52px;
@@ -70,1588 +69,498 @@
     </style>
 
     <script>
-        
+    $(function() {
+       $('.text_money').on('blur', function(){
+          var num = $(this).val();
+          num = num.replace(/(\d)(?=(\d\d\d)+$)/g, '$1,');
+          $(this).val(num);
+       });
+       $('.text_money').on('focus', function(){
+          var num = $(this).val();
+          num = num.replace(/,/g, '');
+          $(this).val(num);
+       });
+    });
     </script>
 </head>
-<body class="bg-steel">
-
-     <!-- ヘッダー固定 -->
-   <div id="Menu_load"></div>
+<body>
+    <!-- ヘッダー固定 -->
+    <div id="Menu_load"></div>
 
     <div class="page-content">
         <div class="flex-grid no-responsive-future" style="height: 100%;">
             <div class="row" >
                 <div class="cell auto-size padding20 bg-white" id="cell-content">
-					<ul class="breadcrumbs" style="padding:0px;">
-					    <li><h4>定期便（運行コース）</h4></li>
-					</ul>
-		            <div class="grid">
-		            
+                    <ul class="breadcrumbs" style="padding:0px;">
+                        <li><h4>定期便（運行コース）</h4></li>
+                    </ul>
                     <hr class="thin bg-grayLighter">
-	                
-					<div class="align-right">
-                    <button class="button warning" onclick="pushMessage('warning')">キャンセル</button>
-                    <button class="button success" onclick="pushMessage('info')">保存</button>
-					</div>
-					</div>
-					
-	                <hr class="thin bg-grayLighter">
-                    
-                    <table class="table border bordered" data-auto-width="false">
+                    <div class="grid">
+                      <div style="float: right; right;display:inline;">
+                          <button class="button warning" style="width:100px; margin:0px 10px 0px 0px">行追加</button>
+                          <button class="button alert" style="width:100px; margin:0px 10px 0px 0px">削除</button>
+                          <button class="button primary" style="width:100px; margin:0px 10px 0px 0px">保存</button>
+                      </div>
+                    </div>
+                    <hr class="thin bg-grayLighter">
+                    <table class="table border bordered" data-auto-width="false" style="font-size: small;">
                         <thead>
                           <tr>
-                            <td width="60" style="text-align:center;">便番</td>
-                            <td width="100" style="text-align:center;">線路名</td>
-                            <td width="100" style="text-align:center;">便名</td>
-                            <td width="90" style="text-align:center;">運行コース</td>
-                            <td width="70" style="text-align:center;">運行日</td>
-                            <td width="70" style="text-align:center;">車種</td>
-                            <td width="100" style="text-align:center;">一日あたりの運賃</td>
-                            <td width="100" style="text-align:center;">有料道路使用料</td>
+                            <td style="width: 50px;text-align: center;">削除</td>
+                            <td style="width:150px;text-align: center;">便番</td>
+                            <td style="text-align: center;">線路名</td>
+                            <td style="text-align: center;">便名</td>
+                            <td style="text-align: center;">運行コース</td>
+                            <td style="text-align: center;">運行日</td>
+                            <td style="text-align: center;">車種</td>
+                            <td style="width:130px;text-align: center;">一日あたりの運賃</td>
+                            <td style="width:130px;text-align: center;">有料道路使用料</td>
                           </tr>
                         </thead>
                         <tbody>
-                        
-                        
                         <tr>
-		                  <td rowspan="4" class="form">
-		                    <div class="input-control"><input type="text" class="text" value="A-111" style="text-align:right;"></div>
-		                  </td>
-		                  <td rowspan="4" class="form">
-		                    <div class="input-control"><input type="text" class="text" value="川崎・大阪"></div>
-		                  </td>
-		                  <td rowspan="4" class="form">
-		                    <div class="input-control"><input type="text" class="text" value="川神下1"></div>
-		                  </td>
-		                  <td rowspan="4" class="buttonCenter"><button class="button primary" onclick="window.open('master_root_next2.html','_self')">設定</button></td>
+                            <td rowspan="4" style="text-align:center;padding:0px;margin:0px;">
+                                <label class="input-control checkbox small-check no-margin">
+                                    <input type="checkbox">
+                                    <span class="check" style="margin-bottom:7px"></span>
+                                </label>
+                            </td>
+                            <td rowspan="4" class="form">
+                               <div class="input-control"><input type="text" class="text" value="A-111"></div>
+                            </td>
+                            <td rowspan="4" class="form">
+                               <div class="input-control"><input type="text" class="text" value="川崎・大阪"></div>
+                            </td>
+                            <td rowspan="4" class="form">
+                               <div class="input-control"><input type="text" class="text" value="川神下１"></div>
+                            </td>
+                            <td rowspan="4" class="buttonCenter">
+                               <button class="button primary" style="margin-top:25px;" onclick="window.open('master_root_next2.html','_self')">設定</button>
+                               <p style="margin-top:3px;">設定済</p>
+                            </td>
+                            <td>
+                               <div class="input-control">
+                               <select>
+                                  <option>土曜日</option>
+                                  <option>1~末</option>
+                                  <option>日曜日</option>
+                                  <option>祝日</option>
+                                  <option>休翌</option>
+                                  <option>--</option>
+                               </select>
+                               </div>
+                            </td>
+                            <td>
+                               <div class="input-control">
+                               <select>
+                                  <option>6t</option>
+                                  <option>2t</option>
+                                  <option>4t</option>
+                                  <option>8t</option>
+                                  <option>10t</option>
+                                  <option>--</option>
+                               </select>
+                               </div>
+                            </td>
+                            <td>
+                               <div class="input-control"><input class="text_money" style="text-align: right; " type="text" value="170,135"></div>
+                            </td>
+                            <td>
+                               <div class="input-control"><input class="text_money" style="text-align: right; " type="text"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                               <div class="input-control">
+                               <select>
+                                  <option>1~末</option>
+                                  <option>土曜日</option>
+                                  <option>日曜日</option>
+                                  <option>祝日</option>
+                                  <option>休翌</option>
+                                  <option>--</option>
+                               </select>
+                               </div>
+                            </td>
+                            <td>
+                               <div class="input-control">
+                               <select>
+                                  <option>8t</option>
+                                  <option>2t</option>
+                                  <option>4t</option>
+                                  <option>6t</option>
+                                  <option>10t</option>
+                                  <option>--</option>
+                               </select>
+                               </div>
+                            </td>
+                            <td>
+                               <div class="input-control"><input class="text_money" style="text-align: right; " type="text" value="171,800"></div>
+                            </td>
+                            <td>
+                               <div class="input-control"><input class="text_money" style="text-align: right; " type="text"></div>
+                            </td>
+                         </tr>
+                         <tr>
+                            <td>
+                               <div class="input-control">
+                               <select>
+                                  <option>--</option>
+                                  <option>1~末</option>
+                                  <option>土曜日</option>
+                                  <option>日曜日</option>
+                                  <option>祝日</option>
+                                  <option>休翌</option>
+                               </select>
+                               </div>
+                            </td>
                           <td>
                             <div class="input-control">
                             <select>
-                              <option>土曜日</option>
-		                      <option>1~末</option>
-		                     
-		                      <option>日曜日</option>
-						  	  <option>祝日</option>
-							  <option>休翌</option>
-							  <option>--</option>
-						    </select>
-						    </div>
-                          </td>
-                          <td>
-                            <div class="input-control">
-                            <select>
+                              <option>--</option>
+                              <option>2t</option>
+                              <option>4t</option>
                               <option>6t</option>
-		                      <option>2t</option>
-							  <option>4t</option>
-							 
-							  <option>8t</option>
-							  <option>10t</option>
-							  <option>--</option>
-						    </select>
-						    </div>
-						  </td>
-                          <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text" value="70,135"></div>
+                              <option>8t</option>
+                              <option>10t</option>
+                            </select>
+                            </div>
                           </td>
                           <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
-                          </td>
-                        </tr>
-			            <tr>
-			              <td>
-			                <div class="input-control">
-			                <select>
-		                      <option>1~末</option>
-		                      <option>土曜日</option>
-		                      <option>日曜日</option>
-						  	  <option>祝日</option>
-							  <option>休翌</option>
-							  <option>--</option>
-						    </select>
-						    </div>
-			              </td>
-			              <td>
-			                <div class="input-control">
-			                <select>
-			                  <option>8t</option>
-		                      <option>2t</option>
-						  	  <option>4t</option>
-							  <option>6t</option>
-							  
-							  <option>10t</option>
-							  <option>--</option>
-						    </select>
-						    </div>
-			              </td>
-			              <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text" value="78,128"></div>
+                            <div class="input-control"><input class="text_money" style="text-align: right; " type="text"></div>
                           </td>
                           <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
+                            <div class="input-control"><input class="text_money" style="text-align: right; " type="text"></div>
                           </td>
                         </tr>
                         <tr>
-			              <td>
-			                <div class="input-control">
-			                <select>
-			                  <option>--</option>
-			                  <option>1~末</option>
-		                      <option>土曜日</option>
-		                      <option>日曜日</option>
-						  	  <option>祝日</option>
-							  <option>休翌</option>
-						    </select>
-						    </div>
-			              </td>
-			              <td>
-			                <div class="input-control">
-			                <select>
-			                  <option>--</option>
-			                  <option>2t</option>
-							  <option>4t</option>
-							  <option>6t</option>
-							  <option>8t</option>
-							  <option>10t</option>
-						    </select>
-						    </div>
-			              </td>
-			              <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
-                          </td>
-                          <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
-                          </td>
-                        </tr>
-                        <tr>
-			              <td>
-			                <div class="input-control">
-			                <select>
-			                  <option>--</option>
-			                  <option>1~末</option>
-		                      <option>土曜日</option>
-		                      <option>日曜日</option>
-						  	  <option>祝日</option>
-							  <option>休翌</option>
-						    </select>
-						    </div>
-			              </td>
-			              <td>
-			                <div class="input-control">
-			                <select>
-			                  <option>--</option>
-			                  <option>2t</option>
-						      <option>4t</option>
-							  <option>6t</option>
-						 	  <option>8t</option>
-							  <option>10t</option>
-						    </select>
-						    </div>
-			              </td>
-			              <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
-                          </td>
-                          <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
-                          </td>
-                        </tr>
-                        
-                        
-                        
-                        <tr>
-		                  <td rowspan="4" class="form">
-		                    <div class="input-control"><input type="text" class="text" style="text-align:right;"></div>
-		                  </td>
-		                  <td rowspan="4" class="form">
-		                    <div class="input-control"><input type="text" class="text"></div>
-		                  </td>
-		                  <td rowspan="4" class="form">
-		                    <div class="input-control"><input type="text" class="text"></div>
-		                  </td>
-		                  <td rowspan="4" class="buttonCenter"><button class="button primary" onclick="window.open('master_root_next.html','_self')">設定</button></td>
                           <td>
                             <div class="input-control">
-			                <select>
-			                  <option>--</option>
-			                  <option>1~末</option>
-		                      <option>土曜日</option>
-		                      <option>日曜日</option>
-						  	  <option>祝日</option>
-							  <option>休翌</option>
-						    </select>
-						    </div>
+                            <select>
+                              <option>--</option>
+                              <option>1~末</option>
+                              <option>土曜日</option>
+                              <option>日曜日</option>
+                                <option>祝日</option>
+                              <option>休翌</option>
+                            </select>
+                            </div>
                           </td>
                           <td>
                             <div class="input-control">
-			                <select>
-			                  <option>2t</option>
-						      <option>4t</option>
-							  <option>6t</option>
-						 	  <option>8t</option>
-							  <option>10t</option>
-							  <option>--</option>
-						    </select>
-						    </div>
-						  </td>
-                          <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
+                            <select>
+                              <option>--</option>
+                              <option>2t</option>
+                              <option>4t</option>
+                              <option>6t</option>
+                               <option>8t</option>
+                              <option>10t</option>
+                            </select>
+                            </div>
                           </td>
                           <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
-                          </td>
-                        </tr>
-			            <tr>
-			              <td>
-			                <div class="input-control">
-			                <select>
-			                  <option>--</option>
-			                  <option>1~末</option>
-		                      <option>土曜日</option>
-		                      <option>日曜日</option>
-						  	  <option>祝日</option>
-							  <option>休翌</option>
-						    </select>
-						    </div>
-			              </td>
-			              <td>
-			                <div class="input-control">
-			                <select>
-			                  <option>2t</option>
-						      <option>4t</option>
-							  <option>6t</option>
-						 	  <option>8t</option>
-							  <option>10t</option>
-							  <option>--</option>
-						    </select>
-						    </div>
-			              </td>
-			              <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
+                            <div class="input-control"><input class="text_money" style="text-align: right; " type="text"></div>
                           </td>
                           <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
+                            <div class="input-control"><input class="text_money" style="text-align: right; " type="text"></div>
                           </td>
                         </tr>
                         <tr>
-			              <td>
-			                <div class="input-control">
-			                <select>
-			                  <option>--</option>
-			                  <option>1~末</option>
-		                      <option>土曜日</option>
-		                      <option>日曜日</option>
-						  	  <option>祝日</option>
-							  <option>休翌</option>
-						    </select>
-						    </div>
-			              </td>
-			              <td>
-			                <div class="input-control">
-			                <select>
-			                  <option>2t</option>
-						      <option>4t</option>
-							  <option>6t</option>
-						 	  <option>8t</option>
-							  <option>10t</option>
-							  <option>--</option>
-						    </select>
-						    </div>
-			              </td>
-			              <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
-                          </td>
-                          <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
-                          </td>
+                            <td rowspan="4" style="text-align:center;padding:0px;margin:0px;">
+                                <label class="input-control checkbox small-check no-margin">
+                                    <input type="checkbox">
+                                    <span class="check" style="margin-bottom:7px"></span>
+                                </label>
+                            </td>
+                            <td rowspan="4" class="form">
+                               <div class="input-control"><input type="text" class="text" value="A-112"></div>
+                            </td>
+                            <td rowspan="4" class="form">
+                               <div class="input-control"><input type="text" class="text" value="綾瀬・千葉"></div>
+                            </td>
+                            <td rowspan="4" class="form">
+                               <div class="input-control"><input type="text" class="text" value="川神下"></div>
+                            </td>
+                            <td rowspan="4" class="buttonCenter">
+                               <button class="button primary" style="margin-top:25px;" onclick="window.open('master_root_next2.html','_self')">設定</button>
+                               <p style="margin-top:3px;">未設定</p>
+                            </td>
+                            <td>
+                               <div class="input-control">
+                               <select>
+                                  <option>土曜日</option>
+                                  <option>1~末</option>
+                                  <option>日曜日</option>
+                                  <option>祝日</option>
+                                  <option>休翌</option>
+                                  <option>--</option>
+                               </select>
+                               </div>
+                            </td>
+                            <td>
+                               <div class="input-control">
+                               <select>
+                                  <option>6t</option>
+                                  <option>2t</option>
+                                  <option>4t</option>
+                                  <option>8t</option>
+                                  <option>10t</option>
+                                  <option>--</option>
+                               </select>
+                               </div>
+                            </td>
+                            <td>
+                               <div class="input-control"><input class="text_money" style="text-align: right; " type="text" value="770,135"></div>
+                            </td>
+                            <td>
+                               <div class="input-control"><input class="text_money" style="text-align: right; " type="text"></div>
+                            </td>
                         </tr>
                         <tr>
-			              <td>
-			                <div class="input-control">
-			                <select>
-			                  <option>--</option>
-			                  <option>1~末</option>
-		                      <option>土曜日</option>
-		                      <option>日曜日</option>
-						  	  <option>祝日</option>
-							  <option>休翌</option>
-						    </select>
-						    </div>
-			              </td>
-			              <td>
-			                <div class="input-control">
-			                <select>
-			                  <option>2t</option>
-						      <option>4t</option>
-							  <option>6t</option>
-						 	  <option>8t</option>
-							  <option>10t</option>
-							  <option>--</option>
-						    </select>
-						    </div>
-			              </td>
-			              <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
-                          </td>
-                          <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
-                          </td>
-                        </tr>
-                        
-                        <tr>
-		                  <td rowspan="4" class="form">
-		                    <div class="input-control"><input type="text" class="text" style="text-align:right;"></div>
-		                  </td>
-		                  <td rowspan="4" class="form">
-		                    <div class="input-control"><input type="text" class="text"></div>
-		                  </td>
-		                  <td rowspan="4" class="form">
-		                    <div class="input-control"><input type="text" class="text"></div>
-		                  </td>
-		                  <td rowspan="4" class="buttonCenter"><button class="button primary" onclick="window.open('master_root_next.html','_self')">設定</button></td>
+                            <td>
+                               <div class="input-control">
+                               <select>
+                                  <option>1~末</option>
+                                  <option>土曜日</option>
+                                  <option>日曜日</option>
+                                  <option>祝日</option>
+                                  <option>休翌</option>
+                                  <option>--</option>
+                               </select>
+                               </div>
+                            </td>
+                            <td>
+                               <div class="input-control">
+                               <select>
+                                  <option>8t</option>
+                                  <option>2t</option>
+                                  <option>4t</option>
+                                  <option>6t</option>
+                                  <option>10t</option>
+                                  <option>--</option>
+                               </select>
+                               </div>
+                            </td>
+                            <td>
+                               <div class="input-control"><input class="text_money" style="text-align: right; " type="text" value="778,128"></div>
+                            </td>
+                            <td>
+                               <div class="input-control"><input class="text_money" style="text-align: right; " type="text"></div>
+                            </td>
+                         </tr>
+                         <tr>
+                            <td>
+                               <div class="input-control">
+                               <select>
+                                  <option>--</option>
+                                  <option>1~末</option>
+                                  <option>土曜日</option>
+                                  <option>日曜日</option>
+                                  <option>祝日</option>
+                                  <option>休翌</option>
+                               </select>
+                               </div>
+                            </td>
                           <td>
                             <div class="input-control">
-			                <select>
-			                  <option>--</option>
-			                  <option>1~末</option>
-		                      <option>土曜日</option>
-		                      <option>日曜日</option>
-						  	  <option>祝日</option>
-							  <option>休翌</option>
-						    </select>
-						    </div>
+                            <select>
+                              <option>--</option>
+                              <option>2t</option>
+                              <option>4t</option>
+                              <option>6t</option>
+                              <option>8t</option>
+                              <option>10t</option>
+                            </select>
+                            </div>
                           </td>
+                          <td>
+                            <div class="input-control"><input class="text_money" style="text-align: right; " type="text"></div>
+                          </td>
+                          <td>
+                            <div class="input-control"><input class="text_money" style="text-align: right; " type="text"></div>
+                          </td>
+                        </tr>
+                        <tr>
                           <td>
                             <div class="input-control">
-			                <select>
-			                  <option>2t</option>
-						      <option>4t</option>
-							  <option>6t</option>
-						 	  <option>8t</option>
-							  <option>10t</option>
-							  <option>--</option>
-						    </select>
-						    </div>
-						  </td>
-                          <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
-                          </td>
-                          <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
-                          </td>
-                        </tr>
-			            <tr>
-			              <td>
-			                <div class="input-control">
-			                <select>
-			                  <option>--</option>
-			                  <option>1~末</option>
-		                      <option>土曜日</option>
-		                      <option>日曜日</option>
-						  	  <option>祝日</option>
-							  <option>休翌</option>
-						    </select>
-						    </div>
-			              </td>
-			              <td>
-			                <div class="input-control">
-			                <select>
-			                  <option>2t</option>
-						      <option>4t</option>
-							  <option>6t</option>
-						 	  <option>8t</option>
-							  <option>10t</option>
-							  <option>--</option>
-						    </select>
-						    </div>
-			              </td>
-			              <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
-                          </td>
-                          <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
-                          </td>
-                        </tr>
-                        <tr>
-			              <td>
-			                <div class="input-control">
-			                <select>
-			                  <option>--</option>
-			                  <option>1~末</option>
-		                      <option>土曜日</option>
-		                      <option>日曜日</option>
-						  	  <option>祝日</option>
-							  <option>休翌</option>
-						    </select>
-						    </div>
-			              </td>
-			              <td>
-			                <div class="input-control">
-			                <select>
-			                  <option>2t</option>
-						      <option>4t</option>
-							  <option>6t</option>
-						 	  <option>8t</option>
-							  <option>10t</option>
-							  <option>--</option>
-						    </select>
-						    </div>
-			              </td>
-			              <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
-                          </td>
-                          <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
-                          </td>
-                        </tr>
-                        <tr>
-			              <td>
-			                <div class="input-control">
-			                <select>
-			                  <option>--</option>
-			                  <option>1~末</option>
-		                      <option>土曜日</option>
-		                      <option>日曜日</option>
-						  	  <option>祝日</option>
-							  <option>休翌</option>
-						    </select>
-						    </div>
-			              </td>
-			              <td>
-			                <div class="input-control">
-			                <select>
-			                  <option>2t</option>
-						      <option>4t</option>
-							  <option>6t</option>
-						 	  <option>8t</option>
-							  <option>10t</option>
-							  <option>--</option>
-						    </select>
-						    </div>
-			              </td>
-			              <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
-                          </td>
-                          <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
-                          </td>
-                        </tr>
-                        
-                        <tr>
-		                  <td rowspan="4" class="form">
-		                    <div class="input-control"><input type="text" class="text" style="text-align:right;"></div>
-		                  </td>
-		                  <td rowspan="4" class="form">
-		                    <div class="input-control"><input type="text" class="text"></div>
-		                  </td>
-		                  <td rowspan="4" class="form">
-		                    <div class="input-control"><input type="text" class="text"></div>
-		                  </td>
-		                  <td rowspan="4" class="buttonCenter"><button class="button primary" onclick="window.open('master_root_next.html','_self')">設定</button></td>
-                          <td>
-                            <div class="input-control">
-			                <select>
-			                  <option>--</option>
-			                  <option>1~末</option>
-		                      <option>土曜日</option>
-		                      <option>日曜日</option>
-						  	  <option>祝日</option>
-							  <option>休翌</option>
-						    </select>
-						    </div>
+                            <select>
+                              <option>--</option>
+                              <option>1~末</option>
+                              <option>土曜日</option>
+                              <option>日曜日</option>
+                                <option>祝日</option>
+                              <option>休翌</option>
+                            </select>
+                            </div>
                           </td>
                           <td>
                             <div class="input-control">
-			                <select>
-			                  <option>2t</option>
-						      <option>4t</option>
-							  <option>6t</option>
-						 	  <option>8t</option>
-							  <option>10t</option>
-							  <option>--</option>
-						    </select>
-						    </div>
-						  </td>
-                          <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
+                            <select>
+                              <option>--</option>
+                              <option>2t</option>
+                              <option>4t</option>
+                              <option>6t</option>
+                               <option>8t</option>
+                              <option>10t</option>
+                            </select>
+                            </div>
                           </td>
                           <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
-                          </td>
-                        </tr>
-			            <tr>
-			              <td>
-			                <div class="input-control">
-			                <select>
-			                  <option>--</option>
-			                  <option>1~末</option>
-		                      <option>土曜日</option>
-		                      <option>日曜日</option>
-						  	  <option>祝日</option>
-							  <option>休翌</option>
-						    </select>
-						    </div>
-			              </td>
-			              <td>
-			                <div class="input-control">
-			                <select>
-			                  <option>2t</option>
-						      <option>4t</option>
-							  <option>6t</option>
-						 	  <option>8t</option>
-							  <option>10t</option>
-							  <option>--</option>
-						    </select>
-						    </div>
-			              </td>
-			              <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
+                            <div class="input-control"><input class="text_money" style="text-align: right; " type="text"></div>
                           </td>
                           <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
+                            <div class="input-control"><input class="text_money" style="text-align: right; " type="text"></div>
                           </td>
                         </tr>
                         <tr>
-			              <td>
-			                <div class="input-control">
-			                <select>
-			                  <option>--</option>
-			                  <option>1~末</option>
-		                      <option>土曜日</option>
-		                      <option>日曜日</option>
-						  	  <option>祝日</option>
-							  <option>休翌</option>
-						    </select>
-						    </div>
-			              </td>
-			              <td>
-			                <div class="input-control">
-			                <select>
-			                  <option>2t</option>
-						      <option>4t</option>
-							  <option>6t</option>
-						 	  <option>8t</option>
-							  <option>10t</option>
-							  <option>--</option>
-						    </select>
-						    </div>
-			              </td>
-			              <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
-                          </td>
-                          <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
-                          </td>
+                            <td rowspan="4" style="text-align:center;padding:0px;margin:0px;">
+                                <label class="input-control checkbox small-check no-margin">
+                                    <input type="checkbox">
+                                    <span class="check" style="margin-bottom:7px"></span>
+                                </label>
+                            </td>
+                            <td rowspan="4" class="form">
+                               <div class="input-control"><input type="text" class="text" value="A-113"></div>
+                            </td>
+                            <td rowspan="4" class="form">
+                               <div class="input-control"><input type="text" class="text" value="川崎・大阪"></div>
+                            </td>
+                            <td rowspan="4" class="form">
+                               <div class="input-control"><input type="text" class="text" value="川神下３"></div>
+                            </td>
+                            <td rowspan="4" class="buttonCenter">
+                               <button class="button primary" style="margin-top:25px;" onclick="window.open('master_root_next2.html','_self')">設定</button>
+                               <p style="margin-top:3px;">未設定</p>
+                            </td>
+                            <td>
+                               <div class="input-control">
+                               <select>
+                                  <option>土曜日</option>
+                                  <option>1~末</option>
+                                  <option>日曜日</option>
+                                  <option>祝日</option>
+                                  <option>休翌</option>
+                                  <option>--</option>
+                               </select>
+                               </div>
+                            </td>
+                            <td>
+                               <div class="input-control">
+                               <select>
+                                  <option>6t</option>
+                                  <option>2t</option>
+                                  <option>4t</option>
+                                  <option>8t</option>
+                                  <option>10t</option>
+                                  <option>--</option>
+                               </select>
+                               </div>
+                            </td>
+                            <td>
+                               <div class="input-control"><input class="text_money" style="text-align: right; " type="text" value="224,135"></div>
+                            </td>
+                            <td>
+                               <div class="input-control"><input class="text_money" style="text-align: right; " type="text"></div>
+                            </td>
                         </tr>
                         <tr>
-			              <td>
-			                <div class="input-control">
-			                <select>
-			                  <option>--</option>
-			                  <option>1~末</option>
-		                      <option>土曜日</option>
-		                      <option>日曜日</option>
-						  	  <option>祝日</option>
-							  <option>休翌</option>
-						    </select>
-						    </div>
-			              </td>
-			              <td>
-			                <div class="input-control">
-			                <select>
-			                  <option>2t</option>
-						      <option>4t</option>
-							  <option>6t</option>
-						 	  <option>8t</option>
-							  <option>10t</option>
-							  <option>--</option>
-						    </select>
-						    </div>
-			              </td>
-			              <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
-                          </td>
-                          <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
-                          </td>
-                        </tr>
-                        
-                        <tr>
-		                  <td rowspan="4" class="form">
-		                    <div class="input-control"><input type="text" class="text" style="text-align:right;"></div>
-		                  </td>
-		                  <td rowspan="4" class="form">
-		                    <div class="input-control"><input type="text" class="text"></div>
-		                  </td>
-		                  <td rowspan="4" class="form">
-		                    <div class="input-control"><input type="text" class="text"></div>
-		                  </td>
-		                  <td rowspan="4" class="buttonCenter"><button class="button primary" onclick="window.open('master_root_next.html','_self')">設定</button></td>
+                            <td>
+                               <div class="input-control">
+                               <select>
+                                  <option>1~末</option>
+                                  <option>土曜日</option>
+                                  <option>日曜日</option>
+                                  <option>祝日</option>
+                                  <option>休翌</option>
+                                  <option>--</option>
+                               </select>
+                               </div>
+                            </td>
+                            <td>
+                               <div class="input-control">
+                               <select>
+                                  <option>8t</option>
+                                  <option>2t</option>
+                                  <option>4t</option>
+                                  <option>6t</option>
+                                  <option>10t</option>
+                                  <option>--</option>
+                               </select>
+                               </div>
+                            </td>
+                            <td>
+                               <div class="input-control"><input class="text_money" style="text-align: right; " type="text" value="228,128"></div>
+                            </td>
+                            <td>
+                               <div class="input-control"><input class="text_money" style="text-align: right; " type="text"></div>
+                            </td>
+                         </tr>
+                         <tr>
+                            <td>
+                               <div class="input-control">
+                               <select>
+                                  <option>--</option>
+                                  <option>1~末</option>
+                                  <option>土曜日</option>
+                                  <option>日曜日</option>
+                                  <option>祝日</option>
+                                  <option>休翌</option>
+                               </select>
+                               </div>
+                            </td>
                           <td>
                             <div class="input-control">
-			                <select>
-			                  <option>--</option>
-			                  <option>1~末</option>
-		                      <option>土曜日</option>
-		                      <option>日曜日</option>
-						  	  <option>祝日</option>
-							  <option>休翌</option>
-						    </select>
-						    </div>
+                            <select>
+                              <option>--</option>
+                              <option>2t</option>
+                              <option>4t</option>
+                              <option>6t</option>
+                              <option>8t</option>
+                              <option>10t</option>
+                            </select>
+                            </div>
                           </td>
+                          <td>
+                            <div class="input-control"><input class="text_money" style="text-align: right; " type="text"></div>
+                          </td>
+                          <td>
+                            <div class="input-control"><input class="text_money" style="text-align: right; " type="text"></div>
+                          </td>
+                        </tr>
+                        <tr>
                           <td>
                             <div class="input-control">
-			                <select>
-			                  <option>2t</option>
-						      <option>4t</option>
-							  <option>6t</option>
-						 	  <option>8t</option>
-							  <option>10t</option>
-							  <option>--</option>
-						    </select>
-						    </div>
-						  </td>
-                          <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
-                          </td>
-                          <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
-                          </td>
-                        </tr>
-			            <tr>
-			              <td>
-			                <div class="input-control">
-			                <select>
-			                  <option>--</option>
-			                  <option>1~末</option>
-		                      <option>土曜日</option>
-		                      <option>日曜日</option>
-						  	  <option>祝日</option>
-							  <option>休翌</option>
-						    </select>
-						    </div>
-			              </td>
-			              <td>
-			                <div class="input-control">
-			                <select>
-			                  <option>2t</option>
-						      <option>4t</option>
-							  <option>6t</option>
-						 	  <option>8t</option>
-							  <option>10t</option>
-							  <option>--</option>
-						    </select>
-						    </div>
-			              </td>
-			              <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
-                          </td>
-                          <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
-                          </td>
-                        </tr>
-                        <tr>
-			              <td>
-			                <div class="input-control">
-			                <select>
-			                  <option>--</option>
-			                  <option>1~末</option>
-		                      <option>土曜日</option>
-		                      <option>日曜日</option>
-						  	  <option>祝日</option>
-							  <option>休翌</option>
-						    </select>
-						    </div>
-			              </td>
-			              <td>
-			                <div class="input-control">
-			                <select>
-			                  <option>2t</option>
-						      <option>4t</option>
-							  <option>6t</option>
-						 	  <option>8t</option>
-							  <option>10t</option>
-							  <option>--</option>
-						    </select>
-						    </div>
-			              </td>
-			              <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
-                          </td>
-                          <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
-                          </td>
-                        </tr>
-                        <tr>
-			              <td>
-			                <div class="input-control">
-			                <select>
-			                  <option>--</option>
-			                  <option>1~末</option>
-		                      <option>土曜日</option>
-		                      <option>日曜日</option>
-						  	  <option>祝日</option>
-							  <option>休翌</option>
-						    </select>
-						    </div>
-			              </td>
-			              <td>
-			                <div class="input-control">
-			                <select>
-			                  <option>2t</option>
-						      <option>4t</option>
-							  <option>6t</option>
-						 	  <option>8t</option>
-							  <option>10t</option>
-							  <option>--</option>
-						    </select>
-						    </div>
-			              </td>
-			              <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
-                          </td>
-                          <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
-                          </td>
-                        </tr>
-                        
-                        <tr>
-		                  <td rowspan="4" class="form">
-		                    <div class="input-control"><input type="text" class="text" style="text-align:right;"></div>
-		                  </td>
-		                  <td rowspan="4" class="form">
-		                    <div class="input-control"><input type="text" class="text"></div>
-		                  </td>
-		                  <td rowspan="4" class="form">
-		                    <div class="input-control"><input type="text" class="text"></div>
-		                  </td>
-		                  <td rowspan="4" class="buttonCenter"><button class="button primary" onclick="window.open('master_root_next.html','_self')">設定</button></td>
-                          <td>
-                            <div class="input-control">
-			                <select>
-			                  <option>--</option>
-			                  <option>1~末</option>
-		                      <option>土曜日</option>
-		                      <option>日曜日</option>
-						  	  <option>祝日</option>
-							  <option>休翌</option>
-						    </select>
-						    </div>
+                            <select>
+                              <option>--</option>
+                              <option>1~末</option>
+                              <option>土曜日</option>
+                              <option>日曜日</option>
+                                <option>祝日</option>
+                              <option>休翌</option>
+                            </select>
+                            </div>
                           </td>
                           <td>
                             <div class="input-control">
-			                <select>
-			                  <option>2t</option>
-						      <option>4t</option>
-							  <option>6t</option>
-						 	  <option>8t</option>
-							  <option>10t</option>
-							  <option>--</option>
-						    </select>
-						    </div>
-						  </td>
-                          <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
+                            <select>
+                              <option>--</option>
+                              <option>2t</option>
+                              <option>4t</option>
+                              <option>6t</option>
+                               <option>8t</option>
+                              <option>10t</option>
+                            </select>
+                            </div>
                           </td>
                           <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
+                            <div class="input-control"><input class="text_money" style="text-align: right; " type="text"></div>
+                          </td>
+                          <td>
+                            <div class="input-control"><input class="text_money" style="text-align: right; " type="text"></div>
                           </td>
                         </tr>
-			            <tr>
-			              <td>
-			                <div class="input-control">
-			                <select>
-			                  <option>--</option>
-			                  <option>1~末</option>
-		                      <option>土曜日</option>
-		                      <option>日曜日</option>
-						  	  <option>祝日</option>
-							  <option>休翌</option>
-						    </select>
-						    </div>
-			              </td>
-			              <td>
-			                <div class="input-control">
-			                <select>
-			                  <option>2t</option>
-						      <option>4t</option>
-							  <option>6t</option>
-						 	  <option>8t</option>
-							  <option>10t</option>
-							  <option>--</option>
-						    </select>
-						    </div>
-			              </td>
-			              <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
-                          </td>
-                          <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
-                          </td>
-                        </tr>
-                        <tr>
-			              <td>
-			                <div class="input-control">
-			                <select>
-			                  <option>--</option>
-			                  <option>1~末</option>
-		                      <option>土曜日</option>
-		                      <option>日曜日</option>
-						  	  <option>祝日</option>
-							  <option>休翌</option>
-						    </select>
-						    </div>
-			              </td>
-			              <td>
-			                <div class="input-control">
-			                <select>
-			                  <option>2t</option>
-						      <option>4t</option>
-							  <option>6t</option>
-						 	  <option>8t</option>
-							  <option>10t</option>
-							  <option>--</option>
-						    </select>
-						    </div>
-			              </td>
-			              <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
-                          </td>
-                          <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
-                          </td>
-                        </tr>
-                        <tr>
-			              <td>
-			                <div class="input-control">
-			                <select>
-			                  <option>--</option>
-			                  <option>1~末</option>
-		                      <option>土曜日</option>
-		                      <option>日曜日</option>
-						  	  <option>祝日</option>
-							  <option>休翌</option>
-						    </select>
-						    </div>
-			              </td>
-			              <td>
-			                <div class="input-control">
-			                <select>
-			                  <option>2t</option>
-						      <option>4t</option>
-							  <option>6t</option>
-						 	  <option>8t</option>
-							  <option>10t</option>
-							  <option>--</option>
-						    </select>
-						    </div>
-			              </td>
-			              <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
-                          </td>
-                          <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
-                          </td>
-                        </tr>
-                        
-                        <tr>
-		                  <td rowspan="4" class="form">
-		                    <div class="input-control"><input type="text" class="text" style="text-align:right;"></div>
-		                  </td>
-		                  <td rowspan="4" class="form">
-		                    <div class="input-control"><input type="text" class="text"></div>
-		                  </td>
-		                  <td rowspan="4" class="form">
-		                    <div class="input-control"><input type="text" class="text"></div>
-		                  </td>
-		                  <td rowspan="4" class="buttonCenter"><button class="button primary" onclick="window.open('master_root_next.html','_self')">設定</button></td>
-                          <td>
-                            <div class="input-control">
-			                <select>
-			                  <option>--</option>
-			                  <option>1~末</option>
-		                      <option>土曜日</option>
-		                      <option>日曜日</option>
-						  	  <option>祝日</option>
-							  <option>休翌</option>
-						    </select>
-						    </div>
-                          </td>
-                          <td>
-                            <div class="input-control">
-			                <select>
-			                  <option>2t</option>
-						      <option>4t</option>
-							  <option>6t</option>
-						 	  <option>8t</option>
-							  <option>10t</option>
-							  <option>--</option>
-						    </select>
-						    </div>
-						  </td>
-                          <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
-                          </td>
-                          <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
-                          </td>
-                        </tr>
-			            <tr>
-			              <td>
-			                <div class="input-control">
-			                <select>
-			                  <option>--</option>
-			                  <option>1~末</option>
-		                      <option>土曜日</option>
-		                      <option>日曜日</option>
-						  	  <option>祝日</option>
-							  <option>休翌</option>
-						    </select>
-						    </div>
-			              </td>
-			              <td>
-			                <div class="input-control">
-			                <select>
-			                  <option>2t</option>
-						      <option>4t</option>
-							  <option>6t</option>
-						 	  <option>8t</option>
-							  <option>10t</option>
-							  <option>--</option>
-						    </select>
-						    </div>
-			              </td>
-			              <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
-                          </td>
-                          <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
-                          </td>
-                        </tr>
-                        <tr>
-			              <td>
-			                <div class="input-control">
-			                <select>
-			                  <option>--</option>
-			                  <option>1~末</option>
-		                      <option>土曜日</option>
-		                      <option>日曜日</option>
-						  	  <option>祝日</option>
-							  <option>休翌</option>
-						    </select>
-						    </div>
-			              </td>
-			              <td>
-			                <div class="input-control">
-			                <select>
-			                  <option>2t</option>
-						      <option>4t</option>
-							  <option>6t</option>
-						 	  <option>8t</option>
-							  <option>10t</option>
-							  <option>--</option>
-						    </select>
-						    </div>
-			              </td>
-			              <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
-                          </td>
-                          <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
-                          </td>
-                        </tr>
-                        <tr>
-			              <td>
-			                <div class="input-control">
-			                <select>
-			                  <option>--</option>
-			                  <option>1~末</option>
-		                      <option>土曜日</option>
-		                      <option>日曜日</option>
-						  	  <option>祝日</option>
-							  <option>休翌</option>
-						    </select>
-						    </div>
-			              </td>
-			              <td>
-			                <div class="input-control">
-			                <select>
-			                  <option>2t</option>
-						      <option>4t</option>
-							  <option>6t</option>
-						 	  <option>8t</option>
-							  <option>10t</option>
-							  <option>--</option>
-						    </select>
-						    </div>
-			              </td>
-			              <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
-                          </td>
-                          <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
-                          </td>
-                        </tr>
-                        
-                        <tr>
-		                  <td rowspan="4" class="form">
-		                    <div class="input-control"><input type="text" class="text" style="text-align:right;"></div>
-		                  </td>
-		                  <td rowspan="4" class="form">
-		                    <div class="input-control"><input type="text" class="text"></div>
-		                  </td>
-		                  <td rowspan="4" class="form">
-		                    <div class="input-control"><input type="text" class="text"></div>
-		                  </td>
-		                  <td rowspan="4" class="buttonCenter"><button class="button primary" onclick="window.open('master_root_next.html','_self')">設定</button></td>
-                          <td>
-                            <div class="input-control">
-			                <select>
-			                  <option>--</option>
-			                  <option>1~末</option>
-		                      <option>土曜日</option>
-		                      <option>日曜日</option>
-						  	  <option>祝日</option>
-							  <option>休翌</option>
-						    </select>
-						    </div>
-                          </td>
-                          <td>
-                            <div class="input-control">
-			                <select>
-			                  <option>2t</option>
-						      <option>4t</option>
-							  <option>6t</option>
-						 	  <option>8t</option>
-							  <option>10t</option>
-							  <option>--</option>
-						    </select>
-						    </div>
-						  </td>
-                          <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
-                          </td>
-                          <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
-                          </td>
-                        </tr>
-			            <tr>
-			              <td>
-			                <div class="input-control">
-			                <select>
-			                  <option>--</option>
-			                  <option>1~末</option>
-		                      <option>土曜日</option>
-		                      <option>日曜日</option>
-						  	  <option>祝日</option>
-							  <option>休翌</option>
-						    </select>
-						    </div>
-			              </td>
-			              <td>
-			                <div class="input-control">
-			                <select>
-			                  <option>2t</option>
-						      <option>4t</option>
-							  <option>6t</option>
-						 	  <option>8t</option>
-							  <option>10t</option>
-							  <option>--</option>
-						    </select>
-						    </div>
-			              </td>
-			              <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
-                          </td>
-                          <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
-                          </td>
-                        </tr>
-                        <tr>
-			              <td>
-			                <div class="input-control">
-			                <select>
-			                  <option>--</option>
-			                  <option>1~末</option>
-		                      <option>土曜日</option>
-		                      <option>日曜日</option>
-						  	  <option>祝日</option>
-							  <option>休翌</option>
-						    </select>
-						    </div>
-			              </td>
-			              <td>
-			                <div class="input-control">
-			                <select>
-			                  <option>2t</option>
-						      <option>4t</option>
-							  <option>6t</option>
-						 	  <option>8t</option>
-							  <option>10t</option>
-							  <option>--</option>
-						    </select>
-						    </div>
-			              </td>
-			              <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
-                          </td>
-                          <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
-                          </td>
-                        </tr>
-                        <tr>
-			              <td>
-			                <div class="input-control">
-			                <select>
-			                  <option>--</option>
-			                  <option>1~末</option>
-		                      <option>土曜日</option>
-		                      <option>日曜日</option>
-						  	  <option>祝日</option>
-							  <option>休翌</option>
-						    </select>
-						    </div>
-			              </td>
-			              <td>
-			                <div class="input-control">
-			                <select>
-			                  <option>2t</option>
-						      <option>4t</option>
-							  <option>6t</option>
-						 	  <option>8t</option>
-							  <option>10t</option>
-							  <option>--</option>
-						    </select>
-						    </div>
-			              </td>
-			              <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
-                          </td>
-                          <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
-                          </td>
-                        </tr>
-                        
-                        <tr>
-		                  <td rowspan="4" class="form">
-		                    <div class="input-control"><input type="text" class="text" style="text-align:right;"></div>
-		                  </td>
-		                  <td rowspan="4" class="form">
-		                    <div class="input-control"><input type="text" class="text"></div>
-		                  </td>
-		                  <td rowspan="4" class="form">
-		                    <div class="input-control"><input type="text" class="text"></div>
-		                  </td>
-		                  <td rowspan="4" class="buttonCenter"><button class="button primary" onclick="window.open('master_root_next.html','_self')">設定</button></td>
-                          <td>
-                            <div class="input-control">
-			                <select>
-			                  <option>--</option>
-			                  <option>1~末</option>
-		                      <option>土曜日</option>
-		                      <option>日曜日</option>
-						  	  <option>祝日</option>
-							  <option>休翌</option>
-						    </select>
-						    </div>
-                          </td>
-                          <td>
-                            <div class="input-control">
-			                <select>
-			                  <option>2t</option>
-						      <option>4t</option>
-							  <option>6t</option>
-						 	  <option>8t</option>
-							  <option>10t</option>
-							  <option>--</option>
-						    </select>
-						    </div>
-						  </td>
-                          <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
-                          </td>
-                          <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
-                          </td>
-                        </tr>
-			            <tr>
-			              <td>
-			                <div class="input-control">
-			                <select>
-			                  <option>--</option>
-			                  <option>1~末</option>
-		                      <option>土曜日</option>
-		                      <option>日曜日</option>
-						  	  <option>祝日</option>
-							  <option>休翌</option>
-						    </select>
-						    </div>
-			              </td>
-			              <td>
-			                <div class="input-control">
-			                <select>
-			                  <option>2t</option>
-						      <option>4t</option>
-							  <option>6t</option>
-						 	  <option>8t</option>
-							  <option>10t</option>
-							  <option>--</option>
-						    </select>
-						    </div>
-			              </td>
-			              <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
-                          </td>
-                          <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
-                          </td>
-                        </tr>
-                        <tr>
-			              <td>
-			                <div class="input-control">
-			                <select>
-			                  <option>--</option>
-			                  <option>1~末</option>
-		                      <option>土曜日</option>
-		                      <option>日曜日</option>
-						  	  <option>祝日</option>
-							  <option>休翌</option>
-						    </select>
-						    </div>
-			              </td>
-			              <td>
-			                <div class="input-control">
-			                <select>
-			                  <option>2t</option>
-						      <option>4t</option>
-							  <option>6t</option>
-						 	  <option>8t</option>
-							  <option>10t</option>
-							  <option>--</option>
-						    </select>
-						    </div>
-			              </td>
-			              <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
-                          </td>
-                          <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
-                          </td>
-                        </tr>
-                        <tr>
-			              <td>
-			                <div class="input-control">
-			                <select>
-			                  <option>--</option>
-			                  <option>1~末</option>
-		                      <option>土曜日</option>
-		                      <option>日曜日</option>
-						  	  <option>祝日</option>
-							  <option>休翌</option>
-						    </select>
-						    </div>
-			              </td>
-			              <td>
-			                <div class="input-control">
-			                <select>
-			                  <option>2t</option>
-						      <option>4t</option>
-							  <option>6t</option>
-						 	  <option>8t</option>
-							  <option>10t</option>
-							  <option>--</option>
-						    </select>
-						    </div>
-			              </td>
-			              <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
-                          </td>
-                          <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
-                          </td>
-                        </tr>
-                        
-                        <tr>
-		                  <td rowspan="4" class="form">
-		                    <div class="input-control"><input type="text" class="text" style="text-align:right;"></div>
-		                  </td>
-		                  <td rowspan="4" class="form">
-		                    <div class="input-control"><input type="text" class="text"></div>
-		                  </td>
-		                  <td rowspan="4" class="form">
-		                    <div class="input-control"><input type="text" class="text"></div>
-		                  </td>
-		                  <td rowspan="4" class="buttonCenter"><button class="button primary" onclick="window.open('master_root_next.html','_self')">設定</button></td>
-                          <td>
-                            <div class="input-control">
-			                <select>
-			                  <option>--</option>
-			                  <option>1~末</option>
-		                      <option>土曜日</option>
-		                      <option>日曜日</option>
-						  	  <option>祝日</option>
-							  <option>休翌</option>
-						    </select>
-						    </div>
-                          </td>
-                          <td>
-                            <div class="input-control">
-			                <select>
-			                  <option>2t</option>
-						      <option>4t</option>
-							  <option>6t</option>
-						 	  <option>8t</option>
-							  <option>10t</option>
-							  <option>--</option>
-						    </select>
-						    </div>
-						  </td>
-                          <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
-                          </td>
-                          <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
-                          </td>
-                        </tr>
-			            <tr>
-			              <td>
-			                <div class="input-control">
-			                <select>
-			                  <option>--</option>
-			                  <option>1~末</option>
-		                      <option>土曜日</option>
-		                      <option>日曜日</option>
-						  	  <option>祝日</option>
-							  <option>休翌</option>
-						    </select>
-						    </div>
-			              </td>
-			              <td>
-			                <div class="input-control">
-			                <select>
-			                  <option>2t</option>
-						      <option>4t</option>
-							  <option>6t</option>
-						 	  <option>8t</option>
-							  <option>10t</option>
-							  <option>--</option>
-						    </select>
-						    </div>
-			              </td>
-			              <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
-                          </td>
-                          <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
-                          </td>
-                        </tr>
-                        <tr>
-			              <td>
-			                <div class="input-control">
-			                <select>
-			                  <option>--</option>
-			                  <option>1~末</option>
-		                      <option>土曜日</option>
-		                      <option>日曜日</option>
-						  	  <option>祝日</option>
-							  <option>休翌</option>
-						    </select>
-						    </div>
-			              </td>
-			              <td>
-			                <div class="input-control">
-			                <select>
-			                  <option>2t</option>
-						      <option>4t</option>
-							  <option>6t</option>
-						 	  <option>8t</option>
-							  <option>10t</option>
-							  <option>--</option>
-						    </select>
-						    </div>
-			              </td>
-			              <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
-                          </td>
-                          <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
-                          </td>
-                        </tr>
-                        <tr>
-			              <td>
-			                <div class="input-control">
-			                <select>
-			                  <option>--</option>
-			                  <option>1~末</option>
-		                      <option>土曜日</option>
-		                      <option>日曜日</option>
-						  	  <option>祝日</option>
-							  <option>休翌</option>
-						    </select>
-						    </div>
-			              </td>
-			              <td>
-			                <div class="input-control">
-			                <select>
-			                  <option>2t</option>
-						      <option>4t</option>
-							  <option>6t</option>
-						 	  <option>8t</option>
-							  <option>10t</option>
-							  <option>--</option>
-						    </select>
-						    </div>
-			              </td>
-			              <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
-                          </td>
-                          <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
-                          </td>
-                        </tr>
-                        
-                        <tr>
-		                  <td rowspan="4" class="form">
-		                    <div class="input-control"><input type="text" class="text" style="text-align:right;"></div>
-		                  </td>
-		                  <td rowspan="4" class="form">
-		                    <div class="input-control"><input type="text" class="text"></div>
-		                  </td>
-		                  <td rowspan="4" class="form">
-		                    <div class="input-control"><input type="text" class="text"></div>
-		                  </td>
-		                  <td rowspan="4" class="buttonCenter"><button class="button primary" onclick="window.open('master_root_next.html','_self')">設定</button></td>
-                          <td>
-                            <div class="input-control">
-			                <select>
-			                  <option>--</option>
-			                  <option>1~末</option>
-		                      <option>土曜日</option>
-		                      <option>日曜日</option>
-						  	  <option>祝日</option>
-							  <option>休翌</option>
-						    </select>
-						    </div>
-                          </td>
-                          <td>
-                            <div class="input-control">
-			                <select>
-			                  <option>2t</option>
-						      <option>4t</option>
-							  <option>6t</option>
-						 	  <option>8t</option>
-							  <option>10t</option>
-							  <option>--</option>
-						    </select>
-						    </div>
-						  </td>
-                          <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
-                          </td>
-                          <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
-                          </td>
-                        </tr>
-			            <tr>
-			              <td>
-			                <div class="input-control">
-			                <select>
-			                  <option>--</option>
-			                  <option>1~末</option>
-		                      <option>土曜日</option>
-		                      <option>日曜日</option>
-						  	  <option>祝日</option>
-							  <option>休翌</option>
-						    </select>
-						    </div>
-			              </td>
-			              <td>
-			                <div class="input-control">
-			                <select>
-			                  <option>2t</option>
-						      <option>4t</option>
-							  <option>6t</option>
-						 	  <option>8t</option>
-							  <option>10t</option>
-							  <option>--</option>
-						    </select>
-						    </div>
-			              </td>
-			              <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
-                          </td>
-                          <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
-                          </td>
-                        </tr>
-                        <tr>
-			              <td>
-			                <div class="input-control">
-			                <select>
-			                  <option>--</option>
-			                  <option>1~末</option>
-		                      <option>土曜日</option>
-		                      <option>日曜日</option>
-						  	  <option>祝日</option>
-							  <option>休翌</option>
-						    </select>
-						    </div>
-			              </td>
-			              <td>
-			                <div class="input-control">
-			                <select>
-			                  <option>2t</option>
-						      <option>4t</option>
-							  <option>6t</option>
-						 	  <option>8t</option>
-							  <option>10t</option>
-							  <option>--</option>
-						    </select>
-						    </div>
-			              </td>
-			              <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
-                          </td>
-                          <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
-                          </td>
-                        </tr>
-                        <tr>
-			              <td>
-			                <div class="input-control">
-			                <select>
-			                  <option>--</option>
-			                  <option>1~末</option>
-		                      <option>土曜日</option>
-		                      <option>日曜日</option>
-						  	  <option>祝日</option>
-							  <option>休翌</option>
-						    </select>
-						    </div>
-			              </td>
-			              <td>
-			                <div class="input-control">
-			                <select>
-			                  <option>2t</option>
-						      <option>4t</option>
-							  <option>6t</option>
-						 	  <option>8t</option>
-							  <option>10t</option>
-							  <option>--</option>
-						    </select>
-						    </div>
-			              </td>
-			              <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
-                          </td>
-                          <td>
-                            <div class="input-control"><input class="text" style="text-align: right; " type="text"></div>
-                          </td>
-                        </tr>
-                        
-                        
                         </tbody>
                     </table>
-
-
                 </div>
             </div>
         </div>

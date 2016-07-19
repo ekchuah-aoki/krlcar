@@ -59,146 +59,183 @@
                 type: t
             });
         }
-        
         function showDialog(id) {
             var dialog = $(id).data('dialog');
             dialog.open();
         }
+        $(function(){
+            $("#datepicker_birthday").datepicker();
+            $("#datepicker_from").datepicker();
+            $("#datepicker_to").datepicker();
 
-		$(function(){
-	        $("#datepicker_birthday").datepicker();
-	        $("#datepicker_from").datepicker();
-	        $("#datepicker_to").datepicker();
-	        
-	    });
+            $("#ShokushuEtc").attr('disabled', 'disabled');
+            $('select[id="ShokushuKBN"]').change(function () {
+                if ($(this).val() == "00005") {
+                    $("#ShokushuEtc").removeAttr("disabled");
+                } else {
+                    $("#ShokushuEtc").val("");
+                    $("#ShokushuEtc").attr('disabled', 'disabled');
+                }
+            });
+        });
     </script>
 </head>
 <body>
-
- <!-- ヘッダー固定 -->
+   <!-- ヘッダー固定 -->
    <div id="Menu_load"></div>
 
         <div class="page-content">
         <div class="flex-grid no-responsive-future">
            <div class="row">
                 <div class="cell auto-size padding20 bg-white" id="cell-content">
-	                <ul class="breadcrumbs" style="padding:0px;">
-					    <li><h4>社員登録</h4></li>
-					</ul>
-					<div class="grid">
-	                <hr class="thin bg-grayLighter">
-						<div class="align-right">
-                        <button class="button warning">キャンセル</button>
-                        <button class="button success">保存</button>
-						</div>
-						</div>
-	                <hr class="thin bg-grayLighter">
-		            <div class="grid">
-		                <div class="row cells12">
-							<div class="cell colspan3">
-	                            社員コード
-	                            <div class="input-control text full-size">
-								    <input type="text" style="text-align:right;">
-								</div>
-	                        </div>
-							<div class="cell colspan3">
-	                            社員名
-	                            <div class="input-control text full-size">
-								    <input type="text">
-								</div>
-	                        </div>
-
-							<div class="cell colspan3">
-	                            役割
-	                            <div class="input-control select full-size">
-		                            <select>
-		                                <option>管理者</option>
-		                                <option>オペレーター</option>
-		                            </select>
-		                        </div>
-	                        </div>
+                    <ul class="breadcrumbs" style="padding:0px;">
+                        <li><h4>社員登録</h4></li>
+                    </ul>
+                    <hr class="thin bg-grayLighter">
+                    <div class="align-right">
+                        <button class="button primary" style="width:100px;background-color:#6A5ACD;border-color:#6A5ACD;">印刷</button>
+                        <button class="button success" style="width:100px;">保存</button>
+                        <button class="button alert"   style="width:100px;" onclick="location.href='master_user.html'">戻る</button>
+                     </div>
+                    <hr class="thin bg-grayLighter">
+                    <div class="grid">
+                        <div class="row cells12">
+                            <div class="cell colspan">
+                                社員コード
+                                <div class="input-control text full-size">
+                                    <input type="text" style="width:100px;">
+                                </div>
+                            </div>
+                            <div class="cell colspan">
+                                社員名
+                                <div class="input-control text full-size">
+                                    <input type="text" style="width:350px;">
+                                </div>
+                            </div>
+                            <div class="cell colspan3" style="margin-left:280px;">
+                                社員名（ふりがな）
+                                <div class="input-control text full-size">
+                                    <input type="text" style="width:350px;">
+                                </div>
+                            </div>
                         </div>
-		                <div class="row cells12">
-							<div class="cell colspan3">
-	                            郵便番号
-	                            <div class="input-control text full-size" style="width:80px;">
-								    <input type="text" style="text-align:right;">
-								</div>
-	                        </div>
-							<div class="cell colspan5">
-	                            住所
-	                            <div class="input-control text full-size" style="width:300px;">
-								    <input type="text">
-								</div>
-	                        </div>
-							<div class="cell colspan3">
-	                            建物名
-	                            <div class="input-control text full-size" style="width:100px;">
-								    <input type="text">
-								</div>
-	                        </div>
+                        <div class="row cells12">
+                            <div class="cell colspan1">
+                                職種
+                                <div class="input-control text full-size" style="width:150px;">
+                                    <select id="ShokushuKBN" name="select" style="width:150px;">
+                                        <option value="00000"></option> 
+                                        <option value="00001">常時選任運転手</option>
+                                        <option value="00002">その他運転者</option>
+                                        <option value="00003">職員</option>
+                                        <option value="00004">整備士</option>
+                                        <option value="00005">その他</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="cell colspan2" style="margin-left:80px;">
+                                職種（その他）
+                                <div class="input-control text full-size">
+                                    <input type="text" id="ShokushuEtc" style="width:180px;">
+                                </div>
+                            </div>
+                            <div class="cell colspan3">
+                                在席区分
+                                <div class="input-control text full-size" style="width:100px;">
+                                <select name="select" style="width:100px;">
+                                    <option value="0001">在職</option> 
+                                    <option value="0002">休職</option>
+                                    <option value="0003">退職</option>
+                                </select>
+                                </div>
+                            </div>
                         </div>
-		                <div class="row cells12">
-							<div class="cell colspan3">
-	                            電話番号
-	                            <div class="input-control text full-size" style="width:100px;">
-								    <input type="text" style="text-align:right;">
-								</div>
-							</div>
-							<div class="cell colspan3">
-	                            携帯番号
-	                            <div class="input-control text full-size" style="width:100px;">
-								    <input type="text" style="text-align:right;">
-								</div>
-	                        </div>
-							<div class="cell colspan5">
-	                            メールアドレス
-	                            <div class="input-control text full-size">
-									<input type="text" data-validate-func="email" placeholder="email" data-validate-hint="Not valid email address" style="padding-right: 5px;">
-								</div>
-	                        </div>
+                        <div class="row cells12">
+                            <div class="cell colspan">
+                                郵便番号
+                                <div class="input-control text full-size" style="width:130px;">
+                                    <input type="text" style="width:130px;">
+                                </div>
+                            </div>
+                            <div class="cell colspan1" style="margin-left:80px;">
+                                住所
+                                <div class="input-control text full-size" style="width:400px;">
+                                    <input type="text" style="width:400px;">
+                                </div>
+                            </div>
+                            <div class="cell colspan3" style="margin-left:330px;">
+                                建物名
+                                <div class="input-control text full-size" style="width:200px;">
+                                    <input type="text">
+                                </div>
+                            </div>
                         </div>
-
-		                <div class="row cells12">
-							<div class="cell colspan3">
-	                            免許証番号
-	                            <div class="input-control text full-size" style="width:100px;">
-								    <input type="text" style="text-align:right;">
-								</div>
-							</div>
-							<div class="cell colspan2">
-	                            誕生日
-								<div class="input-control text full-size" id="datepicker_birthday" style="width:150px;">
-								    <input type="text">
-								    <button class="button"><span class="mif-calendar"></span></button>
-								</div>
-	                        </div>
-							<div class="cell colspan2">
-	                            交付日
-								<div class="input-control text full-size" id="datepicker_from" style="width:150px;">
-								    <input type="text">
-								    <button class="button"><span class="mif-calendar"></span></button>
-								</div>
-	                        </div>
-							<div class="cell colspan2">
-	                            有効日
-								<div class="input-control text full-size" id="datepicker_to" style="width:150px;">
-								    <input type="text">
-								    <button class="button"><span class="mif-calendar"></span></button>
-								</div>
-	                        </div>
+                        <div class="row cells12">
+                            <div class="cell colspan">
+                                電話番号
+                                <div class="input-control text full-size" style="width:200px;">
+                                    <input type="text" style="width:200px;">
+                                </div>
+                            </div>
+                            <div class="cell colspan" style="margin-left:130px;">
+                                携帯番号
+                                <div class="input-control text full-size" style="width:200px;">
+                                    <input type="text" style="width:200px;">
+                                </div>
+                            </div>
+                            <div class="cell colspan5" style="margin-left:130px;">
+                                メールアドレス
+                                <div class="input-control text full-size">
+                                    <input type="text" style="padding-right: 5px; width:350px;">
+                                </div>
+                            </div>
                         </div>
-
-		                <div class="row cells12">
-							<div class="cell colspan2">
-	                            ドライバー歩合割合
-	                            <div class="input-control text full-size" style="width:50px;">
-								    <input type="text" placeholder="0.3" style="text-align:right;">
-								</div>
-							</div>
+                        <div class="row cells12">
+                            <div class="cell colspan2">
+                                免許証番号
+                                <div class="input-control text full-size" style="width:100px;">
+                                    <input type="text" style="width:200px;">
+                                </div>
+                            </div>
+                            <div class="cell colspan2">
+                                誕生日
+                                <div class="input-control text full-size" id="datepicker_birthday" style="width:150px;">
+                                    <input type="text" style="width:120px;">
+                                    <button class="button" style="margin-right:35px;"><span class="mif-calendar"></span></button>
+                                </div>
+                            </div>
+                            <div class="cell colspan2">
+                                交付日
+                                <div class="input-control text full-size" id="datepicker_from" style="width:150px;">
+                                    <input type="text" style="width:120px;">
+                                    <button class="button" style="margin-right:35px;"><span class="mif-calendar"></span></button>
+                                </div>
+                            </div>
+                            <div class="cell colspan2">
+                                有効日
+                                <div class="input-control text full-size" id="datepicker_to" style="width:150px;">
+                                    <input type="text" style="width:120px;">
+                                    <button class="button" style="margin-right:35px;"><span class="mif-calendar"></span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row cells12">
+                            <div class="cell colspan2">
+                                ドライバー歩合割合
+                                <div class="input-control text full-size" style="width:50px;">
+                                    <input type="text" style="width:100px;text-align:right;">
+                                </div>
+                            </div>
+                        </div>
+                       <div class="row cells12">
+                            <div class="cell colspan2">
+                                <p style="background:#099; color:#fff;width: 250px; height:40px;text-align: center;display: table-cell;vertical-align: middle;">写真</p>
+                                <div class="content clear-float" style="margin:10px 0;">
+                                </div>
+                            </div>
                         </div>
                     </div>
-	            </div>
+                </div>
             </div>
         </div>
         </div>

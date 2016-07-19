@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Metro, a sleek, intuitive, and powerful framework for faster and easier web development for Windows Metro Style.">
+    <meta name="keywords" content="HTML, CSS, JS, JavaScript, framework, metro, front-end, frontend, web development">
+    <meta name="author" content="Sergey Pimenov and Metro UI CSS contributors">
+
+    <link rel='shortcut icon' type='image/x-icon' href='../favicon.ico' />
+
+    <title>株式会社ケー・アールライン</title>
+
+    <link href="../css/metro.css" rel="stylesheet">
+    <link href="../css/metro-icons.css" rel="stylesheet">
+    <link href="../css/metro-responsive.css" rel="stylesheet">
+    <link href="../css/salesCost_driver_daily.css" rel="stylesheet">
+
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/jquery.dataTables.min.js"></script>
+
+    <script src="../js/metro.js"></script>
+    
+    <script src="../js/Menu.js"></script>
+
+    <style>
+        html, body {
+            height: 100%;
+        }
+        body {
+        }
+        .page-content {
+            padding-top: 3.125rem;
+            min-height: 100%;
+            height: 100%;
+        }
+        .table .input-control.checkbox {
+            line-height: 1;
+            min-height: 0;
+            height: auto;
+        }
+		.dataTable {
+		margin: 0;
+		}
+		.hidden {
+		overflow: hidden;
+		}
+		.left {
+		float: left;
+		}
+        .right {
+        float: right;
+        }
+        @media screen and (max-width: 800px){
+            #cell-sidebar {
+                flex-basis: 52px;
+            }
+            #cell-content {
+                flex-basis: calc(100% - 52px);
+            }
+        }
+    </style>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+<body class="bg-steel">
+     <!-- ヘッダー固定 -->
+   <div id="Menu_load"></div>
+    <div class="page-content">
+        <div class="flex-grid no-responsive-future" style="height: 100%;">
+            <div class="row" style="height: 100%">
+                <div class="cell auto-size padding20 bg-white" id="cell-content">
+                    <ul class="breadcrumbs" style="padding:0px;">
+                      <li><h4>ドライバー別売上一覧</h4></li>
+                    </ul>
+		            <div class="grid">
+                    <hr class="thin bg-grayLighter">
+		            
+	                <div class="hidden">
+						<div class="left">
+	                        <div class="input-control select" style="width:60px;">
+	                            <select dir="rtl">
+	                            	<option>2015</option>
+	                                <option>2016</option>
+	                                <option>2017</option>
+	                                <option>2018</option>
+	                                <option>2019</option>
+	                                <option>2020</option>
+	                            </select>
+							</div>
+	                        年
+							<div class="input-control select" style="width:60px;">
+	                            <select dir="rtl">
+	                                <option>01</option>
+	                                <option>02</option>
+	                                <option>03</option>
+	                                <option>04</option>
+	                                <option>05</option>
+	                                <option>06</option>
+	                                <option>07</option>
+	                                <option>08</option>
+	                                <option>09</option>
+	                                <option>10</option>
+	                                <option>11</option>
+	                                <option>12</option>
+	                            </select>
+	                         </div>
+	                            月
+	                    </div>
+						<div class="right">
+		                    <button class="button primary">検索</button>
+	                    </div>
+	                </div>
+	            </div>
+                <hr class="thin bg-grayLighter">
+				<div class="x_data_area">
+			      <!-- ロック部分 -->
+			      	<div class="lock_box">
+			        	 <table class="dataTable border bordered width300 data" data-auto-width="false">
+			                
+			                <thead>
+			                <tr style="height: 90px;">
+								<td class="sortable-column" rowspan="2"><p class="yoko" style="text-align:center;">社員コード</p></td>
+			                    <td class="sortable-column" rowspan="2"><p class="yoko2" >氏名</p></td>
+			                </tr>
+			                </thead>
+			                <tbody>
+			                	<tr style="height: 30px;">
+			                    	<td style="text-align: right;">0001</td><td style="text-align: left;">平塚</td>
+								</tr>
+			                    <tr style="height: 30px;">
+			                    	<td style="text-align: right;">0002</td><td style="text-align: left;">安藤</td>
+								</tr>
+								<tr style="height: 30px;">
+			                        <td style="text-align: right;">0003</td><td style="text-align: left;">後藤</td>
+								</tr>
+			                    <tr style="height: 30px;">
+			                        <td style="text-align: right;">0004</td><td style="text-align: left;">浜野</td>
+								</tr>
+								<tr style="height: 30px;">
+			                        <td style="text-align: right;">0005</td><td style="text-align: left;">北村</td>
+								</tr>
+								<tfoot>
+								  <tr style="height: 40px;">
+								    <td colspan="2">合計</td>
+			            	      </tr>
+			            	    </tfoot>
+			            	</tbody>
+			        	</table>
+			        </div>
+			        <!-- /ロック部分 -->
+			        <!-- 横スクロール部分 -->
+			        <div class="x_scroll_box">
+			            <table class="dataTable border bordered  data width2500">
+			                <tbody>
+			                  <thead>
+			                	<tr style="height: 48px;">
+			                		<td class="sortable-column" style="text-align:center;">2015/01</td>
+			                    	<td class="sortable-column" style="text-align:center;">2015/02</td>
+			                        <td class="sortable-column" style="text-align:center;">2015/03</td>
+			                        <td class="sortable-column" style="text-align:center;">2015/04</td>
+			                        <td class="sortable-column" style="text-align:center;">2015/05</td>
+			                        <td class="sortable-column" style="text-align:center;">2015/06</td>
+			                        <td class="sortable-column" style="text-align:center;">2015/07</td>
+			                        <td class="sortable-column" style="text-align:center;">2015/08</td>
+			                        <td class="sortable-column" style="text-align:center;">2015/09</td>
+			                        <td class="sortable-column" style="text-align:center;">2015/10</td>
+			                        <td class="sortable-column" style="text-align:center;">2015/11</td>
+			                        <td class="sortable-column" style="text-align:center;">2015/12</td>
+			                        <td class="sortable-column" rowspan="2"><p class="yoko">合計</p></td>
+			                    </tr>
+			                    <tr style="height: 42px;">
+			                        <td class="sortable-column"><p class="yoko">売上金額(円)</p></td>
+		                            <td class="sortable-column"><p class="yoko">売上金額(円)</p></td>
+		                            <td class="sortable-column"><p class="yoko">売上金額(円)</p></td>
+		                            <td class="sortable-column"><p class="yoko">売上金額(円)</p></td>
+		                            <td class="sortable-column"><p class="yoko">売上金額(円)</p></td>
+		                            <td class="sortable-column"><p class="yoko">売上金額(円)</p></td>
+		                            <td class="sortable-column"><p class="yoko">売上金額(円)</p></td>
+		                            <td class="sortable-column"><p class="yoko">売上金額(円)</p></td>
+		                            <td class="sortable-column"><p class="yoko">売上金額(円)</p></td>
+		                            <td class="sortable-column"><p class="yoko">売上金額(円)</p></td>
+		                            <td class="sortable-column"><p class="yoko">売上金額(円)</p></td>
+		                            <td class="sortable-column"><p class="yoko">売上金額(円)</p></td>
+			                      </tr>
+			                  </thead>
+			                  <tr align="right" style="height: 30px;">
+			                    <td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>3,900,000</td>
+			                  </tr>
+			                  <tr align="right" style="height: 30px;">
+			                    <td>200,000</td><td>200,000</td><td>200,000</td><td>200,000</td><td>200,000</td><td>200,000</td><td>200,000</td><td>200,000</td><td>200,000</td><td>200,000</td><td>200,000</td><td>200,000</td><td>2,400,000</td>
+			                  </tr>
+			                  <tr align="right" style="height: 30px;">
+			                    <td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>3,900,000</td>
+			                  </tr>
+			                  <tr align="right" style="height: 30px;">
+			                    <td>400,000</td><td>400,000</td><td>400,000</td><td>400,000</td><td>400,000</td><td>400,000</td><td>400,000</td><td>400,000</td><td>400,000</td><td>400,000</td><td>400,000</td><td>400,000</td><td>4,800,000</td>
+			                  </tr>
+			                  <tr align="right" style="height: 30px;">
+			                    <td>250,000</td><td>250,000</td><td>250,000</td><td>250,000</td><td>250,000</td><td>250,000</td><td>250,000</td><td>250,000</td><td>250,000</td><td>250,000</td><td>250,000</td><td>250,000</td><td>3,000,000</td>
+			                  </tr>
+			                  <tfoot>
+						        <tr style="height: 40px;">
+			                      <td style="text-align:right;">1,450,000</td><td style="text-align:right;">1,450,000</td><td style="text-align:right;">1,450,000</td><td style="text-align:right;">1,450,000</td><td style="text-align:right;">1,450,000</td><td style="text-align:right;">1,450,000</td><td style="text-align:right;">1,450,000</td><td style="text-align:right;">1,450,000</td><td style="text-align:right;">1,450,000</td><td style="text-align:right;">1,450,000</td><td style="text-align:right;">1,450,000</td><td style="text-align:right;">1,450,000</td><td style="text-align:right;">18,000,000</td>
+			                    </tr>
+			                  </tfoot>
+			            </tbody>
+			            </table>
+			        </div>
+				</div>
+            </div>
+          </div>
+      </div>
+    </div>
+</body>
+</html>

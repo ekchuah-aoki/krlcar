@@ -39,17 +39,6 @@
             min-height: 0;
             height: auto;
         }
-        .grid {
-            overflow: hidden;
-        }
-					
-        .right {
-            float: right;
-        }
-        
-        .input-control text {
-            float: left;
-        }
 
         @media screen and (max-width: 800px){
             #cell-sidebar {
@@ -85,188 +74,174 @@
 	    
     </script>
 </head>
-<body class="bg-steel">
+<body>
     <!-- ヘッダー固定 -->
    <div id="Menu_load"></div>
+
     <div class="page-content">
         <div class="flex-grid no-responsive-future" style="height: 100%;">
             <div class="row" style="height: 100%">
                 <div class="cell auto-size padding20 bg-white" id="cell-content">
                     <ul class="breadcrumbs" style="padding:0px;">
-					    <li><h4>ログイン設定</h4></li>
-					</ul>
-					<div class="grid">
-					
+                        <li><h4>ログイン設定・社員一覧</h4></li>
+                    </ul>
                     <hr class="thin bg-grayLighter">
-                    
-						社員名
-						<div class="input-control text" data-length="8" style="width:150px;margin:9px 0px 0px 12px;">
-							<input type="text">
-					    </div>
-					    <div class="right">
-	                    <button class="button primary">検索</button>
-		            </div>
-		            </div>
-		            
+                    <div class="cell colspan5">
+                        <span style="margin-left:10px;">社員名<span>
+                        <div class="input-control text" data-length="8" style="width:150px;">
+                             <input type="text" style="width:250px;margin-left:10px;">
+                        </div>
+                        <div style="float: right; right;display:inline;">
+                             <button class="button primary" style="width:100px; margin:0px 10px 0px 0px">検索</button></div>
+                        </div>
                     <hr class="thin bg-grayLighter">
                     <table class="dataTable border bordered" data-auto-width="false">
                         <thead>
                         <tr>
-                            <td style="width: 20px" class="sortable-column">社員コード</td>
-                            <td class="sortable-column" style="text-align:center;">社員名</td>
-                            <td class="sortable-column" style="text-align:center;">ログインID</td>
-                            <td class="sortable-column" style="text-align:center;">メニューNo</td>
-                            <td class="sortable-column" style="text-align:center;">最終ログイン</td>
-                            <td class="sortable-column" style="text-align:center;">ログイン無効</td>
-                            <td class="sortable-column" style="text-align:center;">詳細</td>
-                            
+                            <td style="width: 20px;text-align: center;" class="sortable-column">社員コード</td>
+                            <td style="width:350px;text-align: center;" class="sortable-column">社員名</td>
+                            <td style="text-align: center;" class="sortable-column">ログインID</td>
+                            <td style="text-align: center;" class="sortable-column">メニューNo</td>
+                            <td style="text-align: center;" class="sortable-column">最終ログイン</td>
+                            <td style="text-align: center;" class="sortable-column">ログイン無効</td>
+                            <td style="text-align: center;" class="sortable-column">詳細</td>
                         </tr>
                         </thead>
                         <tbody>
                         <tr>
-                            <td style="text-align:right;">0000000002</td>
-                            <td>社員Ｂ</td>
-                            <td style="text-align:right;">0000000002</td>
-                            <td style="text-align:right;">0000</td>
-                            <td style="text-align:right;">2016/07/01 17:06:24</td>
+                            <td>0000000001</td>
+                            <td>社員Ａ</td>
+                            <td>ABCDEF0001</td>
+                            <td style="text-align: center;">0000</td>
+                            <td style="text-align: center;">2016/07/01 17:06:24</td>
                             <td align="center">
                                <label class="input-control checkbox small-check no-margin">
                                     <input type="checkbox" checked disabled>
                                     <span class="check"></span>
                                 </label>
                             </td>
-                            <td align="center"><a href="master_loginConfig.html" target="_self">詳細</a></td>
+                            <td align="center" style="padding:0 0;">
+                                <button type="button" style="font-size: 1em; padding:4px 13px;background-color: #2086BF;color: #fff; border-style: none;" onclick="location.href='master_loginConfig.html'">詳細</button>
+                            </td>
                         </tr>
                         <tr>
-                            <td style="text-align:right;">0000000003</td>
-                            <td>社員C</td>
-                            <td style="text-align:right;"></td>
-                            <td style="text-align:right;"></td>
-                            <td style="text-align:right;"></td>
+                            <td>0000000002</td>
+                            <td>社員Ｂ</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
                             <td align="center">
                                <label class="input-control checkbox small-check no-margin">
-                                    <input type="checkbox">
+                                    <input type="checkbox" disabled>
                                     <span class="check"></span>
                                 </label>
                             </td>
-                            <td align="center"><a href="master_loginConfig.html" target="_self">詳細</a></td>
+                            <td align="center" style="padding:0 0;">
+                                <button type="button" style="font-size: 1em; padding:4px 13px;background-color: #2086BF;color: #fff; border-style: none;" onclick="location.href='master_loginConfig.html'">詳細</button>
+                            </td>
                         </tr>
                         <tr>
-                            <td style="text-align:right;">0000000004</td>
-                            <td>社員D</td>
-                            <td style="text-align:right;"></td>
-                            <td style="text-align:right;"></td>
-                            <td style="text-align:right;"></td>
+                            <td>0000000003</td>
+                            <td>社員Ｃ</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
                             <td align="center">
                                <label class="input-control checkbox small-check no-margin">
-                                    <input type="checkbox">
+                                    <input type="checkbox" disabled>
                                     <span class="check"></span>
                                 </label>
                             </td>
-                            <td align="center"><a href="master_loginConfig.html" target="_self">詳細</a></td>
+                            <td align="center" style="padding:0 0;">
+                                <button type="button" style="font-size: 1em; padding:4px 13px;background-color: #2086BF;color: #fff; border-style: none;" onclick="location.href='master_loginConfig.html'">詳細</button>
+                            </td>
                         </tr>
                         <tr>
-                            <td style="text-align:right;">0000000005</td>
-                            <td>社員E</td>
-                            <td style="text-align:right;"></td>
-                            <td style="text-align:right;"></td>
-                            <td style="text-align:right;"></td>
+                            <td>0000000004</td>
+                            <td>社員Ｄ</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
                             <td align="center">
                                <label class="input-control checkbox small-check no-margin">
-                                    <input type="checkbox">
+                                    <input type="checkbox" disabled>
                                     <span class="check"></span>
                                 </label>
                             </td>
-                            <td align="center"><a href="master_loginConfig.html" target="_self">詳細</a></td>
+                            <td align="center" style="padding:0 0;">
+                                <button type="button" style="font-size: 1em; padding:4px 13px;background-color: #2086BF;color: #fff; border-style: none;" onclick="location.href='master_loginConfig.html'">詳細</button>
+                            </td>
                         </tr>
                         <tr>
-                            <td style="text-align:right;">0000000006</td>
-                            <td>社員F</td>
-                            <td style="text-align:right;"></td>
-                            <td style="text-align:right;"></td>
-                            <td style="text-align:right;"></td>
+                            <td>0000000005</td>
+                            <td>社員Ｅ</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
                             <td align="center">
                                <label class="input-control checkbox small-check no-margin">
-                                    <input type="checkbox">
+                                    <input type="checkbox" disabled>
                                     <span class="check"></span>
                                 </label>
                             </td>
-                            <td align="center"><a href="master_loginConfig.html" target="_self">詳細</a></td>
+                            <td align="center" style="padding:0 0;">
+                                <button type="button" style="font-size: 1em; padding:4px 13px;background-color: #2086BF;color: #fff; border-style: none;" onclick="location.href='master_loginConfig.html'">詳細</button>
+                            </td>
                         </tr>
                         <tr>
-                            <td style="text-align:right;">0000000007</td>
-                            <td>社員G</td>
-                            <td style="text-align:right;"></td>
-                            <td style="text-align:right;"></td>
-                            <td style="text-align:right;"></td>
+                            <td>0000000006</td>
+                            <td>社員Ｆ</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
                             <td align="center">
                                <label class="input-control checkbox small-check no-margin">
-                                    <input type="checkbox">
+                                    <input type="checkbox" disabled>
                                     <span class="check"></span>
                                 </label>
                             </td>
-                            <td align="center"><a href="master_loginConfig.html" target="_self">詳細</a></td>
+                            <td align="center" style="padding:0 0;">
+                                <button type="button" style="font-size: 1em; padding:4px 13px;background-color: #2086BF;color: #fff; border-style: none;" onclick="location.href='master_loginConfig.html'">詳細</button>
+                            </td>
                         </tr>
                         <tr>
-                            <td style="text-align:right;">0000000008</td>
-                            <td>社員H</td>
-                            <td style="text-align:right;"></td>
-                            <td style="text-align:right;"></td>
-                            <td style="text-align:right;"></td>
+                            <td>0000000007</td>
+                            <td>社員Ｇ</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
                             <td align="center">
                                <label class="input-control checkbox small-check no-margin">
-                                    <input type="checkbox">
+                                    <input type="checkbox" disabled>
                                     <span class="check"></span>
                                 </label>
                             </td>
-                            <td align="center"><a href="master_loginConfig.html" target="_self">詳細</a></td>
+                            <td align="center" style="padding:0 0;">
+                                <button type="button" style="font-size: 1em; padding:4px 13px;background-color: #2086BF;color: #fff; border-style: none;" onclick="location.href='master_loginConfig.html'">詳細</button>
+                            </td>
                         </tr>
                         <tr>
-                            <td style="text-align:right;">0000000009</td>
-                            <td>社員I</td>
-                            <td style="text-align:right;"></td>
-                            <td style="text-align:right;"></td>
-                            <td style="text-align:right;"></td>
+                            <td>0000000008</td>
+                            <td>社員Ｈ</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
                             <td align="center">
                                <label class="input-control checkbox small-check no-margin">
-                                    <input type="checkbox">
+                                    <input type="checkbox" disabled>
                                     <span class="check"></span>
                                 </label>
                             </td>
-                            <td align="center"><a href="masuter_loginConfig.html" target="_self">詳細</a></td>
+                            <td align="center" style="padding:0 0;">
+                                <button type="button" style="font-size: 1em; padding:4px 13px;background-color: #2086BF;color: #fff; border-style: none;" onclick="location.href='master_loginConfig.html'">詳細</button>
+                            </td>
                         </tr>
                         <tr>
-                            <td style="text-align:right;">0000000010</td>
-                            <td>社員J</td>
-                            <td style="text-align:right;"></td>
-                            <td style="text-align:right;"></td>
-                            <td style="text-align:right;"></td>
-                            <td align="center">
-                               <label class="input-control checkbox small-check no-margin">
-                                    <input type="checkbox">
-                                    <span class="check"></span>
-                                </label>
-                            </td>
-                            <td align="center"><a href="master_loginConfig.html" target="_self">詳細</a></td>
+                            <td colspan="7" style="width: 20px; height:20px;text-align: center;"><span style="color: #2086bf;font-size: small;">1 2</span></td>
                         </tr>
-                        <tr>
-                            <td style="text-align:right;">0000000011</td>
-                            <td>社員K</td>
-                            <td style="text-align:right;"></td>
-                            <td style="text-align:right;"></td>
-                            <td style="text-align:right;"></td>
-                            <td align="center">
-                               <label class="input-control checkbox small-check no-margin">
-                                    <input type="checkbox">
-                                    <span class="check"></span>
-                                </label>
-                            </td>
-                            <td align="center"><a href="master_loginConfig.html" target="_self">詳細</a></td>
-                        </tr>
-                        
-                        
                         </tbody>
                     </table>
+                    <p style="height:40px"></p>
                 </div>
             </div>
         </div>
