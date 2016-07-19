@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -10,7 +10,7 @@
 
     <link rel='shortcut icon' type='image/x-icon' href='../favicon.ico' />
 
-    <title>Login form :: Metro UI CSS - The front-end framework for developing projects on the web in Windows Metro Style</title>
+    <title>Login</title>
 
     <link href="../css/metro.css" rel="stylesheet">
     <link href="../css/metro-icons.css" rel="stylesheet">
@@ -19,6 +19,9 @@
     <script src="../js/jquery-2.1.3.min.js"></script>
     <script src="../js/metro.js"></script>
  
+    <link type="text/css" rel="stylesheet" href="../css/jquery-ui.min.css" />
+    <script type="text/javascript" src="../js/jquery.ui.1.9.2.js"></script>
+    
     <style>
         .login-form {
             width: 25rem;
@@ -33,47 +36,145 @@
             -webkit-transform: scale(.8);
             transform: scale(.8);
         }
+        
+        .login input[type="text"] , .login [type="Password"] {
+            font-size:12px;
+            color:#999;
+            background-color: #FFF;
+            border:none;
+            border-bottom:2px solid #444;
+            -webkit-appearance:none;
+            outline: 0;
+            margin:0 4px 3px;
+            vertical-align: middle;
+            padding: 6px 5px;
+            border-radius: 0px;
+            -moz-border-radius: 0px;
+            -webkit-border-radius: 0px;
+            box-shadow: none;
+            width:160px;
+        }
+        
+        .login input[type="text"]:focus, .login [type="button"]:focus, .login [type="Password"]:focus {
+            box-shadow:none;
+            background-color: #FFF;
+            margin:3px 4px 0;
+            border:none;
+            border-bottom:2px solid #444;
+        }
+        
+        .login [type="submit"] { 
+            font-size:12px; color:#FFF;
+            background-color: #1C3091;
+            border:none; -webkit-appearance:none;
+            outline: 0;
+            margin:0 4px 3px;
+            vertical-align: middle;
+            padding: 6px 5px;
+            border-radius: 0px;
+            -moz-border-radius: 0px;
+            -webkit-border-radius: 0px;
+            box-shadow: 0 3px #DDD;
+            width:130px;
+            height:30px;
+        }
     </style>
 
     <script>
-        $(function(){
-            var form = $(".login-form");
+        function dialog(message) {
+        
+            $("#PageLoadMessage").text(message);
+        
+            $("#dialog").dialog({
+               modal: true,
+               autoOpen: true,
+               closeOnEscape: false,
+               buttons: {
+                   "OK": function () {
+                       $('#prdc1000_LG_ID').focus()
+                       $(this).dialog('close');
+                   }
+               },
+               width: 420,
+               height: 320,
+               resizable: false,
+               show: "drop",
+               open: function (event) { $(".ui-dialog-titlebar-close").hide(); },
+               close: function () {
+                   $("#PageLoadMessage").empty();
+                   if ($('#company_login').val() == "")
+                     $('#company_login').focus().select();
+                   else if ($('#user_login').val() == "")
+                     $('#company_login').focus().select();
+                   else if ($('#user_password').val() == "")
+                     $('#user_password').focus().select();
+               }
+           });
+        }
 
-            form.css({
-                opacity: 1,
-                "-webkit-transform": "scale(1)",
-                "transform": "scale(1)",
-                "-webkit-transition": ".5s",
-                "transition": ".5s"
-            });
+        $(function(){
+           $('#user_password').focus();
+
+           $('#signin').click(function(e) {
+                if ($('#company_login').val() == "") {
+                   dialog("会社コードを入力して下さい。");
+                   return false;
+                }
+                if ($('#user_login').val() == "") {
+                   dialog("ユーザーＩＤを入力して下さい。");
+                   return false;
+                }
+                if ($('#user_password').val() == "") {
+                   dialog("パスワードを入力して下さい。");
+                   return false;
+                }
+                return true;
+           });
         });
     </script>
 </head>
-<body class="bg-darkTeal">
-    <div class="login-form padding20 block-shadow">
+
+<body style="height: 450px;">
+    <div class="login padding20" style="margin: 120px auto 0px; border: 5px solid rgb(28, 48, 145); border-image: none; width: 330px; height: 400px;">
         <form method="post" action="home_notice.html">
-            <h1 class="text-light">ユーザーログイン</h1>
-            <hr class="thin"/>
-            <br />
-            <div class="input-control text full-size" data-role="input">
-                <label for="user_login">ユーザー名：</label>
-                <input type="text" name="user_login" id="user_login" placeholder="chosiki@gmail.com">
-                <button class="button helper-button clear"><span class="mif-cross"></span></button>
+            <div style="text-align: center;">
+               <img alt="" style="width:180px;" src="../img/logo.png" />
             </div>
-            <br />
-            <br />
-            <div class="input-control password full-size" data-role="input">
-                <label for="user_password">パスワード：</label>
+            <div style="text-align: center; color: rgb(128, 128, 128); font-size: 10px; margin-top: 10px;">
+               <span>produced by KR LINE Inc.</span>
+            </div>
+            <div style="text-align: center; color: rgba(82, 82, 82, 1); font-size: 20px; margin-top: 10px;">
+               <span>Login to your account</span>
+            </div>
+            <div class="input-control text full-size" data-role="input" style="margin-top:30px;text-align: center;">
+                <input type="text" name="company_login" id="company_login" placeholder="company code" value="00001">
+            </div>
+            <div class="input-control text full-size" data-role="input" style="margin-top:20px;text-align: center;">
+                <input type="text" name="user_login" id="user_login" placeholder="user id" value="ekchuah">
+            </div>
+            <div class="input-control full-size" data-role="input" style="margin-top:20px;text-align: center;">
                 <input type="password" name="user_password" id="user_password" placeholder="password">
-                <button class="button helper-button reveal"><span class="mif-looks"></span></button>
             </div>
-            <br/>
-            <br/>
-            <div class="form-actions">
-                <button type="submit" class="button primary">ログイン</button>
-                <button type="button" class="button link">取消</button>
+            <div class="form-actions" style="margin-top:30px;text-align: center;">
+                <button type="submit" id="signin">Sign In</button>
             </div>
         </form>
+    </div>
+
+    <div id="dialog" title="確認" style="display:none;">
+        <table style="text-align:center;">
+            <tr>
+                <td></td>
+            </tr>
+            <tr>
+                <td style="text-align:center">
+                    <p id="PageLoadMessage"></p>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+            </tr>
+        </table>
     </div>
 </body>
 </html>

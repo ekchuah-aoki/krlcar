@@ -29,7 +29,7 @@
 			height: 100%;
 		}
 		body {
-			font-size:10pt;
+			font-size:9pt;
 		}
 		.page-content {
 			padding-top: 3.125rem;
@@ -137,7 +137,6 @@
 					</ul>
 					<div class="grid">
 					<hr class="thin bg-grayLighter">
-					
 						<div class="cell colspan5">
 						    <div  class="align-left" data-role="group" data-group-type="one-state">
 							  <button id="whiteGreen-toggle" class="button success">委託用（緑）日報</button>
@@ -171,8 +170,8 @@
 								</label>
 							    </span>
 								<div class="right">
-									<button class="button warning" onclick="pushMessage('warning')">キャンセル</button>
-									<button class="button success" onclick="pushMessage('info')">保存</button>
+									<button class="button warning" onclick="pushMessage('warning')" style="width:150px;">キャンセル</button>
+									<button class="button success" onclick="pushMessage('info')" style="width:100px;">保存</button>
 								</div>
 								</div>
 							</div>
@@ -203,13 +202,9 @@
 						<tbody>
 							<tr>
 								<td>
-									<div class="input-control select" style="width:90px;">
-									<select dir="rtl">
-										<option>4956</option>
-										<option>6308</option>
-										<option>5468</option>
-									</select>
-									</div>
+									<div class="input-control text" style="width:100px;">
+								    <input type="text">
+							    </div>
 								</td>
 								<td>大型</td>
 								<td>15ｔセーフティ</td>
@@ -367,33 +362,33 @@
 								<td><div class="input-control"><input type="text"></div></td>
 								<td><div class="input-control"><input type="text"></div></td>
 								<td>
-									<div class="input-control select" style="width:90px;">
-										<select><option></option><option>山口　英太</option><option>相澤　武彦</option><option>七海　和彦</option><option>渡辺　清</option></select>
+									<div class="input-control select" style="width:80px;">
+										<select><option></option><option>山口英太</option><option>相澤武彦</option><option>七海和彦</option><option>渡辺清</option></select>
 									</div>
 								</td>
 								<td>
-									<div class="input-control select" style="width:90px;">
-										<select><option></option><option>山口　英太</option><option>相澤　武彦</option><option>七海　和彦</option><option>渡辺　清</option></select>
+									<div class="input-control select" style="width:80px;">
+										<select><option></option><option>山口英太</option><option>相澤武彦</option><option>七海和彦</option><option>渡辺清</option></select>
 									</div>
 								</td>
 								<td>
-									<div class="input-control select" style="width:90px;">
-										<select><option></option><option>山口　英太</option><option>相澤　武彦</option><option>七海　和彦</option><option>渡辺　清</option></select>
+									<div class="input-control select" style="width:80px;">
+										<select><option></option><option>山口英太</option><option>相澤武彦</option><option>七海和彦</option><option>渡辺清</option></select>
 									</div>
 								</td>
 								<td>
-									<div class="input-control select" style="width:90px;">
-										<select><option></option><option>山口　英太</option><option>相澤　武彦</option><option>七海　和彦</option><option>渡辺　清</option></select>
+									<div class="input-control select" style="width:80px;">
+										<select><option></option><option>山口　英太</option><option>相澤武彦</option><option>七海和彦</option><option>渡辺清</option></select>
 									</div>
 								</td>
 								<td>
-									<div class="input-control select" style="width:90px;">
-										<select><option></option><option>山口　英太</option><option>相澤　武彦</option><option>七海　和彦</option><option>渡辺　清</option></select>
+									<div class="input-control select" style="width:80px;">
+										<select><option></option><option>山口英太</option><option>相澤武彦</option><option>七海和彦</option><option>渡辺清</option></select>
 									</div>
 								</td>
 								<td>
-									<div class="input-control select" style="width:90px;">
-										<select><option></option><option>山口　英太</option><option>相澤　武彦</option><option>七海　和彦</option><option>渡辺　清</option></select>
+									<div class="input-control select" style="width:80px;">
+										<select><option></option><option>山口英太</option><option>相澤武彦</option><option>七海和彦</option><option>渡辺清</option></select>
 									</div>
 								</td>
 							</tr>
@@ -408,7 +403,7 @@
 							<td style="text-align:center;">トン数・<br/>往復(km)</td>
 							<td class="clear" style="text-align:center;">
 							    <span class="both">品名・個数</span>
-							    <div class="right"><button class="button success goods_list1_add">追加</button></div>
+							    <div class="right"><button class="button success goods_list1_add"style="width:100px;">追加</button></div>
 							</td>
 						</tr>
 						</thead>
@@ -477,7 +472,7 @@
 								    <tr class="goods_list1_var">
 								      <td>品名</td><td><input type="text" name="goods_list1_name_0"></td>
 								      <td>個数</td><td><input type="text" name="goods_list1_mail_0" style="text-align:right;"></td>
-								      <td class="del_01" style="display: table-cell;"><button class="button goods_list1_del alert">削除</button></td>
+								      <td class="del_01" style="display: table-cell;"><button class="button goods_list1_del alert"style="width:100px;">削除</button></td>
 								    </tr>
 								  </tbody>
 								</table>
@@ -677,7 +672,10 @@
 							<td style="text-align:center;">物品受領書</td>
 							<td style="text-align:center;">得意先</td>
 							<td style="text-align:center;">トン数・<br/>往復(km)</td>
-							<td style="text-align:center;">品名・個数<button style="float:right;" class="button success goods_list2_add">追加</button></td>
+							<td class="clear" style="text-align:center;">
+							    <span class="both">品名・個数</span>
+							    <div class="right"><button class="button success goods_list2_add"style="width:100px;">追加</button></div>
+							</td>
 						</tr>
 						</thead>
 						<tbody style="font-size:13px;">
@@ -745,7 +743,7 @@
 								    <tr class="goods_list2_var">
 								      <td>品名</td><td><input type="text" name="goods_list2_name_0" style="text-align:right;"></td>
 								      <td>個数</td><td><input type="text" name="goods_list2_mail_0" style="text-align:right;"></td>
-								      <td class="del_02" style="display: table-cell;"><button class="button goods_list2_del alert">削除</button></td>
+								      <td class="del_02" style="display: table-cell;"><button class="button goods_list2_del alert" style="width:100px;">削除</button></td>
 								    </tr>
 								  </tbody>
 								</table>
