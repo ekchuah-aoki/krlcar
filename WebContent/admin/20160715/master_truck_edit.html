@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Metro, a sleek, intuitive, and powerful framework for faster and easier web development for Windows Metro Style.">
+    <meta name="keywords" content="HTML, CSS, JS, JavaScript, framework, metro, front-end, frontend, web development">
+    <meta name="author" content="Sergey Pimenov and Metro UI CSS contributors">
+
+    <link rel='shortcut icon' type='image/x-icon' href='../favicon.ico' />
+
+    <title>株式会社ケー・アールライン</title>
+
+    <link href="../css/metro.css" rel="stylesheet">
+    <link href="../css/metro-icons.css" rel="stylesheet">
+    <link href="../css/metro-responsive.css" rel="stylesheet">
+
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/jquery.dataTables.min.js"></script>
+
+    <script src="../js/metro.js"></script>
+    
+    <script src="../js/Menu.js"></script>
+
+    <style>
+        html, body {
+            height: 100%;
+        }
+        body {
+        }
+        .page-content {
+            padding-top: 3.125rem;
+            min-height: 100%;
+            height: 100%;
+        }
+        .table .input-control.checkbox {
+            line-height: 1;
+            min-height: 0;
+            height: auto;
+        }
+
+        @media screen and (max-width: 800px){
+            #cell-sidebar {
+                flex-basis: 52px;
+            }
+            #cell-content {
+                flex-basis: calc(100% - 52px);
+            }
+        }
+    </style>
+
+    <script>
+        function pushMessage(t){
+            var mes = 'Info|Implement independently';
+            $.Notify({
+                caption: mes.split("|")[0],
+                content: mes.split("|")[1],
+                type: t
+            });
+        }
+        
+        function showDialog(id) {
+            var dialog = $(id).data('dialog');
+            dialog.open();
+        }
+
+		$(function(){
+	        $("#datepicker1").datepicker();
+	        $("#datepicker").datepicker();
+	        $("#datepicker3").datepicker();
+	        
+	    });
+	    
+    </script>
+</head>
+<body class="bg-steel">
+
+    <!-- ヘッダー固定 -->
+   <div id="Menu_load"></div>
+
+    <div class="page-content">
+        <div class="flex-grid no-responsive-future" style="height: 100%;">
+            <div class="row" style="height: 100%">
+                
+                <div class="cell auto-size padding20 bg-white" id="cell-content">
+                    <ul class="breadcrumbs" style="padding:0px;">
+					    <li><h4>車両</h4></li>
+					</ul>
+					
+					<div class="grid">
+					
+                    <hr class="thin bg-grayLighter">
+                    
+					<div class="align-right">
+                    <button class="button alert" onclick="pushMessage('alert')">削除</button>
+                    <button class="button success" onclick="window.open('master_truck_add.html', '_self')">登録</button>
+					</div>
+					</div>
+					
+                    <hr class="thin bg-grayLighter">
+                    
+                    <table class="dataTable border bordered" data-auto-width="false">
+                        <thead>
+                        <tr>
+                            <td style="width: 60px; text-align:center;">削除</td>
+                            <td class="sortable-column" style="text-align:center;">車番</td>
+                            <td class="sortable-column" style="text-align:center;">管理番号</td>
+                            <td class="sortable-column" style="text-align:center;">車種</td>
+                            <td class="sortable-column" style="text-align:center;">型式</td>
+                            <td class="sortable-column" style="text-align:center;">登録年月日</td>
+                            <td class="sortable-column" style="text-align:center;">走行距離</td>
+                            <td class="sortable-column" style="text-align:center;">直近3カ月点検日</td>
+                            <td class="sortable-column" style="text-align:center;">拠点</td>
+                            <td class="sortable-column" style="text-align:center;">自賠責保険番号</td>
+                            <td class="sortable-column" style="text-align:center;">任意保険番号</td>
+                            <td class="sortable-column" style="text-align:center;">詳細</td>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td style="text-align:center;">
+                                <label class="input-control checkbox small-check no-margin">
+                                    <input type="checkbox">
+                                    <span class="check"></span>
+                                </label>
+                            </td>
+                            <td style="text-align:right;">A111</td>
+                            <td style="text-align:right;">K001</td>
+                            <td>大型</td>
+                            <td>15tウイング</td>
+                            <td style="text-align:right;">2015/12/1</td>
+                            <td style="text-align:right;">50000km</td>
+                            <td style="text-align:right;">2016/09/01</td>
+                            <td>神奈川</td>
+                            <td style="text-align:right;"><a href="../img/sample_hoken01.jpg" target="_blank">GL6555411-31</a></td>
+                            <td style="text-align:right;"><a href="../img/sample_hoken01.jpg" target="_blank">N123456-11</a></td>
+                            <td style="text-align:center;"><a href="master_truck_add.html" target="_self">詳細</a></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:center;">
+                                <label class="input-control checkbox small-check no-margin">
+                                    <input type="checkbox">
+                                    <span class="check"></span>
+                                </label>
+                            </td>
+                            <td style="text-align:right;">A112</td>
+                            <td style="text-align:right;">O002</td>
+                            <td>中型</td>
+                            <td>8ｔユニック</td>
+                            <td style="text-align:right;">2015/12/3</td>
+                            <td style="text-align:right;">50000km</td>
+                            <td style="text-align:right;">2016/03/10</td>
+                            <td>大阪</td>
+                            <td style="text-align:right;"><a href="../img/sample_hoken01.jpg" target="_blank">GL6555411-32</a></td>
+                            <td style="text-align:right;"><a href="../img/sample_hoken01.jpg" target="_blank">N123456-12</a></td>
+                            <td style="text-align:center;"><a href="master_truck_add.html" target="_self">詳細</a></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:center;">
+                                <label class="input-control checkbox small-check no-margin">
+                                    <input type="checkbox">
+                                    <span class="check"></span>
+                                </label>
+                            </td>
+                            <td style="text-align:right;">A113</td>
+                            <td style="text-align:right;">Y001</td>
+                            <td>小型</td>
+                            <td>4ｔウイング</td>
+                            <td style="text-align:right;">2015/12/10</td>
+                            <td style="text-align:right;">50000km</td>
+                            <td style="text-align:right;">2016/02/10</td>
+                            <td>山形</td>
+                            <td style="text-align:right;"><a href="../img/sample_hoken01.jpg" target="_blank">GL6555411-33</a></td>
+                            <td style="text-align:right;"><a href="../img/sample_hoken01.jpg" target="_blank">N123456-13</a></td>
+                            <td style="text-align:center;"><a href="master_truck_add.html" target="_self">詳細</a></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

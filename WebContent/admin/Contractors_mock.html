@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -61,54 +61,51 @@
     </style>
 
     <script>
-	    
+        
     </script>
 </head>
 <body class="bg-steel">
+    
      <!-- ヘッダー固定 -->
    <div id="Menu_load"></div>
+
     <div class="page-content">
         <div class="flex-grid no-responsive-future" style="height: 100%;">
             <div class="row" style="height: 100%">
                 <div class="cell auto-size padding20 bg-white" id="cell-content">
                     <ul class="breadcrumbs" style="padding:0px;">
-					    <li><h4><a href="#">委託先(外注)</a></h4></li>
-					</ul>
-					<div class="grid">
+                        <li><h4>委託先(外注)一覧</h4></li>
+                    </ul>
                     <hr class="thin bg-grayLighter">
-                    
-					<div class="cell colspan5">
-						委託先コード
-						<div class="input-control text" data-length="8" style="width:150px;margin:10px 0px 0px 13px;">
-					      <input type="text" style="text-align:right;">
-					    </div>
-					    委託先名
-						<div class="input-control text" data-length="8" style="width:250px;margin:10px 0px 0px 13px;">
-					      <input type="text">
-					    </div>
-					    
-					    <div class="right">
-					      <button class="button alert" onclick="pushMessage('alert')">削除</button>
-	                      <button class="button primary">検索</button>
-	                      <a href="./master_Contractors_add.html" target="_self"><button class="button success" onclick="#">登録</button></a>
+                    <div class="cell colspan5">
+                        <span style="margin:10px 0px 0px 10px;">委託先コード</span>
+                        <div class="input-control text" data-length="8" style="width:100px;margin:5px 0px 0px 5px;">
+                          <input type="text" style="width:100px;">
                         </div>
-		            </div>
-					</div>
+                        <span style="margin-left:10px;">委託先名</span>
+                        <div class="input-control text" data-length="8" style="width:100px;margin:5px 0px 0px 5px;">
+                          <input type="text" style="width:230px;">
+                        </div>
+                        <div class="right">
+                          <button type="button" class="button alert" style="width:100px;">削除</button>
+                          <button type="button" class="button primary" style="width:100px;">検索</button>
+                          <button type="button" style="width:100px; font-size: 1em; padding:5px 13px;background-color: #2086BF;color: #fff; border-style: none;" onclick="location.href='master_Contractors_add.html'">登録</button>
+                        </div>
+                    </div>
                     <hr class="thin bg-grayLighter">
-                    
-                    <table class="dataTable border bordered" data-auto-width="false">
+                    <table class="dataTable border bordered" data-auto-width="false" style="font-size: small;">
                         <thead>
                         <tr>
-                            <td class="sortable-column" style="text-align:center;">削除</td>
-                            <td class="sortable-column" style="text-align:center;">委託先コード</td>
-                            <td class="sortable-column" style="text-align:center;">委託先名</td>
-                            <td class="sortable-column" style="text-align:center;">部署</td>
-                            <td class="sortable-column" style="text-align:center;">課名</td>
-                            <td class="sortable-column" style="text-align:center;">郵便番号</td>
-                            <td class="sortable-column" style="text-align:center;">住所</td>
-                            <td class="sortable-column" style="text-align:center;">電話番号</td>
-                            <td class="sortable-column" style="text-align:center;">FAX</td>
-                            <td class="sortable-column" style="text-align:center;">詳細</td>
+                            <td style="width: 50px;text-align: center;" class="sortable-column">削除</td>
+                            <td style="width:105px;text-align: center;" class="sortable-column">委託先コード</td>
+                            <td style="text-align: center;" class="sortable-column">委託先名</td>
+                            <td style="text-align: center;" class="sortable-column">部署</td>
+                            <td style="text-align: center;" class="sortable-column">課名</td>
+                            <td style="width: 80px;text-align: center;" class="sortable-column">郵便番号</td>
+                            <td style="text-align: center;" class="sortable-column">住所</td>
+                            <td style="width: 110px;text-align: center;" class="sortable-column">電話番号</td>
+                            <td style="width: 110px;text-align: center;" class="sortable-column">FAX</td>
+                            <td style="text-align: center;" class="sortable-column">詳細</td>
                         </tr>
                         </thead>
                         <tbody>
@@ -120,18 +117,20 @@
                                     <span class="check"></span>
                                 </label>
                             </td>
-                            <td style="text-align:right;">1234</td>
+                            <td>1234</td>
                             <td>クレベ運送株式会社</td>
                             <td></td>
                             <td></td>
-                            <td style="text-align:right;">538-0043</td>
+                            <td>538-0043</td>
                             <td>大阪府大阪市鶴見区今津南３丁目２-４</td>
-                            <td style="text-align:right;">06-6962-1581</td>
-                            <td style="text-align:right;">06-6968-1651</td>
-                            <td align="center"><a href="#" target="_self">詳細</a></td>
-                       </tr>
-					</tbody>
-					</table>
+                            <td>06-6962-1581</td>
+                            <td>06-6968-1651</td>
+                            <td align="center">
+                                 <button type="button" style="font-size: 1em; padding:4px 13px;background-color: #2086BF;color: #fff; border-style: none;" onclick="location.href='master_Contractors_add.html'">詳細</button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>

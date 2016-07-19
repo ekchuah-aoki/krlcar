@@ -39,12 +39,10 @@
             min-height: 0;
             height: auto;
         }
-        
         input.checkbox {
             width: 24px;
             height: 24px;
         }
-        
          .size {
              font-size: 18px;
              margin: 0px 0 15px 0px; 
@@ -59,7 +57,6 @@
             }
         }
     </style>
-
     <script>
         function pushMessage(t){
             var mes = 'Info|Implement independently';
@@ -69,103 +66,98 @@
                 type: t
             });
         }
-        
         function showDialog(id) {
             var dialog = $(id).data('dialog');
             dialog.open();
         }
-
-		$(function(){
-	        $("#datepicker").datepicker();
-	        $("#datepicker_inspect").datepicker();
-	        
-	    });
+        $(function(){
+            $("#datepicker").datepicker();
+            $("#datepicker_inspect").datepicker();
+        });
+        $(function(){
+            $('.sidebar').on('click', 'li', function(){
+                if (!$(this).hasClass('active')) {
+                    $('.sidebar li').removeClass('active');
+                    $(this).addClass('active');
+                }
+            })
+        })
     </script>
 </head>
 <body>
-
-     <!-- ヘッダー固定 -->
-   <div id="Menu_load"></div>
+    <!-- ヘッダー固定 -->
+    <div id="Menu_load"></div>
 
     <div class="page-content">
         <div class="flex-grid no-responsive-future" style="height: 100%;">
             <div class="row">
-                  <div class="cell auto-size padding20 bg-white" id="cell-content">
-					<ul class="breadcrumbs" style="padding:0px;">
-						<li><h4>ログイン設定</h4></li>
-					</ul>
-					<div class="grid">
-                    <hr class="thin bg-grayLighter">
-					<div class="align-right">
-					<button class="button warning" onclick="pushMessage('warning')">キャンセル</button>
-                    <button class="button success" onclick="pushMessage('alert')">保存</button>
-                    </div>
-					</div>
-                    <hr class="thin bg-grayLighter">
-
-		            <div class="grid">
-		                <div class="row cells12">
-							<div class="cell colspan2">
-		                        社員コード
-	                            <div class="input-control text full-size">
-								    <input type="text" style="text-align:right;">
-								</div>
-		                    </div>
-							<div class="cell colspan2">
-		                        社員名
-	                            <div class="input-control text full-size">
-								    <input type="text">
-								</div>
-							</div>
-							
-							
-	                    </div>
-		                <div class="row cells12">
-							<div class="cell colspan2">
-		                        ログインID
-	                            <div class="input-control text full-size">
-								    <input type="text">
-								</div>
-		                    </div>
-		                    
-		                    <div class="cell colspan2">
-		                        パスワード
-	                            <div class="input-control text full-size">
-								    <input type="text">
-								</div>
-		                    </div>
-		                    
-		                    <div class="cell colspan2">
-		                        メニューNo
-	                            <div class="input-control text full-size">
-								    <input type="text">
-								</div>
-		                    </div>
-							
-							<div class="cell colspan3">
-	                            ログイン無効
-	                            <div class="checkbox">
-		                          <label class="input-control checkbox small-check no-margin">
-                                    <input type="checkbox" class="checkbox">
-                                    <span class="check"></span>
-                                  </label>
+                <div class="cell auto-size padding20 bg-white" id="cell-content">
+                     <ul class="breadcrumbs" style="padding:0px;">
+                     <li><h4>ログイン設定</h4></li>
+                     </ul>
+                     <hr class="thin bg-grayLighter">
+                     <div class="align-right">
+                         <button class="button success" style="width:100px;">保存</button>
+                         <button class="button alert"   style="width:100px;" onclick="location.href='master_loginConfig_user.html'">戻る</button>
+                     </div>
+                     <hr class="thin bg-grayLighter">
+                     <div class="grid">
+                         <div class="row cells12">
+                             <div class="cell colspan2">
+                             社員コード
+                                 <div class="input-control text full-size">
+                                 <input type="text"  style="width:150px;" value="0000000001">
+                                 </div>
+                             </div>
+                             <div class="cell colspan2">
+                             社員名
+                                 <div class="input-control text full-size">
+                                 <input type="text"  style="width:280px;" value="社員Ａ">
+                                 </div>
+                             </div>
+                         </div>
+                         <div class="row cells12">
+                             <div class="cell colspan2">
+                             ログインID
+                                 <div class="input-control text full-size">
+                                 <input type="text" style="width:150px;" value="ABCDEF0001">
+                                 </div>
+                             </div>
+                             <div class="cell colspan2">
+                             パスワード
+                                 <div class="input-control text full-size">
+                                 <input type="text"  style="width:150px;" value="ABCDEF0001">
+                                 </div>
+                             </div>
+                             <div class="cell colspan">
+                             メニューNo
+                                 <div class="input-control text full-size">
+                                 <select name="MenuNo" style="width:100px;">
+                                    <option value="0000">0000</option>
+                                    <option value="0001">0001</option>
+                                    <option value="0002">0002</option>
+                                 </select>
+                                 </div>
+                             </div>
+                             <div class="cell colspan3">
+                             ログイン無効
+                                 <div class="checkbox">
+                                    <label class="input-control checkbox small-check no-margin">
+                                        <input type="checkbox" class="checkbox" checked="checked">
+                                        <span class="check"></span>
+                                    </label>
+                                 </div>
+                             </div>
+                         </div>
+                         <div class="row cells12">
+                            <div class="cell colspan2">
+                                備考
+                                <div class="input-control text full-size">
+                                    <input type="text" style="width:500px;">
                                 </div>
-		                    </div>
-	                    </div>
-
-		                <div class="row cells12">
-							<div class="cell colspan2">
-		                        備考
-	                            <div class="input-control text full-size">
-								    <input type="text">
-								</div>
-		                    </div>
-							
-							
-	                    </div>
-
-			        </div>
-			        
+                           </div>
+                       </div>
+                    </div>
                 </div>
             </div>
         </div>

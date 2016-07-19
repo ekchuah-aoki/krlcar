@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -18,11 +18,14 @@
 
     <script src="../js/jquery-2.1.3.min.js"></script>
     <script src="../js/jquery.dataTables.min.js"></script>
-
+    
     <script src="../js/metro.js"></script>
     
     <script src="../js/Menu.js"></script>
 
+    <link type="text/css" rel="stylesheet" href="../css/jquery-ui.min.css" />
+    <script type="text/javascript" src="../js/jquery.ui.1.9.2.js"></script>
+  
     <style>
         html, body {
             height: 100%;
@@ -39,15 +42,7 @@
             min-height: 0;
             height: auto;
         }
-        .cell colspan5 {
-            overflow: hidden;
-        }		
-        .right {
-            float: right;
-        }
-        .input-control text {
-            float: left;
-        }
+
         @media screen and (max-width: 800px){
             #cell-sidebar {
                 flex-basis: 52px;
@@ -67,178 +62,207 @@
                 type: t
             });
         }
+
+        $(function(){
+            $("#btn_action").click(function() {
+                $("#PRDC1060").dialog({
+                    modal: true,
+                    closeOnEscape: false,
+                    width: 530,
+                    height: 120,
+                    show: { effect: "clip", complete: function () { $("#PRDC1060_Nendo").focus(); } },
+                    open: function (event, ui) {
+                       $(this).parent().find(".ui-dialog-titlebar-close").show();
+                    }
+                });
+           });
+        });
     </script>
-    <!-- カレンダー -->
-    <script>
-	    $(function(){
-	        $("#datepicker").datepicker();
-	    });
-	</script>
 </head>
-<body class="bg-steel">
+<body>
     
     <!-- ヘッダー固定 -->
-   <div id="Menu_load"></div>
+    <div id="Menu_load"></div>
 
     <div class="page-content">
         <div class="flex-grid no-responsive-future" style="height: 100%;">
             <div class="row">
                 <div class="cell auto-size padding20 bg-white" id="cell-content">
-					<ul class="breadcrumbs" style="padding:0px;">
-					    <li><h4>祝日</h4></li>
-					</ul>
-					<div class="grid">
+                    <ul class="breadcrumbs" style="padding:0px;">
+                        <li><h4>祝日設定</h4></li>
+                    </ul>
                     <hr class="thin bg-grayLighter">
-                    <div class="cell colspan5">
-                                日付
-								<div class="input-control text" id="datepicker" style="width:160px;">
-								    <input type="text">
-								    <button class="button"><span class="mif-calendar"></span></button>
-								</div>
-								名称
-								<input type="text" class="text" value=""style="margin:0px">
-		                   　
-				                <div class="right">
-				                    <button class="button primary" onclick="pushMessage('primary')">検索</button>
-				                    <button class="button success" onclick="pushMessage('success')">保存</button>
-				                </div>
-				                </div>
-				            </div>
+                    <div class="grid">
+                        <div class="row cells12" style="float: right; display:inline;">
+                            <div class="cell colspan5">
+                                <div class="input-control select" style="width:60px;">
+                                    <input type="text" style="width: 60px;" value="2016">
+                                </div>
+                                年
+                            </div>
+                            <div style="width: auto; float: right; display:inline; margin-right:10px;">
+                                <button class="button primary" style="width:100px;">検索</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid">
+                        <div class="row cells12" style="float: right; display:inline;">
+                            <div class="cell colspan5">
+                                <div class="input-control select" style="width:50px;">
+                                    <input type="text" style="width: 45px;" value="">
+                                 </div>
+                                 月
+                                 <div class="input-control select" style="width:50px;">
+                                    <input type="text" style="width: 45px;" value="">
+                                 </div>
+                                 日
+                                <span style="margin-left:10px;">名称</span>
+                                <div class="input-control select" style="width:50px;">
+                                    <input type="text" style="width:200px; height:33px;margin-bottom:3px;" value="">
+                                </div>
+                            </div>
+                            <div style="width: auto; float: right; display:inline; margin-right:10px;">
+                                <button class="button primary" style="width:100px;">登録</button>
+                                <button class="button alert" style="width:100px;">削除</button>
+                                <button class="button primary" id="btn_action" style="width:100px;">複写</button>
+                            </div>    
+                        </div>
+                    </div>
                     <hr class="thin bg-grayLighter">
-					
-                    <table class="dataTable border bordered" data-auto-width="false" style="width:60%; margin:0 auto;">
+                    <table class="dataTable border bordered" data-auto-width="false" style="width:40%; margin:0 auto; font-size: small;">
                         <thead>
                         <tr>
-                        	<td class="sortable-column" style="width:40%;text-align:center;">休　日　表</td>
-                            <td class="sortable-column"style="text-align:center;">備　　考</td>
+                            <td class="sortable-column" style="width: 50px;text-align:center;">削除</td>
+                            <td class="sortable-column" style="width:100px;text-align:center;">日付</td>
+                            <td class="sortable-column" style="text-align:center;">名称</td>
                         </tr>
-                        
                         </thead>
                         <tbody>
                         <tr>
-                            <td style="width:20%;text-align: center;height:20px;">1月1日</td>
-                            <td style="text-align: left;height:20px;">元日</td>
-						</tr>
-						<tr>
-                            <td style="width:20%;text-align: center;height:20px;"></td>
-                            <td style="text-align: left;height:20px;"></td>
-						</tr>
-						<tr>
-                            <td style="width:20%;text-align: center;height:20px;"></td>
-                            <td style="text-align: left;height:20px;"></td>
-						</tr>
-						<tr>
-                            <td style="width:20%;text-align: center;height:20px;"></td>
-                            <td style="text-align: left;height:20px;"></td>
-						</tr>
-						<tr>
-                            <td style="width:20%;text-align: center;height:20px;"></td>
-                            <td style="text-align: left;height:20px;"></td>
-						</tr>
-						<tr>
-                            <td style="width:20%;text-align: center;height:20px;"></td>
-                            <td style="text-align: left;height:20px;"></td>
-						</tr>
-						<tr>
-                            <td style="width:20%;text-align: center;height:20px;"></td>
-                            <td style="text-align: left;height:20px;"></td>
-						</tr>
-						<tr>
-                            <td style="width:20%;text-align: center;height:20px;"></td>
-                            <td style="text-align: left;height:20px;"></td>
-						</tr>
-						<tr>
-                            <td style="width:20%;text-align: center;height:20px;"></td>
-                            <td style="text-align: left;height:20px;"></td>
-						</tr>
-						<tr>
-                            <td style="width:20%;text-align: center;height:20px;"></td>
-                            <td style="text-align: left;height:20px;"></td>
-						</tr>
-						<tr>
-                            <td style="width:20%;text-align: center;height:20px;"></td>
-                            <td style="text-align: left;height:20px;"></td>
-						</tr>
-						<tr>
-                            <td style="width:20%;text-align: center;height:20px;"></td>
-                            <td style="text-align: left;height:20px;"></td>
-						</tr>
-						<tr>
-                            <td style="width:20%;text-align: center;height:20px;"></td>
-                            <td style="text-align: left;height:20px;"></td>
-						</tr>
-						<tr>
-                            <td style="width:20%;text-align: center;height:20px;"></td>
-                            <td style="text-align: left;height:20px;"></td>
-						</tr>
-						<tr>
-                            <td style="width:20%;text-align: center;height:20px;"></td>
-                            <td style="text-align: left;height:20px;"></td>
-						</tr>
-						<tr>
-                            <td style="width:20%;text-align: center;height:20px;"></td>
-                            <td style="text-align: left;height:20px;"></td>
-						</tr>
-						<tr>
-                            <td style="width:20%;text-align: center;height:20px;"></td>
-                            <td style="text-align: left;height:20px;"></td>
-						</tr>
-						<tr>
-                            <td style="width:20%;text-align: center;height:20px;"></td>
-                            <td style="text-align: left;height:20px;"></td>
-						</tr>
-						<tr>
-                            <td style="width:20%;text-align: center;height:20px;"></td>
-                            <td style="text-align: left;height:20px;"></td>
-						</tr>
-						<tr>
-                            <td style="width:20%;text-align: center;height:20px;"></td>
-                            <td style="text-align: left;height:20px;"></td>
-						</tr>
-						<tr>
-                            <td style="width:20%;text-align: center;height:20px;"></td>
-                            <td style="text-align: left;height:20px;"></td>
-						</tr>
-						<tr>
-                            <td style="width:20%;text-align: center;height:20px;"></td>
-                            <td style="text-align: left;height:20px;"></td>
-						</tr>
-						<tr>
-                            <td style="width:20%;text-align: center;height:20px;"></td>
-                            <td style="text-align: left;height:20px;"></td>
-						</tr>
-						<tr>
-                            <td style="width:20%;text-align: center;height:20px;"></td>
-                            <td style="text-align: left;height:20px;"></td>
-						</tr>
-						<tr>
-                            <td style="width:20%;text-align: center;height:20px;"></td>
-                            <td style="text-align: left;height:20px;"></td>
-						</tr>
-						<tr>
-                            <td style="width:20%;text-align: center;height:20px;"></td>
-                            <td style="text-align: left;height:20px;"></td>
-						</tr>
-						<tr>
-                            <td style="width:20%;text-align: center;height:20px;"></td>
-                            <td style="text-align: left;height:20px;"></td>
-						</tr>
-						<tr>
-                            <td style="width:20%;text-align: center;height:20px;"></td>
-                            <td style="text-align: left;height:20px;"></td>
-						</tr>
-						<tr>
-                            <td style="width:20%;text-align: center;height:20px;"></td>
-                            <td style="text-align: left;height:20px;"></td>
-						</tr>
-						<tr>
-                            <td style="width:20%;text-align: center;height:20px;"></td>
-                            <td style="text-align: left;height:20px;"></td>
-						</tr>
+                            <td style="text-align:center;">
+                                <label class="input-control checkbox small-check no-margin">
+                                    <input type="checkbox">
+                                    <span class="check"></span>
+                                </label>
+                            </td>
+                            <td style="text-align: center;">01/01</td>
+                            <td style="text-align: left;">元日</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:center;">
+                                <label class="input-control checkbox small-check no-margin">
+                                    <input type="checkbox">
+                                    <span class="check"></span>
+                                </label>
+                            </td>
+                            <td style="text-align: center;">01/12</td>
+                            <td style="text-align: left;">成人の日</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:center;">
+                                <label class="input-control checkbox small-check no-margin">
+                                    <input type="checkbox">
+                                    <span class="check"></span>
+                                </label>
+                            </td>
+                            <td style="text-align: center;">02/11</td>
+                            <td style="text-align: left;">建国記念の日</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:center;">
+                                <label class="input-control checkbox small-check no-margin">
+                                    <input type="checkbox">
+                                    <span class="check"></span>
+                                </label>
+                            </td>
+                            <td style="text-align: center;">03/21</td>
+                            <td style="text-align: left;">春分の日</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:center;">
+                                <label class="input-control checkbox small-check no-margin">
+                                    <input type="checkbox">
+                                    <span class="check"></span>
+                                </label>
+                            </td>
+                            <td style="text-align: center;">04/29</td>
+                            <td style="text-align: left;">昭和の日</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:center;">
+                                <label class="input-control checkbox small-check no-margin">
+                                    <input type="checkbox">
+                                    <span class="check"></span>
+                                </label>
+                            </td>
+                            <td style="text-align: center;">05/03</td>
+                            <td style="text-align: left;">憲法記念日</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:center;">
+                                <label class="input-control checkbox small-check no-margin">
+                                    <input type="checkbox">
+                                    <span class="check"></span>
+                                </label>
+                            </td>
+                            <td style="text-align: center;">05/04</td>
+                            <td style="text-align: left;">みどりの日</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:center;">
+                                <label class="input-control checkbox small-check no-margin">
+                                    <input type="checkbox">
+                                    <span class="check"></span>
+                                </label>
+                            </td>
+                            <td style="text-align: center;">05/05</td>
+                            <td style="text-align: left;">こどもの日</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:center;">
+                                <label class="input-control checkbox small-check no-margin">
+                                    <input type="checkbox">
+                                    <span class="check"></span>
+                                </label>
+                            </td>
+                            <td style="text-align: center;">05/06</td>
+                            <td style="text-align: left;">振替休日</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:center;">
+                                <label class="input-control checkbox small-check no-margin">
+                                    <input type="checkbox">
+                                    <span class="check"></span>
+                                </label>
+                            </td>
+                            <td style="text-align: center;">07/18</td>
+                            <td style="text-align: left;">海の日</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" style="width: 20px; height:20px;text-align: center;"><span style="color: #2086bf;font-size: small;">1 2</span></td>
+                        </tr>
                     </table>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- 複写処理子画面 -->
+    <div id="PRDC1060" title="複写処理" class="dialog" style="display:none;">
+        <table border="0" style="width:500px;">
+            <tr style="height:10px;"><td colspan="4" ></td></tr>
+            <tr style="height:23px;">
+                <td style="width:10px;"></td>
+                <td style="width:95px;">
+                    <span style="font-size:14px; color:#2086bf; margin-left:15px; margin-right:20px;">複写先年</span></td>
+                <td style="width:60px;">
+                    <input type="text" class="text" style="width: 70px;margin:0px;" value=""></td>
+                <td style="width:auto; text-align:right;">
+                    <input type="button" style="background:#2086bf; color:#ffffff; border-color:#2086bf; width:95px; height:30px; margin-right:5px; border-radius: 3px;" id="PRDC1060_Start" value="開　始" /></td>
+            </tr>
+            <tr style="height:10px;"><td colspan="4"></td></tr>
+        </table>
+    </div>
+
 </body>
 </html>

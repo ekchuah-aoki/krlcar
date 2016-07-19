@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -7,6 +7,7 @@
     <meta name="description" content="Metro, a sleek, intuitive, and powerful framework for faster and easier web development for Windows Metro Style.">
     <meta name="keywords" content="HTML, CSS, JS, JavaScript, framework, metro, front-end, frontend, web development">
     <meta name="author" content="Sergey Pimenov and Metro UI CSS contributors">
+    <meta name="format-detection" content="telephone=no"/>
 
     <link rel='shortcut icon' type='image/x-icon' href='../favicon.ico' />
 
@@ -39,16 +40,6 @@
             min-height: 0;
             height: auto;
         }
-        .cell colspan5 {
-            overflow: hidden;
-        }
-        .input-control text {
-            float: left;
-        }
-        .right {
-            float: right;
-            margin:7px 0 0 0;
-        }
 
         @media screen and (max-width: 800px){
             #cell-sidebar {
@@ -59,98 +50,91 @@
             }
         }
     </style>
-
-    <script>
-	    
-    </script>
 </head>
-<body class="bg-steel">
-    
-     <!-- ヘッダー固定 -->
-   <div id="Menu_load"></div>
+<body>
+    <!-- ヘッダー固定 -->
+    <div id="Menu_load"></div>
 
     <div class="page-content">
         <div class="flex-grid no-responsive-future" style="height: 100%;">
-            <div class="row" style="height: 100%">
-                
+             <div class="row" style="height: 100%">
                 <div class="cell auto-size padding20 bg-white" id="cell-content">
                     <ul class="breadcrumbs" style="padding:0px;">
-					    <li><h4>会社</h4></li>
-					</ul>
-					
-					<div class="grid">
-					
+                        <li><h4>会社一覧</h4></li>
+                    </ul>
                     <hr class="thin bg-grayLighter">
-                    
-					<div class="cell colspan5">
-						支社名
-						<div class="input-control text" data-length="8" style="width:150px;margin:10px 0px 0px 13px;">
-					      <input type="text">
-					    </div>
-					    <div class="right">
-	                      <button class="button primary" style="margin:2px 0px 0px 70px;">検索</button>
-	                      <a href="./master_company_info.html" target="_self"><button class="button success" onclick="#">登録</button></a>
-                        </div>
-		            </div>
-					</div>
+                    <div class="cell colspan5">
+                    <span style="margin-left:10px;">支社名</span>
+                    <div class="input-control text" data-length="8" style="width:150px;">
+                       <input type="text" style="width:250px;margin-left:10px;">
+                    </div>
+                    <div style="float: right; display:inline;">
+                         <button class="button primary" style="width:100px; margin:0px 5px 0px 0px">検索</button>
+                         <button type="button" style="height:32px;width:100px; font-size: 1em; padding:4px 13px;background-color: #2086BF;color: #fff; border-style: none;" onclick="location.href='master_company_info.html'">登録</button>
+                    </div>
+                    </div>
                     <hr class="thin bg-grayLighter">
-                    
-                    <table class="dataTable border bordered" data-auto-width="false">
+                    <table class="dataTable border bordered" data-auto-width="false" style="font-size: small;">
                         <thead>
                         <tr>
-                            <td class="sortable-column" style="text-align:center;">会社コード</td>
-                            <td class="sortable-column" style="text-align:center;">会社名</td>
-                            <td class="sortable-column" style="text-align:center;">支社名</td>
-                            <td class="sortable-column" style="text-align:center;">代表名</td>
-                            <td class="sortable-column" style="text-align:center;">郵便番号</td>
-                            <td class="sortable-column" style="text-align:center;">住所</td>
-                            <td class="sortable-column" style="text-align:center;">電話番号</td>
-                            <td class="sortable-column" style="text-align:center;">詳細</td>
+                            <td style="width:100px;text-align: center;" class="sortable-column">会社コード</td>
+                            <td style="width:200px;text-align: center;" class="sortable-column">会社名</td>
+                            <td style="text-align: center;" class="sortable-column">支社名</td>
+                            <td style="width:180px; text-align: center;" class="sortable-column">代表名</td>
+                            <td style="text-align: center;" class="sortable-column">郵便番号</td>
+                            <td style="text-align: center;" class="sortable-column">住所</td>
+                            <td style="text-align: center;" class="sortable-column">電話番号</td>
+                            <td style="text-align: center;" class="sortable-column">詳細</td>
                         </tr>
                         </thead>
                         <tbody>
                         <tr style="height: 45px;">
-                            <td style="text-align:right;">00001</td>
+                            <td>00001</td>
                             <td>株式会社ケー・アールライン</td>
                             <td>本社</td>
                             <td>小池　康一</td>
-                            <td style="text-align:right;">259-1219</td>
+                            <td>259-1219</td>
                             <td>神奈川県 平塚市 広川775-1</td>
-                            <td style="text-align:right;">0463-59-6166</td>
-                            <td align="center"><a href="master_company_officeKanagawa.html" target="_self">詳細</a></td>
+                            <td>0463-59-6166</td>
+                            <td align="center">
+                                 <button type="button" style="font-size: 1em; padding:4px 13px;background-color: #2086BF;color: #fff; border-style: none;" onclick="location.href='master_company_officeOsaka.html'">詳細</button>
+                            </td>
                         </tr>
-                        
                         <tr style="height: 45px;">
-                            <td style="text-align:right;">00002</td>
+                            <td>00002</td>
                             <td>株式会社ケー・アールライン</td>
                             <td>山形営業所</td>
                             <td></td>
-                            <td style="text-align:right;">993-0024</td>
+                            <td>993-0024</td>
                             <td>山形県 東置賜郡 高畠町 中島1083-1</td>
-                            <td style="text-align:right;">0238-58-0021</td>
-                            <td align="center"><a href="master_company_officeYamagata.html" target="_self">詳細</a></td>
+                            <td>0238-58-0021</td>
+                            <td align="center">
+                                 <button type="button" style="font-size: 1em; padding:4px 13px;background-color: #2086BF;color: #fff; border-style: none;" onclick="location.href='master_company_officeOsaka.html'">詳細</button>
+                            </td>
                         </tr>
-                        
                         <tr style="height: 45px;">
-                            <td style="text-align:right;">00003</td>
+                            <td>00003</td>
                             <td>株式会社ケー・アールライン</td>
                             <td>大阪堺倉庫</td>
                             <td></td>
-                            <td style="text-align:right;">599-8252</td>
+                            <td>599-8252</td>
                             <td>大阪府 堺市 中区 楢葉197-1</td>
-                            <td style="text-align:right;">072-230-3131</td>
-                            <td align="center"><a href="master_company_officeOsaka.html" target="_self">詳細</a></td>
+                            <td>072-230-3131</td>
+                            <td align="center">
+                                 <button type="button" style="font-size: 1em; padding:4px 13px;background-color: #2086BF;color: #fff; border-style: none;" onclick="location.href='master_company_officeOsaka.html'">詳細</button>
+                            </td>
                         </tr>
-                        
                         <tr style="height: 45px;">
-                            <td style="text-align:right;">00004</td>
+                            <td>00004</td>
                             <td>株式会社ケー・アールライン</td>
                             <td>沖縄営業所：ウォーター事業部</td>
                             <td></td>
-                            <td style="text-align:right;">900-0002</td>
+                            <td>900-0002</td>
                             <td>沖縄県那覇市曙2-24-13 曙沖商ビル6階B号室</td>
-                            <td style="text-align:right;">098-867-6166</td>
-                            <td align="center"><a href="./master_company_officeOkinawa.html" target="_self">詳細</a></td>
+                            <td>098-867-6166</td>
+                            <td align="center">
+                                 <button type="button" style="font-size: 1em; padding:4px 13px;background-color: #2086BF;color: #fff; border-style: none;" onclick="location.href='master_company_officeOsaka.html'">詳細</button>
+                            </td>
                         </tr>
                         </tbody>
                     </table>

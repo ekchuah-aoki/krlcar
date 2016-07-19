@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Metro, a sleek, intuitive, and powerful framework for faster and easier web development for Windows Metro Style.">
+    <meta name="keywords" content="HTML, CSS, JS, JavaScript, framework, metro, front-end, frontend, web development">
+    <meta name="author" content="Sergey Pimenov and Metro UI CSS contributors">
+
+    <link rel='shortcut icon' type='image/x-icon' href='../favicon.ico' />
+
+    <title>株式会社ケー・アールライン</title>
+
+    <link href="../css/metro.css" rel="stylesheet">
+    <link href="../css/metro-icons.css" rel="stylesheet">
+    <link href="../css/metro-responsive.css" rel="stylesheet">
+    <link href="../css/mock_unsou.css" rel="stylesheet">
+
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/jquery.dataTables.min.js"></script>
+
+    <script src="../js/metro.js"></script>
+
+    <script src="../js/Menu.js"></script>
+
+    <link type="text/css" rel="stylesheet" href="../css/jquery-ui.min.css" />
+    <script type="text/javascript" src="../js/jquery.ui.1.9.2.js"></script>
+
+    <style>
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            font-size:10pt;
+        }
+        
+        .page-content {
+            padding-top: 3.125rem;
+            min-height: 100%;
+            height: 100%;
+        }
+
+        td.course{
+            text-align:center;
+        }
+
+        .x_data_area{
+           margin: 0;
+        }
+        
+        @media screen and (max-width:100%){
+            #cell-sidebar {
+                flex-basis: 52px;
+            }
+            #cell-content {
+                flex-basis: calc(100% - 52px);
+            }
+        }
+        .item input[type="text"], .driver  { 
+            border:1px #d9d9d9 solid;
+            height:23px;
+            width: 100px;
+        }
+    </style>
+
+    <script>
+        $(function(){
+           $("#datepicker").datepicker();
+
+           $(".btn_shaban").click(function() {
+                $("#shaban").dialog({
+                    modal: true,
+                    closeOnEscape: false,
+                    width:  440,
+                    height: 520,
+                    show: { effect: "clip", complete: function () { $("#shashu").focus(); } },
+                    open: function (event, ui) {
+                       $(this).parent().find(".ui-dialog-titlebar-close").show();
+                    }
+                });
+           });
+
+           $(".btn_torihikisaki").click(function() {
+                $("#torihikisaki").dialog({
+                    modal: true,
+                    closeOnEscape: false,
+                    width:  440,
+                    height: 520,
+                    show: { effect: "clip", complete: function () { $("#torihikisaki_name").focus(); } },
+                    open: function (event, ui) {
+                       $(this).parent().find(".ui-dialog-titlebar-close").show();
+                    }
+                });
+           });
+
+           $("#th01").click(function() {
+                $('#findname').text("委託先名");
+                $('#title01').text("委託先コード");
+                $('#title02').text("委託先名");
+                $('#title03').text("電話番号");
+           });
+
+           $("#th02").click(function() {
+                $('#findname').text("社員名");
+                $('#title01').text("社員コード");
+                $('#title02').text("社員名");
+                $('#title03').text("電話番号");
+           });
+       });
+        
+        var showflag = false;
+
+        function colshow() {
+            showflag = !showflag;
+            if (showflag) {
+                $('#colshow').text('運用コース表示');
+                $('.movecoase').hide();
+                $('.result').css('width', '171px');
+                $('.lockbox').css('width', '');
+                $('.xscrollbox').css('width', '1050px');
+                $('.xscrollbox').css('margin-left', '0px');
+            } else {
+                $('#colshow').text('運用コース非表示');
+                $('.movecoase').show();
+                $('.result').css('width', '900px');
+                $('.lockbox').css('width', '898px');
+                $('.xscrollbox').css('width', '324px');
+                $('.xscrollbox').css('margin-left', '2px');
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="Menu_load"></div>
+
+    <div class="page-content">
+        <div class="flex-grid no-responsive-future">
+           <div class="row">
+                <div class="cell auto-size padding20 bg-white" id="cell-content" style="width:100%;">
+                  <ul class="breadcrumbs" style="padding:0px;">
+                    <li><h4>配車表入力</h4></li>
+                  </ul>
+                  <hr class="thin bg-grayLighter">
+                  <div class="grid">
+                     <div class="input-control select" style="width:350px;">
+                         <!--
+                         <div class="input-control text" id="datepicker">
+                         <input type="text" style="height:32px;width:120px;" value="2016/06/05">
+                         <button class="button" style="height:32px;margin-right:20px;"><span class="mif-calendar"></span></button>
+                         -->
+                         <div class="input-control select" style="width:60px;">
+                             <select>
+                                 <option>2016</option>
+                                 <option>2017</option>
+                                 <option>2018</option>
+                                 <option>2019</option>
+                                 <option>2020</option>
+                             </select>
+                         </div>
+                         年
+                         <div class="input-control select" style="width:50px;">
+                             <select>
+                                 <option>01</option>
+                                 <option>02</option>
+                                 <option>03</option>
+                                 <option>04</option>
+                                 <option>05</option>
+                                 <option selected>06</option>
+                                 <option>07</option>
+                                 <option>08</option>
+                                 <option>09</option>
+                                 <option>10</option>
+                                 <option>11</option>
+                                 <option>12</option>
+                             </select>
+                          </div>
+                          月
+                          <div class="input-control select" style="width:50px;">
+                             <select>
+                                 <option>01</option>
+                                 <option>02</option>
+                                 <option>03</option>
+                                 <option>04</option>
+                                 <option selected>05</option>
+                                 <option>06</option>
+                                 <option>07</option>
+                                 <option>08</option>
+                                 <option>09</option>
+                                 <option>10</option>
+                                 <option>11</option>
+                                 <option>12</option>
+                                 <option>13</option>
+                                 <option>14</option>
+                                 <option>15</option>
+                                 <option>16</option>
+                                 <option>18</option>
+                                 <option>19</option>
+                                 <option>20</option>
+                                 <option>21</option>
+                                 <option>22</option>
+                                 <option>23</option>
+                                 <option>24</option>
+                                 <option>25</option>
+                                 <option>26</option>
+                                 <option>27</option>
+                                 <option>28</option>
+                                 <option>29</option>
+                                 <option>30</option>
+                                 <option>31</option>
+                             </select>
+                          </div>
+                          日
+                     </div>
+                     <div style="float: right; right;display:inline;">
+                         <button class="button primary" style="width:100px;margin-left:14px;">検索</button>
+                     </div>
+                  </div>
+                  <div class="grid">
+                     <div style="float: left; right;display:inline;">
+                         <button class="button alert" style="width:150px;font-size:13px;" id="colshow" onclick="return colshow();">運用コース非表示</button>
+                     </div>
+                     <div style="float: right; right;display:inline;">
+                         <button class="button alert" style="width:100px;">削除</button>
+                         <button class="button primary" style="width:100px;background-color:#6A5ACD;border-color:#6A5ACD;">印刷</button>
+                         <button class="button primary" style="width:100px;">保存</button>
+                     </div>
+                  </div>
+                  <hr class="thin bg-grayLighter">
+                  <div class="xdataarea" style="width: 1300px; overflow: hidden;">
+                     <div class="lockbox" style="float:left; width:898px;">
+                        <table class="dataTable border bordered data result" style="margin:0px; width:900px;" data-auto-width="false">
+                        <colgroup>
+                            <col style="width: 6%;">
+                            <col style="width: 6%;">
+                            <col style="width: 7%;">
+                            <col class="movecoase" style="width:66%;">
+                            <col class="movecoase" style="width:12%;">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                               <td><p style="margin:0px;padding:25px 0px 25px 0px;">削除</p></td>
+                               <td class="sortable-column">便番</td>
+                               <td class="sortable-column">便名</td>
+                               <td class="sortable-column movecoase">運行コース/作業割り当(行先)</td>
+                               <td class="sortable-column movecoase">運行日/車種</td>
+                            </tr>
+                        </thead>
+                        <tbody style="font-size:11px;">
+                            <tr>
+                               <td style="height: 70px;text-align:center;">
+                                   <label class="input-control checkbox small-check no-margin">
+                                       <input type="checkbox"><span class="check" style="visibility: hidden;"></span>
+                                   </label>
+                               </td>
+                               <td style="padding:28px 5px;">A-111</td>
+                               <td>川神下1</td>
+                               <td class="movecoase">
+                                   <table class="left">
+                                      <tr id="acMenu">
+                                          <td style="border:none;"><p style="margin:0px;">川崎東</p></td>
+                                          <td class="course" rowspan="2" style="border:none;">⇨</td>
+                                          <td style="border:none;"><p style="margin:0px;">新大阪</p></td>
+                                          <td class="course" rowspan="2" style="border:none;">⇨</td>
+                                          <td style="border:none;"><p style="margin:0px;">ゆうP</p></td>
+                                          <td class="course" rowspan="2" style="border:none;">⇨</td>
+                                          <td style="border:none;"><p style="margin:0px;">神戸</p></td>
+                                      </tr>
+                                      <tr>
+                                          <td style="border:none;"><p style="margin:0px;">21:30</p></td>
+                                          <td style="border:none;"><p style="margin:0px;">5:00</p></td>
+                                          <td style="border:none;"><p style="margin:0px;">5:15</p></td>
+                                          <td style="border:none;"><p style="margin:0px;">6:25</p></td>
+                                      </tr>
+                                   </table>
+                               </td>
+                               <td class="movecoase" style="text-align:center;">1〜末/8t</td>
+                            </tr>
+                            <tr>
+                               <td style="height: 70px;text-align:center;">
+                                   <label class="input-control checkbox small-check no-margin">
+                                       <input type="checkbox"><span class="check" style="visibility: hidden;"></span>
+                                   </label>
+                               </td>
+                               <td style="padding:28px 5px;">A-150</td>
+                               <td>綾神上</td>
+                               <td class="movecoase">
+                                   <table class="left">
+                                      <tr id="acMenu">
+                                          <td style="border:none;"><p style="margin:0px;">神戸</p></td>
+                                          <td class="course" rowspan="2" style="border:none;">⇨</td>
+                                          <td style="border:none;"><p style="margin:0px;">ゆうP</p></td>
+                                          <td class="course" rowspan="2" style="border:none;">⇨</td>
+                                          <td style="border:none;"><p style="margin:0px;">新大阪</p></td>
+                                          <td class="course" rowspan="2" style="border:none;">⇨</td>
+                                          <td style="border:none;"><p style="margin:0px;">ゆうP</p></td>
+                                          <td class="course" rowspan="2" style="border:none;">⇨</td>
+                                          <td style="border:none;"><p style="margin:0px;">綾瀬</p></td>
+                                      </tr>
+                                      <tr>
+                                          <td style="border:none;"><p style="margin:0px;">19:15</p></td>
+                                          <td style="border:none;"><p style="margin:0px;">20:00</p></td>
+                                          <td style="border:none;"><p style="margin:0px;">20:20</p></td>
+                                          <td style="border:none;"><p style="margin:0px;">21:15</p></td>
+                                          <td style="border:none;"><p style="margin:0px;">4:05</p></td>
+                                      </tr>
+                                   </table>
+                               </td>
+                               <td class="movecoase" style="text-align:center;"><p>1〜末/8t</p><p>日祝/4t</p></td>
+                            </tr>
+                            <tr>
+                               <td style="height: 70px;text-align:center;">
+                                   <label class="input-control checkbox small-check no-margin">
+                                       <input type="checkbox"><span class="check"></span>
+                                   </label>
+                               </td>
+                               <td style="padding:28px 5px;">00001</td>
+                               <td></td>
+                               <td class="movecoase">
+                                   <table class="left" style="float:left; right;display:inline;">
+                                      <tr id="acMenu">
+                                          <td style="border:none;"><p style="margin:0px;">川崎東</p></td>
+                                          <td class="course" rowspan="2" style="border:none;">⇨</td>
+                                          <td style="border:none;"><p style="margin:0px;">新大阪</p></td>
+                                          <td class="course" rowspan="2" style="border:none;">⇨</td>
+                                          <td style="border:none;"><p style="margin:0px;">ゆうP</p></td>
+                                          <td class="course" rowspan="2" style="border:none;">⇨</td>
+                                          <td style="border:none;"><p style="margin:0px;">神戸</p></td>
+                                          <td class="course" rowspan="2" style="border:none;">⇨</td>
+                                          <td style="border:none;"><p style="margin:0px;">ゆうP</p></td>
+                                          <td class="course" rowspan="2" style="border:none;">⇨</td>
+                                          <td style="border:none;"><p style="margin:0px;">新大阪</p></td>
+                                          <td class="course" rowspan="2" style="border:none;">⇨</td>
+                                          <td style="border:none;"><p style="margin:0px;">ゆうP</p></td>
+                                          <td class="course" rowspan="2" style="border:none;">⇨</td>
+                                          <td style="border:none;"><p style="margin:0px;">綾瀬</p></td>
+                                      </tr>
+                                      <tr>
+                                          <td style="border:none;"><p style="margin:0px;">21:30</p></td>
+                                          <td style="border:none;"><p style="margin:0px;">5:00</p></td>
+                                          <td style="border:none;"><p style="margin:0px;">5:15</p></td>
+                                          <td style="border:none;"><p style="margin:0px;">6:25</p></td>
+                                          <td style="border:none;"><p style="margin:0px;">7:35</p></td>
+                                          <td style="border:none;"><p style="margin:0px;">7:50</p></td>
+                                          <td style="border:none;"><p style="margin:0px;">8:20</p></td>
+                                          <td style="border:none;"><p style="margin:0px;">13:30</p></td>
+                                      </tr>
+                                   </table>
+                                   <div style="float:right; right;display:inline;">
+                                      <button class="button primary" style="padding: 0px; width: 50px; height: 23px; font-size: 12px;" onclick="window.open('mock_unsou_add.html','_self')">設定</button>
+                                   </div>
+                               </td>
+                               <td class="movecoase" style="text-align:center;">
+                                   <select style="border:1px #d9d9d9 solid;height:23px;width:60px;">
+                                      <option></option>
+                                      <option> 2t</option>
+                                      <option> 6t</option>
+                                      <option> 8t</option>
+                                      <option>10t</option>
+                                   </select>
+                               </td>
+                            </tr>
+                        </tbody>
+                        </table>
+                     </div>
+                       
+                     <div class="xscrollbox" style="float: left;width:324px;overflow-y:hidden;overflow-x:scroll;margin-left:2px;">
+                        <table class="dataTable border bordered  data" style="margin:0px;width:2200px;">
+                        <colgroup>
+                            <col style="width: 10%;">
+                            <col style="width: 10%;">
+                            <col style="width: 10%;">
+                            <col style="width: 10%;">
+                            <col style="width: 10%;">
+                            <col style="width: 10%;">
+                            <col style="width: 10%;">
+                            <col style="width: 10%;">
+                            <col style="width: 10%;">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                               <td class="sortable-column" style="height:37px;">6月 5日(日)</td>
+                               <td class="sortable-column">6月 6日(月)</td>
+                               <td class="sortable-column">6月 7日(火)</td>
+                               <td class="sortable-column">6月 8日(水)</td>
+                               <td class="sortable-column">6月 9日(木)</td>
+                               <td class="sortable-column">6月10日(金)</td>
+                               <td class="sortable-column">6月11日(土)</td>
+                               <td class="sortable-column">6月12日(日)</td>
+                               <td class="sortable-column">6月13日(月)</td>
+                            </tr>
+                            <tr>
+                               <td class="sortable-column">車番/委託先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
+                               <td class="sortable-column">車番/委託先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
+                               <td class="sortable-column">車番/委託先(社員ドライバー)<br>連絡先/委託先ライバー</td>
+                               <td class="sortable-column">車番/委託先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
+                               <td class="sortable-column">車番/委託先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
+                               <td class="sortable-column">車番/委託先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
+                               <td class="sortable-column">車番/委託先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
+                               <td class="sortable-column">車番/委託先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
+                               <td class="sortable-column">車番/委託先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
+                            </tr>
+                        </thead>
+                        <tbody style="font-size:x-small">
+                            <tr>
+                               <td style="height: 70px;">
+                                   <table class="item" style="border-collapse:collapse;">
+                                      <tr>
+                                          <td style="border:none;">
+                                              <input type="text" style="text-align:right;width:73px;" name="car" value="5346">
+                                              <button class="button primary btn_shaban" style="margin: 0px; padding: 0px; width: 25px; height: 23px; font-size: 10px;">検索</button>
+                                          </td>
+                                          <td style="border:none;">
+                                              <input type="text" style="text-align:left;width:72px;" name="car" value="平坂">
+                                              <button class="button primary btn_torihikisaki" style="margin: 0px; padding: 0px; width: 25px; height: 23px; font-size: 10px;">検索</button>
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td style="border:none;">
+                                              <input type="text" style="text-align:right;" size="15" name="tel"value="090-1111-1111">
+                                          </td>
+                                          <td style="border:none;">
+                                              <input type="text" size="15" name="driver">
+                                          </td>
+                                      </tr>
+                                   </table>
+                               </td>
+                               <td>
+                                   <table class="item" style="border-collapse:collapse;">
+                                      <tr>
+                                          <td style="border:none;">
+                                              <input type="text" style="text-align:right;width:73px;" name="car" value="5346">
+                                              <button class="button primary btn_shaban" style="margin: 0px; padding: 0px; width: 25px; height: 23px; font-size: 10px;">検索</button>
+                                          </td>
+                                          <td style="border:none;">
+                                              <input type="text" style="text-align:left;width:72px;" name="car" value="平坂">
+                                              <button class="button primary btn_torihikisaki" style="margin: 0px; padding: 0px; width: 25px; height: 23px; font-size: 10px;">検索</button>
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td style="border:none;">
+                                              <input type="text" style="text-align:right;" size="15" name="tel"value="090-1111-1111">
+                                          </td>
+                                          <td style="border:none;">
+                                              <input type="text" size="15" name="driver">
+                                          </td>
+                                      </tr>
+                                   </table>
+                               </td>
+                               <td>
+                                   <table class="item" style="border-collapse:collapse;">
+                                      <tr>
+                                          <td style="border:none;">
+                                              <input type="text" style="text-align:right;width:73px;" name="car" value="5346">
+                                              <button class="button primary btn_shaban" style="margin: 0px; padding: 0px; width: 25px; height: 23px; font-size: 10px;">検索</button>
+                                          </td>
+                                          <td style="border:none;">
+                                              <input type="text" style="text-align:left;width:72px;" name="car" value="平坂">
+                                              <button class="button primary btn_torihikisaki" style="margin: 0px; padding: 0px; width: 25px; height: 23px; font-size: 10px;">検索</button>
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td style="border:none;">
+                                              <input type="text" style="text-align:right;" size="15" name="tel"value="090-1111-1111">
+                                          </td>
+                                          <td style="border:none;">
+                                              <input type="text" size="15" name="driver">
+                                          </td>
+                                      </tr>
+                                   </table>
+                               </td>
+                               <td>
+                                   <table class="item" style="border-collapse:collapse;">
+                                      <tr>
+                                          <td style="border:none;">
+                                              <input type="text" style="text-align:right;width:73px;" name="car" value="5346">
+                                              <button class="button primary btn_shaban" style="margin: 0px; padding: 0px; width: 25px; height: 23px; font-size: 10px;">検索</button>
+                                          </td>
+                                          <td style="border:none;">
+                                              <input type="text" style="text-align:left;width:72px;" name="car" value="平坂">
+                                              <button class="button primary btn_torihikisaki" style="margin: 0px; padding: 0px; width: 25px; height: 23px; font-size: 10px;">検索</button>
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td style="border:none;">
+                                              <input type="text" style="text-align:right;" size="15" name="tel"value="090-1111-1111">
+                                          </td>
+                                          <td style="border:none;">
+                                              <input type="text" size="15" name="driver">
+                                          </td>
+                                      </tr>
+                                   </table>
+                               </td>
+                               <td>
+                                   <table class="item" style="border-collapse:collapse;">
+                                      <tr>
+                                          <td style="border:none;">
+                                              <input type="text" style="text-align:right;width:73px;" name="car" value="5346">
+                                              <button class="button primary btn_shaban" style="margin: 0px; padding: 0px; width: 25px; height: 23px; font-size: 10px;">検索</button>
+                                          </td>
+                                          <td style="border:none;">
+                                              <input type="text" style="text-align:left;width:72px;" name="car" value="平坂">
+                                              <button class="button primary btn_torihikisaki" style="margin: 0px; padding: 0px; width: 25px; height: 23px; font-size: 10px;">検索</button>
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td style="border:none;">
+                                              <input type="text" style="text-align:right;" size="15" name="tel"value="090-1111-1111">
+                                          </td>
+                                          <td style="border:none;">
+                                              <input type="text" size="15" name="driver">
+                                          </td>
+                                      </tr>
+                                   </table>
+                               </td>
+                               <td>
+                                   <table class="item" style="border-collapse:collapse;">
+                                      <tr>
+                                          <td style="border:none;">
+                                              <input type="text" style="text-align:right;width:73px;" name="car" value="5346">
+                                              <button class="button primary btn_shaban" style="margin: 0px; padding: 0px; width: 25px; height: 23px; font-size: 10px;">検索</button>
+                                          </td>
+                                          <td style="border:none;">
+                                              <input type="text" style="text-align:left;width:72px;" name="car" value="平坂">
+                                              <button class="button primary btn_torihikisaki" style="margin: 0px; padding: 0px; width: 25px; height: 23px; font-size: 10px;">検索</button>
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td style="border:none;">
+                                              <input type="text" style="text-align:right;" size="15" name="tel"value="090-1111-1111">
+                                          </td>
+                                          <td style="border:none;">
+                                              <input type="text" size="15" name="driver">
+                                          </td>
+                                      </tr>
+                                   </table>
+                               </td>
+                               <td>
+                                   <table class="item" style="border-collapse:collapse;">
+                                      <tr>
+                                          <td style="border:none;">
+                                              <input type="text" style="text-align:right;width:73px;" name="car" value="5346">
+                                              <button class="button primary btn_shaban" style="margin: 0px; padding: 0px; width: 25px; height: 23px; font-size: 10px;">検索</button>
+                                          </td>
+                                          <td style="border:none;">
+                                              <input type="text" style="text-align:left;width:72px;" name="car" value="平坂">
+                                              <button class="button primary btn_torihikisaki" style="margin: 0px; padding: 0px; width: 25px; height: 23px; font-size: 10px;">検索</button>
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td style="border:none;">
+                                              <input type="text" style="text-align:right;" size="15" name="tel"value="090-1111-1111">
+                                          </td>
+                                          <td style="border:none;">
+                                              <input type="text" size="15" name="driver">
+                                          </td>
+                                      </tr>
+                                   </table>
+                               </td>
+                               <td>
+                                   <table class="item" style="border-collapse:collapse;">
+                                      <tr>
+                                          <td style="border:none;">
+                                              <input type="text" style="text-align:right;width:73px;" name="car" value="5346">
+                                              <button class="button primary btn_shaban" style="margin: 0px; padding: 0px; width: 25px; height: 23px; font-size: 10px;">検索</button>
+                                          </td>
+                                          <td style="border:none;">
+                                              <input type="text" style="text-align:left;width:72px;" name="car" value="平坂">
+                                              <button class="button primary btn_torihikisaki" style="margin: 0px; padding: 0px; width: 25px; height: 23px; font-size: 10px;">検索</button>
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td style="border:none;">
+                                              <input type="text" style="text-align:right;" size="15" name="tel"value="090-1111-1111">
+                                          </td>
+                                          <td style="border:none;">
+                                              <input type="text" size="15" name="driver">
+                                          </td>
+                                      </tr>
+                                   </table>
+                               </td>
+                               <td>
+                                   <table class="item" style="border-collapse:collapse;">
+                                      <tr>
+                                          <td style="border:none;">
+                                              <input type="text" style="text-align:right;width:73px;" name="car" value="5346">
+                                              <button class="button primary btn_shaban" style="margin: 0px; padding: 0px; width: 25px; height: 23px; font-size: 10px;">検索</button>
+                                          </td>
+                                          <td style="border:none;">
+                                              <input type="text" style="text-align:left;width:72px;" name="car" value="平坂">
+                                              <button class="button primary btn_torihikisaki" style="margin: 0px; padding: 0px; width: 25px; height: 23px; font-size: 10px;">検索</button>
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td style="border:none;">
+                                              <input type="text" style="text-align:right;" size="15" name="tel"value="090-1111-1111">
+                                          </td>
+                                          <td style="border:none;">
+                                              <input type="text" size="15" name="driver">
+                                          </td>
+                                      </tr>
+                                   </table>
+                               </td>
+                            </tr>
+
+                            <tr>
+                               <td style="height: 70px;">
+                                   <table class="item" style="border-collapse:collapse;">
+                                      <tr>
+                                          <td style="border:none;">
+                                              <input type="text" style="text-align:right;width:73px;" name="car" value="5346">
+                                              <button class="button primary btn_shaban" style="margin: 0px; padding: 0px; width: 25px; height: 23px; font-size: 10px;">検索</button>
+                                          </td>
+                                          <td style="border:none;">
+                                              <input type="text" style="text-align:left;width:72px;" name="car" value="平坂">
+                                              <button class="button primary btn_torihikisaki" style="margin: 0px; padding: 0px; width: 25px; height: 23px; font-size: 10px;">検索</button>
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td style="border:none;">
+                                              <input type="text" style="text-align:right;" size="15" name="tel"value="090-1111-1111">
+                                          </td>
+                                          <td style="border:none;">
+                                              <input type="text" size="15" name="driver">
+                                          </td>
+                                      </tr>
+                                   </table>
+                               </td>
+                               <td>
+                                   <table class="item" style="border-collapse:collapse;">
+                                      <tr>
+                                          <td style="border:none;">
+                                              <input type="text" style="text-align:right;width:73px;" name="car" value="5346">
+                                              <button class="button primary btn_shaban" style="margin: 0px; padding: 0px; width: 25px; height: 23px; font-size: 10px;">検索</button>
+                                          </td>
+                                          <td style="border:none;">
+                                              <input type="text" style="text-align:left;width:72px;" name="car" value="平坂">
+                                              <button class="button primary btn_torihikisaki" style="margin: 0px; padding: 0px; width: 25px; height: 23px; font-size: 10px;">検索</button>
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td style="border:none;">
+                                              <input type="text" style="text-align:right;" size="15" name="tel"value="090-1111-1111">
+                                          </td>
+                                          <td style="border:none;">
+                                              <input type="text" size="15" name="driver">
+                                          </td>
+                                      </tr>
+                                   </table>
+                               </td>
+                               <td>
+                                   <table class="item" style="border-collapse:collapse;">
+                                      <tr>
+                                          <td style="border:none;">
+                                              <input type="text" style="text-align:right;width:73px;" name="car" value="5346">
+                                              <button class="button primary btn_shaban" style="margin: 0px; padding: 0px; width: 25px; height: 23px; font-size: 10px;">検索</button>
+                                          </td>
+                                          <td style="border:none;">
+                                              <input type="text" style="text-align:left;width:72px;" name="car" value="平坂">
+                                              <button class="button primary btn_torihikisaki" style="margin: 0px; padding: 0px; width: 25px; height: 23px; font-size: 10px;">検索</button>
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td style="border:none;">
+                                              <input type="text" style="text-align:right;" size="15" name="tel"value="090-1111-1111">
+                                          </td>
+                                          <td style="border:none;">
+                                              <input type="text" size="15" name="driver">
+                                          </td>
+                                      </tr>
+                                   </table>
+                               </td>
+                               <td>
+                                   <table class="item" style="border-collapse:collapse;">
+                                      <tr>
+                                          <td style="border:none;">
+                                              <input type="text" style="text-align:right;width:73px;" name="car" value="5346">
+                                              <button class="button primary btn_shaban" style="margin: 0px; padding: 0px; width: 25px; height: 23px; font-size: 10px;">検索</button>
+                                          </td>
+                                          <td style="border:none;">
+                                              <input type="text" style="text-align:left;width:72px;" name="car" value="平坂">
+                                              <button class="button primary btn_torihikisaki" style="margin: 0px; padding: 0px; width: 25px; height: 23px; font-size: 10px;">検索</button>
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td style="border:none;">
+                                              <input type="text" style="text-align:right;" size="15" name="tel"value="090-1111-1111">
+                                          </td>
+                                          <td style="border:none;">
+                                              <input type="text" size="15" name="driver">
+                                          </td>
+                                      </tr>
+                                   </table>
+                               </td>
+                               <td>
+                                   <table class="item" style="border-collapse:collapse;">
+                                      <tr>
+                                          <td style="border:none;">
+                                              <input type="text" style="text-align:right;width:73px;" name="car" value="5346">
+                                              <button class="button primary btn_shaban" style="margin: 0px; padding: 0px; width: 25px; height: 23px; font-size: 10px;">検索</button>
+                                          </td>
+                                          <td style="border:none;">
+                                              <input type="text" style="text-align:left;width:72px;" name="car" value="平坂">
+                                              <button class="button primary btn_torihikisaki" style="margin: 0px; padding: 0px; width: 25px; height: 23px; font-size: 10px;">検索</button>
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td style="border:none;">
+                                              <input type="text" style="text-align:right;" size="15" name="tel"value="090-1111-1111">
+                                          </td>
+                                          <td style="border:none;">
+                                              <input type="text" size="15" name="driver">
+                                          </td>
+                                      </tr>
+                                   </table>
+                               </td>
+                               <td>
+                                   <table class="item" style="border-collapse:collapse;">
+                                      <tr>
+                                          <td style="border:none;">
+                                              <input type="text" style="text-align:right;width:73px;" name="car" value="5346">
+                                              <button class="button primary btn_shaban" style="margin: 0px; padding: 0px; width: 25px; height: 23px; font-size: 10px;">検索</button>
+                                          </td>
+                                          <td style="border:none;">
+                                              <input type="text" style="text-align:left;width:72px;" name="car" value="平坂">
+                                              <button class="button primary btn_torihikisaki" style="margin: 0px; padding: 0px; width: 25px; height: 23px; font-size: 10px;">検索</button>
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td style="border:none;">
+                                              <input type="text" style="text-align:right;" size="15" name="tel"value="090-1111-1111">
+                                          </td>
+                                          <td style="border:none;">
+                                              <input type="text" size="15" name="driver">
+                                          </td>
+                                      </tr>
+                                   </table>
+                               </td>
+                               <td>
+                                   <table class="item" style="border-collapse:collapse;">
+                                      <tr>
+                                          <td style="border:none;">
+                                              <input type="text" style="text-align:right;width:73px;" name="car" value="5346">
+                                              <button class="button primary btn_shaban" style="margin: 0px; padding: 0px; width: 25px; height: 23px; font-size: 10px;">検索</button>
+                                          </td>
+                                          <td style="border:none;">
+                                              <input type="text" style="text-align:left;width:72px;" name="car" value="平坂">
+                                              <button class="button primary btn_torihikisaki" style="margin: 0px; padding: 0px; width: 25px; height: 23px; font-size: 10px;">検索</button>
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td style="border:none;">
+                                              <input type="text" style="text-align:right;" size="15" name="tel"value="090-1111-1111">
+                                          </td>
+                                          <td style="border:none;">
+                                              <input type="text" size="15" name="driver">
+                                          </td>
+                                      </tr>
+                                   </table>
+                               </td>
+                               <td>
+                                   <table class="item" style="border-collapse:collapse;">
+                                      <tr>
+                                          <td style="border:none;">
+                                              <input type="text" style="text-align:right;width:73px;" name="car" value="5346">
+                                              <button class="button primary btn_shaban" style="margin: 0px; padding: 0px; width: 25px; height: 23px; font-size: 10px;">検索</button>
+                                          </td>
+                                          <td style="border:none;">
+                                              <input type="text" style="text-align:left;width:72px;" name="car" value="平坂">
+                                              <button class="button primary btn_torihikisaki" style="margin: 0px; padding: 0px; width: 25px; height: 23px; font-size: 10px;">検索</button>
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td style="border:none;">
+                                              <input type="text" style="text-align:right;" size="15" name="tel"value="090-1111-1111">
+                                          </td>
+                                          <td style="border:none;">
+                                              <input type="text" size="15" name="driver">
+                                          </td>
+                                      </tr>
+                                   </table>
+                               </td>
+                               <td>
+                                   <table class="item" style="border-collapse:collapse;">
+                                      <tr>
+                                          <td style="border:none;">
+                                              <input type="text" style="text-align:right;width:73px;" name="car" value="5346">
+                                              <button class="button primary btn_shaban" style="margin: 0px; padding: 0px; width: 25px; height: 23px; font-size: 10px;">検索</button>
+                                          </td>
+                                          <td style="border:none;">
+                                              <input type="text" style="text-align:left;width:72px;" name="car" value="平坂">
+                                              <button class="button primary btn_torihikisaki" style="margin: 0px; padding: 0px; width: 25px; height: 23px; font-size: 10px;">検索</button>
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td style="border:none;">
+                                              <input type="text" style="text-align:right;" size="15" name="tel"value="090-1111-1111">
+                                          </td>
+                                          <td style="border:none;">
+                                              <input type="text" size="15" name="driver">
+                                          </td>
+                                      </tr>
+                                   </table>
+                               </td>
+                            </tr>
+
+                            <tr>
+                               <td style="height: 70px;">
+                                   <table class="item" style="border-collapse:collapse;">
+                                      <tr>
+                                          <td style="border:none;">
+                                              <input type="text" style="text-align:right;width:73px;" name="car" value="">
+                                              <button class="button primary btn_shaban" style="margin: 0px; padding: 0px; width: 25px; height: 23px; font-size: 10px;">検索</button>
+                                          </td>
+                                          <td style="border:none;">
+                                              <input type="text" style="text-align:left;width:72px;" name="car" value="">
+                                              <button class="button primary btn_torihikisaki" style="margin: 0px; padding: 0px; width: 25px; height: 23px; font-size: 10px;">検索</button>
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td style="border:none;">
+                                              <input type="text" style="text-align:right;" size="15" name="tel"value="">
+                                          </td>
+                                          <td style="border:none;">
+                                              <input type="text" size="15" name="driver">
+                                          </td>
+                                      </tr>
+                                   </table>
+                               </td>
+                               <td>
+                                   <table class="item" style="border-collapse:collapse;">
+                                      <tr>
+                                          <td style="border:none;">
+                                              <input type="text" style="text-align:right;width:73px;" name="car" value="">
+                                              <button class="button primary btn_shaban" style="margin: 0px; padding: 0px; width: 25px; height: 23px; font-size: 10px;">検索</button>
+                                          </td>
+                                          <td style="border:none;">
+                                              <input type="text" style="text-align:left;width:72px;" name="car" value="">
+                                              <button class="button primary btn_torihikisaki" style="margin: 0px; padding: 0px; width: 25px; height: 23px; font-size: 10px;">検索</button>
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td style="border:none;">
+                                              <input type="text" style="text-align:right;" size="15" name="tel"value="">
+                                          </td>
+                                          <td style="border:none;">
+                                              <input type="text" size="15" name="driver">
+                                          </td>
+                                      </tr>
+                                   </table>
+                               </td>
+                               <td>
+                                   <table class="item" style="border-collapse:collapse;">
+                                      <tr>
+                                          <td style="border:none;">
+                                              <input type="text" style="text-align:right;width:73px;" name="car" value="">
+                                              <button class="button primary btn_shaban" style="margin: 0px; padding: 0px; width: 25px; height: 23px; font-size: 10px;">検索</button>
+                                          </td>
+                                          <td style="border:none;">
+                                              <input type="text" style="text-align:left;width:72px;" name="car" value="">
+                                              <button class="button primary btn_torihikisaki" style="margin: 0px; padding: 0px; width: 25px; height: 23px; font-size: 10px;">検索</button>
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td style="border:none;">
+                                              <input type="text" style="text-align:right;" size="15" name="tel"value="">
+                                          </td>
+                                          <td style="border:none;">
+                                              <input type="text" size="15" name="driver">
+                                          </td>
+                                      </tr>
+                                   </table>
+                               </td>
+                               <td>
+                                   <table class="item" style="border-collapse:collapse;">
+                                      <tr>
+                                          <td style="border:none;">
+                                              <input type="text" style="text-align:right;width:73px;" name="car" value="">
+                                              <button class="button primary btn_shaban" style="margin: 0px; padding: 0px; width: 25px; height: 23px; font-size: 10px;">検索</button>
+                                          </td>
+                                          <td style="border:none;">
+                                              <input type="text" style="text-align:left;width:72px;" name="car" value="">
+                                              <button class="button primary btn_torihikisaki" style="margin: 0px; padding: 0px; width: 25px; height: 23px; font-size: 10px;">検索</button>
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td style="border:none;">
+                                              <input type="text" style="text-align:right;" size="15" name="tel"value="">
+                                          </td>
+                                          <td style="border:none;">
+                                              <input type="text" size="15" name="driver">
+                                          </td>
+                                      </tr>
+                                   </table>
+                               </td>
+                               <td>
+                                   <table class="item" style="border-collapse:collapse;">
+                                      <tr>
+                                          <td style="border:none;">
+                                              <input type="text" style="text-align:right;width:73px;" name="car" value="">
+                                              <button class="button primary btn_shaban" style="margin: 0px; padding: 0px; width: 25px; height: 23px; font-size: 10px;">検索</button>
+                                          </td>
+                                          <td style="border:none;">
+                                              <input type="text" style="text-align:left;width:72px;" name="car" value="">
+                                              <button class="button primary btn_torihikisaki" style="margin: 0px; padding: 0px; width: 25px; height: 23px; font-size: 10px;">検索</button>
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td style="border:none;">
+                                              <input type="text" style="text-align:right;" size="15" name="tel"value="">
+                                          </td>
+                                          <td style="border:none;">
+                                              <input type="text" size="15" name="driver">
+                                          </td>
+                                      </tr>
+                                   </table>
+                               </td>
+                               <td>
+                                   <table class="item" style="border-collapse:collapse;">
+                                      <tr>
+                                          <td style="border:none;">
+                                              <input type="text" style="text-align:right;width:73px;" name="car" value="">
+                                              <button class="button primary btn_shaban" style="margin: 0px; padding: 0px; width: 25px; height: 23px; font-size: 10px;">検索</button>
+                                          </td>
+                                          <td style="border:none;">
+                                              <input type="text" style="text-align:left;width:72px;" name="car" value="">
+                                              <button class="button primary btn_torihikisaki" style="margin: 0px; padding: 0px; width: 25px; height: 23px; font-size: 10px;">検索</button>
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td style="border:none;">
+                                              <input type="text" style="text-align:right;" size="15" name="tel"value="">
+                                          </td>
+                                          <td style="border:none;">
+                                              <input type="text" size="15" name="driver">
+                                          </td>
+                                      </tr>
+                                   </table>
+                               </td>
+                               <td>
+                                   <table class="item" style="border-collapse:collapse;">
+                                      <tr>
+                                          <td style="border:none;">
+                                              <input type="text" style="text-align:right;width:73px;" name="car" value="">
+                                              <button class="button primary btn_shaban" style="margin: 0px; padding: 0px; width: 25px; height: 23px; font-size: 10px;">検索</button>
+                                          </td>
+                                          <td style="border:none;">
+                                              <input type="text" style="text-align:left;width:72px;" name="car" value="">
+                                              <button class="button primary btn_torihikisaki" style="margin: 0px; padding: 0px; width: 25px; height: 23px; font-size: 10px;">検索</button>
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td style="border:none;">
+                                              <input type="text" style="text-align:right;" size="15" name="tel"value="">
+                                          </td>
+                                          <td style="border:none;">
+                                              <input type="text" size="15" name="driver">
+                                          </td>
+                                      </tr>
+                                   </table>
+                               </td>
+                               <td>
+                                   <table class="item" style="border-collapse:collapse;">
+                                      <tr>
+                                          <td style="border:none;">
+                                              <input type="text" style="text-align:right;width:73px;" name="car" value="">
+                                              <button class="button primary btn_shaban" style="margin: 0px; padding: 0px; width: 25px; height: 23px; font-size: 10px;">検索</button>
+                                          </td>
+                                          <td style="border:none;">
+                                              <input type="text" style="text-align:left;width:72px;" name="car" value="">
+                                              <button class="button primary btn_torihikisaki" style="margin: 0px; padding: 0px; width: 25px; height: 23px; font-size: 10px;">検索</button>
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td style="border:none;">
+                                              <input type="text" style="text-align:right;" size="15" name="tel"value="">
+                                          </td>
+                                          <td style="border:none;">
+                                              <input type="text" size="15" name="driver">
+                                          </td>
+                                      </tr>
+                                   </table>
+                               </td>
+                               <td>
+                                   <table class="item" style="border-collapse:collapse;">
+                                      <tr>
+                                          <td style="border:none;">
+                                              <input type="text" style="text-align:right;width:73px;" name="car" value="">
+                                              <button class="button primary btn_shaban" style="margin: 0px; padding: 0px; width: 25px; height: 23px; font-size: 10px;">検索</button>
+                                          </td>
+                                          <td style="border:none;">
+                                              <input type="text" style="text-align:left;width:72px;" name="car" value="">
+                                              <button class="button primary btn_torihikisaki" style="margin: 0px; padding: 0px; width: 25px; height: 23px; font-size: 10px;">検索</button>
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td style="border:none;">
+                                              <input type="text" style="text-align:right;" size="15" name="tel"value="">
+                                          </td>
+                                          <td style="border:none;">
+                                              <input type="text" size="15" name="driver">
+                                          </td>
+                                      </tr>
+                                   </table>
+                               </td>
+                            </tr>
+                            </tbody>
+                            </table>
+                        </div>
+                      </div>
+                   <div>
+                        <button class="button success" style="width:100px;">行追加</button>        
+                   </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 車番一覧 -->
+    <div id="shaban" title="車番一覧" style="display:none;">
+        <table border="0" style="width:400px;">
+            <tr style="height:30px;">
+                <td style="width:20%;">
+                    <span style="width:75px;color:#555555;">車種</span>
+                </td>
+                <td id="shashu" style="width:50%;">
+                    <select style="width:100px;">
+                        <option></option>
+                        <option>大型</option>
+                        <option>中型</option>
+                        <option>小型</option>
+                    </select>
+                </td>
+                <td style="width:10%;">
+                    <button class="button primary" style="width:80px;margin-left:14px;">検索</button>
+                </td>
+            </tr>
+            <tr style="height:10px;">
+               <td colspan="3" ></td>
+            </tr>
+        </table>
+        <hr class="thin bg-grayLighter">
+
+        <table border="0" style="width:400px;">
+            <tr style="height:10px;">
+                <td style="width:80px;">
+                    <button type="button" style="padding: 9px 9px;" class="ui-icon ui-icon-triangle-1-w button_search"></button>
+                </td>
+                <td style="width:400px;"></td>
+                <td style="width:20px;">
+                    <button type="button" style="padding: 9px 9px;" class="ui-icon ui-icon-triangle-1-e button_search"></button>
+                </td>
+            </tr>
+            <tr style="height:350px">
+                <td colspan="3" style="vertical-align:top">
+                    <table style="border-color: rgb(153, 153, 153); margin: 0px auto;" border="1">
+                        <tr class="trheader" style="border-bottom-color: rgb(170, 170, 170); border-bottom-width: 3px; border-bottom-style: solid;">
+                            <th style="width:120px;height:26px;text-align:center;color:#52677a;">車番</th>
+                            <th style="width:130px;height:26px;text-align:center;color:#52677a;">車種</th>
+                            <th style="width:130px;height:26px;text-align:center;color:#52677a;">形式</th>
+                        </tr>
+                        <tr class="trheader">
+                            <td style="text-align:left;color:#52677a;">A111</td>
+                            <td style="text-align:left;color:#52677a;">大型</td>
+                            <td style="text-align:left;color:#52677a;">15tウイング</td>
+                        </tr>
+                        <tr class="trheader">
+                            <td style="text-align:left;color:#52677a;">A112</td>
+                            <td style="text-align:left;color:#52677a;">中型</td>
+                            <td style="text-align:left;color:#52677a;">8ｔユニック</td>
+                        </tr>
+                        <tr class="trheader">
+                            <td style="text-align:left;color:#52677a;">A113</td>
+                            <td style="text-align:left;color:#52677a;">小型</td>
+                            <td style="text-align:left;color:#52677a;">4ｔウイング</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- 委託先（社員ドライバー）一覧 -->
+    <div id="torihikisaki" title="委託先一覧" style="display:none;">
+        <table border="0" style="width:400px;">
+            <tr style="height:30px;">
+                <td colspan="3">
+                   <label class="input-control radio small-check">
+                       <input id="th01" name="th01" type="radio" checked="checked">
+                       <span class="check"></span><span style="margin-left:5px;">委託先</span>
+                   </label>
+                   <label class="input-control radio small-check" style="margin-left:5px;">
+                       <input id="th02" name="th01" type="radio">
+                       <span class="check"></span><span style="margin-left:5px;">社員ドライバー</span>
+                   </label>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                   <hr class="thin bg-grayLighter">
+                </td>
+            </tr>
+            <tr style="height:30px;">
+                <td style="width:20%;">
+                    <span id="findname" style="width:75px;color:#555555;">委託者名</span>
+                </td>
+                <td style="width:50%;">
+                     <input type="text" id="torihikisaki_name" style="width:200px;">
+                </td>
+                <td style="width:10%;">
+                    <button class="button primary" style="width:80px;margin-left:14px;">検索</button>
+                </td>
+            </tr>
+            <tr style="height:10px;">
+               <td colspan="3" ></td>
+            </tr>
+        </table>
+        <hr class="thin bg-grayLighter">
+
+        <table border="0" style="width:400px;">
+            <tr style="height:10px;">
+                <td style="width:80px;">
+                    <button type="button" style="padding: 9px 9px;" class="ui-icon ui-icon-triangle-1-w button_search"></button>
+                </td>
+                <td style="width:400px;"></td>
+                <td style="width:20px;">
+                    <button type="button" style="padding: 9px 9px;" class="ui-icon ui-icon-triangle-1-e button_search"></button>
+                </td>
+            </tr>
+            <tr style="height:250px">
+                <td colspan="3" style="vertical-align:top">
+                    <table style="border-color: rgb(153, 153, 153); margin: 0px auto;" border="1">
+                        <tr class="trheader" style="border-bottom-color: rgb(170, 170, 170); border-bottom-width: 3px; border-bottom-style: solid;">
+                            <th id="title01" style="width:120px;height:26px;text-align:center;color:#52677a;">委託先コード</th>
+                            <th id="title02" style="width:230px;height:26px;text-align:center;color:#52677a;">委託先名</th>
+                            <th id="title03" style="width:130px;height:26px;text-align:center;color:#52677a;">部署</th>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+</body>
+</html>

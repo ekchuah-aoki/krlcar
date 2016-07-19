@@ -7,7 +7,8 @@
     <meta name="description" content="Metro, a sleek, intuitive, and powerful framework for faster and easier web development for Windows Metro Style.">
     <meta name="keywords" content="HTML, CSS, JS, JavaScript, framework, metro, front-end, frontend, web development">
     <meta name="author" content="Sergey Pimenov and Metro UI CSS contributors">
-
+    <meta name="format-detection" content="telephone=no"/>
+    
     <link rel='shortcut icon' type='image/x-icon' href='../favicon.ico' />
 
     <title>株式会社ケー・アールライン</title>
@@ -61,58 +62,54 @@
     </style>
 
     <script>
-	    
+
     </script>
 </head>
-<body class="bg-steel">
-     <!-- ヘッダー固定 -->
-   <div id="Menu_load"></div>
+<body>
+
+    <!-- ヘッダー固定 -->
+    <div id="Menu_load"></div>
+
     <div class="page-content">
         <div class="flex-grid no-responsive-future" style="height: 100%;">
             <div class="row" style="height: 100%">
                 <div class="cell auto-size padding20 bg-white" id="cell-content">
                     <ul class="breadcrumbs" style="padding:0px;">
-					    <li><h4><a href="#">得意先</a></h4></li>
-					</ul>
-					<div class="grid">
+                        <li><h4><a href="#">得意先一覧</a></h4></li>
+                    </ul>
                     <hr class="thin bg-grayLighter">
-                    
-					<div class="cell colspan5">
-						得意先コード
-						<div class="input-control text" data-length="8" style="width:150px;margin:10px 0px 0px 13px;">
-					      <input type="text">
-					    </div>
-					    得意先名
-						<div class="input-control text" data-length="8" style="width:250px;margin:10px 0px 0px 13px;">
-					      <input type="text">
-					    </div>
-					    
-					    <div class="right">
-					      <button class="button alert" onclick="pushMessage('alert')">削除</button>
-	                      <button class="button primary">検索</button>
-	                      <a href="./master_customer_add.html" target="_self"><button class="button success" onclick="#">登録</button></a>
+                    <div class="cell colspan5">
+                        <span style=";margin:10px 0px 0px 10px;">得意先コード</span>
+                        <div class="input-control text" data-length="8" style="width:100px;margin:5px 0px 0px 5px;">
+                          <input type="text" style="width:100px;">
                         </div>
-		            </div>
-					</div>
+                        <span style="margin-left:10px;">得意先名</span>
+                        <div class="input-control text" data-length="8" style="width:250px;margin:5px 0px 0px 5px;">
+                          <input type="text" style="width:230px;">
+                        </div>
+                        <div class="right">
+                          <button type="button" class="button alert" style="width:100px;">削除</button>
+                          <button type="button" class="button primary" style="width:100px;">検索</button>
+                          <button type="button" style="width:100px; font-size: 1em; height:32px;background-color: #2086BF;color: #fff; border-style: none;" onclick="location.href='master_customer_add.html'">登録</button>
+                        </div>
+                    </div>
                     <hr class="thin bg-grayLighter">
-                    
-                    <table class="dataTable border bordered" data-auto-width="false">
+                    <table class="dataTable border bordered" data-auto-width="false" style="font-size: small;">
                         <thead>
                         <tr>
-                            <td class="sortable-column" style="text-align:center;">削除</td>
-                            <td class="sortable-column" style="text-align:center;">得意先コード</td>
-                            <td class="sortable-column" style="text-align:center;">得意先名</td>
-                            <td class="sortable-column" style="text-align:center;">部署</td>
-                            <td class="sortable-column" style="text-align:center;">課名</td>
-                            <td class="sortable-column" style="text-align:center;">郵便番号</td>
-                            <td class="sortable-column" style="text-align:center;">住所</td>
-                            <td class="sortable-column" style="text-align:center;">電話番号</td>
-                            <td class="sortable-column" style="text-align:center;">FAX</td>
-                            <td class="sortable-column" style="text-align:center;">詳細</td>
+                            <td style="width: 50px;text-align: center;" class="sortable-column">削除</td>
+                            <td style="width:105px;text-align: center;" class="sortable-column">得意先コード</td>
+                            <td style="text-align: center;" class="sortable-column">得意先名</td>
+                            <td style="width:110px;text-align: center;" class="sortable-column">部署</td>
+                            <td style="width:110px;text-align: center;" class="sortable-column">課名</td>
+                            <td style="width: 80px;text-align: center;" class="sortable-column">郵便番号</td>
+                            <td style="text-align: center;" class="sortable-column">住所</td>
+                            <td style="width:110px;text-align: center;" class="sortable-column">電話番号</td>
+                            <td style="width:110px;text-align: center;" class="sortable-column">FAX</td>
+                            <td style="text-align: center;" class="sortable-column">詳細</td>
                         </tr>
                         </thead>
                         <tbody>
-                        
                         <tr style="height: 45px;">
                             <td align="center">
                                <label class="input-control checkbox small-check no-margin">
@@ -120,17 +117,18 @@
                                     <span class="check"></span>
                                 </label>
                             </td>
-                            <td style="text-align:right;">0423</td>
+                            <td>0423</td>
                             <td>ユニキャリア</td>
                             <td>総務部</td>
                             <td>商品管理課</td>
-                            <td style="text-align:right;">259-1219</td>
+                            <td>259-1219</td>
                             <td>神奈川県 平塚市 広川775-1</td>
-                            <td style="text-align:right;">0463-59-6166</td>
-                            <td style="text-align:right;">0463-59-6169</td>
-                            <td align="center"><a href="#" target="_self">詳細</a></td>
+                            <td>0463-59-6166</td>
+                            <td>0463-59-6169</td>
+                            <td align="center">
+                                 <button type="button" style="font-size: 1em; padding:4px 13px;background-color: #2086BF;color: #fff; border-style: none;" onclick="location.href='master_customer_add.html'">詳細</button>
+                            </td>
                         </tr>
-                        
                         <tr style="height: 45px;">
                             <td align="center">
                                <label class="input-control checkbox small-check no-margin">
@@ -138,17 +136,18 @@
                                     <span class="check"></span>
                                 </label>
                             </td>
-                            <td style="text-align:right;">0424</td>
+                            <td>0424</td>
                             <td>株式会社富士フォークリフト</td>
                             <td></td>
                             <td></td>
-                            <td style="text-align:right;">241-0803</td>
+                            <td>241-0803</td>
                             <td>神奈川県横浜市旭区川井本町61-1</td>
-                            <td style="text-align:right;">0463-59-6166</td>
-                            <td style="text-align:right;">045-953-6750</td>
-                            <td align="center"><a href="#" target="_self">詳細</a></td>
+                            <td>0463-59-6166</td>
+                            <td>045-953-6750</td>
+                             <td align="center">
+                                 <button type="button" style="font-size: 1em; padding:4px 13px;background-color: #2086BF;color: #fff; border-style: none;" onclick="location.href='master_customer_add.html'">詳細</button>
+                            </td>
                         </tr>
-                        
                         </tbody>
                     </table>
                 </div>

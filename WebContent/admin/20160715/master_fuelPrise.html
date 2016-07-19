@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Metro, a sleek, intuitive, and powerful framework for faster and easier web development for Windows Metro Style.">
+    <meta name="keywords" content="HTML, CSS, JS, JavaScript, framework, metro, front-end, frontend, web development">
+    <meta name="author" content="Sergey Pimenov and Metro UI CSS contributors">
+
+    <link rel='shortcut icon' type='image/x-icon' href='../favicon.ico' />
+
+    <title>株式会社ケー・アールライン</title>
+
+    <link href="../css/metro.css" rel="stylesheet">
+    <link href="../css/metro-icons.css" rel="stylesheet">
+    <link href="../css/metro-responsive.css" rel="stylesheet">
+
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/jquery.dataTables.min.js"></script>
+
+    <script src="../js/metro.js"></script>
+    
+    <script src="../js/Menu.js"></script>
+
+    <style>
+        html, body {
+            height: 100%;
+        }
+        body {
+        }
+        .page-content {
+            padding-top: 3.125rem;
+            min-height: 100%;
+            height: 100%;
+        }
+        .table .input-control.checkbox {
+            line-height: 1;
+            min-height: 0;
+            height: auto;
+        }
+
+        @media screen and (max-width: 800px){
+            #cell-sidebar {
+                flex-basis: 52px;
+            }
+            #cell-content {
+                flex-basis: calc(100% - 52px);
+            }
+        }
+    </style>
+
+    <script>
+        function pushMessage(t){
+            var mes = 'Info|Implement independently';
+            $.Notify({
+                caption: mes.split("|")[0],
+                content: mes.split("|")[1],
+                type: t
+            });
+        }
+　　</script>
+</head>
+<body class="bg-steel">
+     <!-- ヘッダー固定 -->
+   <div id="Menu_load"></div>
+    <div class="page-content">
+        <div class="flex-grid no-responsive-future" style="height: 100%;">
+            <div class="row" style="height: 100%">
+                <div class="cell auto-size padding20 bg-white" id="cell-content">
+                    <ul class="breadcrumbs" style="padding:0px;">
+					    <li><h4>月別燃料単価</h4></li>
+					</ul>
+					<div class="grid">
+	                <hr class="thin bg-grayLighter">
+	                
+					<div class="align-right">
+                      <button class="button warning" onclick="pushMessage('warning')">キャンセル</button>
+                      <button class="button success" onclick="pushMessage('success')">保存</button>
+					</div>
+					</div>
+					
+	                <hr class="thin bg-grayLighter">
+                    <table class="dataTable border bordered" data-auto-width="false">
+                        <thead>
+                        <tr>
+                            <td rowspan="2" style="text-align:center;">燃料単価</td>
+                            <td colspan="12" style="text-align:center;">月</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:center;">6月</td>
+                            <td style="text-align:center;">7月</td>
+                            <td style="text-align:center;">8月</td>
+                            <td style="text-align:center;">9月</td>
+                            <td style="text-align:center;">10月</td>
+                            <td style="text-align:center;">11月</td>
+                            <td style="text-align:center;">12月</td>
+                            <td style="text-align:center;">1月</td>
+                            <td style="text-align:center;">2月</td>
+                            <td style="text-align:center;">3月</td>
+                            <td style="text-align:center;">4月</td>
+                            <td style="text-align:center;">5月</td>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td style="text-align:left;">平成27年度</td>
+                            <td style="text-align:right;"><div class="input-control text" style="width:60px;"><input type="text" style="text-align:right;" placeholder="95.46"></div></td>
+                            <td style="text-align:right;"><div class="input-control text" style="width:60px;"><input type="text" style="text-align:right;" placeholder="91.54"></div></td>
+                            <td style="text-align:right;"><div class="input-control text" style="width:60px;"><input type="text" style="text-align:right;" placeholder="84.5"></div></td>
+                            <td style="text-align:right;"><div class="input-control text" style="width:60px;"><input type="text" style="text-align:right;" placeholder="82.7"></div></td>
+                            <td style="text-align:right;"><div class="input-control text" style="width:60px;"><input type="text" style="text-align:right;" placeholder="82.6"></div></td>
+                            <td style="text-align:right;"><div class="input-control text" style="width:60px;"><input type="text" style="text-align:right;" placeholder="84.4"></div></td>
+                            <td style="text-align:right;"><div class="input-control text" style="width:60px;"><input type="text" style="text-align:right;" placeholder="80.9"></div></td>
+                            <td style="text-align:right;"><div class="input-control text" style="width:60px;"><input type="text" style="text-align:right;" placeholder="74.1"></div></td>
+                            <td style="text-align:right;"><div class="input-control text" style="width:60px;"><input type="text" style="text-align:right;" placeholder="70.1"></div></td>
+                            <td style="text-align:right;"><div class="input-control text" style="width:60px;"><input type="text" style="text-align:right;" placeholder=""></div></td>
+                            <td style="text-align:right;"><div class="input-control text" style="width:60px;"><input type="text" style="text-align:right;" placeholder=""></div></td>
+                            <td style="text-align:right;"><div class="input-control text" style="width:60px;"><input type="text" style="text-align:right;" placeholder=""></div></td>
+						</tr>
+                        <tr>
+                            <td style="text-align:left;">平成26年度</td>
+                            <td style="text-align:right;">95.46</td>
+                            <td style="text-align:right;">91.54</td>
+                            <td style="text-align:right;">84.5</td>
+                            <td style="text-align:right;">82.7</td>
+                            <td style="text-align:right;">82.6</td>
+                            <td style="text-align:right;">84.4</td>
+                            <td style="text-align:right;">80.9</td>
+                            <td style="text-align:right;">74.1</td>
+                            <td style="text-align:right;">70.1</td>
+                            <td style="text-align:right;">89</td>
+                            <td style="text-align:right;">90</td>
+                            <td style="text-align:right;">91</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:left;">平成25年度</td>
+                            <td style="text-align:right;">95.46</td>
+                            <td style="text-align:right;">91.54</td>
+                            <td style="text-align:right;">84.5</td>
+                            <td style="text-align:right;">82.7</td>
+                            <td style="text-align:right;">82.6</td>
+                            <td style="text-align:right;">84.4</td>
+                            <td style="text-align:right;">80.9</td>
+                            <td style="text-align:right;">74.1</td>
+                            <td style="text-align:right;">70.1</td>
+                            <td style="text-align:right;">89</td>
+                            <td style="text-align:right;">90</td>
+                            <td style="text-align:right;">91</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:left;">平成24年度</td>
+                            <td style="text-align:right;">95.46</td>
+                            <td style="text-align:right;">91.54</td>
+                            <td style="text-align:right;">84.5</td>
+                            <td style="text-align:right;">82.7</td>
+                            <td style="text-align:right;">82.6</td>
+                            <td style="text-align:right;">84.4</td>
+                            <td style="text-align:right;">80.9</td>
+                            <td style="text-align:right;">74.1</td>
+                            <td style="text-align:right;">70.1</td>
+                            <td style="text-align:right;">89</td>
+                            <td style="text-align:right;">90</td>
+                            <td style="text-align:right;">91</td>
+                        </tr>
+					</tbody>
+					</table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

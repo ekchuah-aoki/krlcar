@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -40,16 +40,7 @@
             min-height: 0;
             height: auto;
         }
-        
-        .grid {
-            overflow: hidden;
-        }
-        .left {
-            float: left;
-        }
-        .right {
-            float: right;
-        }
+
         @media screen and (max-width: 800px){
             #cell-sidebar {
                 flex-basis: 52px;
@@ -75,12 +66,21 @@
             dialog.open();
         }
 
-		$(function(){
-	        $("#datepicker1").datepicker();
-	        $("#datepicker").datepicker();
-	        $("#datepicker3").datepicker();
-	        
-	    });
+        $(function(){
+            $("#datepicker1").datepicker();
+            $("#datepicker").datepicker();
+            $("#datepicker3").datepicker();
+            
+        });
+        
+        $(function(){
+            $('.sidebar').on('click', 'li', function(){
+                if (!$(this).hasClass('active')) {
+                    $('.sidebar li').removeClass('active');
+                    $(this).addClass('active');
+                }
+            })
+        })
     </script>
 </head>
 <body class="bg-steel">
@@ -89,86 +89,90 @@
    <div id="Menu_load"></div>
 
     <div class="page-content">
-        <div class="flex-grid no-responsive-future" style="height: 100%;">
+        <div class="flex-grid no-responsive-future" style="height:100%;">
             <div class="row" style="height: 100%">
                 
                 <div class="cell auto-size padding20 bg-white" id="cell-content">
                     <ul class="breadcrumbs" style="padding:0px;">
-					    <li><h4>車両台帳印刷</h4></li>
-					</ul>
-					<div class="grid">
+                        <li><h4>車両一覧（メンテナンス）</h4></li>
+                    </ul>
                     <hr class="thin bg-grayLighter">
-					<div class="left">
-					<label class="input-control checkbox small-check no-margin">
-                    	<input type="checkbox">
-                    	<span class="check"></span>シビヤ点検
-                    </label>
-                    <label class="input-control checkbox small-check no-margin">
-                    	<input type="checkbox">
-                    	<span class="check"></span>三カ月点検
-                    </label>
-                    <label class="input-control checkbox small-check no-margin">
-                    	<input type="checkbox">
-                    	<span class="check"></span>車検
-                    </label>
-                    <label class="input-control checkbox small-check no-margin">
-                    	<input type="checkbox">
-                    	<span class="check"></span>オイル交換
-                    </label>
-                    <button class="" onclick="('')">絞込</button>
+                    <span style="margin-left:10px;">支社名</span>
+                    <div class="input-control text" data-length="8" style="width:250px;margin:5px 10px 0px 5px;">
+                    <select>
+                        <option></option>
+                        <option>本社</option>
+                        <option>山形営業所</option>
+                        <option>大阪堺倉庫</option>
+                        <option>沖縄営業所：ウォーター事業部</option>
+                    </select>
                     </div>
-                    <div class="right">
-                        <button class="button alert" onclick="pushMessage('alert')">削除</button>
-						<button class="button primary" onclick="pushMessage('info')" style="background-color:#6A5ACD;border-color:#6A5ACD;">印刷</button>
-	                    <button class="button success" onclick="window.open('master_truck_add.html', '_self')">登録</button>
-					</div>
-					</div>
-                    
+                    <label class="input-control checkbox small-check no-margin">
+                        <input type="checkbox">
+                        <span class="check"></span><span style="margin:5px 10px 5px 10px;">シビヤ点検</span>
+                    </label>
+                    <label class="input-control checkbox small-check no-margin">
+                        <input type="checkbox">
+                        <span class="check"></span><span style="margin:5px 10px 5px 10px;">三カ月点検</span>
+                    </label>
+                    <label class="input-control checkbox small-check no-margin">
+                        <input type="checkbox">
+                        <span class="check"></span><span style="margin:5px 10px 5px 10px;">車検</span>
+                    </label>
+                    <label class="input-control checkbox small-check no-margin">
+                        <input type="checkbox">
+                        <span class="check"></span><span style="margin:5px 10px 5px 10px;">タイヤ交換</span>
+                    </label>
+                    <label class="input-control checkbox small-check no-margin">
+                        <input type="checkbox">
+                        <span class="check"></span><span style="margin:5px 10px 5px 10px;">タイヤローテーション</span>
+                    </label>
+                    <label class="input-control checkbox small-check no-margin">
+                        <input type="checkbox">
+                        <span class="check"></span><span style="margin:5px 10px 5px 10px;">オイル交換</span>
+                    </label>
+                    <div style="float: right; display:inline;">
+                        <button type="button" class="button primary" style="width:100px;margin:5px 5px 5px 5px;">検索</button>
+                    </div>
                     <hr class="thin bg-grayLighter">
                     <table class="dataTable border bordered" data-auto-width="false" style="text-align:center;">
                         <thead>
                         <tr>
-                            <td rowspan="2" style="width:60px" style="text-align:center;">削除</td>
-                            <td rowspan="2" class="sortable-column" style="text-align:center;">車番</td>
-                            <td rowspan="2" class="sortable-column" style="text-align:center;">車種</td>
-                            <td rowspan="2" class="sortable-column" style="text-align:center;">拠点</td>
-                            <td rowspan="2" class="sortable-column" style="text-align:center;">走行距離km</td>
-                            <td colspan="3" class="sortable-column" style="text-align:center;">次回実施予定日</td>
-                            <td colspan="3" class="sortable-column" style="text-align:center;">次回残距離km</td>
-                            <td rowspan="2" class="sortable-column" style="text-align:center;">詳細</td>
+                            <td rowspan="2" style="text-align: center;" class="sortable-column">支社名</td>
+                            <td rowspan="2" style="text-align: center;" class="sortable-column">車番</td>
+                            <td rowspan="2" style="text-align: center;" class="sortable-column">車種</td>
+                            <td rowspan="2" style="text-align: center;" class="sortable-column">形式</td>
+                            <td rowspan="2" style="text-align: center;" class="sortable-column">走行距離km</td>
+                            <td colspan="3" style="text-align: center;" class="sortable-column">次回実施予定日</td>
+                            <td colspan="3" style="text-align: center;" class="sortable-column">次回残距離km</td>
+                            <td rowspan="2" style="text-align: center;" class="sortable-column">詳細</td>
                         </tr>
-                        
                         <tr>
-                            <td class="sortable-column" style="text-align:center;">シビア点検</td>
-                            <td class="sortable-column" style="text-align:center;">三カ月点検</td>
-                            <td class="sortable-column" style="text-align:center;">車検</td>
-                            <td class="sortable-column" style="text-align:center;">タイヤ交換</td>
-                            <td class="sortable-column" style="text-align:center;">タイヤローテーション</td>
-                            <td class="sortable-column" style="text-align:center;">オイル交換</td>
+                            <td style="text-align: center;" class="sortable-column">シビア点検</td>
+                            <td style="text-align: center;" class="sortable-column">三カ月点検</td>
+                            <td style="text-align: center;" class="sortable-column">車検</td>
+                            <td style="text-align: center;" class="sortable-column">タイヤ交換</td>
+                            <td style="text-align: center;" class="sortable-column">タイヤローテーション</td>
+                            <td style="text-align: center;" class="sortable-column">オイル交換</td>
                         </tr>
-                         
                         </thead>
                         <tbody>
-                        <tr>
-                            <td>
-                                <label class="input-control checkbox small-check no-margin">
-                                    <input type="checkbox">
-                                    <span class="check"></span>
-                                </label>
+                        <tr style="height:40px">
+                            <td style="text-align:left;">山形営業所</td>
+                            <td style="text-align:left;">A111</td>
+                            <td style="text-align:left;">大型</td>
+                            <td style="text-align:left;">15tウイング</td>
+                            <td style="text-align:right;">130,340</td>
+                            <td style="text-align:center;">2016/08/02</td>
+                            <td style="text-align:center;">2016/06/17</td>
+                            <td style="text-align:center;">2017/10/22</td>
+                            <td style="text-align:right;">310,000</td>
+                            <td style="text-align:right;">200,000</td>
+                            <td style="text-align:right;">130,000</td>
+                            <td align="center">
+                                 <button type="button" style="font-size: 1em; padding:4px 13px;background-color: #2086BF;color: #fff; border-style: none;" onclick="location.href='master_truck_add.html'">詳細</button>
                             </td>
-                            <td style="text-align:right;">9999</td>
-                            <td style="text-align:left;">大型10t</td>
-                            <td style="text-align:left;">神奈川</td>
-                            <td style="text-align:right;">999,999</td>
-                            <td style="text-align:center;">99/99/99</td>
-                            <td style="text-align:center;">99/99/99</td>
-                            <td style="text-align:center;">99/99/99</td>
-                            <td style="text-align:right;">999,999</td>
-                            <td style="text-align:right;">999,999</td>
-                            <td style="text-align:right;">999,999</td>
-                            <td style="text-align:center;"><a href="master_truck_add.html" target="_self">詳細</a></td>
                         </tr>
-                       
                         </tbody>
                     </table>
                 </div>

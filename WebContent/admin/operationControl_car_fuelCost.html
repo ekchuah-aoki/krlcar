@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -28,6 +28,7 @@
             height: 100%;
         }
         body {
+        font-size:10pt;
         }
         .page-content {
             padding-top: 3.125rem;
@@ -39,15 +40,7 @@
             min-height: 0;
             height: auto;
         }
-        .cell colspan5 {
-            overflow: hidden;
-        }
-        .input-control select {
-            float: left;
-        }
-        .right {
-            float: right;
-        }
+
         @media screen and (max-width: 800px){
             #cell-sidebar {
                 flex-basis: 52px;
@@ -67,43 +60,48 @@
                 type: t
             });
         }
+
+        $(function(){
+            $('.sidebar').on('click', 'li', function(){
+                if (!$(this).hasClass('active')) {
+                    $('.sidebar li').removeClass('active');
+                    $(this).addClass('active');
+                }
+            })
+        })
     </script>
 </head>
-<body class="bg-steel">
-
-     <!-- ヘッダー固定 -->
-   <div id="Menu_load"></div>
+<body>
+    <!-- ヘッダー固定 -->
+    <div id="Menu_load"></div>
 
     <div class="page-content">
         <div class="flex-grid no-responsive-future" style="height: 100%;">
-
             <div class="row" style="height: 100%">
                 <div class="cell auto-size padding20 bg-white" id="cell-content">
                     <ul class="breadcrumbs" style="padding:0px;">
-                      <li><h4>月別個車燃費推移一覧</h4></li>
+                        <li><h4>月別個車燃費推移一覧</h4></li>
                     </ul>
-		            <div class="grid">
-		            
                     <hr class="thin bg-grayLighter">
-                    
-		                <div class="cell colspan5">
-								<div class="input-control select" style="width:60px;">
-		                            <select dir="rtl">
-		                                <option>2016</option>
-		                                <option>2015</option>
-		                                <option>2014</option>
-		                                <option>2013</option>
-		                            </select>
-								</div>
-								年度
-		                    
-							<div class="right">
-		                    	<button class="button primary">検索</button>
-		                    </div>
-		                    </div>
-	                    </div>
+                    <div class="grid">
+                      <div class="row cells12">
+                     <div class="cell colspan6" style="float:left;margin-right: auto;">
+                        <div class="input-control select" style="width:70px;">
+                                  <select>
+                                      <option>2016</option>
+                                      <option>2015</option>
+                                      <option>2014</option>
+                                      <option>2013</option>
+                                  </select>
+                        </div>
+                        年度
+                     </div>
+                     <div style="float: right; display:inline;">
+                             <button class="button primary" style="width:100px;">検索</button>
+                          </div>
+                       </div>
+                    </div>
                     <hr class="thin bg-grayLighter">
-
                     <table class="dataTable border bordered" data-auto-width="false">
                         <thead>
                         <tr>
@@ -143,145 +141,147 @@
                             <td>平均燃費</td>
                         </tr>
                         </thead>
-                        <tbody style="text-align:right;">
+                        <tbody  style="text-align:right;">
                         <tr>
-						  	<td rowspan="4" style="text-align:left;">101<br/>いすゞ<br/>阿部</td>
-						 	<td style="text-align:left;">走行距離</td>
-							<td>14304</td>
-							<td>11451</td>
-							<td>12367</td>
-							<td>11828</td>
-							<td>15617</td>
-							<td>15176</td>
-							<td>9490</td>
-							<td>10241</td>
-							<td>10111</td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td>110585</td>
-						</tr>
-						<tr>
-							<td style="text-align:left;">給油量</td>
-							<td>3661.00</td>
-							<td>3368.00</td>
-							<td>3307.00</td>
-							<td>3197.00</td>
-							<td>3886.92</td>
-							<td>4055.01</td>
-							<td>2659.00</td>
-							<td>2801.01</td>
-							<td>2822.01</td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td>29756.95</td>
-						</tr>
-						<tr>
-							<td style="text-align:left;">燃料費</td>
-							<td>349479</td>
-							<td>308307</td>
-							<td>279442</td>
-							<td>264392</td>
-							<td>321060</td>
-							<td>342243</td>
-							<td>215113</td>
-							<td>207555</td>
-							<td>197823</td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td>2485412</td>
-						</tr>
-						<tr>
-							<td style="text-align:left;">燃費</td>
-							<td>3.91</td>
-							<td>3.40</td>
-							<td>3.74</td>
-							<td>3.70</td>
-							<td>4.02</td>
-							<td>3.74</td>
-							<td>3.57</td>
-							<td>3.66</td>
-							<td>3.58</td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td>3.72</td>
-						</tr>
-
-                        <tr>
-						  	<td rowspan="4" style="text-align:left;">103<br/>いすゞ<br/></td>
-						 	<td style="text-align:left;">走行距離</td>
-							<td>9763</td>
-							<td>15166</td>
-							<td>12911</td>
-							<td>11664</td>
-							<td>7919</td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td>57333</td>
-						</tr>
-						<tr>
-							<td style="text-align:left;">給油量</td>
-							<td>2702.00</td>
-							<td>4040.01</td>
-							<td>3636.00</td>
-							<td>3361.00</td>
-							<td>2203.20</td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td>15943.21</td>
-						</tr>
-						<tr>
-							<td style="text-align:left;">燃料費</td>
-							<td>258028</td>
-							<td>369823</td>
-							<td>307242</td>
-							<td>277955</td>
-							<td>181984</td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td>15943.21</td>
-						</tr>
-						<tr>
-							<td style="text-align:left;">燃費</td>
-							<td>3.58</td>
-							<td>3.75</td>
-							<td>3.55</td>
-							<td>3.47</td>
-							<td>3.59</td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td>3.60</td>
-						</tr>
-					</tbody>
-                        <tfoot>
-                        <tr>
-						  	<td colspan="15">燃料費(円)　＝　給油量(L)　＊　単価(円/L)<br/>燃費(km/L)　＝　走行した距離(km)　÷　給油量(L)</td>
-						</tr>
-                        </tfoot>
-					</table>
+                       <td rowspan="4" style="text-align:center;">101<br/>いすゞ<br/>阿部</td>
+                      <td style="text-align:left;">走行距離</td>
+                      <td>14,304</td>
+                      <td>11,451</td>
+                      <td>12,367</td>
+                      <td>11,828</td>
+                      <td>15,617</td>
+                      <td>15,176</td>
+                      <td>9,490</td>
+                      <td>10,241</td>
+                      <td>10,111</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td>110,585</td>
+                  </tr>
+                  <tr>
+                     <td style="text-align:left;">給油量</td>
+                     <td>3,661.00</td>
+                     <td>3,368.00</td>
+                     <td>3,307.00</td>
+                     <td>3,197.00</td>
+                     <td>3,886.92</td>
+                     <td>4,055.01</td>
+                     <td>2,659.00</td>
+                     <td>2,801.01</td>
+                     <td>2,822.01</td>
+                     <td></td>
+                     <td></td>
+                     <td></td>
+                     <td>29,756.95</td>
+                  </tr>
+                  <tr>
+                     <td style="text-align:left;">燃料費</td>
+                     <td>349,479</td>
+                     <td>308,307</td>
+                     <td>279,442</td>
+                     <td>264,392</td>
+                     <td>321,060</td>
+                     <td>342,243</td>
+                     <td>215,113</td>
+                     <td>207,555</td>
+                     <td>197,823</td>
+                     <td></td>
+                     <td></td>
+                     <td></td>
+                     <td>2,485,412</td>
+                  </tr>
+                  <tr>
+                     <td style="text-align:left;">燃費</td>
+                     <td>3.91</td>
+                     <td>3.40</td>
+                     <td>3.74</td>
+                     <td>3.70</td>
+                     <td>4.02</td>
+                     <td>3.74</td>
+                     <td>3.57</td>
+                     <td>3.66</td>
+                     <td>3.58</td>
+                     <td></td>
+                     <td></td>
+                     <td></td>
+                     <td>3.72</td>
+                  </tr>
+                  <tr>
+                     <td rowspan="4" style="text-align:center;">103<br/>いすゞ<br/></td>
+                     <td style="text-align:left;">走行距離</td>
+                     <td>9,763</td>
+                     <td>15,166</td>
+                     <td>12,911</td>
+                     <td>11,664</td>
+                     <td>7,919</td>
+                     <td></td>
+                     <td></td>
+                     <td></td>
+                     <td></td>
+                     <td></td>
+                     <td></td>
+                     <td></td>
+                     <td>57,333</td>
+                  </tr>
+                  <tr>
+                     <td style="text-align:left;">給油量</td>
+                     <td>2,702.00</td>
+                     <td>4,040.01</td>
+                     <td>3,636.00</td>
+                     <td>3,361.00</td>
+                     <td>2,203.20</td>
+                     <td></td>
+                     <td></td>
+                     <td></td>
+                     <td></td>
+                     <td></td>
+                     <td></td>
+                     <td></td>
+                     <td>15,943.21</td>
+                  </tr>
+                  <tr>
+                     <td style="text-align:left;">燃料費</td>
+                     <td>258,028</td>
+                     <td>369,823</td>
+                     <td>307,242</td>
+                     <td>277,955</td>
+                     <td>181,984</td>
+                     <td></td>
+                     <td></td>
+                     <td></td>
+                     <td></td>
+                     <td></td>
+                     <td></td>
+                     <td></td>
+                     <td>15,943.21</td>
+                  </tr>
+                  <tr>
+                     <td style="text-align:left;">燃費</td>
+                     <td>3.58</td>
+                     <td>3.75</td>
+                     <td>3.55</td>
+                     <td>3.47</td>
+                     <td>3.59</td>
+                     <td></td>
+                     <td></td>
+                     <td></td>
+                     <td></td>
+                     <td></td>
+                     <td></td>
+                     <td></td>
+                     <td>3.60</td>
+                  </tr>
+                  </tbody>
+                  <tfoot>
+                     <tr>
+                        <td colspan="15">
+                           <p style="text-align:justify; text-justify:distribute-all-lines; width:400px;margin:2px;">燃料費(円)＝給油量(L)＊単価(円/L)</p>
+                           <p style="text-align:justify; text-justify:distribute-all-lines; width:400px;margin:2px;">燃費(km/L)＝走行した距離(km)÷給油量(L)</p>
+                        </td>
+                     </tr>
+                  </tfoot>
+                  </table>
                 </div>
             </div>
         </div>

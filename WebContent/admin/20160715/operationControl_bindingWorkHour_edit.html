@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Metro, a sleek, intuitive, and powerful framework for faster and easier web development for Windows Metro Style.">
+    <meta name="keywords" content="HTML, CSS, JS, JavaScript, framework, metro, front-end, frontend, web development">
+    <meta name="author" content="Sergey Pimenov and Metro UI CSS contributors">
+
+    <link rel='shortcut icon' type='image/x-icon' href='../favicon.ico' />
+
+    <title>株式会社ケー・アールライン</title>
+
+    <link href="../css/metro.css" rel="stylesheet">
+    <link href="../css/metro-icons.css" rel="stylesheet">
+    <link href="../css/metro-responsive.css" rel="stylesheet">
+
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/jquery.dataTables.min.js"></script>
+
+    <script src="../js/metro.js"></script>
+    
+    <script src="../js/Menu.js"></script>
+
+    <style>
+        html, body {
+            height: 100%;
+        }
+        body {
+            font-size:10pt;
+        }
+        .page-content {
+            padding-top: 3.125rem;
+            min-height: 100%;
+            height: 100%;
+        }
+        .table .input-control.checkbox {
+            line-height: 1;
+            min-height: 0;
+            height: auto;
+        }
+        
+        .dataTable border bordered {
+             border-right: 1px;
+        }
+        
+        
+        @media screen and (max-width: 800px){
+            #cell-sidebar {
+                flex-basis: 52px;
+            }
+            #cell-content {
+                flex-basis: calc(100% - 52px);
+            }
+        }
+    </style>
+
+    <script>
+        function pushMessage(t){
+            var mes = 'Info|Implement independently';
+            $.Notify({
+                caption: mes.split("|")[0],
+                content: mes.split("|")[1],
+                type: t
+            });
+        }
+    </script>
+</head>
+<body>
+
+     <!-- ヘッダー固定 -->
+   <div id="Menu_load"></div>
+
+    <div class="page-content">
+        <div class="flex-grid no-responsive-future">
+            <div class="row">
+                <div class="cell auto-size padding20 bg-white" id="cell-content">
+                    <ul class="breadcrumbs" style="padding:0px;">
+					    <li><h4>ドライバー別拘束・運転時間管理一覧 調整</h4></li>
+					</ul>
+					<div class="grid">
+                    <hr class="thin bg-grayLighter">
+                    <div class="align-right">
+                    <button class="button success" onclick="pushMessage('info')">保存</button>
+                    </div>
+                    </div>
+                    <hr class="thin bg-grayLighter">
+						<h4>運転手:平坂</h4>
+						<h5>
+						<span class="fg-red">拘束時間：一日13時間以内　・最高16時間以内　・15時間超は一周間に2回以内　・1カ月293時間以内　・繁忙期の場合320時間以内）
+						<br/>運転時間：2日平均で9時間以内　・2週間の平均が1週間当たり44時間以内
+						</span><br/>
+						<span class="fg-blue">安：安全講習会</span>
+						</h5>
+                    <table class="dataTable border bordered" data-auto-width="false">
+                        <thead>
+                        <tr>
+                            <td class="sortable-column" rowspan="6">1月</td>
+                            <td class="sortable-column" colspan="35" style="text-align:center;">月間計</td>
+                        </tr>
+                        <tr>
+                            <td class="sortable-column" colspan="7" style="text-align:center;">週間計</td>
+                            <td class="sortable-column" colspan="7" style="text-align:center;">週間計</td>
+                            <td class="sortable-column" colspan="7" style="text-align:center;">週間計</td>
+                            <td class="sortable-column" colspan="7" style="text-align:center;">週間計</td>
+                            <td class="sortable-column" colspan="7" style="text-align:center;">週間計</td>
+                        </tr>
+                        <tr>
+                            <td class="sortable-column">1</td>
+                            <td class="sortable-column">2</td>
+                            <td class="sortable-column">3</td>
+                            <td class="sortable-column">4</td>
+                            <td class="sortable-column">5</td>
+                            <td class="sortable-column">6</td>
+                            <td class="sortable-column">7</td>
+                            <td class="sortable-column">8</td>
+                            <td class="sortable-column">9</td>
+                            <td class="sortable-column">10</td>
+                            <td class="sortable-column">11</td>
+                            <td class="sortable-column">12</td>
+                            <td class="sortable-column">13</td>
+                            <td class="sortable-column">14</td>
+                            <td class="sortable-column">15</td>
+                            <td class="sortable-column">16</td>
+                            <td class="sortable-column">17</td>
+                            <td class="sortable-column">18</td>
+                            <td class="sortable-column">19</td>
+                            <td class="sortable-column">20</td>
+                            <td class="sortable-column">21</td>
+                            <td class="sortable-column">22</td>
+                            <td class="sortable-column">23</td>
+                            <td class="sortable-column">24</td>
+                            <td class="sortable-column">25</td>
+                            <td class="sortable-column">26</td>
+                            <td class="sortable-column">27</td>
+                            <td class="sortable-column">28</td>
+                            <td class="sortable-column">29</td>
+                            <td class="sortable-column">30</td>
+                            <td class="sortable-column">31</td>
+                        </tr>
+                        <tr>
+                            <td class="sortable-column">金</td>
+                            <td class="sortable-column">土</td>
+                            <td class="sortable-column">日</td>
+                            <td class="sortable-column">月</td>
+                            <td class="sortable-column">火</td>
+                            <td class="sortable-column">水</td>
+                            <td class="sortable-column">木</td>
+                            <td class="sortable-column">金</td>
+                            <td class="sortable-column">土</td>
+                            <td class="sortable-column">日</td>
+                            <td class="sortable-column">月</td>
+                            <td class="sortable-column">火</td>
+                            <td class="sortable-column">水</td>
+                            <td class="sortable-column">木</td>
+                            <td class="sortable-column">金</td>
+                            <td class="sortable-column">土</td>
+                            <td class="sortable-column">日</td>
+                            <td class="sortable-column">月</td>
+                            <td class="sortable-column">火</td>
+                            <td class="sortable-column">水</td>
+                            <td class="sortable-column">木</td>
+                            <td class="sortable-column">金</td>
+                            <td class="sortable-column">土</td>
+                            <td class="sortable-column">日</td>
+                            <td class="sortable-column">月</td>
+                            <td class="sortable-column">火</td>
+                            <td class="sortable-column">水</td>
+                            <td class="sortable-column">木</td>
+                            <td class="sortable-column">金</td>
+                            <td class="sortable-column">土</td>
+                            <td class="sortable-column">日</td>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+							<td rowspan="3">拘束</td>
+							<td colspan="35" style="text-align:center;"><span class="fg-green">289</span></td>
+						</tr>
+                        <tr>
+							<td colspan="7" style="text-align:center;">95</td>
+							<td colspan="7" style="text-align:center;">68</td>
+							<td colspan="7" style="text-align:center;">49</td>
+							<td colspan="7" style="text-align:center;">60</td>
+							<td colspan="7" style="text-align:center;">17</td>
+						</tr>
+                        <tr>
+							<td class="bg-yellow"><input type="text" style="width:30px;text-align:right;" placeholder="17"></td>
+							<td><input type="text" style="width:30px;text-align:right;" placeholder="12"></td>
+							<td><input type="text" style="width:30px;text-align:right;" placeholder="10"></td>
+							<td><input type="text" style="width:30px;text-align:right;" placeholder="11"></td>
+							<td><input type="text" style="width:30px;text-align:right;" placeholder="10"></td>
+							<td><input type="text" style="width:30px;text-align:right;" placeholder="10"></td>
+							<td><input type="text" style="width:30px;text-align:right;" placeholder="14"></td>
+							<td><input type="text" style="width:30px;text-align:right;" placeholder="10"></td>
+							<td><span class="fg-green"><input type="text" style="width:30px;text-align:right;" placeholder="休"></span></td>
+							<td><span class="fg-green"><input type="text" style="width:30px;text-align:right;" placeholder="休"></span></td>
+							<td><input type="text" style="width:30px;text-align:right;" placeholder="10"></td>
+							<td><input type="text" style="width:30px;text-align:right;" placeholder="10"></td>
+							<td><input type="text" style="width:30px;text-align:right;" placeholder="10"></td>
+							<td><input type="text" style="width:30px;text-align:right;" placeholder="10"></td>
+							<td><input type="text" style="width:30px;text-align:right;" placeholder="10"></td>
+							<td><input type="text" style="width:30px;text-align:right;" placeholder="10"></td>
+							<td><span class="fg-green"><input type="text" style="width:30px;text-align:right;" placeholder="休"></span></td>
+							<td><input type="text" style="width:30px;text-align:right;" placeholder="10"></td>
+							<td><input type="text" style="width:30px;text-align:right;" placeholder="10"></td>
+							<td><input type="text" style="width:30px;text-align:right;" placeholder="10"></td>
+							<td><span class="fg-green"><input type="text" style="width:30px;text-align:right;" placeholder="休"></span></td>
+							<td><input type="text" style="width:30px;text-align:right;" placeholder="10"></td>
+							<td><span class="fg-blue"><input type="text" style="width:30px;text-align:right;" placeholder="安"></span></td>
+							<td><input type="text" style="width:30px;text-align:right;" placeholder="10"></td>
+							<td><input type="text" style="width:30px;text-align:right;" placeholder="10"></td>
+							<td><input type="text" style="width:30px;text-align:right;" placeholder="10"></td>
+							<td><input type="text" style="width:30px;text-align:right;" placeholder="10"></td>
+							<td><input type="text" style="width:30px;text-align:right;" placeholder="10"></td>
+							<td><input type="text" style="width:30px;text-align:right;" placeholder="6"></td>
+							<td><span class="fg-green"><input type="text" style="width:30px;text-align:right;" placeholder="休"></span></td>
+							<td colspan="5"><input type="text" style="width:30px;text-align:right;" placeholder="11"></td>
+						</tr>
+                        <tr>
+						  	<td rowspan="3">運転</td>
+							<td colspan="35" style="text-align:center;"><span class="fg-green">193</span></td>
+						</tr>
+                        <tr>
+							<td colspan="7" style="text-align:center;">60</td>
+							<td colspan="7" style="text-align:center;">41</td>
+							<td colspan="7" style="text-align:center;">38</td>
+							<td colspan="7" style="text-align:center;">40</td>
+							<td colspan="7" style="text-align:center;">12</td>
+						</tr>
+                        <tr>
+							<td><input type="text" style="width:30px;text-align:right;" placeholder="9"></td>
+							<td><input type="text" style="width:30px;text-align:right;" placeholder="9"></td>
+							<td><input type="text" style="width:30px;text-align:right;" placeholder="7"></td>
+							<td><input type="text" style="width:30px;text-align:right;" placeholder="8"></td>
+							<td><input type="text" style="width:30px;text-align:right;" placeholder="9"></td>
+							<td><input type="text" style="width:30px;text-align:right;" placeholder="8"></td>
+							<td><input type="text" style="width:30px;text-align:right;" placeholder="8"></td>
+							<td><input type="text" style="width:30px;text-align:right;" placeholder="9"></td>
+							<td><input type="text" style="width:30px;text-align:right;" placeholder=" "></td>
+							<td><input type="text" style="width:30px;text-align:right;" placeholder=" "></td>
+							<td><input type="text" style="width:30px;text-align:right;" placeholder="9"></td>
+							<td><input type="text" style="width:30px;text-align:right;" placeholder="9"></td>
+							<td><input type="text" style="width:30px;text-align:right;" placeholder="9"></td>
+							<td><input type="text" style="width:30px;text-align:right;" placeholder="9"></td>
+							<td><input type="text" style="width:30px;text-align:right;" placeholder="9"></td>
+							<td><input type="text" style="width:30px;text-align:right;" placeholder="9"></td>
+							<td><input type="text" style="width:30px;text-align:right;" placeholder=" "></td>
+							<td><input type="text" style="width:30px;text-align:right;" placeholder="9"></td>
+							<td><input type="text" style="width:30px;text-align:right;" placeholder="9"></td>
+							<td><input type="text" style="width:30px;text-align:right;" placeholder="9"></td>
+							<td><input type="text" style="width:30px;text-align:right;" placeholder=" "></td>
+							<td><input type="text" style="width:30px;text-align:right;" placeholder="9"></td>
+							<td><input type="text" style="width:30px;text-align:right;" placeholder=" "></td>
+							<td><input type="text" style="width:30px;text-align:right;" placeholder="9"></td>
+							<td><input type="text" style="width:30px;text-align:right;" placeholder="9"></td>
+							<td><input type="text" style="width:30px;text-align:right;" placeholder="9"></td>
+							<td><input type="text" style="width:30px;text-align:right;" placeholder="9"></td>
+							<td><input type="text" style="width:30px;text-align:right;" placeholder="9"></td>
+							<td><input type="text" style="width:30px;text-align:right;" placeholder="4"></td>
+							<td><input type="text" style="width:30px;text-align:right;" placeholder=" "></td>
+							<td colspan="5"><input type="text" style="width:30px;text-align:right;" placeholder="8"></td>
+						</tr>					
+                        </tbody>
+                    </table>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

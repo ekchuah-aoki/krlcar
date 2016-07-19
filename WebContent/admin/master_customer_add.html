@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -65,185 +65,183 @@
             dialog.open();
         }
 
-		$(function(){
-	        $("#datepicker_seikyu").datepicker();
-	        $("#datepicker").datepicker();
-	        $("#datepicker_sime").datepicker();
-	        
-	    });
+        $(function(){
+            $("#datepicker_seikyu").datepicker();
+            $("#datepicker").datepicker();
+            $("#datepicker_sime").datepicker();
+            
+        });
+        
+        $(function(){
+            $('.sidebar').on('click', 'li', function(){
+                if (!$(this).hasClass('active')) {
+                    $('.sidebar li').removeClass('active');
+                    $(this).addClass('active');
+                }
+            })
+        })
+    </script>
+    
+    <!-- ヘッダー固定 -->
+    <script type="text/javascript">
+        $(document).ready(function() {
+           $('#header-target').load('header.html');
+        });
     </script>
 </head>
-<body class="bg-steel">
+<body>
+
    <!-- ヘッダー固定 -->
    <div id="Menu_load"></div>
+    
         <div class="page-content">
         <div class="flex-grid no-responsive-future">
            <div class="row">
                 <div class="cell auto-size padding20 bg-white" id="cell-content">
-	                <ul class="breadcrumbs" style="padding:0px;">
-					    <li><h4>得意先登録</h4></li>
-					</ul>
-					<div class="grid">
-	                <hr class="thin bg-grayLighter">
-	                
-					<div class="align-right">
-	                    <button class="button warning">キャンセル</button>
-	                    <button class="button success">保存</button>
-					</div>
-					</div>
-	                <hr class="thin bg-grayLighter">
-
-		            <div class="grid">
-		                <div class="row cells12">
-							<div class="cell colspan1">
-		                        顧客コード
-		                        <div class="input-control text full-size">
-								    <input type="text" style="text-align:right;">
-								</div>
-		                    </div>
-		                    <div class="cell colspan3">
-		                        <label>顧客名</label>
-		                        <div class="input-control text full-size">
-		                            <input type="text">
-		                        </div>
-		                    </div>
-		                    <div class="cell colspan3">
-		                        <label>部署名</label>
-		                        <div class="input-control text full-size">
-		                            <input type="text">
-		                        </div>
-		                    </div>
-		                    <div class="cell colspan2">
-		                        <label>課名</label>
-		                        <div class="input-control text full-size">
-		                            <input type="text">
-		                        </div>
-		                    </div>
-		                </div>
-		                <div class="row cells12">
-		                    <div class="cell colspan3">
-		                        <label>顧客略名</label>
-		                        <div class="input-control text full-size">
-		                            <input type="text">
-		                        </div>
-		                    </div>
-		                </div>
-
-		                <div class="row cells12">
-							<div class="cell colspan1">
-		                        郵便番号
-		                        <div class="input-control text full-size">
-								    <input type="text" style="text-align:right;">
-								</div>
-		                    </div>
-		                    <div class="cell colspan3">
-		                        <label>住所1</label>
-		                        <div class="input-control text full-size">
-		                            <input type="text">
-		                        </div>
-		                    </div>
-		                    <div class="cell colspan2">
-		                        <label>住所2</label>
-		                        <div class="input-control text full-size">
-		                            <input type="text">
-		                        </div>
-		                    </div>
-		                    <div class="cell colspan2">
-		                        <label>住所3</label>
-		                        <div class="input-control text full-size">
-		                            <input type="text">
-		                        </div>
-		                    </div>
-							<div class="cell colspan2">
-		                        建物名
-	                            <div class="input-control text full-size">
-								    <input type="text">
-								</div>
-		                    </div>
-		                </div>
-		                <div class="row cells12">
-							<div class="cell colspan1">
-		                        電話番号
-	                            <div class="input-control text full-size">
-								    <input type="text" style="text-align:right;">
-								</div>
-		                    </div>
-							<div class="cell colspan1">
-		                        ＦＡＸ
-	                            <div class="input-control text full-size">
-								    <input type="text" style="text-align:right;">
-								</div>
-		                    </div>
-							<div class="cell colspan6">
-		                        メールアドレス
-	                            <div class="input-control text full-size">
-								    <input type="text">
-								</div>
-		                    </div>
-	                    </div>
-		                <div class="row cells12">
-							<div class="cell colspan2">
-		                        担当者名
-	                            <div class="input-control text full-size">
-								    <input type="text">
-								</div>
-		                    </div>
-							<div class="cell colspan2">
-		                        経理担当者名
-	                            <div class="input-control text full-size">
-								    <input type="text">
-								</div>
-		                    </div>
-	                    </div>
-		                <div class="row cells12">
-							<div class="cell colspan1">
-		                        締日
-								<div class="input-control text full-size">
-									<input type="text" placeholder="31" style="text-align:right;">
-								</div>
-								※来月は99と入力
-								
-		                    </div>
-							<div class="cell colspan7">
-		                        締日内容
-				                <div class="input-control textarea full-size">
-				                    <textarea style="min-height:3rem;" placeholder="月末〆毎月１日ＰＭ１５時までにＦＡＸにて送付、正・副は３日までに送付"></textarea>
-				                </div>
-		                    </div>
-	                    </div>
-                        
-                        
-                        <div class="row cells12">
-							<div class="cell colspan1">
-		                        支払サイト
-								<div class="input-control text full-size">
-									<select class="select" name="carType">
-                              　　　   <option value="">当月</option>
-				                      <option value="">翌月</option>
-				                      <option value="">翌々月</option>
-								  	  <option value="">--</option>
-								    </select>
-								</div>	
-		                    </div>
-							<div class="cell colspan1">
-							    日付
-	                            <div class="input-control text full-size">
-								    <input type="text" style="text-align:right;">
-								</div>
-		                    </div>
-		                    <div class="cell colspan7">
-		                        支払内容
-				                <div class="input-control textarea full-size">
-				                    <textarea style="min-height:3rem;" placeholder="20日締め翌々月10日現金支払100万円以上は原則手形又は半金半手"></textarea>
-				                </div>
-		                    </div>
-	                    </div>
-                        
-	                    
-	                    </div>
+                    <ul class="breadcrumbs" style="padding:0px;">
+                        <li><h4>得意先登録</h4></li>
+                    </ul>
+                    <hr class="thin bg-grayLighter">
+                    <div class="align-right">
+                        <button class="button success" style="width:100px;">保存</button>
+                        <button class="button alert"   style="width:100px;" onclick="location.href='customer_mock.html'">戻る</button>
                     </div>
-	            </div>
+                    <hr class="thin bg-grayLighter">
+
+                    <div class="grid">
+                        <div class="row cells12">
+                            <div class="cell colspan1">
+                                顧客コード
+                                <div class="input-control text full-size">
+                                    <input type="text">
+                                </div>
+                            </div>
+                            <div class="cell colspan3">
+                                <label>顧客名</label>
+                                <div class="input-control text full-size">
+                                    <input type="text">
+                                </div>
+                            </div>
+                            <div class="cell colspan3">
+                                <label>部署名</label>
+                                <div class="input-control text full-size">
+                                    <input type="text">
+                                </div>
+                            </div>
+                            <div class="cell colspan2">
+                                <label>課名</label>
+                                <div class="input-control text full-size">
+                                    <input type="text">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row cells12">
+                            <div class="cell colspan3">
+                                <label>顧客略名</label>
+                                <div class="input-control text full-size">
+                                    <input type="text">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row cells12">
+                            <div class="cell colspan1">
+                                郵便番号
+                                <div class="input-control text full-size">
+                                    <input type="text">
+                                </div>
+                            </div>
+                            <div class="cell colspan5">
+                                <label>住所</label>
+                                <div class="input-control text full-size">
+                                    <input type="text">
+                                </div>
+                            </div>
+                            <div class="cell colspan2">
+                                建物名
+                                <div class="input-control text full-size">
+                                    <input type="text">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row cells12">
+                            <div class="cell colspan1">
+                                電話番号
+                                <div class="input-control text full-size">
+                                    <input type="text">
+                                </div>
+                            </div>
+                            <div class="cell colspan1">
+                                ＦＡＸ
+                                <div class="input-control text full-size">
+                                    <input type="text">
+                                </div>
+                            </div>
+                            <div class="cell colspan3">
+                                メールアドレス
+                                <div class="input-control text full-size">
+                                    <input type="text">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row cells12">
+                            <div class="cell colspan2">
+                                担当者名
+                                <div class="input-control text full-size">
+                                    <input type="text">
+                                </div>
+                            </div>
+                            <div class="cell colspan2">
+                                経理担当者名
+                                <div class="input-control text full-size">
+                                    <input type="text">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row cellsl2">
+                            <div class="cell colspan1">
+                                締日
+                                <div class="input-control text full-size">
+                                    <input style="width: 60px; text-align: right;" type="text" value="31">
+                                </div>
+                                <span style="color: red; font-size: 12px;">※来月は99と入力</span>                                
+                            </div>
+                            <div class="cell colspan7">
+                                締日内容
+                                <div class="input-control textarea full-size">
+                                    <input type="text" value="月末〆毎月１日ＰＭ１５時までにＦＡＸにて送付、正・副は３日までに送付">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row cells12">
+                            <div class="cell colspan1">
+                                支払サイト
+                                <div class="input-control text full-size">
+                                    <select class="select" name="carType">
+                                      <option value="">当月</option>
+                                      <option value="">翌月</option>
+                                      <option value="">翌々月</option>
+                                      <option value="">--</option>
+                                    </select>
+                                </div>    
+                            </div>
+                            <div class="cell colspan1">
+                                日付
+                                <div class="input-control text full-size">
+                                    <input type="text">
+                                </div>
+                            </div>
+                            <div class="cell colspan7">
+                                支払内容
+                                <div class="input-control textarea full-size">
+                                    <input type="text" value="20日締め翌々月10日現金支払100万円以上は原則手形又は半金半手">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+    </div>
 </body>
 </html>

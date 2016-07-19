@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Metro, a sleek, intuitive, and powerful framework for faster and easier web development for Windows Metro Style.">
+    <meta name="keywords" content="HTML, CSS, JS, JavaScript, framework, metro, front-end, frontend, web development">
+    <meta name="author" content="Sergey Pimenov and Metro UI CSS contributors">
+
+    <link rel='shortcut icon' type='image/x-icon' href='../favicon.ico' />
+
+    <title>株式会社ケー・アールライン</title>
+
+    <link href="../css/metro.css" rel="stylesheet">
+    <link href="../css/metro-icons.css" rel="stylesheet">
+    <link href="../css/metro-responsive.css" rel="stylesheet">
+
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/jquery.dataTables.min.js"></script>
+
+    <script src="../js/metro.js"></script>
+    
+    <script src="../js/Menu.js"></script>
+
+    <style>
+        html, body {
+            height: 100%;
+        }
+        body {
+        font-size:10pt;
+        }
+        .page-content {
+            padding-top: 3.125rem;
+            min-height: 100%;
+            height: 100%;
+        }
+        .table .input-control.checkbox {
+            line-height: 1;
+            min-height: 0;
+            height: auto;
+        }
+
+        @media screen and (max-width: 800px){
+            #cell-sidebar {
+                flex-basis: 52px;
+            }
+            #cell-content {
+                flex-basis: calc(100% - 52px);
+            }
+        }
+    </style>
+
+    <script>
+        function pushMessage(t){
+            var mes = 'Info|Implement independently';
+            $.Notify({
+                caption: mes.split("|")[0],
+                content: mes.split("|")[1],
+                type: t
+            });
+        }
+
+        $(function(){
+            $('.sidebar').on('click', 'li', function(){
+                if (!$(this).hasClass('active')) {
+                    $('.sidebar li').removeClass('active');
+                    $(this).addClass('active');
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+    <!-- ヘッダー固定 -->
+    <div id="Menu_load"></div>
+
+    <div class="page-content">
+        <div class="flex-grid no-responsive-future" style="height: 100%;">
+            <div class="row" style="height: 100%">
+                <div class="cell auto-size padding20 bg-white" id="cell-content">
+                    <ul class="breadcrumbs" style="padding:0px;">
+                        <li><h4>月別個車燃費推移一覧</h4></li>
+                    </ul>
+                    <hr class="thin bg-grayLighter">
+                    <div class="grid">
+                      <div class="row cells12">
+                     <div class="cell colspan6" style="float:left;margin-right: auto;">
+                        <div class="input-control select" style="width:70px;">
+                                  <select>
+                                      <option>2016</option>
+                                      <option>2015</option>
+                                      <option>2014</option>
+                                      <option>2013</option>
+                                  </select>
+                        </div>
+                        年度
+                     </div>
+                     <div style="float: right; right;display:inline;">
+                             <button class="button primary" style="width:100px;">検索</button>
+                          </div>
+                       </div>
+                    </div>
+                    <hr class="thin bg-grayLighter">
+                    <table class="dataTable border bordered" data-auto-width="false">
+                        <thead>
+                        <tr>
+                            <td colspan="15" style="text-align: center;">個車別燃費推移（平成２７年度）</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">燃料費単価</td>
+                            <td style="text-align:right;">95.46</td>
+                            <td style="text-align:right;">91.54</td>
+                            <td style="text-align:right;">84.5</td>
+                            <td style="text-align:right;">82.7</td>
+                            <td style="text-align:right;">82.6</td>
+                            <td style="text-align:right;">84.4</td>
+                            <td style="text-align:right;">80.9</td>
+                            <td style="text-align:right;">74.1</td>
+                            <td style="text-align:right;">70.1</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>車別</td>
+                            <td>kmと燃費</td>
+                            <td style="text-align:center;">27/6</td>
+                            <td style="text-align:center;">27/7</td>
+                            <td style="text-align:center;">27/8</td>
+                            <td style="text-align:center;">27/9</td>
+                            <td style="text-align:center;">27/10</td>
+                            <td style="text-align:center;">27/11</td>
+                            <td style="text-align:center;">27/12</td>
+                            <td style="text-align:center;">28/1</td>
+                            <td style="text-align:center;">28/2</td>
+                            <td style="text-align:center;">28/3</td>
+                            <td style="text-align:center;">28/4</td>
+                            <td style="text-align:center;">28/5</td>
+                            <td>平均燃費</td>
+                        </tr>
+                        </thead>
+                        <tbody  style="text-align:right;">
+                        <tr>
+                       <td rowspan="4" style="text-align:center;">101<br/>いすゞ<br/>阿部</td>
+                      <td style="text-align:left;">走行距離</td>
+                      <td>14,304</td>
+                      <td>11,451</td>
+                      <td>12,367</td>
+                      <td>11,828</td>
+                      <td>15,617</td>
+                      <td>15,176</td>
+                      <td>9,490</td>
+                      <td>10,241</td>
+                      <td>10,111</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td>110,585</td>
+                  </tr>
+                  <tr>
+                     <td style="text-align:left;">給油量</td>
+                     <td>3,661.00</td>
+                     <td>3,368.00</td>
+                     <td>3,307.00</td>
+                     <td>3,197.00</td>
+                     <td>3,886.92</td>
+                     <td>4,055.01</td>
+                     <td>2,659.00</td>
+                     <td>2,801.01</td>
+                     <td>2,822.01</td>
+                     <td></td>
+                     <td></td>
+                     <td></td>
+                     <td>29,756.95</td>
+                  </tr>
+                  <tr>
+                     <td style="text-align:left;">燃料費</td>
+                     <td>349,479</td>
+                     <td>308,307</td>
+                     <td>279,442</td>
+                     <td>264,392</td>
+                     <td>321,060</td>
+                     <td>342,243</td>
+                     <td>215,113</td>
+                     <td>207,555</td>
+                     <td>197,823</td>
+                     <td></td>
+                     <td></td>
+                     <td></td>
+                     <td>2,485,412</td>
+                  </tr>
+                  <tr>
+                     <td style="text-align:left;">燃費</td>
+                     <td>3.91</td>
+                     <td>3.40</td>
+                     <td>3.74</td>
+                     <td>3.70</td>
+                     <td>4.02</td>
+                     <td>3.74</td>
+                     <td>3.57</td>
+                     <td>3.66</td>
+                     <td>3.58</td>
+                     <td></td>
+                     <td></td>
+                     <td></td>
+                     <td>3.72</td>
+                  </tr>
+                  <tr>
+                     <td rowspan="4" style="text-align:center;">103<br/>いすゞ<br/></td>
+                     <td style="text-align:left;">走行距離</td>
+                     <td>9,763</td>
+                     <td>15,166</td>
+                     <td>12,911</td>
+                     <td>11,664</td>
+                     <td>7,919</td>
+                     <td></td>
+                     <td></td>
+                     <td></td>
+                     <td></td>
+                     <td></td>
+                     <td></td>
+                     <td></td>
+                     <td>57,333</td>
+                  </tr>
+                  <tr>
+                     <td style="text-align:left;">給油量</td>
+                     <td>2,702.00</td>
+                     <td>4,040.01</td>
+                     <td>3,636.00</td>
+                     <td>3,361.00</td>
+                     <td>2,203.20</td>
+                     <td></td>
+                     <td></td>
+                     <td></td>
+                     <td></td>
+                     <td></td>
+                     <td></td>
+                     <td></td>
+                     <td>15,943.21</td>
+                  </tr>
+                  <tr>
+                     <td style="text-align:left;">燃料費</td>
+                     <td>258,028</td>
+                     <td>369,823</td>
+                     <td>307,242</td>
+                     <td>277,955</td>
+                     <td>181,984</td>
+                     <td></td>
+                     <td></td>
+                     <td></td>
+                     <td></td>
+                     <td></td>
+                     <td></td>
+                     <td></td>
+                     <td>15,943.21</td>
+                  </tr>
+                  <tr>
+                     <td style="text-align:left;">燃費</td>
+                     <td>3.58</td>
+                     <td>3.75</td>
+                     <td>3.55</td>
+                     <td>3.47</td>
+                     <td>3.59</td>
+                     <td></td>
+                     <td></td>
+                     <td></td>
+                     <td></td>
+                     <td></td>
+                     <td></td>
+                     <td></td>
+                     <td>3.60</td>
+                  </tr>
+                  </tbody>
+                  <tfoot>
+                     <tr>
+                        <td colspan="15">
+                           <p style="text-align:justify; text-justify:distribute-all-lines; width:400px;margin:2px;">燃料費(円)＝給油量(L)＊単価(円/L)</p>
+                           <p style="text-align:justify; text-justify:distribute-all-lines; width:400px;margin:2px;">燃費(km/L)＝走行した距離(km)÷給油量(L)</p>
+                        </td>
+                     </tr>
+                  </tfoot>
+                  </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -65,145 +65,137 @@
             dialog.open();
         }
 
-		$(function(){
-	        $("#datepicker_seikyu").datepicker();
-	        $("#datepicker").datepicker();
-	        $("#datepicker_sime").datepicker();
-	        
-	    });
+        $(function(){
+            $("#datepicker_seikyu").datepicker();
+            $("#datepicker").datepicker();
+            $("#datepicker_sime").datepicker();
+            
+        });
+        
+        $(function(){
+            $('.sidebar').on('click', 'li', function(){
+                if (!$(this).hasClass('active')) {
+                    $('.sidebar li').removeClass('active');
+                    $(this).addClass('active');
+                }
+            })
+        })
     </script>
 </head>
 <body>
+
     <!-- ヘッダー固定 -->
    <div id="Menu_load"></div>
+
+    
         <div class="page-content">
         <div class="flex-grid no-responsive-future">
            <div class="row">
                 <div class="cell auto-size padding20 bg-white" id="cell-content">
-	                <ul class="breadcrumbs" style="padding:0px;">
-					    <li><h4>委託先(外注)登録</h4></li>
-					</ul>
-					<div class="grid">
-	                <hr class="thin bg-grayLighter">
-					<div class="align-right">
-	                    <button class="button warning">キャンセル</button>
-	                    <button class="button success">保存</button>
-					</div>
-					</div>
-	                <hr class="thin bg-grayLighter">
-
-		            <div class="grid">
-		                <div class="row cells12">
-							<div class="cell colspan1">
-		                        委託先コード
-		                        <div class="input-control text full-size">
-								    <input type="text">
-								</div>
-		                    </div>
-		                    <div class="cell colspan3">
-		                        <label>委託先名</label>
-		                        <div class="input-control text full-size">
-		                            <input type="text">
-		                        </div>
-		                    </div>
-		                    <div class="cell colspan3">
-		                        <label>部署名</label>
-		                        <div class="input-control text full-size">
-		                            <input type="text">
-		                        </div>
-		                    </div>
-		                    <div class="cell colspan2">
-		                        <label>課名</label>
-		                        <div class="input-control text full-size">
-		                            <input type="text">
-		                        </div>
-		                    </div>
-		                </div>
-		                <div class="row cells12">
-		                    <div class="cell colspan3">
-		                        <label>委託先略名</label>
-		                        <div class="input-control text full-size">
-		                            <input type="text">
-		                        </div>
-		                    </div>
-		                </div>
-
-		                <div class="row cells12">
-							<div class="cell colspan1">
-		                        郵便番号
-		                        <div class="input-control text full-size">
-								    <input type="text">
-								</div>
-		                    </div>
-		                    <div class="cell colspan3">
-		                        <label>住所1</label>
-		                        <div class="input-control text full-size">
-		                            <input type="text">
-		                        </div>
-		                    </div>
-		                    <div class="cell colspan2">
-		                        <label>住所2</label>
-		                        <div class="input-control text full-size">
-		                            <input type="text">
-		                        </div>
-		                    </div>
-		                    <div class="cell colspan2">
-		                        <label>住所3</label>
-		                        <div class="input-control text full-size">
-		                            <input type="text">
-		                        </div>
-		                    </div>
-							<div class="cell colspan2">
-		                        建物名
-	                            <div class="input-control text full-size">
-								    <input type="text">
-								</div>
-		                    </div>
-		                </div>
-		                <div class="row cells12">
-							<div class="cell colspan1">
-		                        電話番号
-	                            <div class="input-control text full-size">
-								    <input type="text">
-								</div>
-		                    </div>
-							<div class="cell colspan1">
-		                        ＦＡＸ
-	                            <div class="input-control text full-size">
-								    <input type="text">
-								</div>
-		                    </div>
-							<div class="cell colspan6">
-		                        メールアドレス
-	                            <div class="input-control text full-size">
-								    <input type="text">
-								</div>
-		                    </div>
-	                    </div>
-		                <div class="row cells12">
-							<div class="cell colspan2">
-		                        担当者名
-	                            <div class="input-control text full-size">
-								    <input type="text">
-								</div>
-		                    </div>
-							<div class="cell colspan2">
-		                        経理担当者名
-	                            <div class="input-control text full-size">
-								    <input type="text">
-								</div>
-		                    </div>
-	                    </div>
-		                
-                        
-                        
-                        
-                        
-	                    
-	                    </div>
+                    <ul class="breadcrumbs" style="padding:0px;">
+                        <li><h4>委託先(外注)登録</h4></li>
+                    </ul>
+                    <hr class="thin bg-grayLighter">
+                    <div class="align-right">
+                        <button class="button success" style="width:100px;">保存</button>
+                        <button class="button alert"   style="width:100px;" onclick="location.href='Contractors_mock.html'">戻る</button>
                     </div>
-	            </div>
+                    <hr class="thin bg-grayLighter">
+
+                    <div class="grid">
+                        <div class="row cells12">
+                            <div class="cell colspan1">
+                                委託先コード
+                                <div class="input-control text full-size">
+                                    <input type="text">
+                                </div>
+                            </div>
+                            <div class="cell colspan3">
+                                <label>委託先名</label>
+                                <div class="input-control text full-size">
+                                    <input type="text">
+                                </div>
+                            </div>
+                            <div class="cell colspan3">
+                                <label>部署名</label>
+                                <div class="input-control text full-size">
+                                    <input type="text">
+                                </div>
+                            </div>
+                            <div class="cell colspan2">
+                                <label>課名</label>
+                                <div class="input-control text full-size">
+                                    <input type="text">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row cells12">
+                            <div class="cell colspan3">
+                                <label>委託先略名</label>
+                                <div class="input-control text full-size">
+                                    <input type="text">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row cells12">
+                            <div class="cell colspan1">
+                                郵便番号
+                                <div class="input-control text full-size">
+                                    <input type="text">
+                                </div>
+                            </div>
+                            <div class="cell colspan5">
+                                <label>住所</label>
+                                <div class="input-control text full-size">
+                                    <input type="text">
+                                </div>
+                            </div>
+                            <div class="cell colspan2">
+                                建物名
+                                <div class="input-control text full-size">
+                                    <input type="text">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row cells12">
+                            <div class="cell colspan1">
+                                電話番号
+                                <div class="input-control text full-size">
+                                    <input type="text">
+                                </div>
+                            </div>
+                            <div class="cell colspan1">
+                                ＦＡＸ
+                                <div class="input-control text full-size">
+                                    <input type="text">
+                                </div>
+                            </div>
+                            <div class="cell colspan3">
+                                メールアドレス
+                                <div class="input-control text full-size">
+                                    <input type="text">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row cells12">
+                            <div class="cell colspan2">
+                                担当者名
+                                <div class="input-control text full-size">
+                                    <input type="text">
+                                </div>
+                            </div>
+                            <div class="cell colspan2">
+                                経理担当者名
+                                <div class="input-control text full-size">
+                                    <input type="text">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+    </div>
 </body>
 </html>
