@@ -95,12 +95,14 @@
                     }
                 });
            });
-
            $("#th01").click(function() {
                 $('#findname').text("委託先名");
                 $('#title01').text("委託先コード");
                 $('#title02').text("委託先名");
                 $('#title03').text("電話番号");
+                $('#title04').text("1234");
+                $('#title05').text("クレベ運送株式会社");
+                $('#title06').text("");
            });
 
            $("#th02").click(function() {
@@ -108,6 +110,9 @@
                 $('#title01').text("社員コード");
                 $('#title02').text("社員名");
                 $('#title03').text("電話番号");
+                $('#title04').text("0000000001");
+                $('#title05').text("平坂　一郎");
+                $('#title06').text("090-1111-1111");
            });
        });
         
@@ -321,31 +326,19 @@
                                <td class="movecoase">
                                    <table class="left" style="float:left; display:inline;">
                                       <tr id="acMenu">
-                                          <td style="border:none;"><p style="margin:0px;">川崎東</p></td>
+                                          <td style="border:none;"><p style="margin:0px;">平塚</p></td>
                                           <td class="course" rowspan="2" style="border:none;">⇨</td>
-                                          <td style="border:none;"><p style="margin:0px;">新大阪</p></td>
+                                          <td style="border:none;"><p style="margin:0px;">厚木</p></td>
                                           <td class="course" rowspan="2" style="border:none;">⇨</td>
-                                          <td style="border:none;"><p style="margin:0px;">ゆうP</p></td>
+                                          <td style="border:none;"><p style="margin:0px;">大和</p></td>
                                           <td class="course" rowspan="2" style="border:none;">⇨</td>
-                                          <td style="border:none;"><p style="margin:0px;">神戸</p></td>
-                                          <td class="course" rowspan="2" style="border:none;">⇨</td>
-                                          <td style="border:none;"><p style="margin:0px;">ゆうP</p></td>
-                                          <td class="course" rowspan="2" style="border:none;">⇨</td>
-                                          <td style="border:none;"><p style="margin:0px;">新大阪</p></td>
-                                          <td class="course" rowspan="2" style="border:none;">⇨</td>
-                                          <td style="border:none;"><p style="margin:0px;">ゆうP</p></td>
-                                          <td class="course" rowspan="2" style="border:none;">⇨</td>
-                                          <td style="border:none;"><p style="margin:0px;">綾瀬</p></td>
+                                          <td style="border:none;"><p style="margin:0px;">座間</p></td>
                                       </tr>
                                       <tr>
-                                          <td style="border:none;"><p style="margin:0px;">21:30</p></td>
-                                          <td style="border:none;"><p style="margin:0px;">5:00</p></td>
-                                          <td style="border:none;"><p style="margin:0px;">5:15</p></td>
-                                          <td style="border:none;"><p style="margin:0px;">6:25</p></td>
-                                          <td style="border:none;"><p style="margin:0px;">7:35</p></td>
-                                          <td style="border:none;"><p style="margin:0px;">7:50</p></td>
-                                          <td style="border:none;"><p style="margin:0px;">8:20</p></td>
-                                          <td style="border:none;"><p style="margin:0px;">13:30</p></td>
+                                          <td style="border:none;"><p style="margin:0px;">8:30</p></td>
+                                          <td style="border:none;"><p style="margin:0px;">11:01</p></td>
+                                          <td style="border:none;"><p style="margin:0px;">11:54</p></td>
+                                          <td style="border:none;"><p style="margin:0px;">13:17</p></td>
                                       </tr>
                                    </table>
                                    <div style="float:right; display:inline;">
@@ -1062,17 +1055,17 @@
                             <th style="width:130px;height:26px;text-align:center;color:#52677a;">形式</th>
                         </tr>
                         <tr class="trheader">
-                            <td style="text-align:left;color:#52677a;">A111</td>
+                            <td style="text-align:left;color:#52677a;">5346</td>
                             <td style="text-align:left;color:#52677a;">大型</td>
                             <td style="text-align:left;color:#52677a;">15tウイング</td>
                         </tr>
                         <tr class="trheader">
-                            <td style="text-align:left;color:#52677a;">A112</td>
+                            <td style="text-align:left;color:#52677a;">5347</td>
                             <td style="text-align:left;color:#52677a;">中型</td>
                             <td style="text-align:left;color:#52677a;">8ｔユニック</td>
                         </tr>
                         <tr class="trheader">
-                            <td style="text-align:left;color:#52677a;">A113</td>
+                            <td style="text-align:left;color:#52677a;">5348</td>
                             <td style="text-align:left;color:#52677a;">小型</td>
                             <td style="text-align:left;color:#52677a;">4ｔウイング</td>
                         </tr>
@@ -1134,8 +1127,13 @@
                     <table style="border-color: rgb(153, 153, 153); margin: 0px auto;" border="1">
                         <tr class="trheader" style="border-bottom-color: rgb(170, 170, 170); border-bottom-width: 3px; border-bottom-style: solid;">
                             <th id="title01" style="width:120px;height:26px;text-align:center;color:#52677a;">委託先コード</th>
-                            <th id="title02" style="width:230px;height:26px;text-align:center;color:#52677a;">委託先名</th>
+                            <th id="title02" style="width:130px;height:26px;text-align:center;color:#52677a;">委託先名</th>
                             <th id="title03" style="width:130px;height:26px;text-align:center;color:#52677a;">部署</th>
+                        </tr>
+                        <tr class="trheader">
+                            <td id="title04" style="text-align:left;color:#52677a;">1234</td>
+                            <td id="title05" style="text-align:left;color:#52677a;">クレベ運送株式会社</td>
+                            <td id="title06" style="text-align:left;color:#52677a;"></td>
                         </tr>
                     </table>
                 </td>
