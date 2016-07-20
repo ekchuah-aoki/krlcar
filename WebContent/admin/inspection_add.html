@@ -28,6 +28,7 @@
             height: 100%;
         }
         body {
+            font-size:10pt;
         }
         .page-content {
             padding-top: 3.125rem;
@@ -139,13 +140,13 @@
 	                    <div class="cell colspan5">
 		                        始業点検
 								<div class="input-control text" id="datepicker" style="width:160px;">
-								    <input type="text">
-								    <button class="button"><span class="mif-calendar"></span></button>
+								    <input type="text" style="height:35px;">
+								    <button class="button" style="height:35px;"><span class="mif-calendar"></span></button>
 								</div>
 							    就業点検
 								<div class="input-control text" id="datepicker2" style="width:160px;">
-								    <input type="text">
-								    <button class="button"><span class="mif-calendar"></span></button>
+								    <input type="text" style="height:35px;">
+								    <button class="button" style="height:35px;"><span class="mif-calendar"></span></button>
 								</div>
 		                    <div class="right">
                                 <button class="button warning" onclick="pushMessage('warning')" style="width:150px;">キャンセル</button>
@@ -194,7 +195,7 @@
 							</td>
                         </tr>
                         <tr>
-                            <td rowspan="12">運転者席</td>
+                            <td rowspan="11">運転者席</td>
                             <td colspan="2">エンジンのかかり具合・異音</td>
                             <td style="text-align:center;">
 			                        <label class="input-control radio small-check">
@@ -216,31 +217,6 @@
 			                        </label>
 			                        <label class="input-control radio small-check">
 			                            <input type="radio" name="n29">
-			                            <span class="check"></span>
-			                            <span class="mif-cross fg-red"></span>
-			                        </label>
-							</td>
-						</tr><tr>
-					        <td colspan="2">エンジンのかかり具合・異音</td>
-					        <td style="text-align:center;">
-					        <label class="input-control radio small-check">
-					            <input type="radio" name="n3" checked="checked">
-					            <span class="check"></span>
-					            <span class="mif-checkmark fg-green"></span>
-					        </label>
-					        <label class="input-control radio small-check">
-					            <input type="radio" name="n3">
-					            <span class="check"></span>
-					            <span class="mif-cross fg-red"></span>
-					        </label></td>
-							<td style="text-align:center;">
-			                        <label class="input-control radio small-check">
-			                            <input type="radio" name="n30" checked="checked">
-			                            <span class="check"></span>
-			                            <span class="mif-checkmark fg-green"></span>
-			                        </label>
-			                        <label class="input-control radio small-check">
-			                            <input type="radio" name="n30">
 			                            <span class="check"></span>
 			                            <span class="mif-cross fg-red"></span>
 			                        </label>
