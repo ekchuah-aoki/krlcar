@@ -29,6 +29,7 @@
             height: 100%;
         }
         body {
+            font-size:10pt;
         }
         .page-content {
             padding-top: 3.125rem;
@@ -41,22 +42,22 @@
             height: auto;
         }
 		p.yoko{
-		text-align:center;
-		 margin:0px;
+			text-align:center;
+		    margin:0px;
 		}
 		p.yoko2{
-		text-align:center;
-		padding:18px;
-		margin:0px;
+			text-align:center;
+			padding:18px;
+			margin:0px;
 		}
         .hidden {
-		overflow: hidden;
+			overflow: hidden;
 		}
 		.left {
-		float: left;
+			float: left;
 		}
         .right {
-        float: right;
+        	float: right;
         }
         @media screen and (max-width: 800px){
             #cell-sidebar {
@@ -67,7 +68,6 @@
             }
         }
     </style>
-
     <script>
         function pushMessage(t){
             var mes = 'Info|Implement independently';
@@ -80,10 +80,8 @@
     </script>
 </head>
 <body class="bg-steel">
-    
     <!-- ヘッダー固定 -->
    <div id="Menu_load"></div>
-
     <div class="page-content">
         <div class="flex-grid no-responsive-future" style="height: 100%;">
             <div class="row" style="height: 100%">
@@ -92,9 +90,7 @@
 					    <li><h4>委託先別支払一覧</h4></li>
 					</ul>
 		            <div class="grid">
-		            
                     <hr class="thin bg-grayLighter">
-		            
 		                <div class="hidden">
 							<div class="left">
 		                        <div class="input-control select" style="width:60px;">
@@ -132,13 +128,10 @@
 		                </div>
 		            </div>
                     <hr class="thin bg-grayLighter">
-					
 				<div class="x_data_area">
-				
 				     <!-- ロック部分 -->
 				     	<div class="lock_box">
 				       	 <table class="dataTable border bordered width300 data" style="margin:0px;"data-auto-width="false">
-				               
 				               <colgroup>
 				               	  <col style="width: 30%;">
 				               	  <col style="width: 70%;">
@@ -160,77 +153,77 @@
 						</tfoot>
 				       	</table>
 				       </div>
-				       
 				       <!-- /ロック部分 -->
 				       <!-- 横スクロール部分 -->
 				       <div class="x_scroll_box">
 				           <table class="dataTable border bordered  data width2500"  style="margin:0px;">
 				               <tbody>
-				               <thead>
-				               	<tr style="height: 48px;">
-				               		<td class="sortable-column" style="text-align:center;">2015/01</td>
-				                   	<td class="sortable-column" style="text-align:center;">2015/02</td>
-				                       <td class="sortable-column" style="text-align:center;">2015/03</td>
-				                       <td class="sortable-column" style="text-align:center;">2015/04</td>
-				                       <td class="sortable-column" style="text-align:center;">2015/05</td>
-				                       <td class="sortable-column" style="text-align:center;">2015/06</td>
-				                       <td class="sortable-column" style="text-align:center;">2015/07</td>
-				                       <td class="sortable-column" style="text-align:center;">2015/08</td>
-				                       <td class="sortable-column" style="text-align:center;">2015/09</td>
-				                       <td class="sortable-column" style="text-align:center;">2015/10</td>
-				                       <td class="sortable-column" style="text-align:center;">2015/11</td>
-				                       <td class="sortable-column" style="text-align:center;">2015/12</td>
-				                       <td class="sortable-column" rowspan="2"><p class="yoko">合計</p></td>
+				                 <thead>
+				               	   <tr style="height: 48px;">
+					               	   <td class="sortable-column" colspan="3" style="text-align:center;">2015/01</td>
+					                   <td class="sortable-column" colspan="3" style="text-align:center;">2015/02</td>
+					                   <td class="sortable-column" colspan="3" style="text-align:center;">2015/03</td>
+				                       <td class="sortable-column" colspan="3" style="text-align:center;">2015/04</td>
+				                       <td class="sortable-column" colspan="3" style="text-align:center;">2015/05</td>
+				                       <td class="sortable-column" colspan="3" style="text-align:center;">2015/06</td>
+				                       <td class="sortable-column" colspan="3" style="text-align:center;">2015/07</td>
+				                       <td class="sortable-column" colspan="3" style="text-align:center;">2015/08</td>
+				                       <td class="sortable-column" colspan="3" style="text-align:center;">2015/09</td>
+				                       <td class="sortable-column" colspan="3" style="text-align:center;">2015/10</td>
+				                       <td class="sortable-column" colspan="3" style="text-align:center;">2015/11</td>
+				                       <td class="sortable-column" colspan="3" style="text-align:center;">2015/12</td>
+				                       <td class="sortable-column" colspan="3" style="text-align:center;">合計</td>
 				                   </tr>
 				                   <tr style="height: 42px;">
-				                       <td class="sortable-column"><p class="yoko">支払金額(円)</p></td>
-				                       <td class="sortable-column"><p class="yoko">支払金額(円)</p></td>
-				                       <td class="sortable-column"><p class="yoko">支払金額(円)</p></td>
-				                       <td class="sortable-column"><p class="yoko">支払金額(円)</p></td>
-				                       <td class="sortable-column"><p class="yoko">支払金額(円)</p></td>
-				                       <td class="sortable-column"><p class="yoko">支払金額(円)</p></td>
-				                       <td class="sortable-column"><p class="yoko">支払金額(円)</p></td>
-				                       <td class="sortable-column"><p class="yoko">支払金額(円)</p></td>
-				                       <td class="sortable-column"><p class="yoko">支払金額(円)</p></td>
-				                       <td class="sortable-column"><p class="yoko">支払金額(円)</p></td>
-				                       <td class="sortable-column"><p class="yoko">支払金額(円)</p></td>
-				                       <td class="sortable-column"><p class="yoko">支払金額(円)</p></td>
-				                   </tr>
-				               </thead>
-				               <tbody style="text-align:right;">
-				                       <tr style="height: 30px;">
-				                           <td>100,000</td><td>100,000</td><td>100,000</td><td>100,000</td><td>100,000</td><td>100,000</td><td>100,000</td><td>100,000</td><td>100,000</td><td>100,000</td><td>100,000</td><td>100,000</td><td>1,200,00</td>
-				                       </tr>
-				                       <tr style="height: 30px;">
-				                           <td>200,000</td><td>200,000</td><td>200,000</td><td>200,000</td><td>200,000</td><td>200,000</td><td>200,000</td><td>200,000</td><td>200,000</td><td>200,000</td><td>200,000</td><td>200,000</td><td>2,400,00</td>
-				                           </tr>
-									<tr style="height: 30px;">
-				                           <td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>300,000</td><td>3,900,000</td>
-				                           </tr>
-				                       <tr style="height: 30px;">
-				                           <td>400,000</td><td>400,000</td><td>400,000</td><td>400,000</td><td>400,000</td><td>400,000</td><td>400,000</td><td>400,000</td><td>400,000</td><td>400,000</td><td>400,000</td><td>400,000</td><td>4,800,000</td>
-				                       </tr>  
-				           </tbody>
-				           <tfoot>
-							<tr style="height: 40px;">
-							<td style="text-align:right;">1,000,000</td>
-							<td style="text-align:right;">1,000,000</td>
-							<td style="text-align:right;">1,000,000</td>
-							<td style="text-align:right;">1,000,000</td>
-							<td style="text-align:right;">1,000,000</td>
-							<td style="text-align:right;">1,000,000</td>
-							<td style="text-align:right;">1,000,000</td>
-							<td style="text-align:right;">1,000,000</td>
-							<td style="text-align:right;">1,000,000</td>
-							<td style="text-align:right;">1,000,000</td>
-							<td style="text-align:right;">1,000,000</td>
-							<td style="text-align:right;">1,000,000</td>
-							<td style="text-align:right;">12,000,000</td>
-						</tfoot>
-				           </table>
-				       </div>
-					</div>
-                    
+				                       <td class="sortable-column"><p class="yoko">支払金額(円)</p></td><td class="sortable-column"><p class="yoko">売上金額(円)</p></td><td class="sortable-column"><p class="yoko">利益額(円)</p></td>
+				                       <td class="sortable-column"><p class="yoko">支払金額(円)</p></td><td class="sortable-column"><p class="yoko">売上金額(円)</p></td><td class="sortable-column"><p class="yoko">利益額(円)</p></td>
+				                       <td class="sortable-column"><p class="yoko">支払金額(円)</p></td><td class="sortable-column"><p class="yoko">売上金額(円)</p></td><td class="sortable-column"><p class="yoko">利益額(円)</p></td>
+				                       <td class="sortable-column"><p class="yoko">支払金額(円)</p></td><td class="sortable-column"><p class="yoko">売上金額(円)</p></td><td class="sortable-column"><p class="yoko">利益額(円)</p></td>
+				                       <td class="sortable-column"><p class="yoko">支払金額(円)</p></td><td class="sortable-column"><p class="yoko">売上金額(円)</p></td><td class="sortable-column"><p class="yoko">利益額(円)</p></td>
+				                       <td class="sortable-column"><p class="yoko">支払金額(円)</p></td><td class="sortable-column"><p class="yoko">売上金額(円)</p></td><td class="sortable-column"><p class="yoko">利益額(円)</p></td>
+				                       <td class="sortable-column"><p class="yoko">支払金額(円)</p></td><td class="sortable-column"><p class="yoko">売上金額(円)</p></td><td class="sortable-column"><p class="yoko">利益額(円)</p></td>
+				                       <td class="sortable-column"><p class="yoko">支払金額(円)</p></td><td class="sortable-column"><p class="yoko">売上金額(円)</p></td><td class="sortable-column"><p class="yoko">利益額(円)</p></td>
+				                       <td class="sortable-column"><p class="yoko">支払金額(円)</p></td><td class="sortable-column"><p class="yoko">売上金額(円)</p></td><td class="sortable-column"><p class="yoko">利益額(円)</p></td>
+				                       <td class="sortable-column"><p class="yoko">支払金額(円)</p></td><td class="sortable-column"><p class="yoko">売上金額(円)</p></td><td class="sortable-column"><p class="yoko">利益額(円)</p></td>
+				                       <td class="sortable-column"><p class="yoko">支払金額(円)</p></td><td class="sortable-column"><p class="yoko">売上金額(円)</p></td><td class="sortable-column"><p class="yoko">利益額(円)</p></td>
+				                       <td class="sortable-column"><p class="yoko">支払金額(円)</p></td><td class="sortable-column"><p class="yoko">売上金額(円)</p></td><td class="sortable-column"><p class="yoko">利益額(円)</p></td>
+				                       <td class="sortable-column"><p class="yoko">支払金額(円)</p></td><td class="sortable-column"><p class="yoko">売上金額(円)</p></td><td class="sortable-column"><p class="yoko">利益額(円)</p></td>
+				                    </tr>
+				                </thead>
+				                <tbody style="text-align:right;">
+			                        <tr style="height: 30px;">
+			                            <td>100,000</td><td>150,000</td><td>50,000</td><td>100,000</td><td>150,000</td><td>50,000</td><td>100,000</td><td>150,000</td><td>50,000</td><td>100,000</td><td>150,000</td><td>50,000</td><td>100,000</td><td>150,000</td><td>50,000</td><td>100,000</td><td>150,000</td><td>50,000</td><td>100,000</td><td>150,000</td><td>50,000</td><td>100,000</td><td>150,000</td><td>50,000</td><td>100,000</td><td>150,000</td><td>50,000</td><td>100,000</td><td>150,000</td><td>50,000</td><td>100,000</td><td>150,000</td><td>50,000</td><td>100,000</td><td>150,000</td><td>50,000</td><td>1,200,000</td><td>1,80,000</td><td>600,000</td>
+			                        </tr>
+			                        <tr style="height: 30px;">
+			                            <td>200,000</td><td>300,000</td><td>100,000</td><td>200,000</td><td>300,000</td><td>100,000</td><td>200,000</td><td>300,000</td><td>100,000</td><td>200,000</td><td>300,000</td><td>100,000</td><td>200,000</td><td>300,000</td><td>100,000</td><td>200,000</td><td>300,000</td><td>100,000</td><td>200,000</td><td>300,000</td><td>100,000</td><td>200,000</td><td>300,000</td><td>100,000</td><td>200,000</td><td>300,000</td><td>100,000</td><td>200,000</td><td>300,000</td><td>100,000</td><td>200,000</td><td>300,000</td><td>100,000</td><td>200,000</td><td>300,000</td><td>100,000</td><td>2,400,000</td><td>3,600,000</td><td>1,200,000</td>
+			                        </tr>
+								    <tr style="height: 30px;">
+			                            <td>300,000</td><td>370,000</td><td>70,000</td><td>300,000</td><td>370,000</td><td>70,000</td><td>300,000</td><td>370,000</td><td>70,000</td><td>300,000</td><td>370,000</td><td>70,000</td><td>300,000</td><td>370,000</td><td>70,000</td><td>300,000</td><td>370,000</td><td>70,000</td><td>300,000</td><td>370,000</td><td>70,000</td><td>300,000</td><td>370,000</td><td>70,000</td><td>300,000</td><td>370,000</td><td>70,000</td><td>300,000</td><td>370,000</td><td>70,000</td><td>300,000</td><td>370,000</td><td>70,000</td><td>300,000</td><td>370,000</td><td>70,000</td><td>3,600,000</td><td>4,440,000</td><td>84,000</td>
+			                        </tr>
+			                        <tr style="height: 30px;">
+			                            <td>400,000</td><td>580,000</td><td>180,000</td><td>400,000</td><td>580,000</td><td>180,000</td><td>400,000</td><td>580,000</td><td>180,000</td><td>400,000</td><td>580,000</td><td>180,000</td><td>400,000</td><td>580,000</td><td>180,000</td><td>400,000</td><td>580,000</td><td>180,000</td><td>400,000</td><td>580,000</td><td>180,000</td><td>400,000</td><td>580,000</td><td>180,000</td><td>400,000</td><td>580,000</td><td>180,000</td><td>400,000</td><td>580,000</td><td>180,000</td><td>400,000</td><td>580,000</td><td>180,000</td><td>400,000</td><td>580,000</td><td>180,000</td><td>4,800,000</td><td>6,960,000</td><td>2,160,000</td>
+			                        </tr>  
+				                </tbody>
+						        <tfoot>
+								    <tr style="height: 40px;">
+									    <td style="text-align:right;">1,000,000</td><td style="text-align:right;">14,000,000</td><td style="text-align:right;">4,000,000</td>
+										<td style="text-align:right;">1,000,000</td><td style="text-align:right;">14,000,000</td><td style="text-align:right;">4,000,000</td>
+										<td style="text-align:right;">1,000,000</td><td style="text-align:right;">14,000,000</td><td style="text-align:right;">4,000,000</td>
+										<td style="text-align:right;">1,000,000</td><td style="text-align:right;">14,000,000</td><td style="text-align:right;">4,000,000</td>
+										<td style="text-align:right;">1,000,000</td><td style="text-align:right;">14,000,000</td><td style="text-align:right;">4,000,000</td>
+										<td style="text-align:right;">1,000,000</td><td style="text-align:right;">14,000,000</td><td style="text-align:right;">4,000,000</td>
+										<td style="text-align:right;">1,000,000</td><td style="text-align:right;">14,000,000</td><td style="text-align:right;">4,000,000</td>
+										<td style="text-align:right;">1,000,000</td><td style="text-align:right;">14,000,000</td><td style="text-align:right;">4,000,000</td>
+										<td style="text-align:right;">1,000,000</td><td style="text-align:right;">14,000,000</td><td style="text-align:right;">4,000,000</td>
+										<td style="text-align:right;">1,000,000</td><td style="text-align:right;">14,000,000</td><td style="text-align:right;">4,000,000</td>
+										<td style="text-align:right;">1,000,000</td><td style="text-align:right;">14,000,000</td><td style="text-align:right;">4,000,000</td>
+										<td style="text-align:right;">1,000,000</td><td style="text-align:right;">14,000,000</td><td style="text-align:right;">4,000,000</td>
+									    <td style="text-align:right;">12,000,000</td><td style="text-align:right;">24,360,000</td><td style="text-align:right;">12,360,000</td>
+								    </tr>
+							    </tfoot>
+				            </table>
+				        </div>
+				    </div>
                 </div>
             </div>
         </div>
