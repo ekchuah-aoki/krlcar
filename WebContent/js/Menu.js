@@ -17,14 +17,14 @@ $(function(){
     </li>\
     <li><a href='' class='dropdown-toggle'>日常点検</a>\
       <ul class='d-menu' data-role='dropdown'>\
-        <li><a href='./inspection_add.html'><span class='title'>日常点検実施表入力</span></a></li>\
         <li><a href='./inspection_list.html'><span class='title'>日常点検実施表検索一覧</span></a></li>\
+        <li><a href='./inspection_add.html'><span class='title'>日常点検実施表入力</span></a></li>\
       </ul>\
     </li>\
     <li><a href='' class='dropdown-toggle'>運送日報管理</a>\
       <ul class='d-menu' data-role='dropdown'>\
-        <li><a href='./driving_report_add.html'><span class='title'>運送日報入力</span></a></li>\
         <li><a href='./driving_report_list.html'><span class='title'>運送日報検索一覧</span></a></li>\
+        <li><a href='./driving_report_add.html'><span class='title'>運送日報入力</span></a></li>\
       </ul>\
     </li>\
     <li><a href='' class='dropdown-toggle'>経費</a>\
