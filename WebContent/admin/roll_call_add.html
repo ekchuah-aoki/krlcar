@@ -92,8 +92,25 @@
     </style>
 
     <script>
-       $(function(){
-           $(".btn_shainlist").click(function () {
+        $(function () {
+            //電話番号毎にバックカラーを変更
+            var timebreak;
+            var index = false;
+            $.each($("#sort-table.table tbody tr"), function () {
+                var tmptel = $("td", this).eq(3).text().substr($("td", this).eq(3).text().length - 13);
+                if (timebreak != tmptel) {
+                    timebreak = tmptel;
+                    index = !index;
+                }
+                if (index) {
+                    $(this).css("background-color", "AliceBlue");
+                } else {
+                    $(this).css("background-color", "Ivory");
+                }
+            });
+
+            //社員一覧表示
+            $(".btn_shainlist").click(function () {
                 $("#shainlist").dialog({
                     modal: true,
                     closeOnEscape: false,
@@ -106,8 +123,8 @@
                 });
            });
 
+           //確認事項表示
            var btnkakunin;
-
            $(".btn_kakunin").click(function () {
                 btnkakunin = this;
                 var type = $(this).attr('id');
@@ -136,7 +153,7 @@
                     }
                 });
            });
-
+           //確認事項、未確認ボタン
            $('#close').click(function () {
                $('.kakuninType1').hide();
                $('.kakuninType2').hide();
@@ -145,7 +162,7 @@
                $(btnkakunin).css("color", "red");
                $("#kakuninInfo").dialog('close');
            });
-
+           //確認事項、確認ボタン
            $('#corroboration').click(function () {
                $('.kakuninType1').hide();
                $('.kakuninType2').hide();
@@ -154,7 +171,7 @@
                $(btnkakunin).css("color", "blue");
                $("#kakuninInfo").dialog('close');
            });
-
+           //日常点検
            $('.tenken').click(function () {
                window.location.href = 'inspection_add.html';
            });
