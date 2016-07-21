@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -17,7 +17,7 @@
     <link href="../css/common.css" rel="stylesheet">
     <link href="../css/metro-icons.css" rel="stylesheet">
     <link href="../css/metro-responsive.css" rel="stylesheet">
-	<link href="../themes/blue/style.css" rel="stylesheet" type="text/css" id="" media="print, projection, screen" />
+    <link href="../themes/blue/style.css" rel="stylesheet" type="text/css" id="" media="print, projection, screen" />
 
     <script src="../js/jquery-2.1.3.min.js"></script>
     <script src="../js/jquery.dataTables.min.js"></script>
@@ -26,148 +26,272 @@
     
     <script src="../js/Menu.js"></script>
 
-	<script type="text/javascript" src="../js/jquery-latest.js"></script>
-	<script type="text/javascript" src="../js/jquery.tablesorter.min.js"></script>
+    <script type="text/javascript" src="../js/jquery-latest.js"></script>
+    <script type="text/javascript" src="../js/jquery.tablesorter.min.js"></script>
+
+    <link type="text/css" rel="stylesheet" href="../css/jquery-ui.min.css" />
+    <script type="text/javascript" src="../js/jquery.ui.1.9.2.js"></script>
+
     <style>
-        html, body {
-            height: 100%;
-        }
-        .callList {
-        	font-size:10pt;
-        }
-	    .callList thead td {
-  			padding: 0.225rem;
-	    }
-        
-        .page-content {
-            padding-top: 3.125rem;
-            min-height: 100%;
-            height: 100%;
-        }
-        .table .input-control.checkbox {
-            line-height: 1;
-            min-height: 0;
-            height: auto;
-        }
-        .checklist {
-            font-size: 1em;
-        }
-        .cell colspan5 {
-            overflow: hidden;
-        }
-        .input-control select {
-            float: left;
-        }
-        .input-control text {
-            float: left;
-        }
-        .right {
-            float: right;
-        }
-        @media screen and (max-width: 800px){
-            #cell-sidebar {
-                flex-basis: 52px;
-            }
-            #cell-content {
-                flex-basis: calc(100% - 52px);
-            }
-        }
+       html, body {
+           height: 100%;
+       }
+       .callList {
+           font-size:10pt;
+       }
+       .callList thead td {
+           padding: 0.225rem;
+       }
+       .page-content {
+           padding-top: 3.125rem;
+           min-height: 100%;
+           height: 100%;
+       }
+       .table .input-control.checkbox {
+           line-height: 1;
+           min-height: 0;
+           height: auto;
+       }
+       .checklist {
+           font-size: 1em;
+       }
+       .cell colspan5 {
+           overflow: hidden;
+       }
+       .input-control select {
+           float: left;
+       }
+       .input-control text {
+           float: left;
+       }
+       .right {
+           float: right;
+       }
+       @media screen and (max-width: 800px){
+           #cell-sidebar {
+               flex-basis: 52px;
+           }
+           #cell-content {
+               flex-basis: calc(100% - 52px);
+           }
+       }
+       table.rowselect th{
+           border: 1px solid rgb(153, 153, 153);
+           background-color:#ffffff;
+           padding:3px;
+       }
+       table.rowselect tr:hover {
+           background-color: #FFCC99;
+       }
+       .btn_kakunin:hover {
+	       cursor:pointer;
+       }
+       .tenken:hover {
+	       cursor:pointer;
+       }
     </style>
-    <!-- カレンダー -->
+
     <script>
-	    $(function(){
-	        $("#datepicker").datepicker();
-	    });
-	</script>
-    <!-- ポップアップ -->
-	<script>
-        function showDialog(id) {
-            var dialog = $(id).data('dialog');
-            dialog.open();
-        }
-    </script>
-    <!-- セレクトボックス -->
-    <script>
- 		    function kakunin(){
- 		    	  obj = document.test.changeSelect;
- 		    	  
- 		    	  index = obj.selectedIndex;
- 		    	  
- 		    	  if (index == 2){
- 		    		//alert(index);
- 		    		$('.rightForm').append('<input type="text" style="width:75px;">');
- 		    	  }else{
- 		    		 $('.rightForm').empty();	  
- 		    	  }
- 		    	}
-    </script>
-    <script>
-		$(document).ready(function() 
-    		{ 
-        		$("#sort-table").tablesorter(); 
-    		} 
-		);
-	</script>
+       $(function(){
+           $(".btn_shainlist").click(function () {
+                $("#shainlist").dialog({
+                    modal: true,
+                    closeOnEscape: false,
+                    width: 440,
+                    height: 520,
+                    show: { effect: "clip", complete: function () { $("#torihikisaki_name").focus(); } },
+                    open: function (event, ui) {
+                        $(this).parent().find(".ui-dialog-titlebar-close").show();
+                    }
+                });
+           });
+
+           var btnkakunin;
+
+           $(".btn_kakunin").click(function () {
+                btnkakunin = this;
+                var type = $(this).attr('id');
+                $("#kakuninInfo").dialog({
+                    modal: true,
+                    closeOnEscape: false,
+                    width: 1000,
+                    height: 420,
+                    show: {
+                        effect: "clip", complete: function () {
+                            if (type == 1) 
+                                $('.kakuninType1').show();
+                            else if (type == 2) 
+                                $('.kakuninType2').show();
+                            else if (type == 3) 
+                                $('.kakuninType3').show();
+                        }
+                    },
+                    open: function (event, ui) {
+                        $(this).parent().find(".ui-dialog-titlebar-close").show();
+                    },
+                    close: function (event, ui) {
+                        $('.kakuninType1').hide();
+                        $('.kakuninType2').hide();
+                        $('.kakuninType3').hide();
+                    }
+                });
+           });
+
+           $('#close').click(function () {
+               $('.kakuninType1').hide();
+               $('.kakuninType2').hide();
+               $('.kakuninType3').hide();
+               $(btnkakunin).text('未確認');
+               $(btnkakunin).css("color", "red");
+               $("#kakuninInfo").dialog('close');
+           });
+
+           $('#corroboration').click(function () {
+               $('.kakuninType1').hide();
+               $('.kakuninType2').hide();
+               $('.kakuninType3').hide();
+               $(btnkakunin).text('確認済');
+               $(btnkakunin).css("color", "blue");
+               $("#kakuninInfo").dialog('close');
+           });
+
+           $('.tenken').click(function () {
+               window.location.href = 'inspection_add.html';
+           });
+       });
+   </script>
 </head>
-<body class="bg-steel">
-     <!-- ヘッダー固定 -->
-   <div id="Menu_load"></div>
+<body>
+
+    <!-- ヘッダー固定 -->
+    <div id="Menu_load"></div>
+
     <div class="page-content">
         <div class="flex-grid no-responsive-future" style="height: 100%;">
             <div class="row">
                 <div class="cell auto-size padding20 bg-white" id="cell-content">
                     <ul class="breadcrumbs" style="padding:0px;">
-					    <li><h4>点呼記録表入力</h4></li>
-					</ul>
-					<div class="grid">
+                        <li><h4>点呼記録表入力</h4></li>
+                    </ul>
                     <hr class="thin bg-grayLighter">
-                    
-					<div class="cell colspan5">
-		                        天候
-		                        <div class="input-control select" style="width:70px;">
-		                            <select>
-		                                <option></option>
-		                                <option>晴れ</option>
-		                                <option>曇り</option>
-		                                <option>雨</option>
-		                                <option>雪</option>
-		                            </select>
-		                        </div>
-		                        本支店
-		                        <div class="input-control select" style="width:70px;">
-		                            <select>
-		                                <option></option>
-		                                <option>本社</option>
-		                                <option>大阪</option>
-		                                <option>名古屋</option>
-		                            </select>
-		                        </div>
-		                        点呼日
-								<div class="input-control text" id="datepicker" style="width:160px;">
-								    <input type="text">
-								    <button class="button"><span class="mif-calendar"></span></button>
-								</div>
-		                    <div class="right">
-		                      <button class="button primary" style="width:100px;">検索</button>
-		                      <button class="button warning" onclick="pushMessage('warning')" style="width:150px;">キャンセル</button>
-						      <button class="button primary" onclick="pushMessage('info')" style="background-color:#6A5ACD;border-color:#6A5ACD;width:100px;">印刷</button>
-			                  <button class="button success" onclick="pushMessage('info')" style="width:100px;">保存</button>
-	                        </div>
-		                </div>
-	                    </div>
+                    <div class="grid">
+                        <div class="cell colspan5">
+                            <span style="margin-left:5px;margin-right:5px;">支社名</span>
+                            <div class="input-control select" style="width:250px;">
+                                <select>
+                                    <option>本社</option>
+                                    <option>山形営業所</option>
+                                    <option>大阪堺倉庫</option>
+                                    <option>沖縄営業所：ウォーター事業部</option>
+                                </select>
+                            </div>
+                            <div class="input-control select" style="width:355px;">
+                                <span style="margin-left:5px;margin-right:5px;">点呼日</span>
+                                <div class="input-control select" style="width:75px;">
+                                    <select>
+                                        <option selected>2016</option>
+                                        <option>2017</option>
+                                        <option>2018</option>
+                                        <option>2019</option>
+                                        <option>2020</option>
+                                    </select>
+                                </div>
+                                年
+                                <div class="input-control select" style="width:65px;">
+                                    <select>
+                                        <option>01</option>
+                                        <option>02</option>
+                                        <option>03</option>
+                                        <option>04</option>
+                                        <option>05</option>
+                                        <option>06</option>
+                                        <option selected>07</option>
+                                        <option>08</option>
+                                        <option>09</option>
+                                        <option>10</option>
+                                        <option>11</option>
+                                        <option>12</option>
+                                    </select>
+                                </div>
+                                月
+                                <div class="input-control select" style="width:65px;">
+                                    <select>
+                                        <option selected>01</option>
+                                        <option>02</option>
+                                        <option>03</option>
+                                        <option>04</option>
+                                        <option>05</option>
+                                        <option>06</option>
+                                        <option>07</option>
+                                        <option>08</option>
+                                        <option>09</option>
+                                        <option>10</option>
+                                        <option>11</option>
+                                        <option>12</option>
+                                        <option>13</option>
+                                        <option>14</option>
+                                        <option>15</option>
+                                        <option>16</option>
+                                        <option>18</option>
+                                        <option>19</option>
+                                        <option>20</option>
+                                        <option>21</option>
+                                        <option>22</option>
+                                        <option>23</option>
+                                        <option>24</option>
+                                        <option>25</option>
+                                        <option>26</option>
+                                        <option>27</option>
+                                        <option>28</option>
+                                        <option>29</option>
+                                        <option>30</option>
+                                        <option>31</option>
+                                    </select>
+                                </div>
+                                日
+                            </div>
+                            <div class="right">
+                                <button class="button primary" style="width:100px;">検索</button>
+                            </div>
+                        </div>
+                    </div>
                     <hr class="thin bg-grayLighter">
-                    <table id="sort-table" class="tablesorter table border bordered callList" data-auto-width="false">
+                    <div class="grid">
+                        <div class="cell colspan5">
+                            <span style="margin-left:5px;margin-right:5px;">天候</span>
+                            <div class="input-control select" style="width:70px;">
+                                <select style="width:100px;">
+                                    <option></option>
+                                    <option>快晴</option>
+                                    <option selected>晴れ</option>
+                                    <option>薄曇</option>
+                                    <option>曇り</option>
+                                    <option>雨</option>
+                                    <option>霧雨</option>
+                                    <option>みぞれ</option>
+                                    <option>雪</option>
+                                    <option>雷</option>
+                                </select>
+                            </div>
+                            <div class="right">
+                                <button class="button primary" style="background-color:#6A5ACD;border-color:#6A5ACD;width:100px;">印刷</button>
+                                <button class="button success" style="width:100px;">保存</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <table id="sort-table" class="tablesorter table border bordered callList" data-auto-width="false" style="font-size:12px;">
                         <thead>
                         <tr>
-                            <td rowspan="3" style="text-align:center;">便名/作業割当（行先）</td>
-                            <td rowspan="3" width="75" style="text-align:center;">便番</td>
-                            <td rowspan="3" width="75" style="text-align:center;">発着予定<br>時刻</td>
+                            <td rowspan="3" width="75"  style="text-align:center;">便番</td>
+                            <td rowspan="3" style="text-align:center;">便名/作業割当<p style="margin:0 auto;">（行先）</p></td>
+                            <td rowspan="3" width="75"  style="text-align:center;">発着予定<br>時刻</td>
                             <td rowspan="2" width="130" style="text-align:center;">ドライバー（車番）</td>
                             <td colspan="7" style="text-align:center;">点呼内容</td>
-                            <td rowspan="3" style="text-align:center;">備考</td>
+                            <td rowspan="3" style="text-align:center;">報告・連絡</td>
                         </tr>
                         <tr>
-                            <td rowspan="2" width="150" style="text-align:center;">点呼場所</td>
+                            <td rowspan="2" width="100" style="text-align:center;">種別<p style="margin:0 auto;">日常点検</p></td>
                             <td rowspan="2" class="sortable-column" style="text-align:center;">点呼方法</td>
                             <td class="sortable-column" colspan="2" style="text-align:center;">アルコール検知器</td>
                             <td rowspan="2" style="text-align:center;">確認事項</td>
@@ -180,961 +304,546 @@
                             <td style="text-align:center;">測定結果</td>
                         </tr>
                         </thead>
+
                         <tbody>
-                          
- <!-- １行目 -->                       
                         <tr>
-                        	<td>川神下1</td>
-                        	<td style="text-align:right;">HA-111</td>
-                        	<td style="text-align:right;">20:30</td>
-                        	<td>平坂 一郎 (5346)<br>090-1111-1111</td>
-                        	<td>1H前</td>
-                            <td>
-		                        <label class="input-control radio small-check">
-		                            <input type="radio" name="th01">
-		                            <span class="check"></span>面
-		                        </label>
-		                        <label class="input-control radio small-check">
-		                            <input type="radio" name="th01" >
-		                            <span class="check"></span>電
-		                        </label>
-							</td>
-                            <td>
-							    <input type="text" style="width:60px; text-align:right;">
-							</td>
-                            <td>
-		                        <label class="input-control radio small-check">
-		                            <input type="radio" name="alcohol_result1">
-		                            <span class="check"></span><span class="mif-checkmark fg-green"></span>
-		                        </label>
-		                        <label class="input-control radio small-check">
-		                            <input type="radio" name="alcohol_result1">
-		                            <span class="check"></span><span class="mif-cross fg-red"></span>
-		                        </label>
-							</td>
-                            <td>
-		                        <label class="input-control radio small-check">
-		                            <input type="radio" name="confirm_1">
-		                            <span class="check"></span>
-		                            <span class="mif-checkmark fg-green"></span>
-		                        </label>
-		                        <label class="input-control radio small-check">
-		                            <input type="radio" name="confirm_1">
-		                            <span class="check"></span>
-		                            <span class="mif-cross fg-red"></span>
-		                        </label>
-		                        
-			                    <!-- ポップアップ -->
-					            <div class="checklist"><a href="javascript:showDialog('#checklist')" target="_blank">確認事項</a></div>
-		                        <div data-role="dialog" id="checklist" data-close-button="true" data-content='<iframe src="checklist.html"></iframe>' data-width="900" data-content-type="video"></div>
-							
-							</td>
-                            <td>
-							    <input type="text" style="width:30px; text-align:right;">:<input type="text" style="width:30px; text-align:right;">
-							</td>
-                            <td>
-		                        <div class="input-control select" style="width:120px;">
-		                            <select>
-		                                <option></option>
-		                                <option>東京 純一郎</option>
-		                                <option>神奈川 花子</option>
-		                            </select>
-		                        </div>
-							</td>
-							<td>
-							<input type="text" style="width:200px;">
-							</td>
-                        </tr>
-<!-- 2行目 -->                       
-                        <tr>
-                        	<td>川神下1</td>
-                        	<td style="text-align:right;">HA-111</td>
-                        	<td style="text-align:right;">20:30</td>
-                        	<td>平坂 一郎 (5346)<br>090-1111-1111</td>
-                        	<td>業務前</td>
-                            <td>
-		                        <label class="input-control radio small-check">
-		                            <input type="radio" name="th01">
-		                            <span class="check"></span>面
-		                        </label>
-		                        <label class="input-control radio small-check">
-		                            <input type="radio" name="th01" >
-		                            <span class="check"></span>電
-		                        </label>
-							</td>
-                            <td>
-							    <input type="text" style="width:60px; text-align:right;">
-							</td>
-                            <td>
-		                        <label class="input-control radio small-check">
-		                            <input type="radio" name="alcohol_result1">
-		                            <span class="check"></span><span class="mif-checkmark fg-green"></span>
-		                        </label>
-		                        <label class="input-control radio small-check">
-		                            <input type="radio" name="alcohol_result1">
-		                            <span class="check"></span><span class="mif-cross fg-red"></span>
-		                        </label>
-							</td>
-                            <td>
-		                        <label class="input-control radio small-check">
-		                            <input type="radio" name="confirm_1">
-		                            <span class="check"></span>
-		                            <span class="mif-checkmark fg-green"></span>
-		                        </label>
-		                        <label class="input-control radio small-check">
-		                            <input type="radio" name="confirm_1">
-		                            <span class="check"></span>
-		                            <span class="mif-cross fg-red"></span>
-		                        </label>
-		                        <!-- ポップアップ -->
-				                <div class="checklist"><a href="javascript:showDialog('#checklist')" target="_blank">確認事項</a></div>
-		                        <div data-role="dialog" id="checklist" data-close-button="true" data-content='<iframe src="checklist.html"></iframe>' data-width="900" data-content-type="video"></div>
-		                        
-							</td>
-                            <td>
-							    <input type="text" style="width:30px; text-align:right;">:<input type="text" style="width:30px; text-align:right;">
-							</td>
-                            <td>
-		                        <div class="input-control select" style="width:120px;">
-		                            <select>
-		                                <option></option>
-		                                <option>東京 純一郎</option>
-		                                <option>神奈川 花子</option>
-		                            </select>
-		                        </div>
-							</td>
-							<td>
-							<input type="text" style="width:200px;">
-							</td>
+                           <td>A-111</td>
+                           <td style="text-align:left;">川神下1<p style="margin:0 auto;">（川崎東）</p></td>
+                           <td style="text-align:center;">21:30</td>
+                           <td>平坂 一郎 (5346)<p style="margin:0 auto;">090-1111-1111</p></td>
+                           <td>乗務前<p class="tenken" style="margin:0 auto;color:blue;">日常点検（済）</p></td>
+                           <td>
+                              <label class="input-control radio small-check">
+                                  <input type="radio" name="th01" checked="checked">
+                                  <span class="check" style="margin-right:5px;"></span>面
+                              </label>
+                              <label class="input-control radio small-check">
+                                  <input type="radio" name="th01" >
+                                  <span class="check" style="margin-right:5px;"></span>電
+                              </label>
+                           </td>
+                           <td>
+                               <input type="text" maxlength="7" style="width:60px; text-align:left;" value="FC-1000">
+                           </td>
+                           <td>
+                               <label class="input-control radio small-check">
+                                   <input type="radio" name="alcohol_result1" checked="checked">
+                                  <span class="check" style="margin-right:5px;"></span><span class="mif-checkmark fg-green"></span>
+                               </label>
+                               <label class="input-control radio small-check">
+                                  <input type="radio" name="alcohol_result1">
+                                  <span class="check" style="margin-right:5px;"></span><span class="mif-cross fg-red"></span>
+                               </label>
+                           </td>
+                           <td style="text-align:center;">
+                               <span class="btn_kakunin" style="color:blue;" id="1">確認済</span>
+                           </td>
+                           <td>
+                               <input type="text" maxlength="2" style="width:30px; text-align:right;" value="20">:<input type="text" maxlength="2" style="width:30px; text-align:right;" value="30">
+                           </td>
+                           <td>
+                               <input type="text" style="text-align:left;width:100px;" value="大崎 三郎">
+                               <button class="button primary btn_shainlist" style="margin:0px; padding:0px; width:30px; height:23px; font-size:10px; position:relative;">検索</button>
+                           </td>
+                           <td>
+                               <input type="text" style="width:200px;">
+                           </td>
                         </tr>
 
-<!-- 3行目 -->                       
                         <tr>
-                        	<td>川神下1</td>
-                        	<td style="text-align:right;">HA-111</td>
-                        	<td style="text-align:right;">21:30</td>
-                        	<td>平坂 一郎 (5346)<br>090-1111-1111</td>
-                        	<td>川崎東</td>
-                            <td>
-		                        <label class="input-control radio small-check">
-		                            <input type="radio" name="th03">
-		                            <span class="check"></span>面
-		                        </label>
-		                        <label class="input-control radio small-check">
-		                            <input type="radio" name="th03" >
-		                            <span class="check"></span>電
-		                        </label>
-							</td>
-                            <td>
-							</td>
-                            <td>
-		                        <label class="input-control radio small-check">
-		                        </label>
-		                        <label class="input-control radio small-check">
-		                        </label>
-							</td>
-                            <td>
-		                        <label class="input-control radio small-check">
-		                        </label>
-		                        <label class="input-control radio small-check">
-		                        </label>
-		                        		                        
-		                    </td>
-                            <td>
-							    <input type="text" style="width:30px; text-align:right;">:<input type="text" style="width:30px; text-align:right;">
-							</td>
-                            <td>
-		                        <div class="input-control select" style="width:120px;">
-		                            <select>
-		                                <option></option>
-		                                <option>東京 純一郎</option>
-		                                <option>神奈川 花子</option>
-		                            </select>
-		                        </div>
-							</td>
-							<td>
-							<input type="text" style="width:200px;">
-							</td>
-                        </tr>
-                        
-<!-- 4行目 -->                       
-                        <tr>
-                        	<td>川神下1</td>
-                        	<td style="text-align:right;">HA-111</td>
-                        	<td style="text-align:right;">5:00</td>
-                        	<td>平坂 一郎 (5346)<br>090-1111-1111</td>
-                        	<td>新大阪</td>
-                            <td>
-		                        <label class="input-control radio small-check">
-		                            <input type="radio" name="th04">
-		                            <span class="check"></span>面
-		                        </label>
-		                        <label class="input-control radio small-check">
-		                            <input type="radio" name="th04" >
-		                            <span class="check"></span>電
-		                        </label>
-							</td>
-                            <td>
-							</td>
-                            <td>
-		                        <label class="input-control radio small-check">
-		                        </label>
-		                        <label class="input-control radio small-check">
-		                        </label>
-							</td>
-                            <td>
-		                        <label class="input-control radio small-check">
-		                        </label>
-		                        <label class="input-control radio small-check">
-		                        </label>
-							</td>
-                            <td>
-							    <input type="text" style="width:30px; text-align:right;">:<input type="text" style="width:30px; text-align:right;">
-							</td>
-                            <td>
-		                        <div class="input-control select" style="width:120px;">
-		                            <select>
-		                                <option></option>
-		                                <option>東京 純一郎</option>
-		                                <option>神奈川 花子</option>
-		                            </select>
-		                        </div>
-							</td>
-							<td>
-							<input type="text" style="width:200px;">
-							</td>
-                        </tr>
-
-<!-- 5行目 -->                       
-                        <tr>
-                        	<td>川神下1</td>
-                        	<td style="text-align:right;">HA-111</td>
-                        	<td style="text-align:right;">05:15</td>
-                        	<td>平坂 一郎 (5346)<br>090-1111-1111</td>
-                        	<td>ゆうP</td>
-                            <td>
-		                        <label class="input-control radio small-check">
-		                            <input type="radio" name="th05" >
-		                            <span class="check"></span>面
-		                        </label>
-		                        <label class="input-control radio small-check">
-		                            <input type="radio" name="th05" >
-		                            <span class="check"></span>電
-		                        </label>
-							</td>
-                            <td>
-							</td>
-                            <td>
-		                        <label class="input-control radio small-check">
-		                        </label>
-		                        <label class="input-control radio small-check">
-		                        </label>
-							</td>
-                            <td>
-		                        <label class="input-control radio small-check">
-		                        </label>
-		                        <label class="input-control radio small-check">
-		                        </label>
-							</td>
-                            <td>
-							    <input type="text" style="width:30px; text-align:right;">:<input type="text" style="width:30px; text-align:right;">
-							</td>
-                            <td>
-		                        <div class="input-control select" style="width:120px;">
-		                            <select>
-		                                <option></option>
-		                                <option>東京 純一郎</option>
-		                                <option>神奈川 花子</option>
-		                            </select>
-		                        </div>
-							</td>
-							<td>
-							<input type="text" style="width:200px;">
-							</td>
-                        </tr>
-<!-- 6行目 -->                       
-                        <tr>
-                        	<td>川神下1</td>
-                        	<td style="text-align:right;">HA-111</td>
-                        	<td style="text-align:right;">06:25</td>
-                        	<td>平坂 一郎 (5346)<br>090-1111-1111</td>
-                        	<td>神戸</td>
-                            <td>
-		                        <label class="input-control radio small-check">
-		                            <input type="radio" name="th06">
-		                            <span class="check"></span>面
-		                        </label>
-		                        <label class="input-control radio small-check">
-		                            <input type="radio" name="th06" >
-		                            <span class="check"></span>電
-		                        </label>
-							</td>
-                            <td>
-							</td>
-                            <td>
-		                        <label class="input-control radio small-check">
-		                        </label>
-		                        <label class="input-control radio small-check">
-		                        </label>
-							</td>
-                            <td>
-			                    <label class="input-control radio small-check">
-		                        </label>
-		                        <label class="input-control radio small-check">
-		                        </label>
-							</td>
-                            <td>
-							    <input type="text" style="width:30px; text-align:right;">:<input type="text" style="width:30px; text-align:right;">
-							</td>
-                            <td>
-		                        <div class="input-control select" style="width:120px;">
-		                            <select>
-		                                <option></option>
-		                                <option>東京 純一郎</option>
-		                                <option>神奈川 花子</option>
-		                            </select>
-		                        </div>
-							</td>
-							<td>
-							<input type="text" style="width:200px;">
-							</td>
-                        </tr>                
-<!-- 7行目 -->                       
-                        <tr>
-                        	<td>川神下1</td>
-                        	<td style="text-align:right;">HA-111</td>
-                        	<td style="text-align:right;"></td>
-                        	<td>平坂 一郎 (5346)<br>090-1111-1111</td>
-                        	<td>中間<input type="text" style="margin-left:10px;width:100px;"></td>
-                            <td>
-		                        <label class="input-control radio small-check">
-		                            <input type="radio" name="th07">
-		                            <span class="check"></span>面
-		                        </label>
-		                        <label class="input-control radio small-check">
-		                            <input type="radio" name="th07" >
-		                            <span class="check"></span>電
-		                        </label>
-							</td>
-                            <td>
-							    <input type="text" style="width:60px; text-align:right;">
-							</td>
-                            <td>
-		                        <label class="input-control radio small-check">
-		                            <input type="radio" name="alcohol_result7" >
-		                            <span class="check"></span><span class="mif-checkmark fg-green"></span>
-		                        </label>
-		                        <label class="input-control radio small-check">
-		                            <input type="radio" name="alcohol_result7">
-		                            <span class="check"></span><span class="mif-cross fg-red"></span>
-		                        </label>
-							</td>
-                            <td>
-			                    <label class="input-control radio small-check">
-		                            <input type="radio" name="confirm_5">
-		                            <span class="check"></span>
-		                            <span class="mif-checkmark fg-green"></span>
-		                        </label>
-		                        <label class="input-control radio small-check">
-		                            <input type="radio" name="confirm_5">
-		                            <span class="check"></span>
-		                            <span class="mif-cross fg-red"></span>
-		                        </label>
-		                        <!-- ポップアップ -->
-			                    <div class="checklist"><a href="javascript:showDialog('#checklist')" target="_blank">確認事項</a></div>
-							    <div data-role="dialog" id="checklist" data-close-button="true" data-content='<iframe src="checklist.html"></iframe>' data-width="900" data-content-type="video"></div>
-							    
-							</td>
-                            <td>
-							    <input type="text" style="width:30px; text-align:right;">:<input type="text" style="width:30px; text-align:right;">
-							</td>
-                            <td>
-		                        <div class="input-control select" style="width:120px;">
-		                            <select>
-		                                <option></option>
-		                                <option>東京 純一郎</option>
-		                                <option>神奈川 花子</option>
-		                            </select>
-		                        </div>
-							</td>
-							<td>
-							    <input type="text" style="width:200px;">
-							</td>
-                        </tr>                
-<!-- 8行目 -->                       
-                        <tr>
-                        	<td>川神下1</td>
-                        	<td style="text-align:right;">HA-111</td>
-                        	<td style="text-align:right;"></td>
-                        	<td>平坂 一郎 (5346)<br>090-1111-1111</td>
-                        	<td>業務後</td>
-                            <td>
-		                        <label class="input-control radio small-check">
-		                            <input type="radio" name="th08">
-		                            <span class="check"></span>面
-		                        </label>
-		                        <label class="input-control radio small-check">
-		                            <input type="radio" name="th08">
-		                            <span class="check"></span>電
-		                        </label>
-							</td>
-                            <td>
-							    <input type="text" style="width:60px; text-align:right;">
-							</td>
-                            <td>
-		                        <label class="input-control radio small-check">
-		                            <input type="radio" name="alcohol_result8" >
-		                            <span class="check"></span><span class="mif-checkmark fg-green"></span>
-		                        </label>
-		                        <label class="input-control radio small-check">
-		                            <input type="radio" name="alcohol_result8">
-		                            <span class="check"></span><span class="mif-cross fg-red"></span>
-		                        </label>
-							</td>
-                            <td>
-			                    <label class="input-control radio small-check">
-		                            <input type="radio" name="confirm_5">
-		                            <span class="check"></span>
-		                            <span class="mif-checkmark fg-green"></span>
-		                        </label>
-		                        <label class="input-control radio small-check">
-		                            <input type="radio" name="confirm_5">
-		                            <span class="check"></span>
-		                            <span class="mif-cross fg-red"></span>
-		                        </label>
-		                        <!-- ポップアップ -->
-			                    <div class="checklist"><a href="javascript:showDialog('#checklist')" target="_blank">確認事項</a></div>
-							    <div data-role="dialog" id="checklist" data-close-button="true" data-content='<iframe src="checklist.html"></iframe>' data-width="900" data-content-type="video"></div>
-							    
-							</td>
-                            <td>
-							    <input type="text" style="width:30px; text-align:right;">:<input type="text" style="width:30px; text-align:right;">
-							</td>
-                            <td>
-		                        <div class="input-control select" style="width:120px;">
-		                            <select>
-		                                <option></option>
-		                                <option>東京 純一郎</option>
-		                                <option>神奈川 花子</option>
-		                            </select>
-		                        </div>
-							</td>
-							<td>
-							<input type="text" style="width:200px;">
-							</td>
-                        </tr>
-<!-- 9行目 -->                       
-                        <tr>
-                        	<td>下4</td>
-                        	<td style="text-align:right;">HA-051</td>
-                        	<td style="text-align:right;">22:40</td>
-                        	<td>賀川 二郎 (9492)<br>090-6666-2222</td>
-                        	<td>1H前</td>
-                            <td>
-		                        <label class="input-control radio small-check">
-		                            <input type="radio" name="th09">
-		                            <span class="check"></span>面
-		                        </label>
-		                        <label class="input-control radio small-check">
-		                            <input type="radio" name="th09" >
-		                            <span class="check"></span>電
-		                        </label>
-							</td>
-                            <td>
-							    <input type="text" style="width:60px; text-align:right;">
-							</td>
-                            <td>
-		                        <label class="input-control radio small-check">
-		                            <input type="radio" name="alcohol_result9" >
-		                            <span class="check"></span><span class="mif-checkmark fg-green"></span>
-		                        </label>
-		                        <label class="input-control radio small-check">
-		                            <input type="radio" name="alcohol_result9">
-		                            <span class="check"></span><span class="mif-cross fg-red"></span>
-		                        </label>
-							</td>
+                            <td>A-111</td>
+                            <td style="text-align:left;">川神下1<p style="margin:0 auto;">（川崎東）</p></td>
+                            <td style="text-align:center;">21:30</td>
+                            <td>平坂 一郎 (5346)<p style="margin:0 auto;">090-1111-1111</p></td>
+                            <td>乗務後<p class="tenken" style="margin:0 auto;color:blue;">日常点検（済）</p></td>
                             <td>
                                 <label class="input-control radio small-check">
-		                            <input type="radio" name="confirm_5">
-		                            <span class="check"></span>
-		                            <span class="mif-checkmark fg-green"></span>
-		                        </label>
-		                        <label class="input-control radio small-check">
-		                            <input type="radio" name="confirm_5">
-		                            <span class="check"></span>
-		                            <span class="mif-cross fg-red"></span>
-		                        </label>
-		                        <!-- ポップアップ -->
-			                    <div class="checklist"><a href="javascript:showDialog('#checklist')" target="_blank">確認事項</a></div>
-							    <div data-role="dialog" id="checklist" data-close-button="true" data-content='<iframe src="checklist.html"></iframe>' data-width="900" data-content-type="video"></div>
-							    
-							</td>
+                                    <input type="radio" name="th02" checked="checked">
+                                    <span class="check" style="margin-right:5px;"></span>面
+                                </label>
+                                <label class="input-control radio small-check">
+                                    <input type="radio" name="th02">
+                                    <span class="check" style="margin-right:5px;"></span>電
+                                </label>
+                            </td>
                             <td>
-							    <input type="text" style="width:30px; text-align:right;">:<input type="text" style="width:30px; text-align:right;">
-							</td>
+                                <input type="text" maxlength="7" style="width:60px; text-align:left;" value="FC-1000">
+                            </td>
                             <td>
-		                        <div class="input-control select" style="width:120px;">
-		                            <select>
-		                                <option></option>
-		                                <option>東京 純一郎</option>
-		                                <option>神奈川 花子</option>
-		                            </select>
-		                        </div>
-							</td>
-							<td>
-							<input type="text" style="width:200px;">
-							</td>
+                                <label class="input-control radio small-check">
+                                    <input type="radio" name="alcohol_result2" checked="checked">
+                                    <span class="check" style="margin-right:5px;"></span><span class="mif-checkmark fg-green"></span>
+                                </label>
+                                <label class="input-control radio small-check">
+                                    <input type="radio" name="alcohol_result2">
+                                    <span class="check" style="margin-right:5px;"></span><span class="mif-cross fg-red"></span>
+                                </label>
+                            </td>
+                            <td style="text-align:center;">
+                                <span class="btn_kakunin" style="color:blue;" id="3">確認済</span>
+                            </td>
+                            <td>
+                                <input type="text" maxlength="2" style="width:30px; text-align:right;" value="05">:<input type="text" maxlength="2" style="width:30px; text-align:right;" value="00">
+                            </td>
+                            <td>
+                                <input type="text" style="text-align:left;width:100px;" value="大崎 三郎">
+                                <button class="button primary btn_shainlist" style="margin: 0px; padding: 0px; width: 30px; height: 23px; font-size: 10px; position:relative;">検索</button>
+                            </td>
+                            <td>
+                                <input type="text" style="width:200px;">
+                            </td>
                         </tr>
-<!-- 10行目 -->                       
-                        <tr>
-                        	<td>下4</td>
-                        	<td style="text-align:right;">HA-051</td>
-                        	<td style="text-align:right;">22:40</td>
-                        	<td>賀川 二郎 (9492)<br>090-6666-2222</td>
-                        	<td>業務前</td>
-                            <td>
-		                        <label class="input-control radio small-check">
-		                            <input type="radio" name="th09">
-		                            <span class="check"></span>面
-		                        </label>
-		                        <label class="input-control radio small-check">
-		                            <input type="radio" name="th09" >
-		                            <span class="check"></span>電
-		                        </label>
-							</td>
-                            <td>
-							    <input type="text" style="width:60px; text-align:right;">
-							</td>
-                            <td>
-		                        <label class="input-control radio small-check">
-		                            <input type="radio" name="alcohol_result9" >
-		                            <span class="check"></span><span class="mif-checkmark fg-green"></span>
-		                        </label>
-		                        <label class="input-control radio small-check">
-		                            <input type="radio" name="alcohol_result9">
-		                            <span class="check"></span><span class="mif-cross fg-red"></span>
-		                        </label>
-							</td>
-                            <td>
-			                    <label class="input-control radio small-check">
-		                            <input type="radio" name="confirm_5">
-		                            <span class="check"></span>
-		                            <span class="mif-checkmark fg-green"></span>
-		                        </label>
-		                        <label class="input-control radio small-check">
-		                            <input type="radio" name="confirm_5">
-		                            <span class="check"></span>
-		                            <span class="mif-cross fg-red"></span>
-		                        </label>
-		                        <!-- ポップアップ -->
-			                    <div class="checklist"><a href="javascript:showDialog('#checklist')" target="_blank">確認事項</a></div>
-							    <div data-role="dialog" id="checklist" data-close-button="true" data-content='<iframe src="checklist.html"></iframe>' data-width="900" data-content-type="video"></div>
-							    
-							</td>
-                            <td>
-							    <input type="text" style="width:30px; text-align:right;">:<input type="text" style="width:30px; text-align:right;">
-							</td>
-                            <td>
-		                        <div class="input-control select" style="width:120px;">
-		                            <select>
-		                                <option></option>
-		                                <option>東京 純一郎</option>
-		                                <option>神奈川 花子</option>
-		                            </select>
-		                        </div>
-							</td>
-							<td>
-							<input type="text" style="width:200px;">
-							</td>
-                        </tr>
-  
-<!-- 11行目 -->                       
-                        <tr>
-                        	<td>下4</td>
-                        	<td style="text-align:right;">HA-051</td>
-                        	<td style="text-align:right;">23:40</td>
-                        	<td>賀川 二郎 (9492)<br>090-6666-2222</td>
-                        	<td>東京多摩</td>
-                            <td>
-		                        <label class="input-control radio small-check">
-		                            <input type="radio" name="th11">
-		                            <span class="check"></span>面
-		                        </label>
-		                        <label class="input-control radio small-check">
-		                            <input type="radio" name="th11">
-		                            <span class="check"></span>電
-		                        </label>
-							</td>
-                            <td>
-							</td>
-                            <td>
-		                        <label class="input-control radio small-check">
-		                        </label>
-		                        <label class="input-control radio small-check">
-		                        </label>
-							</td>
-                            <td>
-			                    <label class="input-control radio small-check">
-		                        </label>
-		                        <label class="input-control radio small-check">
-		                        </label>
-							</td>
-                            <td>
-							    <input type="text" style="width:30px; text-align:right;">:<input type="text" style="width:30px; text-align:right;">
-							</td>
-                            <td>
-		                        <div class="input-control select" style="width:120px;">
-		                            <select>
-		                                <option></option>
-		                                <option>東京 純一郎</option>
-		                                <option>神奈川 花子</option>
-		                            </select>
-		                        </div>
-							</td>
-							<td>
-							<input type="text" style="width:200px;">
-							</td>
-                        </tr>
-<!-- 12行目 -->                       
-                        <tr>
-                        	<td>下4</td>
-                        	<td style="text-align:right;">HA-051</td>
-                        	<td style="text-align:right;">00:45</td>
-                        	<td>賀川 二郎 (9492)<br>090-6666-2222</td>
-                        	<td>綾瀬</td>
-                            <td>
-		                        <label class="input-control radio small-check">
-		                            <input type="radio" name="th12">
-		                            <span class="check"></span>面
-		                        </label>
-		                        <label class="input-control radio small-check">
-		                            <input type="radio" name="th12" >
-		                            <span class="check"></span>電
-		                        </label>
-							</td>
-                            <td>
-							</td>
-                            <td>
-		                        <label class="input-control radio small-check">
-		                        </label>
-		                        <label class="input-control radio small-check">
-		                        </label>
-							</td>
-                            <td>
-			                    <label class="input-control radio small-check">
-		                        </label>
-		                        <label class="input-control radio small-check">
-		                        </label>
-							</td>
-                            <td>
-							    <input type="text" style="width:30px; text-align:right;">:<input type="text" style="width:30px; text-align:right;">
-							</td>
-                            <td>
-		                        <div class="input-control select" style="width:120px;">
-		                            <select>
-		                                <option></option>
-		                                <option>東京 純一郎</option>
-		                                <option>神奈川 花子</option>
-		                            </select>
-		                        </div>
-							</td>
-							<td>
-							<input type="text" style="width:200px;">
-							</td>
-                        </tr>
-<!-- 13行目 -->                       
-                        <tr>
-                        	<td>下4</td>
-                        	<td style="text-align:right;">HA-051</td>
-                        	<td style="text-align:right;">02:15</td>
-                        	<td>賀川 二郎 (9492)<br>090-6666-2222</td>
-                        	<td>川崎東</td>
-                            <td>
-		                        <label class="input-control radio small-check">
-		                            <input type="radio" name="th13">
-		                            <span class="check"></span>面
-		                        </label>
-		                        <label class="input-control radio small-check">
-		                            <input type="radio" name="th13">
-		                            <span class="check"></span>電
-		                        </label>
-							</td>
-                            <td>
-							</td>
-                            <td>
-		                        <label class="input-control radio small-check">
-		                        </label>
-		                        <label class="input-control radio small-check">
-		                        </label>
-							</td>
-                            <td>
-			                    <label class="input-control radio small-check">
-		                        </label>
-		                        <label class="input-control radio small-check">
-		                        </label>
-							</td>
-                            <td>
-							    <input type="text" style="width:30px; text-align:right;">:<input type="text" style="width:30px; text-align:right;">
-							</td>
-                            <td>
-		                        <div class="input-control select" style="width:120px;">
-		                            <select>
-		                                <option></option>
-		                                <option>東京 純一郎</option>
-		                                <option>神奈川 花子</option>
-		                            </select>
-		                        </div>
-							</td>
-							<td>
-							<input type="text" style="width:200px;">
-							</td>
-                        </tr>                                                                                                                          
-<!-- 14行目 -->                       
-                        <tr>
-                        	<td>下4</td>
-                        	<td style="text-align:right;">HA-051</td>
-                        	<td style="text-align:right;"></td>
-                        	<td>賀川 二郎 (9492)<br>090-6666-2222</td>
-                        	<td>中間<input type="text" style="margin-left:10px;width:100px;"></td>
-                            <td>
-		                        <label class="input-control radio small-check">
-		                            <input type="radio" name="th14">
-		                            <span class="check"></span>面
-		                        </label>
-		                        <label class="input-control radio small-check">
-		                            <input type="radio" name="th14" >
-		                            <span class="check"></span>電
-		                        </label>
-							</td>
-                            <td>
-							    <input type="text" style="width:60px; text-align:right;">
-							</td>
-                            <td>
-		                        <label class="input-control radio small-check">
-		                            <input type="radio" name="alcohol_result14">
-		                            <span class="check"></span><span class="mif-checkmark fg-green"></span>
-		                        </label>
-		                        <label class="input-control radio small-check">
-		                            <input type="radio" name="alcohol_result14">
-		                            <span class="check"></span><span class="mif-cross fg-red"></span>
-		                        </label>
-							</td>
-                            <td>
-			                    <label class="input-control radio small-check">
-		                            <input type="radio" name="confirm_5">
-		                            <span class="check"></span>
-		                            <span class="mif-checkmark fg-green"></span>
-		                        </label>
-		                        <label class="input-control radio small-check">
-		                            <input type="radio" name="confirm_5">
-		                            <span class="check"></span>
-		                            <span class="mif-cross fg-red"></span>
-		                        </label>
-		                        <!-- ポップアップ -->
-			                    <div class="checklist"><a href="javascript:showDialog('#checklist')" target="_blank">確認事項</a></div>
-							    <div data-role="dialog" id="checklist" data-close-button="true" data-content='<iframe src="checklist.html"></iframe>' data-width="900" data-content-type="video"></div>
-							    
-							</td>
-                            <td>
-							    <input type="text" style="width:30px; text-align:right;">:<input type="text" style="width:30px; text-align:right;">
-							</td>
-                            <td>
-		                        <div class="input-control select" style="width:120px;">
-		                            <select>
-		                                <option></option>
-		                                <option>東京 純一郎</option>
-		                                <option>神奈川 花子</option>
-		                            </select>
-		                        </div>
-							</td>
-							<td>
-							<input type="text" style="width:200px;">
-							</td>
-                        </tr>
-<!-- 15行目 -->                       
-                        <tr>
-                        	<td>下4</td>
-                        	<td style="text-align:right;">HA-051</td>
-                        	<td style="text-align:right;"></td>
-                        	<td>賀川 二郎 (9492)<br>090-6666-2222</td>
-                        	<td>業務後</td>
-                            <td>
-		                        <label class="input-control radio small-check">
-		                            <input type="radio" name="th15">
-		                            <span class="check"></span>面
-		                        </label>
-		                        <label class="input-control radio small-check">
-		                            <input type="radio" name="th15">
-		                            <span class="check"></span>電
-		                        </label>
-							</td>
-                            <td>
-							    <input type="text" style="width:60px; text-align:right;">
-							</td>
-                            <td>
-		                        <label class="input-control radio small-check">
-		                            <input type="radio" name="alcohol_result15">
-		                            <span class="check"></span><span class="mif-checkmark fg-green"></span>
-		                        </label>
-		                        <label class="input-control radio small-check">
-		                            <input type="radio" name="alcohol_result15">
-		                            <span class="check"></span><span class="mif-cross fg-red"></span>
-		                        </label>
-							</td>
-                            <td>
-			                    <label class="input-control radio small-check">
-		                            <input type="radio" name="confirm_5">
-		                            <span class="check"></span>
-		                            <span class="mif-checkmark fg-green"></span>
-		                        </label>
-		                        <label class="input-control radio small-check">
-		                            <input type="radio" name="confirm_5">
-		                            <span class="check"></span>
-		                            <span class="mif-cross fg-red"></span>
-		                        </label>
-		                        <!-- ポップアップ -->
-			                    <div class="checklist"><a href="javascript:showDialog('#checklist')" target="_blank">確認事項</a></div>
-							    <div data-role="dialog" id="checklist" data-close-button="true" data-content='<iframe src="checklist.html"></iframe>' data-width="900" data-content-type="video"></div>
-							    
-							</td>
-                            <td>
-							    <input type="text" style="width:30px; text-align:right;">:<input type="text" style="width:30px; text-align:right;">
-							</td>
-                            <td>
-		                        <div class="input-control select" style="width:120px;">
-		                            <select>
-		                                <option></option>
-		                                <option>東京 純一郎</option>
-		                                <option>神奈川 花子</option>
-		                            </select>
-		                        </div>
-							</td>
-							<td>
-							<input type="text" style="width:200px;">
-							</td>
-                        </tr>
- <!-- 16行目/追加 -->
-                        <tr>
-                        	<td rowspan="2"></td>
-                        	<td rowspan="2" style="text-align:right;"></td>
-                        	<td rowspan="2">
-							    <input type="text" style="width:30px; text-align:right;">:<input type="text" style="width:30px; text-align:right;">
-							</td>
-                        	<td>
-                        	  <div class="input-control select" style="width:90px;">
-                        	  <select>
-							    <option value="">賀川 二郎</option>
-						      </select>
-						      </div>
-                        	</td>
-                        	<td rowspan="2" style="color:green">
-                        	
-                        	<div class="input-control select" style="width:140px;">
-                        	  <form class="left" name="test">
-                              <select name="changeSelect" onChange="kakunin()" style="width:60px;">
-								
-								<option>業務前</option>
-								<option>1H前</option>
-								<option>中間</option>
-								<option>業務後</option>
 
-						      </select>
-						      
-							  </form>
-								
-							  <div class="rightForm"></div>
-                        	</div>
-						     
-                        	</td>
-                            <td rowspan="2">
-		                        <label class="input-control radio small-check">
-		                            <input type="radio" name="th15">
-		                            <span class="check"></span>面
-		                        </label>
-		                        <label class="input-control radio small-check">
-		                            <input type="radio" name="th15">
-		                            <span class="check"></span>電
-		                        </label>
-							</td>
-                            <td rowspan="2">
-							    <input type="text" style="width:60px; text-align:right;">
-							</td>
-                            <td rowspan="2">
-		                        <label class="input-control radio small-check">
-		                            <input type="radio" name="alcohol_result15">
-		                            <span class="check"></span><span class="mif-checkmark fg-green"></span>
-		                        </label>
-		                        <label class="input-control radio small-check">
-		                            <input type="radio" name="alcohol_result15">
-		                            <span class="check"></span><span class="mif-cross fg-red"></span>
-		                        </label>
-							</td>
-                            <td rowspan="2">
-			                        <label class="input-control radio small-check">
-		                            <input type="radio" name="confirm_5">
-		                            <span class="check"></span>
-		                            <span class="mif-checkmark fg-green"></span>
-		                        </label>
-		                        <label class="input-control radio small-check">
-		                            <input type="radio" name="confirm_5">
-		                            <span class="check"></span>
-		                            <span class="mif-cross fg-red"></span>
-		                        </label>
-		                        
-			                    <div class="checklist"><a href="javascript:showDialog('#checklist')" target="_blank">確認事項</a></div>
-							</td>
-                            <td rowspan="2">
-							    <input type="text" style="width:30px; text-align:right;">:<input type="text" style="width:30px; text-align:right;">
-							</td>
-                            <td rowspan="2">
-		                        <div class="input-control select" style="width:120px;">
-		                            <select>
-		                                <option></option>
-		                                <option>東京 純一郎</option>
-		                                <option>神奈川 花子</option>
-		                            </select>
-		                        </div>
-							</td>
-							<td rowspan="2">
-							<input type="text" style="width:200px;">
-							</td>
+                        <tr>
+                            <td>A-111</td>
+                            <td style="text-align:left;">川神下1<p style="margin:0 auto;">（新大阪）</p></td>
+                            <td style="text-align:center;">05:00</td>
+                            <td>安藤 一郎 (5347)<p style="margin:0 auto;">090-1111-2111</p></td>
+                            <td>乗務前<p class="tenken" style="margin:0 auto;color:blue;">日常点検（済）</p></td>
+                            <td>
+                                <label class="input-control radio small-check">
+                                    <input type="radio" name="th03" checked="checked">
+                                    <span class="check" style="margin-right:5px;"></span>面
+                                </label>
+                                <label class="input-control radio small-check">
+                                    <input type="radio" name="th03">
+                                    <span class="check" style="margin-right:5px;"></span>電
+                                </label>
+                            </td>
+                            <td>
+                                <input type="text" maxlength="7" style="width:60px; text-align:left;" value="FC-1000">
+                            </td>
+                            <td>
+                                <label class="input-control radio small-check">
+                                    <input type="radio" name="alcohol_result3" checked="checked">
+                                    <span class="check" style="margin-right:5px;"></span><span class="mif-checkmark fg-green"></span>
+                                </label>
+                                <label class="input-control radio small-check">
+                                    <input type="radio" name="alcohol_result3">
+                                    <span class="check" style="margin-right:5px;"></span><span class="mif-cross fg-red"></span>
+                                </label>
+                            </td>
+                            <td style="text-align:center;">
+                                <span class="btn_kakunin" style="color:blue;" id="1">確認済</span>
+                            </td>
+                            <td>
+                                <input type="text" maxlength="2" style="width:30px; text-align:right;" value="04">:<input type="text" maxlength="2" style="width:30px; text-align:right;" value="00">
+                            </td>
+                            <td>
+                                <input type="text" style="text-align:left;width:100px;" value="大崎 三郎">
+                                <button class="button primary btn_shainlist" style="margin: 0px; padding: 0px; width: 30px; height: 23px; font-size: 10px; position:relative;">検索</button>
+                            </td>
+                            <td>
+                                <input type="text" style="width:200px;">
+                            </td>
                         </tr>
-                        <tr><td><input type="text" style="width:110px; text-align:right;"value="090-6666-2222"></td></tr>
-                        
-                        </tbody>
+
+                        <tr>
+                            <td>A-111</td>
+                            <td style="text-align:left;">川神下1<p style="margin:0 auto;">（ゆうP）</p></td>
+                            <td style="text-align:center;">05:15</td>
+                            <td>安藤 一郎 (5347)<p style="margin:0 auto;">090-1111-2111</p></td>
+                            <td>乗務途中<p class="tenken" style="margin:0 auto;">なし</p></td>
+                            <td>
+                                <label class="input-control radio small-check">
+                                    <input type="radio" name="th04">
+                                    <span class="check" style="margin-right:4px;"></span>面
+                                </label>
+                                <label class="input-control radio small-check">
+                                    <input type="radio" name="th04">
+                                    <span class="check" style="margin-right:4px;"></span>電
+                                </label>
+                            </td>
+                            <td>
+                                <input type="text" maxlength="7" style="width:60px; text-align:left;" value="">
+                            </td>
+                            <td>
+                                <label class="input-control radio small-check">
+                                    <input type="radio" name="alcohol_result4">
+                                    <span class="check" style="margin-right:5px;"></span><span class="mif-checkmark fg-green"></span>
+                                </label>
+                                <label class="input-control radio small-check">
+                                    <input type="radio" name="alcohol_result4">
+                                    <span class="check" style="margin-right:5px;"></span><span class="mif-cross fg-red"></span>
+                                </label>
+                            </td>
+                            <td style="text-align:center;">
+                                <span class="btn_kakunin" style="color:red;" id="2">未確認</span>
+                            </td>
+                            <td>
+                                <input type="text" maxlength="2" style="width:30px; text-align:right;" value="">:<input type="text" maxlength="2" style="width:30px; text-align:right;" value="">
+                            </td>
+                            <td>
+                                <input type="text" style="text-align:left;width:100px;" value="">
+                                <button class="button primary btn_shainlist" style="margin: 0px; padding: 0px; width: 30px; height: 23px; font-size: 10px; position:relative;">検索</button>
+                            </td>
+                            <td>
+                                <input type="text" style="width:200px;">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>A-150</td>
+                            <td style="text-align:left;">綾神上<p style="margin:0 auto;">（神戸）</p></td>
+                            <td style="text-align:center;">19:15</td>
+                            <td>賀川 二郎 (5399)<p style="margin:0 auto;">090-1111-1311</p></td>
+                            <td>乗務前<p class="tenken" style="margin:0 auto;color:blue;">日常点検（済）</p></td>
+                            <td>
+                                <label class="input-control radio small-check">
+                                    <input type="radio" name="th05" checked="checked">
+                                    <span class="check" style="margin-right:5px;"></span>面
+                                </label>
+                                <label class="input-control radio small-check">
+                                    <input type="radio" name="th05">
+                                    <span class="check" style="margin-right:5px;"></span>電
+                                </label>
+                            </td>
+                            <td>
+                                <input type="text" maxlength="7" style="width:60px; text-align:left;" value="FC-1000">
+                            </td>
+                            <td>
+                                <label class="input-control radio small-check">
+                                    <input type="radio" name="alcohol_result5" checked="checked">
+                                    <span class="check" style="margin-right:5px;"></span><span class="mif-checkmark fg-green"></span>
+                                </label>
+                                <label class="input-control radio small-check">
+                                    <input type="radio" name="alcohol_result5">
+                                    <span class="check" style="margin-right:5px;"></span><span class="mif-cross fg-red"></span>
+                                </label>
+                            </td>
+                            <td style="text-align:center;">
+                                <span class="btn_kakunin" style="color:blue;" id="1">確認済</span>
+                            </td>
+                            <td>
+                                <input type="text" maxlength="2" style="width:30px; text-align:right;" value="18">:<input type="text" maxlength="2" style="width:30px; text-align:right;" value="45">
+                            </td>
+                            <td>
+                                <input type="text" style="text-align:left;width:100px;" value="大崎 三郎">
+                                <button class="button primary btn_shainlist" style="margin:0px; padding:0px; width:30px; height:23px; font-size:10px; position:relative;">検索</button>
+                            </td>
+                            <td>
+                                <input type="text" style="width:200px;">
+                            </td>
+                        </tr>  
+
+                        <tr>
+                            <td>A-150</td>
+                            <td style="text-align:left;">綾神上<p style="margin:0 auto;">（神戸）</p></td>
+                            <td style="text-align:center;">19:15</td>
+                            <td>賀川 二郎 (5399)<p style="margin:0 auto;">090-1111-1311</p></td>
+                            <td>乗務後<p class="tenken" style="margin:0 auto;color:blue;">日常点検（済）</p></td>
+                            <td>
+                                <label class="input-control radio small-check">
+                                    <input type="radio" name="th06" checked="checked">
+                                    <span class="check" style="margin-right:6px;"></span>面
+                                </label>
+                                <label class="input-control radio small-check">
+                                    <input type="radio" name="th06">
+                                    <span class="check" style="margin-right:6px;"></span>電
+                                </label>
+                            </td>
+                            <td>
+                                <input type="text" maxlength="7" style="width:60px; text-align:left;" value="FC-1000">
+                            </td>
+                            <td>
+                                <label class="input-control radio small-check">
+                                    <input type="radio" name="alcohol_result6" checked="checked">
+                                    <span class="check" style="margin-right:6px;"></span><span class="mif-checkmark fg-green"></span>
+                                </label>
+                                <label class="input-control radio small-check">
+                                    <input type="radio" name="alcohol_result6">
+                                    <span class="check" style="margin-right:5px;"></span><span class="mif-cross fg-red"></span>
+                                </label>
+                            </td>
+                            <td style="text-align:center;">
+                                <span class="btn_kakunin" style="color:blue;" id="3">確認済</span>
+                            </td>
+                            <td>
+                                <input type="text" maxlength="2" style="width:30px; text-align:right;" value="20">:<input type="text" maxlength="2" style="width:30px; text-align:right;" value="00">
+                            </td>
+                            <td>
+                                <input type="text" style="text-align:left;width:100px;" value="大崎 三郎">
+                                <button class="button primary btn_shainlist" style="margin:0px; padding:0px; width:30px; height:23px; font-size:10px; position:relative;">検索</button>
+                            </td>
+                            <td>
+                                <input type="text" style="width:200px;">
+                            </td>
+                        </tr>  
+
+                        <tr>
+                            <td>A-150</td>
+                            <td style="text-align:left;">綾神上<p style="margin:0 auto;">（ゆうP）</p></td>
+                            <td style="text-align:center;">20:00</td>
+                            <td>賀川 二郎 (6399)<p style="margin:0 auto;">090-1111-1311</p></td>
+                            <td>乗務前<p class="tenken" style="margin:0 auto;color:red;">日常点検（未）</p></td>
+                            <td>
+                                <label class="input-control radio small-check">
+                                    <input type="radio" name="th07" checked="checked">
+                                    <span class="check" style="margin-right:7px;"></span>面
+                                </label>
+                                <label class="input-control radio small-check">
+                                    <input type="radio" name="th07">
+                                    <span class="check" style="margin-right:7px;"></span>電
+                                </label>
+                            </td>
+                            <td>
+                                <input type="text" maxlength="7" style="width:60px; text-align:left;" value="FC-1000">
+                            </td>
+                            <td>
+                                <label class="input-control radio small-check">
+                                    <input type="radio" name="alcohol_result7" checked="checked">
+                                    <span class="check" style="margin-right:6px;"></span><span class="mif-checkmark fg-green"></span>
+                                </label>
+                                <label class="input-control radio small-check">
+                                    <input type="radio" name="alcohol_result7">
+                                    <span class="check" style="margin-right:5px;"></span><span class="mif-cross fg-red"></span>
+                                </label>
+                            </td>
+                            <td style="text-align:center;">
+                                <span class="btn_kakunin" style="color:blue;" id="1">確認済</span>
+                            </td>
+                            <td>
+                                <input type="text" maxlength="2" style="width:30px; text-align:right;" value="20">:<input type="text" maxlength="2" style="width:30px; text-align:right;" value="00">
+                            </td>
+                            <td>
+                                <input type="text" style="text-align:left;width:100px;" value="">
+                                <button class="button primary btn_shainlist" style="margin:0px; padding:0px; width:30px; height:23px; font-size:10px; position:relative;">検索</button>
+                            </td>
+                            <td>
+                                <input type="text" style="width:200px;" value="日常点検待ち">
+                            </td>
+                        </tr>  
+
+                        <tr>
+                            <td>00001</td>
+                            <td style="text-align:left;">臨時便<p style="margin:0 auto;">（平塚）</p></td>
+                            <td style="text-align:center;">8:30</td>
+                            <td>川上 武<p style="margin:0 auto;">090-3111-3111</p></td>
+                            <td>乗務前<p class="tenken" style="margin:0 auto;">なし</p></td>
+                            <td>
+                                <label class="input-control radio small-check">
+                                    <input type="radio" name="th08">
+                                    <span class="check" style="margin-right:7px;"></span>面
+                                </label>
+                                <label class="input-control radio small-check">
+                                    <input type="radio" name="th08" checked="checked">
+                                    <span class="check" style="margin-right:7px;"></span>電
+                                </label>
+                            </td>
+                            <td>
+                                <input type="text" maxlength="7" style="width:60px; text-align:left;" value="FALC-11">
+                            </td>
+                            <td>
+                                <label class="input-control radio small-check">
+                                    <input type="radio" name="alcohol_result8" checked="checked">
+                                    <span class="check" style="margin-right:6px;"></span><span class="mif-checkmark fg-green"></span>
+                                </label>
+                                <label class="input-control radio small-check">
+                                    <input type="radio" name="alcohol_result8">
+                                    <span class="check" style="margin-right:5px;"></span><span class="mif-cross fg-red"></span>
+                                </label>
+                            </td>
+                            <td style="text-align:center;">
+                                <span class="btn_kakunin" style="color:blue;" id="1">確認済</span>
+                            </td>
+                            <td>
+                                <input type="text" maxlength="2" style="width:30px; text-align:right;" value="07">:<input type="text" maxlength="2" style="width:30px; text-align:right;" value="30">
+                            </td>
+                            <td>
+                                <input type="text" style="text-align:left;width:100px;" value="大崎 三郎">
+                                <button class="button primary btn_shainlist" style="margin:0px; padding:0px; width:30px; height:23px; font-size:10px; position:relative;">検索</button>
+                            </td>
+                            <td>
+                                <input type="text" style="width:200px;" value="">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>00001</td>
+                            <td style="text-align:left;">臨時便<p style="margin:0 auto;">（平塚）</p></td>
+                            <td style="text-align:center;">8:30</td>
+                            <td>川上 武<p style="margin:0 auto;">090-3111-3111</p></td>
+                            <td>乗務後<p class="tenken" style="margin:0 auto;">なし</p></td>
+                            <td>
+                                <label class="input-control radio small-check">
+                                    <input type="radio" name="th09">
+                                    <span class="check" style="margin-right:7px;"></span>面
+                                </label>
+                                <label class="input-control radio small-check">
+                                    <input type="radio" name="th09" checked="checked">
+                                    <span class="check" style="margin-right:7px;"></span>電
+                                </label>
+                            </td>
+                            <td>
+                                <input type="text" maxlength="7" style="width:60px; text-align:left;" value="FALC-11">
+                            </td>
+                            <td>
+                                <label class="input-control radio small-check">
+                                    <input type="radio" name="alcohol_result9" checked="checked">
+                                    <span class="check" style="margin-right:6px;"></span><span class="mif-checkmark fg-green"></span>
+                                </label>
+                                <label class="input-control radio small-check">
+                                    <input type="radio" name="alcohol_result9">
+                                    <span class="check" style="margin-right:5px;"></span><span class="mif-cross fg-red"></span>
+                                </label>
+                            </td>
+                            <td style="text-align:center;">
+                                <span class="btn_kakunin" style="color:blue;" id="3">確認済</span>
+                            </td>
+                            <td>
+                                <input type="text" maxlength="2" style="width:30px; text-align:right;" value="11">:<input type="text" maxlength="2" style="width:30px; text-align:right;" value="00">
+                            </td>
+                            <td>
+                                <input type="text" style="text-align:left;width:100px;" value="大崎 三郎">
+                                <button class="button primary btn_shainlist" style="margin:0px; padding:0px; width:30px; height:23px; font-size:10px; position:relative;">検索</button>
+                            </td>
+                            <td>
+                                <input type="text" style="width:200px;" value="">
+                            </td>
+                        </tr>
+
+                    </tbody>
                     </table>
                     
-                    <!-- 追加ボタン -->
-					<button class="button success" onclick="pushMessage('info')" style="width:100px;">行追加</button>
-					<div class="row cells12">
-						<div class="cell colspan4">
-						    <fieldset id="personal">
-						        <legend>指示事項</legend>
-				                <div class="input-control textarea full-size" data-text-max-height="100">
-				                    <textarea>連続運転4時間以内に休憩をとること</textarea>
-				                </div>
-					    	</fieldset>
-	                    </div>
-						<div class="cell colspan4">
-						    <fieldset id="personal">
-						        <legend>報告事項</legend>
-				                <div class="input-control textarea full-size" data-text-max-height="100">
-				                    <textarea></textarea>
-				                </div>
-					    	</fieldset>
-	                    </div>
-						<div class="cell colspan4">
-						    <fieldset id="personal">
-						        <legend>その他必要事項</legend>
-				                <div class="input-control textarea full-size" data-text-max-height="100">
-				                    <textarea></textarea>
-				                </div>
-					    	</fieldset>
-	                    </div>
+                    <div class="row cells12">
+                       <div class="cell colspan4">
+                          <fieldset id="personal">
+                             <legend>指示事項</legend>
+                             <div class="input-control textarea full-size" data-text-max-height="100">
+                                 <textarea>連続運転4時間以内に休憩をとること</textarea>
+                             </div>
+                          </fieldset>
+                       </div>
+                       <div class="cell colspan4">
+                          <fieldset id="personal">
+                             <legend>報告事項</legend>
+                             <div class="input-control textarea full-size" data-text-max-height="100">
+                                 <textarea></textarea>
+                             </div>
+                          </fieldset>
+                       </div>
+                       <div class="cell colspan4">
+                          <fieldset id="personal">
+                             <legend>その他必要事項</legend>
+                             <div class="input-control textarea full-size" data-text-max-height="100">
+                                 <textarea></textarea>
+                             </div>
+                          </fieldset>
+                       </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- 社員一覧 -->
+    <div id="shainlist" title="社員一覧" style="display:none;">
+        <table border="0" style="width:400px;margin:0 auto;">
+            <tr>
+                <td colspan="3">
+                    <hr class="thin bg-grayLighter">
+                </td>
+            </tr>
+            <tr style="height:30px;">
+                <td style="width:20%;">
+                    <span id="findname" style="width:75px;color:#555555;">社員名</span>
+                </td>
+                <td style="width:50%;">
+                    <input type="text" id="torihikisaki_name" style="width:200px;">
+                </td>
+                <td style="width:10%;">
+                    <button class="button primary" style="width:80px;margin-left:14px;">検索</button>
+                </td>
+            </tr>
+            <tr style="height:10px;">
+                <td colspan="3"></td>
+            </tr>
+        </table>
+        <hr class="thin bg-grayLighter">
+
+        <table border="0" style="width:400px;margin:0 auto;">
+            <tr style="height:10px;">
+                <td colspan="3" style="padding-right:3px; padding-left:3px;">
+                    <button type="button" style="padding: 9px 9px;border-color:#9d9d9d;float:left;" class="ui-icon ui-icon-triangle-1-w button_search"></button>
+                    <button type="button" style="padding: 9px 9px;border-color:#9d9d9d;float:right;" class="ui-icon ui-icon-triangle-1-e button_search"></button>
+                </td>
+            </tr>
+            <tr style="height:250px">
+                <td colspan="3" style="vertical-align:top">
+                    <table class="rowselect" style="border-color: rgb(153, 153, 153); margin: 0px auto;" border="1">
+                        <tr class="trheader" style="border-bottom-color: rgb(170, 170, 170); border-bottom-width: 3px; border-bottom-style: solid;">
+                            <th id="title01" style="width:130px;height:26px;text-align:center;color:#52677a;">社員コード</th>
+                            <th id="title02" style="width:200px;height:26px;text-align:center;color:#52677a;">社員名</th>
+                            <th id="title03" style="width:200px;height:26px;text-align:center;color:#52677a;">電話番号</th>
+                        </tr>
+                        <tr class="trheader">
+                            <td id="title04" style="text-align:left;color:#52677a;">0000000001</td>
+                            <td id="title05" style="text-align:left;color:#52677a;">平坂　一郎</td>
+                            <td id="title06" style="text-align:left;color:#52677a;">090-1111-1111</td>
+                        </tr>
+                        <tr class="trheader">
+                            <td id="title04" style="text-align:left;color:#52677a;">0000000011</td>
+                            <td id="title05" style="text-align:left;color:#52677a;">安藤　一郎</td>
+                            <td id="title06" style="text-align:left;color:#52677a;">090-1211-1124   </td>
+                        </tr>
+                        <tr class="trheader">
+                            <td id="title04" style="text-align:left;color:#52677a;">0000000023</td>
+                            <td id="title05" style="text-align:left;color:#52677a;">平塚　三郎</td>
+                            <td id="title06" style="text-align:left;color:#52677a;">090-1241-2124   </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- 確認事項 -->
+    <div id="kakuninInfo" title="確認事項" style="display:none;">
+        <div class="flex-grid no-responsive-future" style="height: 100%;">
+            <div class="row" style="height: 100%">
+                <div class="cell auto-size padding20 bg-white" id="cell-content">
+                    <div class="grid">
+                        <div class="right">
+                            <button class="button success" id="corroboration" style="width:100px;">確認済</button>
+                            <button class="button alert" id="close" style="width:100px;">未確認</button>
+                        </div>
+                    </div>
+                    <hr class="thin bg-grayLighter">
+                    <div class="grid">
+                        <div class="cell colspan11 kakuninType1" style="display:none;">
+                            <h4 style="color: #52677a;">乗務前確認</h4>
+                            <div>
+                                <p><span style="margin-right:5px;">①</span>酒気帯びの有無<span style="margin-right:5px;margin-left:15px;">②</span>運転者の疾病、疲労等の状況<span style="margin-right:5px;margin-left:15px;">③</span>日常点検の状況</p>
+                                <hr width="100%" align="left">
+                                <p><span style="margin-right:5px;">④</span>その他必要な事項(携帯用アルコール検知、免許証、検査証、運転指示書、乗務記録、チャート紙等の携行状況等)</p>
+                                <hr width="100%" align="left">
+                            </div>
+                        </div>
+
+                        <div class="cell colspan11 kakuninType2" style="display:none;">
+                            <h4 style="color: #52677a;">乗務途中確認</h4>
+                            <div>
+                                <p><span style="margin-right:5px;">①</span>酒気帯びの有無<span style="margin-right:5px;margin-left:15px;">②</span>運転者の疾病、疲労等の状況</p>
+                                <hr width="70%" align="left">
+                                <p><span style="margin-right:5px;">④</span>その他必要な事項(携帯用アルコール検知、免許証、検査証、運転指示書、乗務記録、チャート紙等の携行状況等)</p>
+                                <hr width="100%" align="left">
+                            </div>
+                        </div>
+
+                        <div class="cell colspan11 kakuninType3" style="display:none;">
+                            <h4 style="color: #52677a;">乗務後確認</h4>
+                            <div>
+                                <p><span style="margin-right:5px;">①</span>酒気帯びの有無<span style="margin-right:5px;margin-left:15px;">⑤</span>自動車、道路及び運行の状況<span style="margin-right:5px;margin-left:15px;">⑥</span>交替運転者に対する通告</p>
+                                <hr width="70%" align="left">
+                                <p><span style="margin-right:5px;">⑦</span>その他必要な事項(事故・違反、乗客の異常、遺失物等の有無及び乗務記録・チャート紙等の記載状況等)</p>
+                                <hr width="100%" align="left">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
