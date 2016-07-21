@@ -1,32 +1,33 @@
 /* 外枠 */
 div.x_data_area {
-  width:1355px;
-  overflow: hidden;
+  width:1379px;
+  overflow: hidden; /* floatさせた要素を内包しているため指定 */
   border-right: 1px solid #CCC;
-  margin: 0;
 }
 
 /* ロック部分 */
 div.lock_box {
   float: left;
-  width: 67%;
+  width: 37%;
 }
 
 /* 横スクロール部分 */
 div.x_scroll_box {
   float: left;
-  width: 33%;
+  width: 63%;
   overflow-y: hidden; /* 縦スクロール非表示 */
   overflow-x: scroll; /* 横スクロール */
 }
 
 /* テーブル */
-.width300 {
+.width100 {
   width: 100%;
+  margin: 0;
 }
 
-.width2500 {
-  width: 2500px;
+.width4000 {
+  width: 3500px;
+  margin: 0;
 }
 
 table.data {
@@ -35,7 +36,7 @@ table.data {
 }
 
 table.data td {
-  border-right: 1px solid #CCC;
+
   border-bottom: 1px solid #CCC;
 }
 
@@ -60,13 +61,4 @@ table.data {
 /* IE7 */
 *:first-child+html table.data {
   border-collapse: collapse; /* IE7がborder-spacing: 0;に対応していないので */
-}
-.cell colspan5 {
-    overflow: hidden;
-}
-.input-control text {
-    float: left;
-}
-.right {
-    float: right;
 }

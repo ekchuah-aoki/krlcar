@@ -1,0 +1,10 @@
+table.tablesorter thead tr .header {
+	background-image: url(../css/images/bg.gif);
+	background-repeat: no-repeat;
+	background-position: center right;
+	cursor: pointer;
+    font-size:13.3333px;
+    font-style:normal;
+    font-weight:bold;
+	font-family:"Hiragino Kaku Gothic ProN", "�q���M�m�p�S ProN W3", Meiryo, ���C���I, Osaka, "MS PGothic", arial, helvetica, sans-serif;
+}
