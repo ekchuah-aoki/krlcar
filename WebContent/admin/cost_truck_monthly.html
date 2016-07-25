@@ -11,18 +11,19 @@
     <link rel='shortcut icon' type='image/x-icon' href='../favicon.ico' />
 
     <title>株式会社ケー・アールライン</title>
-
+ 
     <link href="../css/metro.css" rel="stylesheet">
     <link href="../css/metro-icons.css" rel="stylesheet">
     <link href="../css/metro-responsive.css" rel="stylesheet">
 
     <script src="../js/jquery-2.1.3.min.js"></script>
     <script src="../js/jquery.dataTables.min.js"></script>
-
     <script src="../js/metro.js"></script>
-    
     <script src="../js/Menu.js"></script>
 
+    <link type="text/css" rel="stylesheet" href="../css/jquery-ui.min.css" />
+    <script type="text/javascript" src="../js/jquery.ui.1.9.2.js"></script>
+     
     <style>
         html, body {
             height: 100%;
@@ -40,11 +41,9 @@
             min-height: 0;
             height: auto;
         }
-
 		table.center{
 		width:100%;
 		margin:0 auto;
-		
 		}
 		.cell colspan5 {
             overflow: hidden;
@@ -54,6 +53,10 @@
         }
         .input-control text {
             float: left;
+            overflow: hidden;
+        }
+        .left {
+        	float: left;
         }
         .right {
             float: right;
@@ -67,23 +70,26 @@
             }
         }
     </style>
-
+    
     <script>
-        function pushMessage(t){
-            var mes = 'Info|Implement independently';
-            $.Notify({
-                caption: mes.split("|")[0],
-                content: mes.split("|")[1],
-                type: t
-            });
-        }
+    $(function(){
+        $(".btn_shaban").click(function() {
+             $("#shaban").dialog({
+                 modal: true,
+                 closeOnEscape: false,
+                 width:  440,
+                 height: 520,
+                 show: { effect: "clip", complete: function () { $("#shashu").focus(); } },
+                 open: function (event, ui) {
+                    $(this).parent().find(".ui-dialog-titlebar-close").show();
+                 }
+             });
+        });
+    });
     </script>
 </head>
 <body class="bg-steel">
-    
-    <!-- ヘッダー固定 -->
    <div id="Menu_load"></div>
-
     <div class="page-content">
         <div class="flex-grid no-responsive-future" style="height: 100%;">
             <div class="row">
@@ -123,28 +129,26 @@
 		                            </select>
 		                         </div>
 		                            月
-		                        <span style="margin-left:30px;">
-		                        車番
-		                        </span>
-		                        <div class="input-control text" style="width:100px;">
-								    <input type="text">
-							    </div>							<div class="right">
+		                        <span style="margin-left:30px;">車番</span>
+							    <div class="input-control text" style="width:200px;">
+                                    <input type="text" style="text-align:right;width:125px;" name="car" value="5346">
+                                    <button class="button primary btn_shaban" style="margin: 0px; padding: 0px; left: 130px; width: 50px; height: 30px; font-size: 10px;">検索</button>
+                                </div>
+							    					
+							    <div class="right">
 			                    <button class="button primary" style="width:100px;">検索</button>
 			                    <button class="button primary" onclick="pushMessage('info')" style="background-color:#6A5ACD;border-color:#6A5ACD;width:100px;">印刷</button>
 			                    <button class="button success" onclick="pushMessage('info')" style="width:100px;">保存</button>
 		                    </div>
 		                  </div>
 		                </div>
-
                     <hr class="thin bg-grayLighter">
-                    
                     <table class="dataTable border bordered" data-auto-width="false" style="width:70%; margin:0 auto;">
                         <thead>
                         <tr>
                         	<td class="sortable-column"colspan="2" style="width:70%;text-align:center;">費目</td>
                             <td class="sortable-column"></td>
                         </tr>
-                        
                         </thead>
                         <tbody style="text-align: right;">
                         <tr>
@@ -232,6 +236,67 @@
                 </div>
             </div>
         </div>
+    
+    <!-- 車番一覧 -->
+    <div id="shaban" title="車番一覧" style="display:none;">
+        <table border="0" style="width:400px;margin:0 auto;">
+            <tr style="height:30px;">
+                <td style="width:20%;padding-left: 20px;">
+                    <span style="width:75px;color:#555555;">車種</span>
+                </td>
+                <td id="shashu" style="width:50%;">
+                    <select style="width:100px;">
+                        <option></option>
+                        <option>大型</option>
+                        <option>中型</option>
+                        <option>小型</option>
+                    </select>
+                </td>
+                <td style="width:10%;padding-right: 20px;">
+                    <button class="button primary" style="width:80px;margin-left:14px;">検索</button>
+                </td>
+            </tr>
+            <tr style="height:10px;">
+               <td colspan="3" ></td>
+            </tr>
+        </table>
+        <hr class="thin bg-grayLighter">
+
+        <table border="0" style="width:400px;margin:0 auto;">
+            <tr style="height:10px;">
+                <td colspan="3" style="padding-right:10px; padding-left:10px;">
+                    <button type="button" style="padding: 9px 9px;border-color:#9d9d9d;float:left;" class="ui-icon ui-icon-triangle-1-w button_search"></button>
+                    <button type="button" style="padding: 9px 9px;border-color:#9d9d9d;float:right;" class="ui-icon ui-icon-triangle-1-e button_search"></button>
+                </td>
+            </tr>
+            <tr style="height:350px">
+                <td colspan="3" style="vertical-align:top">
+                    <table class="rowselect" style="border-color: rgb(153, 153, 153); margin: 0px auto;" border="1">
+                        <tr class="trheader" style="border-bottom-color: rgb(170, 170, 170); border-bottom-width: 3px; border-bottom-style: solid;">
+                            <th style="width:120px;height:26px;text-align:center;color:#52677a;">車番</th>
+                            <th style="width:130px;height:26px;text-align:center;color:#52677a;">車種</th>
+                            <th style="width:130px;height:26px;text-align:center;color:#52677a;">形式</th>
+                        </tr>
+                        <tr class="trheader">
+                            <td style="text-align:left;color:#52677a;">5346</td>
+                            <td style="text-align:left;color:#52677a;">大型</td>
+                            <td style="text-align:left;color:#52677a;">15tウイング</td>
+                        </tr>
+                        <tr class="trheader">
+                            <td style="text-align:left;color:#52677a;">5347</td>
+                            <td style="text-align:left;color:#52677a;">中型</td>
+                            <td style="text-align:left;color:#52677a;">8ｔユニック</td>
+                        </tr>
+                        <tr class="trheader">
+                            <td style="text-align:left;color:#52677a;">5348</td>
+                            <td style="text-align:left;color:#52677a;">小型</td>
+                            <td style="text-align:left;color:#52677a;">4ｔウイング</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
     
 </body>
 </html>
