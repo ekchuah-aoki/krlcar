@@ -93,11 +93,21 @@
 
     <script>
         $(function () {
+            //点呼場所
+            $("#tenkobashoTXT").attr('disabled', 'disabled');
+            $('select[id="tenkobashoKBN"]').change(function () {
+                if ($(this).val() == "00003") {
+                    $("#tenkobashoTXT").removeAttr("disabled");
+                } else {
+                    $("#tenkobashoTXT").val("");
+                    $("#tenkobashoTXT").attr('disabled', 'disabled');
+                }
+            });
             //電話番号毎にバックカラーを変更
             var timebreak;
             var index = false;
             $.each($("#sort-table.table tbody tr"), function () {
-                var tmptel = $("td", this).eq(3).text().substr($("td", this).eq(3).text().length - 13);
+                var tmptel = $("td", this).eq(4).text().substr($("td", this).eq(4).text().length - 13);
                 if (timebreak != tmptel) {
                     timebreak = tmptel;
                     index = !index;
@@ -123,7 +133,21 @@
                 });
            });
 
-           //確認事項表示
+           //車番一覧表示
+           $(".btn_shaban").click(function () {
+               $("#shaban").dialog({
+                   modal: true,
+                   closeOnEscape: false,
+                   width: 450,
+                   height: 500,
+                   show: { effect: "clip", complete: function () { $("#shashu").focus(); } },
+                   open: function (event, ui) {
+                       $(this).parent().find(".ui-dialog-titlebar-close").show();
+                   }
+               });
+           });
+
+            //確認事項表示
            var btnkakunin;
            $(".btn_kakunin").click(function () {
                 btnkakunin = this;
@@ -175,7 +199,46 @@
            $('.tenken').click(function () {
                window.location.href = 'inspection_add.html';
            });
-       });
+           $("#th98").click(function () {
+               $('#findname').text("車種");
+               $('#torihikisaki_name').hide();
+               $('#shashu_select').show();
+               $('#titletr12').show();
+               $('#titletr13').show();
+               $('#title11').text("車番");
+               $('#title12').text("車種");
+               $('#title13').text("形式");
+               $('#title15').text("A111");
+               $('#title16').text("大型");
+               $('#title17').text("15tウイング");
+               $('#title18').text("A112");
+               $('#title19').text("中型");
+               $('#title20').text("8ｔユニック");
+               $('#title21').text("A113");
+               $('#title22').text("小型");
+               $('#title23').text("4ｔウイング");
+           });
+
+           $("#th99").click(function () {
+               $('#findname').text("委託先名");
+               $('#torihikisaki_name').show();
+               $('#shashu_select').hide();
+               $('#titletr12').hide();
+               $('#titletr13').hide();
+               $('#title11').text("委託先コード");
+               $('#title12').text("委託先名");
+               $('#title13').text("電話番号");
+               $('#title15').text("1234");
+               $('#title16').text("クレベ運送株式会社");
+               $('#title17').text("");
+               $('#title18').text("");
+               $('#title19').text("");
+               $('#title20').text("");
+               $('#title21').text("");
+               $('#title22').text("");
+               $('#title23').text("");
+           });
+        });
    </script>
 </head>
 <body>
@@ -291,6 +354,7 @@
                                 </select>
                             </div>
                             <div class="right">
+                                <button type="button" class="button alert" style="width:100px;">削除</button>
                                 <button class="button primary" style="background-color:#6A5ACD;border-color:#6A5ACD;width:100px;">印刷</button>
                                 <button class="button success" style="width:100px;">保存</button>
                             </div>
@@ -300,19 +364,21 @@
                     <table id="sort-table" class="tablesorter table border bordered callList" data-auto-width="false" style="font-size:12px;">
                         <thead>
                         <tr>
+                            <td rowspan="3" style="text-align:center;">削除</td>
                             <td rowspan="3" width="75"  style="text-align:center;">便番</td>
                             <td rowspan="3" style="text-align:center;">便名/作業割当<p style="margin:0 auto;">（行先）</p></td>
-                            <td rowspan="3" width="75"  style="text-align:center;">発着予定<br>時刻</td>
-                            <td rowspan="2" width="130" style="text-align:center;">ドライバー（車番）</td>
+                            <td rowspan="3" width="60"  style="text-align:center;">発着予定<br>時刻</td>
+                            <td rowspan="2" width="120" style="text-align:center;">ドライバー</td>
+                            <td rowspan="3" width="75"  style="text-align:center;">委託先・車番<p style="margin:0 auto;">（日常点検）</p></td>
                             <td colspan="7" style="text-align:center;">点呼内容</td>
-                            <td rowspan="3" style="text-align:center;">報告・連絡</td>
+                            <td rowspan="3" style="text-align:center;" >報告・連絡</td>
                         </tr>
                         <tr>
-                            <td rowspan="2" width="100" style="text-align:center;">種別<p style="margin:0 auto;">日常点検</p></td>
+                            <td rowspan="2" width="100" style="text-align:center;">点呼場所</td>
                             <td rowspan="2" class="sortable-column" style="text-align:center;">点呼方法</td>
                             <td class="sortable-column" colspan="2" style="text-align:center;">アルコール検知器</td>
                             <td rowspan="2" style="text-align:center;">確認事項</td>
-                            <td rowspan="2" width="75" style="text-align:center;">点呼時間</td>
+                            <td rowspan="2" width="65" style="text-align:center;">点呼時間</td>
                             <td rowspan="2" style="text-align:center;">点呼執行者</td>
                         </tr>
                         <tr>
@@ -322,165 +388,178 @@
                         </tr>
                         </thead>
 
-                        <tbody>
+                        <tbody style="height: 60px;">
                         <tr>
-                           <td>A-111</td>
-                           <td style="text-align:left;">川神下1<p style="margin:0 auto;">（川崎東）</p></td>
-                           <td style="text-align:center;">21:30</td>
-                           <td>平坂 一郎 (5346)<p style="margin:0 auto;">090-1111-1111</p></td>
-                           <td>１Ｈ前<p style="margin:0 auto;">なし</p></td>
-                           <td>
-                              <label class="input-control radio small-check">
-                                  <input type="radio" name="th01" checked="checked">
-                                  <span class="check" style="margin-right:5px;"></span>面
-                              </label>
-                              <label class="input-control radio small-check">
-                                  <input type="radio" name="th01" >
-                                  <span class="check" style="margin-right:5px;"></span>電
-                              </label>
-                           </td>
-                           <td>
-                               <input type="text" maxlength="7" style="width:60px; text-align:left;" value="FC-1000">
-                           </td>
-                           <td>
-                               <label class="input-control radio small-check">
-                                   <input type="radio" name="alcohol_result1" checked="checked">
-                                  <span class="check" style="margin-right:5px;"></span><span class="mif-checkmark fg-green"></span>
-                               </label>
-                               <label class="input-control radio small-check">
-                                  <input type="radio" name="alcohol_result1">
-                                  <span class="check" style="margin-right:5px;"></span><span class="mif-cross fg-red"></span>
-                               </label>
-                           </td>
-                           <td style="text-align:center;">
-                               <span class="btn_kakunin" style="color:blue;" id="1">確認済</span>
-                           </td>
-                           <td>
-                               <input type="text" maxlength="2" style="width:30px; text-align:right;" value="20">:<input type="text" maxlength="2" style="width:30px; text-align:right;" value="30">
-                           </td>
-                           <td>
-                               <input type="text" style="text-align:left;width:100px;" value="大崎 三郎">
-                               <button class="button primary btn_shainlist" style="margin:0px; padding:0px; width:30px; height:23px; font-size:10px; position:relative;">検索</button>
-                           </td>
-                           <td>
-                               <input type="text" style="width:200px;">
-                           </td>
-                        </tr>
-
-                        <tr>
-                           <td>A-111</td>
-                           <td style="text-align:left;">川神下1<p style="margin:0 auto;">（川崎東）</p></td>
-                           <td style="text-align:center;">21:30</td>
-                           <td>平坂 一郎 (5346)<p style="margin:0 auto;">090-1111-1111</p></td>
-                           <td>乗務前<p class="tenken" style="margin:0 auto;color:blue;">日常点検（済）</p></td>
-                           <td>
-                              <label class="input-control radio small-check">
-                                  <input type="radio" name="th02" checked="checked">
-                                  <span class="check" style="margin-right:5px;"></span>面
-                              </label>
-                              <label class="input-control radio small-check">
-                                  <input type="radio" name="th02" >
-                                  <span class="check" style="margin-right:5px;"></span>電
-                              </label>
-                           </td>
-                           <td>
-                               <input type="text" maxlength="7" style="width:60px; text-align:left;" value="FC-1000">
-                           </td>
-                           <td>
-                               <label class="input-control radio small-check">
-                                   <input type="radio" name="alcohol_result2" checked="checked">
-                                  <span class="check" style="margin-right:5px;"></span><span class="mif-checkmark fg-green"></span>
-                               </label>
-                               <label class="input-control radio small-check">
-                                  <input type="radio" name="alcohol_result2">
-                                  <span class="check" style="margin-right:5px;"></span><span class="mif-cross fg-red"></span>
-                               </label>
-                           </td>
-                           <td style="text-align:center;">
-                               <span class="btn_kakunin" style="color:blue;" id="1">確認済</span>
-                           </td>
-                           <td>
-                               <input type="text" maxlength="2" style="width:30px; text-align:right;" value="21">:<input type="text" maxlength="2" style="width:30px; text-align:right;" value="30">
-                           </td>
-                           <td>
-                               <input type="text" style="text-align:left;width:100px;" value="大崎 三郎">
-                               <button class="button primary btn_shainlist" style="margin:0px; padding:0px; width:30px; height:23px; font-size:10px; position:relative;">検索</button>
-                           </td>
-                           <td>
-                               <input type="text" style="width:200px;">
-                           </td>
-                        </tr>
-
-                        <tr>
-                            <td>A-111</td>
-                            <td style="text-align:left;">川神下1<p style="margin:0 auto;">（川崎東）</p></td>
-                            <td style="text-align:center;">21:30</td>
-                            <td>平坂 一郎 (5346)<p style="margin:0 auto;">090-1111-1111</p></td>
-                            <td>乗務後<p class="tenken" style="margin:0 auto;color:blue;">日常点検（済）</p></td>
+                            <td></td>
+                            <td>A-150</td>
+                            <td style="text-align:left;">綾神上<p style="margin:0 auto;">（神戸）</p></td>
+                            <td style="text-align:center;">19:15</td>
+                            <td>賀川 二郎<p style="margin:0 auto;">090-1111-1311</p></td>
+                            <td style="text-align:center;"></td>
+                            <td>１Ｈ前</td>
                             <td>
                                 <label class="input-control radio small-check">
-                                    <input type="radio" name="th03" checked="checked">
+                                    <input type="radio" name="th01" checked="checked">
                                     <span class="check" style="margin-right:5px;"></span>面
                                 </label>
+                                <label class="input-control radio small-check">
+                                    <input type="radio" name="th01">
+                                    <span class="check" style="margin-right:5px;"></span>電
+                                </label>
+                            </td>
+                            <td>
+                                <input type="text" maxlength="7" style="width:60px; text-align:left;" value="FC-1000">
+                            </td>
+                            <td>
+                                <label class="input-control radio small-check">
+                                    <input type="radio" name="alcohol_result01" checked="checked">
+                                    <span class="check" style="margin-right:5px;"></span><span class="mif-checkmark fg-green"></span>
+                                </label>
+                                <label class="input-control radio small-check">
+                                    <input type="radio" name="alcohol_result01">
+                                    <span class="check" style="margin-right:5px;"></span><span class="mif-cross fg-red"></span>
+                                </label>
+                            </td>
+                            <td style="text-align:center;">
+                                <span class="btn_kakunin" style="color:blue;" id="1">確認済</span>
+                            </td>
+                            <td>
+                                <input type="text" maxlength="2" style="width:25px; text-align:right;" value="18">:<input type="text" maxlength="2" style="width:25px; text-align:right;" value="45">
+                            </td>
+                            <td>
+                                <input type="text" style="text-align:left;width:100px;" value="大崎 三郎">
+                                <button class="button primary btn_shainlist" style="margin:0px; padding:0px; width:30px; height:23px; font-size:10px; position:relative;">検索</button>
+                            </td>
+                            <td>
+                                <input type="text" style="width:110px;">
+                            </td>
+                        </tr>  
+
+                        <tr>
+                            <td></td>
+                            <td>A-150</td>
+                            <td style="text-align:left;">綾神上<p style="margin:0 auto;">（神戸）</p></td>
+                            <td style="text-align:center;">19:15</td>
+                            <td>賀川 二郎<p style="margin:0 auto;">090-1111-1311</p></td>
+                            <td style="text-align:center;"><span class="tenken" style="margin:0 auto;color:blue;">（5346）<p style="margin:0 auto;">日常点検（済）</p></span></td>
+                            <td>乗務前</td>
+                            <td>
+                                <label class="input-control radio small-check">
+                                    <input type="radio" name="th02" checked="checked">
+                                    <span class="check" style="margin-right:5px;"></span>面
+                                </label>
+                                <label class="input-control radio small-check">
+                                    <input type="radio" name="th02">
+                                    <span class="check" style="margin-right:5px;"></span>電
+                                </label>
+                            </td>
+                            <td>
+                                <input type="text" maxlength="7" style="width:60px; text-align:left;" value="FC-1000">
+                            </td>
+                            <td>
+                                <label class="input-control radio small-check">
+                                    <input type="radio" name="alcohol_result02" checked="checked">
+                                    <span class="check" style="margin-right:5px;"></span><span class="mif-checkmark fg-green"></span>
+                                </label>
+                                <label class="input-control radio small-check">
+                                    <input type="radio" name="alcohol_result02">
+                                    <span class="check" style="margin-right:5px;"></span><span class="mif-cross fg-red"></span>
+                                </label>
+                            </td>
+                            <td style="text-align:center;">
+                                <span class="btn_kakunin" style="color:blue;" id="1">確認済</span>
+                            </td>
+                            <td>
+                                <input type="text" maxlength="2" style="width:25px; text-align:right;" value="19">:<input type="text" maxlength="2" style="width:25px; text-align:right;" value="15">
+                            </td>
+                            <td>
+                                <input type="text" style="text-align:left;width:100px;" value="大崎 三郎">
+                                <button class="button primary btn_shainlist" style="margin:0px; padding:0px; width:30px; height:23px; font-size:10px; position:relative;">検索</button>
+                            </td>
+                            <td>
+                                <input type="text" style="width:110px;">
+                            </td>
+                        </tr>  
+
+                        <tr>
+                            <td></td>
+                            <td>A-150</td>
+                            <td style="text-align:left;">綾神上<p style="margin:0 auto;">（ゆうP）</p></td>
+                            <td style="text-align:center;">20:00</td>
+                            <td>賀川 二郎<p style="margin:0 auto;">090-1111-1311</p></td>
+                            <td style="text-align:center;"></td>
+                            <td>乗務途中<p style="margin:0 auto">ゆうP</p></td>
+                            <td>
                                 <label class="input-control radio small-check">
                                     <input type="radio" name="th03">
+                                    <span class="check" style="margin-right:5px;"></span>面
+                                </label>
+                                <label class="input-control radio small-check">
+                                    <input type="radio" name="th03" checked="checked">
                                     <span class="check" style="margin-right:5px;"></span>電
                                 </label>
                             </td>
                             <td>
-                                <input type="text" maxlength="7" style="width:60px; text-align:left;" value="FC-1000">
+                                <input type="text" maxlength="7" style="width:60px; text-align:left;" value="FC-2300">
                             </td>
                             <td>
                                 <label class="input-control radio small-check">
-                                    <input type="radio" name="alcohol_result3" checked="checked">
+                                    <input type="radio" name="alcohol_result03" checked="checked">
                                     <span class="check" style="margin-right:5px;"></span><span class="mif-checkmark fg-green"></span>
                                 </label>
                                 <label class="input-control radio small-check">
-                                    <input type="radio" name="alcohol_result3">
+                                    <input type="radio" name="alcohol_result03">
                                     <span class="check" style="margin-right:5px;"></span><span class="mif-cross fg-red"></span>
                                 </label>
                             </td>
                             <td style="text-align:center;">
-                                <span class="btn_kakunin" style="color:blue;" id="3">確認済</span>
+                                <span class="btn_kakunin" style="color:blue;" id="1">確認済</span>
                             </td>
                             <td>
-                                <input type="text" maxlength="2" style="width:30px; text-align:right;" value="05">:<input type="text" maxlength="2" style="width:30px; text-align:right;" value="00">
+                                <input type="text" maxlength="2" style="width:25px; text-align:right;" value="20">:<input type="text" maxlength="2" style="width:25px; text-align:right;" value="00">
                             </td>
                             <td>
                                 <input type="text" style="text-align:left;width:100px;" value="大崎 三郎">
-                                <button class="button primary btn_shainlist" style="margin: 0px; padding: 0px; width: 30px; height: 23px; font-size: 10px; position:relative;">検索</button>
+                                <button class="button primary btn_shainlist" style="margin:0px; padding:0px; width:30px; height:23px; font-size:10px; position:relative;">検索</button>
                             </td>
                             <td>
-                                <input type="text" style="width:200px;">
+                                <input type="text" style="width:110px;">
                             </td>
                         </tr>
 
                         <tr>
-                            <td>A-111</td>
-                            <td style="text-align:left;">川神下1<p style="margin:0 auto;">（新大阪）</p></td>
-                            <td style="text-align:center;">05:00</td>
-                            <td>安藤 一郎 (5347)<p style="margin:0 auto;">090-1111-2111</p></td>
-                            <td>１Ｈ前<p style="margin:0 auto;">なし</p></td>
-                            <td>
-                                <label class="input-control radio small-check">
-                                    <input type="radio" name="th04" checked="checked">
-                                    <span class="check" style="margin-right:5px;"></span>面
+                            <td style="text-align:center;">
+                                <label class="input-control checkbox small-check no-margin">
+                                    <input type="checkbox">
+                                    <span class="check"></span>
                                 </label>
+                            </td>
+                            <td>A-150</td>
+                            <td style="text-align:left;"><p style="margin:0 auto;"></p></td>
+                            <td style="text-align:center;">20:20</td>
+                            <td>賀川 二郎<p style="margin:0 auto;">090-1111-1311</p></td>
+                            <td style="text-align:center;"></td>
+                            <td style="vertical-align:bottom;">乗務途中<p style="margin: 0 auto"><input type="text" style="width: 90px; margin-top: 4px;" value="遠州森町Ｐ"><p></td>
+                            <td>
                                 <label class="input-control radio small-check">
                                     <input type="radio" name="th04">
+                                    <span class="check" style="margin-right:5px;"></span>面
+                                </label>
+                                <label class="input-control radio small-check">
+                                    <input type="radio" name="th04" checked="checked">
                                     <span class="check" style="margin-right:5px;"></span>電
                                 </label>
                             </td>
                             <td>
-                                <input type="text" maxlength="7" style="width:60px; text-align:left;" value="FC-1000">
+                                <input type="text" maxlength="7" style="width:60px; text-align:left;" value="FC-2300">
                             </td>
                             <td>
                                 <label class="input-control radio small-check">
-                                    <input type="radio" name="alcohol_result4" checked="checked">
+                                    <input type="radio" name="alcohol_result04" checked="checked">
                                     <span class="check" style="margin-right:5px;"></span><span class="mif-checkmark fg-green"></span>
                                 </label>
                                 <label class="input-control radio small-check">
-                                    <input type="radio" name="alcohol_result4">
+                                    <input type="radio" name="alcohol_result04">
                                     <span class="check" style="margin-right:5px;"></span><span class="mif-cross fg-red"></span>
                                 </label>
                             </td>
@@ -488,43 +567,45 @@
                                 <span class="btn_kakunin" style="color:blue;" id="1">確認済</span>
                             </td>
                             <td>
-                                <input type="text" maxlength="2" style="width:30px; text-align:right;" value="04">:<input type="text" maxlength="2" style="width:30px; text-align:right;" value="00">
+                                <input type="text" maxlength="2" style="width:25px; text-align:right;" value="20">:<input type="text" maxlength="2" style="width:25px; text-align:right;" value="20">
                             </td>
                             <td>
                                 <input type="text" style="text-align:left;width:100px;" value="大崎 三郎">
-                                <button class="button primary btn_shainlist" style="margin: 0px; padding: 0px; width: 30px; height: 23px; font-size: 10px; position:relative;">検索</button>
+                                <button class="button primary btn_shainlist" style="margin:0px; padding:0px; width:30px; height:23px; font-size:10px; position:relative;">検索</button>
                             </td>
                             <td>
-                                <input type="text" style="width:200px;">
+                                <input type="text" style="width:110px;">
                             </td>
                         </tr>
 
                         <tr>
-                            <td>A-111</td>
-                            <td style="text-align:left;">川神下1<p style="margin:0 auto;">（新大阪）</p></td>
-                            <td style="text-align:center;">05:00</td>
-                            <td>安藤 一郎 (5347)<p style="margin:0 auto;">090-1111-2111</p></td>
-                            <td>乗務前<p class="tenken" style="margin:0 auto;color:blue;">日常点検（済）</p></td>
+                            <td></td>
+                            <td>A-150</td>
+                            <td style="text-align:left;">綾神上<p style="margin:0 auto;">（新大阪）</p></td>
+                            <td style="text-align:center;">20:20</td>
+                            <td>賀川 二郎<p style="margin:0 auto;">090-1111-1311</p></td>
+                            <td style="text-align:center;"></td>
+                            <td>乗務途中<p style="margin: 0 auto;">新大阪</p></td>
                             <td>
-                                <label class="input-control radio small-check">
-                                    <input type="radio" name="th05" checked="checked">
-                                    <span class="check" style="margin-right:5px;"></span>面
-                                </label>
                                 <label class="input-control radio small-check">
                                     <input type="radio" name="th05">
+                                    <span class="check" style="margin-right:5px;"></span>面
+                                </label>
+                                <label class="input-control radio small-check">
+                                    <input type="radio" name="th05" checked="checked">
                                     <span class="check" style="margin-right:5px;"></span>電
                                 </label>
                             </td>
                             <td>
-                                <input type="text" maxlength="7" style="width:60px; text-align:left;" value="FC-1000">
+                                <input type="text" maxlength="7" style="width:60px; text-align:left;" value="FC-2300">
                             </td>
                             <td>
                                 <label class="input-control radio small-check">
-                                    <input type="radio" name="alcohol_result5" checked="checked">
+                                    <input type="radio" name="alcohol_result05" checked="checked">
                                     <span class="check" style="margin-right:5px;"></span><span class="mif-checkmark fg-green"></span>
                                 </label>
                                 <label class="input-control radio small-check">
-                                    <input type="radio" name="alcohol_result5">
+                                    <input type="radio" name="alcohol_result05">
                                     <span class="check" style="margin-right:5px;"></span><span class="mif-cross fg-red"></span>
                                 </label>
                             </td>
@@ -532,162 +613,79 @@
                                 <span class="btn_kakunin" style="color:blue;" id="1">確認済</span>
                             </td>
                             <td>
-                                <input type="text" maxlength="2" style="width:30px; text-align:right;" value="05">:<input type="text" maxlength="2" style="width:30px; text-align:right;" value="00">
+                                <input type="text" maxlength="2" style="width:25px; text-align:right;" value="20">:<input type="text" maxlength="2" style="width:25px; text-align:right;" value="20">
                             </td>
                             <td>
                                 <input type="text" style="text-align:left;width:100px;" value="大崎 三郎">
-                                <button class="button primary btn_shainlist" style="margin: 0px; padding: 0px; width: 30px; height: 23px; font-size: 10px; position:relative;">検索</button>
+                                <button class="button primary btn_shainlist" style="margin:0px; padding:0px; width:30px; height:23px; font-size:10px; position:relative;">検索</button>
                             </td>
                             <td>
-                                <input type="text" style="width:200px;">
+                                <input type="text" style="width:110px;">
                             </td>
                         </tr>
 
                         <tr>
-                            <td>A-111</td>
-                            <td style="text-align:left;">川神下1<p style="margin:0 auto;">（ゆうP）</p></td>
-                            <td style="text-align:center;">05:15</td>
-                            <td>安藤 一郎 (5347)<p style="margin:0 auto;">090-1111-2111</p></td>
-                            <td>乗務途中<p class="tenken" style="margin:0 auto;">なし</p></td>
+                            <td></td>
+                            <td>A-150</td>
+                            <td style="text-align:left;">綾神上<p style="margin:0 auto;">（ゆうP）</p></td>
+                            <td style="text-align:center;">21:15</td>
+                            <td>賀川 二郎<p style="margin:0 auto;">090-1111-1311</p></td>
+                            <td style="text-align:center;"></td>
+                            <td>乗務途中<p style="margin:0 auto;">ゆうP</p></td>
                             <td>
                                 <label class="input-control radio small-check">
                                     <input type="radio" name="th06">
-                                    <span class="check" style="margin-right:4px;"></span>面
+                                    <span class="check" style="margin-right:5px;"></span>面
                                 </label>
                                 <label class="input-control radio small-check">
-                                    <input type="radio" name="th06">
-                                    <span class="check" style="margin-right:4px;"></span>電
+                                    <input type="radio" name="th06" checked="checked">
+                                    <span class="check" style="margin-right:5px;"></span>電
                                 </label>
                             </td>
                             <td>
-                                <input type="text" maxlength="7" style="width:60px; text-align:left;" value="">
+                                <input type="text" maxlength="7" style="width:60px; text-align:left;" value="FC-2300">
                             </td>
                             <td>
                                 <label class="input-control radio small-check">
-                                    <input type="radio" name="alcohol_result6">
+                                    <input type="radio" name="alcohol_result06" checked="checked">
                                     <span class="check" style="margin-right:5px;"></span><span class="mif-checkmark fg-green"></span>
                                 </label>
                                 <label class="input-control radio small-check">
-                                    <input type="radio" name="alcohol_result6">
+                                    <input type="radio" name="alcohol_result06">
                                     <span class="check" style="margin-right:5px;"></span><span class="mif-cross fg-red"></span>
                                 </label>
                             </td>
                             <td style="text-align:center;">
-                                <span class="btn_kakunin" style="color:red;" id="2">未確認</span>
+                                <span class="btn_kakunin" style="color:blue;" id="1">確認済</span>
                             </td>
                             <td>
-                                <input type="text" maxlength="2" style="width:30px; text-align:right;" value="">:<input type="text" maxlength="2" style="width:30px; text-align:right;" value="">
+                                <input type="text" maxlength="2" style="width:25px; text-align:right;" value="21">:<input type="text" maxlength="2" style="width:25px; text-align:right;" value="15">
                             </td>
                             <td>
-                                <input type="text" style="text-align:left;width:100px;" value="">
-                                <button class="button primary btn_shainlist" style="margin: 0px; padding: 0px; width: 30px; height: 23px; font-size: 10px; position:relative;">検索</button>
+                                <input type="text" style="text-align:left;width:100px;" value="大崎 三郎">
+                                <button class="button primary btn_shainlist" style="margin:0px; padding:0px; width:30px; height:23px; font-size:10px; position:relative;">検索</button>
                             </td>
                             <td>
-                                <input type="text" style="width:200px;">
+                                <input type="text" style="width:110px;">
                             </td>
                         </tr>
 
                         <tr>
+                            <td style="text-align:center;">
+                            </td>
                             <td>A-150</td>
-                            <td style="text-align:left;">綾神上<p style="margin:0 auto;">（神戸）</p></td>
-                            <td style="text-align:center;">19:15</td>
-                            <td>賀川 二郎 (5399)<p style="margin:0 auto;">090-1111-1311</p></td>
-                            <td>１Ｈ前<p style="margin:0 auto;">なし</p></td>
+                            <td style="text-align:left;">綾神上<p style="margin:0 auto;">（綾瀬）</p></td>
+                            <td style="text-align:center;">4:05</td>
+                            <td>賀川 二郎 <p style="margin:0 auto;">090-1111-1311</p></td>
+                            <td style="text-align:center;"></td>
+                            <td>乗務途中<p style="margin:0 auto;">綾瀬</p></td>
                             <td>
-                                <label class="input-control radio small-check">
-                                    <input type="radio" name="th07" checked="checked">
-                                    <span class="check" style="margin-right:5px;"></span>面
-                                </label>
                                 <label class="input-control radio small-check">
                                     <input type="radio" name="th07">
-                                    <span class="check" style="margin-right:5px;"></span>電
-                                </label>
-                            </td>
-                            <td>
-                                <input type="text" maxlength="7" style="width:60px; text-align:left;" value="FC-1000">
-                            </td>
-                            <td>
-                                <label class="input-control radio small-check">
-                                    <input type="radio" name="alcohol_result7" checked="checked">
-                                    <span class="check" style="margin-right:5px;"></span><span class="mif-checkmark fg-green"></span>
-                                </label>
-                                <label class="input-control radio small-check">
-                                    <input type="radio" name="alcohol_result7">
-                                    <span class="check" style="margin-right:5px;"></span><span class="mif-cross fg-red"></span>
-                                </label>
-                            </td>
-                            <td style="text-align:center;">
-                                <span class="btn_kakunin" style="color:blue;" id="1">確認済</span>
-                            </td>
-                            <td>
-                                <input type="text" maxlength="2" style="width:30px; text-align:right;" value="18">:<input type="text" maxlength="2" style="width:30px; text-align:right;" value="45">
-                            </td>
-                            <td>
-                                <input type="text" style="text-align:left;width:100px;" value="大崎 三郎">
-                                <button class="button primary btn_shainlist" style="margin:0px; padding:0px; width:30px; height:23px; font-size:10px; position:relative;">検索</button>
-                            </td>
-                            <td>
-                                <input type="text" style="width:200px;">
-                            </td>
-                        </tr>  
-
-                        <tr>
-                            <td>A-150</td>
-                            <td style="text-align:left;">綾神上<p style="margin:0 auto;">（神戸）</p></td>
-                            <td style="text-align:center;">19:15</td>
-                            <td>賀川 二郎 (5399)<p style="margin:0 auto;">090-1111-1311</p></td>
-                            <td>乗務前<p class="tenken" style="margin:0 auto;color:blue;">日常点検（済）</p></td>
-                            <td>
-                                <label class="input-control radio small-check">
-                                    <input type="radio" name="th08" checked="checked">
-                                    <span class="check" style="margin-right:5px;"></span>面
-                                </label>
-                                <label class="input-control radio small-check">
-                                    <input type="radio" name="th08">
-                                    <span class="check" style="margin-right:5px;"></span>電
-                                </label>
-                            </td>
-                            <td>
-                                <input type="text" maxlength="7" style="width:60px; text-align:left;" value="FC-1000">
-                            </td>
-                            <td>
-                                <label class="input-control radio small-check">
-                                    <input type="radio" name="alcohol_result8" checked="checked">
-                                    <span class="check" style="margin-right:5px;"></span><span class="mif-checkmark fg-green"></span>
-                                </label>
-                                <label class="input-control radio small-check">
-                                    <input type="radio" name="alcohol_result8">
-                                    <span class="check" style="margin-right:5px;"></span><span class="mif-cross fg-red"></span>
-                                </label>
-                            </td>
-                            <td style="text-align:center;">
-                                <span class="btn_kakunin" style="color:blue;" id="1">確認済</span>
-                            </td>
-                            <td>
-                                <input type="text" maxlength="2" style="width:30px; text-align:right;" value="19">:<input type="text" maxlength="2" style="width:30px; text-align:right;" value="15">
-                            </td>
-                            <td>
-                                <input type="text" style="text-align:left;width:100px;" value="大崎 三郎">
-                                <button class="button primary btn_shainlist" style="margin:0px; padding:0px; width:30px; height:23px; font-size:10px; position:relative;">検索</button>
-                            </td>
-                            <td>
-                                <input type="text" style="width:200px;">
-                            </td>
-                        </tr>  
-
-                        <tr>
-                            <td>A-150</td>
-                            <td style="text-align:left;">綾神上<p style="margin:0 auto;">（神戸）</p></td>
-                            <td style="text-align:center;">19:15</td>
-                            <td>賀川 二郎 (5399)<p style="margin:0 auto;">090-1111-1311</p></td>
-                            <td>乗務後<p class="tenken" style="margin:0 auto;color:blue;">日常点検（済）</p></td>
-                            <td>
-                                <label class="input-control radio small-check">
-                                    <input type="radio" name="th09" checked="checked">
                                     <span class="check" style="margin-right:6px;"></span>面
                                 </label>
                                 <label class="input-control radio small-check">
-                                    <input type="radio" name="th09">
+                                    <input type="radio" name="th07" checked="checked">
                                     <span class="check" style="margin-right:6px;"></span>電
                                 </label>
                             </td>
@@ -696,11 +694,11 @@
                             </td>
                             <td>
                                 <label class="input-control radio small-check">
-                                    <input type="radio" name="alcohol_result9" checked="checked">
+                                    <input type="radio" name="alcohol_result07" checked="checked">
                                     <span class="check" style="margin-right:6px;"></span><span class="mif-checkmark fg-green"></span>
                                 </label>
                                 <label class="input-control radio small-check">
-                                    <input type="radio" name="alcohol_result9">
+                                    <input type="radio" name="alcohol_result07">
                                     <span class="check" style="margin-right:5px;"></span><span class="mif-cross fg-red"></span>
                                 </label>
                             </td>
@@ -708,23 +706,127 @@
                                 <span class="btn_kakunin" style="color:blue;" id="3">確認済</span>
                             </td>
                             <td>
-                                <input type="text" maxlength="2" style="width:30px; text-align:right;" value="20">:<input type="text" maxlength="2" style="width:30px; text-align:right;" value="00">
+                                <input type="text" maxlength="2" style="width:25px; text-align:right;" value="04">:<input type="text" maxlength="2" style="width:25px; text-align:right;" value="05">
                             </td>
                             <td>
                                 <input type="text" style="text-align:left;width:100px;" value="大崎 三郎">
                                 <button class="button primary btn_shainlist" style="margin:0px; padding:0px; width:30px; height:23px; font-size:10px; position:relative;">検索</button>
                             </td>
                             <td>
-                                <input type="text" style="width:200px;">
+                                <input type="text" style="width:110px;">
                             </td>
                         </tr>  
 
                         <tr>
+                            <td style="text-align:center;"></td>
+                            <td>A-150</td>
+                            <td style="text-align:left;">綾神上<p style="margin:0 auto;">（綾瀬）</p></td>
+                            <td style="text-align:center;">5:00</td>
+                            <td>賀川 二郎 <p style="margin:0 auto;">090-1111-1311</p></td>
+                            <td style="text-align:center;"><span class="tenken" style="margin:0 auto;color:blue;">（5346）<p style="margin:0 auto;">日常点検（済）</p></span></td>
+                            <td>乗務後</td>
+                            <td>
+                                <label class="input-control radio small-check">
+                                    <input type="radio" name="th08" checked="checked">
+                                    <span class="check" style="margin-right:6px;"></span>面
+                                </label>
+                                <label class="input-control radio small-check">
+                                    <input type="radio" name="th08">
+                                    <span class="check" style="margin-right:6px;"></span>電
+                                </label>
+                            </td>
+                            <td>
+                                <input type="text" maxlength="7" style="width:60px; text-align:left;" value="FC-1000">
+                            </td>
+                            <td>
+                                <label class="input-control radio small-check">
+                                    <input type="radio" name="alcohol_result08" checked="checked">
+                                    <span class="check" style="margin-right:6px;"></span><span class="mif-checkmark fg-green"></span>
+                                </label>
+                                <label class="input-control radio small-check">
+                                    <input type="radio" name="alcohol_result08">
+                                    <span class="check" style="margin-right:5px;"></span><span class="mif-cross fg-red"></span>
+                                </label>
+                            </td>
+                            <td style="text-align:center;">
+                                <span class="btn_kakunin" style="color:blue;" id="3">確認済</span>
+                            </td>
+                            <td>
+                                <input type="text" maxlength="2" style="width:25px; text-align:right;" value="05">:<input type="text" maxlength="2" style="width:25px; text-align:right;" value="00">
+                            </td>
+                            <td>
+                                <input type="text" style="text-align:left;width:100px;" value="大崎 三郎">
+                                <button class="button primary btn_shainlist" style="margin:0px; padding:0px; width:30px; height:23px; font-size:10px; position:relative;">検索</button>
+                            </td>
+                            <td>
+                                <input type="text" style="width:110px;">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td style="text-align:center;">
+                                <label class="input-control checkbox small-check no-margin">
+                                    <input type="checkbox">
+                                    <span class="check"></span>
+                                </label>
+                            </td>
                             <td>00001</td>
                             <td style="text-align:left;">臨時便<p style="margin:0 auto;">（平塚）</p></td>
                             <td style="text-align:center;">8:30</td>
                             <td>川上 武<p style="margin:0 auto;">090-3111-3111</p></td>
-                            <td>１Ｈ前<p class="tenken" style="margin:0 auto;">なし</p></td>
+                            <td style="text-align:center;font-size:x-small;">クレベ運送株式会社</td>
+                            <td>１Ｈ前</td>
+                            <td>
+                                <label class="input-control radio small-check">
+                                    <input type="radio" name="th09">
+                                    <span class="check" style="margin-right:7px;"></span>面
+                                </label>
+                                <label class="input-control radio small-check">
+                                    <input type="radio" name="th09" checked="checked">
+                                    <span class="check" style="margin-right:7px;"></span>電
+                                </label>
+                            </td>
+                            <td>
+                                <input type="text" maxlength="7" style="width:60px; text-align:left;" value="FALC-11">
+                            </td>
+                            <td>
+                                <label class="input-control radio small-check">
+                                    <input type="radio" name="alcohol_result09" checked="checked">
+                                    <span class="check" style="margin-right:6px;"></span><span class="mif-checkmark fg-green"></span>
+                                </label>
+                                <label class="input-control radio small-check">
+                                    <input type="radio" name="alcohol_result09">
+                                    <span class="check" style="margin-right:5px;"></span><span class="mif-cross fg-red"></span>
+                                </label>
+                            </td>
+                            <td style="text-align:center;">
+                                <span class="btn_kakunin" style="color:blue;" id="1">確認済</span>
+                            </td>
+                            <td>
+                                <input type="text" maxlength="2" style="width:25px; text-align:right;" value="07">:<input type="text" maxlength="2" style="width:25px; text-align:right;" value="30">
+                            </td>
+                            <td>
+                                <input type="text" style="text-align:left;width:100px;" value="大崎 三郎">
+                                <button class="button primary btn_shainlist" style="margin:0px; padding:0px; width:30px; height:23px; font-size:10px; position:relative;">検索</button>
+                            </td>
+                            <td>
+                                <input type="text" style="width:110px;" value="">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td style="text-align:center;">
+                                <label class="input-control checkbox small-check no-margin">
+                                    <input type="checkbox">
+                                    <span class="check"></span>
+                                </label>
+                            </td>
+                            <td>00001</td>
+                            <td style="text-align:left;">臨時便<p style="margin:0 auto;">（平塚）</p></td>
+                            <td style="text-align:center;">8:30</td>
+                            <td>川上 武<p style="margin:0 auto;">090-3111-3111</p></td>
+                            <td style="text-align:center;font-size:x-small;">クレベ運送株式会社</td>
+                            <td>乗務前</td>
                             <td>
                                 <label class="input-control radio small-check">
                                     <input type="radio" name="th10">
@@ -752,23 +854,30 @@
                                 <span class="btn_kakunin" style="color:blue;" id="1">確認済</span>
                             </td>
                             <td>
-                                <input type="text" maxlength="2" style="width:30px; text-align:right;" value="07">:<input type="text" maxlength="2" style="width:30px; text-align:right;" value="30">
+                                <input type="text" maxlength="2" style="width:25px; text-align:right;" value="08">:<input type="text" maxlength="2" style="width:25px; text-align:right;" value="30">
                             </td>
                             <td>
                                 <input type="text" style="text-align:left;width:100px;" value="大崎 三郎">
                                 <button class="button primary btn_shainlist" style="margin:0px; padding:0px; width:30px; height:23px; font-size:10px; position:relative;">検索</button>
                             </td>
                             <td>
-                                <input type="text" style="width:200px;" value="">
+                                <input type="text" style="width:110px;" value="">
                             </td>
                         </tr>
 
                         <tr>
+                            <td style="text-align:center;">
+                                <label class="input-control checkbox small-check no-margin">
+                                    <input type="checkbox">
+                                    <span class="check"></span>
+                                </label>
+                            </td>
                             <td>00001</td>
                             <td style="text-align:left;">臨時便<p style="margin:0 auto;">（平塚）</p></td>
                             <td style="text-align:center;">8:30</td>
                             <td>川上 武<p style="margin:0 auto;">090-3111-3111</p></td>
-                            <td>乗務前<p class="tenken" style="margin:0 auto;">なし</p></td>
+                            <td style="text-align:center;font-size:x-small;">クレベ運送株式会社</td>
+                            <td>乗務後</td>
                             <td>
                                 <label class="input-control radio small-check">
                                     <input type="radio" name="th11">
@@ -793,67 +902,106 @@
                                 </label>
                             </td>
                             <td style="text-align:center;">
-                                <span class="btn_kakunin" style="color:blue;" id="1">確認済</span>
+                                <span class="btn_kakunin" style="color:blue;" id="3">確認済</span>
                             </td>
                             <td>
-                                <input type="text" maxlength="2" style="width:30px; text-align:right;" value="08">:<input type="text" maxlength="2" style="width:30px; text-align:right;" value="30">
+                                <input type="text" maxlength="2" style="width:25px; text-align:right;" value="11">:<input type="text" maxlength="2" style="width:25px; text-align:right;" value="00">
                             </td>
                             <td>
                                 <input type="text" style="text-align:left;width:100px;" value="大崎 三郎">
                                 <button class="button primary btn_shainlist" style="margin:0px; padding:0px; width:30px; height:23px; font-size:10px; position:relative;">検索</button>
                             </td>
                             <td>
-                                <input type="text" style="width:200px;" value="">
+                                <input type="text" style="width:110px;" value="">
                             </td>
                         </tr>
 
                         <tr>
-                            <td>00001</td>
-                            <td style="text-align:left;">臨時便<p style="margin:0 auto;">（平塚）</p></td>
-                            <td style="text-align:center;">8:30</td>
-                            <td>川上 武<p style="margin:0 auto;">090-3111-3111</p></td>
-                            <td>乗務後<p class="tenken" style="margin:0 auto;">なし</p></td>
+                            <td style="text-align:center;">
+                                <label class="input-control checkbox small-check no-margin">
+                                    <input type="checkbox">
+                                    <span class="check"></span>
+                                </label>
+                            </td>
+                            <td>
+                                <div class="input-control select" style="width: 60px; height: 10px;margin-top: 15px;">
+                                    <select style="width: 60px; padding-top: 2px; padding-bottom: 2px;">
+                                        <option></option>
+                                        <option>A-111</option>
+                                        <option>A-150</option>
+                                        <option>00001</option>
+                                    </select>
+                                </div>
+                            </td>
+                            <td style="text-align:left;"></td>
+                            <td style="text-align:center;">
+                                <input type="text" maxlength="2" style="width:25px; text-align:right;" value="">:<input type="text" maxlength="2" style="width:25px; text-align:right;" value="">
+                            </td>
+                            <td>
+                                <input type="text" style="width:75px; padding-top: 2px; padding-bottom: 2px;margin-top:10px;" value="">
+                                <button class="button primary btn_shainlist" style="margin:0 auto;padding:0px; width:30px; height:23px; font-size:10px; margin-top:10px;position:relative;">検索</button>
+                                <p style="margin-top: 4px;">
+                                    <input type="text" style="width: 110px; padding-top: 2px; padding-bottom: 2px;margin:0;" value="">
+                                </p>
+                            </td>
+                            <td style="text-align:center;">
+                                <input type="text" style="width:65px; padding-top: 2px; padding-bottom: 2px;margin-top:10px;" value="">
+                                <button class="button primary btn_shaban" style="margin:0 auto;padding:0px; width:30px; height:23px; font-size:10px; margin-top:10px;position:relative;">検索</button>
+                            </td>
+                            <td>
+                                <div class="input-control select" style="width: 90px; height: 10px; min-height: 2.46rem;">
+                                    <select id="tenkobashoKBN" style="width: 90px; padding-top: 2px; padding-bottom: 2px;">
+                                        <option value="00000"></option>
+                                        <option value="00001">１Ｈ前</option>
+                                        <option value="00002">乗務前</option>
+                                        <option value="00003">乗務途中</option>
+                                        <option value="00004">乗務後</option>
+                                    </select>
+                                    <input type="text" id="tenkobashoTXT" style="width: 90px; padding-top: 2px; padding-bottom: 2px; margin-top: 4px;" value="">
+                                </div>
+                            </td>
                             <td>
                                 <label class="input-control radio small-check">
-                                    <input type="radio" name="th12">
+                                    <input type="radio" name="th07">
                                     <span class="check" style="margin-right:7px;"></span>面
                                 </label>
                                 <label class="input-control radio small-check">
-                                    <input type="radio" name="th12" checked="checked">
+                                    <input type="radio" name="th07">
                                     <span class="check" style="margin-right:7px;"></span>電
                                 </label>
                             </td>
                             <td>
-                                <input type="text" maxlength="7" style="width:60px; text-align:left;" value="FALC-11">
+                                <input type="text" maxlength="7" style="width:60px; text-align:left;" value="">
                             </td>
                             <td>
                                 <label class="input-control radio small-check">
-                                    <input type="radio" name="alcohol_result12" checked="checked">
+                                    <input type="radio" name="alcohol_result07">
                                     <span class="check" style="margin-right:6px;"></span><span class="mif-checkmark fg-green"></span>
                                 </label>
                                 <label class="input-control radio small-check">
-                                    <input type="radio" name="alcohol_result12">
+                                    <input type="radio" name="alcohol_result07">
                                     <span class="check" style="margin-right:5px;"></span><span class="mif-cross fg-red"></span>
                                 </label>
                             </td>
                             <td style="text-align:center;">
-                                <span class="btn_kakunin" style="color:blue;" id="3">確認済</span>
+                                <span class="btn_kakunin" style="color:red;" id="1">未確認</span>
                             </td>
                             <td>
-                                <input type="text" maxlength="2" style="width:30px; text-align:right;" value="11">:<input type="text" maxlength="2" style="width:30px; text-align:right;" value="00">
+                                <input type="text" maxlength="2" style="width:25px; text-align:right;" value="">:<input type="text" maxlength="2" style="width:25px; text-align:right;" value="">
                             </td>
                             <td>
-                                <input type="text" style="text-align:left;width:100px;" value="大崎 三郎">
+                                <input type="text" style="text-align:left;width:100px;" value="">
                                 <button class="button primary btn_shainlist" style="margin:0px; padding:0px; width:30px; height:23px; font-size:10px; position:relative;">検索</button>
                             </td>
                             <td>
-                                <input type="text" style="width:200px;" value="">
+                                <input type="text" style="width:110px;" value="">
                             </td>
                         </tr>
 
                     </tbody>
                     </table>
-                    
+                    <button class="button success" onclick="pushMessage('info')" style="width:100px;">行追加</button>
+
                     <div class="row cells12">
                        <div class="cell colspan4">
                           <fieldset id="personal">
@@ -895,10 +1043,10 @@
             </tr>
             <tr style="height:30px;">
                 <td style="width:20%;">
-                    <span id="findname" style="width:75px;color:#555555;">社員名</span>
+                    <span style="width:75px;color:#555555;">社員名</span>
                 </td>
                 <td style="width:50%;">
-                    <input type="text" id="torihikisaki_name" style="width:200px;">
+                    <input type="text" style="width:200px;">
                 </td>
                 <td style="width:10%;">
                     <button class="button primary" style="width:80px;margin-left:14px;">検索</button>
@@ -939,6 +1087,82 @@
                             <td id="title04" style="text-align:left;color:#52677a;">0000000023</td>
                             <td id="title05" style="text-align:left;color:#52677a;">平塚　三郎</td>
                             <td id="title06" style="text-align:left;color:#52677a;">090-1241-2124   </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- 車番一覧 -->
+    <div id="shaban" title="車番一覧" style="display:none;">
+        <table border="0" style="width:400px;">
+            <tr style="height:30px;">
+                <td colspan="3">
+                    <label class="input-control radio small-check">
+                        <input id="th98" name="th99" type="radio" checked="checked">
+                        <span class="check"></span><span style="margin-left:5px;">車種</span>
+                    </label>
+                    <label class="input-control radio small-check" style="margin-left:5px;">
+                        <input id="th99" name="th99" type="radio">
+                        <span class="check"></span><span style="margin-left:5px;">委託先</span>
+                    </label>
+                </td>
+            </tr>
+            <tr style="height:30px;">
+                <td style="width:20%;">
+                    <span id="findname" style="width:75px;color:#555555;">車種</span>
+                </td>
+                <td id="shashu" style="width:50%;">
+                    <select id="shashu_select" style="width:100px;">
+                        <option></option>
+                        <option>大型</option>
+                        <option>中型</option>
+                        <option>小型</option>
+                    </select>
+                    <input type="text" id="torihikisaki_name" style="width:200px;display: none;">
+                </td>
+                <td style="width:10%;">
+                    <button class="button primary" style="width:80px;margin-left:14px;">検索</button>
+                </td>
+            </tr>
+            <tr style="height:10px;">
+                <td colspan="3"></td>
+            </tr>
+        </table>
+        <hr class="thin bg-grayLighter">
+        <table border="0" style="width:400px;">
+            <tr style="height:10px;">
+                <td style="width:80px;">
+                    <button type="button" style="padding: 9px 9px;" class="ui-icon ui-icon-triangle-1-w button_search"></button>
+                </td>
+                <td style="width:400px;"></td>
+                <td style="width:20px;">
+                    <button type="button" style="padding: 9px 9px;" class="ui-icon ui-icon-triangle-1-e button_search"></button>
+                </td>
+            </tr>
+            <tr style="height:250px">
+                <td colspan="3" style="vertical-align:top">
+                    <table class="rowselect" style="border-color: rgb(153, 153, 153); margin: 0px auto;" border="1">
+                        <tr class="trheader" style="border-bottom-color: rgb(170, 170, 170); border-bottom-width: 3px; border-bottom-style: solid;">
+                            <th id="title11" style="width:120px;height:26px;text-align:center;color:#52677a;">車番</th>
+                            <th id="title12" style="width:150px;height:26px;text-align:center;color:#52677a;">車種</th>
+                            <th id="title13" style="width:120px;height:26px;text-align:center;color:#52677a;">形式</th>
+                        </tr>
+                        <tr id="titletr11" class="trheader">
+                            <td id="title15" style="text-align:left;color:#52677a;">A111</td>
+                            <td id="title16" style="text-align:left;color:#52677a;">大型</td>
+                            <td id="title17" style="text-align:left;color:#52677a;">15tウイング</td>
+                        </tr>
+                        <tr id="titletr12" class="trheader">
+                            <td id="title18" style="text-align:left;color:#52677a;">A112</td>
+                            <td id="title19" style="text-align:left;color:#52677a;">中型</td>
+                            <td id="title20" style="text-align:left;color:#52677a;">8ｔユニック</td>
+                        </tr>
+                        <tr id="titletr13" class="trheader">
+                            <td id="title21" style="text-align:left;color:#52677a;">A113</td>
+                            <td id="title22" style="text-align:left;color:#52677a;">小型</td>
+                            <td id="title23" style="text-align:left;color:#52677a;">4ｔウイング</td>
                         </tr>
                     </table>
                 </td>
