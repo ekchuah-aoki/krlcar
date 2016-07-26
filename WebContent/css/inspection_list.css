@@ -1,6 +1,6 @@
 /* 外枠 */
 div.x_data_area {
-  width:1379px;
+  width:1209px;
   overflow: hidden; /* floatさせた要素を内包しているため指定 */
   border-right: 1px solid #CCC;
 }
@@ -8,13 +8,13 @@ div.x_data_area {
 /* ロック部分 */
 div.lock_box {
   float: left;
-  width: 37%;
+  width: 40%;
 }
 
 /* 横スクロール部分 */
 div.x_scroll_box {
   float: left;
-  width: 63%;
+  width: 60%;
   overflow-y: hidden; /* 縦スクロール非表示 */
   overflow-x: scroll; /* 横スクロール */
 }
