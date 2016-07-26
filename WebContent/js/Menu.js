@@ -42,6 +42,7 @@ $(function(){
     </li>\
     <li><a href='' class='dropdown-toggle'>運行管理</a>\
       <ul class='d-menu' data-role='dropdown'>\
+        <li><a href='./driver_allocation.html'><span class='title'>ドライバー別自動配車固定一覧</span></a></li>\
         <li><a href='./operationControl_bindingWorkHour.html'><span class='title'>ドライバー別拘束・運転時間管理一覧</span></a></li>\
         <li><a href='./operationControl_car_fuelCost.html'><span class='title'>月別個車燃費推移一覧</span></a></li>\
         <li><a href='./driver_mock.html'><span class='title'>年次ドライバー別実車・空車・総走行距離一覧</span></a></li>\
