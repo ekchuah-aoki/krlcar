@@ -62,17 +62,51 @@
 				$('#whiteGreen-toggle').text("解除");
 			}else{
 				$('#whiteGreen-toggle').text("ロック");
-				$('.button success').addClass('.button alert');
 			}
 			$('#whiteGreen-toggle').on("click", function(){
 				var flg = $("#white_green_flg").val();
 				if(flg == "white"){
-					$('#whiteGreen-toggle').text("ロック");
-					$('.button success').addClass('.button alert');
-					$("#white_green_flg").val("green")
+					$('#whiteGreen-toggle').text("ロック").removeClass(".button success").addClass(".button alert");
+					$("#white_green_flg").val("red")
 				}else{
-					$('#whiteGreen-toggle').text("解除");
+					$('#whiteGreen-toggle').text("解除").removeClass(".button alert").addClass(".button success");
 					$("#white_green_flg").val("white")
+				}
+			});
+		});
+		$(function(){
+			var flg = $("#lock2").val();
+			if(flg == "lock2"){
+				$('#lock2-toggle').text("解除");
+			}else{
+				$('#lock2-toggle').text("ロック");
+			}
+			$('#lock2-toggle').on("click", function(){
+				var flg = $("#lock2").val();
+				if(flg == "lock2"){
+					$('#lock2-toggle').text("ロック").removeClass(".button success").addClass(".button alert");
+					$("#lock2").val("red2")
+				}else{
+					$('#lock2-toggle').text("解除").removeClass(".button alert").addClass(".button success");
+					$("#lock2").val("lock2")
+				}
+			});
+		});
+		$(function(){
+			var flg = $("#lock3").val();
+			if(flg == "lock3"){
+				$('#lock3-toggle').text("解除");
+			}else{
+				$('#lock3-toggle').text("ロック");
+			}
+			$('#lock3-toggle').on("click", function(){
+				var flg = $("#lock3").val();
+				if(flg == "lock3"){
+					$('#lock3-toggle').text("ロック").removeClass(".button success").addClass(".button alert");
+					$("#lock3").val("red3")
+				}else{
+					$('#lock3-toggle').text("解除").removeClass(".button alert").addClass(".button success");
+					$("#lock3").val("lock3")
 				}
 			});
 		});
@@ -127,24 +161,26 @@
 		                </div>
 		            </div>
                     <hr class="thin bg-grayLighter">
-                    <table class="dataTable border bordered" data-auto-width="false">
+                    <table class="dataTable border bordered" data-auto-width="false"style="width:70%;margin:0 auto;;">
                         <thead>
                         <tr>
-                            <td class="sortable-column" rowspan="3" style="text-align:center; width: 250px;">社員番号</td>
-							<td class="sortable-column" rowspan="3" style="text-align:center; width: 250px;">社員名</td>
+                            <td class="sortable-column" rowspan="3" style="text-align:center; width: 180px;">社員番号</td>
+							<td class="sortable-column" rowspan="3" style="text-align:center; width: 180px;">社員名</td>
                         </tr>
                         <tr>
                             <td class="sortable-column" style="text-align: center;" colspan="3">2016/01</td>
                         </tr>
                         <tr>
+                            <td class="sortable-column" style="text-align: center; width: 150px;">拘束時間</td>
+                            <td class="sortable-column" style="text-align: center; width: 150px;">運転時間</td>
                             <td class="sortable-column" style="text-align: center; width: px;">解除/ロック</td>
-                            <td class="sortable-column" style="text-align: center; width: 220px;">運転時間</td>
-                            <td class="sortable-column" style="text-align: center; width: 220px;">拘束時間</td>
                         </tr>
                         </thead>
                         <tbody>
                         <tr style="height: 50px;">
                             <td style="text-align: right;">0000000001</td><td style="text-align: left;">平坂 一郎</td>
+                            <td style="text-align:right;">193</td>
+                            <td style="text-align:right;">289</td>
                             <td>
                               <div  style="text-align:center;">
 							    <button id="whiteGreen-toggle" class="button success"style="width: 150px;"></button>
@@ -152,28 +188,37 @@
                                 <input type="hidden" id="white_green_flg" name="white_green_flg" value="white">
 							  </div>
                             </td>
-                            <td style="text-align:right;">289</td>
-                            <td style="text-align:right;">193</td>
                         </tr>
+                        
                         <tr style="height: 50px;">
                             <td style="text-align: right;">0000000002</td>
                             <td style="text-align: left;">賀川 二郎</td>
-                            <td style="text-align:center;">
-                              
-                            </td>
-                            <td style="text-align:right;">288</td>
                             <td style="text-align:right;">190</td>
+                            <td style="text-align:right;">288</td>
+                            <td style="text-align:center;">
+                              <div  style="text-align:center;">
+							    <button id="lock2-toggle" class="button success"style="width: 150px;"></button>
+							    <span id="lock2-item"></span>
+                                <input type="hidden" id="lock2" name="lock2" value="lock2">
+							  </div>
+                            </td>
                         </tr>
+                        
                         <tr style="height: 50px;">
                             <td style="text-align: right;">0000000003</td>
                             <td style="text-align: left;">平塚 三郎</td>
-                            <td style="text-align:center;">
-                              
-                            </td>
-                            <td style="text-align:right;">301</td>
                             <td style="text-align:right;">205</td>
+                            <td style="text-align:right;">301</td>
+                            <td style="text-align:center;">
+                              <div  style="text-align:center;">
+							    <button id="lock3-toggle" class="button success"style="width: 150px;"></button>
+							    <span id="lock3-item"></span>
+                                <input type="hidden" id="lock3" value="lock3">
+							  </div>
+                            </td>
                         </tr>
-                    </tbody>
+                        
+                      </tbody>
                     </table>
                 </div>
             </div>
