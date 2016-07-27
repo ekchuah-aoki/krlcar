@@ -15,21 +15,16 @@
     <link href="../css/metro.css" rel="stylesheet">
     <link href="../css/metro-icons.css" rel="stylesheet">
     <link href="../css/metro-responsive.css" rel="stylesheet">
-    <link href="../css/driver_allocation.css" rel="stylesheet">
 
     <script src="../js/jquery-2.1.3.min.js"></script>
     <script src="../js/jquery.dataTables.min.js"></script>
-
     <script src="../js/metro.js"></script>
-    
     <script src="../js/Menu.js"></script>
-
     <style>
         html, body {
             height: 100%;
         }
         body {
-            font-size:10pt;
         }
         .page-content {
             padding-top: 3.125rem;
@@ -41,18 +36,16 @@
             min-height: 0;
             height: auto;
         }
-		.dataTable {
-		margin: 0;
-		}
-		.hidden {
-		overflow: hidden;
+        .hidden {
+			overflow: hidden;
 		}
 		.left {
-		float: left;
+			float: left;
 		}
         .right {
-        float: right;
+        	float: right;
         }
+        
         @media screen and (max-width: 800px){
             #cell-sidebar {
                 flex-basis: 52px;
@@ -62,27 +55,47 @@
             }
         }
     </style>
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script>
+		$(function(){
+			var flg = $("#white_green_flg").val();
+			if(flg == "white"){
+				$('#whiteGreen-toggle').text("解除");
+			}else{
+				$('#whiteGreen-toggle').text("ロック");
+				$('.button success').addClass('.button alert');
+			}
+			$('#whiteGreen-toggle').on("click", function(){
+				var flg = $("#white_green_flg").val();
+				if(flg == "white"){
+					$('#whiteGreen-toggle').text("ロック");
+					$('.button success').addClass('.button alert');
+					$("#white_green_flg").val("green")
+				}else{
+					$('#whiteGreen-toggle').text("解除");
+					$("#white_green_flg").val("white")
+				}
+			});
+		});
+	</script>
+
 </head>
-<body class="bg-steel">
-     <!-- ヘッダー固定 -->
+<body>
    <div id="Menu_load"></div>
     <div class="page-content">
         <div class="flex-grid no-responsive-future" style="height: 100%;">
             <div class="row" style="height: 100%">
                 <div class="cell auto-size padding20 bg-white" id="cell-content">
                     <ul class="breadcrumbs" style="padding:0px;">
-                      <li><h4>ドライバー別自動配車固定一覧</h4></li>
+                        <li><h4>ドライバー別自動配車固定一覧</h4></li>
                     </ul>
-		            <div class="grid">
+                    <div class="grid">
                     <hr class="thin bg-grayLighter">
-		            
 		                <div class="hidden">
 							<div class="left">
 		                        <div class="input-control select" style="width:60px;">
 		                            <select dir="rtl">
 		                            	<option>2015</option>
-		                                <option>2016</option>
+		                                <option selected>2016</option>
 		                                <option>2017</option>
 		                                <option>2018</option>
 		                                <option>2019</option>
@@ -90,6 +103,23 @@
 		                            </select>
 								</div>
 		                        年
+		                        <div class="input-control select" style="width:40px;">
+		                            <select dir="rtl">
+		                                <option>01</option>
+		                                <option>02</option>
+		                                <option>03</option>
+		                                <option>04</option>
+		                                <option>05</option>
+		                                <option>06</option>
+		                                <option>07</option>
+		                                <option>08</option>
+		                                <option>09</option>
+		                                <option>10</option>
+		                                <option>11</option>
+		                                <option>12</option>
+		                            </select>
+								</div>
+								月
 		                    </div>
 							<div class="right">
 			                    <button class="button primary" style="width:100px;">検索</button>
@@ -97,227 +127,54 @@
 		                </div>
 		            </div>
                     <hr class="thin bg-grayLighter">
-		            <div class="grid">
-		                <div class="row cells12">
-							<div class="cell colspan5">
-                              <div class="x_data_area">
-							      <!-- ロック部分 -->
-							      	<div class="lock_box">
-							        	 <table class="dataTable border bordered width300 data" data-auto-width="false">
-							                
-							                <thead>
-							                <tr style="height: 90px;">
-												<td class="sortable-column" rowspan="2"><p class="yoko" style="text-align:center;">社員番号</p></td>
-							                    <td class="sortable-column" rowspan="2"><p class="yoko2" >氏名</p></td>
-							                </tr>
-							                </thead>
-							                <tbody>
-							                	<tr style="height: 50px;">
-							                    	<td style="text-align: right;">0000000001</td><td style="text-align: left;">平坂 一郎</td>
-												</tr>
-							                    <tr style="height: 50px;">
-							                    	<td style="text-align: right;">0000000002</td><td style="text-align: left;">賀川 二郎</td>
-												</tr>
-												<tr style="height: 50px;">
-							                        <td style="text-align: right;">0000000003</td><td style="text-align: left;">平塚 三郎</td>
-												</tr>
-							            	</tbody>
-							        	</table>
-							        </div>
-							        <!-- /ロック部分 -->
-							        <!-- 横スクロール部分 -->
-							        <div class="x_scroll_box">
-							            <table class="dataTable border bordered  data width2500">
-							                <tbody>
-							                  <thead>
-							                	<tr style="height: 48px;">
-							                		<td class="sortable-column" style="text-align:center;">2015/01</td>
-							                    	<td class="sortable-column" style="text-align:center;">2015/02</td>
-							                        <td class="sortable-column" style="text-align:center;">2015/03</td>
-							                        <td class="sortable-column" style="text-align:center;">2015/04</td>
-							                        <td class="sortable-column" style="text-align:center;">2015/05</td>
-							                        <td class="sortable-column" style="text-align:center;">2015/06</td>
-							                        <td class="sortable-column" style="text-align:center;">2015/07</td>
-							                        <td class="sortable-column" style="text-align:center;">2015/08</td>
-							                        <td class="sortable-column" style="text-align:center;">2015/09</td>
-							                        <td class="sortable-column" style="text-align:center;">2015/10</td>
-							                        <td class="sortable-column" style="text-align:center;">2015/11</td>
-							                        <td class="sortable-column" style="text-align:center;">2015/12</td>
-							                    </tr>
-							                    <tr style="height: 42px;">
-							                        <td class="sortable-column"><span style="float:right;"></span>【配車固定→<span class="mif-checkmark fg-green" style="margin-right:5px;"></span>固定解除→<span class="mif-checkmark fg-red"></span>】</td>
-						                            <td class="sortable-column"><span style="float:right;"></span>【配車固定→<span class="mif-checkmark fg-green" style="margin-right:5px;"></span>固定解除→<span class="mif-checkmark fg-red"></span>】</td>
-						                            <td class="sortable-column"><span style="float:right;"></span>【配車固定→<span class="mif-checkmark fg-green" style="margin-right:5px;"></span>固定解除→<span class="mif-checkmark fg-red"></span>】</td>
-						                            <td class="sortable-column"><span style="float:right;"></span>【配車固定→<span class="mif-checkmark fg-green" style="margin-right:5px;"></span>固定解除→<span class="mif-checkmark fg-red"></span>】</td>
-						                            <td class="sortable-column"><span style="float:right;"></span>【配車固定→<span class="mif-checkmark fg-green" style="margin-right:5px;"></span>固定解除→<span class="mif-checkmark fg-red"></span>】</td>
-						                            <td class="sortable-column"><span style="float:right;"></span>【配車固定→<span class="mif-checkmark fg-green" style="margin-right:5px;"></span>固定解除→<span class="mif-checkmark fg-red"></span>】</td>
-						                            <td class="sortable-column"><span style="float:right;"></span>【配車固定→<span class="mif-checkmark fg-green" style="margin-right:5px;"></span>固定解除→<span class="mif-checkmark fg-red"></span>】</td>
-						                            <td class="sortable-column"><span style="float:right;"></span>【配車固定→<span class="mif-checkmark fg-green" style="margin-right:5px;"></span>固定解除→<span class="mif-checkmark fg-red"></span>】</td>
-						                            <td class="sortable-column"><span style="float:right;"></span>【配車固定→<span class="mif-checkmark fg-green" style="margin-right:5px;"></span>固定解除→<span class="mif-checkmark fg-red"></span>】</td>
-						                            <td class="sortable-column"><span style="float:right;"></span>【配車固定→<span class="mif-checkmark fg-green" style="margin-right:5px;"></span>固定解除→<span class="mif-checkmark fg-red"></span>】</td>
-						                            <td class="sortable-column"><span style="float:right;"></span>【配車固定→<span class="mif-checkmark fg-green" style="margin-right:5px;"></span>固定解除→<span class="mif-checkmark fg-red"></span>】</td>
-						                            <td class="sortable-column"><span style="float:right;"></span>【配車固定→<span class="mif-checkmark fg-green" style="margin-right:5px;"></span>固定解除→<span class="mif-checkmark fg-red"></span>】</td>
-						                        </tr>
-							                  </thead>
-							                  <tr align="center" style="height: 50px;">
-			                                    <td>
-			                                      <label class="input-control radio small-check"><input type="radio" name="n1"><span class="check"></span><span class="mif-checkmark fg-green" style="margin-right:5px;"></span></label>
-			                                      <label class="input-control radio small-check" style="margin-left:35px;"><input type="radio" name="n1" checked="checked"><span class="check"></span><span class="mif-checkmark fg-red" style="margin-right:5px;"></span></label>
-			                                    </td>
-			                                    <td>
-			                                      <label class="input-control radio small-check"><input type="radio" name="n2"><span class="check"></span><span class="mif-checkmark fg-green" style="margin-right:5px;"></span></label>
-			                                      <label class="input-control radio small-check" style="margin-left:35px;"><input type="radio" name="n2" checked="checked"><span class="check"></span><span class="mif-checkmark fg-red" style="margin-right:5px;"></span></label>
-			                                    </td>
-			                                    <td>
-			                                      <label class="input-control radio small-check"><input type="radio" name="n3"><span class="check"></span><span class="mif-checkmark fg-green" style="margin-right:5px;"></span></label>
-			                                      <label class="input-control radio small-check" style="margin-left:35px;"><input type="radio" name="n3" checked="checked"><span class="check"></span><span class="mif-checkmark fg-red" style="margin-right:5px;"></span></label>
-			                                    </td>
-			                                    <td>
-			                                      <label class="input-control radio small-check"><input type="radio" name="n4"><span class="check"></span><span class="mif-checkmark fg-green" style="margin-right:5px;"></span></label>
-			                                      <label class="input-control radio small-check" style="margin-left:35px;"><input type="radio" name="n4" checked="checked"><span class="check"></span><span class="mif-checkmark fg-red" style="margin-right:5px;"></span></label>
-			                                    </td>
-			                                    <td>
-			                                      <label class="input-control radio small-check"><input type="radio" name="n5"><span class="check"></span><span class="mif-checkmark fg-green" style="margin-right:5px;"></span></label>
-			                                      <label class="input-control radio small-check" style="margin-left:35px;"><input type="radio" name="n5" checked="checked"><span class="check"></span><span class="mif-checkmark fg-red" style="margin-right:5px;"></span></label>
-			                                    </td>
-			                                    <td>
-			                                      <label class="input-control radio small-check"><input type="radio" name="n6"><span class="check"></span><span class="mif-checkmark fg-green" style="margin-right:5px;"></span></label>
-			                                      <label class="input-control radio small-check" style="margin-left:35px;"><input type="radio" name="n6" checked="checked"><span class="check"></span><span class="mif-checkmark fg-red" style="margin-right:5px;"></span></label>
-			                                    </td>
-			                                    <td>
-			                                      <label class="input-control radio small-check"><input type="radio" name="n7"><span class="check"></span><span class="mif-checkmark fg-green" style="margin-right:5px;"></span></label>
-			                                      <label class="input-control radio small-check" style="margin-left:35px;"><input type="radio" name="n7" checked="checked"><span class="check"></span><span class="mif-checkmark fg-red" style="margin-right:5px;"></span></label>
-			                                    </td>
-			                                    <td>
-			                                      <label class="input-control radio small-check"><input type="radio" name="n8"><span class="check"></span><span class="mif-checkmark fg-green" style="margin-right:5px;"></span></label>
-			                                      <label class="input-control radio small-check" style="margin-left:35px;"><input type="radio" name="n8" checked="checked"><span class="check"></span><span class="mif-checkmark fg-red" style="margin-right:5px;"></span></label>
-			                                    </td>
-			                                    <td>
-			                                      <label class="input-control radio small-check"><input type="radio" name="n9"><span class="check"></span><span class="mif-checkmark fg-green" style="margin-right:5px;"></span></label>
-			                                      <label class="input-control radio small-check" style="margin-left:35px;"><input type="radio" name="n9" checked="checked"><span class="check"></span><span class="mif-checkmark fg-red" style="margin-right:5px;"></span></label>
-			                                    </td>
-			                                    <td>
-			                                      <label class="input-control radio small-check"><input type="radio" name="n10"><span class="check"></span><span class="mif-checkmark fg-green" style="margin-right:5px;"></span></label>
-			                                      <label class="input-control radio small-check" style="margin-left:35px;"><input type="radio" name="n10" checked="checked"><span class="check"></span><span class="mif-checkmark fg-red" style="margin-right:5px;"></span></label>
-			                                    </td>
-			                                    <td>
-			                                      <label class="input-control radio small-check"><input type="radio" name="n11"><span class="check"></span><span class="mif-checkmark fg-green" style="margin-right:5px;"></span></label>
-			                                      <label class="input-control radio small-check" style="margin-left:35px;"><input type="radio" name="n11" checked="checked"><span class="check"></span><span class="mif-checkmark fg-red" style="margin-right:5px;"></span></label>
-			                                    </td>
-			                                    <td>
-			                                      <label class="input-control radio small-check"><input type="radio" name="n12"><span class="check"></span><span class="mif-checkmark fg-green" style="margin-right:5px;"></span></label>
-			                                      <label class="input-control radio small-check" style="margin-left:35px;"><input type="radio" name="n12" checked="checked"><span class="check"></span><span class="mif-checkmark fg-red" style="margin-right:5px;"></span></label>
-			                                    </td>
-			                                  </tr>
-			                                  
-							                  <tr align="center" style="height: 50px;">
-			                                    <td>
-			                                      <label class="input-control radio small-check"><input type="radio" name="n13"><span class="check"></span><span class="mif-checkmark fg-green" style="margin-right:5px;"></span></label>
-			                                      <label class="input-control radio small-check" style="margin-left:35px;"><input type="radio" name="n13" checked="checked"><span class="check"></span><span class="mif-checkmark fg-red" style="margin-right:5px;"></span></label>
-			                                    </td>
-			                                    <td>
-			                                      <label class="input-control radio small-check"><input type="radio" name="n14"><span class="check"></span><span class="mif-checkmark fg-green" style="margin-right:5px;"></span></label>
-			                                      <label class="input-control radio small-check" style="margin-left:35px;"><input type="radio" name="n14" checked="checked"><span class="check"></span><span class="mif-checkmark fg-red" style="margin-right:5px;"></span></label>
-			                                    </td>
-			                                    <td>
-			                                      <label class="input-control radio small-check"><input type="radio" name="n15"><span class="check"></span><span class="mif-checkmark fg-green" style="margin-right:5px;"></span></label>
-			                                      <label class="input-control radio small-check" style="margin-left:35px;"><input type="radio" name="n15" checked="checked"><span class="check"></span><span class="mif-checkmark fg-red" style="margin-right:5px;"></span></label>
-			                                    </td>
-			                                    <td>
-			                                      <label class="input-control radio small-check"><input type="radio" name="n16"><span class="check"></span><span class="mif-checkmark fg-green" style="margin-right:5px;"></span></label>
-			                                      <label class="input-control radio small-check" style="margin-left:35px;"><input type="radio" name="n16" checked="checked"><span class="check"></span><span class="mif-checkmark fg-red" style="margin-right:5px;"></span></label>
-			                                    </td>
-			                                    <td>
-			                                      <label class="input-control radio small-check"><input type="radio" name="n17"><span class="check"></span><span class="mif-checkmark fg-green" style="margin-right:5px;"></span></label>
-			                                      <label class="input-control radio small-check" style="margin-left:35px;"><input type="radio" name="n17" checked="checked"><span class="check"></span><span class="mif-checkmark fg-red" style="margin-right:5px;"></span></label>
-			                                    </td>
-			                                    <td>
-			                                      <label class="input-control radio small-check"><input type="radio" name="n18"><span class="check"></span><span class="mif-checkmark fg-green" style="margin-right:5px;"></span></label>
-			                                      <label class="input-control radio small-check" style="margin-left:35px;"><input type="radio" name="n18" checked="checked"><span class="check"></span><span class="mif-checkmark fg-red" style="margin-right:5px;"></span></label>
-			                                    </td>
-			                                    <td>
-			                                      <label class="input-control radio small-check"><input type="radio" name="n19"><span class="check"></span><span class="mif-checkmark fg-green" style="margin-right:5px;"></span></label>
-			                                      <label class="input-control radio small-check" style="margin-left:35px;"><input type="radio" name="n19" checked="checked"><span class="check"></span><span class="mif-checkmark fg-red" style="margin-right:5px;"></span></label>
-			                                    </td>
-			                                    <td>
-			                                      <label class="input-control radio small-check"><input type="radio" name="n20"><span class="check"></span><span class="mif-checkmark fg-green" style="margin-right:5px;"></span></label>
-			                                      <label class="input-control radio small-check" style="margin-left:35px;"><input type="radio" name="n20" checked="checked"><span class="check"></span><span class="mif-checkmark fg-red" style="margin-right:5px;"></span></label>
-			                                    </td>
-			                                    <td>
-			                                      <label class="input-control radio small-check"><input type="radio" name="n21"><span class="check"></span><span class="mif-checkmark fg-green" style="margin-right:5px;"></span></label>
-			                                      <label class="input-control radio small-check" style="margin-left:35px;"><input type="radio" name="n21" checked="checked"><span class="check"></span><span class="mif-checkmark fg-red" style="margin-right:5px;"></span></label>
-			                                    </td>
-			                                    <td>
-			                                      <label class="input-control radio small-check"><input type="radio" name="n22"><span class="check"></span><span class="mif-checkmark fg-green" style="margin-right:5px;"></span></label>
-			                                      <label class="input-control radio small-check" style="margin-left:35px;"><input type="radio" name="n22" checked="checked"><span class="check"></span><span class="mif-checkmark fg-red" style="margin-right:5px;"></span></label>
-			                                    </td>
-			                                    <td>
-			                                      <label class="input-control radio small-check"><input type="radio" name="n23"><span class="check"></span><span class="mif-checkmark fg-green" style="margin-right:5px;"></span></label>
-			                                      <label class="input-control radio small-check" style="margin-left:35px;"><input type="radio" name="n23" checked="checked"><span class="check"></span><span class="mif-checkmark fg-red" style="margin-right:5px;"></span></label>
-			                                    </td>
-			                                    <td>
-			                                      <label class="input-control radio small-check"><input type="radio" name="n24"><span class="check"></span><span class="mif-checkmark fg-green" style="margin-right:5px;"></span></label>
-			                                      <label class="input-control radio small-check" style="margin-left:35px;"><input type="radio" name="n24" checked="checked"><span class="check"></span><span class="mif-checkmark fg-red" style="margin-right:5px;"></span></label>
-			                                    </td>
-			                                  </tr>
-			                                  
-							                  <tr align="center" style="height: 50px;">
-			                                    <td>
-			                                      <label class="input-control radio small-check"><input type="radio" name="n25"><span class="check"></span><span class="mif-checkmark fg-green" style="margin-right:5px;"></span></label>
-			                                      <label class="input-control radio small-check" style="margin-left:35px;"><input type="radio" name="n25" checked="checked"><span class="check"></span><span class="mif-checkmark fg-red" style="margin-right:5px;"></span></label>
-			                                    </td>
-			                                    <td>
-			                                      <label class="input-control radio small-check"><input type="radio" name="n26"><span class="check"></span><span class="mif-checkmark fg-green" style="margin-right:5px;"></span></label>
-			                                      <label class="input-control radio small-check" style="margin-left:35px;"><input type="radio" name="n26" checked="checked"><span class="check"></span><span class="mif-checkmark fg-red" style="margin-right:5px;"></span></label>
-			                                    </td>
-			                                    <td>
-			                                      <label class="input-control radio small-check"><input type="radio" name="n27"><span class="check"></span><span class="mif-checkmark fg-green" style="margin-right:5px;"></span></label>
-			                                      <label class="input-control radio small-check" style="margin-left:35px;"><input type="radio" name="n27" checked="checked"><span class="check"></span><span class="mif-checkmark fg-red" style="margin-right:5px;"></span></label>
-			                                    </td>
-			                                    <td>
-			                                      <label class="input-control radio small-check"><input type="radio" name="n28"><span class="check"></span><span class="mif-checkmark fg-green" style="margin-right:5px;"></span></label>
-			                                      <label class="input-control radio small-check" style="margin-left:35px;"><input type="radio" name="n28" checked="checked"><span class="check"></span><span class="mif-checkmark fg-red" style="margin-right:5px;"></span></label>
-			                                    </td>
-			                                    <td>
-			                                      <label class="input-control radio small-check"><input type="radio" name="n29"><span class="check"></span><span class="mif-checkmark fg-green" style="margin-right:5px;"></span></label>
-			                                      <label class="input-control radio small-check" style="margin-left:35px;"><input type="radio" name="n29" checked="checked"><span class="check"></span><span class="mif-checkmark fg-red" style="margin-right:5px;"></span></label>
-			                                    </td>
-			                                    <td>
-			                                      <label class="input-control radio small-check"><input type="radio" name="n30"><span class="check"></span><span class="mif-checkmark fg-green" style="margin-right:5px;"></span></label>
-			                                      <label class="input-control radio small-check" style="margin-left:35px;"><input type="radio" name="n30" checked="checked"><span class="check"></span><span class="mif-checkmark fg-red" style="margin-right:5px;"></span></label>
-			                                    </td>
-			                                    <td>
-			                                      <label class="input-control radio small-check"><input type="radio" name="n31"><span class="check"></span><span class="mif-checkmark fg-green" style="margin-right:5px;"></span></label>
-			                                      <label class="input-control radio small-check" style="margin-left:35px;"><input type="radio" name="n31" checked="checked"><span class="check"></span><span class="mif-checkmark fg-red" style="margin-right:5px;"></span></label>
-			                                    </td>
-			                                    <td>
-			                                      <label class="input-control radio small-check"><input type="radio" name="n32"><span class="check"></span><span class="mif-checkmark fg-green" style="margin-right:5px;"></span></label>
-			                                      <label class="input-control radio small-check" style="margin-left:35px;"><input type="radio" name="n32" checked="checked"><span class="check"></span><span class="mif-checkmark fg-red" style="margin-right:5px;"></span></label>
-			                                    </td>
-			                                    <td>
-			                                      <label class="input-control radio small-check"><input type="radio" name="n33"><span class="check"></span><span class="mif-checkmark fg-green" style="margin-right:5px;"></span></label>
-			                                      <label class="input-control radio small-check" style="margin-left:35px;"><input type="radio" name="n33" checked="checked"><span class="check"></span><span class="mif-checkmark fg-red" style="margin-right:5px;"></span></label>
-			                                    </td>
-			                                    <td>
-			                                      <label class="input-control radio small-check"><input type="radio" name="n34"><span class="check"></span><span class="mif-checkmark fg-green" style="margin-right:5px;"></span></label>
-			                                      <label class="input-control radio small-check" style="margin-left:35px;"><input type="radio" name="n34" checked="checked"><span class="check"></span><span class="mif-checkmark fg-red" style="margin-right:5px;"></span></label>
-			                                    </td>
-			                                    <td>
-			                                      <label class="input-control radio small-check"><input type="radio" name="n35"><span class="check"></span><span class="mif-checkmark fg-green" style="margin-right:5px;"></span></label>
-			                                      <label class="input-control radio small-check" style="margin-left:35px;"><input type="radio" name="n35" checked="checked"><span class="check"></span><span class="mif-checkmark fg-red" style="margin-right:5px;"></span></label>
-			                                    </td>
-			                                    <td>
-			                                      <label class="input-control radio small-check"><input type="radio" name="n36"><span class="check"></span><span class="mif-checkmark fg-green" style="margin-right:5px;"></span></label>
-			                                      <label class="input-control radio small-check" style="margin-left:35px;"><input type="radio" name="n36" checked="checked"><span class="check"></span><span class="mif-checkmark fg-red" style="margin-right:5px;"></span></label>
-			                                    </td>
-			                                  </tr>
-							              </tbody>
-							            </table>
-							        </div>
-								</div>
-		                    </div>
-	                    </div>
-                    </div>
+                    <table class="dataTable border bordered" data-auto-width="false">
+                        <thead>
+                        <tr>
+                            <td class="sortable-column" rowspan="3" style="text-align:center; width: 250px;">社員番号</td>
+							<td class="sortable-column" rowspan="3" style="text-align:center; width: 250px;">社員名</td>
+                        </tr>
+                        <tr>
+                            <td class="sortable-column" style="text-align: center;" colspan="3">2016/01</td>
+                        </tr>
+                        <tr>
+                            <td class="sortable-column" style="text-align: center; width: px;">解除/ロック</td>
+                            <td class="sortable-column" style="text-align: center; width: 220px;">運転時間</td>
+                            <td class="sortable-column" style="text-align: center; width: 220px;">拘束時間</td>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr style="height: 50px;">
+                            <td style="text-align: right;">0000000001</td><td style="text-align: left;">平坂 一郎</td>
+                            <td>
+                              <div  style="text-align:center;">
+							    <button id="whiteGreen-toggle" class="button success"style="width: 150px;"></button>
+							    <span id="whiteGreen-item"></span>
+                                <input type="hidden" id="white_green_flg" name="white_green_flg" value="white">
+							  </div>
+                            </td>
+                            <td style="text-align:right;">289</td>
+                            <td style="text-align:right;">193</td>
+                        </tr>
+                        <tr style="height: 50px;">
+                            <td style="text-align: right;">0000000002</td>
+                            <td style="text-align: left;">賀川 二郎</td>
+                            <td style="text-align:center;">
+                              
+                            </td>
+                            <td style="text-align:right;">288</td>
+                            <td style="text-align:right;">190</td>
+                        </tr>
+                        <tr style="height: 50px;">
+                            <td style="text-align: right;">0000000003</td>
+                            <td style="text-align: left;">平塚 三郎</td>
+                            <td style="text-align:center;">
+                              
+                            </td>
+                            <td style="text-align:right;">301</td>
+                            <td style="text-align:right;">205</td>
+                        </tr>
+                    </tbody>
+                    </table>
                 </div>
             </div>
         </div>
