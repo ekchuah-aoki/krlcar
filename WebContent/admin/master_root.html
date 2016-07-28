@@ -21,8 +21,10 @@
     <script src="../js/jquery.dataTables.min.js"></script>
     <script src="../js/metro.js"></script>
     <script src="../js/Menu.js"></script>
+
     <link type="text/css" rel="stylesheet" href="../css/jquery-ui.min.css" />
     <script type="text/javascript" src="../js/jquery.ui.1.9.2.js"></script>
+
     <style>
         html, body {
             height: 100%;
@@ -71,39 +73,45 @@
                 flex-basis: calc(100% - 52px);
             }
         }
+
+        table.rowselect th{
+            border: 1px solid rgb(153, 153, 153);
+            background-color:#ffffff;
+            padding:3px;
+        }
+        table.rowselect tr:hover {
+            background-color: #FFCC99;
+        }
     </style>
 
     <script>
-    $(function() {
-       $('.text_money').on('blur', function(){
-          var num = $(this).val();
-          num = num.replace(/(\d)(?=(\d\d\d)+$)/g, '$1,');
-          $(this).val(num);
-       });
-       $('.text_money').on('focus', function(){
-          var num = $(this).val();
-          num = num.replace(/,/g, '');
-          $(this).val(num);
-       });
-    });
-    </script>
-    <script>
-    $(function(){
-        $(".btn_cons").click(function() {
-             $("#cons").dialog({
-                 modal: true,
-                 closeOnEscape: false,
-                 width:  440,
-                 height: 520,
-                 show: { effect: "clip", complete: function () { $("#cons").focus(); } },
-                 open: function (event, ui) {
+        $(function() {
+            $('.text_money').on('blur', function(){
+                var num = $(this).val();
+                num = num.replace(/(\d)(?=(\d\d\d)+$)/g, '$1,');
+                $(this).val(num);
+            });
+
+            $('.text_money').on('focus', function () {
+                var num = $(this).val();
+                num = num.replace(/,/g, '');
+                $(this).val(num);
+            });
+
+           $(".btn_cons").click(function () {
+                $("#cons").dialog({
+                    modal: true,
+                    closeOnEscape: false,
+                    width: 440,
+                    height: 520,
+                    show: { effect: "clip", complete: function () { $("#cons").focus(); } },
+                    open: function (event, ui) {
                     $(this).parent().find(".ui-dialog-titlebar-close").show();
-                 }
-             });
+                    }
+                });
+           });
         });
-    });
-    </script>
-    
+    </script>   
 </head>
 <body>
     <!-- ヘッダー固定 -->
@@ -125,21 +133,21 @@
                       </div>
                     </div>
                     <hr class="thin bg-grayLighter">
-                    <table class="table border bordered" data-auto-width="false" style="font-size: small;">
+                    <table class="table border bordered" data-auto-width="false" style="font-size: 11px;">
                         <thead>
                           <tr>
                             <td style="width: 50px;text-align: center;">削除</td>
-                            <td style="width:100px;text-align: center;">便番</td>
-                            <td style="width:120px;text-align: center;">線路名</td>
-                            <td style="width:120px;text-align: center;">便名</td>
-                            <td style="width:165px;text-align: center;">委託先</td>
-                            <td style="width:100px;text-align: center;">運転時間</td>
-                            <td style="width:100px;text-align: center;">拘束時間</td>
-                            <td style="width:100px;text-align: center;">運行コース</td>
-                            <td style="width:70px;text-align: center;">運行日</td>
-                            <td style="width:60px;text-align: center;">車種</td>
-                            <td style="width:120px;text-align: center;">一日あたりの運賃</td>
-                            <td style="width:120px;text-align: center;">有料道路使用料</td>
+                            <td style="width:130px;text-align: center;">便番</td>
+                            <td style="width:130px;text-align: center;">線路名</td>
+                            <td style="width:130px;text-align: center;">便名</td>
+                            <td style="width:175px;text-align: center;">委託先</td>
+                            <td style="width: 80px;text-align: center;">拘束時間</td>
+                            <td style="width: 80px;text-align: center;">運転時間</td>
+                            <td style="width:130px;text-align: center;">運行コース</td>
+                            <td style="width:100px;text-align: center;">運行日</td>
+                            <td style="width: 80px;text-align: center;">車種</td>
+                            <td style="width: 80px;text-align: center;">一日あたりの運賃</td>
+                            <td style="width: 80px;text-align: center;">有料道路使用料</td>
                           </tr>
                         </thead>
                         <tbody>
@@ -166,10 +174,14 @@
                               </div>
                             </td>
                             <td rowspan="4" class="form" style="text-align:center;">
-                              <input type="text" class="input" value="00" />:<input type="text" class="input" value="00" />
+                                <div class="input-control">
+                                    <input type="text" maxlength="3" class="text" value="14" style="width:40px; text-align:right; padding-right : 0px; padding-left: 0px;">
+                                </div>
                             </td>
                             <td rowspan="4" class="form" style="text-align:center;">
-                              <input type="text" class="input" value="00" />:<input type="text" class="input" value="00" />
+                                <div class="input-control">
+                                    <input type="text" maxlength="3" class="text" value="10" style="width:40px; text-align:right; padding-right : 0px; padding-left: 0px;">
+                                </div>
                             </td>
                             <td rowspan="4" class="buttonCenter">
                                <button class="button primary" style="margin-top:25px;" onclick="window.open('master_root_next2.html','_self')">設定</button>
@@ -325,10 +337,14 @@
                               </div>
                             </td>
                             <td rowspan="4" class="form" style="text-align:center;">
-                              <input type="text" class="input" value="00" />:<input type="text" class="input" value="00" />
+                                <div class="input-control">
+                                    <input type="text" maxlength="3" class="text" value="10" style="width:40px; text-align:right; padding-right : 0px; padding-left: 0px;">
+                                </div>
                             </td>
                             <td rowspan="4" class="form" style="text-align:center;">
-                              <input type="text" class="input" value="00" />:<input type="text" class="input" value="00" />
+                                <div class="input-control">
+                                    <input type="text" maxlength="3" class="text" value="7" style="width:40px; text-align:right; padding-right : 0px; padding-left: 0px;">
+                               </div>
                             </td>
                             <td rowspan="4" class="buttonCenter">
                                <button class="button primary" style="margin-top:25px;" onclick="window.open('master_root_next2.html','_self')">設定</button>
@@ -484,10 +500,14 @@
                               </div>
                             </td>
                             <td rowspan="4" class="form" style="text-align:center;">
-                              <input type="text" class="input" value="00" />:<input type="text" class="input" value="00" />
+                                <div class="input-control">
+                                    <input type="text" maxlength="3" class="text" value="10" style="width:40px; text-align:right; padding-right : 0px; padding-left: 0px;">
+                                </div>
                             </td>
                             <td rowspan="4" class="form" style="text-align:center;">
-                              <input type="text" class="input" value="00" />:<input type="text" class="input" value="00" />
+                                <div class="input-control">
+                                    <input type="text" maxlength="3" class="text" value="8" style="width:40px; text-align:right; padding-right : 0px; padding-left: 0px;">
+                                </div>
                             </td>
                             <td rowspan="4" class="buttonCenter">
                                <button class="button primary" style="margin-top:25px;" onclick="window.open('master_root_next2.html','_self')">設定</button>
