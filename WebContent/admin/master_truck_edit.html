@@ -99,7 +99,7 @@
                     </div>
                     <div style="float: right; display:inline;">
                         <button type="button" class="button primary" style="width:100px;">検索</button>
-                        <button class="button primary" style="width:100px;" onclick="window.open('master_truck_add.html', '_self')">登録</button>
+                        <button class="button success" style="width:100px;" onclick="window.open('master_truck_add.html', '_self')">登録</button>
                         <button class="button alert" style="width:100px;">削除</button>
                     </div>
                     <hr class="thin bg-grayLighter">
@@ -107,16 +107,18 @@
                         <thead>
                         <tr>
                             <td style="width: 50px;text-align: center;">削除</td>
-                            <td style="width:120px;text-align: center;" class="sortable-column">支社名</td>
-                            <td style="width:120px;text-align: center;" class="sortable-column">車番</td>
-                            <td style="width:120px;text-align: center;" class="sortable-column">車種</td>
-                            <td style="width:120px;text-align: center;" class="sortable-column">型式</td>
+                            <td style="width:100px;text-align: center;" class="sortable-column">支社名</td>
+                            <td style="width:50px;text-align: center;" class="sortable-column">車番</td>
+                            <td style="width:50px;text-align: center;" class="sortable-column">車種</td>
+                            <td style="width:100px;text-align: center;" class="sortable-column">型式</td>
                             <td style="width:100px;text-align: center;" class="sortable-column">登録年月日</td>
-                            <td style="width:100px;text-align: center;" class="sortable-column">走行距離</td>
+                            <td style="width:90px;text-align: center;" class="sortable-column">走行距離</td>
                             <td style="width:130px;text-align: center;" class="sortable-column">直近3カ月点検日</td>
-                            <td style="width:150px;text-align: center;" class="sortable-column">自賠責保険番号</td>
-                            <td style="width:150px;text-align: center;" class="sortable-column">任意保険番号</td>
-                            <td style="text-align: center;" class="sortable-column">詳細</td>
+                            <td style="width:130px;text-align: center;" class="sortable-column">ETCカードNO</td>
+                            <td style="width:150px;text-align: center;" class="sortable-column">ETCカード有効期限</td>
+                            <td style="width:120px;text-align: center;" class="sortable-column">自賠責保険番号</td>
+                            <td style="width:110px;text-align: center;" class="sortable-column">任意保険番号</td>
+                            <td style="text-align: center;width:80px;" class="sortable-column">詳細</td>
                         </tr>
                         </thead>
                         <tbody>
@@ -134,6 +136,8 @@
                             <td style="text-align: center;">2015/12/1</td>
                             <td style="text-align: right;">50000km</td>
                             <td style="text-align: center;">2016/09/01</td>
+                            <td style="text-align: left;">1111-1111-1111-1111</td>
+                            <td style="text-align: center;">2019/09/01</td>
                             <td><a href="../img/sample_hoken01.jpg" target="_blank">GL6555411-31</a></td>
                             <td><a href="../img/sample_hoken01.jpg" target="_blank">N123456-11</a></td>
                             <td align="center">
@@ -154,6 +158,8 @@
                             <td style="text-align: center;">2015/12/3</td>
                             <td style="text-align: right;">50000km</td>
                             <td style="text-align: center;">2016/03/10</td>
+                            <td style="text-align: left;">2222-2222-2222-2222</td>
+                            <td style="text-align: center;">2019/03/10</td>
                             <td><a href="../img/sample_hoken01.jpg" target="_blank">GL6555411-32</a></td>
                             <td><a href="../img/sample_hoken01.jpg" target="_blank">N123456-12</a></td>
                             <td align="center">
@@ -174,6 +180,8 @@
                             <td style="text-align: center;">2015/12/10</td>
                             <td style="text-align: right;">50000km</td>
                             <td style="text-align: center;">2016/02/10</td>
+                            <td style="text-align: left;">3333-3333-3333-3333</td>
+                            <td style="text-align: center;">2019/03/10</td>
                             <td><a href="../img/sample_hoken01.jpg" target="_blank">GL6555411-33</a></td>
                             <td><a href="../img/sample_hoken01.jpg" target="_blank">N123456-13</a></td>
                             <td align="center">
