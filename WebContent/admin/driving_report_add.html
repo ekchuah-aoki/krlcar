@@ -124,6 +124,7 @@
             $('#goods_list2').addInputArea({ area_del: '.del_02' });
             $("#shabantext").prop('readonly', true);
             $('#shabantext').css('background', 'gainsboro');
+            $('#shabantext').css("border", "1px solid #787878;");
             $('.btn_shaban').attr("disabled", "disabled");
 
 			$('#whiteGreen-toggle').on("click", function () {
@@ -140,6 +141,8 @@
 					$('#shabantext').css('background', 'white');
 					$('.btn_torihikisaki').attr("disabled", "disabled");
 					$('.btn_shaban').removeAttr("disabled");
+					$('#shabantext').css("border", "1px solid #d9d9d9;");
+					$('#torihikisakitext').css("border", "1px solid #787878;");
 			    } else {
 					$('#whiteGreen-toggle').text("委託用日報へ");
 					$('#whiteGreen-item').text("乗務員支払代金");
@@ -153,7 +156,9 @@
 					$('#shabantext').css('background', 'gainsboro');
 					$('.btn_shaban').attr("disabled", "disabled");
 					$('.btn_torihikisaki').removeAttr("disabled");
-                }
+					$('#shabantext').css("border", "1px solid #787878;");
+					$('#torihikisakitext').css("border", "1px solid #d9d9d9;");
+			    }
 			});
 
 			$(".btn_shaban").click(function () {
@@ -503,7 +508,7 @@
                                     <td style="padding-right: 0px;">
                                         <div class="input-control text" style="width:100px;">
                                             <input type="text" id="shabantext" style="text-align:right;width:100px;" name="car" value="">
-                                            <button class="button primary btn_shaban" style="padding: 0px; left: 93px; width: 25px; height: 28px; font-size: 10px; margin-left: 10px;">検索</button>
+                                            <button class="button primary btn_shaban" style="padding: 0px; left: 93px; width: 28px; height: 28px; font-size: 10px; margin-left: 10px;">検索</button>
                                         </div>
                                     </td>
                                     <td></td>
@@ -511,25 +516,25 @@
                                     <td>
                                         <div class="input-control text" style="width:150px;">
                                             <input type="text" id="torihikisakitext" style="text-align:left;width:160px;" value="クレベ運送株式会社">
-                                            <button class="button primary btn_torihikisaki" style="margin: 0px; padding: 0px; left: 165px; width: 25px; height: 28px; font-size: 10px;">検索</button>
+                                            <button class="button primary btn_torihikisaki" style="margin: 0px; padding: 0px; left: 165px; width: 35px; height: 28px; font-size: 10px;">検索</button>
                                         </div>
                                     </td>
                                     <td>
                                         <div class="input-control text" style="width:150px;">
                                             <input type="text" style="text-align:left;width:150px;" name="car" value="平坂　一郎">
-                                            <button class="button primary btn_shainlist" style="margin: 0px; padding: 0px; left: 155px; width: 25px; height: 28px; font-size: 10px;">検索</button>
+                                            <button class="button primary btn_shainlist" style="margin: 0px; padding: 0px; left: 155px; width: 35px; height: 28px; font-size: 10px;">検索</button>
                                         </div>
                                     </td>
                                     <td>
                                         <div class="input-control text" style="width:150px;">
                                             <input type="text" style="text-align:left;width:150px;" name="car" value="町谷　晃">
-                                            <button class="button primary btn_shainlist" style="margin: 0px; padding: 0px; left: 155px; width: 25px; height: 28px; font-size: 10px;">検索</button>
+                                            <button class="button primary btn_shainlist" style="margin: 0px; padding: 0px; left: 155px; width: 35px; height: 28px; font-size: 10px;">検索</button>
                                         </div>
                                     </td>
                                     <td>
                                         <div class="input-control text" style="width:150px;">
                                             <input type="text" style="text-align:left;width:150px;" name="car" value="">
-                                            <button class="button primary btn_shainlist" style="margin: 0px; padding: 0px; left: 155px; width: 25px; height: 28px; font-size: 10px;">検索</button>
+                                            <button class="button primary btn_shainlist" style="margin: 0px; padding: 0px; left: 155px; width: 35px; height: 28px; font-size: 10px;">検索</button>
                                         </div>
                                     </td>
                                 </tr>
