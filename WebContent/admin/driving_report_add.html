@@ -75,6 +75,11 @@
 				flex-basis: calc(100% - 52px);
 			}
 		}
+        table.rowselect th{
+            border: 1px solid rgb(153, 153, 153);
+            background-color:#ffffff;
+            padding:3px;
+        }
         table.rowselect tr:hover {
             background-color: #FFCC99;
         }
@@ -116,7 +121,10 @@
 		$(function(){
             $("#datepicker").datepicker();
             $('#goods_list1').addInputArea({ area_del: '.del_01'});	
-            $('#goods_list2').addInputArea({ area_del: '.del_02'});	
+            $('#goods_list2').addInputArea({ area_del: '.del_02' });
+            $("#shabantext").prop('readonly', true);
+            $('#shabantext').css('background', 'gainsboro');
+            $('.btn_shaban').attr("disabled", "disabled");
 
 			$('#whiteGreen-toggle').on("click", function () {
 			    if ($('#whiteGreen-toggle').text() == "委託用日報へ") {
@@ -124,16 +132,32 @@
 					$('#whiteGreen-item').text("　用車支払代金");
 					$('#whiteGreen-toggle').css('background', '#00ccff');
 					$('#whiteGreen-toggle').css('border-color', '#00ccff');
+					$('#torihikisakitext').val("");
+					$('#torihikisakitext').prop('readonly', true);
+					$('#torihikisakitext').css('background', 'gainsboro');
+			        $('#shabantext').val("");
+					$('#shabantext').prop('readonly', false);
+					$('#shabantext').css('background', 'white');
+					$('.btn_torihikisaki').attr("disabled", "disabled");
+					$('.btn_shaban').removeAttr("disabled");
 			    } else {
 					$('#whiteGreen-toggle').text("委託用日報へ");
 					$('#whiteGreen-item').text("乗務員支払代金");
 					$('#whiteGreen-toggle').css('background', '#60a917');
 					$('#whiteGreen-toggle').css('border-color', '#60a917');
+					$('#torihikisakitext').val("");
+					$('#torihikisakitext').prop('readonly', false);
+					$('#torihikisakitext').css('background', 'white');
+			        $('#shabantext').val("");
+					$('#shabantext').prop('readonly', true);
+					$('#shabantext').css('background', 'gainsboro');
+					$('.btn_shaban').attr("disabled", "disabled");
+					$('.btn_torihikisaki').removeAttr("disabled");
                 }
 			});
 
 			$(".btn_shaban").click(function () {
-			    $("#shaban").dialog({
+			    $("#shabanlst").dialog({
 			        modal: true,
 			        closeOnEscape: false,
 			        width: 440,
@@ -197,6 +221,19 @@
 			        $('.showgroup').text("▲ 印鑑欄");
 			        $(".grouptable").show();
                 }
+			});
+
+			$(".btn_torihikisaki").click(function () {
+			    $("#torihikisaki").dialog({
+			        modal: true,
+			        closeOnEscape: false,
+			        width: 440,
+			        height: 520,
+			        show: { effect: "clip", complete: function () { $("#torihikisaki_name").focus(); } },
+			        open: function (event, ui) {
+			            $(this).parent().find(".ui-dialog-titlebar-close").show();
+			        }
+			    });
 			});
 		});
 
@@ -443,14 +480,15 @@
                                     </tr>
                                 </tbody>
                             </table>
-</fieldset>
+                        </fieldset>
 
-                        <table class="table border bordered customHeader" data-auto-width="false" style="width:970px;">
+                        <table class="table border bordered customHeader" data-auto-width="false">
                             <thead>
                                 <tr>
                                     <td rowspan="2" style="text-align:center;width:140px;">車番</td>
                                     <td rowspan="2" style="text-align:center;width:115px;">車種</td>
-                                    <td rowspan="2" style="text-align:center;width:115px;">型式</td>
+                                    <td rowspan="2" style="text-align:center;width:125px;">型式</td>
+                                    <td rowspan="2" style="text-align:center;">委託先</td>
                                     <td colspan="1" style="text-align:center;">運転手</td>
                                     <td colspan="2" style="text-align:center;">助手</td>
                                 </tr>
@@ -464,12 +502,18 @@
                                 <tr>
                                     <td style="padding-right: 0px;">
                                         <div class="input-control text" style="width:100px;">
-                                            <input type="text" style="text-align:right;width:100px;" name="car" value="5346">
+                                            <input type="text" id="shabantext" style="text-align:right;width:100px;" name="car" value="">
                                             <button class="button primary btn_shaban" style="padding: 0px; left: 93px; width: 25px; height: 28px; font-size: 10px; margin-left: 10px;">検索</button>
                                         </div>
                                     </td>
-                                    <td>大型</td>
-                                    <td>15ｔセーフティ</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <div class="input-control text" style="width:150px;">
+                                            <input type="text" id="torihikisakitext" style="text-align:left;width:160px;" value="クレベ運送株式会社">
+                                            <button class="button primary btn_torihikisaki" style="margin: 0px; padding: 0px; left: 165px; width: 25px; height: 28px; font-size: 10px;">検索</button>
+                                        </div>
+                                    </td>
                                     <td>
                                         <div class="input-control text" style="width:150px;">
                                             <input type="text" style="text-align:left;width:150px;" name="car" value="平坂　一郎">
@@ -1260,7 +1304,7 @@
 	</div>
 
     <!-- 車番一覧 -->
-    <div id="shaban" title="車番一覧" style="display:none;">
+    <div id="shabanlst" title="車番一覧" style="display:none;">
         <table border="0" style="width:400px;margin:0 auto;">
             <tr style="height:30px;">
                 <td style="width:20%;padding-left: 20px;">
@@ -1376,6 +1420,57 @@
         </table>
     </div>
 
+    <!-- 委託先一覧 -->
+    <div id="torihikisaki" title="委託先一覧" style="display:none;">
+        <table border="0" style="width:400px;margin:0 auto;">
+            <tr>
+                <td colspan="3">
+                    <hr class="thin bg-grayLighter">
+                </td>
+            </tr>
+            <tr style="height:30px;">
+                <td style="width:20%;">
+                    <span id="findname" style="width:75px;color:#555555;">委託者名</span>
+                </td>
+                <td style="width:50%;">
+                    <input type="text" id="torihikisaki_name" style="width:200px;">
+                </td>
+                <td style="width:10%;">
+                    <button class="button primary" style="width:80px;margin-left:14px;">検索</button>
+                </td>
+            </tr>
+            <tr style="height:10px;">
+                <td colspan="3"></td>
+            </tr>
+        </table>
+        <hr class="thin bg-grayLighter">
+
+        <table border="0" style="width:400px;margin:0 auto;">
+            <tr style="height:10px;">
+                <td colspan="3" style="padding-right:3px; padding-left:3px;">
+                    <button type="button" style="padding: 9px 9px;border-color:#9d9d9d;float:left;" class="ui-icon ui-icon-triangle-1-w button_search"></button>
+                    <button type="button" style="padding: 9px 9px;border-color:#9d9d9d;float:right;" class="ui-icon ui-icon-triangle-1-e button_search"></button>
+                </td>
+            </tr>
+            <tr style="height:250px">
+                <td colspan="3" style="vertical-align:top">
+                    <table class="rowselect" style="border-color: rgb(153, 153, 153); margin: 0px auto;" border="1">
+                        <tr class="trheader" style="border-bottom-color: rgb(170, 170, 170); border-bottom-width: 3px; border-bottom-style: solid;">
+                            <th id="title01" style="width:130px;height:26px;text-align:center;color:#52677a;">委託先コード</th>
+                            <th id="title02" style="width:200px;height:26px;text-align:center;color:#52677a;">委託先名</th>
+                            <th id="title03" style="width:150px;height:26px;text-align:center;color:#52677a;">部署</th>
+                        </tr>
+                        <tr class="trheader">
+                            <td id="title04" style="text-align:left;color:#52677a;">1234</td>
+                            <td id="title05" style="text-align:left;color:#52677a;">クレベ運送株式会社</td>
+                            <td id="title06" style="text-align:left;color:#52677a;"></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+
     <!-- 得意先一覧 -->
     <div id="tokuisakilist" title="得意先一覧" style="display:none;">
         <table border="0" style="width:450px;margin:0 auto;">
@@ -1436,6 +1531,5 @@
             </tr>
         </table>
     </div>
-
 </body>
 </html>
