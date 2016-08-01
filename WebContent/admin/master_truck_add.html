@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -79,30 +79,26 @@
         $(function(){
             $("#datepicker").datepicker();
             $("#datepicker_inspect").datepicker();
-        });
-        
-        $(function(){
+
             $("#datepicker").datepicker();
             $("#datepicker_touroku").datepicker();
-        });
 
-        $(function(){
             $("#datepicker").datepicker();
             $("#datepicker_yukou").datepicker(); 
-        });
-        
-        $(function(){
+
             $("#datepicker").datepicker();
             $("#datepicker_syaken").datepicker();
-        });
-        
-        $(function(){
+
             $("#datepicker").datepicker();
             $("#datepicker_ETC").datepicker();
-        });
-        
-        $(function(){
-            $('.sidebar').on('click', 'li', function(){
+
+            $("#datepicker_kanyu1").datepicker();
+            $("#datepicker_kanyu2").datepicker();
+
+            $("#datepicker_kigen1").datepicker();
+            $("#datepicker_kigen2").datepicker();
+
+            $('.sidebar').on('click', 'li', function () {
                 if (!$(this).hasClass('active')) {
                     $('.sidebar li').removeClass('active');
                     $(this).addClass('active');
@@ -131,119 +127,91 @@
                     </div>
                     <hr class="thin bg-grayLighter">
                     
-                    <div class="grid">
-                        <div class="row cells12">
-                            <div class="cell colspan3">
-                                支社名
-                                <div class="input-control select full-size">
-                                    <select style="width: 300px;">
-                                        <option></option>
-                                        <option>本社</option>
-                                        <option selected>山形営業所</option>
-                                        <option>大阪堺倉庫</option>
-                                        <option>沖縄営業所：ウォーター事業部</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="cell colspan1">
-	                            車番
-	                            <div class="input-control text full-size">
-                                    <input style="width: 100px; text-align: right;" type="text" value="5346">
-                                </div>
-                            </div>
-                            <div class="cell colspan1">
-	                            車種
-	                            <div class="input-control select full-size">
-	                                <select>
-	                                    <option></option>
-	                                    <option selected>大型</option>
-	                                    <option>中型</option>
-	                                    <option>小型</option>
-	                                </select>
-	                            </div>
-                            </div>
-                            <div class="cell colspan1">
-	                            型式
-                                    <div class="input-control select full-size">
-                                    <select>
-                                        <option></option>
-                                        <option selected>15tウイング</option>
-                                        <option>10ｔウイング</option>
-                                        <option>4ｔウイング</option>
-                                        <option>15ｔ平</option>
-                                        <option>10ｔ平</option>
-                                    </select>
-                                </div>
-                            </div>
-                            
-                            <div class="cell colspan3">
-                                定期更使用車
-                                <div class="checkbox">
-                                  <label class="input-control checkbox small-check no-margin">
-                                    <input type="checkbox" class="checkbox">
-                                    <span class="check"></span>
-                                  </label>
-                                </div>
-                            </div>
-                            
-                        </div>
-                        <div class="row cells12">
-                            <div class="cell colspan2">
-                                現在走行距離(km)
-                                <div class="input-control text full-size">
-                                    <input style="width: 150px; text-align: right;" type="text" value="50,000">
-                                </div>
-                            </div>
-                            <div class="cell colspan2">
-                                3カ月点検日
-                                <div class="input-control text full-size" id="datepicker_inspect">
-                                    <input style="height: 31px; text-align: right;width: 120px;" type="text" readonly="readonly" value="2016/09/01">
-                                    <button class="button" style="height: 31px; margin-right: 33px;" type="button"><span class="mif-calendar"></span></button>
-                                </div>
-                            </div>
-                            <div class="cell colspan2">
-                                ETCカードNO
-                                <div class="input-control text full-size">
-                                    <input style="width: 200px; text-align: right;" type="text" value="1111-1111-1111-1111">
-                                </div>
-                            </div>
-                            <div class="cell colspan2">
-                                ETCカード有効期限
-                                <div class="input-control text full-size" id="datepicker_ETC">
-                                    <input style="height: 31px; text-align: right;width: 150px;" type="text" readonly="readonly" value="2019/09/01">
-                                    <button class="button" style="height: 31px; margin-left: px;" type="button"><span class="mif-calendar"></span></button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row cells12">
-                            <div class="cell colspan2">
-                                自賠責保険番号
-                                <div class="input-control text full-size">
-                                    <input type="text" value="GL6555411-31">
-                                </div>
-                            </div>
-                            <div class="cell colspan3">
-                                自賠責保険書アップロード
-                                <div class="input-control file" data-role="input" style="width:300px;">
-                                    <input type="file" style="width:300px;">
-                                    <button class="button success" style="width:110px; height:81%; font-size:10px; margin-left: 50px;" onclick="('')">アップロード</button>
-                                </div>
-                            </div>
-                            <div class="cell colspan2">
-                                任意保険番号
-                                <div class="input-control text full-size">
-                                    <input type="text" value="N123456-11">
-                                </div>
-                            </div>
-                            <div class="cell colspan3">
-                                任意保険書アップロード
-                                <div class="input-control file" data-role="input" style="width:300px;">
-                                    <input type="file" style="width:300px;">
-                                    <button class="button success" style="width:110px;height:81%;font-size:10px;margin-left: 50px;" onclick="('')">アップロード</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                   <div class="grid">
+                       <div class="row cells12">
+                           <div class="cell colspan3">
+                               支社名（配置営業所）
+                               <div class="input-control select full-size">
+                                   <select style="width: 300px;">
+                                       <option></option>
+                                       <option>本社</option>
+                                       <option selected>山形営業所</option>
+                                       <option>大阪堺倉庫</option>
+                                       <option>沖縄営業所：ウォーター事業部</option>
+                                   </select>
+                               </div>
+                           </div>
+                           <div class="cell colspan1">
+                               車番
+                               <div class="input-control text full-size">
+                                   <input style="width: 100px; text-align: right;" type="text" value="5346">
+                               </div>
+                           </div>
+                           <div class="cell colspan1">
+                               車種
+                               <div class="input-control select full-size">
+                                   <select>
+                                       <option></option>
+                                       <option selected>大型</option>
+                                       <option>中型</option>
+                                       <option>小型</option>
+                                   </select>
+                               </div>
+                           </div>
+                           <div class="cell colspan2">
+                               型式
+                               <div class="input-control select full-size">
+                                   <select>
+                                       <option></option>
+                                       <option selected>15tウイング</option>
+                                       <option>10ｔウイング</option>
+                                       <option>4ｔウイング</option>
+                                       <option>15ｔ平</option>
+                                       <option>10ｔ平</option>
+                                   </select>
+                               </div>
+                           </div>
+
+                           <div class="cell colspan3">
+                               定期更使用車
+                               <div class="checkbox">
+                                   <label class="input-control checkbox small-check no-margin">
+                                       <input type="checkbox" class="checkbox">
+                                       <span class="check"></span>
+                                   </label>
+                               </div>
+                           </div>
+
+                       </div>
+                       <div class="row cells12">
+                           <div class="cell colspan2">
+                               現在走行距離(km)
+                               <div class="input-control text full-size">
+                                   <input style="width: 120px; text-align: right;" type="text" value="50,000">
+                               </div>
+                           </div>
+                           <div class="cell colspan2">
+                               3カ月点検日
+                               <div class="input-control text full-size" id="datepicker_inspect">
+                                   <input style="height: 31px; text-align: right;width: 100px;" type="text" readonly="readonly" value="2016/09/01">
+                                   <button class="button" style="height: 31px; margin-right: 55px;" type="button"><span class="mif-calendar"></span></button>
+                               </div>
+                           </div>
+                           <div class="cell colspan2">
+                               ETCカードNO
+                               <div class="input-control text full-size">
+                                   <input style="width: 170px; text-align: right;" type="text" value="1234-1234-1234-1234">
+                               </div>
+                           </div>
+                           <div class="cell colspan2">
+                               ETCカード有効期限
+                               <div class="input-control text full-size" id="datepicker_ETC">
+                                   <input style="height: 31px; text-align: right;width: 130px;" type="text" readonly="readonly" value="2019/09/01">
+                                   <button class="button" style="height: 31px; margin-right: 23px;" type="button"><span class="mif-calendar"></span></button>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
                     
                     <div class="example" data-text="メンテナンス情報">
                         <div class="grid" style="font-size:13px;">
@@ -251,8 +219,8 @@
                                 <div class="cell colspan2">
                                     車検有効日
                                     <div class="input-control text full-size" id="datepicker_syaken">
-                                        <input style="height: 31px;width: 105px; text-align: right;" type="text" readonly="readonly" value="2017/4/26">
-                                        <button class="button" style="height: 31px; margin-right: 33px;" type="button"><span class="mif-calendar"></span></button>
+                                        <input style="height: 31px;width: 100px; text-align: right;" type="text" readonly="readonly" value="2017/04/26">
+                                        <button class="button" style="height: 31px; margin-right: 40px;" type="button"><span class="mif-calendar"></span></button>
                                     </div>
                                 </div>
                                 <div class="cell colspan2">
@@ -309,230 +277,350 @@
                       </div>
                     </div>
 
-                    <div class="example" data-text="車検証情報">
-                        <div class="grid" style="font-size:13px;">
-                            <div class="row cells12">
-                                <div class="cell colspan2">
-                                    登録番号
-                                    <div class="input-control text full-size" style="width:90px;">
-                                        <input type="text" value="湘南 130 あ 4666">
-                                    </div>
-                                </div>
-                                <div class="cell colspan2">
-                                    登録年月日
-                                    <div class="input-control text full-size" id="datepicker_touroku">
-                                    	<input style="height: 31px; width: 105px;text-align: right;" type="text" readonly="readonly" value="2016/3/24">
-                                    	<button class="button" style="height: 31px; margin-right: 33px;" type="button"><span class="mif-calendar"></span></button>
-                                	</div>
-                                </div>
-                                <div class="cell colspan1">
-                                    初度登録年月
-                                    <div class="input-control text full-size">
-                                        <input type="text" value="2016/3" style="text-align: right;">
-                                    </div>
-                                </div>
-                                <div class="cell colspan1">
-                                    自動車の種別
-                                    <div class="input-control text full-size">
-                                        <input type="text" value="普通">
-                                    </div>
-                                </div>
-                                <div class="cell colspan1">
-                                    用途
-                                    <div class="input-control text full-size">
-                                        <input type="text" value="貨物">
-                                    </div>
-                                </div>
-                                <div class="cell colspan2">
-                                    自家用・事業用の別
-                                    <div class="input-control text full-size">
-                                        <input type="text" value="事業用">
-                                    </div>
-                                </div>
-                                <div class="cell colspan1">
-                                    車体の形状
-                                    <div class="input-control text full-size">
-                                        <input type="text" value="バン">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row cells12">
-                                <div class="cell colspan2">
-                                    車名
-                                    <div class="input-control text full-size">
-                                        <input type="text" value="日野">
-                                    </div>
-                                </div>
-                                <div class="cell colspan2">
-                                    型式
-                                    <div class="input-control text full-size">
-                                        <input type="text" value="PK-FR1EXWG">
-                                    </div>
-                                </div>
-                                <div class="cell colspan1">
-                                    乗車定員（人）
-                                    <div class="input-control text full-size">
-                                        <input type="text" style="width:100px; text-align: right;" value="2">
-                                    </div>
-                                </div>
-                                <div class="cell colspan2">
-                                    最大積載量（kg）
-                                    <div class="input-control text full-size">
-                                        <input type="text" style="text-align: right;" value="11,500">
-                                    </div>
-                                </div>
-                                <div class="cell colspan2">
-                                    車両重量（kg）
-                                    <div class="input-control text full-size">
-                                        <input type="text" style="text-align: right;" value="11,380">
-                                    </div>
-                                </div>
-                                <div class="cell colspan2">
-                                    車両総重量（kg）
-                                    <div class="input-control text full-size">
-                                        <input type="text" style="width:100px; text-align: right;" value="22,990">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row cells12">
-                                <div class="cell colspan2">
-                                    車体番号
-                                    <div class="input-control text full-size" style="width:90px;">
-                                        <input type="text" value="FR1EXW-10485">
-                                    </div>
-                                </div>
-                                <div class="cell colspan1">
-                                    長さ（cm）
-                                    <div class="input-control text full-size" style="width:40px;">
-                                        <input type="text" style="text-align: right;" value="1,196">
-                                    </div>
-                                </div>
-                                <div class="cell colspan1">
-                                    幅（cm）
-                                    <div class="input-control text full-size" style="width:40px;">
-                                        <input type="text" style="text-align: right;" value="294">
-                                    </div>
-                                </div>
-                                <div class="cell colspan1">
-                                    高さ（cm）
-                                    <div class="input-control text full-size" style="width:40px;">
-                                        <input type="text" style="text-align: right;" value="376">
-                                    </div>
-                                </div>
-                              </div>  
-                              <div class="row cells12">
-                                <div class="cell colspan2">
-                                    前前軸重（kg）
-                                    <div class="input-control text full-size" style="width:40px;">
-                                        <input type="text" style="text-align: right;"value="5,020">
-                                    </div>
-                                </div>
-                                <div class="cell colspan2">
-                                    前後軸重（kg）
-                                    <div class="input-control text full-size" style="width:40px;">
-                                        <input type="text" style="text-align: right;"value="">
-                                    </div>
-                                </div>
-                                <div class="cell colspan2">
-                                    後前軸重（kg）
-                                    <div class="input-control text full-size" style="width:40px;">
-                                        <input type="text" style="text-align: right;"value="3,730">
-                                    </div>
-                                </div>
-                                <div class="cell colspan2">
-                                    後後軸重（kg）
-                                    <div class="input-control text full-size" style="width:40px;">
-                                        <input type="text" style="text-align: right;"value="2,630">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row cells12">
-                                
-                                <div class="cell colspan2">
-                                    原動機の型式
-                                    <div class="input-control text full-size">
-                                        <input type="text" value="E13C">
-                                    </div>
-                                </div>
-                                <div class="cell colspan3">
-                                    総排気量または定格出力（kw）
-                                    <div class="input-control text full-size">
-                                        <input type="text" style="text-align: right;" value="12.91">
-                                    </div>
-                                </div>
-                                <div class="cell colspan1">
-                                    燃料の種類
-                                    <div class="input-control text full-size">
-                                        <input type="text" value="軽油">
-                                    </div>
-                                </div>
-                                <div class="cell colspan1">
-                                    型式指定番号
-                                    <div class="input-control text full-size">
-                                        <input type="text" value="">
-                                    </div>
-                                </div>
-                                <div class="cell colspan1">
-                                    類別指定番号
-                                    <div class="input-control text full-size">
-                                        <input type="text" value="">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row cells12">
-                                <div class="cell colspan2">
-                                    所有者の氏名又は名称
-                                    <div class="input-control text full-size">
-                                        <input type="text" value="株式会社 ケーアールライン">
-                                    </div>
-                                </div>
-                                <div class="cell colspan5">
-                                    所有者の住所
-                                    <div class="input-control text full-size">
-                                        <input type="text" value="神奈川県平塚市広川775−1">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row cells12">
-                                <div class="cell colspan2">
-                                    使用者の氏名又は名称
-                                    <div class="input-control text full-size">
-                                        <input type="text">
-                                    </div>
-                                </div>
-                                <div class="cell colspan5">
-                                    使用者の住所
-                                    <div class="input-control text full-size">
-                                        <input type="text">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row cells12">
-                                <div class="cell colspan4">
-                                    使用の本拠の位置
-                                    <div class="input-control text full-size">
-                                        <input type="text">
-                                    </div>
-                                </div>
-                                <div class="cell colspan2">
-                                    有効期限の満了日
-                                    <div class="input-control text full-size" id="datepicker_yukou">
-                                        <input style="height: 31px;width: 105px; text-align: right;" type="text" readonly="readonly" value="2017/4/26">
-                                        <button class="button" style="height: 31px; margin-right: 33px;" type="button"><span class="mif-calendar"></span></button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row cells12">
-                                <div class="cell colspan12">
-                                    備考
-                                    <div class="input-control textarea full-size">
-                                        <input style="width: 1100px;" type="text">
-                                    </div>
-                                </div>
-                            </div>
+                   <div class="example" data-text="保険情報">
+                        <span>損害賠償責任保険</span>
+                        <div style="float:right">
+                            <button class="button success" style="font-size:11px;width:90px;height:25px;margin-right:5px;">行追加</button>
                         </div>
-                    </div>
-                </div>
+                        <table class="table border bordered" data-auto-width="false" style="font-size:12px; margin-top: 20px;">
+                            <thead>
+                                <tr>
+                                    <td style="width:180px;">加入年月日</td>
+                                    <td style="width:180px;">期限</td>
+                                    <td style="width:250px;">契約先</td>
+                                    <td style="width:180px;"c>保険番号</td>
+                                    <td>月数</td>
+                                    <td>保険書画像</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="text-align: left; padding-right: 5px; padding-left: 5px;">
+                                        <div class="input-control text full-size" id="datepicker_kanyu1">
+                                            <input style="height: 31px;width: 100px; text-align: right;" type="text" readonly="readonly" value="2016/04/26">
+                                            <button class="button" style="height: 31px; margin-right: 10px;" type="button"><span class="mif-calendar"></span></button>
+                                        </div>
+                                    </td>
+                                    <td style="text-align: left; padding-right: 5px; padding-left: 5px;">
+                                        <div class="input-control text full-size" id="datepicker_kigen1">
+                                            <input style="height: 31px;width: 100px; text-align: right;" type="text" readonly="readonly" value="2017/04/26">
+                                            <button class="button" style="height: 31px; margin-right: 10px;" type="button"><span class="mif-calendar"></span></button>
+                                        </div>
+                                    </td>
+                                    <td style="text-align: center;">
+                                        <div class="input-control text" style="width:250px;" data-length="3">
+                                            <input style="text-align: right;" type="text" value="">
+                                        </div>
+                                    </td>
+                                    <td style="text-align: left;">
+                                        <div class="input-control text" style="width:100px;" data-length="3">
+                                            <input style="text-align: right;width:160px;" type="text" value="GL6555411-31">
+                                        </div>
+                                    </td>
+                                    <td style="text-align: left;">
+                                        <div class="input-control text" style="width:40px;" data-length="3">
+                                            <input style="text-align: right;width:40px;" type="text" value="">
+                                        </div>
+                                    </td>
+                                    <td style="text-align: left; padding-right: 5px; padding-left: 5px;">
+                                        <div class="input-control file" data-role="input" style="width:300px;">
+                                            <input type="file" style="width:300px; height:28px;">
+                                            <button class="button success" style="width:90px; height:26px; font-size:10px; margin-left: 50px;" onclick="('')">アップロード</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <span style="margin:0 auto;">
+                            任意保険（
+                            <span style="margin-left:0px;">
+                                <label class="input-control checkbox small-check no-margin">
+                                    <input type="checkbox" class="checkbox">
+                                    <span class="check"></span><span style="font-size:10px;margin-left:3px;">対人</span>
+                                </label>&nbsp;&nbsp;
+                                <label class="input-control checkbox small-check no-margin">
+                                    <input type="checkbox" class="checkbox">
+                                    <span class="check"></span><span style="font-size:10px;margin-left:3px;">対物</span>
+                                </label>）
+                            </span>
+                        </span>
+                       <div style="float:right">
+                           <button class="button success" style="font-size:11px;width:90px;height:25px;margin-right:5px;">行追加</button>
+                       </div>
+                           <table class="table border bordered" data-auto-width="false" style="font-size:12px; margin-top: 0px;">
+                               <thead>
+                                   <tr>
+                                       <td style="width:180px;">加入年月日</td>
+                                       <td style="width:180px;">期限</td>
+                                       <td style="width:250px;">契約先</td>
+                                       <td style="width:180px;">保険番号</td>
+                                       <td>月数</td>
+                                       <td>保険書画像</td>
+                                   </tr>
+                               </thead>
+                               <tbody>
+                                   <tr>
+                                       <td style="text-align: left; padding-right: 5px; padding-left: 5px;">
+                                           <div class="input-control text full-size" id="datepicker_kanyu2">
+                                               <input style="height: 31px;width: 100px; text-align: right;" type="text" readonly="readonly" value="2016/04/26">
+                                               <button class="button" style="height: 31px; margin-right: 10px;" type="button"><span class="mif-calendar"></span></button>
+                                           </div>
+                                       </td>
+                                       <td style="text-align: left; padding-right: 5px; padding-left: 5px;">
+                                           <div class="input-control text full-size" id="datepicker_kigen2">
+                                               <input style="height: 31px;width: 100px; text-align: right;" type="text" readonly="readonly" value="2017/04/26">
+                                               <button class="button" style="height: 31px; margin-right: 10px;" type="button"><span class="mif-calendar"></span></button>
+                                           </div>
+                                       </td>
+                                       <td style="text-align: center;">
+                                           <div class="input-control text" style="width:250px;" data-length="3">
+                                               <input style="text-align: right;" type="text" value="">
+                                           </div>
+                                       </td>
+                                       <td style="text-align: left;">
+                                           <div class="input-control text" style="width:100px;" data-length="3">
+                                               <input style="text-align: right;width:160px;" type="text" value="N123456-11">
+                                           </div>
+                                       </td>
+                                       <td style="text-align: left;">
+                                           <div class="input-control text" style="width:40px;" data-length="3">
+                                               <input style="text-align: right;width:40px;" type="text" value="">
+                                           </div>
+                                       </td>
+                                       <td style="text-align: left; padding-right: 5px; padding-left: 5px;">
+                                           <div class="input-control file" data-role="input" style="width:300px;">
+                                               <input type="file" style="width:300px; height:28px;">
+                                               <button class="button success" style="width:90px; height:26px; font-size:10px; margin-left: 50px;" onclick="('')">アップロード</button>
+                                           </div>
+                                       </td>
+                                   </tr>
+                               </tbody>
+                           </table>
+                       </div>
+
+                       <div class="example" data-text="車検証情報">
+                           <div class="grid" style="font-size:13px;">
+                               <div class="row cells12">
+                                   <div class="cell colspan2">
+                                       登録番号
+                                       <div class="input-control text full-size" style="width:90px;">
+                                           <input type="text" value="湘南 130 あ 4666">
+                                       </div>
+                                   </div>
+                                   <div class="cell colspan2">
+                                       登録年月日
+                                       <div class="input-control text full-size" id="datepicker_touroku">
+                                           <input style="height: 31px; width: 105px;text-align: right;" type="text" readonly="readonly" value="2016/03/24">
+                                           <button class="button" style="height: 31px; margin-right: 35px;" type="button"><span class="mif-calendar"></span></button>
+                                       </div>
+                                   </div>
+                                   <div class="cell colspan1">
+                                       初度登録年月
+                                       <div class="input-control text full-size">
+                                           <input type="text" value="2016/03" style="text-align: right;">
+                                       </div>
+                                   </div>
+                                   <div class="cell colspan1">
+                                       自動車の種別
+                                       <div class="input-control text full-size">
+                                           <input type="text" value="普通">
+                                       </div>
+                                   </div>
+                                   <div class="cell colspan1">
+                                       用途
+                                       <div class="input-control text full-size">
+                                           <input type="text" value="貨物">
+                                       </div>
+                                   </div>
+                                   <div class="cell colspan2">
+                                       自家用・事業用の別
+                                       <div class="input-control text full-size">
+                                           <input type="text" value="事業用">
+                                       </div>
+                                   </div>
+                                   <div class="cell colspan1">
+                                       車体の形状
+                                       <div class="input-control text full-size">
+                                           <input type="text" value="バン">
+                                       </div>
+                                   </div>
+                               </div>
+                               <div class="row cells12">
+                                   <div class="cell colspan2">
+                                       車名
+                                       <div class="input-control text full-size">
+                                           <input type="text" value="日野">
+                                       </div>
+                                   </div>
+                                   <div class="cell colspan2">
+                                       型式
+                                       <div class="input-control text full-size">
+                                           <input type="text" value="PK-FR1EXWG">
+                                       </div>
+                                   </div>
+                                   <div class="cell colspan1">
+                                       乗車定員（人）
+                                       <div class="input-control text full-size">
+                                           <input type="text" style="width:100px; text-align: right;" value="2">
+                                       </div>
+                                   </div>
+                                   <div class="cell colspan1" style="width:200px;">
+                                       最大積載量（kg）
+                                       <div class="input-control text full-size">
+                                           <input type="text" style="text-align: right;width:110px;" value="11,500">
+                                       </div>
+                                   </div>
+                                   <div class="cell colspan1" style="width:200px;">
+                                       車両重量（kg）
+                                       <div class="input-control text full-size">
+                                           <input type="text" style="text-align: right;width:110px;" value="11,380">
+                                       </div>
+                                   </div>
+                                   <div class="cell colspan1" style="width:200px;">
+                                       車両総重量（kg）
+                                       <div class="input-control text full-size">
+                                           <input type="text" style="width:120px; text-align: right;" value="22,990">
+                                       </div>
+                                   </div>
+                               </div>
+                               <div class="row cells12">
+                                   <div class="cell colspan2">
+                                       車体番号
+                                       <div class="input-control text full-size" style="width:90px;">
+                                           <input type="text" value="FR1EXW-10485">
+                                       </div>
+                                   </div>
+                                   <div class="cell colspan1">
+                                       長さ（cm）
+                                       <div class="input-control text full-size" style="width:80px;">
+                                           <input type="text" style="text-align: right;" value="1,196">
+                                       </div>
+                                   </div>
+                                   <div class="cell colspan1">
+                                       幅（cm）
+                                       <div class="input-control text full-size" style="width:80px;">
+                                           <input type="text" style="text-align: right;" value="294">
+                                       </div>
+                                   </div>
+                                   <div class="cell colspan1">
+                                       高さ（cm）
+                                       <div class="input-control text full-size" style="width:80px;">
+                                           <input type="text" style="text-align: right;" value="376">
+                                       </div>
+                                   </div>
+                                   <div class="cell colspan1">
+                                       前前軸重（kg）
+                                       <div class="input-control text full-size" style="width:80px;">
+                                           <input type="text" style="text-align: right;" value="5,020">
+                                       </div>
+                                   </div>
+                                   <div class="cell colspan1">
+                                       前後軸重（kg）
+                                       <div class="input-control text full-size" style="width:80px;">
+                                           <input type="text" style="text-align: right;" value="">
+                                       </div>
+                                   </div>
+                                   <div class="cell colspan1">
+                                       後前軸重（kg）
+                                       <div class="input-control text full-size" style="width:80px;">
+                                           <input type="text" style="text-align: right;" value="3,730">
+                                       </div>
+                                   </div>
+                                   <div class="cell colspan1">
+                                       後後軸重（kg）
+                                       <div class="input-control text full-size" style="width:80px;">
+                                           <input type="text" style="text-align: right;" value="2,630">
+                                       </div>
+                                   </div>
+                               </div>
+                               <div class="row cells12">
+
+                                   <div class="cell colspan2">
+                                       原動機の型式
+                                       <div class="input-control text full-size">
+                                           <input type="text" value="E13C">
+                                       </div>
+                                   </div>
+                                   <div class="cell colspan1" style="width:100px;">
+                                       総排気量（ℓ）
+                                       <div class="input-control text full-size">
+                                           <input type="text" style="text-align: right;width:100px;" value="12.91">
+                                       </div>
+                                   </div>
+                                   <div class="cell colspan1">
+                                       燃料の種類
+                                       <div class="input-control text full-size">
+                                           <input type="text" value="軽油">
+                                       </div>
+                                   </div>
+                                   <div class="cell colspan1" style="width:120px;">
+                                       定格出力（kw）
+                                       <div class="input-control text full-size">
+                                           <input type="text" style="width:120px;" value="">
+                                       </div>
+                                   </div>
+                                   <div class="cell colspan2">
+                                       型式指定番号及び類別区分番号
+                                       <div class="input-control text full-size">
+                                           <input type="text" value="">
+                                       </div>
+                                   </div>
+                               </div>
+                               <div class="row cells12">
+                                   <div class="cell colspan2">
+                                       所有者の氏名又は名称
+                                       <div class="input-control text full-size">
+                                           <input type="text" value="株式会社 ケーアールライン">
+                                       </div>
+                                   </div>
+                                   <div class="cell colspan5">
+                                       所有者の住所
+                                       <div class="input-control text full-size">
+                                           <input type="text" value="神奈川県平塚市広川775−1">
+                                       </div>
+                                   </div>
+                               </div>
+                               <div class="row cells12">
+                                   <div class="cell colspan2">
+                                       使用者の氏名又は名称
+                                       <div class="input-control text full-size">
+                                           <input type="text">
+                                       </div>
+                                   </div>
+                                   <div class="cell colspan5">
+                                       使用者の住所
+                                       <div class="input-control text full-size">
+                                           <input type="text">
+                                       </div>
+                                   </div>
+                               </div>
+                               <div class="row cells12">
+                                   <div class="cell colspan4">
+                                       使用の本拠の位置
+                                       <div class="input-control text full-size">
+                                           <input type="text">
+                                       </div>
+                                   </div>
+                                   <div class="cell colspan2">
+                                       有効期限の満了日
+                                       <div class="input-control text full-size" id="datepicker_yukou">
+                                           <input style="height: 31px;width: 105px; text-align: right;" type="text" readonly="readonly" value="2017/04/26">
+                                           <button class="button" style="height: 31px; margin-right: 35px;" type="button"><span class="mif-calendar"></span></button>
+                                       </div>
+                                   </div>
+                               </div>
+                               <div class="row cells12">
+                                   <div class="cell colspan12">
+                                       備考
+                                       <div class="input-control textarea full-size">
+                                           <input style="width: 1100px;" type="text">
+                                       </div>
+                                   </div>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
             </div>
         </div>
     </div>
