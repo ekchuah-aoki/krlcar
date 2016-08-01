@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -23,7 +23,7 @@
     
     <style>
         html, body {
-            height: 120%;
+
         }
         body {
             font-size:10pt;
@@ -31,7 +31,6 @@
         .page-content {
             padding-top: 3.125rem;
             min-height: 100%;
-            height: 100%;
         }
         .table .input-control.checkbox {
             line-height: 1;
@@ -52,10 +51,12 @@
     </style>
 </head>
 <body>
-   <div id="Menu_load"></div>
+
+    <div id="Menu_load"></div>
+
     <div class="page-content">
         <div class="flex-grid no-responsive-future" style="height: 100%;">
-            <div class="row" style="height: 120%">
+            <div class="row">
                 <div class="cell auto-size padding20 bg-white" id="cell-content">
                     <h1 class="text-light">最新のお知らせ<span class="mif-notification place-right"></span></h1>
                     <hr class="thin bg-grayLighter">
@@ -63,7 +64,6 @@
                         <div class="list-group">
                             <span class="list-group-toggle">未締め・未請求データあり</span>
                             <div class="list-group-content" style="display: block;">
-                            
                                 <a class="list op-yellow" onclick="window.open('sales_month.html')" href="#">
                                     <span class="list-content">
                                         <span class="list-title"><span class="place-right icon-flag-2 fg-red smaller"></span>未締めデータあります</span>
@@ -71,7 +71,6 @@
                                         <span class="list-remark">締日：2016/2/28</span>
                                     </span>
                                 </a>
-                                
                                 <a class="list op-yellow" onclick="window.open('bill_close.html')" href="#">
                                     <span class="list-content">
                                         <span class="list-title"><span class="place-right icon-flag-2 fg-red smaller"></span>未請求データあります</span>
@@ -79,13 +78,12 @@
                                         <span class="list-remark">締日：2016/2/28</span>
                                     </span>
                                 </a>
-                                
                             </div>
                         </div>
+
                         <div class="list-group">
                             <span class="list-group-toggle">拘束時間・運転時間</span>
                             <div class="list-group-content" style="display: block;">
-                            
                                 <a class="list op-yellow" onclick="window.open('operationControl_bindingWorkHour.html')" href="#">
                                     <span class="list-content">
                                         <span class="list-title"><span class="place-right icon-flag-2 fg-yellow smaller"></span>本月の拘束時間リミットに近づいています</span>
@@ -93,7 +91,6 @@
                                         <span class="list-remark">2016年1月</span>
                                     </span>
                                 </a>
-                                
                                 <a class="list op-yellow" onclick="window.open('operationControl_bindingWorkHour.html')" href="#">
                                     <span class="list-content">
                                         <span class="list-title"><span class="place-right icon-flag-2 fg-yellow smaller"></span>一日の運転時間が12時間をオーバーしています、翌日6時間以内での運転時間調整してください。</span>
@@ -101,7 +98,6 @@
                                         <span class="list-remark">2016/02/02 運転時間：13時間  </span>
                                     </span>
                                 </a>
-                                
                                 <a class="list op-yellow" onclick="window.open('operationControl_bindingWorkHour.html')" href="#">
                                     <span class="list-content">
                                         <span class="list-title"><span class="place-right icon-flag-2 fg-yellow smaller"></span>２週間平均運転時間数(44)に近づいています</span>
@@ -109,43 +105,38 @@
                                         <span class="list-remark">開始：2016/01/01 終了：2016/01/12</span>
                                     </span>
                                 </a>
-                                
                             </div>
                         </div>
+
                         <div class="list-group">
                             <span class="list-group-toggle">3カ月点検</span>
                             <div class="list-group-content" style="display: block;">
-                            
                                 <a class="list op-yellow" onclick="window.open('master_truck.html')" href="#">
                                     <span class="list-content">
                                         <span class="list-title"><span class="place-right icon-flag-2 fg-yellow smaller"></span>3カ月点検時期が近づいています</span>
                                         <span class="list-subtitle"><span class="place-right"></span>車番：5347</span>
-                                        <span class="list-remark">前回点検日付：2015/09/09  </span>
+                                        <span class="list-remark">前回点検日付：2015/09/09</span>
                                     </span>
                                 </a>
-                                
                             </div>
                         </div>
                         
                         <div class="list-group">
                             <span class="list-group-toggle">ETCカード有効期限</span>
                             <div class="list-group-content" style="display: block;">
-                            
-                                <a class="list op-yellow" onclick="window.open('master_truck.html')" href="#">
+                                <a class="list op-yellow" onclick="window.open('master_truck_edit.html')" href="#">
                                     <span class="list-content">
                                         <span class="list-title"><span class="place-right icon-flag-2 fg-yellow smaller"></span>ETCカード有効期限が近づいています</span>
-                                        <span class="list-subtitle"><span class="place-right"></span>車番：5346 ETCカードNO：1111-1111-1111-1111</span>
+                                        <span class="list-subtitle"><span class="place-right"></span>車番：5346 ETCカードNO：1234-1234-1234-1234</span>
                                         <span class="list-remark">平成29年9月1日まで有効</span>
                                     </span>
                                 </a>
-                                
                             </div>
                         </div>
                         
                         <div class="list-group">
                             <span class="list-group-toggle">オイル交換</span>
                             <div class="list-group-content" style="display: block;">
-                            
                                 <a class="list op-yellow" onclick="window.open('operationControl_car_fuelCost.html')" href="#">
                                     <span class="list-content">
                                         <span class="list-title"><span class="place-right icon-flag-2 fg-red smaller"></span>オイル交換期限が近づいています</span>
@@ -153,14 +144,12 @@
                                         <span class="list-remark">大型</span>
                                     </span>
                                 </a>
-                                
                             </div>
                         </div>
 
                         <div class="list-group">
                             <span class="list-group-toggle">免許更新</span>
                             <div class="list-group-content" style="display: block;">
-                            
                                 <a class="list op-yellow" onclick="window.open('master_user.html')" href="#">
                                     <span class="list-content">
                                         <span class="list-title"><span class="place-right icon-flag-2 fg-red smaller"></span>免許更新期限が近づいています</span>
@@ -168,28 +157,25 @@
                                         <span class="list-remark">平成28年4月1日まで有効</span>
                                     </span>
                                 </a>
-                                
                             </div>
                         </div>
+
                         <div class="list-group">
                             <span class="list-group-toggle">シビヤ点検(1カ月点検)</span>
                             <div class="list-group-content" style="display: block;">
-                            
                                 <a class="list op-yellow" onclick="window.open('master_truck.html')" href="#">
                                     <span class="list-content">
                                         <span class="list-title"><span class="place-right icon-flag-2 fg-yellow smaller"></span>1カ月点検時期が近づいています</span>
                                         <span class="list-subtitle"><span class="place-right"></span>車番：5348</span>
-                                        <span class="list-remark">前回点検日付：2015/09/09  </span>
+                                        <span class="list-remark">前回点検日付：2015/09/09</span>
                                     </span>
                                 </a>
-                                
                             </div>
                         </div>
 
                         <div class="list-group">
                             <span class="list-group-toggle">車検</span>
                             <div class="list-group-content" style="display: block;">
-                            
                                 <a class="list op-yellow" onclick="window.open('master_truck.html')" href="#">
                                     <span class="list-content">
                                         <span class="list-title"><span class="place-right icon-flag-2 fg-yellow smaller"></span>車検時期が近づいています</span>
@@ -197,37 +183,32 @@
                                         <span class="list-remark">平成29年4月1日まで有効</span>
                                     </span>
                                 </a>
-                                
                             </div>
                         </div>
 
                         <div class="list-group">
                             <span class="list-group-toggle">タイヤ交換</span>
                             <div class="list-group-content" style="display: block;">
-                            
                                 <a class="list op-yellow" onclick="window.open('master_truck.html')" href="#">
                                     <span class="list-content">
                                         <span class="list-title"><span class="place-right icon-flag-2 fg-yellow smaller"></span>タイヤ交換時期が近づいています</span>
                                         <span class="list-subtitle"><span class="place-right"></span>車番：5348</span>
-                                        <span class="list-remark">前回交換日付：2016/01/03  </span>
+                                        <span class="list-remark">前回交換日付：2016/01/03</span>
                                     </span>
                                 </a>
-                                
                             </div>
                         </div>
 
                         <div class="list-group">
                             <span class="list-group-toggle">タイヤローテーション</span>
                             <div class="list-group-content" style="display: block;">
-                            
                                 <a class="list op-yellow" onclick="window.open('master_truck.html')" href="#">
                                     <span class="list-content">
                                         <span class="list-title"><span class="place-right icon-flag-2 fg-yellow smaller"></span>タイヤローテーション時期が近づいています</span>
                                         <span class="list-subtitle"><span class="place-right"></span>車番：5348</span>
-                                        <span class="list-remark">前回ローテーション日付：2014/07/07  </span>
+                                        <span class="list-remark">前回ローテーション日付：2014/07/07</span>
                                     </span>
                                 </a>
-                                
                             </div>
                         </div>
                     </div>
