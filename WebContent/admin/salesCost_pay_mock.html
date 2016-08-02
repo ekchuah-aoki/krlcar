@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -79,9 +79,11 @@
         }
     </script>
 </head>
-<body class="bg-steel">
-    <!-- ヘッダー固定 -->
-   <div id="Menu_load"></div>
+
+<body>
+
+    <div id="Menu_load"></div>
+
     <div class="page-content">
         <div class="flex-grid no-responsive-future" style="height: 100%;">
             <div class="row" style="height: 100%">
@@ -120,18 +122,18 @@
 		                                <option>12</option>
 		                            </select>
 		                         </div>
-		                            月
+		                         月
 		                    </div>
 							<div class="right">
-			                    <button class="button primary" style="width:100px;">検索</button>
+			                    <button class="button primary" style="width:100px;margin-right:5px;">検索</button>
 		                    </div>
 		                </div>
 		            </div>
                     <hr class="thin bg-grayLighter">
-				<div class="x_data_area">
-				     <!-- ロック部分 -->
-				     	<div class="lock_box">
-				       	 <table class="dataTable border bordered width300 data" style="margin:0px;"data-auto-width="false">
+                    <div class="x_data_area" style="width:1230px;">
+
+				    <div class="lock_box" style="width:29%;">
+				       	 <table class="dataTable border bordered data" style="margin:0px; width:357px;"data-auto-width="false">
 				               <colgroup>
 				               	  <col style="width: 30%;">
 				               	  <col style="width: 70%;">
@@ -139,7 +141,7 @@
 				               <thead>
 				               <tr style="height: 90px;">
 							       <td class="sortable-column" rowspan="2"><p class="yoko">委託先コード</p></td>
-				                   <td class="sortable-column" rowspan="2"><p class="yoko2">委託先名(略)</p></td>
+				                   <td class="sortable-column" rowspan="2"><p class="yoko2">委託先略名</p></td>
 				               </tr>
 				               </thead>
 				               <tbody>
@@ -153,9 +155,8 @@
 						</tfoot>
 				       	</table>
 				       </div>
-				       <!-- /ロック部分 -->
-				       <!-- 横スクロール部分 -->
-				       <div class="x_scroll_box">
+
+				       <div class="x_scroll_box" style="width: 71%;">
 				           <table class="dataTable border bordered  data width2500"  style="margin:0px;">
 				               <tbody>
 				                 <thead>
@@ -206,19 +207,19 @@
 				                </tbody>
 						        <tfoot>
 								    <tr style="height: 40px;">
-									    <td style="text-align:right;">1,000,000</td><td style="text-align:right;">14,000,000</td><td style="text-align:right;">4,000,000</td>
-										<td style="text-align:right;">1,000,000</td><td style="text-align:right;">14,000,000</td><td style="text-align:right;">4,000,000</td>
-										<td style="text-align:right;">1,000,000</td><td style="text-align:right;">14,000,000</td><td style="text-align:right;">4,000,000</td>
-										<td style="text-align:right;">1,000,000</td><td style="text-align:right;">14,000,000</td><td style="text-align:right;">4,000,000</td>
-										<td style="text-align:right;">1,000,000</td><td style="text-align:right;">14,000,000</td><td style="text-align:right;">4,000,000</td>
-										<td style="text-align:right;">1,000,000</td><td style="text-align:right;">14,000,000</td><td style="text-align:right;">4,000,000</td>
-										<td style="text-align:right;">1,000,000</td><td style="text-align:right;">14,000,000</td><td style="text-align:right;">4,000,000</td>
-										<td style="text-align:right;">1,000,000</td><td style="text-align:right;">14,000,000</td><td style="text-align:right;">4,000,000</td>
-										<td style="text-align:right;">1,000,000</td><td style="text-align:right;">14,000,000</td><td style="text-align:right;">4,000,000</td>
-										<td style="text-align:right;">1,000,000</td><td style="text-align:right;">14,000,000</td><td style="text-align:right;">4,000,000</td>
-										<td style="text-align:right;">1,000,000</td><td style="text-align:right;">14,000,000</td><td style="text-align:right;">4,000,000</td>
-										<td style="text-align:right;">1,000,000</td><td style="text-align:right;">14,000,000</td><td style="text-align:right;">4,000,000</td>
-									    <td style="text-align:right;">12,000,000</td><td style="text-align:right;">24,360,000</td><td style="text-align:right;">12,360,000</td>
+									    <td style="text-align:right; padding-right: 5px;">1,000,000</td><td style="text-align:right; padding-right: 5px;">14,000,000</td><td style="text-align:right; padding-right: 5px;">4,000,000</td>
+										<td style="text-align:right; padding-right: 5px;">1,000,000</td><td style="text-align:right; padding-right: 5px;">14,000,000</td><td style="text-align:right; padding-right: 5px;">4,000,000</td>
+										<td style="text-align:right; padding-right: 5px;">1,000,000</td><td style="text-align:right; padding-right: 5px;">14,000,000</td><td style="text-align:right; padding-right: 5px;">4,000,000</td>
+										<td style="text-align:right; padding-right: 5px;">1,000,000</td><td style="text-align:right; padding-right: 5px;">14,000,000</td><td style="text-align:right; padding-right: 5px;">4,000,000</td>
+										<td style="text-align:right; padding-right: 5px;">1,000,000</td><td style="text-align:right; padding-right: 5px;">14,000,000</td><td style="text-align:right; padding-right: 5px;">4,000,000</td>
+										<td style="text-align:right; padding-right: 5px;">1,000,000</td><td style="text-align:right; padding-right: 5px;">14,000,000</td><td style="text-align:right; padding-right: 5px;">4,000,000</td>
+										<td style="text-align:right; padding-right: 5px;">1,000,000</td><td style="text-align:right; padding-right: 5px;">14,000,000</td><td style="text-align:right; padding-right: 5px;">4,000,000</td>
+										<td style="text-align:right; padding-right: 5px;">1,000,000</td><td style="text-align:right; padding-right: 5px;">14,000,000</td><td style="text-align:right; padding-right: 5px;">4,000,000</td>
+										<td style="text-align:right; padding-right: 5px;">1,000,000</td><td style="text-align:right; padding-right: 5px;">14,000,000</td><td style="text-align:right; padding-right: 5px;">4,000,000</td>
+										<td style="text-align:right; padding-right: 5px;">1,000,000</td><td style="text-align:right; padding-right: 5px;">14,000,000</td><td style="text-align:right; padding-right: 5px;">4,000,000</td>
+										<td style="text-align:right; padding-right: 5px;">1,000,000</td><td style="text-align:right; padding-right: 5px;">14,000,000</td><td style="text-align:right; padding-right: 5px;">4,000,000</td>
+										<td style="text-align:right; padding-right: 5px;">1,000,000</td><td style="text-align:right; padding-right: 5px;">14,000,000</td><td style="text-align:right; padding-right: 5px;">4,000,000</td>
+									    <td style="text-align:right; padding-right: 5px;">12,000,000</td><td style="text-align:right; padding-right: 5px;">24,360,000</td><td style="text-align:right; padding-right: 5px;">12,360,000</td>
 								    </tr>
 							    </tfoot>
 				            </table>
