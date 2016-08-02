@@ -8,14 +8,13 @@ div.x_data_area {
 /* ロック部分 */
 div.lock_box {
   float: left;
-  width: 30%;
-  
+  width: 20%;
 }
 
 /* 横スクロール部分 */
 div.x_scroll_box {
   float: left;
-  width: 70%;
+  width: 80%;
   
   overflow-y: hidden; /* 縦スクロール非表示 */
   overflow-x: scroll; /* 横スクロール */

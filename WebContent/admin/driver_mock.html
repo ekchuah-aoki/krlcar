@@ -9,21 +9,18 @@
     <meta name="author" content="Sergey Pimenov and Metro UI CSS contributors">
 
     <link rel='shortcut icon' type='image/x-icon' href='../favicon.ico' />
-
+    
     <title>株式会社ケー・アールライン</title>
-
+    
     <link href="../css/metro.css" rel="stylesheet">
     <link href="../css/metro-icons.css" rel="stylesheet">
     <link href="../css/metro-responsive.css" rel="stylesheet">
     <link href="../css/driver_mock_table.css" rel="stylesheet">
-
+    
     <script src="../js/jquery-2.1.3.min.js"></script>
     <script src="../js/jquery.dataTables.min.js"></script>
-
     <script src="../js/metro.js"></script>
-
     <script src="../js/Menu.js"></script>
-
     <style>
         html, body {
            height: 100%;
@@ -40,17 +37,6 @@
            line-height: 1;
            min-height: 0;
            height: auto;
-        }
-        p.yoko{
-           text-align:center;
-           width:85px;
-           margin:0px;
-        }
-        p.yoko2{
-           text-align:center;
-           padding:18px;
-           width:150px;
-           margin:0px;
         }
         .dataTable {
            margin: 0;
@@ -86,13 +72,10 @@
     </script>
 </head>
 <body>
-    
-    <!-- ヘッダー固定 -->
     <div id="Menu_load"></div>
-
     <div class="page-content">
-        <div class="flex-grid no-responsive-future" style="height: 100%;">
-             <div class="row" style="height: 100%">
+        <div class="flex-grid no-responsive-future">
+             <div class="row">
                 <div class="cell auto-size padding20 bg-white" id="cell-content" style="width:100%;">
                     <ul class="breadcrumbs" style="padding:0px;">
                         <li><h4>年次ドライバー別実車・空車・総走行距離一覧</h4></li>
@@ -112,23 +95,6 @@
                             </select>
                         </div>
                         年
-                        <div class="input-control select" style="width:50px;">
-                            <select dir="rtl">
-                               <option>01</option>
-                               <option>02</option>
-                               <option>03</option>
-                               <option>04</option>
-                               <option>05</option>
-                               <option>06</option>
-                               <option>07</option>
-                               <option>08</option>
-                               <option>09</option>
-                               <option>10</option>
-                               <option>11</option>
-                               <option>12</option>
-                            </select>
-                        </div>
-                        月
                     </div>
                     <div style="float: right; right;display:inline;">
                          <button class="button primary" style="width:100px; margin:0px 5px 0px 0px">検索</button>
@@ -139,32 +105,32 @@
                     <div class="x_data_area">
                     <div class="lock_box">
                         <table class="dataTable border bordered data" data-auto-width="false">
-                            <colgroup>
-                               <col style="width: 30%;">
-                               <col style="width: 70%;">
-                            </colgroup>
                             <thead>
-                               <tr>
-                                  <td class="sortable-column" rowspan="2"><p style="text-align:center; margin:0px;">社員番号</p></td>
-                                  <td class="sortable-column" rowspan="2"><p style="text-align:center; padding:18px; width:150px; margin:0px;">氏名</p></td>
+                               <tr style="height:80px;">
+                                  <td class="sortable-column" rowspan="2" style="text-align:center;">社員番号</td>
+                                  <td class="sortable-column" rowspan="2" style="text-align:center;">氏名</td>
                                </tr>
                             </thead>
                             <tbody>
                                <tr>
-                                  <td style="text-align: center;">1111</td><td style="text-align: left;">平坂 一郎</td>
+                                  <td style="text-align: right;">0000000001</td>
+                                  <td style="text-align: left;">平坂 一郎</td>
                                </tr>
                                <tr>
-                                  <td style="text-align: center;">2222</td><td style="text-align: left;">安藤 二郎</td>
+                                  <td style="text-align: right;">0000000002</td>
+                                  <td style="text-align: left;">賀川 二郎</td>
                                </tr>
                                <tr>
-                                  <td style="text-align: center;">3333</td><td style="text-align: left;">後藤 三郎</td>
+                                  <td style="text-align: right;">0000000003</td>
+                                  <td style="text-align: left;">平塚 三郎</td>
                                </tr>
                                <tr>
-                                  <td style="text-align: center;">4444</td><td style="text-align: left;">北村 四郎</td>
+                                  <td style="text-align: right;">0000000004</td>
+                                  <td style="text-align: left;">北村 四郎</td>
                                </tr>
                                <tfoot>
                                   <tr>
-                                     <td colspan="2">合計</td>
+                                     <td colspan="2" style="text-align:center;">合計</td>
                                   </tr>
                                </tfoot>
                             </tbody>
@@ -174,61 +140,61 @@
                     <div class="x_scroll_box">
                         <table class="dataTable border bordered  data width2500">
                            <thead>
-                               <tr>
-                                    <td class="sortable-column" colspan="3">2015/01</td>
-                                    <td class="sortable-column" colspan="3">2015/02</td>
-                                    <td class="sortable-column" colspan="3">2015/03</td>
-                                    <td class="sortable-column" colspan="3">2015/04</td>
-                                    <td class="sortable-column" colspan="3">2015/05</td>
-                                    <td class="sortable-column" colspan="3">2015/06</td>
-                                    <td class="sortable-column" colspan="3">2015/07</td>
-                                    <td class="sortable-column" colspan="3">2015/08</td>
-                                    <td class="sortable-column" colspan="3">2015/09</td>
-                                    <td class="sortable-column" colspan="3">2015/10</td>
-                                    <td class="sortable-column" colspan="3">2015/11</td>
-                                    <td class="sortable-column" colspan="3">2015/12</td>
-                                    <td class="sortable-column" colspan="3"><p class="yoko" style="padding:0px 0px 0px 130px;">合計</p></td>
+                               <tr style="height:40px;">
+                                    <td class="sortable-column" colspan="3" style="text-align: center;">2015/01</td>
+                                    <td class="sortable-column" colspan="3" style="text-align: center;">2015/02</td>
+                                    <td class="sortable-column" colspan="3" style="text-align: center;">2015/03</td>
+                                    <td class="sortable-column" colspan="3" style="text-align: center;">2015/04</td>
+                                    <td class="sortable-column" colspan="3" style="text-align: center;">2015/05</td>
+                                    <td class="sortable-column" colspan="3" style="text-align: center;">2015/06</td>
+                                    <td class="sortable-column" colspan="3" style="text-align: center;">2015/07</td>
+                                    <td class="sortable-column" colspan="3" style="text-align: center;">2015/08</td>
+                                    <td class="sortable-column" colspan="3" style="text-align: center;">2015/09</td>
+                                    <td class="sortable-column" colspan="3" style="text-align: center;">2015/10</td>
+                                    <td class="sortable-column" colspan="3" style="text-align: center;">2015/11</td>
+                                    <td class="sortable-column" colspan="3" style="text-align: center;">2015/12</td>
+                                    <td class="sortable-column" colspan="3" style="text-align: center;">合計</td>
                                 </tr>
-                                <tr>
-                                    <td class="sortable-column"><p class="yoko">実車km</p></td>
-                                    <td class="sortable-column"><p class="yoko">空車km</p></td>
-                                    <td class="sortable-column"><p class="yoko">総走行km</p></td>
-                                    <td class="sortable-column"><p class="yoko">実車km</p></td>
-                                    <td class="sortable-column"><p class="yoko">空車km</p></td>
-                                    <td class="sortable-column"><p class="yoko">総走行km</p></td>
-                                    <td class="sortable-column"><p class="yoko">実車km</p></td>
-                                    <td class="sortable-column"><p class="yoko">空車km</p></td>
-                                    <td class="sortable-column"><p class="yoko">総走行km</p></td>
-                                    <td class="sortable-column"><p class="yoko">実車km</p></td>
-                                    <td class="sortable-column"><p class="yoko">空車km</p></td>
-                                    <td class="sortable-column"><p class="yoko">総走行km</p></td>
-                                    <td class="sortable-column"><p class="yoko">実車km</p></td>
-                                    <td class="sortable-column"><p class="yoko">空車km</p></td>
-                                    <td class="sortable-column"><p class="yoko">総走行km</p></td>
-                                    <td class="sortable-column"><p class="yoko">実車km</p></td>
-                                    <td class="sortable-column"><p class="yoko">空車km</p></td>
-                                    <td class="sortable-column"><p class="yoko">総走行km</p></td>
-                                    <td class="sortable-column"><p class="yoko">実車km</p></td>
-                                    <td class="sortable-column"><p class="yoko">空車km</p></td>
-                                    <td class="sortable-column"><p class="yoko">総走行km</p></td>
-                                    <td class="sortable-column"><p class="yoko">実車km</p></td>
-                                    <td class="sortable-column"><p class="yoko">空車km</p></td>
-                                    <td class="sortable-column"><p class="yoko">総走行km</p></td>
-                                    <td class="sortable-column"><p class="yoko">実車km</p></td>
-                                    <td class="sortable-column"><p class="yoko">空車km</p></td>
-                                    <td class="sortable-column"><p class="yoko">総走行km</p></td>
-                                    <td class="sortable-column"><p class="yoko">実車km</p></td>
-                                    <td class="sortable-column"><p class="yoko">空車km</p></td>
-                                    <td class="sortable-column"><p class="yoko">総走行km</p></td>
-                                    <td class="sortable-column"><p class="yoko">実車km</p></td>
-                                    <td class="sortable-column"><p class="yoko">空車km</p></td>
-                                    <td class="sortable-column"><p class="yoko">総走行km</p></td>
-                                    <td class="sortable-column"><p class="yoko">実車km</p></td>
-                                    <td class="sortable-column"><p class="yoko">空車km</p></td>
-                                    <td class="sortable-column"><p class="yoko">総走行km</p></td>
-                                    <td class="sortable-column"><p class="yoko">実車km</p></td>
-                                    <td class="sortable-column"><p class="yoko">空車km</p></td>
-                                    <td class="sortable-column"><p class="yoko">総走行km</p></td>
+                                <tr style="height:40px;">
+                                    <td class="sortable-column" style="text-align: center;">実車km</td>
+                                    <td class="sortable-column" style="text-align: center;">空車km</td>
+                                    <td class="sortable-column" style="text-align: center;">総走行km</td>
+                                    <td class="sortable-column" style="text-align: center;">実車km</td>
+                                    <td class="sortable-column" style="text-align: center;">空車km</td>
+                                    <td class="sortable-column" style="text-align: center;">総走行km</td>
+                                    <td class="sortable-column" style="text-align: center;">実車km</td>
+                                    <td class="sortable-column" style="text-align: center;">空車km</td>
+                                    <td class="sortable-column" style="text-align: center;">総走行km</td>
+                                    <td class="sortable-column" style="text-align: center;">実車km</td>
+                                    <td class="sortable-column" style="text-align: center;">空車km</td>
+                                    <td class="sortable-column" style="text-align: center;">総走行km</td>
+                                    <td class="sortable-column" style="text-align: center;">実車km</td>
+                                    <td class="sortable-column" style="text-align: center;">空車km</td>
+                                    <td class="sortable-column" style="text-align: center;">総走行km</td>
+                                    <td class="sortable-column" style="text-align: center;">実車km</td>
+                                    <td class="sortable-column" style="text-align: center;">空車km</td>
+                                    <td class="sortable-column" style="text-align: center;">総走行km</td>
+                                    <td class="sortable-column" style="text-align: center;">実車km</td>
+                                    <td class="sortable-column" style="text-align: center;">空車km</td>
+                                    <td class="sortable-column" style="text-align: center;">総走行km</td>
+                                    <td class="sortable-column" style="text-align: center;">実車km</td>
+                                    <td class="sortable-column" style="text-align: center;">空車km</td>
+                                    <td class="sortable-column" style="text-align: center;">総走行km</td>
+                                    <td class="sortable-column" style="text-align: center;">実車km</td>
+                                    <td class="sortable-column" style="text-align: center;">空車km</td>
+                                    <td class="sortable-column" style="text-align: center;">総走行km</td>
+                                    <td class="sortable-column" style="text-align: center;">実車km</td>
+                                    <td class="sortable-column" style="text-align: center;">空車km</td>
+                                    <td class="sortable-column" style="text-align: center;">総走行km</td>
+                                    <td class="sortable-column" style="text-align: center;">実車km</td>
+                                    <td class="sortable-column" style="text-align: center;">空車km</td>
+                                    <td class="sortable-column" style="text-align: center;">総走行km</td>
+                                    <td class="sortable-column" style="text-align: center;">実車km</td>
+                                    <td class="sortable-column" style="text-align: center;">空車km</td>
+                                    <td class="sortable-column" style="text-align: center;">総走行km</td>
+                                    <td class="sortable-column" style="text-align: center;">実車km</td>
+                                    <td class="sortable-column" style="text-align: center;">空車km</td>
+                                    <td class="sortable-column" style="text-align: center;">総走行km</td>
                                 </tr>
                               </thead>
                               <tbody  style="text-align:right;">
