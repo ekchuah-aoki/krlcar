@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -89,10 +89,9 @@
     </script>
     
 </head>
-<body class="bg-steel">
+<body>
     
-    <!-- ヘッダー固定 -->
-   <div id="Menu_load"></div>
+    <div id="Menu_load"></div>
 
     <div class="page-content">
         <div class="flex-grid no-responsive-future" style="height: 100%;">
@@ -102,15 +101,13 @@
 					    <li><h4>車両・委託先別売上経費一覧</h4></li>
 					</ul>
 		            <div class="grid">
-		            
                     <hr class="thin bg-grayLighter">
-		            
 		                <div class="hidden">
 							<div class="left">
 		                        <div class="input-control select" style="width:60px;">
 		                            <select dir="rtl">
-		                            	<option>2015</option>
-		                                <option>2016</option>
+                                        <option selected>2015</option>
+                                        <option>2016</option>
 		                                <option>2017</option>
 		                                <option>2018</option>
 		                                <option>2019</option>
@@ -120,13 +117,13 @@
 		                        年
 								<div class="input-control select" style="width:50px;">
 		                            <select dir="rtl">
-		                                <option>01</option>
+                                        <option selected>01</optionselected>
 		                                <option>02</option>
 		                                <option>03</option>
 		                                <option>04</option>
 		                                <option>05</option>
 		                                <option>06</option>
-		                                <option>07</option>
+                                        <option>07</option>
 		                                <option>08</option>
 		                                <option>09</option>
 		                                <option>10</option>
@@ -134,47 +131,44 @@
 		                                <option>12</option>
 		                            </select>
 		                         </div>
-		                            月
+		                         月
 		                    </div>
 							<div class="right">
-			                    <button class="button primary"  style="width:100px;">検索</button>
+			                    <button class="button primary" style="width:100px;margin-right:10px;">検索</button>
 		                    </div>
 		                </div>
 		            </div>
                     <hr class="thin bg-grayLighter">
 					
-                    <div class="x_data_area">
-				     <!-- ロック部分 -->
-				     	<div class="lock_box">
-				       	 <table class="dataTable border bordered width300 data" style="margin:0px;"data-auto-width="false">
-				             <thead>
-				               <tr style="height: 90px;">
-								   <td class="sortable-column" style="width:160px;"><p class="yoko3">車番/委託先コード</p></td>
-				                   <td class="sortable-column"><p class="yoko3">車種/委託先名</p></td>
-				               </tr>
-				               </thead>
-				               <tbody>
-				               	<tr style="height: 30px;">
-				                    <td style="text-align: right;">5346</td>
-				                    <td>大型8t</td>
-								</tr>
-				                <tr style="height: 30px;">
-				                   	<td style="text-align: right;">5906</td>
-				                    <td>クレベ運送</td>
-								</tr>
-				           	</tbody>
-				           	<tfoot>
-							<tr style="height: 40px;"><td colspan="2">合計</td>
-						</tfoot>
-				       	</table>
-				       </div>
-				       
-				       <!-- 横スクロール部分 -->
-				       <div class="x_scroll_box">
+                    <div class="x_data_area" style="width:1230px;">
+				        <div class="lock_box">
+				       	    <table class="dataTable border bordered width300 data" style="margin:0px;"data-auto-width="false">
+				                <thead>
+				                    <tr style="height: 90px;">
+								        <td class="sortable-column" style="width:150px;"><p class="yoko3">車番/委託先コード</p></td>
+				                        <td class="sortable-column"><p class="yoko3">車種/委託先名</p></td>
+				                    </tr>
+				                </thead>
+                                <tbody>
+                                    <tr style="height: 30px;">
+                                        <td style="text-align: right;">5346</td>
+                                        <td>大型8t</td>
+                                    </tr>
+                                    <tr style="height: 30px;">
+                                        <td style="text-align: right;">5906</td>
+                                        <td>クレベ運送</td>
+                                    </tr>
+                                </tbody>
+				           	    <tfoot>
+							        <tr style="height: 40px;"><td colspan="2">合計</td>
+						        </tfoot>
+				       	    </table>
+                        </div>
+
+                        <div class="x_scroll_box">
 				           <table class="dataTable border bordered  data width2500"  style="margin:0px;">
-				               <tbody>
 				               <thead>
-				               	<tr style="height: 48px;">
+				               	    <tr style="height: 48px;">
 				                   		<td class="sortable-column" colspan="8" style="text-align:center;">2015/01</td>
 				                           <td class="sortable-column" colspan="8" style="text-align:center;">2015/02</td>
 				                           <td class="sortable-column" colspan="8" style="text-align:center;">2015/03</td>
@@ -326,29 +320,29 @@
 					                      <td>6,240,000</td><td>6,240,000</td><td>ー</td><td>540,000</td><td>5,700,000</td><td>2,220</td>
 				                      </tr>
 					       </tbody>
-					         <tfoot>
+					       <tfoot>
 							   <tr style="height: 40px;">
-			                        <td style="text-align: right;">1,170,000</td><td style="text-align: right;">970,000</td><td style="text-align: right;">200,000</td><td style="text-align: right;">95,000</td><td style="text-align: right;">1,075,000</td><td style="text-align: right;">385</td><td style="text-align: right;">5,060</td><td style="text-align: right;">1,000</td>
-			                       	<td style="text-align: right;">1,170,000</td><td style="text-align: right;">970,000</td><td style="text-align: right;">200,000</td><td style="text-align: right;">95,000</td><td style="text-align: right;">1,075,000</td><td style="text-align: right;">385</td><td style="text-align: right;">5,060</td><td style="text-align: right;">1,000</td>
-			                       	<td style="text-align: right;">1,170,000</td><td style="text-align: right;">970,000</td><td style="text-align: right;">200,000</td><td style="text-align: right;">95,000</td><td style="text-align: right;">1,075,000</td><td style="text-align: right;">385</td><td style="text-align: right;">5,060</td><td style="text-align: right;">1,000</td>
-			                       	<td style="text-align: right;">1,170,000</td><td style="text-align: right;">970,000</td><td style="text-align: right;">200,000</td><td style="text-align: right;">95,000</td><td style="text-align: right;">1,075,000</td><td style="text-align: right;">385</td><td style="text-align: right;">5,060</td><td style="text-align: right;">1,000</td>
-			                       	<td style="text-align: right;">1,170,000</td><td style="text-align: right;">970,000</td><td style="text-align: right;">200,000</td><td style="text-align: right;">95,000</td><td style="text-align: right;">1,075,000</td><td style="text-align: right;">385</td><td style="text-align: right;">5,060</td><td style="text-align: right;">1,000</td>
-			                       	<td style="text-align: right;">1,170,000</td><td style="text-align: right;">970,000</td><td style="text-align: right;">200,000</td><td style="text-align: right;">95,000</td><td style="text-align: right;">1,075,000</td><td style="text-align: right;">385</td><td style="text-align: right;">5,060</td><td style="text-align: right;">1,000</td>
-			                       	<td style="text-align: right;">1,170,000</td><td style="text-align: right;">970,000</td><td style="text-align: right;">200,000</td><td style="text-align: right;">95,000</td><td style="text-align: right;">1,075,000</td><td style="text-align: right;">385</td><td style="text-align: right;">5,060</td><td style="text-align: right;">1,000</td>
-			                       	<td style="text-align: right;">1,170,000</td><td style="text-align: right;">970,000</td><td style="text-align: right;">200,000</td><td style="text-align: right;">95,000</td><td style="text-align: right;">1,075,000</td><td style="text-align: right;">385</td><td style="text-align: right;">5,060</td><td style="text-align: right;">1,000</td>
-			                       	<td style="text-align: right;">1,170,000</td><td style="text-align: right;">970,000</td><td style="text-align: right;">200,000</td><td style="text-align: right;">95,000</td><td style="text-align: right;">1,075,000</td><td style="text-align: right;">385</td><td style="text-align: right;">5,060</td><td style="text-align: right;">1,000</td>
-			                       	<td style="text-align: right;">1,170,000</td><td style="text-align: right;">970,000</td><td style="text-align: right;">200,000</td><td style="text-align: right;">95,000</td><td style="text-align: right;">1,075,000</td><td style="text-align: right;">385</td><td style="text-align: right;">5,060</td><td style="text-align: right;">1,000</td>
-			                       	<td style="text-align: right;">1,170,000</td><td style="text-align: right;">970,000</td><td style="text-align: right;">200,000</td><td style="text-align: right;">95,000</td><td style="text-align: right;">1,075,000</td><td style="text-align: right;">385</td><td style="text-align: right;">5,060</td><td style="text-align: right;">1,000</td>
-			                       	<td style="text-align: right;">1,170,000</td><td style="text-align: right;">970,000</td><td style="text-align: right;">200,000</td><td style="text-align: right;">95,000</td><td style="text-align: right;">1,075,000</td><td style="text-align: right;">385</td><td style="text-align: right;">5,060</td><td style="text-align: right;">1,000</td>
-			                       	<td style="text-align: right;">14,040,000</td><td style="text-align: right;">11,640,000</td><td style="text-align: right;">2,400,000</td><td style="text-align: right;">11,400,000</td><td style="text-align: right;">12,900,000</td><td style="text-align: right;">4,620</td>
+			                        <td style="text-align: right;padding-right: 5px;">1,170,000</td><td style="text-align: right;padding-right: 5px;">970,000</td><td style="text-align: right;padding-right: 5px;">200,000</td><td style="text-align: right;padding-right: 5px;">95,000</td><td style="text-align: right;padding-right: 5px;">1,075,000</td><td style="text-align: right;padding-right: 5px;">385</td><td style="text-align: right;padding-right: 5px;">5,060</td><td style="text-align: right;padding-right: 5px;">1,000</td>
+			                       	<td style="text-align: right;padding-right: 5px;">1,170,000</td><td style="text-align: right;padding-right: 5px;">970,000</td><td style="text-align: right;padding-right: 5px;">200,000</td><td style="text-align: right;padding-right: 5px;">95,000</td><td style="text-align: right;padding-right: 5px;">1,075,000</td><td style="text-align: right;padding-right: 5px;">385</td><td style="text-align: right;padding-right: 5px;">5,060</td><td style="text-align: right;padding-right: 5px;">1,000</td>
+			                       	<td style="text-align: right;padding-right: 5px;">1,170,000</td><td style="text-align: right;padding-right: 5px;">970,000</td><td style="text-align: right;padding-right: 5px;">200,000</td><td style="text-align: right;padding-right: 5px;">95,000</td><td style="text-align: right;padding-right: 5px;">1,075,000</td><td style="text-align: right;padding-right: 5px;">385</td><td style="text-align: right;padding-right: 5px;">5,060</td><td style="text-align: right;padding-right: 5px;">1,000</td>
+			                       	<td style="text-align: right;padding-right: 5px;">1,170,000</td><td style="text-align: right;padding-right: 5px;">970,000</td><td style="text-align: right;padding-right: 5px;">200,000</td><td style="text-align: right;padding-right: 5px;">95,000</td><td style="text-align: right;padding-right: 5px;">1,075,000</td><td style="text-align: right;padding-right: 5px;">385</td><td style="text-align: right;padding-right: 5px;">5,060</td><td style="text-align: right;padding-right: 5px;">1,000</td>
+			                       	<td style="text-align: right;padding-right: 5px;">1,170,000</td><td style="text-align: right;padding-right: 5px;">970,000</td><td style="text-align: right;padding-right: 5px;">200,000</td><td style="text-align: right;padding-right: 5px;">95,000</td><td style="text-align: right;padding-right: 5px;">1,075,000</td><td style="text-align: right;padding-right: 5px;">385</td><td style="text-align: right;padding-right: 5px;">5,060</td><td style="text-align: right;padding-right: 5px;">1,000</td>
+			                       	<td style="text-align: right;padding-right: 5px;">1,170,000</td><td style="text-align: right;padding-right: 5px;">970,000</td><td style="text-align: right;padding-right: 5px;">200,000</td><td style="text-align: right;padding-right: 5px;">95,000</td><td style="text-align: right;padding-right: 5px;">1,075,000</td><td style="text-align: right;padding-right: 5px;">385</td><td style="text-align: right;padding-right: 5px;">5,060</td><td style="text-align: right;padding-right: 5px;">1,000</td>
+			                       	<td style="text-align: right;padding-right: 5px;">1,170,000</td><td style="text-align: right;padding-right: 5px;">970,000</td><td style="text-align: right;padding-right: 5px;">200,000</td><td style="text-align: right;padding-right: 5px;">95,000</td><td style="text-align: right;padding-right: 5px;">1,075,000</td><td style="text-align: right;padding-right: 5px;">385</td><td style="text-align: right;padding-right: 5px;">5,060</td><td style="text-align: right;padding-right: 5px;">1,000</td>
+			                       	<td style="text-align: right;padding-right: 5px;">1,170,000</td><td style="text-align: right;padding-right: 5px;">970,000</td><td style="text-align: right;padding-right: 5px;">200,000</td><td style="text-align: right;padding-right: 5px;">95,000</td><td style="text-align: right;padding-right: 5px;">1,075,000</td><td style="text-align: right;padding-right: 5px;">385</td><td style="text-align: right;padding-right: 5px;">5,060</td><td style="text-align: right;padding-right: 5px;">1,000</td>
+			                       	<td style="text-align: right;padding-right: 5px;">1,170,000</td><td style="text-align: right;padding-right: 5px;">970,000</td><td style="text-align: right;padding-right: 5px;">200,000</td><td style="text-align: right;padding-right: 5px;">95,000</td><td style="text-align: right;padding-right: 5px;">1,075,000</td><td style="text-align: right;padding-right: 5px;">385</td><td style="text-align: right;padding-right: 5px;">5,060</td><td style="text-align: right;padding-right: 5px;">1,000</td>
+			                       	<td style="text-align: right;padding-right: 5px;">1,170,000</td><td style="text-align: right;padding-right: 5px;">970,000</td><td style="text-align: right;padding-right: 5px;">200,000</td><td style="text-align: right;padding-right: 5px;">95,000</td><td style="text-align: right;padding-right: 5px;">1,075,000</td><td style="text-align: right;padding-right: 5px;">385</td><td style="text-align: right;padding-right: 5px;">5,060</td><td style="text-align: right;padding-right: 5px;">1,000</td>
+			                       	<td style="text-align: right;padding-right: 5px;">1,170,000</td><td style="text-align: right;padding-right: 5px;">970,000</td><td style="text-align: right;padding-right: 5px;">200,000</td><td style="text-align: right;padding-right: 5px;">95,000</td><td style="text-align: right;padding-right: 5px;">1,075,000</td><td style="text-align: right;padding-right: 5px;">385</td><td style="text-align: right;padding-right: 5px;">5,060</td><td style="text-align: right;padding-right: 5px;">1,000</td>
+			                       	<td style="text-align: right;padding-right: 5px;">1,170,000</td><td style="text-align: right;padding-right: 5px;">970,000</td><td style="text-align: right;padding-right: 5px;">200,000</td><td style="text-align: right;padding-right: 5px;">95,000</td><td style="text-align: right;padding-right: 5px;">1,075,000</td><td style="text-align: right;padding-right: 5px;">385</td><td style="text-align: right;padding-right: 5px;">5,060</td><td style="text-align: right;padding-right: 5px;">1,000</td>
+			                       	<td style="text-align: right;padding-right: 5px;">14,040,000</td><td style="text-align: right;padding-right: 5px;">11,640,000</td><td style="text-align: right;padding-right: 5px;">2,400,000</td><td style="text-align: right;padding-right: 5px;">11,400,000</td><td style="text-align: right;padding-right: 5px;">12,900,000</td><td style="text-align: right;padding-right: 5px;">4,620</td>
                        		    </tr>
-						     </tfoot>
-				           </table>
-				       </div>
-					</div>
-				</div>
-			  </div>
-			</div>
-		</div>
+						    </tfoot>
+				            </table>
+				        </div>
+				    </div>
+			    </div>
+		    </div>
+	    </div>
+    </div>
 </body>
 </html>
