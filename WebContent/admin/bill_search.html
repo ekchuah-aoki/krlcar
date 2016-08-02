@@ -221,7 +221,7 @@
                                 月
                                 <div class="input-control select" style="width:65px;">
                                     <select>
-                                        <option selected>01</option>
+                                        <option>01</option>
                                         <option>02</option>
                                         <option>03</option>
                                         <option>04</option>
@@ -250,38 +250,32 @@
                                         <option>28</option>
                                         <option>29</option>
                                         <option>30</option>
-                                        <option>31</option>
+                                        <option selected>31</option>
                                     </select>
                                 </div>
                                 日
                             </div>
-
-
-
-
-
-
-
                                 <div class="right">
                                     <button class="button primary" onclick="pushMessage('info')" style="width:100px;">検索</button>
                                     <button class="button success" onclick="window.open('../pdf/bill_1201.pdf')" style="width:150px;">選択請求書印刷</button>
                                 </div>
                             </div>
-</div>
+                        </div>
                     <hr class="thin bg-grayLighter">
 
                     <table class="dataTable border bordered" data-auto-width="false">
                         <thead>
                         <tr>
-                            <td style="width: 60px;text-align:center;">印刷</td>
+                            <td style="width: 60px;text-align:center;">選択</td>
                             <td class="sortable-column" style="text-align:center;">番号</td>
-                            <td class="sortable-column" style="text-align:center;">得意先コード</td>
+                            <td class="sortable-column" style="text-align:center;">運送日付</td>
+                            <td class="sortable-column" style="text-align:center;width:120px;">得意先コード</td>
                             <td class="sortable-column" style="text-align:center;">得意先</td>
                             <td class="sortable-column" style="text-align:center;">締日</td>
                             <td class="sortable-column" style="text-align:center;">請求年月日</td>
-                            <td class="sortable-column" style="text-align:center;">総未収合計</td>
-                            <td class="sortable-column" style="text-align:center;">消費税</td>
-                            <td class="sortable-column" style="text-align:center;">請求金額</td>
+                            <td class="sortable-column" style="text-align:center;width:120px;">総未収合計</td>
+                            <td class="sortable-column" style="text-align:center;width:120px;">消費税</td>
+                            <td class="sortable-column" style="text-align:center;width:120px;">請求金額</td>
                             <td class="sortable-column" style="text-align:center;">請求状況</td>
                         </tr>
                         </thead>
@@ -294,14 +288,15 @@
                                 </label>
                             </td>
                             <td style="text-align:right;">466</td>
+                            <td style="text-align:center;">2016/07/10</td>
                             <td style="text-align:right;">489</td>
                             <td>いすゞ自動車（株）</td>
-                            <td style="text-align:center;">2015/11/30</td>
-                            <td style="text-align:center;">2015/11/30</td>
+                            <td style="text-align:center;">2016/06/30</td>
+                            <td style="text-align:center;">2016/06/30</td>
                             <td style="text-align:right;">105,690</td>
                             <td style="text-align:right;">8,455</td>
                             <td style="text-align:right;">114,145</td>
-                            <td style="text-align:center;">請求済<span class="mif-checkmark fg-green"></span></td>
+                            <td style="text-align:center;">請求済</td>
                             
                         </tr>
                         <tr>
@@ -312,14 +307,15 @@
                                 </label>
                             </td>
                             <td style="text-align:right;">489</td>
+                            <td style="text-align:center;">2016/07/10</td>
                             <td style="text-align:right;">287</td>
                             <td>クレベ運送株式会社</td>
-                            <td style="text-align:center;">2015/11/30</td>
-                            <td style="text-align:center;">2015/12/1</td>
+                            <td style="text-align:center;">2016/06/30</td>
+                            <td style="text-align:center;">2016/06/01</td>
                             <td style="text-align:right;">133,315</td>
                             <td style="text-align:right;">10,665</td>
                             <td style="text-align:right;">143,980</td>
-                            <td style="text-align:center;">請求済<span class="mif-checkmark fg-green"></span></td>
+                            <td style="text-align:center;">請求済</td>
                         </tr>
                         <tr>
                             <td style="text-align:center;">
@@ -329,14 +325,15 @@
                                 </label>
                             </td>
                             <td style="text-align:right;">405</td>
+                            <td style="text-align:center;">2016/07/10</td>
                             <td style="text-align:right;">427</td>
                             <td>ニチユＭＨＩ</td>
-                            <td style="text-align:center;">2015/11/30</td>
+                            <td style="text-align:center;">2016/06/30</td>
                             <td></td>
                             <td style="text-align:right;">6133,315</td>
                             <td style="text-align:right;">610,665</td>
                             <td style="text-align:right;">6143,980</td>
-                            <td style="text-align:center;">未請求<span class="mif-stop fg-red"></span></td>
+                            <td style="text-align:center;">未請求</td>
                             
                         </tr>
                         <tr>
@@ -347,14 +344,15 @@
                                 </label>
                             </td>
                             <td style="text-align:right;">474</td>
+                            <td style="text-align:center;">2016/07/10</td>
                             <td style="text-align:right;">497</td>
                             <td>日本郵便輸送株式会社南関東支社</td>
-                            <td style="text-align:center;">2015/11/30</td>
+                            <td style="text-align:center;">2016/06/30</td>
                             <td></td>
                             <td style="text-align:right;">8133,315</td>
                             <td style="text-align:right;">810,665</td>
                             <td style="text-align:right;">8143,980</td>
-                            <td style="text-align:center;">未請求<span class="mif-stop fg-red"></span></td>
+                            <td style="text-align:center;">未請求</td>
                         </tr>
                         </tbody>
                     </table>
