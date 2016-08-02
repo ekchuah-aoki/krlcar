@@ -158,30 +158,28 @@
                             </div>
                             日
                         </div>
-                        
                         <div class="input-control text" style="width:200px;">
-                          得意先
-                          <input type="text" style="text-align:right;width:100px;" name="car" value="5346">
-                          <button class="button primary btn_tokuisakilist" style="margin: 0px; padding: 0px; left: 150px; width: 35px; height: 30px; font-size: 10px;">検索</button>
-                        </div>
-                        
-                        <div class="input-control text" style="width:150px;">
                           運転手
-                          <input type="text" style="text-align:left;width:100px;" name="car" value="町谷　晃">
+                          <input type="text" style="width:100px;" name="car" value="町谷　晃">
                           <button class="button primary btn_shainlist" style="margin: 0px; padding: 0px; left: 150px; width: 35px; height: 30px; font-size: 10px;">検索</button>
                         </div>
-                                  
+                        
+                        <div class="input-control text" style="width:300px;">
+                          得意先
+                          <input type="text" style="width:200px;" name="car" value="株式会社 富士フォークリフト">
+                          <button class="button primary btn_tokuisakilist" style="margin: 0px; padding: 0px; left: 250px; width: 35px; height: 30px; font-size: 10px;">検索</button>
+                        </div>
+                        
                         <div style="float: right;">
                             <button class="button primary" style="width:100px;">検索</button>
                         </div>
-                        
                     </div>
                     <div style="overflow: hidden;">
-                    <div style="float: right;">
-                            <button class="button alert" style="width:100px;">削除</button>
-                            <button class="button info" style="width:120px;">公開/非公開</button>
-                            <button class="button success" onclick="location.href = 'driving_report_add.html'" style="width:100px;">登録</button>
-                    </div>
+	                    <div style="float: right;">
+	                      <button class="button alert" style="width:100px;">削除</button>
+	                      <button class="button info" style="width:120px;">公開/非公開</button>
+	                      <button class="button success" onclick="location.href = 'driving_report_add.html'" style="width:100px;">登録</button>
+	                    </div>
                     </div>
                     <hr class="thin bg-grayLighter">
                     <table class="dataTable border bordered" data-auto-width="false">
@@ -192,7 +190,7 @@
                             <td style="width:50px;text-align:center;">枝番</td>
                             <td style="width:75px;text-align:center;">日報種別</td>
                             <td style="width:60px;text-align:center;">車番</td>
-                            <td style="text-align:center;">運転手</td>
+                            <td style="width:110px;text-align:center;">運転手</td>
                             <td style="width:110px;text-align:center;">総行距離(km)</td>
                             <td style="width:90px;text-align:center;">合計未収額</td>
                             <td style="width:130px;text-align:center;">支払代金(円)<p style="margin:3px auto;">（用車/乗務員）</p></td>
@@ -302,6 +300,62 @@
     </div>
     </div>
     
+    <!-- 社員一覧 -->
+    <div id="shainlist" title="社員一覧" style="display:none;">
+        <table border="0" style="width:400px;margin:0 auto;">
+            <tr>
+                <td colspan="3">
+                    <hr class="thin bg-grayLighter">
+                </td>
+            </tr>
+            <tr style="height:30px;">
+                <td style="width:20%;">
+                    <span id="findname" style="width:75px;color:#555555;">社員名</span>
+                </td>
+                <td style="width:50%;">
+                    <input type="text" id="torihikisaki_name" style="width:200px;">
+                </td>
+                <td style="width:10%;">
+                    <button class="button primary" style="width:80px;margin-left:14px;">検索</button>
+                </td>
+            </tr>
+            <tr style="height:10px;">
+                <td colspan="3"></td>
+            </tr>
+        </table>
+        <hr class="thin bg-grayLighter">
+
+        <table border="0" style="width:400px;margin:0 auto;">
+            <tr style="height:10px;">
+                <td colspan="3" style="padding-right:3px; padding-left:3px;">
+                    <button type="button" style="padding: 9px 9px;border-color:#9d9d9d;float:left;" class="ui-icon ui-icon-triangle-1-w button_search"></button>
+                    <button type="button" style="padding: 9px 9px;border-color:#9d9d9d;float:right;" class="ui-icon ui-icon-triangle-1-e button_search"></button>
+                </td>
+            </tr>
+            <tr style="height:250px">
+                <td colspan="3" style="vertical-align:top">
+                    <table class="rowselect" style="border-color: rgb(153, 153, 153); margin: 0px auto;" border="1">
+                        <tr class="trheader" style="border-bottom-color: rgb(170, 170, 170); border-bottom-width: 3px; border-bottom-style: solid;">
+                            <th id="title01" style="width:130px;height:26px;text-align:center;color:#52677a;">社員コード</th>
+                            <th id="title02" style="width:200px;height:26px;text-align:center;color:#52677a;">社員名</th>
+                            <th id="title03" style="width:150px;height:26px;text-align:center;color:#52677a;">電話番号</th>
+                        </tr>
+                        <tr class="trheader">
+                            <td id="title04" style="text-align:left;color:#52677a;">0000000001</td>
+                            <td id="title05" style="text-align:left;color:#52677a;">平坂　一郎</td>
+                            <td id="title06" style="text-align:left;color:#52677a;">090-1111-1111</td>
+                        </tr>
+                        <tr class="trheader">
+                            <td id="title04" style="text-align:left;color:#52677a;">0000000002</td>
+                            <td id="title05" style="text-align:left;color:#52677a;">小沢　一郎</td>
+                            <td id="title06" style="text-align:left;color:#52677a;">090-1211-1311</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+    
     <!-- 得意先一覧 -->
     <div id="tokuisakilist" title="得意先一覧" style="display:none;">
         <table border="0" style="width:400px;margin:0 auto;">
@@ -362,62 +416,7 @@
             </tr>
         </table>
     </div>
-
-    <!-- 社員一覧 -->
-    <div id="shainlist" title="社員一覧" style="display:none;">
-        <table border="0" style="width:400px;margin:0 auto;">
-            <tr>
-                <td colspan="3">
-                    <hr class="thin bg-grayLighter">
-                </td>
-            </tr>
-            <tr style="height:30px;">
-                <td style="width:20%;">
-                    <span id="findname" style="width:75px;color:#555555;">社員名</span>
-                </td>
-                <td style="width:50%;">
-                    <input type="text" id="torihikisaki_name" style="width:200px;">
-                </td>
-                <td style="width:10%;">
-                    <button class="button primary" style="width:80px;margin-left:14px;">検索</button>
-                </td>
-            </tr>
-            <tr style="height:10px;">
-                <td colspan="3"></td>
-            </tr>
-        </table>
-        <hr class="thin bg-grayLighter">
-
-        <table border="0" style="width:400px;margin:0 auto;">
-            <tr style="height:10px;">
-                <td colspan="3" style="padding-right:3px; padding-left:3px;">
-                    <button type="button" style="padding: 9px 9px;border-color:#9d9d9d;float:left;" class="ui-icon ui-icon-triangle-1-w button_search"></button>
-                    <button type="button" style="padding: 9px 9px;border-color:#9d9d9d;float:right;" class="ui-icon ui-icon-triangle-1-e button_search"></button>
-                </td>
-            </tr>
-            <tr style="height:250px">
-                <td colspan="3" style="vertical-align:top">
-                    <table class="rowselect" style="border-color: rgb(153, 153, 153); margin: 0px auto;" border="1">
-                        <tr class="trheader" style="border-bottom-color: rgb(170, 170, 170); border-bottom-width: 3px; border-bottom-style: solid;">
-                            <th id="title01" style="width:130px;height:26px;text-align:center;color:#52677a;">社員コード</th>
-                            <th id="title02" style="width:200px;height:26px;text-align:center;color:#52677a;">社員名</th>
-                            <th id="title03" style="width:150px;height:26px;text-align:center;color:#52677a;">電話番号</th>
-                        </tr>
-                        <tr class="trheader">
-                            <td id="title04" style="text-align:left;color:#52677a;">0000000001</td>
-                            <td id="title05" style="text-align:left;color:#52677a;">平坂　一郎</td>
-                            <td id="title06" style="text-align:left;color:#52677a;">090-1111-1111</td>
-                        </tr>
-                        <tr class="trheader">
-                            <td id="title04" style="text-align:left;color:#52677a;">0000000002</td>
-                            <td id="title05" style="text-align:left;color:#52677a;">小沢　一郎</td>
-                            <td id="title06" style="text-align:left;color:#52677a;">090-1211-1311</td>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-        </table>
-    </div>
+    
     
 </body>
 </html>

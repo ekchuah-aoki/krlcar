@@ -63,22 +63,7 @@
             }
         }
     </style>
-    <script>
-		$(function(){
-			$(".btn_tokuisaki").click(function () {
-			    $("#tokuisakilist").dialog({
-			        modal: true,
-			        closeOnEscape: false,
-			        width: 500,
-			        height: 520,
-			        show: { effect: "clip", complete: function () { $("#shashu").focus(); } },
-			        open: function (event, ui) {
-			            $(this).parent().find(".ui-dialog-titlebar-close").show();
-			        }
-			    });
-			});
-		});
-	</script>
+    
 </head>
 <body>
    <div id="Menu_load"></div>
@@ -121,16 +106,12 @@
                         </div>
                         月
                         </div>
-                        <div class="input-control text" style="width:300px;margin-top: 5px;">
-                          得意先
-                          <input type="text" style="width:200px;" name="car" value="株式会社 富士フォークリフト">
-                          <button class="button primary btn_tokuisaki" style="margin: 0px; padding: 0px; left: 255px; height: 30px; width: 35px; font-size: 10px;">検索</button>
-                        </div>
-	                                              
+                                                  
 						<div class="right">
 						　　<button class="button primary" style="width:100px;">検索</button>
 						</div>
 					  </div>
+					  
 					<hr class="thin bg-grayLighter">
 					
 				    <div class="x_data_area">
@@ -264,74 +245,11 @@
 				  		</table>
 					  </div>
 					 
-							    
-							 
 					</div>
 					
                 </div>
             </div>
         </div>
-    </div>
-    
-    <!-- 得意先一覧 -->
-    <div id="tokuisakilist" title="得意先一覧" style="display:none;">
-        <table border="0" style="width:450px;margin:0 auto;">
-            <tr>
-                <td colspan="3">
-                    <hr class="thin bg-grayLighter">
-                </td>
-            </tr>
-            <tr style="height:30px;">
-                <td style="width:20%;">
-                    <span id="findname" style="width:75px;color:#555555;">得意先者名</span>
-                </td>
-                <td style="width:50%;">
-                    <input type="text" id="torihikisaki_name" style="width:200px;">
-                </td>
-                <td style="width:10%;">
-                    <button class="button primary" style="width:80px;margin-left:14px;">検索</button>
-                </td>
-            </tr>
-            <tr style="height:10px;">
-                <td colspan="3"></td>
-            </tr>
-        </table>
-        <hr class="thin bg-grayLighter">
-
-        <table border="0" style="width:450px;margin:0 auto;">
-            <tr style="height:10px;">
-                <td colspan="3" style="padding-right:3px; padding-left:3px;">
-                    <button type="button" style="padding: 9px 9px;border-color:#9d9d9d;float:left;" class="ui-icon ui-icon-triangle-1-w button_search"></button>
-                    <button type="button" style="padding: 9px 9px;border-color:#9d9d9d;float:right;" class="ui-icon ui-icon-triangle-1-e button_search"></button>
-                </td>
-            </tr>
-            <tr style="height:250px">
-                <td colspan="3" style="vertical-align:top">
-                    <table class="rowselect" style="border-color: rgb(153, 153, 153); margin: 0px auto;" border="1">
-                        <tr class="trheader" style="border-bottom-color: rgb(170, 170, 170); border-bottom-width: 3px; border-bottom-style: solid;">
-                            <th id="title01" style="width:130px;height:26px;text-align:center;color:#52677a;">得意先コード</th>
-                            <th id="title02" style="width:350px;height:26px;text-align:center;color:#52677a;">得意先名</th>
-                            <th id="title03" style="width:150px;height:26px;text-align:center;color:#52677a;">電話番号</th>
-                        </tr>
-                        <tr class="trheader">
-                            <td id="title04" style="text-align:left;color:#52677a;">0423</td>
-                            <td id="title05" style="text-align:left;color:#52677a;">ユニキャリア</td>
-                            <td id="title06" style="text-align:left;color:#52677a;">0463-59-6166</td>
-                        </tr>
-                        <tr class="trheader">
-                            <td id="title04" style="text-align:left;color:#52677a;">0453</td>
-                            <td id="title05" style="text-align:left;color:#52677a;">住友ナコ</td>
-                            <td id="title06" style="text-align:left;color:#52677a;">0463-79-7166</td>
-                        </tr>
-                        <tr class="trheader">
-                            <td id="title04" style="text-align:left;color:#52677a;">0693</td>
-                            <td id="title05" style="text-align:left;color:#52677a;">株式会社 富士フォークリフト</td>
-                            <td id="title06" style="text-align:left;color:#52677a;">0463-29-4126</td>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-        </table>
     </div>
     
 </body>
