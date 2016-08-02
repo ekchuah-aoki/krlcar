@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -42,8 +42,8 @@
             height: auto;
         }
 		table.center{
-		width:100%;
-		margin:0 auto;
+    		width:100%;
+	    	margin:0 auto;
 		}
 		.cell colspan5 {
             overflow: hidden;
@@ -60,6 +60,14 @@
         }
         .right {
             float: right;
+        }
+        table.rowselect th{
+            border: 1px solid rgb(153, 153, 153);
+            background-color:#ffffff;
+            padding:3px;
+        }
+        table.rowselect tr:hover {
+            background-color: #FFCC99;
         }
         @media screen and (max-width: 800px){
             #cell-sidebar {
@@ -88,8 +96,11 @@
     });
     </script>
 </head>
-<body class="bg-steel">
+
+<body>
+
    <div id="Menu_load"></div>
+
     <div class="page-content">
         <div class="flex-grid no-responsive-future" style="height: 100%;">
             <div class="row">
@@ -99,143 +110,164 @@
 					</ul>
 					<div class="grid">
                     <hr class="thin bg-grayLighter">
-                    
 		                <div class="cell colspan5">
-		                        <div class="input-control select" style="width:60px;">
-		                            <select dir="rtl">
-		                            	<option>2015</option>
-		                                <option>2016</option>
-		                                <option>2017</option>
-		                                <option>2018</option>
-		                                <option>2019</option>
-		                                <option>2020</option>
-		                            </select>
-								</div>
-		                        年
-								<div class="input-control select" style="width:50px;">
-		                            <select dir="rtl">
-		                                <option>01</option>
-		                                <option>02</option>
-		                                <option>03</option>
-		                                <option>04</option>
-		                                <option>05</option>
-		                                <option>06</option>
-		                                <option>07</option>
-		                                <option>08</option>
-		                                <option>09</option>
-		                                <option>10</option>
-		                                <option>11</option>
-		                                <option>12</option>
-		                            </select>
-		                         </div>
-		                            月
-		                        <span style="margin-left:30px;">車番</span>
-							    <div class="input-control text" style="width:200px;">
-                                    <input type="text" style="text-align:right;width:125px;" name="car" value="5346">
-                                    <button class="button primary btn_shaban" style="margin: 0px; padding: 0px; left: 130px; width: 50px; height: 30px; font-size: 10px;">検索</button>
-                                </div>
-							    					
-							    <div class="right">
+		                    <div class="input-control select" style="width:60px;">
+		                        <select dir="rtl">
+		                            <option>2015</option>
+		                            <option>2016</option>
+		                            <option>2017</option>
+		                            <option>2018</option>
+		                            <option>2019</option>
+		                            <option>2020</option>
+		                        </select>
+							</div>
+		                    年
+							<div class="input-control select" style="width:50px;">
+		                        <select dir="rtl">
+		                            <option>01</option>
+		                            <option>02</option>
+		                            <option>03</option>
+		                            <option>04</option>
+		                            <option>05</option>
+		                            <option>06</option>
+		                            <option>07</option>
+		                            <option>08</option>
+		                            <option>09</option>
+		                            <option>10</option>
+		                            <option>11</option>
+		                            <option>12</option>
+		                        </select>
+		                    </div>
+	                        月
+		                    <span style="margin-left:30px;margin-right:5px;">車番</span>
+							<div class="input-control text" style="width:200px;">
+                                <input type="text" style="text-align:right;width:100px;" name="car" value="5346">
+                                <button class="button primary btn_shaban" style="margin: 0px; padding: 0px; left: 105px; width: 50px; height: 30px; font-size: 10px;">検索</button>
+                            </div>
+							<div class="right">
 			                    <button class="button primary" style="width:100px;">検索</button>
 			                    <button class="button primary" onclick="pushMessage('info')" style="background-color:#6A5ACD;border-color:#6A5ACD;width:100px;">印刷</button>
 			                    <button class="button success" onclick="pushMessage('info')" style="width:100px;">保存</button>
-		                    </div>
-		                  </div>
+    		                </div>
 		                </div>
+		            </div>
                     <hr class="thin bg-grayLighter">
-                    <table class="dataTable border bordered" data-auto-width="false" style="width:70%; margin:0 auto;">
+                    <table class="dataTable border bordered" data-auto-width="false" style="width:60%; margin:0 auto;">
                         <thead>
                         <tr>
-                        	<td class="sortable-column"colspan="2" style="width:70%;text-align:center;">費目</td>
-                            <td class="sortable-column"></td>
+                        	<td class="sortable-column" colspan="2" style="width:50%; text-align:center;">費目</td>
+                            <td class="sortable-column" style="width:10%; text-align:center;">金額</td>
                         </tr>
                         </thead>
                         <tbody style="text-align: right;">
                         <tr>
-                            <td style="width:20%;text-align: center;"rowspan="6">車両費</td>
-                            <td style="text-align: left;">(1) 減価償却費</td><td><input type="text" size="30%" name="car" value="32,638" style="text-align: right;"></td>
+                            <td style="width:20%;text-align: center;border-bottom:double;"rowspan="6">車両費</td>
+                            <td style="text-align: left;">(1) 減価償却費</td>
+                            <td><input type="text" style="width:100%; text-align:right;" value="32,638"></td>
 						</tr>
                         <tr>
-                            <td style="text-align: left;">(2) 金融費用</td><td><input type="text" size="30%" name="car" value="2,083" style="text-align: right;"></td>
+                            <td style="text-align: left;">(2) 金融費用</td>
+                            <td><input type="text" style="width:100%; text-align:right;" value="2,083"></td>
 						</tr>
                         <tr>
-                            <td style="text-align: left;">(3) 自動車取得税</td><td><input type="text" size="30%" name="car" value="1,041" style="text-align: right;"></td>
+                            <td style="text-align: left;">(3) 自動車取得税</td>
+                            <td><input type="text" style="width:100%; text-align:right;" value="1,041"></td>
 						</tr>
                         <tr>
-                            <td style="text-align: left;">(4) 自動車税</td><td><input type="text" size="30%" name="car" value="958" style="text-align: right;"></td>
+                            <td style="text-align: left;">(4) 自動車税</td>
+                            <td><input type="text" style="width:100%; text-align:right;" value="958"></td>
 						</tr>
                         <tr>
-                            <td style="text-align: left;">(5) 自動車重量税</td><td><input type="text" size="30%" name="car" value="683" style="text-align: right;"></td>
+                            <td style="text-align: left;">(5) 自動車重量税</td>
+                            <td><input type="text" style="width:100%; text-align:right;" value="683"></td>
 						</tr>
 						 <tr>
-                            <td style="text-align: left; border-top:double;border-bottom:double;">車両費の合計</td><td style="border-top:double;border-bottom:double;">37,403</td>
+                            <td style="text-align: left; background-color:Ivory;border-bottom:double;font-weight:bold;color:#52677a;">車両費の合計</td>
+                            <td style="text-align: right;background-color:Ivory;border-bottom:double;font-weight:bold;color:#52677a;">37,403</td>
+						</tr>
+
+						<tr>
+                            <td style="width:20%;text-align: center;border-bottom:double;" rowspan="4">保険費</td>
+                            <td style="text-align: left;">(1) 自賠責保険</td>
+                            <td><input type="text" style="width:100%; text-align:right;" value="2,280"></td>
+						</tr>
+                        <tr>
+                            <td style="text-align: left;">(2) 任意保険(事故・車両)</td>
+                            <td><input type="text" style="width:100%; text-align:right;" value="4,166"></td>
+						</tr>
+                        <tr>
+                            <td style="text-align: left;">(3) その他運送業総合保険等</td>
+                            <td><input type="text" style="width:100%; text-align:right;" value="2,500"></td>
+						</tr>
+                        <tr>
+                            <td style="text-align: left; background-color:Ivory;border-bottom:double;font-weight:bold;color:#52677a;">保険費の合計</td>
+                            <td style="text-align: right;background-color:Ivory;border-bottom:double;font-weight:bold;color:#52677a;">8,946</td>
+						</tr>
+
+						<tr>
+                            <td style="width:20%;text-align: center;border-bottom:double;"rowspan="6">運行費</td>
+                            <td style="text-align: left;">(1) 燃料単価(ℓ)</td>
+                            <td><input type="text" style="width:100%; text-align:right;" value="437,500"></td>
+						</tr>
+                        <tr>
+                            <td style="text-align: left;">(2) 油脂費</td>
+                            <td><input type="text" style="width:100%; text-align:right;" value="12,600"></td>
+						</tr>
+                        <tr>
+                            <td style="text-align: left;">(3) 修理費・車検整備費</td>
+                            <td><input type="text" style="width:100%; text-align:right;" value="8,333"></td>
+						</tr>
+                        <tr>
+                            <td style="text-align: left;">(4) 修理費・一般修理費</td>
+                            <td><input type="text" style="width:100%; text-align:right;" value="17,500"></td>
+						</tr>
+                        <tr>
+                            <td style="text-align: left;">(5) タイヤチューブ費</td>
+                            <td><input type="text" style="width:100%; text-align:right;" value="22,400"></td> 
 						</tr>
 						<tr>
-                            <td style="width:20%;text-align: center;" rowspan="4">保険費</td>
-                            <td style="text-align: left;">(1) 自賠責保険</td><td><input type="text" size="30%" name="car" value="2,280" style="text-align: right;"></td>
-						</tr>
-                        <tr>
-                            <td style="text-align: left;">(2) 任意保険(事故・車両)</td><td><input type="text" size="30%" name="car" value="4,166" style="text-align: right;"></td>
-						</tr>
-                        <tr>
-                            <td style="text-align: left;">(3) その他運送業総合保険等</td><td><input type="text" size="30%" name="car" value="2,500" style="text-align: right;"></td>
-						</tr>
-                        <tr>
-                            <td style="text-align: left;border-top:double;border-bottom:double;">保険費の合計</td><td style="border-top:double;border-bottom:double;">8,946</td>
-						</tr>
-						<tr>
-                            <td style="width:20%;text-align: center;"rowspan="6">運行費</td>
-                            <td style="text-align: left;">(1) 燃料単価(ℓ)</td><td><input type="text" size="30%" name="car" value="437,500" style="text-align: right;"></td>
-						</tr>
-                        <tr>
-                            <td style="text-align: left;">(2) 油脂費</td><td><input type="text" size="30%" name="car" value="12,600" style="text-align: right;"></td>
-						</tr>
-                        <tr>
-                            <td style="text-align: left;">(3) 修理費・車検整備費</td><td><input type="text" size="30%" name="car" value="8,333" style="text-align: right;"></td>
-						</tr>
-                        <tr>
-                            <td style="text-align: left;">(4) 修理費・一般修理費</td><td><input type="text" size="30%" name="car" value="17,500" style="text-align: right;"></td>
-						</tr>
-                        <tr>
-                            <td style="text-align: left;">(5) タイヤチューブ費</td><td><input type="text" size="30%" name="car" value="22,400" style="text-align: right;"></td> 
-						</tr>
-						<tr>
-                            <td style="text-align: left;border-top:double;border-bottom:double;">運行費の合計</td><td style="border-top:double;border-bottom:double;">498,333</td> 
+                            <td style="text-align: left; background-color:Ivory;border-bottom:double;font-weight:bold;color:#52677a;">運行費の合計</td>
+                            <td style="text-align: right;background-color:Ivory;border-bottom:double;font-weight:bold;color:#52677a;">498,333</td> 
 						</tr>
 						
 						<tr>
-                            <td style="width:20%;text-align: center;"rowspan="4">人件費</td>
-                            <td style="text-align: left;">(1) ドライバー人件費</td><td><input type="text" size="30%" name="car" value="292,600" style="text-align: right;"></td>
+                            <td style="width:20%;text-align: center;border-bottom:double;" rowspan="4">人件費</td>
+                            <td style="text-align: left;">(1) ドライバー人件費</td>
+                            <td><input type="text" style="width:100%; text-align:right;" value="292,600"></td>
 						</tr>
                         <tr>
-                            <td style="text-align: left;">(2) 時間外手当</td><td><input type="text" size="30%" name="car" value="50,000" style="text-align: right;"></td>
+                            <td style="text-align: left;">(2) 時間外手当</td>
+                            <td><input type="text" style="width:100%; text-align:right;" value="50,000"></td>
 						</tr>
                         <tr>
-                            <td style="text-align: left;">(3) 退職金引当金</td><td><input type="text" size="30%" name="car" value="2,916" style="text-align: right;"></td>
+                            <td style="text-align: left;">(3) 退職金引当金</td>
+                            <td><input type="text" style="width:100%; text-align:right;" value="2,916"></td>
 						</tr>
                         <tr>
-                            <td style="text-align: left;border-top:double;border-bottom:double;">人件費の合計</td><td style="border-top:double;border-bottom:double;">345,516</td>
+                            <td style="text-align: left; background-color:Ivory;border-bottom:double;font-weight:bold;color:#52677a;">人件費の合計</td>
+                            <td style="text-align: right;background-color:Ivory;border-bottom:double;font-weight:bold;color:#52677a;">345,516</td>
 						</tr>
+
 						<tr>
                             <td style="text-align: left;" colspan="2">運送料(高速道路利用料他)</td>
-                            <td><input type="text" size="30%" name="car" value="5,000" style="text-align: right;"></td>
+                            <td><input type="text" style="width:100%; text-align:right;" value="5,000"></td>
 						</tr>
                         <tr>
                            <td style="text-align: left;" colspan="2">一般管理費</td>
-                           <td><input type="text" size="30%" name="car" value="41,66" style="text-align: right;"></td>
+                           <td><input type="text" style="width:100%; text-align:right;" value="41,66"></td>
 						</tr>
                         </tbody>   
-                         <tfoot>
-			             <tr>
-                           <td style="text-align: center;" colspan="2">運送減価の合計</td>
-                           <td style="text-align: right;">936,864</td>
-						</tr>
+                        <tfoot>
+    			             <tr>
+                                <td style="text-align: center;" colspan="2">運送減価の合計</td>
+                                <td style="text-align: right;">936,864</td>
+						    </tr>
 			            </tfoot>        
                     </table>
-			        </div>
-                </div>
+			    </div>
             </div>
         </div>
+    </div>
     
     <!-- 車番一覧 -->
     <div id="shaban" title="車番一覧" style="display:none;">
