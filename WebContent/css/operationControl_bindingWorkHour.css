@@ -2,7 +2,6 @@
 div.x_data_area {
   width:1209px;
   overflow: hidden; /* floatさせた要素を内包しているため指定 */
-  border-right: 1px solid #CCC;
 }
 /* ロック部分 */
 div.lock_box {

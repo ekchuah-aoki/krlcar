@@ -17,15 +17,12 @@
     <link href="../css/metro-icons.css" rel="stylesheet">
     <link href="../css/metro-responsive.css" rel="stylesheet">
     <link href="../css/table3.css" rel="stylesheet">
-
+    <link type="text/css" rel="stylesheet" href="../css/jquery-ui.min.css" />
+    
     <script src="../js/jquery-2.1.3.min.js"></script>
     <script src="../js/jquery.dataTables.min.js"></script>
-
     <script src="../js/metro.js"></script>
-
     <script src="../js/Menu.js"></script>
-
-    <link type="text/css" rel="stylesheet" href="../css/jquery-ui.min.css" />
     <script type="text/javascript" src="../js/jquery.ui.1.9.2.js"></script>
 
     <style>
@@ -140,24 +137,21 @@
             if (showflag) {
                 $('#colshow').text('運用コース表示');
                 $('.movecoase').hide();
-                $('.result').css('width', '171px');
+                $('.result').css('width', '174px');
                 $('.lockbox').css('width', '');
                 $('.xscrollbox').css('width', '1065px');
-                $('.xscrollbox').css('margin-left', '0px');
             } else {
                 $('#colshow').text('運用コース非表示');
                 $('.movecoase').show();
-                $('.result').css('width', '900px');
+                $('.result').css('width', '901px');
                 $('.lockbox').css('width', '898px');
-                $('.xscrollbox').css('width', '335px');
-                $('.xscrollbox').css('margin-left', '2px');
+                $('.xscrollbox').css('width', '340px');
             }
         }
     </script>
 </head>
 <body>
     <div id="Menu_load"></div>
-
     <div class="page-content">
         <div class="flex-grid no-responsive-future">
            <div class="row">
@@ -195,7 +189,6 @@
                              </select>
                           </div>
                           月
-                          
                      </div>
                      <div style="float: right; display:inline;">
                          <button class="button primary" style="width:100px;margin-left:14px;">検索</button>
@@ -212,23 +205,17 @@
                      </div>
                   </div>
                   <hr class="thin bg-grayLighter">
-                  <div class="xdataarea" style="width: 1300px; overflow: hidden;">
-                     <div class="lockbox" style="float:left; width:898px;">
+                  
+                  <div class="xdataarea" style="width: 1240px; overflow: hidden; border-right-color: rgb(204, 204, 204); border-right-width: 1px; border-right-style: solid;">
+                     <div class="lockbox" style="float:left; width:900px;">
                         <table class="dataTable border bordered data result" style="margin:0px; width:900px;" data-auto-width="false">
-                        <colgroup>
-                            <col style="width: 6%;">
-                            <col style="width: 6%;">
-                            <col style="width: 7%;">
-                            <col class="movecoase" style="width:66%;">
-                            <col class="movecoase" style="width:12%;">
-                        </colgroup>
                         <thead>
-                            <tr style="height: 89px;">
-                               <td><p style="margin:0px;padding:25px 0px 25px 0px;">削除</p></td>
-                               <td class="sortable-column">便番</td>
-                               <td class="sortable-column">便名</td>
-                               <td class="sortable-column movecoase">運行コース/作業割り当(行先)</td>
-                               <td class="sortable-column movecoase">運行日/車種</td>
+                            <tr style="height: 90px;">
+                               <td style="text-align: center; width: 6%;">削除</td>
+                               <td style="text-align: center; width: 6%;">便番</td>
+                               <td style="text-align: center; width: 7%;">便名</td>
+                               <td class="movecoase" style="text-align: center; width: 66%;">運行コース/作業割り当(行先)</td>
+                               <td class="movecoase" style="text-align: center; width: 12%;">運行日/車種</td>
                             </tr>
                         </thead>
                         <tbody style="font-size:11px;">
@@ -334,107 +321,75 @@
                         </table>
                      </div>
                        
-                     <div class="xscrollbox" style="width: 335px; margin-left: 2px; border-right-color: rgb(204, 204, 204); border-right-width: 1px; border-right-style: solid; overflow-x: scroll; overflow-y: hidden; float: left;">
+                     <div class="xscrollbox" style="width: 338px; overflow-x: scroll; overflow-y: hidden; float: left;">
                         <table class="dataTable border bordered  data" style="margin:0px;width:2200px;">
-                        <colgroup>
-                            <col style="width: 15%;">
-                            <col style="width: 15%;">
-                            <col style="width: 15%;">
-                            <col style="width: 15%;">
-                            <col style="width: 15%;">
-                            <col style="width: 15%;">
-                            <col style="width: 15%;">
-                            <col style="width: 15%;">
-                            <col style="width: 15%;">
-                            <col style="width: 15%;">
-                            <col style="width: 15%;">
-                            <col style="width: 15%;">
-                            <col style="width: 15%;">
-                            <col style="width: 15%;">
-                            <col style="width: 15%;">
-                            <col style="width: 15%;">
-                            <col style="width: 15%;">
-                            <col style="width: 15%;">
-                            <col style="width: 15%;">
-                            <col style="width: 15%;">
-                            <col style="width: 15%;">
-                            <col style="width: 15%;">
-                            <col style="width: 15%;">
-                            <col style="width: 15%;">
-                            <col style="width: 15%;">
-                            <col style="width: 15%;">
-                            <col style="width: 15%;">
-                            <col style="width: 15%;">
-                            <col style="width: 15%;">
-                            <col style="width: 15%;">
-                            <col style="width: 10%;">
-                        </colgroup>
+                        
                         <thead>
-                            <tr>
-                               <td class="sortable-column" style="height:38px;">7月 1日(金)</td>
-                               <td class="sortable-column" style="color:blue;">7月 2日(土)</td>
-                               <td class="sortable-column" style="color:red;">7月 3日(日)</td>
-                               <td class="sortable-column">7月 4日(月)</td>
-                               <td class="sortable-column">7月 5日(火)</td>
-                               <td class="sortable-column">7月 6日(水)</td>
-                               <td class="sortable-column">7月 7日(木)</td>
-                               <td class="sortable-column">7月 8日(金)</td>
-                               <td class="sortable-column" style="color:blue;">7月 9日(土)</td>
-                               <td class="sortable-column" style="color:red;">7月10日(日)</td>
-                               <td class="sortable-column">7月11日(月)</td>
-                               <td class="sortable-column">7月12日(火)</td>
-                               <td class="sortable-column">7月13日(水)</td>
-                               <td class="sortable-column">7月14日(木)</td>
-                               <td class="sortable-column">7月15日(金)</td>
-                               <td class="sortable-column" style="color:blue;">7月16日(土)</td>
-                               <td class="sortable-column" style="color:red;">7月17日(日)</td>
-                               <td class="sortable-column" style="color:red;">7月18日(月)</td>
-                               <td class="sortable-column">7月19日(火)</td>
-                               <td class="sortable-column">7月20日(水)</td>
-                               <td class="sortable-column">7月21日(木)</td>
-                               <td class="sortable-column">7月22日(金)</td>
-                               <td class="sortable-column" style="color:blue;">7月23日(土)</td>
-                               <td class="sortable-column" style="color:red;">7月24日(日)</td>
-                               <td class="sortable-column">7月25日(月)</td>
-                               <td class="sortable-column">7月26日(火)</td>
-                               <td class="sortable-column">7月27日(水)</td>
-                               <td class="sortable-column">7月28日(木)</td>
-                               <td class="sortable-column">7月29日(金)</td>
-                               <td class="sortable-column" style="color:blue;">7月30日(土)</td>
-                               <td class="sortable-column" style="color:red;">7月31日(日)</td>
+                            <tr style="height:40px;">
+                               <td>7月 1日(金)</td>
+                               <td style="color:blue;">7月 2日(土)</td>
+                               <td style="color:red;">7月 3日(日)</td>
+                               <td>7月 4日(月)</td>
+                               <td>7月 5日(火)</td>
+                               <td>7月 6日(水)</td>
+                               <td>7月 7日(木)</td>
+                               <td>7月 8日(金)</td>
+                               <td style="color:blue;">7月 9日(土)</td>
+                               <td style="color:red;">7月10日(日)</td>
+                               <td>7月11日(月)</td>
+                               <td>7月12日(火)</td>
+                               <td>7月13日(水)</td>
+                               <td>7月14日(木)</td>
+                               <td>7月15日(金)</td>
+                               <td style="color:blue;">7月16日(土)</td>
+                               <td style="color:red;">7月17日(日)</td>
+                               <td style="color:red;">7月18日(月)</td>
+                               <td>7月19日(火)</td>
+                               <td>7月20日(水)</td>
+                               <td>7月21日(木)</td>
+                               <td>7月22日(金)</td>
+                               <td style="color:blue;">7月23日(土)</td>
+                               <td style="color:red;">7月24日(日)</td>
+                               <td>7月25日(月)</td>
+                               <td>7月26日(火)</td>
+                               <td>7月27日(水)</td>
+                               <td>7月28日(木)</td>
+                               <td>7月29日(金)</td>
+                               <td style="color:blue;">7月30日(土)</td>
+                               <td style="color:red;">7月31日(日)</td>
                             </tr>
-                            <tr>
-                               <td class="sortable-column">車番/委託先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
-                               <td class="sortable-column">車番/委託先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
-                               <td class="sortable-column">車番/委託先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
-                               <td class="sortable-column">車番/委託先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
-                               <td class="sortable-column">車番/委託先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
-                               <td class="sortable-column">車番/委託先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
-                               <td class="sortable-column">車番/委託先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
-                               <td class="sortable-column">車番/委託先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
-                               <td class="sortable-column">車番/委託先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
-                               <td class="sortable-column">車番/委託先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
-                               <td class="sortable-column">車番/委託先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
-                               <td class="sortable-column">車番/委託先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
-                               <td class="sortable-column">車番/委託先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
-                               <td class="sortable-column">車番/委託先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
-                               <td class="sortable-column">車番/委託先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
-                               <td class="sortable-column">車番/委託先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
-                               <td class="sortable-column">車番/委託先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
-                               <td class="sortable-column">車番/委託先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
-                               <td class="sortable-column">車番/委託先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
-                               <td class="sortable-column">車番/委託先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
-                               <td class="sortable-column">車番/委託先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
-                               <td class="sortable-column">車番/委託先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
-                               <td class="sortable-column">車番/委託先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
-                               <td class="sortable-column">車番/委託先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
-                               <td class="sortable-column">車番/委託先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
-                               <td class="sortable-column">車番/委託先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
-                               <td class="sortable-column">車番/委託先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
-                               <td class="sortable-column">車番/委託先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
-                               <td class="sortable-column">車番/委託先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
-                               <td class="sortable-column">車番/委託先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
-                               <td class="sortable-column">車番/委託先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
+                            <tr style="height:50px;">
+                               <td>車番/委託先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
+                               <td>車番/委託先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
+                               <td>車番/委託先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
+                               <td>車番/委託先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
+                               <td>車番/委託先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
+                               <td>車番/委託先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
+                               <td>車番/委託先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
+                               <td>車番/委託先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
+                               <td>車番/委託先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
+                               <td>車番/委託先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
+                               <td>車番/委託先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
+                               <td>車番/委託先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
+                               <td>車番/委託先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
+                               <td>車番/委託先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
+                               <td>車番/委託先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
+                               <td>車番/委託先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
+                               <td>車番/委託先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
+                               <td>車番/委託先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
+                               <td>車番/委託先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
+                               <td>車番/委託先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
+                               <td>車番/委託先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
+                               <td>車番/委託先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
+                               <td>車番/委託先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
+                               <td>車番/委託先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
+                               <td>車番/委託先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
+                               <td>車番/委託先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
+                               <td>車番/委託先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
+                               <td>車番/委託先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
+                               <td>車番/委託先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
+                               <td>車番/委託先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
+                               <td>車番/委託先(社員ドライバー)<br>連絡先/委託先ドライバー</td>
                             </tr>
                         </thead>
                         <tbody style="font-size:x-small">
