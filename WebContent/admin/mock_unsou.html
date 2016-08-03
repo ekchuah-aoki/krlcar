@@ -91,7 +91,7 @@
                 $("#torihikisaki").dialog({
                     modal: true,
                     closeOnEscape: false,
-                    width:  440,
+                    width:  840,
                     height: 520,
                     show: { effect: "clip", complete: function () { $("#torihikisaki_name").focus(); } },
                     open: function (event, ui) {
@@ -100,25 +100,38 @@
                 });
            });
            $("#th01").click(function() {
+                $('#ui-id-1').text("委託先一覧");
                 $('#findname').text("委託先名");
                 $('#title01').text("委託先コード");
                 $('#title02').text("委託先名");
                 $('#title03').text("電話番号");
-                $('#title04').text("1234");
-                $('#title05').text("クレベ運送株式会社");
-                $('#title06').text("");
+                $('#title04').text("部署");
+                $('#title05').text("課名");
+
+                $('#title10').text("1234");
+                $('#title11').text("クレベ運送株式会社");
+                $('#title12').text("090-1111-1111");
+                $('#title13').text("");
+                $('#title14').text("");
+                $('#title15').text("");
            });
 
            $("#th02").click(function() {
+                $('#ui-id-1').text("社員一覧");
                 $('#findname').text("社員名");
                 $('#title01').text("社員コード");
                 $('#title02').text("社員名");
                 $('#title03').text("電話番号");
-                $('#title04').text("0000000001");
-                $('#title05').text("平坂　一郎");
-                $('#title06').text("090-1111-1111");
+                $('#title04').text("拘束時間月計");
+                $('#title05').text("運転時間月計");
+
+                $('#title10').text("0000000001");
+                $('#title11').text("平坂　一郎");
+                $('#title12').text("090-1111-1111");
+                $('#title13').text("289");
+                $('#title14').text("193");
            });
-       });
+        });
         
         var showflag = false;
 
@@ -2557,7 +2570,7 @@
 
     <!-- 委託先（社員ドライバー）一覧 -->
     <div id="torihikisaki" title="委託先一覧" style="display:none;">
-        <table border="0" style="width:400px;margin:0 auto;">
+        <table border="0" style="width:800px;margin:0 auto;">
             <tr style="height:30px;">
                 <td colspan="3">
                    <label class="input-control radio small-check">
@@ -2576,7 +2589,7 @@
                 </td>
             </tr>
             <tr style="height:30px;">
-                <td style="width:20%;">
+                <td style="width:7%;">
                     <span id="findname" style="width:75px;color:#555555;">委託者名</span>
                 </td>
                 <td style="width:50%;">
@@ -2592,9 +2605,9 @@
         </table>
         <hr class="thin bg-grayLighter">
 
-        <table border="0" style="width:400px;margin:0 auto;">
+        <table border="0" style="width:800px;margin:0 auto;">
             <tr style="height:10px;">
-                <td colspan="3" style="padding-right:3px; padding-left:3px;">
+                <td colspan="3" style="padding-right:10px; padding-left:10px;">
                     <button type="button" style="padding: 9px 9px;border-color:#9d9d9d;float:left;" class="ui-icon ui-icon-triangle-1-w button_search"></button>
                     <button type="button" style="padding: 9px 9px;border-color:#9d9d9d;float:right;" class="ui-icon ui-icon-triangle-1-e button_search"></button>
                 </td>
@@ -2605,12 +2618,16 @@
                         <tr class="trheader" style="border-bottom-color: rgb(170, 170, 170); border-bottom-width: 3px; border-bottom-style: solid;">
                             <th id="title01" style="width:130px;height:26px;text-align:center;color:#52677a;">委託先コード</th>
                             <th id="title02" style="width:200px;height:26px;text-align:center;color:#52677a;">委託先名</th>
-                            <th id="title03" style="width:150px;height:26px;text-align:center;color:#52677a;">部署</th>
+                            <th id="title03" style="width:150px;height:26px;text-align:center;color:#52677a;">電話番号</th>
+                            <th id="title04" style="width:150px;height:26px;text-align:center;color:#52677a;">部署</th>
+                            <th id="title05" style="width:150px;height:26px;text-align:center;color:#52677a;">課名</th>
                         </tr>
                         <tr class="trheader">
-                            <td id="title04" style="text-align:left;color:#52677a;">1234</td>
-                            <td id="title05" style="text-align:left;color:#52677a;">クレベ運送株式会社</td>
-                            <td id="title06" style="text-align:left;color:#52677a;"></td>
+                            <td id="title10" style="text-align:left;color:#52677a;">1234</td>
+                            <td id="title11" style="text-align:left;color:#52677a;">クレベ運送株式会社</td>
+                            <td id="title12" style="text-align:left;color:#52677a;">090-1111-1111</td>
+                            <td id="title13" style="text-align:right;color:#52677a;"></td>
+                            <td id="title14" style="text-align:right;color:#52677a;"></td>
                         </tr>
                     </table>
                 </td>
