@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -63,11 +63,12 @@
             }
         }
     </style>
-    
 </head>
 <body>
-   <div id="Menu_load"></div>
-     <div class="page-content">
+
+    <div id="Menu_load"></div>
+
+    <div class="page-content">
         <div class="flex-grid no-responsive-future" style="height: 100%;">
             <div class="row" style="height: 100%">
                 <div class="cell auto-size padding20 bg-white" id="cell-content">
@@ -75,182 +76,327 @@
 					    <li><h4>得意先別請求一覧</h4></li>
 					</ul>
                     <hr class="thin bg-grayLighter">
-                      
                     <div class="cell colspan5">
-                      <div class="input-control select" style="width:200px;">
-	                    <div class="input-control select" style="width:75px;">
-	                        <select dir="rtl">
-	                            <option selected>2016</option>
-	                            <option>2017</option>
-	                            <option>2018</option>
-	                            <option>2019</option>
-	                            <option>2020</option>
-	                        </select>
-	                    </div>
-                        年
-                        <div class="input-control select" style="width:65px;">
-                            <select dir="rtl">
-                                <option>01</option>
-                                <option>02</option>
-                                <option>03</option>
-                                <option>04</option>
-                                <option>05</option>
-                                <option>06</option>
-                                <option selected>07</option>
-                                <option>08</option>
-                                <option>09</option>
-                                <option>10</option>
-                                <option>11</option>
-                                <option>12</option>
-                            </select>
+                        <div class="input-control select" style="width:200px;">
+	                        <div class="input-control select" style="width:75px;">
+	                            <select dir="rtl">
+	                                <option selected>2015</option>
+	                                <option>2016</option>
+                                    <option>2017</option>
+	                                <option>2018</option>
+	                                <option>2019</option>
+	                                <option>2020</option>
+	                            </select>
+	                        </div>
+                            年
+                            <div class="input-control select" style="width:65px;">
+                                <select dir="rtl">
+                                    <option>01</option>
+                                    <option>02</option>
+                                    <option>03</option>
+                                    <option>04</option>
+                                    <option>05</option>
+                                    <option>06</option>
+                                    <option>07</option>
+                                    <option>08</option>
+                                    <option>09</option>
+                                    <option>10</option>
+                                    <option>11</option>
+                                    <option>12</option>
+                                </select>
+                            </div>
+                            月
                         </div>
-                        月
-                        </div>
-                                                  
 						<div class="right">
-						　　<button class="button primary" style="width:100px;">検索</button>
+						　　  <button class="button primary" style="width:100px;margin-right:10px;">検索</button>
 						</div>
-					  </div>
-					  
-					<hr class="thin bg-grayLighter">
-					
-				    <div class="x_data_area">
-				     <!-- ロック部分 -->
-				    	<div class="lock_box">
-				      	 <table class="dataTable border bordered width300 data" style="margin:0px;"data-auto-width="false">
-				              <thead>
-				              <tr style="height: 90px;">
-							      <td rowspan="2" style="text-align:center;width: 40%;">得意先コード</td>
-				                  <td rowspan="2" style="text-align:center;width: 60%;">得意先名</td>
-				              </tr>
-				              </thead>
-				              <tbody>
-				              	<tr style="height: 30px;">
-				                  	<td style="text-align: right;">0423</td>
-				                  	<td style="text-align: left;">ユニキャリア</td>
-							    </tr>
-				                <tr style="height: 30px;">
-				                  	<td style="text-align: right;">0305</td>
-				                  	<td style="text-align: left;">住友ナコ</td>
-							    </tr>
-						  	    <tr style="height: 30px;">
-				                    <td style="text-align: right;">0617</td>
-				                    <td style="text-align: left;">富士フォークリフト</td>
-							    </tr>
-				          	  </tbody>
-				          	<tfoot>
-						      <tr style="height: 40px;"><td colspan="2" style="text-align: center;">合計</td></tr>
-					        </tfoot>
-				         </table>
-				      </div>
-				      <!-- 横スクロール部分 -->
-				      <div class="x_scroll_box">
-				          <table class="dataTable border bordered  data width2500"  style="margin:0px;">
-				              <tbody>
-				              <thead>
-				              	  <tr style="height: 48px;">
-				                 		 <td colspan="3" style="text-align:center;">2015/01</td>
-				                     	 <td colspan="3" style="text-align:center;">2015/02</td>
-				                         <td colspan="3" style="text-align:center;">2015/03</td>
-				                         <td colspan="3" style="text-align:center;">2015/04</td>
-				                         <td colspan="3" style="text-align:center;">2015/05</td>
-				                         <td colspan="3" style="text-align:center;">2015/06</td>
-				                         <td colspan="3" style="text-align:center;">2015/07</td>
-				                         <td colspan="3" style="text-align:center;">2015/08</td>
-				                         <td colspan="3" style="text-align:center;">2015/09</td>
-				                         <td colspan="3" style="text-align:center;">2015/10</td>
-				                         <td colspan="3" style="text-align:center;">2015/11</td>
-				                         <td colspan="3" style="text-align:center;">2015/12</td>
-				                         <td colspan="3" style="text-align:center;">合計</td>
-				                     </tr>
-				                     <tr style="height: 42px;">
-				                         <td style="text-align:center;">請求金額(円)</td><td style="text-align:center;">総未収合計(円)</td><td style="text-align:center;">消費税(円)</td>
-				                         <td style="text-align:center;">請求金額(円)</td><td style="text-align:center;">総未収合計(円)</td><td style="text-align:center;">消費税(円)</td>
-				                         <td style="text-align:center;">請求金額(円)</td><td style="text-align:center;">総未収合計(円)</td><td style="text-align:center;">消費税(円)</td>
-				                         <td style="text-align:center;">請求金額(円)</td><td style="text-align:center;">総未収合計(円)</td><td style="text-align:center;">消費税(円)</td>
-				                         <td style="text-align:center;">請求金額(円)</td><td style="text-align:center;">総未収合計(円)</td><td style="text-align:center;">消費税(円)</td>
-				                         <td style="text-align:center;">請求金額(円)</td><td style="text-align:center;">総未収合計(円)</td><td style="text-align:center;">消費税(円)</td>
-				                         <td style="text-align:center;">請求金額(円)</td><td style="text-align:center;">総未収合計(円)</td><td style="text-align:center;">消費税(円)</td>
-				                         <td style="text-align:center;">請求金額(円)</td><td style="text-align:center;">総未収合計(円)</td><td style="text-align:center;">消費税(円)</td>
-				                         <td style="text-align:center;">請求金額(円)</td><td style="text-align:center;">総未収合計(円)</td><td style="text-align:center;">消費税(円)</td>
-				                         <td style="text-align:center;">請求金額(円)</td><td style="text-align:center;">総未収合計(円)</td><td style="text-align:center;">消費税(円)</td>
-				                         <td style="text-align:center;">請求金額(円)</td><td style="text-align:center;">総未収合計(円)</td><td style="text-align:center;">消費税(円)</td>
-				                         <td style="text-align:center;">請求金額(円)</td><td style="text-align:center;">総未収合計(円)</td><td style="text-align:center;">消費税(円)</td>
-				                         <td style="text-align:center;">請求金額(円)</td><td style="text-align:center;">総未収合計(円)</td><td style="text-align:center;">消費税(円)</td>
-				                     </tr>
-				              </thead>
-				              <tbody style="text-align: right;">
-				                      <tr style="height: 30px;">
-				                          <td>151,945</td><td>140,960</td><td>11,255</td>
-				                          <td>151,945</td><td>140,960</td><td>11,255</td>
-				                          <td>151,945</td><td>140,960</td><td>11,255</td>
-				                          <td>151,945</td><td>140,960</td><td>11,255</td>
-				                          <td>151,945</td><td>140,960</td><td>11,255</td>
-				                          <td>151,945</td><td>140,960</td><td>11,255</td>
-				                          <td>151,945</td><td>140,960</td><td>11,255</td>
-				                          <td>151,945</td><td>140,960</td><td>11,255</td>
-				                          <td>151,945</td><td>140,960</td><td>11,255</td>
-				                          <td>151,945</td><td>140,960</td><td>11,255</td>
-				                          <td>151,945</td><td>140,960</td><td>11,255</td>
-				                          <td>151,945</td><td>140,960</td><td>11,255</td>
-				                          <td>1,823,340</td><td>1,691,520</td><td>135,060</td>
-				                      </tr>
-				                      <tr style="height: 30px;">
-				                          <td>200,100</td><td>185,000</td><td>15,100</td>
-				                          <td>200,100</td><td>185,000</td><td>15,100</td>
-				                          <td>200,100</td><td>185,000</td><td>15,100</td>
-				                          <td>200,100</td><td>185,000</td><td>15,100</td>
-				                          <td>200,100</td><td>185,000</td><td>15,100</td>
-				                          <td>200,100</td><td>185,000</td><td>15,100</td>
-				                          <td>200,100</td><td>185,000</td><td>15,100</td>
-				                          <td>200,100</td><td>185,000</td><td>15,100</td>
-				                          <td>200,100</td><td>185,000</td><td>15,100</td>
-				                          <td>200,100</td><td>185,000</td><td>15,100</td>
-				                          <td>200,100</td><td>185,000</td><td>15,100</td>
-				                          <td>200,100</td><td>185,000</td><td>15,100</td>
-				                          <td>2,401,200</td><td>2,220,000</td><td>181,200</td>
-				                      </tr>
-								      <tr style="height: 30px;">
-				                          <td>140,500</td><td>129,960</td><td>10,540</td>
-				                          <td>140,500</td><td>129,960</td><td>10,540</td>
-				                          <td>140,500</td><td>129,960</td><td>10,540</td>
-				                          <td>140,500</td><td>129,960</td><td>10,540</td>
-				                          <td>140,500</td><td>129,960</td><td>10,540</td>
-				                          <td>140,500</td><td>129,960</td><td>10,540</td>
-				                          <td>140,500</td><td>129,960</td><td>10,540</td>
-				                          <td>140,500</td><td>129,960</td><td>10,540</td>
-				                          <td>140,500</td><td>129,960</td><td>10,540</td>
-				                          <td>140,500</td><td>129,960</td><td>10,540</td>
-				                          <td>140,500</td><td>129,960</td><td>10,540</td>
-				                          <td>140,500</td><td>129,960</td><td>10,540</td>
-				                          <td>1,686,000</td><td>1,559,520</td><td>126,480</td>
-				                      </tr>
-				              </tbody>
-						      <tfoot>
-								<tr style="height: 40px;">
-									<td style="text-align: right;">492,545</td><td style="text-align: right;">455,920</td><td style="text-align: right;">36,895</td>
-									<td style="text-align: right;">492,545</td><td style="text-align: right;">455,920</td><td style="text-align: right;">36,895</td>
-									<td style="text-align: right;">492,545</td><td style="text-align: right;">455,920</td><td style="text-align: right;">36,895</td>
-									<td style="text-align: right;">492,545</td><td style="text-align: right;">455,920</td><td style="text-align: right;">36,895</td>
-									<td style="text-align: right;">492,545</td><td style="text-align: right;">455,920</td><td style="text-align: right;">36,895</td>
-									<td style="text-align: right;">492,545</td><td style="text-align: right;">455,920</td><td style="text-align: right;">36,895</td>
-									<td style="text-align: right;">492,545</td><td style="text-align: right;">455,920</td><td style="text-align: right;">36,895</td>
-									<td style="text-align: right;">492,545</td><td style="text-align: right;">455,920</td><td style="text-align: right;">36,895</td>
-									<td style="text-align: right;">492,545</td><td style="text-align: right;">455,920</td><td style="text-align: right;">36,895</td>
-									<td style="text-align: right;">492,545</td><td style="text-align: right;">455,920</td><td style="text-align: right;">36,895</td>
-									<td style="text-align: right;">492,545</td><td style="text-align: right;">455,920</td><td style="text-align: right;">36,895</td>
-									<td style="text-align: right;">492,545</td><td style="text-align: right;">455,920</td><td style="text-align: right;">36,895</td>
-									<td style="text-align: right;">5,910,540</td><td style="text-align: right;">5,471,040</td><td style="text-align: right;">442,740</td>
-							  </tfoot>
-				  		</table>
-					  </div>
-					 
 					</div>
-					
+				    <hr class="thin bg-grayLighter">
+
+                    <div class="x_data_area" style="width:1240px;border-right:0px none #ffffff;">
+                        <div class="lock_box">
+                            <table class="dataTable border bordered width300 data" style="margin:0px;font-size:12px;" data-auto-width="false">
+                                <thead>
+                                    <tr style="height: 90px;">
+                                        <td rowspan="2" style="text-align:center;width: 40%;">得意先コード</td>
+                                        <td rowspan="2" style="text-align:center;width: 60%;">得意先略名</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="height: 30px;">
+                                        <td style="text-align: right;">0423</td>
+                                        <td style="text-align: left;">ユニキャリア</td>
+                                    </tr>
+                                    <tr style="height: 30px;">
+                                        <td style="text-align: right;">0305</td>
+                                        <td style="text-align: left;">住友ナコ</td>
+                                    </tr>
+                                    <tr style="height: 30px;">
+                                        <td style="text-align: right;">0617</td>
+                                        <td style="text-align: left;">富士フォークリフト</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr style="height: 40px;"><td colspan="2" style="text-align: center;">合計</td></tr>
+                                </tfoot>
+                            </table>
+                        </div>
+
+                        <div class="x_scroll_box" style="width:615px;">
+                            <table class="dataTable border bordered  data" style="margin:0px;font-size:12px;width:3705px;">
+                                <thead>
+                                    <tr style="height: 48px;">
+                                        <td colspan="3" style="text-align:center;">2015/01</td>
+                                        <td colspan="3" style="text-align:center;">2015/02</td>
+                                        <td colspan="3" style="text-align:center;">2015/03</td>
+                                        <td colspan="3" style="text-align:center;">2015/04</td>
+                                        <td colspan="3" style="text-align:center;">2015/05</td>
+                                        <td colspan="3" style="text-align:center;">2015/06</td>
+                                        <td colspan="3" style="text-align:center;">2015/07</td>
+                                        <td colspan="3" style="text-align:center;">2015/08</td>
+                                        <td colspan="3" style="text-align:center;">2015/09</td>
+                                        <td colspan="3" style="text-align:center;">2015/10</td>
+                                        <td colspan="3" style="text-align:center;">2015/11</td>
+                                        <td colspan="3" style="text-align:center;">2015/12</td>
+                                    </tr>
+                                    <tr style="height: 42px;">
+                                        <td style="text-align:center;">請求金額(円)</td>
+                                        <td style="text-align:center;">総未収合計(円)</td>
+                                        <td style="text-align:center;">消費税(円)</td>
+                                        <td style="text-align:center;">請求金額(円)</td>
+                                        <td style="text-align:center;">総未収合計(円)</td>
+                                        <td style="text-align:center;">消費税(円)</td>
+                                        <td style="text-align:center;">請求金額(円)</td>
+                                        <td style="text-align:center;">総未収合計(円)</td>
+                                        <td style="text-align:center;">消費税(円)</td>
+                                        <td style="text-align:center;">請求金額(円)</td>
+                                        <td style="text-align:center;">総未収合計(円)</td>
+                                        <td style="text-align:center;">消費税(円)</td>
+                                        <td style="text-align:center;">請求金額(円)</td>
+                                        <td style="text-align:center;">総未収合計(円)</td>
+                                        <td style="text-align:center;">消費税(円)</td>
+                                        <td style="text-align:center;">請求金額(円)</td>
+                                        <td style="text-align:center;">総未収合計(円)</td>
+                                        <td style="text-align:center;">消費税(円)</td>
+                                        <td style="text-align:center;">請求金額(円)</td>
+                                        <td style="text-align:center;">総未収合計(円)</td>
+                                        <td style="text-align:center;">消費税(円)</td>
+                                        <td style="text-align:center;">請求金額(円)</td>
+                                        <td style="text-align:center;">総未収合計(円)</td>
+                                        <td style="text-align:center;">消費税(円)</td>
+                                        <td style="text-align:center;">請求金額(円)</td>
+                                        <td style="text-align:center;">総未収合計(円)</td>
+                                        <td style="text-align:center;">消費税(円)</td>
+                                        <td style="text-align:center;">請求金額(円)</td>
+                                        <td style="text-align:center;">総未収合計(円)</td>
+                                        <td style="text-align:center;">消費税(円)</td>
+                                        <td style="text-align:center;">請求金額(円)</td>
+                                        <td style="text-align:center;">総未収合計(円)</td>
+                                        <td style="text-align:center;">消費税(円)</td>
+                                        <td style="text-align:center;">請求金額(円)</td>
+                                        <td style="text-align:center;">総未収合計(円)</td>
+                                        <td style="text-align:center;">消費税(円)</td>
+                                    </tr>
+                                </thead>
+                                <tbody style="text-align: right;">
+                                    <tr style="height: 30px;">
+                                        <td>151,945</td>
+                                        <td>140,960</td>
+                                        <td>11,255</td>
+                                        <td>151,945</td>
+                                        <td>140,960</td>
+                                        <td>11,255</td>
+                                        <td>151,945</td>
+                                        <td>140,960</td>
+                                        <td>11,255</td>
+                                        <td>151,945</td>
+                                        <td>140,960</td>
+                                        <td>11,255</td>
+                                        <td>151,945</td>
+                                        <td>140,960</td>
+                                        <td>11,255</td>
+                                        <td>151,945</td>
+                                        <td>140,960</td>
+                                        <td>11,255</td>
+                                        <td>151,945</td>
+                                        <td>140,960</td>
+                                        <td>11,255</td>
+                                        <td>151,945</td>
+                                        <td>140,960</td>
+                                        <td>11,255</td>
+                                        <td>151,945</td>
+                                        <td>140,960</td>
+                                        <td>11,255</td>
+                                        <td>151,945</td>
+                                        <td>140,960</td>
+                                        <td>11,255</td>
+                                        <td>151,945</td>
+                                        <td>140,960</td>
+                                        <td>11,255</td>
+                                        <td>151,945</td>
+                                        <td>140,960</td>
+                                        <td>11,255</td>
+                                    </tr>
+                                    <tr style="height: 30px;">
+                                        <td>200,100</td>
+                                        <td>185,000</td>
+                                        <td>15,100</td>
+                                        <td>200,100</td>
+                                        <td>185,000</td>
+                                        <td>15,100</td>
+                                        <td>200,100</td>
+                                        <td>185,000</td>
+                                        <td>15,100</td>
+                                        <td>200,100</td>
+                                        <td>185,000</td>
+                                        <td>15,100</td>
+                                        <td>200,100</td>
+                                        <td>185,000</td>
+                                        <td>15,100</td>
+                                        <td>200,100</td>
+                                        <td>185,000</td>
+                                        <td>15,100</td>
+                                        <td>200,100</td>
+                                        <td>185,000</td>
+                                        <td>15,100</td>
+                                        <td>200,100</td>
+                                        <td>185,000</td>
+                                        <td>15,100</td>
+                                        <td>200,100</td>
+                                        <td>185,000</td>
+                                        <td>15,100</td>
+                                        <td>200,100</td>
+                                        <td>185,000</td>
+                                        <td>15,100</td>
+                                        <td>200,100</td>
+                                        <td>185,000</td>
+                                        <td>15,100</td>
+                                        <td>200,100</td>
+                                        <td>185,000</td>
+                                        <td>15,100</td>
+                                    </tr>
+                                    <tr style="height: 30px;">
+                                        <td>140,500</td>
+                                        <td>129,960</td>
+                                        <td>10,540</td>
+                                        <td>140,500</td>
+                                        <td>129,960</td>
+                                        <td>10,540</td>
+                                        <td>140,500</td>
+                                        <td>129,960</td>
+                                        <td>10,540</td>
+                                        <td>140,500</td>
+                                        <td>129,960</td>
+                                        <td>10,540</td>
+                                        <td>140,500</td>
+                                        <td>129,960</td>
+                                        <td>10,540</td>
+                                        <td>140,500</td>
+                                        <td>129,960</td>
+                                        <td>10,540</td>
+                                        <td>140,500</td>
+                                        <td>129,960</td>
+                                        <td>10,540</td>
+                                        <td>140,500</td>
+                                        <td>129,960</td>
+                                        <td>10,540</td>
+                                        <td>140,500</td>
+                                        <td>129,960</td>
+                                        <td>10,540</td>
+                                        <td>140,500</td>
+                                        <td>129,960</td>
+                                        <td>10,540</td>
+                                        <td>140,500</td>
+                                        <td>129,960</td>
+                                        <td>10,540</td>
+                                        <td>140,500</td>
+                                        <td>129,960</td>
+                                        <td>10,540</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr style="height: 40px;">
+                                        <td style="text-align: right; padding-right:5px;">492,545</td>
+                                        <td style="text-align: right; padding-right:5px;">455,920</td>
+                                        <td style="text-align: right; padding-right:5px;">36,895</td>
+                                        <td style="text-align: right; padding-right:5px;">492,545</td>
+                                        <td style="text-align: right; padding-right:5px;">455,920</td>
+                                        <td style="text-align: right; padding-right:5px;">36,895</td>
+                                        <td style="text-align: right; padding-right:5px;">492,545</td>
+                                        <td style="text-align: right; padding-right:5px;">455,920</td>
+                                        <td style="text-align: right; padding-right:5px;">36,895</td>
+                                        <td style="text-align: right; padding-right:5px;">492,545</td>
+                                        <td style="text-align: right; padding-right:5px;">455,920</td>
+                                        <td style="text-align: right; padding-right:5px;">36,895</td>
+                                        <td style="text-align: right; padding-right:5px;">492,545</td>
+                                        <td style="text-align: right; padding-right:5px;">455,920</td>
+                                        <td style="text-align: right; padding-right:5px;">36,895</td>
+                                        <td style="text-align: right; padding-right:5px;">492,545</td>
+                                        <td style="text-align: right; padding-right:5px;">455,920</td>
+                                        <td style="text-align: right; padding-right:5px;">36,895</td>
+                                        <td style="text-align: right; padding-right:5px;">492,545</td>
+                                        <td style="text-align: right; padding-right:5px;">455,920</td>
+                                        <td style="text-align: right; padding-right:5px;">36,895</td>
+                                        <td style="text-align: right; padding-right:5px;">492,545</td>
+                                        <td style="text-align: right; padding-right:5px;">455,920</td>
+                                        <td style="text-align: right; padding-right:5px;">36,895</td>
+                                        <td style="text-align: right; padding-right:5px;">492,545</td>
+                                        <td style="text-align: right; padding-right:5px;">455,920</td>
+                                        <td style="text-align: right; padding-right:5px;">36,895</td>
+                                        <td style="text-align: right; padding-right:5px;">492,545</td>
+                                        <td style="text-align: right; padding-right:5px;">455,920</td>
+                                        <td style="text-align: right; padding-right:5px;">36,895</td>
+                                        <td style="text-align: right; padding-right:5px;">492,545</td>
+                                        <td style="text-align: right; padding-right:5px;">455,920</td>
+                                        <td style="text-align: right; padding-right:5px;">36,895</td>
+                                        <td style="text-align: right; padding-right:5px;">492,545</td>
+                                        <td style="text-align: right; padding-right:5px;">455,920</td>
+                                        <td style="text-align: right; padding-right:5px;">36,895</td>
+                                </tfoot>
+                            </table>
+                        </div>
+
+                        <div class="lock_box">
+                            <table class="dataTable border bordered  data" style="margin:0px;width:300px;font-size:12px;">
+                                <thead>
+                                    <tr style="height: 48px;">
+                                        <td colspan="3" style="text-align:center;width:300px;">合計</td>
+                                    </tr>
+                                    <tr style="height: 42px;">
+                                        <td style="text-align:center;">請求金額(円)</td>
+                                        <td style="text-align:center;">総未収合計(円)</td>
+                                        <td style="text-align:center;">消費税(円)</td>
+                                    </tr>
+                                </thead>
+                                <tbody style="text-align: right;">
+                                    <tr style="height: 30px;">
+                                        <td>1,823,340</td>
+                                        <td>1,691,520</td>
+                                        <td>135,060</td>
+                                    </tr>
+                                    <tr style="height: 30px;">
+                                        <td>2,401,200</td>
+                                        <td>2,220,000</td>
+                                        <td>181,200</td>
+                                    </tr>
+                                    <tr style="height: 30px;">
+                                        <td>1,686,000</td>
+                                        <td>1,559,520</td>
+                                        <td>126,480</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr style="height: 40px;">
+                                        <td style="text-align: right; padding-right:5px;">5,910,540</td>
+                                        <td style="text-align: right; padding-right:5px;">5,471,040</td>
+                                        <td style="text-align: right; padding-right:5px;">442,740</td>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    
 </body>
 </html>
