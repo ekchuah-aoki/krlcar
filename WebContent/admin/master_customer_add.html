@@ -65,16 +65,13 @@
             var dialog = $(id).data('dialog');
             dialog.open();
         }
-
+       
         $(function(){
             $("#datepicker_seikyu").datepicker();
             $("#datepicker").datepicker();
             $("#datepicker_sime").datepicker();
-            
-        });
-        
-        $(function(){
-            $('.sidebar').on('click', 'li', function(){
+
+            $('.sidebar').on('click', 'li', function () {
                 if (!$(this).hasClass('active')) {
                     $('.sidebar li').removeClass('active');
                     $(this).addClass('active');
@@ -112,13 +109,13 @@
                     <div class="grid">
                         <div class="row cells12">
                             <div class="cell colspan1">
-                                顧客コード
+                                得意先コード
                                 <div class="input-control text full-size">
                                     <input type="text">
                                 </div>
                             </div>
                             <div class="cell colspan3">
-                                <label>顧客名</label>
+                                <label>得意先名</label>
                                 <div class="input-control text full-size">
                                     <input type="text">
                                 </div>
@@ -138,7 +135,7 @@
                         </div>
                         <div class="row cells12">
                             <div class="cell colspan3">
-                                <label>顧客略名</label>
+                                <label>得意先略名</label>
                                 <div class="input-control text full-size">
                                     <input type="text">
                                 </div>
