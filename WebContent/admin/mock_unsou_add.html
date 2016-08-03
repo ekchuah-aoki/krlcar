@@ -99,25 +99,21 @@
         }
 
         $(function(){
-            $('.sidebar').on('click', 'li', function(){
+            $("#datepicker").datepicker();
+
+            var addRow;
+            addRow = function () {
+                var lastRow = $('#nameTable tbody > tr:last').after('<tr class="center"><td style="text-align:center;padding:0px;margin:0px;"><label class="input-control checkbox small-check no-margin"><input type="checkbox"><span class="check"></span></label></td><td><input type="text" class="hoge" style="width:95%;" value="" /></td><td><input type="text" class="input" value="" />:<input type="text" class="input" value="" /></td></tr>')
+            }
+            $('#addRow').on('click', function () {
+                addRow();
+            });
+
+            $('.sidebar').on('click', 'li', function () {
                 if (!$(this).hasClass('active')) {
                     $('.sidebar li').removeClass('active');
                     $(this).addClass('active');
                 }
-            })
-        })
-    </script>
-    <script>
-        $(function(){
-            var addRow;
-
-            $("#datepicker").datepicker();
-
-            addRow = function () {
-                var lastRow = $('#nameTable tbody > tr:last').after('<tr class="center"><td style="text-align:center;padding:0px;margin:0px;"><label class="input-control checkbox small-check no-margin"><input type="checkbox"><span class="check"></span></label></td><td><input type="text" class="hoge" style="width:95%;" value="" /></td><td><input type="text" class="input" value="" />:<input type="text" class="input" value="" /></td></tr>')
-            }
-            $('#addRow').on('click', function() {
-                addRow();
             });
         });
     </script>
@@ -147,7 +143,8 @@
                     </div>
                     <hr class="thin bg-grayLighter">
                                         
-                    <table id="nameTable" class="dataTable border bordered" data-auto-width="false" style="width:155px; float: right;margin-right:185px;">
+                    <!--
+                    <table class="dataTable border bordered" data-auto-width="false" style="width:155px; float: right;margin-right:185px;">
                         <thead>
                             <tr>
                                 <td style="width:15px;text-align: center;">拘束時間</td>
@@ -169,8 +166,8 @@
                             </tr>
                         </tbody>
                     </table>
-
                     <div style="height:10px;"></div>
+                    -->
 
                     <table id="nameTable" class="dataTable border bordered" data-auto-width="false" style="width:70%; margin:0 auto;">
                       <thead>
