@@ -99,8 +99,8 @@
                     }
                 });
            });
-           $("#th01").click(function() {
-                $('#ui-id-1').text("委託先一覧");
+           $("#th01").click(function () {
+                $("[id^=ui-id]").text("委託先一覧");
                 $('#findname').text("委託先名");
                 $('#title01').text("委託先コード");
                 $('#title02').text("委託先名");
@@ -116,8 +116,8 @@
                 $('#title15').text("");
            });
 
-           $("#th02").click(function() {
-                $('#ui-id-1').text("社員一覧");
+           $("#th02").click(function () {
+                $("[id^=ui-id]").text("社員一覧");
                 $('#findname').text("社員名");
                 $('#title01').text("社員コード");
                 $('#title02').text("社員名");
