@@ -141,8 +141,8 @@
 	                        月
 		                    <span style="margin-left:30px;margin-right:5px;">車番</span>
 							<div class="input-control text" style="width:200px;">
-                                <input type="text" style="text-align:right;width:100px;" name="car" value="5346">
-                                <button class="button primary btn_shaban" style="margin: 0px; padding: 0px; left: 105px; width: 50px; height: 30px; font-size: 10px;">検索</button>
+                                <input type="text" style="text-align:right;width:100px;height: 28px;" name="car" value="5346">
+                                <button class="button primary btn_shaban" style="margin: 0px; padding: 0px; left: 105px; width: 50px; height: 28px; font-size: 10px;">検索</button>
                             </div>
 							<div class="right">
 			                    <button class="button primary" style="width:100px;">検索</button>
@@ -152,115 +152,116 @@
 		                </div>
 		            </div>
                     <hr class="thin bg-grayLighter">
-                    <table class="dataTable border bordered" data-auto-width="false" style="width:60%; margin:0 auto;">
+                    <table class="dataTable border bordered" data-auto-width="false" style="width:600px;  margin :0 auto;">
                         <thead>
                         <tr>
-                        	<td class="sortable-column" colspan="2" style="width:50%; text-align:center;">費目</td>
-                            <td class="sortable-column" style="width:10%; text-align:center;">金額</td>
+                        	<td class="sortable-column" colspan="3" style="width:200px; text-align:center;">費目</td>
+                            <td class="sortable-column" style="width:100px; text-align:center;">金額</td>
                         </tr>
                         </thead>
                         <tbody style="text-align: right;">
                         <tr>
                             <td style="width:20%;text-align: center;border-bottom:double;"rowspan="6">車両費</td>
-                            <td style="text-align: left;">(1) 減価償却費</td>
+                            <td style="text-align: left;" colspan="2">(1) 減価償却費</td>
                             <td><input type="text" style="width:100%; text-align:right;" value="32,638"></td>
 						</tr>
                         <tr>
-                            <td style="text-align: left;">(2) 金融費用</td>
+                            <td style="text-align: left;" colspan="2">(2) 金融費用</td>
                             <td><input type="text" style="width:100%; text-align:right;" value="2,083"></td>
 						</tr>
                         <tr>
-                            <td style="text-align: left;">(3) 自動車取得税</td>
+                            <td style="text-align: left;" colspan="2">(3) 自動車取得税</td>
                             <td><input type="text" style="width:100%; text-align:right;" value="1,041"></td>
 						</tr>
                         <tr>
-                            <td style="text-align: left;">(4) 自動車税</td>
+                            <td style="text-align: left;" colspan="2">(4) 自動車税</td>
                             <td><input type="text" style="width:100%; text-align:right;" value="958"></td>
 						</tr>
                         <tr>
-                            <td style="text-align: left;">(5) 自動車重量税</td>
-                            <td><input type="text" style="width:100%; text-align:right;" value="683"></td>
+                            <td style="text-align: left;border-bottom:double;" colspan="2">(5) 自動車重量税</td>
+                            <td style="border-bottom:double;"><input type="text" style="width:100%; text-align:right;" value="683"></td>
 						</tr>
 						 <tr>
-                            <td style="text-align: left; background-color:Ivory;border-bottom:double;font-weight:bold;color:#52677a;">車両費の合計</td>
-                            <td style="text-align: right;background-color:Ivory;border-bottom:double;font-weight:bold;color:#52677a;">37,403</td>
+                            <td style="text-align: left; background-color:Ivory;border-bottom:double;font-weight:bold;color:#52677a;" colspan="2">車両費の合計</td>
+                            <td style="text-align: right;background-color:Ivory;border-bottom:double;font-weight:bold;color:#52677a; padding-right:7px;">37,403</td>
 						</tr>
 
 						<tr>
                             <td style="width:20%;text-align: center;border-bottom:double;" rowspan="4">保険費</td>
-                            <td style="text-align: left;">(1) 自賠責保険</td>
+                            <td style="text-align: left;" colspan="2">(1) 自賠責保険</td>
                             <td><input type="text" style="width:100%; text-align:right;" value="2,280"></td>
 						</tr>
                         <tr>
-                            <td style="text-align: left;">(2) 任意保険(事故・車両)</td>
+                            <td style="text-align: left;" colspan="2">(2) 任意保険(事故・車両)</td>
                             <td><input type="text" style="width:100%; text-align:right;" value="4,166"></td>
 						</tr>
                         <tr>
-                            <td style="text-align: left;">(3) その他運送業総合保険等</td>
-                            <td><input type="text" style="width:100%; text-align:right;" value="2,500"></td>
+                            <td style="text-align: left;border-bottom:double;" colspan="2">(3) その他運送業総合保険等</td>
+                            <td style="border-bottom:double;"><input type="text" style="width:100%; text-align:right;" value="2,500"></td>
 						</tr>
                         <tr>
-                            <td style="text-align: left; background-color:Ivory;border-bottom:double;font-weight:bold;color:#52677a;">保険費の合計</td>
-                            <td style="text-align: right;background-color:Ivory;border-bottom:double;font-weight:bold;color:#52677a;">8,946</td>
+                            <td style="text-align: left; background-color:Ivory;border-bottom:double;font-weight:bold;color:#52677a;" colspan="2">保険費の合計</td>
+                            <td style="text-align: right;background-color:Ivory;border-bottom:double;font-weight:bold;color:#52677a; padding-right:7px;">8,946</td>
 						</tr>
 
 						<tr>
                             <td style="width:20%;text-align: center;border-bottom:double;"rowspan="6">運行費</td>
-                            <td style="text-align: left;">(1) 燃料単価(ℓ)</td>
+                            <td style="text-align: left;" colspan="2">(1) 燃料費</td>
                             <td><input type="text" style="width:100%; text-align:right;" value="437,500"></td>
 						</tr>
                         <tr>
-                            <td style="text-align: left;">(2) 油脂費</td>
+                            <td style="text-align: left;" colspan="2">(2) 油脂費</td>
                             <td><input type="text" style="width:100%; text-align:right;" value="12,600"></td>
 						</tr>
                         <tr>
-                            <td style="text-align: left;">(3) 修理費・車検整備費</td>
+                            <td style="text-align: center; width: 30px;" rowspan="2">修理費</td>
+                            <td style="text-align: left;">車検整備費</td>
                             <td><input type="text" style="width:100%; text-align:right;" value="8,333"></td>
 						</tr>
                         <tr>
-                            <td style="text-align: left;">(4) 修理費・一般修理費</td>
+                            <td style="text-align: left;">一般修理費</td>
                             <td><input type="text" style="width:100%; text-align:right;" value="17,500"></td>
 						</tr>
                         <tr>
-                            <td style="text-align: left;">(5) タイヤチューブ費</td>
-                            <td><input type="text" style="width:100%; text-align:right;" value="22,400"></td> 
+                            <td style="text-align: left;border-bottom:double;" colspan="2">(4) タイヤチューブ費</td>
+                            <td style="border-bottom:double;"><input type="text" style="width:100%; text-align:right;" value="22,400"></td> 
 						</tr>
 						<tr>
-                            <td style="text-align: left; background-color:Ivory;border-bottom:double;font-weight:bold;color:#52677a;">運行費の合計</td>
-                            <td style="text-align: right;background-color:Ivory;border-bottom:double;font-weight:bold;color:#52677a;">498,333</td> 
+                            <td style="text-align: left; background-color:Ivory;border-bottom:double;font-weight:bold;color:#52677a;" colspan="2">運行費の合計</td>
+                            <td style="text-align: right;background-color:Ivory;border-bottom:double;font-weight:bold;color:#52677a; padding-right:7px;">498,333</td> 
 						</tr>
 						
 						<tr>
                             <td style="width:20%;text-align: center;border-bottom:double;" rowspan="4">人件費</td>
-                            <td style="text-align: left;">(1) ドライバー人件費</td>
+                            <td style="text-align: left;" colspan="2">(1) ドライバー人件費</td>
                             <td><input type="text" style="width:100%; text-align:right;" value="292,600"></td>
 						</tr>
                         <tr>
-                            <td style="text-align: left;">(2) 時間外手当</td>
+                            <td style="text-align: left;" colspan="2">(2) 時間外手当</td>
                             <td><input type="text" style="width:100%; text-align:right;" value="50,000"></td>
 						</tr>
                         <tr>
-                            <td style="text-align: left;">(3) 退職金引当金</td>
-                            <td><input type="text" style="width:100%; text-align:right;" value="2,916"></td>
+                            <td style="text-align: left;border-bottom:double;" colspan="2">(3) 退職金引当金</td>
+                            <td style="border-bottom:double;"><input type="text" style="width:100%; text-align:right;" value="2,916"></td>
 						</tr>
                         <tr>
-                            <td style="text-align: left; background-color:Ivory;border-bottom:double;font-weight:bold;color:#52677a;">人件費の合計</td>
-                            <td style="text-align: right;background-color:Ivory;border-bottom:double;font-weight:bold;color:#52677a;">345,516</td>
+                            <td style="text-align: left; background-color:Ivory;border-bottom:double;font-weight:bold;color:#52677a;" colspan="2">人件費の合計</td>
+                            <td style="text-align: right;background-color:Ivory;border-bottom:double;font-weight:bold;color:#52677a; padding-right:7px;">345,516</td>
 						</tr>
 
 						<tr>
-                            <td style="text-align: left;" colspan="2">運送料(高速道路利用料他)</td>
+                            <td style="text-align: left;" colspan="3">運送料(高速道路利用料他)</td>
                             <td><input type="text" style="width:100%; text-align:right;" value="5,000"></td>
 						</tr>
                         <tr>
-                           <td style="text-align: left;" colspan="2">一般管理費</td>
+                           <td style="text-align: left;" colspan="3">一般管理費</td>
                            <td><input type="text" style="width:100%; text-align:right;" value="41,66"></td>
 						</tr>
                         </tbody>   
                         <tfoot>
     			             <tr>
-                                <td style="text-align: center;" colspan="2">運送減価の合計</td>
-                                <td style="text-align: right;">936,864</td>
+                                <td style="text-align: center;" colspan="3">運送減価の合計</td>
+                                <td style="text-align: right; padding-right:7px;">936,864</td>
 						    </tr>
 			            </tfoot>        
                     </table>
