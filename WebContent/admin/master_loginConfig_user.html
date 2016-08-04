@@ -7,6 +7,7 @@
     <meta name="description" content="Metro, a sleek, intuitive, and powerful framework for faster and easier web development for Windows Metro Style.">
     <meta name="keywords" content="HTML, CSS, JS, JavaScript, framework, metro, front-end, frontend, web development">
     <meta name="author" content="Sergey Pimenov and Metro UI CSS contributors">
+    <meta name="format-detection" content="telephone=no" />
 
     <link rel='shortcut icon' type='image/x-icon' href='../favicon.ico' />
 
@@ -40,7 +41,6 @@
             min-height: 0;
             height: auto;
         }
-
         @media screen and (max-width: 800px){
             #cell-sidebar {
                 flex-basis: 52px;
@@ -49,23 +49,31 @@
                 flex-basis: calc(100% - 52px);
             }
         }
+        table.rowselect th{
+            border: 1px solid rgb(153, 153, 153);
+            background-color:#ffffff;
+            padding:3px;
+        }
+        table.rowselect tr:hover {
+            background-color: #FFCC99;
+        }
     </style>
 
     <script>
-    $(function(){
-    $(".btn_shainlist").click(function () {
-	    $("#shainlist").dialog({
-	        modal: true,
-	        closeOnEscape: false,
-	        width: 440,
-	        height: 520,
-	        show: { effect: "clip", complete: function () { $("#torihikisaki_name").focus(); } },
-	        open: function (event, ui) {
-	            $(this).parent().find(".ui-dialog-titlebar-close").show();
-	        }
-	    });
-	});
-});
+        $(function(){
+            $(".btn_shainlist").click(function () {
+	            $("#shainlist").dialog({
+	                modal: true,
+	                closeOnEscape: false,
+	                width: 440,
+	                height: 520,
+	                show: { effect: "clip", complete: function () { $("#torihikisaki_name").focus(); } },
+	                open: function (event, ui) {
+	                    $(this).parent().find(".ui-dialog-titlebar-close").show();
+	                }
+	            });
+	        });
+        });
     </script>
 </head>
 <body>
@@ -81,8 +89,10 @@
                     <div class="cell colspan5">                        
                         <span style="margin-left:10px;">社員名</span>
                         <div class="input-control text" style="width:150px;margin:5px 0px 0px 5px;">
-                          <input type="text" style="text-align:left;width:150px;" name="car" value="平坂　一郎">
-                          <button class="button primary btn_shainlist" style="margin: 0px; padding: 0px; left: 155px; width: 35px; height: 31px; font-size: 10px;">検索</button>
+                            <input type="text" style="text-align:left;width:150px;height: 28px;" name="car" value="">
+                            <!--
+                              <button class="button primary btn_shainlist" style="margin: 0px; padding: 0px; left: 155px; width: 35px; height: 28px; font-size: 10px;">検索</button>
+                            -->
                         </div>
                         <div style="float: right; display:inline;">
                              <button class="button primary" style="width:100px;">検索</button>
