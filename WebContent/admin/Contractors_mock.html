@@ -15,14 +15,12 @@
     <link href="../css/metro.css" rel="stylesheet">
     <link href="../css/metro-icons.css" rel="stylesheet">
     <link href="../css/metro-responsive.css" rel="stylesheet">
-
+    
     <script src="../js/jquery-2.1.3.min.js"></script>
     <script src="../js/jquery.dataTables.min.js"></script>
-
     <script src="../js/metro.js"></script>
-    
     <script src="../js/Menu.js"></script>
-
+    
     <style>
         html, body {
             height: 100%;
@@ -50,7 +48,6 @@
             float: right;
             margin:7px 0 0 0;
         }
-
         @media screen and (max-width: 800px){
             #cell-sidebar {
                 flex-basis: 52px;
@@ -60,16 +57,11 @@
             }
         }
     </style>
-
     <script>
-        
     </script>
 </head>
-<body class="bg-steel">
-    
-     <!-- ヘッダー固定 -->
+<body>
    <div id="Menu_load"></div>
-
     <div class="page-content">
         <div class="flex-grid no-responsive-future" style="height: 100%;">
             <div class="row" style="height: 100%">
@@ -90,43 +82,42 @@
                         <div class="right">
                           <button type="button" class="button alert" style="width:100px;">削除</button>
                           <button type="button" class="button primary" style="width:100px;">検索</button>
-                          <button type="button" class="button primary" style="width:100px;" onclick="location.href='master_company_info.html'">登録</button>
+                          <button type="button" class="button success" style="width:100px;" onclick="location.href='master_company_info.html'">登録</button>
                         </div>
                     </div>
                     <hr class="thin bg-grayLighter">
                     <table class="dataTable border bordered" data-auto-width="false" style="font-size: small;">
                         <thead>
                         <tr>
-                            <td style="width: 50px;text-align: center;" class="sortable-column">削除</td>
-                            <td style="width:105px;text-align: center;" class="sortable-column">委託先コード</td>
-                            <td style="text-align: center;" class="sortable-column">委託先名</td>
-                            <td style="text-align: center;" class="sortable-column">部署</td>
-                            <td style="text-align: center;" class="sortable-column">課名</td>
-                            <td style="width: 80px;text-align: center;" class="sortable-column">郵便番号</td>
-                            <td style="text-align: center;" class="sortable-column">住所</td>
-                            <td style="width: 110px;text-align: center;" class="sortable-column">電話番号</td>
-                            <td style="width: 110px;text-align: center;" class="sortable-column">FAX</td>
-                            <td style="text-align: center;" class="sortable-column">詳細</td>
+                            <td style="text-align: center;width:50px;">削除</td>
+                            <td style="text-align: center;width:105px;">委託先コード</td>
+                            <td style="text-align: center;">委託先名</td>
+                            <td style="text-align: center;">部署</td>
+                            <td style="text-align: center;">課名</td>
+                            <td style="text-align: center;width: 80px;">郵便番号</td>
+                            <td style="text-align: center;">住所</td>
+                            <td style="text-align: center;width: 110px;">電話番号</td>
+                            <td style="text-align: center;width:110px;">FAX</td>
+                            <td style="text-align: center;">詳細</td>
                         </tr>
                         </thead>
                         <tbody>
-                        
                         <tr style="height: 45px;">
-                            <td align="center">
+                            <td style="text-align: center;">
                                <label class="input-control checkbox small-check no-margin">
                                     <input type="checkbox">
                                     <span class="check"></span>
                                 </label>
                             </td>
-                            <td>1234</td>
+                            <td style="text-align: right;">1234</td>
                             <td>クレベ運送株式会社</td>
                             <td></td>
                             <td></td>
-                            <td>538-0043</td>
+                            <td style="text-align: center;">538-0043</td>
                             <td>大阪府大阪市鶴見区今津南３丁目２-４</td>
-                            <td>06-6962-1581</td>
-                            <td>06-6968-1651</td>
-                            <td align="center">
+                            <td style="text-align: right;">06-6962-1581</td>
+                            <td style="text-align: right;">06-6968-1651</td>
+                            <td  style="text-align: center;">
                                  <button type="button" style="font-size: 1em; padding:4px 13px;background-color: #2086BF;color: #fff; border-style: none;" onclick="location.href='master_Contractors_add.html'">詳細</button>
                             </td>
                         </tr>
