@@ -132,7 +132,7 @@
                $("#shaban").dialog({
                    modal: true,
                    closeOnEscape: false,
-                   width: 450,
+                   width: 440,
                    height: 500,
                    show: { effect: "clip", complete: function () { $("#shashu").focus(); } },
                    open: function (event, ui) {
@@ -194,6 +194,7 @@
                window.location.href = 'inspection_add.html';
            });
            $("#th98").click(function () {
+               $("[id^=ui-id]").text("車両一覧");
                $('#findname').text("車種");
                $('#torihikisaki_name').hide();
                $('#shashu_select').show();
@@ -214,6 +215,7 @@
            });
 
            $("#th99").click(function () {
+               $("[id^=ui-id]").text("委託先一覧");
                $('#findname').text("委託先名");
                $('#torihikisaki_name').show();
                $('#shashu_select').hide();
@@ -1026,7 +1028,7 @@
 
     <!-- 社員一覧 -->
     <div id="shainlist" title="社員一覧" style="display:none;">
-        <table border="0" style="width:400px;margin:0 auto;">
+        <table border="0" style="width:400px;margin:0 auto;font-size:13px;">
             <tr>
                 <td colspan="3">
                     <hr class="thin bg-grayLighter">
@@ -1049,7 +1051,7 @@
         </table>
         <hr class="thin bg-grayLighter">
 
-        <table border="0" style="width:400px;margin:0 auto;">
+        <table border="0" style="width:400px;margin:0 auto;font-size:13px;">
             <tr style="height:10px;">
                 <td colspan="3" style="padding-right:3px; padding-left:3px;">
                     <button type="button" style="padding: 9px 9px;border-color:#9d9d9d;float:left;" class="ui-icon ui-icon-triangle-1-w button_search"></button>
@@ -1085,9 +1087,9 @@
         </table>
     </div>
 
-    <!-- 車番一覧 -->
-    <div id="shaban" title="車番一覧" style="display:none;">
-        <table border="0" style="width:400px;">
+    <!-- 車両一覧 -->
+    <div id="shaban" title="車両一覧" style="display:none;">
+        <table border="0" style="width:400px;font-size:13px;">
             <tr style="height:30px;">
                 <td colspan="3">
                     <label class="input-control radio small-check">
@@ -1122,7 +1124,7 @@
             </tr>
         </table>
         <hr class="thin bg-grayLighter">
-        <table border="0" style="width:400px;">
+        <table border="0" style="width:400px;font-size:13px;">
             <tr style="height:10px;">
                 <td style="width:80px;">
                     <button type="button" style="padding: 9px 9px;" class="ui-icon ui-icon-triangle-1-w button_search"></button>
@@ -1134,7 +1136,7 @@
             </tr>
             <tr style="height:250px">
                 <td colspan="3" style="vertical-align:top">
-                    <table class="rowselect" style="border-color: rgb(153, 153, 153); margin: 0px auto;" border="1">
+                    <table class="rowselect" style="border-color: rgb(153, 153, 153); margin: 0px auto; font-size:13px;" border="1">
                         <tr class="trheader" style="border-bottom-color: rgb(170, 170, 170); border-bottom-width: 3px; border-bottom-style: solid;">
                             <th id="title11" style="width:120px;height:26px;text-align:center;color:#52677a;">車番</th>
                             <th id="title12" style="width:150px;height:26px;text-align:center;color:#52677a;">車種</th>
