@@ -23,7 +23,6 @@
     <script src="../js/metro.js"></script>
     <script src="../js/Menu.js"></script>
     <script type="text/javascript" src="../js/jquery.ui.1.9.2.js"></script>
-	
     <style>
         html, body {
             height: 100%;
@@ -59,7 +58,25 @@
             }
         }
     </style>
+    
     <script>
+    function selectPayment(){
+    	obj = document.payment.changeSelect;
+    	
+    	index = obj.selectedIndex;
+    	
+    	if (index == 3){
+    		$('.transfer').append('<div style="margin-left: 30px;"><label>振込手数料</label><div class="input-control text full-size"><input type="text" style="text-align: right;"></div></div>');
+    		$('.paymentBill').empty();
+    		}else if (index == 4){
+    			$('.paymentBill').append('<div style="margin-left: 30px;float: left;"><label>手形番号</label><div class="input-control text full-size"><input type="text" style="text-align: right;"></div></div><div style="margin-left: 30px;float: left;"><label>手形振出人名</label><div class="input-control text full-size"><input type="text"></div></div>');
+    			$('.transfer').empty();
+    		}else{
+    			$('.transfer').empty();
+    			$('.paymentBill').empty();
+    			}
+    	}
+    
     	$(function(){
             $("#datepicker").datepicker();
             $('#goods_list1').addInputArea({ area_del: '.del_01'});
@@ -76,14 +93,7 @@
                     }
                 });
             });
-            
-            var addRow;
-            addRow = function () {
-            	var lastRow = $('#nameTable tbody > tr:last').after('<tr class="center" style="height: 70px;"><td><div class="input-control text full-size"><input type="text" style="text-align: right;" value=""></div></td><td><textarea style="resize: none;height: 60px;width: 100%;"></textarea></td></tr>')
-                	}
-                $('#addRow').on('click', function () {
-                    addRow();
-                });
+
         });
 	</script>
 </head>
@@ -99,26 +109,25 @@
                     <hr class="thin bg-grayLighter">
                     <div class="hidden">
                     <div class="left">
-                    	<span style="margin-left:5px;margin-right:10px;">得意先</span>
+                    	<span style="margin-left:5px;margin-right:10px;">請求番号</span>
                     	<div class="input-control text" style="width:160px;margin-top:10px;">
-                    		<input type="text" style="width:165px;font-size:11px;" value="ユニキャリア">
+                    		<input type="text" style="width:165px;text-align:right;font-size:11px;" value="455">
                       		<button class="button primary btn_tokuisaki" style="margin: 0px; padding: 0px; left: 170px; width: 30px; height: 28px; font-size: 10px;">検索</button>
                    		</div>
-                        <span style="margin-left:65px;margin-right:10px;">請求済み</span>
+                        <span style="margin-left:65px;margin-right:10px;">入金済</span>
                         <label class="input-control radio small-check">
-                        	<input type="radio" name="payment" checked="checked">
+                        	<input type="radio" name="payment">
                             <span class="check"></span>
                             <span class="mif-checkmark fg-green" style="margin-right:5px;"></span>
                         </label>
-                        <span style="margin-left:5px;margin-right:10px;">未締め</span>
+                        <span style="margin-left:5px;margin-right:10px;">未入金</span>
                         <label class="input-control radio small-check">
-                          <input type="radio" name="payment">
+                          <input type="radio" name="payment" checked="checked">
                           <span class="check"></span>
                           <span class="mif-checkmark fg-red" style="margin-right:5px;"></span>
                         </label>
                    	</div>
                     <div class="right">
-                        <button class="button warning goods_list1_add" style="width:100px; margin:0px 5px 0px 0px">行追加</button>
                         <button class="button success" style="width:100px;">保存</button>
                         <button class="button alert"   style="width:100px;" onclick="location.href='customer_mock.html'">戻る</button>
                     </div>
@@ -127,9 +136,9 @@
                     <div class="grid">
                     	<div class="row cells12">
                             <div class="cell colspan1">
-                                入金番号
+                                <label>請求番号</label>
                                 <div class="input-control text full-size">
-                                    <input type="text" style="text-align: right;" value="0000001">
+                                    <input type="text" style="text-align: right;" value="455" disabled>
                                 </div>
                             </div>
                             <div class="cell colspan1">
@@ -147,31 +156,35 @@
                             <div class="cell colspan2">
                                 <label>入金日</label>
                                 <div class="input-control text" id="">
-                                    <input type="text" style="width: 120px; height: 30px;" placeholder="">
-                                    <button class="button" style="height: 30px; right: 40px;"><span class="mif-calendar"></span></button>
+                                    <input type="text" style="height: 30px;" placeholder="">
+                                    <button class="button" style="height: 30px;"><span class="mif-calendar"></span></button>
                                  </div>
                             </div>
+                            <div class="cell colspan1">
+	                            <label>請求額</label>
+	                            <div class="input-control text full-size">
+	                                <input type="text"  style="text-align: right;" value="180,100" disabled>
+	                            </div>
+	                        </div>
                         </div>
                         <div class="row cells12">
                             <div class="cell colspan2">
-                                入金区分
+                                <label>入金区分</label>
                                 <div class="input-control text full-size">
-                                    <select class="select" style="height: 32px;">
+                                  <form name="payment">
+                                    <select class="select" style="height: 32px;" name="changeSelect" onChange="selectPayment()">
                                       <option value="">--</option>
                                       <option value="">現金</option>
                                       <option value="">小切手</option>
                                       <option value="">振込</option>
-                                      <option value="">加算</option>
                                       <option value="">手形</option>
                                       <option value="">その他</option>
-                                      <option value="">相殺</option>
-                                      <option value="">値引き</option>
-                                      <option value="">切手</option>
                                       <option value="">代引き</option>
                                       <option value="">クレジット</option>
                                       <option value="">先入金</option>
                                     </select>
-                                </div>    
+                                  </form>
+                                </div>
                             </div>
                             <div class="cell colspan5">
                                 適用
@@ -181,30 +194,16 @@
                             </div>
                         </div>
                         <div class="row cells12">
-                        <table id="goods_list1" class="dataTable border bordered data result" data-auto-width="false" style="width: 61%;margin-top: 0;">
-                          <thead>
-                            <tr style="height: 20px;">
-                               <td style="text-align: center;width: 20%;">金額</td>
-                               <td style="text-align: center;width: 80%;">備考・手形番号/手形期日など</td>
-                               <td style="text-align: center;width: 20%;display: table-cell;" class="del_01">削除</td>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr class="goods_list1_var" style="height: 90px;">
-                               <td>
-                                 <div class="input-control text full-size">
-                                     <input type="text" style="text-align: right;" value="" name="goods_list1_name_0">
-                                 </div>
-                               </td>
-                               <td>
-                                 <textarea style="resize: none;height: 60px;width: 100%;" name="goods_list1_name_0"></textarea>
-                               </td>
-                               <td class="del_01" style="display: table-cell;">
-                               　　<button class="button goods_list1_del alert" style="width: 100px;margin-bottom:20px;">削除</button>
-                               </td>
-                            </tr>
-                          </tbody>
-                        </table>
+                            <div class="cell colspan1">
+                                <label>金額</label>
+                                <div class="input-control text full-size">
+                                    <input type="text" style="text-align: right;" value="">
+                                </div>
+                            </div>
+                            
+                            <div class="transfer"></div>
+                            <div class="paymentBill" style="overflow: hidden;"></div>
+                            
                         </div>
                         <div class="row cells12">
                         	<div class="cell colspan1">
@@ -231,10 +230,10 @@
             </tr>
             <tr style="height:30px;">
                 <td style="width:20%;">
-                    <span id="findname" style="width:75px;color:#555555;">得意先者名</span>
+                    <span id="findname" style="width:75px;color:#555555;">請求番号</span>
                 </td>
                 <td style="width:50%;">
-                    <input type="text" id="torihikisaki_name" style="width:200px;">
+                    <input type="text" id="torihikisaki_name" style="width:200px;text-align:right;">
                 </td>
                 <td style="width:10%;">
                     <button class="button primary" style="width:80px;margin-left:14px;">検索</button>
@@ -257,24 +256,24 @@
                 <td colspan="3" style="vertical-align:top">
                     <table class="rowselect" style="border-color: rgb(153, 153, 153); margin: 0px auto;" border="1">
                         <tr class="trheader" style="border-bottom-color: rgb(170, 170, 170); border-bottom-width: 3px; border-bottom-style: solid;">
-                            <th id="title01" style="width:130px;height:26px;text-align:center;color:#52677a;">得意先コード</th>
-                            <th id="title02" style="width:350px;height:26px;text-align:center;color:#52677a;">得意先名</th>
-                            <th id="title03" style="width:150px;height:26px;text-align:center;color:#52677a;">電話番号</th>
+                            <th id="title01" style="width:130px;height:26px;text-align:center;color:#52677a;">請求番号</th>
+                            <th id="title02" style="width:150px;height:26px;text-align:center;color:#52677a;">得意先コード</th>
+                            <th id="title03" style="width:350px;height:26px;text-align:center;color:#52677a;">得意先名</th>
                         </tr>
                         <tr class="trheader">
-                            <td id="title04" style="text-align:left;color:#52677a;">0423</td>
+                            <td id="title04" style="text-align:right;color:#52677a;">455</td>
+                            <td id="title06" style="text-align:right;color:#52677a;">0423</td>
                             <td id="title05" style="text-align:left;color:#52677a;">ユニキャリア</td>
-                            <td id="title06" style="text-align:left;color:#52677a;">0463-59-6166</td>
                         </tr>
                         <tr class="trheader">
-                            <td id="title04" style="text-align:left;color:#52677a;">0453</td>
+                            <td id="title04" style="text-align:right;color:#52677a;">456</td>
+                            <td id="title06" style="text-align:right;color:#52677a;">0305</td>
                             <td id="title05" style="text-align:left;color:#52677a;">住友ナコ</td>
-                            <td id="title06" style="text-align:left;color:#52677a;">0463-79-7166</td>
                         </tr>
                         <tr class="trheader">
-                            <td id="title04" style="text-align:left;color:#52677a;">0693</td>
+                            <td id="title04" style="text-align:right;color:#52677a;">468</td>
+                            <td id="title06" style="text-align:right;color:#52677a;">0617</td>
                             <td id="title05" style="text-align:left;color:#52677a;">株式会社 富士フォークリフト</td>
-                            <td id="title06" style="text-align:left;color:#52677a;">0463-29-4126</td>
                         </tr>
                     </table>
                 </td>

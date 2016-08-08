@@ -94,85 +94,13 @@
 					</ul>
 			        <div class="grid">
 			            <hr class="thin bg-grayLighter">
-                        <span style="margin-left:5px;margin-right:10px;">得意先</span>
+                        <span style="margin-left:5px;margin-right:10px;">請求番号</span>
                         <div class="input-control text" style="width:160px;margin-top:10px;">
-                            <input type="text" style="text-align:left;width:165px;font-size:11px;" value="">
+                            <input type="text" style="text-align:right;width:165px;font-size:11px;" value="">
                             <button class="button primary btn_tokuisaki" style="margin: 0px; padding: 0px; left: 170px; width: 30px; height: 28px; font-size: 10px;">検索</button>
-                        </div>
-                        <span style="margin-left:70px;margin-right:10px;">締め状況</span>
-                        <div class="input-control select" style="width:60px;margin-top:10xp;">
-                          <select>
-                          	<option></option>
-                            <option>締め済</option>
-                            <option>未締め</option>
-                          </select>
                         </div>
                         <div class="cell colspan8">
                             <div class="input-control select" style="width:940px;">
-                                <span style="margin-left:5px;margin-right:5px;">請求締め日</span>
-                                <div class="input-control select" style="width:65px;">
-                                    <select dir="rtl">
-                                        <option selected>2016</option>
-                                        <option>2017</option>
-                                        <option>2018</option>
-                                        <option>2019</option>
-                                        <option>2020</option>
-                                    </select>
-                                </div>
-                                年
-                                <div class="input-control select" style="width:55px;">
-                                    <select dir="rtl">
-                                        <option>01</option>
-                                        <option>02</option>
-                                        <option>03</option>
-                                        <option>04</option>
-                                        <option>05</option>
-                                        <option>06</option>
-                                        <option selected>07</option>
-                                        <option>08</option>
-                                        <option>09</option>
-                                        <option>10</option>
-                                        <option>11</option>
-                                        <option>12</option>
-                                    </select>
-                                </div>
-                                月
-                                <div class="input-control select" style="width:55px;">
-                                    <select dir="rtl">
-                                        <option selected>01</option>
-                                        <option>02</option>
-                                        <option>03</option>
-                                        <option>04</option>
-                                        <option>05</option>
-                                        <option>06</option>
-                                        <option>07</option>
-                                        <option>08</option>
-                                        <option>09</option>
-                                        <option>10</option>
-                                        <option>11</option>
-                                        <option>12</option>
-                                        <option>13</option>
-                                        <option>14</option>
-                                        <option>15</option>
-                                        <option>16</option>
-                                        <option>18</option>
-                                        <option>19</option>
-                                        <option>20</option>
-                                        <option>21</option>
-                                        <option>22</option>
-                                        <option>23</option>
-                                        <option>24</option>
-                                        <option>25</option>
-                                        <option>26</option>
-                                        <option>27</option>
-                                        <option>28</option>
-                                        <option>29</option>
-                                        <option>30</option>
-                                        <option>31</option>
-                                    </select>
-                                </div>
-                                日
-                                <span style="margin-left:5px;margin-right:5px;">～</span>
                                 <div class="input-control select" style="width:65px;">
                                     <select dir="rtl">
                                         <option selected>2016</option>
@@ -200,41 +128,14 @@
                                     </select>
                                 </div>
                                 月
-                                <div class="input-control select" style="width:55px;">
-                                    <select dir="rtl">
-                                        <option>01</option>
-                                        <option>02</option>
-                                        <option>03</option>
-                                        <option>04</option>
-                                        <option>05</option>
-                                        <option>06</option>
-                                        <option>07</option>
-                                        <option>08</option>
-                                        <option>09</option>
-                                        <option>10</option>
-                                        <option>11</option>
-                                        <option>12</option>
-                                        <option>13</option>
-                                        <option>14</option>
-                                        <option>15</option>
-                                        <option>16</option>
-                                        <option>18</option>
-                                        <option>19</option>
-                                        <option>20</option>
-                                        <option>21</option>
-                                        <option>22</option>
-                                        <option>23</option>
-                                        <option>24</option>
-                                        <option>25</option>
-                                        <option>26</option>
-                                        <option>27</option>
-                                        <option>28</option>
-                                        <option>29</option>
-                                        <option>30</option>
-                                        <option selected>31</option>
-                                </select>
-                                </div>
-                                日
+                                <span style="margin-left:30px;margin-right:10px;">入金状況</span>
+                        		<div class="input-control select" style="width:60px;margin-top:10xp;">
+                          			<select>
+                          				<option></option>
+                            			<option>入金済</option>
+                            			<option>未入金</option>
+                          			</select>
+                        		</div>
                             </div>
                                 <div class="right">
                                     <button type="button" class="button alert" style="width:100px;">削除</button>
@@ -248,11 +149,12 @@
                         <thead>
                         <tr>
                             <td style="text-align:center;width: 60px;">削除</td>
-                            <td style="text-align:center;">入金番号</td>
+                            <td style="text-align:center;">請求番号</td>
                             <td style="text-align:center;">得意先コード</td>
                             <td style="text-align:center;width:px;">得意先</td>
                             <td style="text-align:center;">入金日</td>
-                            <td style="text-align:center;">入金額合計</td>
+                            <td style="text-align:center;">請求額</td>
+                            <td style="text-align:center;">入金額合計額</td>
                             <td style="text-align:center;">入金状況</td>
                             <td style="text-align: center;">詳細</td>
                         </tr>
@@ -265,12 +167,13 @@
                                     <span class="check"></span>
                                 </label>
                             </td>
-                            <td style="text-align:right;">0000001</td>
+                            <td style="text-align:right;">455</td>
                             <td style="text-align:right;">0423</td>
                             <td>ユニキャリア</td>
                             <td style="text-align:center;">2016/08/20</td>
                             <td style="text-align:right;">180,100</td>
-                            <td style="text-align:center;">請求済</td>
+                            <td style="text-align:right;">180,100</td>
+                            <td style="text-align:center;">入金済</td>
                             <td style="text-align: center;">
                                  <button type="button" style="font-size: 1em; padding:4px 13px;background-color: #2086BF;color: #fff; border-style: none;" onclick="location.href='payment_add.html'">詳細</button>
                             </td>
@@ -282,12 +185,13 @@
                                     <span class="check"></span>
                                 </label>
                             </td>
-                            <td style="text-align:right;">0000002</td>
+                            <td style="text-align:right;">456</td>
                             <td style="text-align:right;">0424</td>
                             <td>株式会社富士フォークリフト</td>
                             <td style="text-align:center;">2016/08/30</td>
                             <td style="text-align:right;">111,980</td>
-                            <td style="text-align:center;">未締め</td>
+                            <td style="text-align:right;">111,980</td>
+                            <td style="text-align:center;">未入金</td>
                             <td style="text-align: center;">
                                  <button type="button" style="font-size: 1em; padding:4px 13px;background-color: #2086BF;color: #fff; border-style: none;" onclick="location.href='payment_add.html'">詳細</button>
                             </td>
@@ -310,10 +214,10 @@
             </tr>
             <tr style="height:30px;">
                 <td style="width:20%;">
-                    <span id="findname" style="width:75px;color:#555555;">得意先者名</span>
+                    <span id="findname" style="width:75px;color:#555555;">請求番号</span>
                 </td>
                 <td style="width:50%;">
-                    <input type="text" id="torihikisaki_name" style="width:200px;">
+                    <input type="text" id="torihikisaki_name" style="width:200px;text-align:right;">
                 </td>
                 <td style="width:10%;">
                     <button class="button primary" style="width:80px;margin-left:14px;">検索</button>
@@ -336,24 +240,24 @@
                 <td colspan="3" style="vertical-align:top">
                     <table class="rowselect" style="border-color: rgb(153, 153, 153); margin: 0px auto;" border="1">
                         <tr class="trheader" style="border-bottom-color: rgb(170, 170, 170); border-bottom-width: 3px; border-bottom-style: solid;">
-                            <th id="title01" style="width:130px;height:26px;text-align:center;color:#52677a;">得意先コード</th>
-                            <th id="title02" style="width:350px;height:26px;text-align:center;color:#52677a;">得意先名</th>
-                            <th id="title03" style="width:150px;height:26px;text-align:center;color:#52677a;">電話番号</th>
+                            <th id="title01" style="width:130px;height:26px;text-align:center;color:#52677a;">請求番号</th>
+                            <th id="title02" style="width:150px;height:26px;text-align:center;color:#52677a;">得意先コード</th>
+                            <th id="title03" style="width:350px;height:26px;text-align:center;color:#52677a;">得意先名</th>
                         </tr>
                         <tr class="trheader">
-                            <td id="title04" style="text-align:left;color:#52677a;">0423</td>
+                            <td id="title04" style="text-align:right;color:#52677a;">455</td>
+                            <td id="title06" style="text-align:right;color:#52677a;">0423</td>
                             <td id="title05" style="text-align:left;color:#52677a;">ユニキャリア</td>
-                            <td id="title06" style="text-align:left;color:#52677a;">0463-59-6166</td>
                         </tr>
                         <tr class="trheader">
-                            <td id="title04" style="text-align:left;color:#52677a;">0453</td>
+                            <td id="title04" style="text-align:right;color:#52677a;">456</td>
+                            <td id="title06" style="text-align:right;color:#52677a;">0305</td>
                             <td id="title05" style="text-align:left;color:#52677a;">住友ナコ</td>
-                            <td id="title06" style="text-align:left;color:#52677a;">0463-79-7166</td>
                         </tr>
                         <tr class="trheader">
-                            <td id="title04" style="text-align:left;color:#52677a;">0693</td>
+                            <td id="title04" style="text-align:right;color:#52677a;">468</td>
+                            <td id="title06" style="text-align:right;color:#52677a;">0617</td>
                             <td id="title05" style="text-align:left;color:#52677a;">株式会社 富士フォークリフト</td>
-                            <td id="title06" style="text-align:left;color:#52677a;">0463-29-4126</td>
                         </tr>
                     </table>
                 </td>
