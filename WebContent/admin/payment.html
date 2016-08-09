@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -72,7 +72,7 @@
                 $("#tokuisakilist").dialog({
                     modal: true,
                     closeOnEscape: false,
-                    width: 500,
+                    width: 900,
                     height: 520,
                     show: { effect: "clip", complete: function () { $("#shashu").focus(); } },
                     open: function (event, ui) {
@@ -94,109 +94,112 @@
 					</ul>
 			        <div class="grid">
 			            <hr class="thin bg-grayLighter">
-                        <span style="margin-left:5px;margin-right:10px;">請求番号</span>
-                        <div class="input-control text" style="width:160px;margin-top:10px;">
-                            <input type="text" style="text-align:right;width:165px;font-size:11px;" value="">
-                            <button class="button primary btn_tokuisaki" style="margin: 0px; padding: 0px; left: 170px; width: 30px; height: 28px; font-size: 10px;">検索</button>
-                        </div>
-                        <div class="cell colspan8">
-                            <div class="input-control select" style="width:940px;">
-                                <div class="input-control select" style="width:65px;">
-                                    <select dir="rtl">
-                                        <option selected>2016</option>
-                                        <option>2017</option>
-                                        <option>2018</option>
-                                        <option>2019</option>
-                                        <option>2020</option>
-                                    </select>
-                                </div>
-                                年
-                                <div class="input-control select" style="width:55px;">
-                                    <select dir="rtl">
-                                        <option>01</option>
-                                        <option>02</option>
-                                        <option>03</option>
-                                        <option>04</option>
-                                        <option>05</option>
-                                        <option>06</option>
-                                        <option>07</option>
-                                        <option selected>08</option>
-                                        <option>09</option>
-                                        <option>10</option>
-                                        <option>11</option>
-                                        <option>12</option>
-                                    </select>
-                                </div>
-                                月
-                                <span style="margin-left:30px;margin-right:10px;">入金状況</span>
-                        		<div class="input-control select" style="width:60px;margin-top:10xp;">
-                          			<select>
-                          				<option></option>
-                            			<option>入金済</option>
-                            			<option>未入金</option>
-                          			</select>
-                        		</div>
+                        <div class="input-control text" style="width:900px;">
+                            <span style="margin-left:5px;margin-right:10px;">請求年月日</span>
+                            <div class="input-control select" style="width:60px;margin-top:5px;">
+                                <select dir="rtl">
+                                    <option selected>2016</option>
+                                    <option>2015</option>
+                                    <option>2014</option>
+                                    <option>2013</option>
+                                </select>
                             </div>
-                                <div class="right">
-                                    <button type="button" class="button alert" style="width:100px;">削除</button>
-                                    <button class="button primary" onclick="pushMessage('info')" style="width:100px;">検索</button>
-                                    <button class="button success" onclick="location.href='payment_add.html'" style="width:100px;">新規</button>
-                                </div>
+                            年
+                            <div class="input-control select" style="width:60px;margin-top:5px;">
+                                <select dir="rtl">
+                                    <option>01</option>
+                                    <option>02</option>
+                                    <option>03</option>
+                                    <option>04</option>
+                                    <option>05</option>
+                                    <option>06</option>
+                                    <option>07</option>
+                                    <option selected>08</option>
+                                    <option>09</option>
+                                    <option>10</option>
+                                    <option>11</option>
+                                    <option>12</option>
+                                </select>
+                            </div>
+                            月
+                            <span style="margin-left:25px;margin-right:10px;">請求書番号</span>
+                            <input type="text" style="text-align:right;width:95px;height: 28px;font-size:11px;" value="">
+                            <button class="button primary btn_tokuisaki" style="padding: 0px; left: 455px; width: 30px; height: 28px; font-size: 10px;margin-top:7px;">検索</button>
+                            <span style="margin-left:50px;margin-right:10px;">入金区分</span>
+                            <div class="input-control select">
+                                <select style="margin-top :5px; width:80px;height: 28px;">
+                                    <option></option>
+                                    <option>未入金</option>
+                                    <option>現金</option>
+                                    <option>振込</option>
+                                    <option>手形</option>
+                                    <option>その他</option>
+                                </select>
                             </div>
                         </div>
+                        <div style="float: right; display:inline;">
+                            <button class="button primary" onclick="pushMessage('info')" style="width:100px;">検索</button>
+                        </div>
+                    </div>
                     <hr class="thin bg-grayLighter">
                     <table class="dataTable border bordered" data-auto-width="false">
                         <thead>
                         <tr>
-                            <td style="text-align:center;width: 60px;">削除</td>
-                            <td style="text-align:center;">請求番号</td>
-                            <td style="text-align:center;">得意先コード</td>
-                            <td style="text-align:center;width:px;">得意先</td>
-                            <td style="text-align:center;">入金日</td>
-                            <td style="text-align:center;">請求額</td>
-                            <td style="text-align:center;">入金額合計額</td>
-                            <td style="text-align:center;">入金状況</td>
-                            <td style="text-align: center;">詳細</td>
+                            <th style="text-align:center;width:90px;">請求番号</th>
+                            <th style="text-align:center;width:130px;">得意先コード</th>
+                            <th style="text-align:center;">得意先略名</th>
+                            <th style="text-align:center;width:110px;">請求締め日</th>
+                            <th style="text-align:center;width:110px;">請求年月日</th>
+                            <th style="text-align:center;width:110px;">請求額</th>
+                            <th style="text-align:center;width:110px;">入金日</th>
+                            <th style="text-align:center;width:110px;">入金額</th>
+                            <th style="text-align:center;width:110px;">入金区分</th>
+                            <th style="text-align:center;width:90px;">詳細</th>
                         </tr>
                         </thead>
                         <tbody>
                         <tr>
-                            <td style="text-align:center;">
-                                <label class="input-control checkbox small-check no-margin">
-                                    <input type="checkbox">
-                                    <span class="check"></span>
-                                </label>
-                            </td>
-                            <td style="text-align:right;">455</td>
-                            <td style="text-align:right;">0423</td>
-                            <td>ユニキャリア</td>
-                            <td style="text-align:center;">2016/08/20</td>
-                            <td style="text-align:right;">180,100</td>
-                            <td style="text-align:right;">180,100</td>
-                            <td style="text-align:center;">入金済</td>
+                            <td style="text-align:right;">466</td>
+                            <td style="text-align:right;">489</td>
+                            <td style="text-align:left;">いすゞ自動車（株）</td>
+                            <td style="text-align:center;">2016/07/20</td>
+                            <td style="text-align:center;">2016/07/21</td>
+                            <td style="text-align:right;">114,145</td>
+                            <td style="text-align:center;">2016/08/08</td>
+                            <td style="text-align:right;">114,145</td>
+                            <td style="text-align:center;">振込</td>
                             <td style="text-align: center;">
                                  <button type="button" style="font-size: 1em; padding:4px 13px;background-color: #2086BF;color: #fff; border-style: none;" onclick="location.href='payment_add.html'">詳細</button>
                             </td>
                         </tr>
                         <tr>
-                            <td style="text-align:center;">
-                                <label class="input-control checkbox small-check no-margin">
-                                    <input type="checkbox">
-                                    <span class="check"></span>
-                                </label>
-                            </td>
-                            <td style="text-align:right;">456</td>
-                            <td style="text-align:right;">0424</td>
-                            <td>株式会社富士フォークリフト</td>
-                            <td style="text-align:center;">2016/08/30</td>
-                            <td style="text-align:right;">111,980</td>
-                            <td style="text-align:right;">111,980</td>
-                            <td style="text-align:center;">未入金</td>
+                            <td style="text-align:right;">489</td>
+                            <td style="text-align:right;">287</td>
+                            <td style="text-align:left;">クレベ運送株式会社</td>
+                            <td style="text-align:center;">2016/07/20</td>
+                            <td style="text-align:center;">2016/07/21</td>
+                            <td style="text-align:right;">143,980</td>
+                            <td style="text-align:center;">2016/08/01</td>
+                            <td style="text-align:right;">143,980</td>
+                            <td style="text-align:center;">振込</td>
                             <td style="text-align: center;">
-                                 <button type="button" style="font-size: 1em; padding:4px 13px;background-color: #2086BF;color: #fff; border-style: none;" onclick="location.href='payment_add.html'">詳細</button>
+                                <button type="button" style="font-size: 1em; padding:4px 13px;background-color: #2086BF;color: #fff; border-style: none;" onclick="location.href='payment_add.html'">詳細</button>
                             </td>
                         </tr>
-                        
+                        <tr>
+                            <td style="text-align:right;">405</td>
+                            <td style="text-align:right;">427</td>
+                            <td style="text-align:left;">ニチユＭＨＩ</td>
+                            <td style="text-align:center;">2016/07/20</td>
+                            <td style="text-align:center;">2016/07/21</td>
+                            <td style="text-align:right;">6,143,980</td>
+                            <td style="text-align:center;"></td>
+                            <td style="text-align:right;"></td>
+                            <td style="text-align:center;">未入金</td>
+                            <td style="text-align: center;">
+                                <button type="button" style="font-size: 1em; padding:4px 13px;background-color: #2086BF;color: #fff; border-style: none;" onclick="location.href='payment_add.html'">詳細</button>
+                            </td>
+                        </tr>
                         </tbody>
                     </table>
                 </div>
@@ -204,32 +207,32 @@
         </div>
     </div>
 
-    <!-- 得意先一覧 -->
-    <div id="tokuisakilist" title="得意先一覧" style="display:none;">
-        <table border="0" style="width:450px;margin:0 auto;">
+    <!-- 請求書一覧 -->
+    <div id="tokuisakilist" title="請求書一覧" style="display:none;">
+        <table border="0" style="width:850px;margin:0 auto;">
             <tr>
                 <td colspan="3">
                     <hr class="thin bg-grayLighter">
                 </td>
             </tr>
             <tr style="height:30px;">
-                <td style="width:20%;">
-                    <span id="findname" style="width:75px;color:#555555;">請求番号</span>
+                <td style="width:50px;">
+                    <span id="findname" style="width:75px;color:#555555;">得意先名</span>
                 </td>
-                <td style="width:50%;">
-                    <input type="text" id="torihikisaki_name" style="width:200px;text-align:right;">
+                <td style="width:400px;">
+                    <input type="text" id="torihikisaki_name" style="width:200px;text-align:left;">
                 </td>
                 <td style="width:10%;">
                     <button class="button primary" style="width:80px;margin-left:14px;">検索</button>
                 </td>
             </tr>
-            <tr style="height:10px;">
+            <tr style="height:5px;">
                 <td colspan="3"></td>
             </tr>
         </table>
         <hr class="thin bg-grayLighter">
 
-        <table border="0" style="width:450px;margin:0 auto;">
+        <table border="0" style="width:850px;margin:0 auto;">
             <tr style="height:10px;">
                 <td colspan="3" style="padding-right:3px; padding-left:3px;">
                     <button type="button" style="padding: 9px 9px;border-color:#9d9d9d;float:left;" class="ui-icon ui-icon-triangle-1-w button_search"></button>
@@ -240,24 +243,28 @@
                 <td colspan="3" style="vertical-align:top">
                     <table class="rowselect" style="border-color: rgb(153, 153, 153); margin: 0px auto;" border="1">
                         <tr class="trheader" style="border-bottom-color: rgb(170, 170, 170); border-bottom-width: 3px; border-bottom-style: solid;">
-                            <th id="title01" style="width:130px;height:26px;text-align:center;color:#52677a;">請求番号</th>
+                            <th id="title01" style="width:130px;height:26px;text-align:center;color:#52677a;">請求書番号</th>
                             <th id="title02" style="width:150px;height:26px;text-align:center;color:#52677a;">得意先コード</th>
                             <th id="title03" style="width:350px;height:26px;text-align:center;color:#52677a;">得意先名</th>
+                            <th id="title04" style="width:150px;height:26px;text-align:center;color:#52677a;">電話番号</th>
+                            <th id="title05" style="width:150px;height:26px;text-align:center;color:#52677a;">請求締め日</th>
+                            <th id="title06" style="width:150px;height:26px;text-align:center;color:#52677a;">請求年月日</th>
                         </tr>
                         <tr class="trheader">
-                            <td id="title04" style="text-align:right;color:#52677a;">455</td>
-                            <td id="title06" style="text-align:right;color:#52677a;">0423</td>
-                            <td id="title05" style="text-align:left;color:#52677a;">ユニキャリア</td>
+                            <td id="title07" style="text-align:right;color:#52677a;">466</td>
+                            <td id="title08" style="text-align:right;color:#52677a;">489</td>
+                            <td id="title09" style="text-align:left;color:#52677a;">いすゞ自動車（株）</td>
+                            <td id="title10" style="text-align:center;color:#52677a;">0463-59-6166</td>
+                            <td id="title11" style="text-align:center;color:#52677a;">2016/07/20</td>
+                            <td id="title12" style="text-align:center;color:#52677a;">2016/07/21</td>
                         </tr>
                         <tr class="trheader">
-                            <td id="title04" style="text-align:right;color:#52677a;">456</td>
-                            <td id="title06" style="text-align:right;color:#52677a;">0305</td>
-                            <td id="title05" style="text-align:left;color:#52677a;">住友ナコ</td>
-                        </tr>
-                        <tr class="trheader">
-                            <td id="title04" style="text-align:right;color:#52677a;">468</td>
-                            <td id="title06" style="text-align:right;color:#52677a;">0617</td>
-                            <td id="title05" style="text-align:left;color:#52677a;">株式会社 富士フォークリフト</td>
+                            <td id="title13" style="text-align:right;color:#52677a;">489</td>
+                            <td id="title14" style="text-align:right;color:#52677a;">287</td>
+                            <td id="title15" style="text-align:left;color:#52677a;">クレベ運送株式会社</td>
+                            <td id="title16" style="text-align:center;color:#52677a;">0463-79-7166</td>
+                            <td id="title17" style="text-align:center;color:#52677a;">2016/07/20</td>
+                            <td id="title18" style="text-align:center;color:#52677a;">2016/07/21</td>
                         </tr>
                     </table>
                 </td>
