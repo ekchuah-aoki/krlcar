@@ -37,8 +37,8 @@ $(function(){
         <li><a href='./salesCost_pay_mock.html'><span class='title'>委託先別支払一覧</span></a></li>\
         <li><a href='./bill_close.html'><span class='title'>請求書締め処理</span></a></li>\
         <li><a href='./bill_search.html'><span class='title'>請求書印刷</span></a></li>\
-        <li><a href='./cost_truck_monthly.html'><span class='title'>車両別固定費・変動費・諸経費入力</span></a></li>\
         <li><a href='./payment.html'><span class='title'>入金一覧</span></a></li>\
+        <li><a href='./cost_truck_monthly.html'><span class='title'>車両別固定費・変動費・諸経費入力</span></a></li>\
     </ul>\
     </li>\
     <li><a href='' class='dropdown-toggle'>運行管理</a>\
