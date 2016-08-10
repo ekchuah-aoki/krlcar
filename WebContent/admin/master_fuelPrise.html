@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -63,168 +63,180 @@
    </script>
 </head>
 <body>
-
-     <!-- ヘッダー固定 -->
-   <div id="Menu_load"></div>
-
+    <div id="Menu_load"></div>
     <div class="page-content">
         <div class="flex-grid no-responsive-future" style="height: 100%;">
-            <div class="row" style="height: 100%">
+            <div class="row">
                 <div class="cell auto-size padding20 bg-white" id="cell-content">
                     <ul class="breadcrumbs" style="padding:0px;">
                         <li><h4>月別燃料単価</h4></li>
                     </ul>
                     <hr class="thin bg-grayLighter">
-                    <div class="align-right">
-                        <button class="button primary" style="width:100px; margin:0px 10px 0px 0px">保存</button>
+                    <div class="grid">
+                        <div class="cell colspan5">
+                            <div class="input-control select" style="width:65px;">
+                                <select dir="rtl">
+                                    <option selected>2016</option>
+                                    <option>2015</option>
+                                    <option>2014</option>
+                                    <option>2013</option>
+                                    <option>2012</option>
+                                </select>
+                            </div>
+                            年度
+                            <div style="float: right;">
+                                <button class="button primary" style="width:100px;">検索</button>
+                                <button class="button primary" style="width:100px;">保存</button>
+                            </div>
+                        </div>
                     </div>
                     <hr class="thin bg-grayLighter">
                     <table class="dataTable border bordered" data-auto-width="false">
                         <thead>
-                        <tr>
-                            <td rowspan="2" style="text-align: center;"><p>燃料単価</p><p>（過去５年分）</p></td>
-                            <td colspan="12"><span style="margin-left:5px;">月</span></td>
-                        </tr>
-                        <tr>
-                            <td style="text-align: center;">6月</td>
-                            <td style="text-align: center;">7月</td>
-                            <td style="text-align: center;">8月</td>
-                            <td style="text-align: center;">9月</td>
-                            <td style="text-align: center;">10月</td>
-                            <td style="text-align: center;">11月</td>
-                            <td style="text-align: center;">12月</td>
-                            <td style="text-align: center;">1月</td>
-                            <td style="text-align: center;">2月</td>
-                            <td style="text-align: center;">3月</td>
-                            <td style="text-align: center;">4月</td>
-                            <td style="text-align: center;">5月</td>
-                        </tr>
+                            <tr>
+                                <td rowspan="2" style="text-align: center;"><p>燃料単価</p><p>（過去５年分）</p></td>
+                                <td colspan="12"><span style="margin-left:5px;">月</span></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center;">6月</td>
+                                <td style="text-align: center;">7月</td>
+                                <td style="text-align: center;">8月</td>
+                                <td style="text-align: center;">9月</td>
+                                <td style="text-align: center;">10月</td>
+                                <td style="text-align: center;">11月</td>
+                                <td style="text-align: center;">12月</td>
+                                <td style="text-align: center;">1月</td>
+                                <td style="text-align: center;">2月</td>
+                                <td style="text-align: center;">3月</td>
+                                <td style="text-align: center;">4月</td>
+                                <td style="text-align: center;">5月</td>
+                            </tr>
                         </thead>
                         <tbody>
-                        <tr style="height: 50px;">
-                            <td style="text-align:center;height: 40px;">2016年度</td>
-                            <td style="text-align: left; width:10px;height: 40px;">
-                               <div class="input-control text" data-length="6" style="width:80px;margin-top:10px;">
-                                    <input type="text" style="text-align:right;width:80px;font-size:14px;" value="95.46">
-                               </div> 
-                            </td>
-                            <td style="text-align: left; width:10px;height: 40px;">
-                               <div class="input-control text" data-length="6" style="width:80px;margin-top:10px;">
-                                    <input type="text" style="text-align:right;width:80px;font-size:14px;" value="91.54">
-                               </div> 
-                            </td>
-                            <td style="text-align: left; width:10px;height: 40px;">
-                               <div class="input-control text" data-length="6" style="width:80px;margin-top:10px;">
-                                    <input type="text" style="text-align:right;width:80px;font-size:14px;" value="84.5">
-                               </div> 
-                            </td>
-                            <td style="text-align: left; width:10px;height: 40px;">
-                               <div class="input-control text" data-length="6" style="width:80px;margin-top:10px;">
-                                    <input type="text" style="text-align:right;width:80px;font-size:14px;" value="82.7">
-                               </div> 
-                            </td>
-                            <td style="text-align: left; width:10px;height: 40px;">
-                               <div class="input-control text" data-length="6" style="width:80px;margin-top:10px;">
-                                    <input type="text" style="text-align:right;width:80px;font-size:14px;" value="82.6">
-                               </div> 
-                            </td>
-                            <td style="text-align: left; width:10px;height: 40px;">
-                               <div class="input-control text" data-length="6" style="width:80px;margin-top:10px;">
-                                    <input type="text" style="text-align:right;width:80px;font-size:14px;" value="84.4">
-                               </div> 
-                            </td>
-                            <td style="text-align: left; width:10px;height: 40px;">
-                               <div class="input-control text" data-length="6" style="width:80px;margin-top:10px;">
-                                    <input type="text" style="text-align:right;width:80px;font-size:14px;" value="80.9">
-                               </div> 
-                            </td>
-                            <td style="text-align: left; width:10px;height: 40px;">
-                               <div class="input-control text" data-length="6" style="width:80px;margin-top:10px;">
-                                    <input type="text" style="text-align:right;width:80px;font-size:14px;" value="74.1">
-                               </div> 
-                            </td>
-                            <td style="text-align: left; width:10px;height: 40px;">
-                               <div class="input-control text" data-length="6" style="width:80px;margin-top:10px;">
-                                    <input type="text" style="text-align:right;width:80px;font-size:14px;" value="70.1">
-                               </div> 
-                            </td>
-                            <td style="text-align: left; width:10px;height: 40px;">
-                               <div class="input-control text" data-length="6" style="width:80px;margin-top:10px;">
-                                    <input type="text" style="text-align:right;width:80px;font-size:14px;" value="">
-                               </div> 
-                            </td>
-                            <td style="text-align: left; width:10px;height: 40px;">
-                               <div class="input-control text" data-length="6" style="width:80px;margin-top:10px;">
-                                    <input type="text" style="text-align:right;width:80px;font-size:14px;" value="">
-                               </div> 
-                            </td>
-                            <td style="text-align: left; width:10px;height: 40px;">
-                               <div class="input-control text" data-length="6" style="width:80px;margin-top:10px;">
-                                    <input type="text" style="text-align:right;width:80px;font-size:14px;" value="">
-                               </div> 
-                            </td>
-                        </tr>
-                        <tr style="height: 50px;">
-                            <td style="text-align:center;">2015年度</td>
-                            <td style="text-align:right;"><span style="margin-right:6px;">95.46</span></td>
-                            <td style="text-align:right;"><span style="margin-right:6px;">91.54</span></td>
-                            <td style="text-align:right;"><span style="margin-right:6px;">84.5</span></td>
-                            <td style="text-align:right;"><span style="margin-right:6px;">82.7</span></td>
-                            <td style="text-align:right;"><span style="margin-right:6px;">82.6</span></td>
-                            <td style="text-align:right;"><span style="margin-right:6px;">84.4</span></td>
-                            <td style="text-align:right;"><span style="margin-right:6px;">80.9</span></td>
-                            <td style="text-align:right;"><span style="margin-right:6px;">74.1</span></td>
-                            <td style="text-align:right;"><span style="margin-right:6px;">70.1</span></td>
-                            <td style="text-align:right;"><span style="margin-right:6px;">89</span></td>
-                            <td style="text-align:right;"><span style="margin-right:6px;">90</span></td>
-                            <td style="text-align:right;"><span style="margin-right:6px;">91</span></td>
-                        </tr>
-                        <tr style="height: 50px;">
-                            <td style="text-align:center;">2014年度</td>
-                            <td style="text-align:right;"><span style="margin-right:6px;">95.46</span></td>
-                            <td style="text-align:right;"><span style="margin-right:6px;">91.54</span></td>
-                            <td style="text-align:right;"><span style="margin-right:6px;">84.5</span></td>
-                            <td style="text-align:right;"><span style="margin-right:6px;">82.7</span></td>
-                            <td style="text-align:right;"><span style="margin-right:6px;">82.6</span></td>
-                            <td style="text-align:right;"><span style="margin-right:6px;">84.4</span></td>
-                            <td style="text-align:right;"><span style="margin-right:6px;">80.9</span></td>
-                            <td style="text-align:right;"><span style="margin-right:6px;">74.1</span></td>
-                            <td style="text-align:right;"><span style="margin-right:6px;">70.1</span></td>
-                            <td style="text-align:right;"><span style="margin-right:6px;">89</span></td>
-                            <td style="text-align:right;"><span style="margin-right:6px;">90</span></td>
-                            <td style="text-align:right;"><span style="margin-right:6px;">91</span></td>
-                        </tr>
-                        <tr style="height: 50px;">
-                            <td style="text-align:center;">2013年度</td>
-                            <td style="text-align:right;"><span style="margin-right:6px;">95.46</span></td>
-                            <td style="text-align:right;"><span style="margin-right:6px;">91.54</span></td>
-                            <td style="text-align:right;"><span style="margin-right:6px;">84.5</span></td>
-                            <td style="text-align:right;"><span style="margin-right:6px;">82.7</span></td>
-                            <td style="text-align:right;"><span style="margin-right:6px;">82.6</span></td>
-                            <td style="text-align:right;"><span style="margin-right:6px;">84.4</span></td>
-                            <td style="text-align:right;"><span style="margin-right:6px;">80.9</span></td>
-                            <td style="text-align:right;"><span style="margin-right:6px;">74.1</span></td>
-                            <td style="text-align:right;"><span style="margin-right:6px;">70.1</span></td>
-                            <td style="text-align:right;"><span style="margin-right:6px;">89</span></td>
-                            <td style="text-align:right;"><span style="margin-right:6px;">90</span></td>
-                            <td style="text-align:right;"><span style="margin-right:6px;">91</span></td>
-                        </tr>
-                        <tr style="height: 50px;">
-                            <td style="text-align:center;">2012年度</td>
-                            <td style="text-align:right;"><span style="margin-right:6px;">95.46</span></td>
-                            <td style="text-align:right;"><span style="margin-right:6px;">91.54</span></td>
-                            <td style="text-align:right;"><span style="margin-right:6px;">84.5</span></td>
-                            <td style="text-align:right;"><span style="margin-right:6px;">82.7</span></td>
-                            <td style="text-align:right;"><span style="margin-right:6px;">82.6</span></td>
-                            <td style="text-align:right;"><span style="margin-right:6px;">84.4</span></td>
-                            <td style="text-align:right;"><span style="margin-right:6px;">80.9</span></td>
-                            <td style="text-align:right;"><span style="margin-right:6px;">74.1</span></td>
-                            <td style="text-align:right;"><span style="margin-right:6px;">70.1</span></td>
-                            <td style="text-align:right;"><span style="margin-right:6px;">89</span></td>
-                            <td style="text-align:right;"><span style="margin-right:6px;">90</span></td>
-                            <td style="text-align:right;"><span style="margin-right:6px;">91</span></td>
-                        </tr>
-                    </tbody>
+                            <tr style="height: 50px;">
+                                <td style="text-align:center;height: 40px;">2016年度</td>
+                                <td style="text-align: left; width:10px;height: 40px;">
+                                    <div class="input-control text" data-length="6" style="width:80px;margin-top:10px;">
+                                        <input type="text" style="text-align:right;width:80px;font-size:14px;" value="95.46">
+                                    </div>
+                                </td>
+                                <td style="text-align: left; width:10px;height: 40px;">
+                                    <div class="input-control text" data-length="6" style="width:80px;margin-top:10px;">
+                                        <input type="text" style="text-align:right;width:80px;font-size:14px;" value="91.54">
+                                    </div>
+                                </td>
+                                <td style="text-align: left; width:10px;height: 40px;">
+                                    <div class="input-control text" data-length="6" style="width:80px;margin-top:10px;">
+                                        <input type="text" style="text-align:right;width:80px;font-size:14px;" value="84.5">
+                                    </div>
+                                </td>
+                                <td style="text-align: left; width:10px;height: 40px;">
+                                    <div class="input-control text" data-length="6" style="width:80px;margin-top:10px;">
+                                        <input type="text" style="text-align:right;width:80px;font-size:14px;" value="82.7">
+                                    </div>
+                                </td>
+                                <td style="text-align: left; width:10px;height: 40px;">
+                                    <div class="input-control text" data-length="6" style="width:80px;margin-top:10px;">
+                                        <input type="text" style="text-align:right;width:80px;font-size:14px;" value="82.6">
+                                    </div>
+                                </td>
+                                <td style="text-align: left; width:10px;height: 40px;">
+                                    <div class="input-control text" data-length="6" style="width:80px;margin-top:10px;">
+                                        <input type="text" style="text-align:right;width:80px;font-size:14px;" value="84.4">
+                                    </div>
+                                </td>
+                                <td style="text-align: left; width:10px;height: 40px;">
+                                    <div class="input-control text" data-length="6" style="width:80px;margin-top:10px;">
+                                        <input type="text" style="text-align:right;width:80px;font-size:14px;" value="80.9">
+                                    </div>
+                                </td>
+                                <td style="text-align: left; width:10px;height: 40px;">
+                                    <div class="input-control text" data-length="6" style="width:80px;margin-top:10px;">
+                                        <input type="text" style="text-align:right;width:80px;font-size:14px;" value="74.1">
+                                    </div>
+                                </td>
+                                <td style="text-align: left; width:10px;height: 40px;">
+                                    <div class="input-control text" data-length="6" style="width:80px;margin-top:10px;">
+                                        <input type="text" style="text-align:right;width:80px;font-size:14px;" value="70.1">
+                                    </div>
+                                </td>
+                                <td style="text-align: left; width:10px;height: 40px;">
+                                    <div class="input-control text" data-length="6" style="width:80px;margin-top:10px;">
+                                        <input type="text" style="text-align:right;width:80px;font-size:14px;" value="">
+                                    </div>
+                                </td>
+                                <td style="text-align: left; width:10px;height: 40px;">
+                                    <div class="input-control text" data-length="6" style="width:80px;margin-top:10px;">
+                                        <input type="text" style="text-align:right;width:80px;font-size:14px;" value="">
+                                    </div>
+                                </td>
+                                <td style="text-align: left; width:10px;height: 40px;">
+                                    <div class="input-control text" data-length="6" style="width:80px;margin-top:10px;">
+                                        <input type="text" style="text-align:right;width:80px;font-size:14px;" value="">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr style="height: 50px;">
+                                <td style="text-align:center;">2015年度</td>
+                                <td style="text-align:right;"><span style="margin-right:6px;">95.46</span></td>
+                                <td style="text-align:right;"><span style="margin-right:6px;">91.54</span></td>
+                                <td style="text-align:right;"><span style="margin-right:6px;">84.5</span></td>
+                                <td style="text-align:right;"><span style="margin-right:6px;">82.7</span></td>
+                                <td style="text-align:right;"><span style="margin-right:6px;">82.6</span></td>
+                                <td style="text-align:right;"><span style="margin-right:6px;">84.4</span></td>
+                                <td style="text-align:right;"><span style="margin-right:6px;">80.9</span></td>
+                                <td style="text-align:right;"><span style="margin-right:6px;">74.1</span></td>
+                                <td style="text-align:right;"><span style="margin-right:6px;">70.1</span></td>
+                                <td style="text-align:right;"><span style="margin-right:6px;">89</span></td>
+                                <td style="text-align:right;"><span style="margin-right:6px;">90</span></td>
+                                <td style="text-align:right;"><span style="margin-right:6px;">91</span></td>
+                            </tr>
+                            <tr style="height: 50px;">
+                                <td style="text-align:center;">2014年度</td>
+                                <td style="text-align:right;"><span style="margin-right:6px;">95.46</span></td>
+                                <td style="text-align:right;"><span style="margin-right:6px;">91.54</span></td>
+                                <td style="text-align:right;"><span style="margin-right:6px;">84.5</span></td>
+                                <td style="text-align:right;"><span style="margin-right:6px;">82.7</span></td>
+                                <td style="text-align:right;"><span style="margin-right:6px;">82.6</span></td>
+                                <td style="text-align:right;"><span style="margin-right:6px;">84.4</span></td>
+                                <td style="text-align:right;"><span style="margin-right:6px;">80.9</span></td>
+                                <td style="text-align:right;"><span style="margin-right:6px;">74.1</span></td>
+                                <td style="text-align:right;"><span style="margin-right:6px;">70.1</span></td>
+                                <td style="text-align:right;"><span style="margin-right:6px;">89</span></td>
+                                <td style="text-align:right;"><span style="margin-right:6px;">90</span></td>
+                                <td style="text-align:right;"><span style="margin-right:6px;">91</span></td>
+                            </tr>
+                            <tr style="height: 50px;">
+                                <td style="text-align:center;">2013年度</td>
+                                <td style="text-align:right;"><span style="margin-right:6px;">95.46</span></td>
+                                <td style="text-align:right;"><span style="margin-right:6px;">91.54</span></td>
+                                <td style="text-align:right;"><span style="margin-right:6px;">84.5</span></td>
+                                <td style="text-align:right;"><span style="margin-right:6px;">82.7</span></td>
+                                <td style="text-align:right;"><span style="margin-right:6px;">82.6</span></td>
+                                <td style="text-align:right;"><span style="margin-right:6px;">84.4</span></td>
+                                <td style="text-align:right;"><span style="margin-right:6px;">80.9</span></td>
+                                <td style="text-align:right;"><span style="margin-right:6px;">74.1</span></td>
+                                <td style="text-align:right;"><span style="margin-right:6px;">70.1</span></td>
+                                <td style="text-align:right;"><span style="margin-right:6px;">89</span></td>
+                                <td style="text-align:right;"><span style="margin-right:6px;">90</span></td>
+                                <td style="text-align:right;"><span style="margin-right:6px;">91</span></td>
+                            </tr>
+                            <tr style="height: 50px;">
+                                <td style="text-align:center;">2012年度</td>
+                                <td style="text-align:right;"><span style="margin-right:6px;">95.46</span></td>
+                                <td style="text-align:right;"><span style="margin-right:6px;">91.54</span></td>
+                                <td style="text-align:right;"><span style="margin-right:6px;">84.5</span></td>
+                                <td style="text-align:right;"><span style="margin-right:6px;">82.7</span></td>
+                                <td style="text-align:right;"><span style="margin-right:6px;">82.6</span></td>
+                                <td style="text-align:right;"><span style="margin-right:6px;">84.4</span></td>
+                                <td style="text-align:right;"><span style="margin-right:6px;">80.9</span></td>
+                                <td style="text-align:right;"><span style="margin-right:6px;">74.1</span></td>
+                                <td style="text-align:right;"><span style="margin-right:6px;">70.1</span></td>
+                                <td style="text-align:right;"><span style="margin-right:6px;">89</span></td>
+                                <td style="text-align:right;"><span style="margin-right:6px;">90</span></td>
+                                <td style="text-align:right;"><span style="margin-right:6px;">91</span></td>
+                            </tr>
+                        </tbody>
                     </table>
                 </div>
             </div>
