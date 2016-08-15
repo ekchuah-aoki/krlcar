@@ -395,7 +395,7 @@
 
                     <fieldset class="grid" style="background-color: #fff;">
                         <div class="showgroup">▼ 印鑑欄</div>
-                        <table class="table border bordered customHeader grouptable" data-auto-width="false" style="margin-bottom: 0px; border-bottom-width: 1px;display: none;">
+                        <table class="table border bordered customHeader grouptable" data-auto-width="false" style="margin-bottom: 0px; border-bottom-width: 1px;display: none; background-color: #FCFCFC;">
                                 <thead>
                                     <tr>
                                         <td rowspan="2" style="text-align:center">当直</td>
@@ -451,7 +451,7 @@
                                 </tbody>
                             </table>
 
-                            <table class="table border bordered customHeader grouptable" data-auto-width="false" style="margin-top: 0px;display: none;">
+                            <table class="table border bordered customHeader grouptable" data-auto-width="false" style="margin-top: 0px;display: none; background-color: #FCFCFC;">
                                 <thead>
                                     <tr>
                                         <th style="text-align:center;">所長</th>
@@ -505,7 +505,7 @@
                             </table>
                         </fieldset>
 
-                        <table class="table border bordered customHeader" data-auto-width="false">
+                        <table class="table border bordered customHeader" data-auto-width="false" style="background-color: #FCFCFC;margin: 0;">
                             <thead>
                                 <tr>
                                     <td rowspan="2" style="text-align:center;width:140px;">車番</td>
@@ -557,7 +557,7 @@
                             </tbody>
                         </table>
 
-                        <table class="table border bordered customHeader" data-auto-width="false">
+                        <table class="table border bordered customHeader" data-auto-width="false" style="background-color: #FCFCFC;margin: 0;">
                             <thead>
                                 <tr class="heightthSsame">
                                     <th style="width:150px;">夜メーター</th>
@@ -569,7 +569,6 @@
                                                 <option>三共石油</option>
                                                 <option>太陽石油</option>
                                                 <option>コーナン</option>
-                      
                                                 <option selected>コスモ石油</option>
                                                 <option>一光石油</option>
                                                 <option>現金</option>
@@ -657,7 +656,7 @@
                         </table>
                         <hr class="thin bg-grayLighter">
 
-                        <table class="table border bordered customHeader" data-auto-width="false">
+                        <table class="table border bordered customHeader" data-auto-width="false" style="background-color: #F6FFFF;margin: 0;">
                             <thead>
                                 <tr>
                                     <td style="text-align:center;">物品受領書</td>
@@ -753,14 +752,13 @@
                                 			</tr>
                         				</table>
                         			</td>
-                        <table class="table border bordered customHeader" data-auto-width="false">
+                        			
+                        			<table class="table border bordered customHeader" data-auto-width="false" style="background-color: #F6FFFF;margin: 0;">
                             <thead>
                                 <tr>
-                                    <th style="text-align:center;">運送区間</th>
-                                    <th style="text-align:center;">所要時間</th>
-                                    <th style="text-align:center;">走行距離(km)</th>
-                                    <th style="text-align:center;">有料代</th>
-                                    <th style="text-align:center;">収受運賃</th>
+                                    <th style="text-align:center;width:500px;">運送区間</th>
+                                    <th style="text-align:center;width:500px;">所要時間</th>
+                                    <th style="text-align:center;width:200px;">走行距離(km)</th>
                                 </tr>
                             </thead>
                             <tbody style="font-size:10px;">
@@ -770,18 +768,20 @@
                                             <tbody>
                                                 <tr>
                                                     <td rowspan="2">積地</td>
-                                                    <td><input type="text" class="tooltip" title="横浜市鶴見区" value="横浜市鶴見区" placeholder="地名"></td>
+                                                    <td>
+                                                   		<input type="text" class="tooltip" title="横浜市鶴見区" value="横浜市鶴見区" placeholder="地名" style="width:450px;">
+                                                    </td>
                                                 </tr>
                                                 <tr>
-                                                    <td><input type="text" class="tooltip" title="ジャパンケムテック" value="ジャパンケムテック" placeholder="社名"></td>
+                                                    <td><input type="text" class="tooltip" title="ジャパンケムテック" value="ジャパンケムテック" placeholder="社名" style="width:450px;"></td>
                                                 </tr>
                                                 <tr><td style="height:10px;"></td></tr>
                                                 <tr>
                                                     <td rowspan="2">卸地</td>
-                                                    <td><input type="text" class="tooltip" title="横浜市旭区" value="横浜市旭区" placeholder="地名"></td>
+                                                    <td><input type="text" class="tooltip" title="横浜市旭区" value="横浜市旭区" placeholder="地名" style="width:450px;"></td>
                                                 </tr>
                                                 <tr>
-                                                    <td><input type="text" class="tooltip" title="(株)富士フォークリフト中古センター" value="(株)富士フォークリフト中古センター" placeholder="社名"></td>
+                                                    <td><input type="text" class="tooltip" title="(株)富士フォークリフト中古センター" value="(株)富士フォークリフト中古センター" placeholder="社名" style="width:450px;"></td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -793,25 +793,27 @@
                                                     <td>自</td>
                                                     <td><input type="text" style="width:30px; text-align:right;" value="1"></td>
                                                     <td>日</td>
-                                                    <td><input type="text" style="width:44px; text-align:right;" value="13:11"></td>
-                                                    <td>分</td>
+                                                    <td><input type="text" style="width:30px; text-align:right;" value="13">:<input type="text" style="width:30px; text-align:right;" value="11"></td>
+                                                    <td><span style="margin-left: 20px;">休憩開始時間</span></td>
+                                                    <td><input type="text" style="width:30px; text-align:right;" value="0">:<input type="text" style="width:30px; text-align:right;" value="00"></td>
+                                                    <td><span style="margin-left: 20px;">拘束</span></td>
+                                                    <td>
+                                                        <input type="text" style="width:30px; text-align:right;background: rgb(245, 245, 245);border: 1px #d9d9d9 solid;" value="1" disabled>:
+                                                        <input type="text" style="width:30px; text-align:right;background: rgb(245, 245, 245);border: 1px #d9d9d9 solid;" value="19" disabled>
+                                                    </td>
                                                 </tr>
                                                 <tr>
                                                     <td>至</td>
-                                                    <td><input type="text" style="width:30px; text-align:right;" value="1"></td>
+                                                    <td><input type="text" style="width:30px; text-align:right;" value="1" ></td>
                                                     <td>日</td>
-                                                    <td><input type="text" style="width:44px; text-align:right;" value="14:30"></td>
-                                                    <td>分</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>拘束</td>
-                                                    <td><input type="text" style="width:30px; text-align:right;" value="1"></td>
-                                                    <td colspan="2">時間</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>運転</td>
-                                                    <td><input type="text" style="width:30px; text-align:right;" value="0.3"></td>
-                                                    <td colspan="2">時間</td>
+                                                    <td><input type="text" style="width:30px; text-align:right;" value="14">:<input type="text" style="width:30px; text-align:right;" value="30"></td>
+                                                    <td><span style="margin-left: 20px;">休憩終了時間</span></td>
+                                                    <td><input type="text" style="width:30px; text-align:right;" value="0">:<input type="text" style="width:30px; text-align:right;" value="00"></td>
+                                                    <td><span style="margin-left: 20px;">運転</span></td>
+                                                    <td>
+                                                        <input type="text" style="width:30px; text-align:right;background: rgb(245, 245, 245);border: 1px #d9d9d9 solid;" value="1" disabled>:
+                                                        <input type="text" style="width:30px; text-align:right;background: rgb(245, 245, 245);border: 1px #d9d9d9 solid;" value="19" disabled>
+                                                    </td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -821,19 +823,33 @@
                                             <tbody>
                                                 <tr>
                                                     <td>実車</td>
-                                                    <td><input type="text" style="width:60px; text-align:right;" value="29"></td>
+                                                    <td><input type="text" style="width:130px; text-align:right;" value="29"></td>
                                                 </tr>
                                                 <tr>
                                                     <td>空車</td>
-                                                    <td><input type="text" style="width:60px; text-align:right;" value="19"></td>
+                                                    <td><input type="text" style="width:130px; text-align:right;" value="19"></td>
                                                 </tr>
                                                 <tr>
                                                     <td>総行<br />距離</td>
-                                                    <td><input type="text" style="width:60px; text-align:right;" value="48"></td>
+                                                    <td><input type="text" style="width:130px; text-align:right;" value="48"></td>
                                                 </tr>
                                             </tbody>
                                         </table>
                                     </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        			
+                        <table class="table border bordered customHeader" data-auto-width="false" style="background-color: #F6FFFF;margin: 0;">
+                            <thead>
+                                <tr>
+                                    <th style="text-align:center;width:475px;">有料代</th>
+                                    <th style="text-align:center;width:475px;">収受運賃</th>
+                                    <th style="text-align:center;width:250px;">作業内容</th>
+                                </tr>
+                            </thead>
+                            <tbody style="font-size:10px;">
+                                <tr>
                                     <td>
                                         <table>
                                             <tbody>
@@ -909,33 +925,7 @@
                                                     <td>
                                                         <input type="text" value="14,000" style="width:70px; text-align:right;">
                                                     </td>
-                                                    <td>留置</td>
-                                                    <td>
-                                                        <input type="text" style="width:70px; text-align:right;">
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>時増</td>
-                                                    <td>
-                                                        <input type="text" style="width:70px; text-align:right;">
-                                                    </td>
-                                                    <td>地区粁増</td>
-                                                    <td>
-                                                        <input type="text" style="width:70px; text-align:right;">
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>道路航送料</td>
-                                                    <td>
-                                                        <input type="text" style="width:70px; text-align:right;">
-                                                    </td>
-                                                    <td>運転手荷役</td>
-                                                    <td>
-                                                        <input type="text" style="width:70px; text-align:right;">
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>助手荷役</td>
+                                                    <td>運送保険料</td>
                                                     <td>
                                                         <input type="text" style="width:70px; text-align:right;">
                                                     </td>
@@ -945,10 +935,54 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td>運送保険料</td>
+                                                    <td>時増</td>
                                                     <td>
                                                         <input type="text" style="width:70px; text-align:right;">
                                                     </td>
+                                                    <td>留置</td>
+                                                    <td>
+                                                        <input type="text" style="width:70px; text-align:right;">
+                                                    </td>
+                                                    <td>
+                                                    	<input type="text" style="width:70px;" value="その他">
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" style="width:70px; text-align:right;">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>道路航送料</td>
+                                                    <td>
+                                                        <input type="text" style="width:70px; text-align:right;">
+                                                    </td>
+                                                    <td>地区粁増</td>
+                                                    <td>
+                                                        <input type="text" style="width:70px; text-align:right;">
+                                                    </td>
+                                                    <td>
+                                                    	<input type="text" style="width:70px;" value="その他">
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" style="width:70px; text-align:right;">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>助手荷役</td>
+                                                    <td>
+                                                        <input type="text" style="width:70px; text-align:right;">
+                                                    </td>
+                                                    <td>運転手荷役</td>
+                                                    <td>
+                                                        <input type="text" style="width:70px; text-align:right;">
+                                                    </td>
+                                                    <td>
+                                                    	<input type="text" style="width:70px;" value="その他">
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" style="width:70px; text-align:right;">
+                                                    </td>
+                                                </tr>
+                                                <tr>
                                                     <td>合計未収額</td>
                                                     <td style="text-align:right;">
                                                         <span class=" fg-green" style="text-align:right; width:70px;font-size:20px;">28,000</span>
@@ -957,54 +991,83 @@
                                             </tbody>
                                         </table>
                                     </td>
-                                </tr>
-                                <tr>
-                                    <th style="font-size:13px;text-align:center;color:#555555;">作業内容</th>
-                                    <td colspan="4">
-                                        <label class="input-control checkbox">
-                                            <input type="checkbox">
-                                            <span class="check"></span><span style="margin-left:5px;margin-right:5px;">1 ユニーク指定</span>
-                                        </label>
-                                        <label class="input-control checkbox">
-                                            <input type="checkbox" checked>
-                                            <span class="check"></span><span style="margin-left:5px;margin-right:5px;">2 クレーン車</span>
-                                        </label>
-                                        <label class="input-control checkbox">
-                                            <input type="checkbox">
-                                            <span class="check"></span><span style="margin-left:5px;margin-right:5px;">3 搬出</span>
-                                        </label>
-                                        <label class="input-control checkbox">
-                                            <input type="checkbox">
-                                            <span class="check"></span><span style="margin-left:5px;margin-right:5px;">4 搬入</span>
-                                        </label>
-                                        <label class="input-control checkbox">
-                                            <input type="checkbox">
-                                            <span class="check"></span><span style="margin-left:5px;margin-right:5px;">5 据付</span>
-                                        </label>
-                                        <label class="input-control checkbox">
-                                            <input type="checkbox">
-                                            <span class="check"></span><span style="margin-left:5px;margin-right:5px;">6 助手指定</span>
-                                        </label>
-                                        <span style="margin-left:5px;margin-right:5px;">7 指定車両</span>
-                                        <label class="input-control text">
-                                            <input style="margin-top: 5px;" type="text">
-                                        </label>
+                                    <td>
+                                    	<table>
+                                    		<tbody>
+                                    			<tr>
+                                    			  <td>
+                                    			    <span>1 ユニーク指定</span>
+			                                        <label class="input-control checkbox">
+			                                            <input type="checkbox">
+			                                            <span class="check"></span>
+			                                        </label>
+			                                      </td>
+			                                      <td>
+			                                        <span>2 クレーン車</span>
+			                                        <label class="input-control checkbox">
+                                            			<input type="checkbox" checked>
+			                                            <span class="check"></span>
+			                                        </label>
+			                                      </td>
+			                                      <td>
+			                                        <span>3 搬出　　</span>
+			                                        <label class="input-control checkbox">
+			                                            <input type="checkbox">
+			                                            <span class="check"></span>
+			                                        </label>
+			                                      </td>
+			                                    </tr>
+                                        		<tr>
+                                        		  <td>
+                                        		    <span>4 搬入　　　</span>
+			                                        <label class="input-control checkbox">
+			                                            <input type="checkbox">
+			                                            <span class="check"></span>
+			                                        </label>
+			                                      </td>
+			                                      <td>
+			                                        <span>5 据付　　　</span>
+			                                        <label class="input-control checkbox">
+			                                            <input type="checkbox">
+			                                            <span class="check"></span>
+			                                        </label>
+			                                      </td>
+			                                      <td>
+			                                        <span>6 助手指定</span>
+			                                        <label class="input-control checkbox">
+			                                            <input type="checkbox">
+			                                            <span class="check"></span>
+			                                        </label>
+			                                      </td>
+                                        		</tr>
+                                        		<tr>
+                                        		  <td style="width: 80px;">
+	                                        		  7 指定車両
+			                                          <label class="input-control text" style="width: 80px;">
+			                                              <input style="margin-top: 5px;width: 80px;" type="text">
+			                                          </label>
+		                                          </td>
+                                        		</tr>
+                                        	</tbody>
+                                        </table>
                                     </td>
                                 </tr>
                             </tbody>
                         </table>
-
+                        
                         <hr class="thin bg-grayLighter">
 
-                        <table class="table border bordered customHeader" data-auto-width="false">
+                        <table class="table border bordered customHeader" data-auto-width="false" style="background-color: #FFF8F3;margin: 0;">
                             <thead>
                                 <tr>
                                     <td style="text-align:center;">物品受領書</td>
                                     <td style="text-align:center;">得意先</td>
                                     <td style="text-align:center;width:100px;">屯数/往復</td>
-                                    <td style="text-align:center; border-right-style: none;width:530px;">品名・個数</td>
-                                    <td style="text-align: center; border-left-style: none;">
-                                        <button class="button success goods_list2_add" style="width:90px;height:23px;font-size:13px;">追加</button>
+                                    <td style="text-align:center;">品名</td>
+                                    <td style="text-align:center;">数量</td>
+                                    <td style="text-align:center; border-right-style: none;width:150px;">号車</td>
+                                    <td style="text-align: center; border-left-style: none;width:80px;">
+                                        <button class="button success goods_list1_add" style="width:70px;height:23px;font-size:13px;">追加</button>
                                     </td>
                                 </tr>
                             </thead>
@@ -1016,13 +1079,13 @@
                                                 <tr>
                                                     <td>
                                                         <label class="input-control radio small-check">
-                                                            <input type="radio" name="alcohol_chk21" checked="checked">
+                                                            <input type="radio" name="alcohol_chk11" checked="checked">
                                                             <span class="check"></span><span style="margin-left:5px;">無</span>
                                                         </label>
                                                     </td>
                                                     <td>
                                                         <label class="input-control radio small-check">
-                                                            <input type="radio" name="alcohol_chk21">
+                                                            <input type="radio" name="alcohol_chk11">
                                                             <span class="check"></span><span style="margin-left:5px;">有</span>
                                                         </label>
                                                     </td>
@@ -1031,19 +1094,19 @@
                                                     <td></td>
                                                     <td>
                                                         <label class="input-control radio small-check">
-                                                            <input type="radio" class="alcohol_chk22" name="alcohol_chk22" disabled>
+                                                            <input type="radio" class="alcohol_chk12" name="alcohol_chk12" disabled>
                                                             <span class="check"></span><span style="margin-left:5px;margin-right:28px;">郵送</span>
                                                         </label>
                                                         <label class="input-control radio small-check">
-                                                            <input type="radio" class="alcohol_chk22" name="alcohol_chk22" disabled>
+                                                            <input type="radio" class="alcohol_chk12" name="alcohol_chk12" disabled>
                                                             <span class="check"></span><span style="margin-left:5px;">お届客先渡し</span>
                                                         </label><br />
                                                         <label class="input-control radio small-check">
-                                                            <input type="radio" class="alcohol_chk22" name="alcohol_chk22" disabled>
+                                                            <input type="radio" class="alcohol_chk12" name="alcohol_chk12" disabled>
                                                             <span class="check"></span><span style="margin-left:5px;margin-right:3px;">仮受領書</span>
                                                         </label>
                                                         <label class="input-control radio small-check">
-                                                            <input type="radio" class="alcohol_chk22" name="alcohol_chk22" disabled>
+                                                            <input type="radio" class="alcohol_chk12" name="alcohol_chk12" disabled>
                                                             <span class="check"></span><span style="margin-left:5px;">その他</span>
                                                         </label>
                                                     </td>
@@ -1051,49 +1114,52 @@
                                             </tbody>
                                         </table>
                                     </td>
-                                    <td>
-                                        <div class="input-control text" style="width:165px;">
-                                            <input type="text" style="text-align:left;width:165px;font-size:11px;" value="">
-                                            <button class="button primary btn_tokuisaki" style="margin: 0px; padding: 0px; left: 170px; width: 30px; height: 25px; font-size: 10px;">検索</button>
+                                    <td style="width: 300px;">
+                                        <div class="input-control text">
+                                            <input type="text" style="text-align:left;width:205px;font-size:11px;" value="">
+                                            <button class="button primary btn_tokuisaki" style="margin: 0px; padding: 0px; left: 210px; width: 30px; height: 25px; font-size: 10px;">検索</button>
                                         </div>
                                     </td>
-                                    <td>
+                                    <td style="width: 110px;">
                                         <div class="input-control text" style="width:30px;">
                                             <input type="text" maxlength="2" style="text-align:right;">
                                         </div><span style="margin-left:3px;margin-right:3px;">t</span>
                                         <div class="input-control text" style="width:30px;">
-                                            <input type="text" maxlength="2" style="text-align:right;">
+                                            <input type="text" maxlength="2" style="text-align:right;" value="">
                                         </div><span style="margin-left:3px;margin-right:3px;">回</span>
                                     </td>
-                                    <td colspan="2" style="padding-right: 0px; padding-left: 0px;">
-                                        <table id="goods_list2">
-                                            <tbody>
-                                                <tr class="goods_list2_var">
-                                                    <td>品名</td>
-                                                    <td><input type="text" name="goods_list1_name_0" value=""></td>
-                                                    <td>号車</td>
-                                                    <td><input type="text" name="goods_list1_name_0" value=""></td>
-                                                    <td>個数</td>
-                                                    <td><input type="text" name="goods_list1_mail_0" style="text-align:right;width:100px;" value=""></td>
-                                                    <td class="del_02" style="display: table-cell;">
-                                                        <button class="button goods_list2_del alert" style="width: 50px; height: 23px; padding-right: 0px; padding-left: 0px; font-size: 10px;">削除</button>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
+                                    <td style="width: 100px;">
+                                      <input type="text" value="">
                                     </td>
-                                </tr>
-                            </tbody>
-                        </table>
-
-                        <table class="table border bordered customHeader" data-auto-width="false">
+                                    <td style="width: 230px;">
+                                      <input type="text" value="">
+                                      <div class="input-control select" style="width:70px;">
+                                            <select style="width: 70px; color: rgb(82, 103, 122); font-size: 10pt; margin-top: 4px;">
+                                                <option>個</option>
+                                                <option>台</option>
+                                                <option>パレット</option>
+                                            </select>
+                                        </div>
+                                    </td>
+                                    <td colspan="2" style="padding-right: 0px; padding-left: 0px;width: 250px;">
+                                        <table id="goods_list1">
+                                        	<tr class="goods_list1_var">
+                                            	<td>
+                                    	        	<input type="text" name="goods_list1_mail_0" style="text-align:right;width:100px;" value="">
+                                    	        </td>
+                                    	        <td class="del_01" style="display: table-cell;">
+                                                    <button class="button goods_list1_del alert" style="width: 50px; height: 23px; padding-right: 0px; padding-left: 0px; font-size: 10px;">削除</button>
+                                    			</td>
+                                			</tr>
+                        				</table>
+                        			</td>
+                        			
+                        			<table class="table border bordered customHeader" data-auto-width="false" style="background-color: #FFF8F3;margin: 0;">
                             <thead>
                                 <tr>
-                                    <th style="text-align:center;">運送区間</th>
-                                    <th style="text-align:center;">所要時間</th>
-                                    <th style="text-align:center;">走行距離(km)</th>
-                                    <th style="text-align:center;">有料代</th>
-                                    <th style="text-align:center;">収受運賃</th>
+                                    <th style="text-align:center;width:500px;">運送区間</th>
+                                    <th style="text-align:center;width:500px;">所要時間</th>
+                                    <th style="text-align:center;width:200px;">走行距離(km)</th>
                                 </tr>
                             </thead>
                             <tbody style="font-size:10px;">
@@ -1103,18 +1169,20 @@
                                             <tbody>
                                                 <tr>
                                                     <td rowspan="2">積地</td>
-                                                    <td><input type="text" class="tooltip" title="" value="" placeholder="地名"></td>
+                                                    <td>
+                                                   		<input type="text" class="tooltip" title="" value="" placeholder="地名" style="width:450px;">
+                                                    </td>
                                                 </tr>
                                                 <tr>
-                                                    <td><input type="text" class="tooltip" title="" value="" placeholder="社名"></td>
+                                                    <td><input type="text" class="tooltip" title="" value="" placeholder="社名" style="width:450px;"></td>
                                                 </tr>
                                                 <tr><td style="height:10px;"></td></tr>
                                                 <tr>
                                                     <td rowspan="2">卸地</td>
-                                                    <td><input type="text" class="tooltip" title="" value="" placeholder="地名"></td>
+                                                    <td><input type="text" class="tooltip" title="" value="" placeholder="地名" style="width:450px;"></td>
                                                 </tr>
                                                 <tr>
-                                                    <td><input type="text" class="tooltip" title="" value="" placeholder="社名"></td>
+                                                    <td><input type="text" class="tooltip" title="" value="" placeholder="社名" style="width:450px;"></td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -1126,25 +1194,27 @@
                                                     <td>自</td>
                                                     <td><input type="text" style="width:30px; text-align:right;" value=""></td>
                                                     <td>日</td>
-                                                    <td><input type="text" style="width:44px; text-align:right;" value=""></td>
-                                                    <td>分</td>
+                                                    <td><input type="text" style="width:30px; text-align:right;" value="">:<input type="text" style="width:30px; text-align:right;" value=""></td>
+                                                    <td><span style="margin-left: 20px;">休憩開始時間</span></td>
+                                                    <td><input type="text" style="width:30px; text-align:right;" value="">:<input type="text" style="width:30px; text-align:right;" value=""></td>
+                                                    <td><span style="margin-left: 20px;">拘束</span></td>
+                                                    <td>
+                                                        <input type="text" style="width:30px; text-align:right;background: rgb(245, 245, 245);border: 1px #d9d9d9 solid;" value="" disabled>:
+                                                        <input type="text" style="width:30px; text-align:right;background: rgb(245, 245, 245);border: 1px #d9d9d9 solid;" value="" disabled>
+                                                    </td>
                                                 </tr>
                                                 <tr>
                                                     <td>至</td>
-                                                    <td><input type="text" style="width:30px; text-align:right;" value=""></td>
+                                                    <td><input type="text" style="width:30px; text-align:right;" value="" ></td>
                                                     <td>日</td>
-                                                    <td><input type="text" style="width:44px; text-align:right;" value=""></td>
-                                                    <td>分</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>拘束</td>
-                                                    <td><input type="text" style="width:30px; text-align:right;"></td>
-                                                    <td colspan="2">時間</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>運転</td>
-                                                    <td><input type="text" style="width:30px; text-align:right;"></td>
-                                                    <td colspan="2">時間</td>
+                                                    <td><input type="text" style="width:30px; text-align:right;" value="">:<input type="text" style="width:30px; text-align:right;" value=""></td>
+                                                    <td><span style="margin-left: 20px;">休憩終了時間</span></td>
+                                                    <td><input type="text" style="width:30px; text-align:right;" value="">:<input type="text" style="width:30px; text-align:right;" value=""></td>
+                                                    <td><span style="margin-left: 20px;">運転</span></td>
+                                                    <td>
+                                                        <input type="text" style="width:30px; text-align:right;background: rgb(245, 245, 245);border: 1px #d9d9d9 solid;" value="" disabled>:
+                                                        <input type="text" style="width:30px; text-align:right;background: rgb(245, 245, 245);border: 1px #d9d9d9 solid;" value="" disabled>
+                                                    </td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -1154,25 +1224,39 @@
                                             <tbody>
                                                 <tr>
                                                     <td>実車</td>
-                                                    <td><input type="text" style="width:60px; text-align:right;" value=""></td>
+                                                    <td><input type="text" style="width:130px; text-align:right;" value=""></td>
                                                 </tr>
                                                 <tr>
                                                     <td>空車</td>
-                                                    <td><input type="text" style="width:60px; text-align:right;" value=""></td>
+                                                    <td><input type="text" style="width:130px; text-align:right;" value=""></td>
                                                 </tr>
                                                 <tr>
                                                     <td>総行<br />距離</td>
-                                                    <td><input type="text" style="width:60px; text-align:right;" value=""></td>
+                                                    <td><input type="text" style="width:130px; text-align:right;" value=""></td>
                                                 </tr>
                                             </tbody>
                                         </table>
                                     </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        			
+                        <table class="table border bordered customHeader" data-auto-width="false" style="background-color: #FFF8F3;margin: 0;">
+                            <thead>
+                                <tr>
+                                    <th style="text-align:center;width:475px;">有料代</th>
+                                    <th style="text-align:center;width:475px;">収受運賃</th>
+                                    <th style="text-align:center;width:250px;">作業内容</th>
+                                </tr>
+                            </thead>
+                            <tbody style="font-size:10px;">
+                                <tr>
                                     <td>
                                         <table>
                                             <tbody>
                                                 <tr>
                                                     <td rowspan="2">現金</td>
-                                                    <td>金額<input type="text" style="width:70px; text-align:right;margin-left:2px;"></td>
+                                                    <td>金額<input type="text" style="width:70px; text-align:right;margin-left:2px;" value=""></td>
                                                     <td rowspan="2">フェリー現金</td>
                                                     <td>金額<input type="text" style="width:70px; text-align:right;margin-left:2px;"></td>
                                                     <td rowspan="2">航送代</td>
@@ -1240,35 +1324,9 @@
                                                 <tr>
                                                     <td>基本運賃</td>
                                                     <td>
-                                                        <input type="text" style="width:70px; text-align:right;">
+                                                        <input type="text" value="" style="width:70px; text-align:right;">
                                                     </td>
-                                                    <td>留置</td>
-                                                    <td>
-                                                        <input type="text" style="width:70px; text-align:right;">
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>時増</td>
-                                                    <td>
-                                                        <input type="text" style="width:70px; text-align:right;">
-                                                    </td>
-                                                    <td>地区粁増</td>
-                                                    <td>
-                                                        <input type="text" style="width:70px; text-align:right;">
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>道路航送料</td>
-                                                    <td>
-                                                        <input type="text" style="width:70px; text-align:right;">
-                                                    </td>
-                                                    <td>運転手荷役</td>
-                                                    <td>
-                                                        <input type="text" style="width:70px; text-align:right;">
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>助手荷役</td>
+                                                    <td>運送保険料</td>
                                                     <td>
                                                         <input type="text" style="width:70px; text-align:right;">
                                                     </td>
@@ -1278,50 +1336,121 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td>運送保険料</td>
+                                                    <td>時増</td>
                                                     <td>
                                                         <input type="text" style="width:70px; text-align:right;">
                                                     </td>
+                                                    <td>留置</td>
+                                                    <td>
+                                                        <input type="text" style="width:70px; text-align:right;">
+                                                    </td>
+                                                    <td>
+                                                    	<input type="text" style="width:70px;" value="その他">
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" style="width:70px; text-align:right;">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>道路航送料</td>
+                                                    <td>
+                                                        <input type="text" style="width:70px; text-align:right;">
+                                                    </td>
+                                                    <td>地区粁増</td>
+                                                    <td>
+                                                        <input type="text" style="width:70px; text-align:right;">
+                                                    </td>
+                                                    <td>
+                                                    	<input type="text" style="width:70px;" value="その他">
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" style="width:70px; text-align:right;">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>助手荷役</td>
+                                                    <td>
+                                                        <input type="text" style="width:70px; text-align:right;">
+                                                    </td>
+                                                    <td>運転手荷役</td>
+                                                    <td>
+                                                        <input type="text" style="width:70px; text-align:right;">
+                                                    </td>
+                                                    <td>
+                                                    	<input type="text" style="width:70px;" value="その他">
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" style="width:70px; text-align:right;">
+                                                    </td>
+                                                </tr>
+                                                <tr>
                                                     <td>合計未収額</td>
                                                     <td style="text-align:right;">
-                                                        <span class=" fg-green" style="text-align:right; width:70px;font-size:20px;">0</span>
+                                                        <span class=" fg-green" style="text-align:right; width:70px;font-size:20px;"></span>
                                                     </td>
                                                 </tr>
                                             </tbody>
                                         </table>
                                     </td>
-                                </tr>
-                                <tr>
-                                    <th style="font-size:13px;text-align:center;color:#555555;">作業内容</th>
-                                    <td colspan="4">
-                                        <label class="input-control checkbox">
-                                            <input type="checkbox">
-                                            <span class="check"></span><span style="margin-left:5px;margin-right:5px;">1 ユニーク指定</span>
-                                        </label>
-                                        <label class="input-control checkbox">
-                                            <input type="checkbox">
-                                            <span class="check"></span><span style="margin-left:5px;margin-right:5px;">2 クレーン車</span>
-                                        </label>
-                                        <label class="input-control checkbox">
-                                            <input type="checkbox">
-                                            <span class="check"></span><span style="margin-left:5px;margin-right:5px;">3 搬出</span>
-                                        </label>
-                                        <label class="input-control checkbox">
-                                            <input type="checkbox">
-                                            <span class="check"></span><span style="margin-left:5px;margin-right:5px;">4 搬入</span>
-                                        </label>
-                                        <label class="input-control checkbox">
-                                            <input type="checkbox">
-                                            <span class="check"></span><span style="margin-left:5px;margin-right:5px;">5 据付</span>
-                                        </label>
-                                        <label class="input-control checkbox">
-                                            <input type="checkbox">
-                                            <span class="check"></span><span style="margin-left:5px;margin-right:5px;">6 助手指定</span>
-                                        </label>
-                                        <span style="margin-left:5px;margin-right:5px;">7 指定車両</span>
-                                        <label class="input-control text">
-                                            <input style="margin-top: 5px;" type="text">
-                                        </label>
+                                    <td>
+                                    	<table>
+                                    		<tbody>
+                                    			<tr>
+                                    			  <td>
+                                    			    <span>1 ユニーク指定</span>
+			                                        <label class="input-control checkbox">
+			                                            <input type="checkbox">
+			                                            <span class="check"></span>
+			                                        </label>
+			                                      </td>
+			                                      <td>
+			                                        <span>2 クレーン車</span>
+			                                        <label class="input-control checkbox">
+                                            			<input type="checkbox">
+			                                            <span class="check"></span>
+			                                        </label>
+			                                      </td>
+			                                      <td>
+			                                        <span>3 搬出　　</span>
+			                                        <label class="input-control checkbox">
+			                                            <input type="checkbox">
+			                                            <span class="check"></span>
+			                                        </label>
+			                                      </td>
+			                                    </tr>
+                                        		<tr>
+                                        		  <td>
+                                        		    <span>4 搬入　　　</span>
+			                                        <label class="input-control checkbox">
+			                                            <input type="checkbox">
+			                                            <span class="check"></span>
+			                                        </label>
+			                                      </td>
+			                                      <td>
+			                                        <span>5 据付　　　</span>
+			                                        <label class="input-control checkbox">
+			                                            <input type="checkbox">
+			                                            <span class="check"></span>
+			                                        </label>
+			                                      </td>
+			                                      <td>
+			                                        <span>6 助手指定</span>
+			                                        <label class="input-control checkbox">
+			                                            <input type="checkbox">
+			                                            <span class="check"></span>
+			                                        </label>
+			                                      </td>
+                                        		</tr>
+                                        		<tr>
+                                        		  <td style="width: 80px;">
+	                                        		  7 指定車両
+			                                          <label class="input-control text" style="width: 80px;">
+			                                              <input style="margin-top: 5px;width: 80px;" type="text">
+			                                          </label>
+		                                          </td>
+                                        		</tr>
+                                        	</tbody>
+                                        </table>
                                     </td>
                                 </tr>
                             </tbody>
