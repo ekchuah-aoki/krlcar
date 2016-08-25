@@ -57,7 +57,6 @@
             }
         }
     </style>
-    
     <script>
     	$(function(){
     	    //入金区分
@@ -70,6 +69,17 @@
                     $("#etctext").attr('disabled', 'disabled');
                 }
             });
+    	    
+    	    var elements = "input[type=text]";
+      	  	$(elements).keypress(function(e) {
+      	    　var c = e.which ? e.which : e.keyCode;
+      	    　if (c == 13) { 
+      	      　var index = $(elements).index(this);
+      	      　$(elements + ":gt(" + index + "):first").focus();
+      	      　e.preventDefault();
+      	    　}
+      	  　});
+    	  
         });
 	</script>
 </head>
@@ -89,7 +99,6 @@
                             <span style="margin-left:5px;margin-right:10px;color:#307fc2;font-size:14px;">得意先名：ニチユＭＨＩ</span>
                             <span style="margin-left:5px;margin-right:10px;color:#307fc2;font-size:14px;">請求年月日：2016/07/21</span>
                             <span style="margin-left:5px;margin-right:10px;color:#307fc2;font-size:14px;">請求額：6,143,980円</span>
-                            <span style="margin-left:5px;margin-right:10px;color:#307fc2;font-size:14px;">入金先：三菱東京UFJ銀行　平塚支店</span>
                    	    </div>
                         <div class="right">
                             <button class="button success" style="width:100px;">保存</button>

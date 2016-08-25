@@ -144,6 +144,7 @@
 					$('#driverText').val("平坂　一郎");
 					$('#assistantText').val("町谷　晃");
 					$('#consignmentBtn').remove();
+					$('#shaban').append('<button class="button primary btn_shabanlst" id="shabanBtn" style="margin: 0px; padding: 0px; left: 95px; width: 35px; height: 28px; font-size: 10px;">検索</button>');
 					$('#driver').append('<button class="button primary btn_shainlist" id="driverBtn" style="margin: 0px; padding: 0px; left: 155px; width: 35px; height: 28px; font-size: 10px;">検索</button>');
 					$('#assistantA').append('<button class="button primary btn_shainlist" id="assistantAbtn" style="margin: 0px; padding: 0px; left: 155px; width: 35px; height: 28px; font-size: 10px;">検索</button>');
 					$('#assistantB').append('<button class="button primary btn_shainlist" id="assistantBbtn" style="margin: 0px; padding: 0px; left: 155px; width: 35px; height: 28px; font-size: 10px;">検索</button>');
@@ -163,6 +164,7 @@
 					$('.btn_shaban').attr("disabled", "disabled");
 					$('.btn_torihikisaki').removeAttr("disabled");
 					$('#consignment').append('<button class="button primary btn_torihikisaki" id="consignmentBtn" style="margin: 0px; padding: 0px; left: 165px; width: 35px; height: 28px; font-size: 10px;">検索</button>');
+					$('#shabanBtn').remove();
 					$('#driverBtn').remove();
 					$('#driverText').val("");
 					$('#assistantText').val("");
@@ -184,7 +186,7 @@
 			    } 
 			  });
 			
-			$(".btn_shaban").click(function () {
+			$(".btn_shabanlst").click(function () {
 			    $("#shabanlst").dialog({
 			        modal: true,
 			        closeOnEscape: false,
@@ -257,7 +259,7 @@
 			        closeOnEscape: false,
 			        width: 440,
 			        height: 520,
-			        show: { effect: "clip", complete: function () { $("#torihikisaki_name").focus(); } },
+			        show: { effect: "clip", complete: function () { $("#findname_name").focus(); } },
 			        open: function (event, ui) {
 			            $(this).parent().find(".ui-dialog-titlebar-close").show();
 			        }
@@ -523,9 +525,10 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td style="padding-right: 0px;">
-                                        <div class="input-control text" style="width:100px;">
-                                            <input type="text" id="torihikisakitext" style="text-align:right;width:100px;" name="car" value="">
+                                    <td>
+                                        <div class="input-control text" id="shaban" style="width:100px;">
+                                            <input type="text" id="torihikisakitext" style="text-align:left;width:90px;" name="car" value="">
+                                            <button class="button primary btn_shabanlst" id="shabanBtn" style="margin: 0px; padding: 0px; left: 95px; width: 35px; height: 28px; font-size: 10px;">検索</button>
                                         </div>
                                     </td>
                                     <td></td>
@@ -1455,10 +1458,16 @@
                                 </tr>
                             </tbody>
                         </table>
-                </div>
-			</div>
-		</div>
-	</div>
+                      </tr>
+                    </tbody>
+                  </table>
+                </tr>
+              </tbody>
+            </table>              
+          </div>
+	    </div>
+      </div>
+	  </div>
 	</div>
 
     <!-- 車番一覧 -->

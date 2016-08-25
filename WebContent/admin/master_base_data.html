@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,11 +20,8 @@
 
     <script src="../js/jquery-2.1.3.min.js"></script>
     <script src="../js/jquery.dataTables.min.js"></script>
-
     <script src="../js/metro.js"></script>
-    
     <script src="../js/Menu.js"></script>
-
     <style>
         html, body {
             height: 100%;
@@ -51,17 +49,22 @@
             }
         }
     </style>
-
     <script>
-        
+    $(function(){
+        var elements = "input[type=text]";
+    	  $(elements).keypress(function(e) {
+    	    var c = e.which ? e.which : e.keyCode;
+    	    if (c == 13) { 
+    	      var index = $(elements).index(this);
+    	      $(elements + ":gt(" + index + "):first").focus();
+    	      e.preventDefault();
+    	    }
+    	  });
+    });
     </script>
-    
 </head>
 <body>
-    
-    <!-- ヘッダー固定 -->
    <div id="Menu_load"></div>
-
     <div class="page-content">
         <div class="flex-grid no-responsive-future" style="height: 100%;">
             <div class="row">
@@ -373,6 +376,152 @@
                             </tbody>
                         </table>
                     </div>
+                    
+                    <div class="example" data-text="登録金融機関情報">
+                          <span>登録金融機関</span>
+                          <div style="float:right">
+                            <button class="button success" style="font-size:11px;width:90px;height:25px;margin-right:5px;">行追加</button>
+                          </div>
+                        <table class="table border bordered" data-auto-width="false" style="font-size:12px; margin-top: 20px;">
+                            <thead>
+                                <tr>
+                                    <td style="width:200px;">登録先金融機関名</td>
+                                    <td style="width:200px;">支店名</td>
+                                    <td style="width:100px;">支店番号</td>
+                                    <td style="width:100px;">預金種目</td>
+                                    <td style="width:250px;">口座番号</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="text-align: left; padding-right: 5px; padding-left: 5px;">
+                                        <div class="input-control text full-size">
+                                            <input type="text" style="height:28px;" value="中南信用金庫">
+                                        </div>
+                                    </td>
+                                    <td style="text-align: left; padding-right: 5px; padding-left: 5px;">
+                                        <div class="input-control text full-size">
+                                            <input type="text" style="height:28px;" value="旭支店">
+                                        </div>
+                                    </td>
+                                    <td style="text-align: left; padding-right: 5px; padding-left: 5px;">
+                                        <div class="input-control text full-size">
+                                            <input type="text" style="height:28px;">
+                                        </div>
+                                    </td>
+                                    <td style="text-align: left; padding-right: 5px; padding-left: 5px;">
+                                        <div class="input-control text full-size">
+                                  		  <form>
+                                            <select>
+                                      			<option value="">--</option>
+                                      			<option value="" selected>普通</option>
+                                      			<option value="">当座</option>
+                                    	    </select>
+                                  		  </form>
+                                		</div>
+                                    </td>
+                                    <td style="text-align: left; padding-right: 5px; padding-left: 5px;">
+                                        <div class="input-control text full-size">
+                                            <input type="text" style="height:28px;text-align: right;" value="0320427">
+                                        </div>
+                                    </td>
+                                  </tr>
+                              </tbody>
+                          </table>
+                          <table class="table border bordered" data-auto-width="false" style="font-size:12px; margin-top: 20px;">
+                            <thead>
+                                <tr>
+                                    <td style="width:200px;">登録先金融機関名</td>
+                                    <td style="width:200px;">支店名</td>
+                                    <td style="width:100px;">支店番号</td>
+                                    <td style="width:100px;">預金種目</td>
+                                    <td style="width:250px;">口座番号</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="text-align: left; padding-right: 5px; padding-left: 5px;">
+                                        <div class="input-control text full-size">
+                                            <input type="text" style="height:28px;" value="三菱東京UFJ銀行">
+                                        </div>
+                                    </td>
+                                    <td style="text-align: left; padding-right: 5px; padding-left: 5px;">
+                                        <div class="input-control text full-size">
+                                            <input type="text" style="height:28px;" value="平塚支店">
+                                        </div>
+                                    </td>
+                                    <td style="text-align: left; padding-right: 5px; padding-left: 5px;">
+                                        <div class="input-control text full-size">
+                                            <input type="text" style="height:28px;">
+                                        </div>
+                                    </td>
+                                    <td style="text-align: left; padding-right: 5px; padding-left: 5px;">
+                                        <div class="input-control text full-size">
+                                  		  <form>
+                                            <select>
+                                      			<option value="">--</option>
+                                      			<option value="" selected>普通</option>
+                                      			<option value="">当座</option>
+                                    	    </select>
+                                  		  </form>
+                                		</div>
+                                    </td>
+                                    <td style="text-align: left; padding-right: 5px; padding-left: 5px;">
+                                        <div class="input-control text full-size">
+                                            <input type="text" style="height:28px;text-align: right;" value="3646891">
+                                        </div>
+                                    </td>
+                                  </tr>
+                              </tbody>
+                          </table>
+                          <table class="table border bordered" data-auto-width="false" style="font-size:12px; margin-top: 20px;">
+                            <thead>
+                                <tr>
+                                    <td style="width:200px;">登録先金融機関名</td>
+                                    <td style="width:200px;">支店名</td>
+                                    <td style="width:100px;">支店番号</td>
+                                    <td style="width:100px;">預金種目</td>
+                                    <td style="width:250px;">口座番号</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="text-align: left; padding-right: 5px; padding-left: 5px;">
+                                        <div class="input-control text full-size">
+                                            <input type="text" style="height:28px;" value="横浜銀行">
+                                        </div>
+                                    </td>
+                                    <td style="text-align: left; padding-right: 5px; padding-left: 5px;">
+                                        <div class="input-control text full-size">
+                                            <input type="text" style="height:28px;" value="平塚支店">
+                                        </div>
+                                    </td>
+                                    <td style="text-align: left; padding-right: 5px; padding-left: 5px;">
+                                        <div class="input-control text full-size">
+                                            <input type="text" style="height:28px;">
+                                        </div>
+                                    </td>
+                                    <td style="text-align: left; padding-right: 5px; padding-left: 5px;">
+                                        <div class="input-control text full-size">
+                                  		  <form>
+                                            <select>
+                                      			<option value="">--</option>
+                                      			<option value="" selected>普通</option>
+                                      			<option value="">当座</option>
+                                    	    </select>
+                                  		  </form>
+                                		</div>
+                                    </td>
+                                    <td style="text-align: left; padding-right: 5px; padding-left: 5px;">
+                                        <div class="input-control text full-size">
+                                            <input type="text" style="height:28px;text-align: right;" value="1652469">
+                                        </div>
+                                    </td>
+                                  </tr>
+                              </tbody>
+                          </table>
+                          
+                        </div>
 
                 </div>
             </div>
